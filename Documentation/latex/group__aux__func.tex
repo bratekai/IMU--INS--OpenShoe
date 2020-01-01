@@ -1,0 +1,226 @@
+\hypertarget{group__aux__func}{
+\section{\-Auxilliary functions}
+\label{group__aux__func}\index{\-Auxilliary functions@{\-Auxilliary functions}}
+}
+
+
+\-Auxilliary functions for calculation various matrix and scalar operations.  
+
+
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__aux__func_gabf788491b9a7053e88a954b41f74b8f7}{sqrt\-\_\-hf} (\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} arg)
+\begin{DoxyCompactList}\small\item\em \-Function for calculating the square root. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__aux__func_ga54eaa66071c6606e7dbad9673e8418a1}{vecnorm2} (\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} $\ast$arg\-\_\-vec, uint8\-\_\-t len)
+\begin{DoxyCompactList}\small\item\em \-Function that calculates the squared \-Euclidean norm of a vector. \end{DoxyCompactList}\item 
+void \hyperlink{group__aux__func_ga59b1148a3b2039b267dc5b740aa2196a}{euler2rotation} (\hyperlink{nav__types_8h_ab7675278cb555aa98b43c97694753329}{mat3} rotmat, const \hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} euler)
+\begin{DoxyCompactList}\small\item\em \-Function that converts \-Euler angles (\mbox{[}roll,pitch,yaw\mbox{]}) into a rotation matrix $R_b^t$. \end{DoxyCompactList}\item 
+void \hyperlink{group__aux__func_gaa74b4197980d69d90ff0bb2299df74e1}{rotation2quat} (\hyperlink{nav__types_8h_ad9a64f455fa02affaba6740746aae7b2}{quat\-\_\-vec} q, const \hyperlink{nav__types_8h_ab7675278cb555aa98b43c97694753329}{mat3} rotmat)
+\begin{DoxyCompactList}\small\item\em \-Function for converting a rotation matrix $R_b^t$ to quaternions. \end{DoxyCompactList}\item 
+void \hyperlink{group__aux__func_ga9ac9f67ebac20a4953265127e3621f6c}{quat2rotation} (\hyperlink{nav__types_8h_ab7675278cb555aa98b43c97694753329}{mat3} rotmat, const \hyperlink{nav__types_8h_ad9a64f455fa02affaba6740746aae7b2}{quat\-\_\-vec} q)
+\begin{DoxyCompactList}\small\item\em \-Function for converting quaternions to a rotation matrix $R_b^t$. \end{DoxyCompactList}\item 
+void \hyperlink{group__aux__func_ga269e411a81080270d202618aece4f079}{rotation2euler} (\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} euler, const \hyperlink{nav__types_8h_ab7675278cb555aa98b43c97694753329}{mat3} rotmat)
+\begin{DoxyCompactList}\small\item\em \-Function for converting a rotation matrix $R_b^t$ to \-Euler angles (\mbox{[}roll,pitch,yaw\mbox{]}). \end{DoxyCompactList}\item 
+void \hyperlink{group__aux__func_ga5f9cb26cc3e73e922fac295a84401462}{innovation\-\_\-cov} (\hyperlink{nav__types_8h_a0407e05d4f0216c13cca22570399e44d}{mat3sym} re, \hyperlink{nav__types_8h_a0f4089eb3ad75e0675d7f7d3914fddeb}{mat9sym} pvec)
+\begin{DoxyCompactList}\small\item\em \-Function for calculating the \-Kalman filter innovation covariance. \end{DoxyCompactList}\item 
+void \hyperlink{group__aux__func_ga06b4d19c89f6b3af0ca6c25d541d350a}{invmat3sys} (\hyperlink{nav__types_8h_a0407e05d4f0216c13cca22570399e44d}{mat3sym} ainv, \hyperlink{nav__types_8h_a0407e05d4f0216c13cca22570399e44d}{mat3sym} a)
+\begin{DoxyCompactList}\small\item\em \-Function for inverting a 3 by 3 matrix hermitian matrix. \end{DoxyCompactList}\item 
+void \hyperlink{group__aux__func_gaa026397785026ed32818cf8008abffb3}{max\-\_\-value} (\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} $\ast$max\-\_\-v, uint8\-\_\-t $\ast$index, \hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} $\ast$arg\-\_\-vec)
+\begin{DoxyCompactList}\small\item\em \-Function that calculates the maximum value of a vector and returns the max value and the index of the vector element holding the maximum value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Auxilliary functions for calculation various matrix and scalar operations. 
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__aux__func_ga59b1148a3b2039b267dc5b740aa2196a}{
+\index{\-Auxilliary functions@{\-Auxilliary functions}!euler2rotation@{euler2rotation}}
+\index{euler2rotation@{euler2rotation}!Auxilliary functions@{\-Auxilliary functions}}
+\subsubsection[{euler2rotation}]{\setlength{\rightskip}{0pt plus 5cm}void euler2rotation (
+\begin{DoxyParamCaption}
+\item[{{\bf mat3}}]{rotmat, }
+\item[{const {\bf vec3}}]{euler}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{group__aux__func_ga59b1148a3b2039b267dc5b740aa2196a}
+
+
+\-Function that converts \-Euler angles (\mbox{[}roll,pitch,yaw\mbox{]}) into a rotation matrix $R_b^t$. 
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em rotmat} & \-Vector representation of the rotation matrix. \\
+\hline
+\mbox{\tt in}  & {\em euler} & \-Vector of euler angles. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__aux__func_ga5f9cb26cc3e73e922fac295a84401462}{
+\index{\-Auxilliary functions@{\-Auxilliary functions}!innovation\-\_\-cov@{innovation\-\_\-cov}}
+\index{innovation\-\_\-cov@{innovation\-\_\-cov}!Auxilliary functions@{\-Auxilliary functions}}
+\subsubsection[{innovation\-\_\-cov}]{\setlength{\rightskip}{0pt plus 5cm}void innovation\-\_\-cov (
+\begin{DoxyParamCaption}
+\item[{{\bf mat3sym}}]{re, }
+\item[{{\bf mat9sym}}]{pvec}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{group__aux__func_ga5f9cb26cc3e73e922fac295a84401462}
+
+
+\-Function for calculating the \-Kalman filter innovation covariance. 
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em re} & \-Vector representation of the innovation covariance matrix. \\
+\hline
+\mbox{\tt in}  & {\em pvec} & \-Vector representation of the \-Kalman filter covariance matrix. \\
+\hline
+\mbox{\tt in}  & {\em sigma} & \-Vector representation of pseudo zero-\/velocity measurement noise standard deviations. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__aux__func_ga06b4d19c89f6b3af0ca6c25d541d350a}{
+\index{\-Auxilliary functions@{\-Auxilliary functions}!invmat3sys@{invmat3sys}}
+\index{invmat3sys@{invmat3sys}!Auxilliary functions@{\-Auxilliary functions}}
+\subsubsection[{invmat3sys}]{\setlength{\rightskip}{0pt plus 5cm}void invmat3sys (
+\begin{DoxyParamCaption}
+\item[{{\bf mat3sym}}]{ainv, }
+\item[{{\bf mat3sym}}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{group__aux__func_ga06b4d19c89f6b3af0ca6c25d541d350a}
+
+
+\-Function for inverting a 3 by 3 matrix hermitian matrix. 
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em ainv} & \-Vector representation of the inverted matrix. \\
+\hline
+\mbox{\tt out}  & {\em error} & \-Error signaling vector. \\
+\hline
+\mbox{\tt in}  & {\em a} & \-Vector representation of the matrix to be inverted. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__aux__func_gaa026397785026ed32818cf8008abffb3}{
+\index{\-Auxilliary functions@{\-Auxilliary functions}!max\-\_\-value@{max\-\_\-value}}
+\index{max\-\_\-value@{max\-\_\-value}!Auxilliary functions@{\-Auxilliary functions}}
+\subsubsection[{max\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}void max\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{{\bf precision} $\ast$}]{max\-\_\-v, }
+\item[{uint8\-\_\-t $\ast$}]{index, }
+\item[{{\bf precision} $\ast$}]{arg\-\_\-vec}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{group__aux__func_gaa026397785026ed32818cf8008abffb3}
+
+
+\-Function that calculates the maximum value of a vector and returns the max value and the index of the vector element holding the maximum value. 
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em max\-\_\-v} & \-Largest value of the input vector. \\
+\hline
+\mbox{\tt out}  & {\em index} & \-Index of the vector element holding the largest value. \\
+\hline
+\mbox{\tt in}  & {\em arg\-\_\-vec} & \-The input vector. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__aux__func_ga9ac9f67ebac20a4953265127e3621f6c}{
+\index{\-Auxilliary functions@{\-Auxilliary functions}!quat2rotation@{quat2rotation}}
+\index{quat2rotation@{quat2rotation}!Auxilliary functions@{\-Auxilliary functions}}
+\subsubsection[{quat2rotation}]{\setlength{\rightskip}{0pt plus 5cm}void quat2rotation (
+\begin{DoxyParamCaption}
+\item[{{\bf mat3}}]{rotmat, }
+\item[{const {\bf quat\-\_\-vec}}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{group__aux__func_ga9ac9f67ebac20a4953265127e3621f6c}
+
+
+\-Function for converting quaternions to a rotation matrix $R_b^t$. 
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em rotmat} & \-Vector of representation of the rotation matrix. \\
+\hline
+\mbox{\tt in}  & {\em q} & \-Vector of quaternions. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__aux__func_ga269e411a81080270d202618aece4f079}{
+\index{\-Auxilliary functions@{\-Auxilliary functions}!rotation2euler@{rotation2euler}}
+\index{rotation2euler@{rotation2euler}!Auxilliary functions@{\-Auxilliary functions}}
+\subsubsection[{rotation2euler}]{\setlength{\rightskip}{0pt plus 5cm}void rotation2euler (
+\begin{DoxyParamCaption}
+\item[{{\bf vec3}}]{euler, }
+\item[{const {\bf mat3}}]{rotmat}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{group__aux__func_ga269e411a81080270d202618aece4f079}
+
+
+\-Function for converting a rotation matrix $R_b^t$ to \-Euler angles (\mbox{[}roll,pitch,yaw\mbox{]}). 
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em euler} & \-Vector of euler angles. \\
+\hline
+\mbox{\tt in}  & {\em rotmat} & \-Vector of representation of the rotation matrix. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__aux__func_gaa74b4197980d69d90ff0bb2299df74e1}{
+\index{\-Auxilliary functions@{\-Auxilliary functions}!rotation2quat@{rotation2quat}}
+\index{rotation2quat@{rotation2quat}!Auxilliary functions@{\-Auxilliary functions}}
+\subsubsection[{rotation2quat}]{\setlength{\rightskip}{0pt plus 5cm}void rotation2quat (
+\begin{DoxyParamCaption}
+\item[{{\bf quat\-\_\-vec}}]{q, }
+\item[{const {\bf mat3}}]{rotmat}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{group__aux__func_gaa74b4197980d69d90ff0bb2299df74e1}
+
+
+\-Function for converting a rotation matrix $R_b^t$ to quaternions. 
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em q} & \-Vector of quaternions. \\
+\hline
+\mbox{\tt in}  & {\em rotmat} & \-Vector of representation of the rotation matrix. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__aux__func_gabf788491b9a7053e88a954b41f74b8f7}{
+\index{\-Auxilliary functions@{\-Auxilliary functions}!sqrt\-\_\-hf@{sqrt\-\_\-hf}}
+\index{sqrt\-\_\-hf@{sqrt\-\_\-hf}!Auxilliary functions@{\-Auxilliary functions}}
+\subsubsection[{sqrt\-\_\-hf}]{\setlength{\rightskip}{0pt plus 5cm}{\bf precision} sqrt\-\_\-hf (
+\begin{DoxyParamCaption}
+\item[{{\bf precision}}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{group__aux__func_gabf788491b9a7053e88a954b41f74b8f7}
+
+
+\-Function for calculating the square root. 
+
+\-Function for calculating the square root using the hardware multipliers if the precision used is float, otherwise use the standard square root function. \hypertarget{group__aux__func_ga54eaa66071c6606e7dbad9673e8418a1}{
+\index{\-Auxilliary functions@{\-Auxilliary functions}!vecnorm2@{vecnorm2}}
+\index{vecnorm2@{vecnorm2}!Auxilliary functions@{\-Auxilliary functions}}
+\subsubsection[{vecnorm2}]{\setlength{\rightskip}{0pt plus 5cm}{\bf precision} vecnorm2 (
+\begin{DoxyParamCaption}
+\item[{{\bf precision} $\ast$}]{arg\-\_\-vec, }
+\item[{uint8\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{group__aux__func_ga54eaa66071c6606e7dbad9673e8418a1}
+
+
+\-Function that calculates the squared \-Euclidean norm of a vector. 
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em norm2} & \-The squared \-Euclidean norm of the input vector. \\
+\hline
+\mbox{\tt in}  & {\em arg\-\_\-vec} & \-The input vectors \\
+\hline
+\mbox{\tt in}  & {\em len} & \-The length of the input vector. \\
+\hline
+\end{DoxyParams}

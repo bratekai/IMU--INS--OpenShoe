@@ -1,0 +1,167 @@
+\hypertarget{group__user__interface}{
+\section{\-User (\-U\-S\-B) interface}
+\label{group__user__interface}\index{\-User (\-U\-S\-B) interface@{\-User (\-U\-S\-B) interface}}
+}
+
+
+\-This group contains high level functions for communication between user and system.  
+
+
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bfseries rxtx\-\_\-buffer}
+\begin{DoxyCompactList}\small\item\em \-Receive and transmit buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__user__interface_ga87a9b575684eea3d1a804e597236b40f}{com\-\_\-interface\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em \-Initialization function for communication interface. \end{DoxyCompactList}\item 
+void \hyperlink{group__user__interface_ga328bb6c7a4ed590a8a4eb1b2a60943f1}{receive\-\_\-command} (void)
+\begin{DoxyCompactList}\small\item\em \-Main function for receiving commands from user. \end{DoxyCompactList}\item 
+void \hyperlink{group__user__interface_ga9926a12daaecdbb4d8106ed110510d49}{transmit\-\_\-data} (void)
+\begin{DoxyCompactList}\small\item\em \-Main function to output data to user. \end{DoxyCompactList}\item 
+void \hyperlink{group__user__interface_ga56ca2a8f03cbdf960d6928e9a7ad68ba}{set\-\_\-state\-\_\-output} (uint8\-\_\-t state\-\_\-id, uint8\-\_\-t divider)
+\begin{DoxyCompactList}\small\item\em \-Sets state\-\_\-id state to be output with interrupt frequency divided by 2$^\wedge$(divider-\/1). \-Divider=0 turns off output. \end{DoxyCompactList}\item 
+void \hyperlink{group__user__interface_gad8c48701618a71f6bcc9ec12d139ba32}{reset\-\_\-output\-\_\-counters} (void)
+\begin{DoxyCompactList}\small\item\em \-Reset the output counter such that the output become synchronized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t \hyperlink{group__user__interface_ga3f996476795917a4b1ace8c6c5e4b28a}{error\-\_\-signal} = 0
+\begin{DoxyCompactList}\small\item\em \-Error signaling vector. \-If zero no error has occurred. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Buffer settings}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__user__interface_ga739a2a1a0047c98ac1b18ecd25dac092}{\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}~20
+\item 
+\#define \hyperlink{group__user__interface_ga9ab33647617098646990fe263600b650}{\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}~60
+\item 
+\#define \hyperlink{group__user__interface_ga0846b13f494cb412b27a5d30d2e227e6}{\-S\-I\-N\-G\-L\-E\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}~10
+\item 
+\#define \hyperlink{group__user__interface_ga36568984b1040a53e0d7d64d67066de4}{\-M\-A\-X\-\_\-\-R\-X\-\_\-\-N\-R\-B}~10
+\end{DoxyCompactItemize}
+\subsection*{\-State output divider limits}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__user__interface_ga9f7db6d016bae1297a6e75263dd6d186}{\-M\-A\-X\-\_\-\-L\-O\-G2\-\_\-\-D\-I\-V\-I\-D\-E\-R}~14
+\item 
+\#define \hyperlink{group__user__interface_gabef3d4b97cf2ed7d11401dafdd3fb6ea}{\-M\-I\-N\-\_\-\-L\-O\-G2\-\_\-\-D\-I\-V\-I\-D\-E\-R}~0
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-This group contains high level functions for communication between user and system. 
+
+\subsection{\-Define \-Documentation}
+\hypertarget{group__user__interface_ga9f7db6d016bae1297a6e75263dd6d186}{
+\index{\-User (\-U\-S\-B) interface@{\-User (\-U\-S\-B) interface}!\-M\-A\-X\-\_\-\-L\-O\-G2\-\_\-\-D\-I\-V\-I\-D\-E\-R@{\-M\-A\-X\-\_\-\-L\-O\-G2\-\_\-\-D\-I\-V\-I\-D\-E\-R}}
+\index{\-M\-A\-X\-\_\-\-L\-O\-G2\-\_\-\-D\-I\-V\-I\-D\-E\-R@{\-M\-A\-X\-\_\-\-L\-O\-G2\-\_\-\-D\-I\-V\-I\-D\-E\-R}!User (USB) interface@{\-User (\-U\-S\-B) interface}}
+\subsubsection[{\-M\-A\-X\-\_\-\-L\-O\-G2\-\_\-\-D\-I\-V\-I\-D\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-M\-A\-X\-\_\-\-L\-O\-G2\-\_\-\-D\-I\-V\-I\-D\-E\-R~14}}
+\label{group__user__interface_ga9f7db6d016bae1297a6e75263dd6d186}
+\hypertarget{group__user__interface_ga36568984b1040a53e0d7d64d67066de4}{
+\index{\-User (\-U\-S\-B) interface@{\-User (\-U\-S\-B) interface}!\-M\-A\-X\-\_\-\-R\-X\-\_\-\-N\-R\-B@{\-M\-A\-X\-\_\-\-R\-X\-\_\-\-N\-R\-B}}
+\index{\-M\-A\-X\-\_\-\-R\-X\-\_\-\-N\-R\-B@{\-M\-A\-X\-\_\-\-R\-X\-\_\-\-N\-R\-B}!User (USB) interface@{\-User (\-U\-S\-B) interface}}
+\subsubsection[{\-M\-A\-X\-\_\-\-R\-X\-\_\-\-N\-R\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-M\-A\-X\-\_\-\-R\-X\-\_\-\-N\-R\-B~10}}
+\label{group__user__interface_ga36568984b1040a53e0d7d64d67066de4}
+\hypertarget{group__user__interface_gabef3d4b97cf2ed7d11401dafdd3fb6ea}{
+\index{\-User (\-U\-S\-B) interface@{\-User (\-U\-S\-B) interface}!\-M\-I\-N\-\_\-\-L\-O\-G2\-\_\-\-D\-I\-V\-I\-D\-E\-R@{\-M\-I\-N\-\_\-\-L\-O\-G2\-\_\-\-D\-I\-V\-I\-D\-E\-R}}
+\index{\-M\-I\-N\-\_\-\-L\-O\-G2\-\_\-\-D\-I\-V\-I\-D\-E\-R@{\-M\-I\-N\-\_\-\-L\-O\-G2\-\_\-\-D\-I\-V\-I\-D\-E\-R}!User (USB) interface@{\-User (\-U\-S\-B) interface}}
+\subsubsection[{\-M\-I\-N\-\_\-\-L\-O\-G2\-\_\-\-D\-I\-V\-I\-D\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-M\-I\-N\-\_\-\-L\-O\-G2\-\_\-\-D\-I\-V\-I\-D\-E\-R~0}}
+\label{group__user__interface_gabef3d4b97cf2ed7d11401dafdd3fb6ea}
+\hypertarget{group__user__interface_ga739a2a1a0047c98ac1b18ecd25dac092}{
+\index{\-User (\-U\-S\-B) interface@{\-User (\-U\-S\-B) interface}!\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E@{\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}}
+\index{\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E@{\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}!User (USB) interface@{\-User (\-U\-S\-B) interface}}
+\subsubsection[{\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E~20}}
+\label{group__user__interface_ga739a2a1a0047c98ac1b18ecd25dac092}
+\hypertarget{group__user__interface_ga0846b13f494cb412b27a5d30d2e227e6}{
+\index{\-User (\-U\-S\-B) interface@{\-User (\-U\-S\-B) interface}!\-S\-I\-N\-G\-L\-E\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E@{\-S\-I\-N\-G\-L\-E\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}}
+\index{\-S\-I\-N\-G\-L\-E\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E@{\-S\-I\-N\-G\-L\-E\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}!User (USB) interface@{\-User (\-U\-S\-B) interface}}
+\subsubsection[{\-S\-I\-N\-G\-L\-E\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-I\-N\-G\-L\-E\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E~10}}
+\label{group__user__interface_ga0846b13f494cb412b27a5d30d2e227e6}
+\hypertarget{group__user__interface_ga9ab33647617098646990fe263600b650}{
+\index{\-User (\-U\-S\-B) interface@{\-User (\-U\-S\-B) interface}!\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E@{\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}}
+\index{\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E@{\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}!User (USB) interface@{\-User (\-U\-S\-B) interface}}
+\subsubsection[{\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E~60}}
+\label{group__user__interface_ga9ab33647617098646990fe263600b650}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__user__interface_ga87a9b575684eea3d1a804e597236b40f}{
+\index{\-User (\-U\-S\-B) interface@{\-User (\-U\-S\-B) interface}!com\-\_\-interface\-\_\-init@{com\-\_\-interface\-\_\-init}}
+\index{com\-\_\-interface\-\_\-init@{com\-\_\-interface\-\_\-init}!User (USB) interface@{\-User (\-U\-S\-B) interface}}
+\subsubsection[{com\-\_\-interface\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void com\-\_\-interface\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__user__interface_ga87a9b575684eea3d1a804e597236b40f}
+
+
+\-Initialization function for communication interface. 
+
+\hypertarget{group__user__interface_ga328bb6c7a4ed590a8a4eb1b2a60943f1}{
+\index{\-User (\-U\-S\-B) interface@{\-User (\-U\-S\-B) interface}!receive\-\_\-command@{receive\-\_\-command}}
+\index{receive\-\_\-command@{receive\-\_\-command}!User (USB) interface@{\-User (\-U\-S\-B) interface}}
+\subsubsection[{receive\-\_\-command}]{\setlength{\rightskip}{0pt plus 5cm}void receive\-\_\-command (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__user__interface_ga328bb6c7a4ed590a8a4eb1b2a60943f1}
+
+
+\-Main function for receiving commands from user. 
+
+\-In case the \-U\-S\-B is attached (vbus is high) and there is data available the function reads in at most \-M\-A\-X\-\_\-\-R\-X\-\_\-\-N\-R\-B number of bytes, parses the commands, and execute the command response. \-In case the functions encounters a invalid header or checksum, it resets the buffer and starts over reading a new command assuming the next byte is a header. \-The function can split commands over different calls to the function. \hypertarget{group__user__interface_gad8c48701618a71f6bcc9ec12d139ba32}{
+\index{\-User (\-U\-S\-B) interface@{\-User (\-U\-S\-B) interface}!reset\-\_\-output\-\_\-counters@{reset\-\_\-output\-\_\-counters}}
+\index{reset\-\_\-output\-\_\-counters@{reset\-\_\-output\-\_\-counters}!User (USB) interface@{\-User (\-U\-S\-B) interface}}
+\subsubsection[{reset\-\_\-output\-\_\-counters}]{\setlength{\rightskip}{0pt plus 5cm}void reset\-\_\-output\-\_\-counters (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__user__interface_gad8c48701618a71f6bcc9ec12d139ba32}
+
+
+\-Reset the output counter such that the output become synchronized. 
+
+\-Resets all output counters to zero. \-Since the output rate dividers will always be a power of two. \-This mean that all outputs will be synchronized independent of their dividers. \hypertarget{group__user__interface_ga56ca2a8f03cbdf960d6928e9a7ad68ba}{
+\index{\-User (\-U\-S\-B) interface@{\-User (\-U\-S\-B) interface}!set\-\_\-state\-\_\-output@{set\-\_\-state\-\_\-output}}
+\index{set\-\_\-state\-\_\-output@{set\-\_\-state\-\_\-output}!User (USB) interface@{\-User (\-U\-S\-B) interface}}
+\subsubsection[{set\-\_\-state\-\_\-output}]{\setlength{\rightskip}{0pt plus 5cm}void set\-\_\-state\-\_\-output (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{state\-\_\-id, }
+\item[{uint8\-\_\-t}]{divider}
+\end{DoxyParamCaption}
+)}}
+\label{group__user__interface_ga56ca2a8f03cbdf960d6928e9a7ad68ba}
+
+
+\-Sets state\-\_\-id state to be output with interrupt frequency divided by 2$^\wedge$(divider-\/1). \-Divider=0 turns off output. 
+
+\-The function checks that state\-\_\-id is a valid state \-I\-D and that divider is within the allowable range. \hypertarget{group__user__interface_ga9926a12daaecdbb4d8106ed110510d49}{
+\index{\-User (\-U\-S\-B) interface@{\-User (\-U\-S\-B) interface}!transmit\-\_\-data@{transmit\-\_\-data}}
+\index{transmit\-\_\-data@{transmit\-\_\-data}!User (USB) interface@{\-User (\-U\-S\-B) interface}}
+\subsubsection[{transmit\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void transmit\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__user__interface_ga9926a12daaecdbb4d8106ed110510d49}
+
+
+\-Main function to output data to user. 
+
+\-The function calls /\#assemble\-\_\-output\-\_\-data with its internal output buffer as an argument. \-This stores the relevant data (single output messages and continual state output) in the buffer. \-Subsequently the data is written over byte by byte to the \-U\-S\-B output buffer. 
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{group__user__interface_ga3f996476795917a4b1ace8c6c5e4b28a}{
+\index{\-User (\-U\-S\-B) interface@{\-User (\-U\-S\-B) interface}!error\-\_\-signal@{error\-\_\-signal}}
+\index{error\-\_\-signal@{error\-\_\-signal}!User (USB) interface@{\-User (\-U\-S\-B) interface}}
+\subsubsection[{error\-\_\-signal}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf error\-\_\-signal} = 0}}
+\label{group__user__interface_ga3f996476795917a4b1ace8c6c5e4b28a}
+
+
+\-Error signaling vector. \-If zero no error has occurred. 
+

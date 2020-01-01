@@ -1,0 +1,76 @@
+\hypertarget{structudd__ctrl__request__t}{
+\section{udd\-\_\-ctrl\-\_\-request\-\_\-t \-Struct \-Reference}
+\label{structudd__ctrl__request__t}\index{udd\-\_\-ctrl\-\_\-request\-\_\-t@{udd\-\_\-ctrl\-\_\-request\-\_\-t}}
+}
+
+
+\-Global variable to give and record information of the setup request management.  
+
+
+
+
+{\ttfamily \#include $<$udd.\-h$>$}
+
+\subsection*{\-Data \-Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structudd__setup__req__t}{udd\-\_\-setup\-\_\-req\-\_\-t} \hyperlink{structudd__ctrl__request__t_a911ea25898e490e2095496e5fe24b1fe}{req}
+\begin{DoxyCompactList}\small\item\em \-Data received in \-U\-S\-B \-S\-E\-T\-U\-P packet. \end{DoxyCompactList}\item 
+uint8\-\_\-t $\ast$ \hyperlink{structudd__ctrl__request__t_a30ee45cc3e128d219f779f32635b6ca0}{payload}
+\begin{DoxyCompactList}\small\item\em \-Point to buffer to send or fill with data following \-S\-E\-T\-U\-P packet. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{structudd__ctrl__request__t_a0ba5f434c1f252576dd707db0034917c}{payload\-\_\-size}
+\item 
+void($\ast$ \hyperlink{structudd__ctrl__request__t_a942a0402e868519a5ce6864941dd939e}{callback} )(void)
+\begin{DoxyCompactList}\small\item\em when the calbbacks \char`\"{}callback/over\-\_\-under\-\_\-run\char`\"{} are called. \end{DoxyCompactList}\item 
+bool($\ast$ \hyperlink{structudd__ctrl__request__t_afb9dab5e58e325dae17ea02345b097c4}{over\-\_\-under\-\_\-run} )(void)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Global variable to give and record information of the setup request management. 
+
+\-This global variable allows to decode and response a setup request. \-It can be updated by \hyperlink{group__udc__group_ga58c2916d7984e0e5b2143cadf4af6080}{udc\-\_\-process\-\_\-setup()} from \-U\-D\-C or $\ast$setup() from \-U\-D\-Is. 
+
+\subsection{\-Field \-Documentation}
+\hypertarget{structudd__ctrl__request__t_a942a0402e868519a5ce6864941dd939e}{
+\index{udd\-\_\-ctrl\-\_\-request\-\_\-t@{udd\-\_\-ctrl\-\_\-request\-\_\-t}!callback@{callback}}
+\index{callback@{callback}!udd_ctrl_request_t@{udd\-\_\-ctrl\-\_\-request\-\_\-t}}
+\subsubsection[{callback}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ {\bf udd\-\_\-ctrl\-\_\-request\-\_\-t\-::callback})(void)}}
+\label{structudd__ctrl__request__t_a942a0402e868519a5ce6864941dd939e}
+
+
+when the calbbacks \char`\"{}callback/over\-\_\-under\-\_\-run\char`\"{} are called. 
+
+\-Callback called after reception of \-Z\-L\-P from setup request \hypertarget{structudd__ctrl__request__t_afb9dab5e58e325dae17ea02345b097c4}{
+\index{udd\-\_\-ctrl\-\_\-request\-\_\-t@{udd\-\_\-ctrl\-\_\-request\-\_\-t}!over\-\_\-under\-\_\-run@{over\-\_\-under\-\_\-run}}
+\index{over\-\_\-under\-\_\-run@{over\-\_\-under\-\_\-run}!udd_ctrl_request_t@{udd\-\_\-ctrl\-\_\-request\-\_\-t}}
+\subsubsection[{over\-\_\-under\-\_\-run}]{\setlength{\rightskip}{0pt plus 5cm}bool($\ast$ {\bf udd\-\_\-ctrl\-\_\-request\-\_\-t\-::over\-\_\-under\-\_\-run})(void)}}
+\label{structudd__ctrl__request__t_afb9dab5e58e325dae17ea02345b097c4}
+\-Callback called when the buffer given (.payload) is full or empty. \hypertarget{structudd__ctrl__request__t_a30ee45cc3e128d219f779f32635b6ca0}{
+\index{udd\-\_\-ctrl\-\_\-request\-\_\-t@{udd\-\_\-ctrl\-\_\-request\-\_\-t}!payload@{payload}}
+\index{payload@{payload}!udd_ctrl_request_t@{udd\-\_\-ctrl\-\_\-request\-\_\-t}}
+\subsubsection[{payload}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t$\ast$ {\bf udd\-\_\-ctrl\-\_\-request\-\_\-t\-::payload}}}
+\label{structudd__ctrl__request__t_a30ee45cc3e128d219f779f32635b6ca0}
+
+
+\-Point to buffer to send or fill with data following \-S\-E\-T\-U\-P packet. 
+
+\hypertarget{structudd__ctrl__request__t_a0ba5f434c1f252576dd707db0034917c}{
+\index{udd\-\_\-ctrl\-\_\-request\-\_\-t@{udd\-\_\-ctrl\-\_\-request\-\_\-t}!payload\-\_\-size@{payload\-\_\-size}}
+\index{payload\-\_\-size@{payload\-\_\-size}!udd_ctrl_request_t@{udd\-\_\-ctrl\-\_\-request\-\_\-t}}
+\subsubsection[{payload\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t {\bf udd\-\_\-ctrl\-\_\-request\-\_\-t\-::payload\-\_\-size}}}
+\label{structudd__ctrl__request__t_a0ba5f434c1f252576dd707db0034917c}
+\-Size of buffer to send or fill, and content the number of byte transfered \hypertarget{structudd__ctrl__request__t_a911ea25898e490e2095496e5fe24b1fe}{
+\index{udd\-\_\-ctrl\-\_\-request\-\_\-t@{udd\-\_\-ctrl\-\_\-request\-\_\-t}!req@{req}}
+\index{req@{req}!udd_ctrl_request_t@{udd\-\_\-ctrl\-\_\-request\-\_\-t}}
+\subsubsection[{req}]{\setlength{\rightskip}{0pt plus 5cm}{\bf udd\-\_\-setup\-\_\-req\-\_\-t} {\bf udd\-\_\-ctrl\-\_\-request\-\_\-t\-::req}}}
+\label{structudd__ctrl__request__t_a911ea25898e490e2095496e5fe24b1fe}
+
+
+\-Data received in \-U\-S\-B \-S\-E\-T\-U\-P packet. 
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{udd_8h}{udd.\-h}\end{DoxyCompactItemize}

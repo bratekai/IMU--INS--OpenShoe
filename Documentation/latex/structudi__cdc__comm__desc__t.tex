@@ -1,0 +1,95 @@
+\hypertarget{structudi__cdc__comm__desc__t}{
+\section{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t \-Struct \-Reference}
+\label{structudi__cdc__comm__desc__t}\index{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t@{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t}}
+}
+
+
+\-Communication \-Class interface descriptor.  
+
+
+
+
+{\ttfamily \#include $<$udi\-\_\-cdc.\-h$>$}
+
+\subsection*{\-Data \-Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structusb__iface__desc__t}{usb\-\_\-iface\-\_\-desc\-\_\-t} \hyperlink{structudi__cdc__comm__desc__t_a6dfc36e8b57260fa2e77bea312a164da}{iface}
+\begin{DoxyCompactList}\small\item\em \-Standard interface descriptor. \end{DoxyCompactList}\item 
+\hyperlink{structusb__cdc__hdr__desc__t}{usb\-\_\-cdc\-\_\-hdr\-\_\-desc\-\_\-t} \hyperlink{structudi__cdc__comm__desc__t_a398a1894f61cb98fe155d0d9e6318be1}{header}
+\begin{DoxyCompactList}\small\item\em \-C\-D\-C \-Header functional descriptor. \end{DoxyCompactList}\item 
+\hyperlink{structusb__cdc__acm__desc__t}{usb\-\_\-cdc\-\_\-acm\-\_\-desc\-\_\-t} \hyperlink{structudi__cdc__comm__desc__t_a6643c3fe52c61dc7cb0cc38a9f324d86}{acm}
+\begin{DoxyCompactList}\small\item\em \-C\-D\-C \-Abstract \-Control \-Model functional descriptor. \end{DoxyCompactList}\item 
+\hyperlink{structusb__cdc__union__desc__t}{usb\-\_\-cdc\-\_\-union\-\_\-desc\-\_\-t} \hyperlink{structudi__cdc__comm__desc__t_aa23728196c57ec96df6a1372c5696313}{union\-\_\-desc}
+\begin{DoxyCompactList}\small\item\em \-C\-D\-C \-Union functional descriptor. \end{DoxyCompactList}\item 
+\hyperlink{structusb__cdc__call__mgmt__desc__t}{usb\-\_\-cdc\-\_\-call\-\_\-mgmt\-\_\-desc\-\_\-t} \hyperlink{structudi__cdc__comm__desc__t_afb9b650303cb414e51b404788fa2eb4e}{call\-\_\-mgmt}
+\begin{DoxyCompactList}\small\item\em \-C\-D\-C \-Call \-Management functional descriptor. \end{DoxyCompactList}\item 
+\hyperlink{structusb__ep__desc__t}{usb\-\_\-ep\-\_\-desc\-\_\-t} \hyperlink{structudi__cdc__comm__desc__t_ae4f839a855f80e1942ae1de4cd5562d3}{ep\-\_\-notify}
+\begin{DoxyCompactList}\small\item\em \-Notification endpoint descriptor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Communication \-Class interface descriptor. 
+
+\-Interface descriptor with associated functional and endpoint descriptors for the \-C\-D\-C \-Communication \-Class interface. 
+
+\subsection{\-Field \-Documentation}
+\hypertarget{structudi__cdc__comm__desc__t_a6643c3fe52c61dc7cb0cc38a9f324d86}{
+\index{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t@{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t}!acm@{acm}}
+\index{acm@{acm}!udi_cdc_comm_desc_t@{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t}}
+\subsubsection[{acm}]{\setlength{\rightskip}{0pt plus 5cm}{\bf usb\-\_\-cdc\-\_\-acm\-\_\-desc\-\_\-t} {\bf udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t\-::acm}}}
+\label{structudi__cdc__comm__desc__t_a6643c3fe52c61dc7cb0cc38a9f324d86}
+
+
+\-C\-D\-C \-Abstract \-Control \-Model functional descriptor. 
+
+\hypertarget{structudi__cdc__comm__desc__t_afb9b650303cb414e51b404788fa2eb4e}{
+\index{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t@{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t}!call\-\_\-mgmt@{call\-\_\-mgmt}}
+\index{call\-\_\-mgmt@{call\-\_\-mgmt}!udi_cdc_comm_desc_t@{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t}}
+\subsubsection[{call\-\_\-mgmt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf usb\-\_\-cdc\-\_\-call\-\_\-mgmt\-\_\-desc\-\_\-t} {\bf udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t\-::call\-\_\-mgmt}}}
+\label{structudi__cdc__comm__desc__t_afb9b650303cb414e51b404788fa2eb4e}
+
+
+\-C\-D\-C \-Call \-Management functional descriptor. 
+
+\hypertarget{structudi__cdc__comm__desc__t_ae4f839a855f80e1942ae1de4cd5562d3}{
+\index{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t@{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t}!ep\-\_\-notify@{ep\-\_\-notify}}
+\index{ep\-\_\-notify@{ep\-\_\-notify}!udi_cdc_comm_desc_t@{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t}}
+\subsubsection[{ep\-\_\-notify}]{\setlength{\rightskip}{0pt plus 5cm}{\bf usb\-\_\-ep\-\_\-desc\-\_\-t} {\bf udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t\-::ep\-\_\-notify}}}
+\label{structudi__cdc__comm__desc__t_ae4f839a855f80e1942ae1de4cd5562d3}
+
+
+\-Notification endpoint descriptor. 
+
+\hypertarget{structudi__cdc__comm__desc__t_a398a1894f61cb98fe155d0d9e6318be1}{
+\index{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t@{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t}!header@{header}}
+\index{header@{header}!udi_cdc_comm_desc_t@{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t}}
+\subsubsection[{header}]{\setlength{\rightskip}{0pt plus 5cm}{\bf usb\-\_\-cdc\-\_\-hdr\-\_\-desc\-\_\-t} {\bf udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t\-::header}}}
+\label{structudi__cdc__comm__desc__t_a398a1894f61cb98fe155d0d9e6318be1}
+
+
+\-C\-D\-C \-Header functional descriptor. 
+
+\hypertarget{structudi__cdc__comm__desc__t_a6dfc36e8b57260fa2e77bea312a164da}{
+\index{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t@{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t}!iface@{iface}}
+\index{iface@{iface}!udi_cdc_comm_desc_t@{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t}}
+\subsubsection[{iface}]{\setlength{\rightskip}{0pt plus 5cm}{\bf usb\-\_\-iface\-\_\-desc\-\_\-t} {\bf udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t\-::iface}}}
+\label{structudi__cdc__comm__desc__t_a6dfc36e8b57260fa2e77bea312a164da}
+
+
+\-Standard interface descriptor. 
+
+\hypertarget{structudi__cdc__comm__desc__t_aa23728196c57ec96df6a1372c5696313}{
+\index{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t@{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t}!union\-\_\-desc@{union\-\_\-desc}}
+\index{union\-\_\-desc@{union\-\_\-desc}!udi_cdc_comm_desc_t@{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t}}
+\subsubsection[{union\-\_\-desc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf usb\-\_\-cdc\-\_\-union\-\_\-desc\-\_\-t} {\bf udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t\-::union\-\_\-desc}}}
+\label{structudi__cdc__comm__desc__t_aa23728196c57ec96df6a1372c5696313}
+
+
+\-C\-D\-C \-Union functional descriptor. 
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{udi__cdc_8h}{udi\-\_\-cdc.\-h}\end{DoxyCompactItemize}

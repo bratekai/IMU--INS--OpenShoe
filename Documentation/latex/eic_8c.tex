@@ -1,0 +1,432 @@
+\hypertarget{eic_8c}{
+\section{eic.c \-File \-Reference}
+\label{eic_8c}\index{eic.\-c@{eic.\-c}}
+}
+
+
+\-E\-I\-C driver for \-A\-V\-R32 \-U\-C3.  
+
+
+{\ttfamily \#include $<$avr32/io.\-h$>$}\*
+{\ttfamily \#include \char`\"{}compiler.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}preprocessor.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}eic.\-h\char`\"{}}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{eic_8c_ae1608e38e94d6e4bde41949fc78c492e}{eic\-\_\-init} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, const \hyperlink{structeic__options__t}{eic\-\_\-options\-\_\-t} $\ast$opt, uint32\-\_\-t nb\-\_\-lines)
+\begin{DoxyCompactList}\small\item\em \-Init the \-E\-I\-C driver. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8c_a511b84fe79f7dc5ed93810593fdfed52}{eic\-\_\-enable\-\_\-lines} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t mask\-\_\-lines)
+\begin{DoxyCompactList}\small\item\em \-Enable the \-E\-I\-C driver. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8c_a129602a787421d2ec2d326e71027bd98}{eic\-\_\-enable\-\_\-line} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t line\-\_\-number)
+\begin{DoxyCompactList}\small\item\em \-Enable the \-E\-I\-C driver. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8c_a03ff7de891cf2c55d48c328dfd4ff7f2}{eic\-\_\-disable\-\_\-lines} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t mask\-\_\-lines)
+\begin{DoxyCompactList}\small\item\em \-Disable the \-E\-I\-C driver. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8c_a9db33f5cf499e075b970e3cbe2a97e16}{eic\-\_\-disable\-\_\-line} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t line\-\_\-number)
+\begin{DoxyCompactList}\small\item\em \-Disable the \-E\-I\-C driver. \end{DoxyCompactList}\item 
+bool \hyperlink{eic_8c_ad4d6bedacd14d41eb9ec805be94ce7d6}{eic\-\_\-is\-\_\-line\-\_\-enabled} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t line\-\_\-number)
+\begin{DoxyCompactList}\small\item\em \-Tells whether an \-E\-I\-C line is enabled. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8c_a3fee668085da1fbb549954ec4dbb5554}{eic\-\_\-enable\-\_\-interrupt\-\_\-lines} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t mask\-\_\-lines)
+\begin{DoxyCompactList}\small\item\em \-Enable the interrupt feature of the \-E\-I\-C. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8c_a75971c52d0a242666964a9ec88931140}{eic\-\_\-enable\-\_\-interrupt\-\_\-line} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t line\-\_\-number)
+\begin{DoxyCompactList}\small\item\em \-Enable the interrupt feature of the \-E\-I\-C. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8c_ad5ea8778d71e0c982ea064c9eaaac222}{eic\-\_\-disable\-\_\-interrupt\-\_\-lines} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t mask\-\_\-lines)
+\begin{DoxyCompactList}\small\item\em \-Disable the interrupt feature of the \-E\-I\-C. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8c_a3a16844763e59d16cf42b93d725e3293}{eic\-\_\-disable\-\_\-interrupt\-\_\-line} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t line\-\_\-number)
+\begin{DoxyCompactList}\small\item\em \-Disable the interrupt feature of the \-E\-I\-C. \end{DoxyCompactList}\item 
+bool \hyperlink{eic_8c_aee31f395ae232d5ac6ec778d66205e5d}{eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-enabled} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t line\-\_\-number)
+\begin{DoxyCompactList}\small\item\em \-Tells whether an \-E\-I\-C interrupt line is enabled. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8c_adb957c6835848c15b7b76385dadd6b49}{eic\-\_\-clear\-\_\-interrupt\-\_\-lines} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t mask\-\_\-lines)
+\begin{DoxyCompactList}\small\item\em \-Clear the interrupt flag. \-Call this function once you've handled the interrupt. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8c_a37cc18c4bb814da1a305dd8f5fc25231}{eic\-\_\-clear\-\_\-interrupt\-\_\-line} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t line\-\_\-number)
+\begin{DoxyCompactList}\small\item\em \-Clear the interrupt flag. \-Call this function once you've handled the interrupt. \end{DoxyCompactList}\item 
+bool \hyperlink{eic_8c_a46c6c5b4cbeb455f26ae1cd31824796e}{eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-pending} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t line\-\_\-number)
+\begin{DoxyCompactList}\small\item\em \-Tells whether an \-E\-I\-C interrupt line is pending. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8c_acd988ec03638a59eac9a0b92ba63ca52}{eic\-\_\-enable\-\_\-interrupt\-\_\-scan} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t presc)
+\begin{DoxyCompactList}\small\item\em \-Enable the interrupt scan feature of the \-E\-I\-C. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8c_ac5240f85be89cf587fd89dd5ab5bd5b7}{eic\-\_\-disable\-\_\-interrupt\-\_\-scan} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic)
+\begin{DoxyCompactList}\small\item\em \-Disable the interrupt scan feature of the \-E\-I\-C. \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{eic_8c_a67eb56b4cc52b76df768af4b0bc7e58f}{eic\-\_\-get\-\_\-interrupt\-\_\-pad\-\_\-scan} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic)
+\begin{DoxyCompactList}\small\item\em \-Return scan pad number that causes interrupt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-E\-I\-C driver for \-A\-V\-R32 \-U\-C3. \-A\-V\-R32 \-External \-Interrupt \-Controller driver module.
+
+
+\begin{DoxyItemize}
+\item \-Compiler\-: \-I\-A\-R \-E\-W\-A\-V\-R32 and \-G\-N\-U \-G\-C\-C for \-A\-V\-R32
+\item \-Supported devices\-: \-All \-A\-V\-R32 devices with an \-E\-I\-C module can be used.
+\item \-App\-Note\-:
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{\-Author}
+\-Atmel \-Corporation\-: \href{http://www.atmel.com}{\tt http\-://www.\-atmel.\-com} \par
+ \-Support and \-F\-A\-Q\-: \href{http://support.atmel.no/}{\tt http\-://support.\-atmel.\-no/} 
+\end{DoxyAuthor}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{eic_8c_a37cc18c4bb814da1a305dd8f5fc25231}{
+\index{eic.\-c@{eic.\-c}!eic\-\_\-clear\-\_\-interrupt\-\_\-line@{eic\-\_\-clear\-\_\-interrupt\-\_\-line}}
+\index{eic\-\_\-clear\-\_\-interrupt\-\_\-line@{eic\-\_\-clear\-\_\-interrupt\-\_\-line}!eic.c@{eic.\-c}}
+\subsubsection[{eic\-\_\-clear\-\_\-interrupt\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-clear\-\_\-interrupt\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{line\-\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8c_a37cc18c4bb814da1a305dd8f5fc25231}
+
+
+\-Clear the interrupt flag. \-Call this function once you've handled the interrupt. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C (i.\-e. \&\-A\-V\-R32\-\_\-\-E\-I\-C). \\
+\hline
+{\em line\-\_\-number} & \-Line number to clear \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8c_adb957c6835848c15b7b76385dadd6b49}{
+\index{eic.\-c@{eic.\-c}!eic\-\_\-clear\-\_\-interrupt\-\_\-lines@{eic\-\_\-clear\-\_\-interrupt\-\_\-lines}}
+\index{eic\-\_\-clear\-\_\-interrupt\-\_\-lines@{eic\-\_\-clear\-\_\-interrupt\-\_\-lines}!eic.c@{eic.\-c}}
+\subsubsection[{eic\-\_\-clear\-\_\-interrupt\-\_\-lines}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-clear\-\_\-interrupt\-\_\-lines (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{mask\-\_\-lines}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8c_adb957c6835848c15b7b76385dadd6b49}
+
+
+\-Clear the interrupt flag. \-Call this function once you've handled the interrupt. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C (i.\-e. \&\-A\-V\-R32\-\_\-\-E\-I\-C). \\
+\hline
+{\em mask\-\_\-lines} & \-Mask for current selected lines \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8c_a3a16844763e59d16cf42b93d725e3293}{
+\index{eic.\-c@{eic.\-c}!eic\-\_\-disable\-\_\-interrupt\-\_\-line@{eic\-\_\-disable\-\_\-interrupt\-\_\-line}}
+\index{eic\-\_\-disable\-\_\-interrupt\-\_\-line@{eic\-\_\-disable\-\_\-interrupt\-\_\-line}!eic.c@{eic.\-c}}
+\subsubsection[{eic\-\_\-disable\-\_\-interrupt\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-disable\-\_\-interrupt\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{line\-\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8c_a3a16844763e59d16cf42b93d725e3293}
+
+
+\-Disable the interrupt feature of the \-E\-I\-C. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C (i.\-e. \&\-A\-V\-R32\-\_\-\-E\-I\-C). \\
+\hline
+{\em line\-\_\-number} & \-Line number to disable \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8c_ad5ea8778d71e0c982ea064c9eaaac222}{
+\index{eic.\-c@{eic.\-c}!eic\-\_\-disable\-\_\-interrupt\-\_\-lines@{eic\-\_\-disable\-\_\-interrupt\-\_\-lines}}
+\index{eic\-\_\-disable\-\_\-interrupt\-\_\-lines@{eic\-\_\-disable\-\_\-interrupt\-\_\-lines}!eic.c@{eic.\-c}}
+\subsubsection[{eic\-\_\-disable\-\_\-interrupt\-\_\-lines}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-disable\-\_\-interrupt\-\_\-lines (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{mask\-\_\-lines}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8c_ad5ea8778d71e0c982ea064c9eaaac222}
+
+
+\-Disable the interrupt feature of the \-E\-I\-C. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C (i.\-e. \&\-A\-V\-R32\-\_\-\-E\-I\-C). \\
+\hline
+{\em mask\-\_\-lines} & \-Mask for current selected lines \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8c_ac5240f85be89cf587fd89dd5ab5bd5b7}{
+\index{eic.\-c@{eic.\-c}!eic\-\_\-disable\-\_\-interrupt\-\_\-scan@{eic\-\_\-disable\-\_\-interrupt\-\_\-scan}}
+\index{eic\-\_\-disable\-\_\-interrupt\-\_\-scan@{eic\-\_\-disable\-\_\-interrupt\-\_\-scan}!eic.c@{eic.\-c}}
+\subsubsection[{eic\-\_\-disable\-\_\-interrupt\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-disable\-\_\-interrupt\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8c_ac5240f85be89cf587fd89dd5ab5bd5b7}
+
+
+\-Disable the interrupt scan feature of the \-E\-I\-C. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C (i.\-e. \&\-A\-V\-R32\-\_\-\-E\-I\-C). \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8c_a9db33f5cf499e075b970e3cbe2a97e16}{
+\index{eic.\-c@{eic.\-c}!eic\-\_\-disable\-\_\-line@{eic\-\_\-disable\-\_\-line}}
+\index{eic\-\_\-disable\-\_\-line@{eic\-\_\-disable\-\_\-line}!eic.c@{eic.\-c}}
+\subsubsection[{eic\-\_\-disable\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-disable\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{line\-\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8c_a9db33f5cf499e075b970e3cbe2a97e16}
+
+
+\-Disable the \-E\-I\-C driver. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C module \\
+\hline
+{\em line\-\_\-number} & \-Line number to disable \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8c_a03ff7de891cf2c55d48c328dfd4ff7f2}{
+\index{eic.\-c@{eic.\-c}!eic\-\_\-disable\-\_\-lines@{eic\-\_\-disable\-\_\-lines}}
+\index{eic\-\_\-disable\-\_\-lines@{eic\-\_\-disable\-\_\-lines}!eic.c@{eic.\-c}}
+\subsubsection[{eic\-\_\-disable\-\_\-lines}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-disable\-\_\-lines (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{mask\-\_\-lines}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8c_a03ff7de891cf2c55d48c328dfd4ff7f2}
+
+
+\-Disable the \-E\-I\-C driver. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C module \\
+\hline
+{\em mask\-\_\-lines} & \-Mask for current selected lines \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8c_a75971c52d0a242666964a9ec88931140}{
+\index{eic.\-c@{eic.\-c}!eic\-\_\-enable\-\_\-interrupt\-\_\-line@{eic\-\_\-enable\-\_\-interrupt\-\_\-line}}
+\index{eic\-\_\-enable\-\_\-interrupt\-\_\-line@{eic\-\_\-enable\-\_\-interrupt\-\_\-line}!eic.c@{eic.\-c}}
+\subsubsection[{eic\-\_\-enable\-\_\-interrupt\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-enable\-\_\-interrupt\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{line\-\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8c_a75971c52d0a242666964a9ec88931140}
+
+
+\-Enable the interrupt feature of the \-E\-I\-C. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C (i.\-e. \&\-A\-V\-R32\-\_\-\-E\-I\-C). \\
+\hline
+{\em line\-\_\-number} & \-Line number to enable \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8c_a3fee668085da1fbb549954ec4dbb5554}{
+\index{eic.\-c@{eic.\-c}!eic\-\_\-enable\-\_\-interrupt\-\_\-lines@{eic\-\_\-enable\-\_\-interrupt\-\_\-lines}}
+\index{eic\-\_\-enable\-\_\-interrupt\-\_\-lines@{eic\-\_\-enable\-\_\-interrupt\-\_\-lines}!eic.c@{eic.\-c}}
+\subsubsection[{eic\-\_\-enable\-\_\-interrupt\-\_\-lines}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-enable\-\_\-interrupt\-\_\-lines (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{mask\-\_\-lines}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8c_a3fee668085da1fbb549954ec4dbb5554}
+
+
+\-Enable the interrupt feature of the \-E\-I\-C. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C (i.\-e. \&\-A\-V\-R32\-\_\-\-E\-I\-C). \\
+\hline
+{\em mask\-\_\-lines} & \-Mask for current selected lines \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8c_acd988ec03638a59eac9a0b92ba63ca52}{
+\index{eic.\-c@{eic.\-c}!eic\-\_\-enable\-\_\-interrupt\-\_\-scan@{eic\-\_\-enable\-\_\-interrupt\-\_\-scan}}
+\index{eic\-\_\-enable\-\_\-interrupt\-\_\-scan@{eic\-\_\-enable\-\_\-interrupt\-\_\-scan}!eic.c@{eic.\-c}}
+\subsubsection[{eic\-\_\-enable\-\_\-interrupt\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-enable\-\_\-interrupt\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{presc}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8c_acd988ec03638a59eac9a0b92ba63ca52}
+
+
+\-Enable the interrupt scan feature of the \-E\-I\-C. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C (i.\-e. \&\-A\-V\-R32\-\_\-\-E\-I\-C). \\
+\hline
+{\em presc} & \-Prescale select for the keypad scan rate in the range \mbox{[}0,31\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8c_a129602a787421d2ec2d326e71027bd98}{
+\index{eic.\-c@{eic.\-c}!eic\-\_\-enable\-\_\-line@{eic\-\_\-enable\-\_\-line}}
+\index{eic\-\_\-enable\-\_\-line@{eic\-\_\-enable\-\_\-line}!eic.c@{eic.\-c}}
+\subsubsection[{eic\-\_\-enable\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-enable\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{line\-\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8c_a129602a787421d2ec2d326e71027bd98}
+
+
+\-Enable the \-E\-I\-C driver. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C module \\
+\hline
+{\em line\-\_\-number} & \-Line number to enable \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8c_a511b84fe79f7dc5ed93810593fdfed52}{
+\index{eic.\-c@{eic.\-c}!eic\-\_\-enable\-\_\-lines@{eic\-\_\-enable\-\_\-lines}}
+\index{eic\-\_\-enable\-\_\-lines@{eic\-\_\-enable\-\_\-lines}!eic.c@{eic.\-c}}
+\subsubsection[{eic\-\_\-enable\-\_\-lines}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-enable\-\_\-lines (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{mask\-\_\-lines}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8c_a511b84fe79f7dc5ed93810593fdfed52}
+
+
+\-Enable the \-E\-I\-C driver. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C module \\
+\hline
+{\em mask\-\_\-lines} & \-Mask for current selected lines \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8c_a67eb56b4cc52b76df768af4b0bc7e58f}{
+\index{eic.\-c@{eic.\-c}!eic\-\_\-get\-\_\-interrupt\-\_\-pad\-\_\-scan@{eic\-\_\-get\-\_\-interrupt\-\_\-pad\-\_\-scan}}
+\index{eic\-\_\-get\-\_\-interrupt\-\_\-pad\-\_\-scan@{eic\-\_\-get\-\_\-interrupt\-\_\-pad\-\_\-scan}!eic.c@{eic.\-c}}
+\subsubsection[{eic\-\_\-get\-\_\-interrupt\-\_\-pad\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t eic\-\_\-get\-\_\-interrupt\-\_\-pad\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8c_a67eb56b4cc52b76df768af4b0bc7e58f}
+
+
+\-Return scan pad number that causes interrupt. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C (i.\-e. \&\-A\-V\-R32\-\_\-\-E\-I\-C). \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8c_ae1608e38e94d6e4bde41949fc78c492e}{
+\index{eic.\-c@{eic.\-c}!eic\-\_\-init@{eic\-\_\-init}}
+\index{eic\-\_\-init@{eic\-\_\-init}!eic.c@{eic.\-c}}
+\subsubsection[{eic\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{const {\bf eic\-\_\-options\-\_\-t} $\ast$}]{opt, }
+\item[{uint32\-\_\-t}]{nb\-\_\-lines}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8c_ae1608e38e94d6e4bde41949fc78c492e}
+
+
+\-Init the \-E\-I\-C driver. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C module \\
+\hline
+{\em opt} & \-Configuration parameters of the \-E\-I\-C module (see \hyperlink{structeic__options__t}{eic\-\_\-options\-\_\-t}) \\
+\hline
+{\em nb\-\_\-lines} & \-Number of lines to consider, equal to size of opt buffer \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8c_aee31f395ae232d5ac6ec778d66205e5d}{
+\index{eic.\-c@{eic.\-c}!eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-enabled@{eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-enabled}}
+\index{eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-enabled@{eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-enabled}!eic.c@{eic.\-c}}
+\subsubsection[{eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-enabled (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{line\-\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8c_aee31f395ae232d5ac6ec778d66205e5d}
+
+
+\-Tells whether an \-E\-I\-C interrupt line is enabled. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C module \\
+\hline
+{\em line\-\_\-number} & \-Line number to test\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Whether an \-E\-I\-C interrupt line is enabled. 
+\end{DoxyReturn}
+\hypertarget{eic_8c_a46c6c5b4cbeb455f26ae1cd31824796e}{
+\index{eic.\-c@{eic.\-c}!eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-pending@{eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-pending}}
+\index{eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-pending@{eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-pending}!eic.c@{eic.\-c}}
+\subsubsection[{eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-pending}]{\setlength{\rightskip}{0pt plus 5cm}bool eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-pending (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{line\-\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8c_a46c6c5b4cbeb455f26ae1cd31824796e}
+
+
+\-Tells whether an \-E\-I\-C interrupt line is pending. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C module \\
+\hline
+{\em line\-\_\-number} & \-Line number to test\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Whether an \-E\-I\-C interrupt line is pending. 
+\end{DoxyReturn}
+\hypertarget{eic_8c_ad4d6bedacd14d41eb9ec805be94ce7d6}{
+\index{eic.\-c@{eic.\-c}!eic\-\_\-is\-\_\-line\-\_\-enabled@{eic\-\_\-is\-\_\-line\-\_\-enabled}}
+\index{eic\-\_\-is\-\_\-line\-\_\-enabled@{eic\-\_\-is\-\_\-line\-\_\-enabled}!eic.c@{eic.\-c}}
+\subsubsection[{eic\-\_\-is\-\_\-line\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool eic\-\_\-is\-\_\-line\-\_\-enabled (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{line\-\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8c_ad4d6bedacd14d41eb9ec805be94ce7d6}
+
+
+\-Tells whether an \-E\-I\-C line is enabled. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C module \\
+\hline
+{\em line\-\_\-number} & \-Line number to test\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Whether an \-E\-I\-C line is enabled. 
+\end{DoxyReturn}

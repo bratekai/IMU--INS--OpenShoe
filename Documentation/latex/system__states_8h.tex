@@ -1,0 +1,81 @@
+\hypertarget{system__states_8h}{
+\section{system\-\_\-states.h \-File \-Reference}
+\label{system__states_8h}\index{system\-\_\-states.\-h@{system\-\_\-states.\-h}}
+}
+
+
+\-Declarations of system states and related information tables.  
+
+
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structstate__t__info}{state\-\_\-t\-\_\-info}
+\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__tables_gaeadb9947c80d097da4413c55179afe6f}{\-S\-I\-D\-\_\-\-L\-I\-M\-I\-T}~0x\-F\-F
+\item 
+\#define \hyperlink{group__tables_gaafd3e23709eecfd5bfdc358f8a07b991}{\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-S\-I\-D}~0x01
+\item 
+\#define \hyperlink{group__tables_ga6b3256a3e116aaefe13352f9b493c279}{\-V\-E\-L\-O\-C\-I\-T\-Y\-\_\-\-S\-I\-D}~0x02
+\item 
+\#define \hyperlink{group__tables_gae1fc29b0358f36a68b7ba9bde85e16fd}{\-Q\-U\-A\-T\-E\-R\-N\-I\-O\-N\-\_\-\-S\-I\-D}~0x03
+\item 
+\#define \hyperlink{group__tables_gae04e393e8b250dad55fddb546ef61111}{\-S\-P\-E\-C\-I\-F\-I\-C\-\_\-\-F\-O\-R\-C\-E\-\_\-\-S\-I\-D}~0x11
+\item 
+\#define \hyperlink{group__tables_ga4bae6e7de487043575d61cb52dff4cf3}{\-A\-N\-G\-U\-L\-A\-R\-\_\-\-R\-A\-T\-E\-\_\-\-S\-I\-D}~0x12
+\item 
+\#define \hyperlink{group__tables_ga1e61a3b04f0d9e2a1393e85a047a24ab}{\-W\-I\-N\-D\-O\-W\-\_\-\-S\-I\-Z\-E\-\_\-\-P\-I\-D}~0x03
+\item 
+\#define \hyperlink{group__tables_gadc587c273985fd12fc0553141c5f9693}{\-T\-I\-M\-E\-\_\-\-S\-I\-N\-C\-E\-\_\-\-L\-A\-S\-T\-\_\-\-Z\-U\-P\-T\-\_\-\-S\-I\-D}~0x04
+\item 
+\#define \hyperlink{group__tables_gacc410e7c7f1185c5dd50ac503dccabbe}{\-P\-R\-O\-C\-E\-S\-S\-\_\-\-C\-Y\-C\-L\-E\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-S\-I\-D}~0x05
+\item 
+\#define \hyperlink{group__tables_ga1c2e91b10f17814f52bf09f647909d83}{\-Z\-U\-P\-T\-\_\-\-S\-I\-D}~0x32
+\item 
+\#define \hyperlink{group__tables_gad5186a188194306bbc87ddddc7644ddd}{\-I\-M\-U\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-S\-\_\-\-S\-I\-D}~0x33
+\item 
+\#define \hyperlink{group__tables_gad0a37f572243f76ea1f2b79fc14b2a30}{\-I\-M\-U\-\_\-\-S\-U\-P\-P\-L\-Y\-\_\-\-V\-O\-L\-T\-A\-G\-E\-\_\-\-S\-I\-D}~0x34
+\item 
+\#define \hyperlink{group__tables_gaf0c693bf22229a5eba03b2bad37b07bf}{\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-B\-I\-A\-S\-E\-S\-\_\-\-S\-I\-D}~0x35
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__tables_ga2807b9fb4b79e01dfde022b613d2575f}{position}
+\begin{DoxyCompactList}\small\item\em \-Position estimate (\-North,\-East,\-Down) \mbox{[} $m$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__tables_ga589efe00d8bd4e8a69613f98390a04c7}{velocity}
+\begin{DoxyCompactList}\small\item\em \-Velocity estimate (\-North,\-East,\-Down) \mbox{[} $m/s$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__tables_gaf92cab44915b7d9faaf5aeadb328bae6}{accelerations\-\_\-in}
+\begin{DoxyCompactList}\small\item\em $[m/s^2]$ \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__tables_ga8cac4b2812dcb492989d7122c5eb0bfb}{angular\-\_\-rates\-\_\-in}
+\begin{DoxyCompactList}\small\item\em $[rad/s]$ \end{DoxyCompactList}\item 
+int \hyperlink{group__tables_ga1c7df51cd44a9862d56e5a86a7382fe2}{window\-\_\-size}
+\item 
+int \hyperlink{group__tables_ga20193da701b182264e8b7bf63293c0f9}{time\-\_\-since\-\_\-last\-\_\-zupt}
+\item 
+uint32\-\_\-t \hyperlink{group__tables_ga69242006691a47df6ea85e8cc45ccc43}{process\-\_\-cycle\-\_\-counter}
+\item 
+\hyperlink{nav__types_8h_ad9a64f455fa02affaba6740746aae7b2}{quat\-\_\-vec} \hyperlink{group__tables_ga059b83d370e7e6a5e9728a8f91943051}{quaternions}
+\begin{DoxyCompactList}\small\item\em \-Attitude (quaternions) estimate. \end{DoxyCompactList}\item 
+bool \hyperlink{group__tables_gabd51dc1d49060099533807a22acc61d4}{zupt}
+\begin{DoxyCompactList}\small\item\em \-Flag that is set to true if a zero-\/velocity update should be done. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__tables_gacd438fa96131e9024d8ad206d83ffb66}{imu\-\_\-temperaturs}
+\begin{DoxyCompactList}\small\item\em $[^circ C]$ \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__tables_ga3f561003deb253bcc716a6c690c87cfe}{imu\-\_\-supply\-\_\-voltage}
+\begin{DoxyCompactList}\small\item\em $[V]$ \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__tables_ga1089eea940f41eff26a6cba1172089e9}{accelerometer\-\_\-biases}
+\begin{DoxyCompactList}\small\item\em \-Accelerometer biases (x,y,z-\/axis) \mbox{[} $m/s^2$\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Declarations of system states and related information tables. \-This header file contains 1) \-Declarations of system states. 2) \-Definitions of tables containing information about the system states. \-The system states can be defined across the program. \-This file just gather the declarations together such that the related information tables can be filled in. \-The information tables are used for output functions in external\-\_\-interfaces.\-c. \-This file contians multiple static variables so it should only be included where necessary.
+
+\begin{DoxyAuthor}{\-Authors}
+\-John-\/\-Olof \-Nilsson, \-Isaac \-Skog 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{\-Copyright}
+\-Copyright (c) 2011 \-Open\-Shoe, \-I\-S\-C \-License (open source) 
+\end{DoxyCopyright}

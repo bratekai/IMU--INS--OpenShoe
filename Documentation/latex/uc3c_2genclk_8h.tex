@@ -1,0 +1,47 @@
+\hypertarget{uc3c_2genclk_8h}{
+\section{genclk.h \-File \-Reference}
+\label{uc3c_2genclk_8h}\index{genclk.\-h@{genclk.\-h}}
+}
+
+
+\-Chip-\/specific generic clock management.  
+
+
+{\ttfamily \#include $<$stdint.\-h$>$}\*
+{\ttfamily \#include $<$avr32/io.\-h$>$}\*
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structgenclk__config}{genclk\-\_\-config}
+\begin{DoxyCompactList}\small\item\em \-Hardware representation of a set of generic clock parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{Indent}\paragraph*{\-Chip-\/specific generic clock definitions}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__genclk__group_gada51baf0de37e57d7052f6f6ea324b53}{\-G\-E\-N\-C\-L\-K\-\_\-\-D\-I\-V\-\_\-\-M\-A\-X}~256
+\begin{DoxyCompactList}\small\item\em \-Maximum divider supported by the generic clock implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group__genclk__group_gaca55f4f4f96549b8111139d144bce01c}{genclk\-\_\-source} \{ \*
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca953707a1c76a0268413b7232d99d0065}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-S\-Y\-S} =  0, 
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca3d1fd9213fb1acca868f9aed0580080f}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C32\-K} =  1, 
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01caeb9bb887118c6aaf7a1c193f80205909}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M} =  2, 
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca885a673e1f2c68e84f6461cb38d2e50f}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0} =  3, 
+\*
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca2c0a57ce35b0fa7efac9930357278930}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1} =  4, 
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca4db9dbbdde9e4efb5b26e8ddfe817812}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0} =  5, 
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca229fcad1bdb8ec267a05a8f1d1b0491e}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1} =  6, 
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01cac903dd8fc4bf4fbdfa810ab774035a1b}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-C\-P\-U} =  7, 
+\*
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca5bb1dbdcf7db89069ddcc2a59d36a6b6}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B} =  8, 
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca0647cd0e7fc56115d0003306568c29ff}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A} =  9, 
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca956d2618a06550aba0d3c2c1cd784be9}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B} =  10, 
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca73e71d3958e85af71ec37d4e2ca76c54}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C} =  11
+ \}
+\begin{DoxyCompactList}\small\item\em \-Generic clock source \-I\-D. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Chip-\/specific generic clock management. \-Copyright (\-C) 2010 \-Atmel \-Corporation. \-All rights reserved. 

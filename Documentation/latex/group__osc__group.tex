@@ -1,0 +1,671 @@
+\hypertarget{group__osc__group}{
+\section{\-Oscillator \-Management}
+\label{group__osc__group}\index{\-Oscillator Management@{\-Oscillator Management}}
+}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__osc__group_ga788c37dfdae9420f469a6b3b5f6acf9d}{osc\-\_\-priv\-\_\-enable\-\_\-osc0} (void)
+\item 
+void \hyperlink{group__osc__group_ga173ad48049211628cd7270db377f79fb}{osc\-\_\-priv\-\_\-disable\-\_\-osc0} (void)
+\item 
+bool \hyperlink{group__osc__group_ga423a37787d60aa4d2d18fa4f9f1c340d}{osc\-\_\-priv\-\_\-osc0\-\_\-is\-\_\-ready} (void)
+\item 
+void \hyperlink{group__osc__group_ga1d6850e50451263f1050560925d945cb}{osc\-\_\-priv\-\_\-enable\-\_\-osc1} (void)
+\item 
+void \hyperlink{group__osc__group_ga6b4e531753deac703af293fd02a66c3b}{osc\-\_\-priv\-\_\-disable\-\_\-osc1} (void)
+\item 
+bool \hyperlink{group__osc__group_ga23faff95a37c65ae40c3e598f52e76b1}{osc\-\_\-priv\-\_\-osc1\-\_\-is\-\_\-ready} (void)
+\item 
+void \hyperlink{group__osc__group_ga6aa18a93d28ef7a49f114fcbbd396a0b}{osc\-\_\-priv\-\_\-enable\-\_\-osc32} (void)
+\item 
+void \hyperlink{group__osc__group_ga8aa3436d99096cfbbfeb97ace773d2fb}{osc\-\_\-priv\-\_\-disable\-\_\-osc32} (void)
+\item 
+bool \hyperlink{group__osc__group_ga6e30883009316673303f6814718e7c99}{osc\-\_\-priv\-\_\-osc32\-\_\-is\-\_\-ready} (void)
+\item 
+void \hyperlink{group__osc__group_gac40b74aa2d9a39b612080aa89a33fe41}{osc\-\_\-priv\-\_\-enable\-\_\-rc8m} (void)
+\item 
+void \hyperlink{group__osc__group_gafb20af853c5bdf6c9328864edfc082bc}{osc\-\_\-priv\-\_\-disable\-\_\-rc8m} (void)
+\item 
+bool \hyperlink{group__osc__group_ga35d3ad0420da939f3bb6e51d3c997eb6}{osc\-\_\-priv\-\_\-rc8m\-\_\-is\-\_\-ready} (void)
+\item 
+void \hyperlink{group__osc__group_ga0cf5b9803bc9ab929af6d120c1a3275a}{osc\-\_\-priv\-\_\-enable\-\_\-rc120m} (void)
+\item 
+void \hyperlink{group__osc__group_ga98bbe496012d424da09d21a112cedef8}{osc\-\_\-priv\-\_\-disable\-\_\-rc120m} (void)
+\item 
+bool \hyperlink{group__osc__group_ga145305d3b97ea65d68fc0ec657031cae}{osc\-\_\-priv\-\_\-rc120m\-\_\-is\-\_\-ready} (void)
+\end{DoxyCompactItemize}
+\subsection*{\-Oscillator identifiers}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__osc__group_ga6404a3bc67f756a7e6fb9b955f29de68}{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-O\-S\-C0}~0
+\begin{DoxyCompactList}\small\item\em \-External \-Oscillator 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_ga9f15ee0e1fcaf29f63532e0334e26232}{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-O\-S\-C1}~1
+\begin{DoxyCompactList}\small\item\em \-External \-Oscillator 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_ga37f1cac41a51005a5acdb308f2258bd0}{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-R\-C8\-M}~2
+\begin{DoxyCompactList}\small\item\em \-Internal 8 \-M\-Hz \-R\-C oscillator. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_ga4f4dcbf422a83b362e265e57166b8437}{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-O\-S\-C32}~3
+\begin{DoxyCompactList}\small\item\em \-External 32 k\-Hz oscillator. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_gadd41022df04761b22fd3ad75287839ae}{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-R\-C120\-M}~4
+\begin{DoxyCompactList}\small\item\em \-Internal 120 \-M\-Hz \-R\-C oscillator. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_ga350967f19725f558900579aa34081b08}{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-R\-C\-S\-Y\-S}~5
+\begin{DoxyCompactList}\small\item\em \-Internal \-System \-R\-C oscillator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-O\-S\-C0/\-O\-S\-C1 mode values}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__osc__group_ga2af36f82400248c817d3cea5dce7df4a}{\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-E\-R\-N\-A\-L}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-\_\-\-C\-L\-O\-C\-K
+\begin{DoxyCompactList}\small\item\em \-External clock connected to \-X\-I\-N. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_gad2ef78eeb228f299c355ecdb76bcfc2a}{\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-\-X\-T\-A\-L}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L\-\_\-\-M\-O\-D\-E\-\_\-\-C\-R\-Y\-S\-T\-A\-L
+\begin{DoxyCompactList}\small\item\em \-Crystal connected to \-X\-I\-N/\-X\-O\-U\-T. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-O\-S\-C32 mode values}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__osc__group_ga74f67f937d9bc13762fc32c5eca7c196}{\-O\-S\-C32\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-E\-R\-N\-A\-L}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-\_\-\-C\-L\-O\-C\-K
+\begin{DoxyCompactList}\small\item\em \-External clock connected to \-X\-I\-N32. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_ga10cea55d2d2b9425cec52633b443adfd}{\-O\-S\-C32\-\_\-\-M\-O\-D\-E\-\_\-\-X\-T\-A\-L}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-M\-O\-D\-E\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-A\-G\-C
+\begin{DoxyCompactList}\small\item\em \-Crystal connected to \-X\-I\-N32/\-X\-O\-U\-T32. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_ga5633c2bfa1bd7f1122b9e9eaf00c3ac8}{\-O\-S\-C32\-\_\-\-M\-O\-D\-E\-\_\-\-X\-T\-A\-L\-\_\-\-H\-C}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-M\-O\-D\-E\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-N\-O\-\_\-\-A\-G\-C
+\begin{DoxyCompactList}\small\item\em \-Crystal connected to \-X\-I\-N32/\-X\-O\-U\-T32 in high current mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-O\-S\-C0/\-O\-S\-C1 startup values}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__osc__group_ga9ae6e8400cfa38e2206501d313df0bd7}{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-0}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-0\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 0 cycles \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_ga5b853a028994f1548b76f674f60ca8d3}{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-4}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-4\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 4 cycles (35 us) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_gac88d172ded7ef205fde1567b78dcc3aa}{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 8 cycles (70 us) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_ga3245296734ccf0c391cf20b231099548}{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 16 cycles (140 us) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_ga0477d5351f45b12894306923d17c9a9f}{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-32}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-32\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 32 cycles (280 us) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_ga8bc169c58308f203fae7db712c32692c}{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-64}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-64\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 64 cycles (560 us) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_gab62df73141674d4d5ba34d6d50a79ab2}{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-128}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-128\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 128 cycles (1.\-1 ms) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_gad01a2bab22a19bdfcb3679acddbf0a88}{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-256}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-256\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 256 cycles (2.\-2 ms) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_ga64460354bcf3739fe1976877e88ccedc}{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-512}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-512\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 512 cycles (4.\-5 ms) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_gaf2249581b46c33d3f6b4a6d1f29073da}{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-1024}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-1024\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 1024 cycles (9.\-0 ms) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_ga7e6a7e9386171f5f3434e0ce1c749664}{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-2048}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-2048\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 2048 cycles (18 ms) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_gaae54d19924d2ad66d9430cd80f09ae5f}{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-4096}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-4096\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 4096 cycles (36 ms) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_ga9c1185f69f68afd0eaa23ed90b6a810b}{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8192}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8192\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 8192 cycles (71 ms) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_ga38472e5c0ec660be10fe707646ba3b7d}{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16384}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16384\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 16384 cycles (142 ms) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-O\-S\-C32 startup values}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__osc__group_gad8bcd39c7f6e46641d17cee3462155cc}{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-0}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-0\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 0 cycles \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_gaeb8c0da95ac96d2b39e5ac6d67798a90}{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-128}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-128\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 128 cycles (1.\-1 ms) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_gabafebd75ae17fa2453c6ae3ffae8afed}{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8192}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8192\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 8192 cycles (72.\-3 ms) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_ga1d51c4a86bfc57bd922f3adc9ee69043}{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16384}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16384\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 16384 cycles (143 ms) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_gadcdb3baf55f807417ff680c67f242662}{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-65536}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-65536\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 65536 cycles (570 ms) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_ga1a10117ee43eccb8581f270b6c7bbb3e}{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-131072}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-131072\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 131072 cycles (1.\-1 s) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_gaa89eb0780af73b41a344ea4c40cc9918}{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-262144}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-262144\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 262144 cycles (2.\-3 s) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_gaaa1f456c1e3ff9c33e290314bdd4e3dd}{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-524288}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-524288\-\_\-\-R\-C\-O\-S\-C
+\begin{DoxyCompactList}\small\item\em 524288 cycles (4.\-6 s) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Board-\/specific configuration parameters}
+\label{_amgrpdbab1d69166943b607e99f47d307d11a}%
+ \-The following definitions must be provided by the board code for all working oscillators on the board. \begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__osc__group_gab0552386a036eecb8cc8acf85e317e1e}{\-B\-O\-A\-R\-D\-\_\-\-O\-S\-C0\-\_\-\-H\-Z}~16000000
+\begin{DoxyCompactList}\small\item\em \-Clock frequency of \-O\-S\-C0 in \-Hz. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_gaf840954b71d416fe61e409477c533d52}{\-B\-O\-A\-R\-D\-\_\-\-O\-S\-C0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-\-U\-S}~2000
+\begin{DoxyCompactList}\small\item\em \-Startup time of \-O\-S\-C0 in microseconds. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_ga90710bf923af394fb63c2c80755bff25}{\-B\-O\-A\-R\-D\-\_\-\-O\-S\-C0\-\_\-\-I\-S\-\_\-\-X\-T\-A\-L}~true
+\begin{DoxyCompactList}\small\item\em \-O\-S\-C0 uses a crystal, not an external clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-R\-C oscillator frequency limits}
+\label{_amgrpbce3bcf546eebe0f0366e196f2536789}%
+ \-The frequency of the internal \-R\-C oscillators may drift a bit as a result of temperature changes. \-These definitions provide upper and lower limits which may be used to calculate upper and lower limits of timeouts, derived clock frequencies, etc. \begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__osc__group_gac6f0fa483cea89b90b34a7e29b5b8834}{\-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-H\-Z}~115000
+\begin{DoxyCompactList}\small\item\em \-Nominal frequency of \-R\-C\-S\-Y\-S in \-Hz. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_gaa2e74d0d1752ab53d339808b4ab42799}{\-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-M\-I\-N\-\_\-\-H\-Z}~100000
+\begin{DoxyCompactList}\small\item\em \-Minimum frequency of \-R\-C\-S\-Y\-S in \-Hz. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_gad6d2678e501e5313cfd5156b0ba93039}{\-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-M\-A\-X\-\_\-\-H\-Z}~120000
+\begin{DoxyCompactList}\small\item\em \-Maximum frequency of \-R\-C\-S\-Y\-S in \-Hz. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_ga29780a3cc29d5015d64e6e359003027c}{\-O\-S\-C\-\_\-\-R\-C8\-M\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-H\-Z}~8000000
+\begin{DoxyCompactList}\small\item\em \-Nominal frequency of \-R\-C8\-M in \-Hz. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__osc__group_gab081db8e207b2d76293e6ded06f5dd01}{\-O\-S\-C\-\_\-\-R\-C120\-M\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-H\-Z}~120000000
+\begin{DoxyCompactList}\small\item\em \-Nominal frequency of \-R\-C120\-M in \-Hz. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-This group contains functions and definitions related to configuring and enabling/disabling on-\/chip oscillators. \-Internal \-R\-C-\/oscillators, external crystal oscillators and external clock generators are supported by this module. \-What all of these have in common is that they swing at a fixed, nominal frequency which is normally not adjustable.
+
+\begin{DoxyParagraph}{\-Example\-: \-Enabling an oscillator}
+
+\end{DoxyParagraph}
+\-The following example demonstrates how to enable the external oscillator on \-X\-M\-E\-G\-A \-A and wait for it to be ready to use. \-The oscillator identifiers are platform-\/specific, so while the same procedure is used on all platforms, the parameter to osc\-\_\-enable() will be different from device to device. 
+\begin{DoxyCode}
+        osc_enable(OSC_ID_XOSC);
+        osc_wait_ready(OSC_ID_XOSC); 
+\end{DoxyCode}
+\hypertarget{group__osc__group_osc_group_board}{}\subsection{\-Board-\/specific Definitions}\label{group__osc__group_osc_group_board}
+\-If external oscillators are used, the board code must provide the following definitions for each of those\-:
+\begin{DoxyItemize}
+\item {\bfseries \-B\-O\-A\-R\-D\-\_\-$<$osc name$>$\-\_\-\-H\-Z\-:} \-The nominal frequency of the oscillator.
+\item {\bfseries \-B\-O\-A\-R\-D\-\_\-$<$osc name$>$\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-\-U\-S\-:} \-The startup time of the oscillator in microseconds.
+\item {\bfseries \-B\-O\-A\-R\-D\-\_\-$<$osc name$>$\-\_\-\-T\-Y\-P\-E\-:} \-The type of oscillator connected, i.\-e. whether it's a crystal or external clock, and sometimes what kind of crystal it is. \-The meaning of this value is platform-\/specific. 
+\end{DoxyItemize}
+
+\subsection{\-Define \-Documentation}
+\hypertarget{group__osc__group_gab0552386a036eecb8cc8acf85e317e1e}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-B\-O\-A\-R\-D\-\_\-\-O\-S\-C0\-\_\-\-H\-Z@{\-B\-O\-A\-R\-D\-\_\-\-O\-S\-C0\-\_\-\-H\-Z}}
+\index{\-B\-O\-A\-R\-D\-\_\-\-O\-S\-C0\-\_\-\-H\-Z@{\-B\-O\-A\-R\-D\-\_\-\-O\-S\-C0\-\_\-\-H\-Z}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-B\-O\-A\-R\-D\-\_\-\-O\-S\-C0\-\_\-\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-B\-O\-A\-R\-D\-\_\-\-O\-S\-C0\-\_\-\-H\-Z~16000000}}
+\label{group__osc__group_gab0552386a036eecb8cc8acf85e317e1e}
+
+
+\-Clock frequency of \-O\-S\-C0 in \-Hz. 
+
+\hypertarget{group__osc__group_ga90710bf923af394fb63c2c80755bff25}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-B\-O\-A\-R\-D\-\_\-\-O\-S\-C0\-\_\-\-I\-S\-\_\-\-X\-T\-A\-L@{\-B\-O\-A\-R\-D\-\_\-\-O\-S\-C0\-\_\-\-I\-S\-\_\-\-X\-T\-A\-L}}
+\index{\-B\-O\-A\-R\-D\-\_\-\-O\-S\-C0\-\_\-\-I\-S\-\_\-\-X\-T\-A\-L@{\-B\-O\-A\-R\-D\-\_\-\-O\-S\-C0\-\_\-\-I\-S\-\_\-\-X\-T\-A\-L}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-B\-O\-A\-R\-D\-\_\-\-O\-S\-C0\-\_\-\-I\-S\-\_\-\-X\-T\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-B\-O\-A\-R\-D\-\_\-\-O\-S\-C0\-\_\-\-I\-S\-\_\-\-X\-T\-A\-L~true}}
+\label{group__osc__group_ga90710bf923af394fb63c2c80755bff25}
+
+
+\-O\-S\-C0 uses a crystal, not an external clock. 
+
+\hypertarget{group__osc__group_gaf840954b71d416fe61e409477c533d52}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-B\-O\-A\-R\-D\-\_\-\-O\-S\-C0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-\-U\-S@{\-B\-O\-A\-R\-D\-\_\-\-O\-S\-C0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-\-U\-S}}
+\index{\-B\-O\-A\-R\-D\-\_\-\-O\-S\-C0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-\-U\-S@{\-B\-O\-A\-R\-D\-\_\-\-O\-S\-C0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-\-U\-S}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-B\-O\-A\-R\-D\-\_\-\-O\-S\-C0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-\-U\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-B\-O\-A\-R\-D\-\_\-\-O\-S\-C0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-\-U\-S~2000}}
+\label{group__osc__group_gaf840954b71d416fe61e409477c533d52}
+
+
+\-Startup time of \-O\-S\-C0 in microseconds. 
+
+\hypertarget{group__osc__group_ga74f67f937d9bc13762fc32c5eca7c196}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C32\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-E\-R\-N\-A\-L@{\-O\-S\-C32\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-E\-R\-N\-A\-L}}
+\index{\-O\-S\-C32\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-E\-R\-N\-A\-L@{\-O\-S\-C32\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-E\-R\-N\-A\-L}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C32\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-E\-R\-N\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C32\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-E\-R\-N\-A\-L~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-\_\-\-C\-L\-O\-C\-K}}
+\label{group__osc__group_ga74f67f937d9bc13762fc32c5eca7c196}
+
+
+\-External clock connected to \-X\-I\-N32. 
+
+\hypertarget{group__osc__group_ga10cea55d2d2b9425cec52633b443adfd}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C32\-\_\-\-M\-O\-D\-E\-\_\-\-X\-T\-A\-L@{\-O\-S\-C32\-\_\-\-M\-O\-D\-E\-\_\-\-X\-T\-A\-L}}
+\index{\-O\-S\-C32\-\_\-\-M\-O\-D\-E\-\_\-\-X\-T\-A\-L@{\-O\-S\-C32\-\_\-\-M\-O\-D\-E\-\_\-\-X\-T\-A\-L}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C32\-\_\-\-M\-O\-D\-E\-\_\-\-X\-T\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C32\-\_\-\-M\-O\-D\-E\-\_\-\-X\-T\-A\-L~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-M\-O\-D\-E\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-A\-G\-C}}
+\label{group__osc__group_ga10cea55d2d2b9425cec52633b443adfd}
+
+
+\-Crystal connected to \-X\-I\-N32/\-X\-O\-U\-T32. 
+
+\hypertarget{group__osc__group_ga5633c2bfa1bd7f1122b9e9eaf00c3ac8}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C32\-\_\-\-M\-O\-D\-E\-\_\-\-X\-T\-A\-L\-\_\-\-H\-C@{\-O\-S\-C32\-\_\-\-M\-O\-D\-E\-\_\-\-X\-T\-A\-L\-\_\-\-H\-C}}
+\index{\-O\-S\-C32\-\_\-\-M\-O\-D\-E\-\_\-\-X\-T\-A\-L\-\_\-\-H\-C@{\-O\-S\-C32\-\_\-\-M\-O\-D\-E\-\_\-\-X\-T\-A\-L\-\_\-\-H\-C}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C32\-\_\-\-M\-O\-D\-E\-\_\-\-X\-T\-A\-L\-\_\-\-H\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C32\-\_\-\-M\-O\-D\-E\-\_\-\-X\-T\-A\-L\-\_\-\-H\-C~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-M\-O\-D\-E\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-N\-O\-\_\-\-A\-G\-C}}
+\label{group__osc__group_ga5633c2bfa1bd7f1122b9e9eaf00c3ac8}
+
+
+\-Crystal connected to \-X\-I\-N32/\-X\-O\-U\-T32 in high current mode. 
+
+\hypertarget{group__osc__group_gad8bcd39c7f6e46641d17cee3462155cc}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-0@{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-0}}
+\index{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-0@{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-0}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-0}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-0~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-0\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_gad8bcd39c7f6e46641d17cee3462155cc}
+
+
+0 cycles 
+
+\hypertarget{group__osc__group_gaeb8c0da95ac96d2b39e5ac6d67798a90}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-128@{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-128}}
+\index{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-128@{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-128}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-128}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-128~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-128\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_gaeb8c0da95ac96d2b39e5ac6d67798a90}
+
+
+128 cycles (1.\-1 ms) 
+
+\hypertarget{group__osc__group_ga1a10117ee43eccb8581f270b6c7bbb3e}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-131072@{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-131072}}
+\index{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-131072@{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-131072}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-131072}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-131072~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-131072\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_ga1a10117ee43eccb8581f270b6c7bbb3e}
+
+
+131072 cycles (1.\-1 s) 
+
+\hypertarget{group__osc__group_ga1d51c4a86bfc57bd922f3adc9ee69043}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16384@{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16384}}
+\index{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16384@{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16384}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16384}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16384~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16384\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_ga1d51c4a86bfc57bd922f3adc9ee69043}
+
+
+16384 cycles (143 ms) 
+
+\hypertarget{group__osc__group_gaa89eb0780af73b41a344ea4c40cc9918}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-262144@{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-262144}}
+\index{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-262144@{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-262144}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-262144}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-262144~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-262144\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_gaa89eb0780af73b41a344ea4c40cc9918}
+
+
+262144 cycles (2.\-3 s) 
+
+\hypertarget{group__osc__group_gaaa1f456c1e3ff9c33e290314bdd4e3dd}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-524288@{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-524288}}
+\index{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-524288@{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-524288}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-524288}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-524288~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-524288\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_gaaa1f456c1e3ff9c33e290314bdd4e3dd}
+
+
+524288 cycles (4.\-6 s) 
+
+\hypertarget{group__osc__group_gadcdb3baf55f807417ff680c67f242662}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-65536@{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-65536}}
+\index{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-65536@{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-65536}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-65536}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-65536~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-65536\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_gadcdb3baf55f807417ff680c67f242662}
+
+
+65536 cycles (570 ms) 
+
+\hypertarget{group__osc__group_gabafebd75ae17fa2453c6ae3ffae8afed}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8192@{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8192}}
+\index{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8192@{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8192}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8192}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8192~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L32\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8192\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_gabafebd75ae17fa2453c6ae3ffae8afed}
+
+
+8192 cycles (72.\-3 ms) 
+
+\hypertarget{group__osc__group_ga6404a3bc67f756a7e6fb9b955f29de68}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-I\-D\-\_\-\-O\-S\-C0@{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-O\-S\-C0}}
+\index{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-O\-S\-C0@{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-O\-S\-C0}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-O\-S\-C0}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-I\-D\-\_\-\-O\-S\-C0~0}}
+\label{group__osc__group_ga6404a3bc67f756a7e6fb9b955f29de68}
+
+
+\-External \-Oscillator 0. 
+
+\hypertarget{group__osc__group_ga9f15ee0e1fcaf29f63532e0334e26232}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-I\-D\-\_\-\-O\-S\-C1@{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-O\-S\-C1}}
+\index{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-O\-S\-C1@{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-O\-S\-C1}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-O\-S\-C1}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-I\-D\-\_\-\-O\-S\-C1~1}}
+\label{group__osc__group_ga9f15ee0e1fcaf29f63532e0334e26232}
+
+
+\-External \-Oscillator 1. 
+
+\hypertarget{group__osc__group_ga4f4dcbf422a83b362e265e57166b8437}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-I\-D\-\_\-\-O\-S\-C32@{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-O\-S\-C32}}
+\index{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-O\-S\-C32@{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-O\-S\-C32}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-O\-S\-C32}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-I\-D\-\_\-\-O\-S\-C32~3}}
+\label{group__osc__group_ga4f4dcbf422a83b362e265e57166b8437}
+
+
+\-External 32 k\-Hz oscillator. 
+
+\hypertarget{group__osc__group_gadd41022df04761b22fd3ad75287839ae}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-I\-D\-\_\-\-R\-C120\-M@{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-R\-C120\-M}}
+\index{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-R\-C120\-M@{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-R\-C120\-M}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-R\-C120\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-I\-D\-\_\-\-R\-C120\-M~4}}
+\label{group__osc__group_gadd41022df04761b22fd3ad75287839ae}
+
+
+\-Internal 120 \-M\-Hz \-R\-C oscillator. 
+
+\hypertarget{group__osc__group_ga37f1cac41a51005a5acdb308f2258bd0}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-I\-D\-\_\-\-R\-C8\-M@{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-R\-C8\-M}}
+\index{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-R\-C8\-M@{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-R\-C8\-M}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-R\-C8\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-I\-D\-\_\-\-R\-C8\-M~2}}
+\label{group__osc__group_ga37f1cac41a51005a5acdb308f2258bd0}
+
+
+\-Internal 8 \-M\-Hz \-R\-C oscillator. 
+
+\hypertarget{group__osc__group_ga350967f19725f558900579aa34081b08}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-I\-D\-\_\-\-R\-C\-S\-Y\-S@{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-R\-C\-S\-Y\-S}}
+\index{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-R\-C\-S\-Y\-S@{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-R\-C\-S\-Y\-S}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-I\-D\-\_\-\-R\-C\-S\-Y\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-I\-D\-\_\-\-R\-C\-S\-Y\-S~5}}
+\label{group__osc__group_ga350967f19725f558900579aa34081b08}
+
+
+\-Internal \-System \-R\-C oscillator. 
+
+\hypertarget{group__osc__group_ga2af36f82400248c817d3cea5dce7df4a}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-E\-R\-N\-A\-L@{\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-E\-R\-N\-A\-L}}
+\index{\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-E\-R\-N\-A\-L@{\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-E\-R\-N\-A\-L}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-E\-R\-N\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-E\-R\-N\-A\-L~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-\_\-\-C\-L\-O\-C\-K}}
+\label{group__osc__group_ga2af36f82400248c817d3cea5dce7df4a}
+
+
+\-External clock connected to \-X\-I\-N. 
+
+\hypertarget{group__osc__group_gad2ef78eeb228f299c355ecdb76bcfc2a}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-\-X\-T\-A\-L@{\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-\-X\-T\-A\-L}}
+\index{\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-\-X\-T\-A\-L@{\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-\-X\-T\-A\-L}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-\-X\-T\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-\-X\-T\-A\-L~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L\-\_\-\-M\-O\-D\-E\-\_\-\-C\-R\-Y\-S\-T\-A\-L}}
+\label{group__osc__group_gad2ef78eeb228f299c355ecdb76bcfc2a}
+
+
+\-Crystal connected to \-X\-I\-N/\-X\-O\-U\-T. 
+
+\hypertarget{group__osc__group_gab081db8e207b2d76293e6ded06f5dd01}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-R\-C120\-M\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-H\-Z@{\-O\-S\-C\-\_\-\-R\-C120\-M\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-H\-Z}}
+\index{\-O\-S\-C\-\_\-\-R\-C120\-M\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-H\-Z@{\-O\-S\-C\-\_\-\-R\-C120\-M\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-H\-Z}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-R\-C120\-M\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-R\-C120\-M\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-H\-Z~120000000}}
+\label{group__osc__group_gab081db8e207b2d76293e6ded06f5dd01}
+
+
+\-Nominal frequency of \-R\-C120\-M in \-Hz. 
+
+\hypertarget{group__osc__group_ga29780a3cc29d5015d64e6e359003027c}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-R\-C8\-M\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-H\-Z@{\-O\-S\-C\-\_\-\-R\-C8\-M\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-H\-Z}}
+\index{\-O\-S\-C\-\_\-\-R\-C8\-M\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-H\-Z@{\-O\-S\-C\-\_\-\-R\-C8\-M\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-H\-Z}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-R\-C8\-M\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-R\-C8\-M\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-H\-Z~8000000}}
+\label{group__osc__group_ga29780a3cc29d5015d64e6e359003027c}
+
+
+\-Nominal frequency of \-R\-C8\-M in \-Hz. 
+
+\hypertarget{group__osc__group_gad6d2678e501e5313cfd5156b0ba93039}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-M\-A\-X\-\_\-\-H\-Z@{\-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-M\-A\-X\-\_\-\-H\-Z}}
+\index{\-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-M\-A\-X\-\_\-\-H\-Z@{\-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-M\-A\-X\-\_\-\-H\-Z}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-M\-A\-X\-\_\-\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-M\-A\-X\-\_\-\-H\-Z~120000}}
+\label{group__osc__group_gad6d2678e501e5313cfd5156b0ba93039}
+
+
+\-Maximum frequency of \-R\-C\-S\-Y\-S in \-Hz. 
+
+\hypertarget{group__osc__group_gaa2e74d0d1752ab53d339808b4ab42799}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-M\-I\-N\-\_\-\-H\-Z@{\-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-M\-I\-N\-\_\-\-H\-Z}}
+\index{\-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-M\-I\-N\-\_\-\-H\-Z@{\-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-M\-I\-N\-\_\-\-H\-Z}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-M\-I\-N\-\_\-\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-M\-I\-N\-\_\-\-H\-Z~100000}}
+\label{group__osc__group_gaa2e74d0d1752ab53d339808b4ab42799}
+
+
+\-Minimum frequency of \-R\-C\-S\-Y\-S in \-Hz. 
+
+\hypertarget{group__osc__group_gac6f0fa483cea89b90b34a7e29b5b8834}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-H\-Z@{\-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-H\-Z}}
+\index{\-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-H\-Z@{\-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-H\-Z}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-H\-Z~115000}}
+\label{group__osc__group_gac6f0fa483cea89b90b34a7e29b5b8834}
+
+
+\-Nominal frequency of \-R\-C\-S\-Y\-S in \-Hz. 
+
+\hypertarget{group__osc__group_ga9ae6e8400cfa38e2206501d313df0bd7}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-0@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-0}}
+\index{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-0@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-0}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-0}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-0~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-0\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_ga9ae6e8400cfa38e2206501d313df0bd7}
+
+
+0 cycles 
+
+\hypertarget{group__osc__group_gaf2249581b46c33d3f6b4a6d1f29073da}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-1024@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-1024}}
+\index{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-1024@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-1024}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-1024}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-1024~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-1024\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_gaf2249581b46c33d3f6b4a6d1f29073da}
+
+
+1024 cycles (9.\-0 ms) 
+
+\hypertarget{group__osc__group_gab62df73141674d4d5ba34d6d50a79ab2}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-128@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-128}}
+\index{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-128@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-128}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-128}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-128~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-128\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_gab62df73141674d4d5ba34d6d50a79ab2}
+
+
+128 cycles (1.\-1 ms) 
+
+\hypertarget{group__osc__group_ga3245296734ccf0c391cf20b231099548}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16}}
+\index{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_ga3245296734ccf0c391cf20b231099548}
+
+
+16 cycles (140 us) 
+
+\hypertarget{group__osc__group_ga38472e5c0ec660be10fe707646ba3b7d}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16384@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16384}}
+\index{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16384@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16384}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16384}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16384~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-16384\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_ga38472e5c0ec660be10fe707646ba3b7d}
+
+
+16384 cycles (142 ms) 
+
+\hypertarget{group__osc__group_ga7e6a7e9386171f5f3434e0ce1c749664}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-2048@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-2048}}
+\index{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-2048@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-2048}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-2048}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-2048~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-2048\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_ga7e6a7e9386171f5f3434e0ce1c749664}
+
+
+2048 cycles (18 ms) 
+
+\hypertarget{group__osc__group_gad01a2bab22a19bdfcb3679acddbf0a88}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-256@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-256}}
+\index{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-256@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-256}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-256}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-256~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-256\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_gad01a2bab22a19bdfcb3679acddbf0a88}
+
+
+256 cycles (2.\-2 ms) 
+
+\hypertarget{group__osc__group_ga0477d5351f45b12894306923d17c9a9f}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-32@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-32}}
+\index{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-32@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-32}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-32}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-32~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-32\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_ga0477d5351f45b12894306923d17c9a9f}
+
+
+32 cycles (280 us) 
+
+\hypertarget{group__osc__group_ga5b853a028994f1548b76f674f60ca8d3}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-4@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-4}}
+\index{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-4@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-4}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-4}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-4~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-4\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_ga5b853a028994f1548b76f674f60ca8d3}
+
+
+4 cycles (35 us) 
+
+\hypertarget{group__osc__group_gaae54d19924d2ad66d9430cd80f09ae5f}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-4096@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-4096}}
+\index{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-4096@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-4096}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-4096}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-4096~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-4096\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_gaae54d19924d2ad66d9430cd80f09ae5f}
+
+
+4096 cycles (36 ms) 
+
+\hypertarget{group__osc__group_ga64460354bcf3739fe1976877e88ccedc}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-512@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-512}}
+\index{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-512@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-512}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-512}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-512~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-512\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_ga64460354bcf3739fe1976877e88ccedc}
+
+
+512 cycles (4.\-5 ms) 
+
+\hypertarget{group__osc__group_ga8bc169c58308f203fae7db712c32692c}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-64@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-64}}
+\index{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-64@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-64}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-64}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-64~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-64\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_ga8bc169c58308f203fae7db712c32692c}
+
+
+64 cycles (560 us) 
+
+\hypertarget{group__osc__group_gac88d172ded7ef205fde1567b78dcc3aa}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8}}
+\index{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_gac88d172ded7ef205fde1567b78dcc3aa}
+
+
+8 cycles (70 us) 
+
+\hypertarget{group__osc__group_ga9c1185f69f68afd0eaa23ed90b6a810b}{
+\index{\-Oscillator Management@{\-Oscillator Management}!\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8192@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8192}}
+\index{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8192@{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8192}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{\-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8192}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-S\-C\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8192~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-L0\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-8192\-\_\-\-R\-C\-O\-S\-C}}
+\label{group__osc__group_ga9c1185f69f68afd0eaa23ed90b6a810b}
+
+
+8192 cycles (71 ms) 
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__osc__group_ga173ad48049211628cd7270db377f79fb}{
+\index{\-Oscillator Management@{\-Oscillator Management}!osc\-\_\-priv\-\_\-disable\-\_\-osc0@{osc\-\_\-priv\-\_\-disable\-\_\-osc0}}
+\index{osc\-\_\-priv\-\_\-disable\-\_\-osc0@{osc\-\_\-priv\-\_\-disable\-\_\-osc0}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{osc\-\_\-priv\-\_\-disable\-\_\-osc0}]{\setlength{\rightskip}{0pt plus 5cm}void osc\-\_\-priv\-\_\-disable\-\_\-osc0 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__osc__group_ga173ad48049211628cd7270db377f79fb}
+\hypertarget{group__osc__group_ga6b4e531753deac703af293fd02a66c3b}{
+\index{\-Oscillator Management@{\-Oscillator Management}!osc\-\_\-priv\-\_\-disable\-\_\-osc1@{osc\-\_\-priv\-\_\-disable\-\_\-osc1}}
+\index{osc\-\_\-priv\-\_\-disable\-\_\-osc1@{osc\-\_\-priv\-\_\-disable\-\_\-osc1}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{osc\-\_\-priv\-\_\-disable\-\_\-osc1}]{\setlength{\rightskip}{0pt plus 5cm}void osc\-\_\-priv\-\_\-disable\-\_\-osc1 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__osc__group_ga6b4e531753deac703af293fd02a66c3b}
+\hypertarget{group__osc__group_ga8aa3436d99096cfbbfeb97ace773d2fb}{
+\index{\-Oscillator Management@{\-Oscillator Management}!osc\-\_\-priv\-\_\-disable\-\_\-osc32@{osc\-\_\-priv\-\_\-disable\-\_\-osc32}}
+\index{osc\-\_\-priv\-\_\-disable\-\_\-osc32@{osc\-\_\-priv\-\_\-disable\-\_\-osc32}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{osc\-\_\-priv\-\_\-disable\-\_\-osc32}]{\setlength{\rightskip}{0pt plus 5cm}void osc\-\_\-priv\-\_\-disable\-\_\-osc32 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__osc__group_ga8aa3436d99096cfbbfeb97ace773d2fb}
+\hypertarget{group__osc__group_ga98bbe496012d424da09d21a112cedef8}{
+\index{\-Oscillator Management@{\-Oscillator Management}!osc\-\_\-priv\-\_\-disable\-\_\-rc120m@{osc\-\_\-priv\-\_\-disable\-\_\-rc120m}}
+\index{osc\-\_\-priv\-\_\-disable\-\_\-rc120m@{osc\-\_\-priv\-\_\-disable\-\_\-rc120m}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{osc\-\_\-priv\-\_\-disable\-\_\-rc120m}]{\setlength{\rightskip}{0pt plus 5cm}void osc\-\_\-priv\-\_\-disable\-\_\-rc120m (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__osc__group_ga98bbe496012d424da09d21a112cedef8}
+\hypertarget{group__osc__group_gafb20af853c5bdf6c9328864edfc082bc}{
+\index{\-Oscillator Management@{\-Oscillator Management}!osc\-\_\-priv\-\_\-disable\-\_\-rc8m@{osc\-\_\-priv\-\_\-disable\-\_\-rc8m}}
+\index{osc\-\_\-priv\-\_\-disable\-\_\-rc8m@{osc\-\_\-priv\-\_\-disable\-\_\-rc8m}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{osc\-\_\-priv\-\_\-disable\-\_\-rc8m}]{\setlength{\rightskip}{0pt plus 5cm}void osc\-\_\-priv\-\_\-disable\-\_\-rc8m (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__osc__group_gafb20af853c5bdf6c9328864edfc082bc}
+\hypertarget{group__osc__group_ga788c37dfdae9420f469a6b3b5f6acf9d}{
+\index{\-Oscillator Management@{\-Oscillator Management}!osc\-\_\-priv\-\_\-enable\-\_\-osc0@{osc\-\_\-priv\-\_\-enable\-\_\-osc0}}
+\index{osc\-\_\-priv\-\_\-enable\-\_\-osc0@{osc\-\_\-priv\-\_\-enable\-\_\-osc0}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{osc\-\_\-priv\-\_\-enable\-\_\-osc0}]{\setlength{\rightskip}{0pt plus 5cm}void osc\-\_\-priv\-\_\-enable\-\_\-osc0 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__osc__group_ga788c37dfdae9420f469a6b3b5f6acf9d}
+\hypertarget{group__osc__group_ga1d6850e50451263f1050560925d945cb}{
+\index{\-Oscillator Management@{\-Oscillator Management}!osc\-\_\-priv\-\_\-enable\-\_\-osc1@{osc\-\_\-priv\-\_\-enable\-\_\-osc1}}
+\index{osc\-\_\-priv\-\_\-enable\-\_\-osc1@{osc\-\_\-priv\-\_\-enable\-\_\-osc1}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{osc\-\_\-priv\-\_\-enable\-\_\-osc1}]{\setlength{\rightskip}{0pt plus 5cm}void osc\-\_\-priv\-\_\-enable\-\_\-osc1 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__osc__group_ga1d6850e50451263f1050560925d945cb}
+\hypertarget{group__osc__group_ga6aa18a93d28ef7a49f114fcbbd396a0b}{
+\index{\-Oscillator Management@{\-Oscillator Management}!osc\-\_\-priv\-\_\-enable\-\_\-osc32@{osc\-\_\-priv\-\_\-enable\-\_\-osc32}}
+\index{osc\-\_\-priv\-\_\-enable\-\_\-osc32@{osc\-\_\-priv\-\_\-enable\-\_\-osc32}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{osc\-\_\-priv\-\_\-enable\-\_\-osc32}]{\setlength{\rightskip}{0pt plus 5cm}void osc\-\_\-priv\-\_\-enable\-\_\-osc32 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__osc__group_ga6aa18a93d28ef7a49f114fcbbd396a0b}
+\hypertarget{group__osc__group_ga0cf5b9803bc9ab929af6d120c1a3275a}{
+\index{\-Oscillator Management@{\-Oscillator Management}!osc\-\_\-priv\-\_\-enable\-\_\-rc120m@{osc\-\_\-priv\-\_\-enable\-\_\-rc120m}}
+\index{osc\-\_\-priv\-\_\-enable\-\_\-rc120m@{osc\-\_\-priv\-\_\-enable\-\_\-rc120m}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{osc\-\_\-priv\-\_\-enable\-\_\-rc120m}]{\setlength{\rightskip}{0pt plus 5cm}void osc\-\_\-priv\-\_\-enable\-\_\-rc120m (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__osc__group_ga0cf5b9803bc9ab929af6d120c1a3275a}
+\hypertarget{group__osc__group_gac40b74aa2d9a39b612080aa89a33fe41}{
+\index{\-Oscillator Management@{\-Oscillator Management}!osc\-\_\-priv\-\_\-enable\-\_\-rc8m@{osc\-\_\-priv\-\_\-enable\-\_\-rc8m}}
+\index{osc\-\_\-priv\-\_\-enable\-\_\-rc8m@{osc\-\_\-priv\-\_\-enable\-\_\-rc8m}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{osc\-\_\-priv\-\_\-enable\-\_\-rc8m}]{\setlength{\rightskip}{0pt plus 5cm}void osc\-\_\-priv\-\_\-enable\-\_\-rc8m (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__osc__group_gac40b74aa2d9a39b612080aa89a33fe41}
+\hypertarget{group__osc__group_ga423a37787d60aa4d2d18fa4f9f1c340d}{
+\index{\-Oscillator Management@{\-Oscillator Management}!osc\-\_\-priv\-\_\-osc0\-\_\-is\-\_\-ready@{osc\-\_\-priv\-\_\-osc0\-\_\-is\-\_\-ready}}
+\index{osc\-\_\-priv\-\_\-osc0\-\_\-is\-\_\-ready@{osc\-\_\-priv\-\_\-osc0\-\_\-is\-\_\-ready}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{osc\-\_\-priv\-\_\-osc0\-\_\-is\-\_\-ready}]{\setlength{\rightskip}{0pt plus 5cm}bool osc\-\_\-priv\-\_\-osc0\-\_\-is\-\_\-ready (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__osc__group_ga423a37787d60aa4d2d18fa4f9f1c340d}
+\hypertarget{group__osc__group_ga23faff95a37c65ae40c3e598f52e76b1}{
+\index{\-Oscillator Management@{\-Oscillator Management}!osc\-\_\-priv\-\_\-osc1\-\_\-is\-\_\-ready@{osc\-\_\-priv\-\_\-osc1\-\_\-is\-\_\-ready}}
+\index{osc\-\_\-priv\-\_\-osc1\-\_\-is\-\_\-ready@{osc\-\_\-priv\-\_\-osc1\-\_\-is\-\_\-ready}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{osc\-\_\-priv\-\_\-osc1\-\_\-is\-\_\-ready}]{\setlength{\rightskip}{0pt plus 5cm}bool osc\-\_\-priv\-\_\-osc1\-\_\-is\-\_\-ready (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__osc__group_ga23faff95a37c65ae40c3e598f52e76b1}
+\hypertarget{group__osc__group_ga6e30883009316673303f6814718e7c99}{
+\index{\-Oscillator Management@{\-Oscillator Management}!osc\-\_\-priv\-\_\-osc32\-\_\-is\-\_\-ready@{osc\-\_\-priv\-\_\-osc32\-\_\-is\-\_\-ready}}
+\index{osc\-\_\-priv\-\_\-osc32\-\_\-is\-\_\-ready@{osc\-\_\-priv\-\_\-osc32\-\_\-is\-\_\-ready}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{osc\-\_\-priv\-\_\-osc32\-\_\-is\-\_\-ready}]{\setlength{\rightskip}{0pt plus 5cm}bool osc\-\_\-priv\-\_\-osc32\-\_\-is\-\_\-ready (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__osc__group_ga6e30883009316673303f6814718e7c99}
+\hypertarget{group__osc__group_ga145305d3b97ea65d68fc0ec657031cae}{
+\index{\-Oscillator Management@{\-Oscillator Management}!osc\-\_\-priv\-\_\-rc120m\-\_\-is\-\_\-ready@{osc\-\_\-priv\-\_\-rc120m\-\_\-is\-\_\-ready}}
+\index{osc\-\_\-priv\-\_\-rc120m\-\_\-is\-\_\-ready@{osc\-\_\-priv\-\_\-rc120m\-\_\-is\-\_\-ready}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{osc\-\_\-priv\-\_\-rc120m\-\_\-is\-\_\-ready}]{\setlength{\rightskip}{0pt plus 5cm}bool osc\-\_\-priv\-\_\-rc120m\-\_\-is\-\_\-ready (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__osc__group_ga145305d3b97ea65d68fc0ec657031cae}
+\hypertarget{group__osc__group_ga35d3ad0420da939f3bb6e51d3c997eb6}{
+\index{\-Oscillator Management@{\-Oscillator Management}!osc\-\_\-priv\-\_\-rc8m\-\_\-is\-\_\-ready@{osc\-\_\-priv\-\_\-rc8m\-\_\-is\-\_\-ready}}
+\index{osc\-\_\-priv\-\_\-rc8m\-\_\-is\-\_\-ready@{osc\-\_\-priv\-\_\-rc8m\-\_\-is\-\_\-ready}!Oscillator Management@{\-Oscillator Management}}
+\subsubsection[{osc\-\_\-priv\-\_\-rc8m\-\_\-is\-\_\-ready}]{\setlength{\rightskip}{0pt plus 5cm}bool osc\-\_\-priv\-\_\-rc8m\-\_\-is\-\_\-ready (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__osc__group_ga35d3ad0420da939f3bb6e51d3c997eb6}

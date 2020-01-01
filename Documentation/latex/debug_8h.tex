@@ -1,0 +1,152 @@
+\hypertarget{debug_8h}{
+\section{debug.h \-File \-Reference}
+\label{debug_8h}\index{debug.\-h@{debug.\-h}}
+}
+
+
+\-Macros and functions dedicated to debug purposes.  
+
+
+{\ttfamily \#include \char`\"{}stringz.\-h\char`\"{}}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{debug_8h_ab92d932ad29de0d43f5e4a8e15f062fd}{\-Uc3\-\_\-trace\-\_\-init}(debug\-\_\-addr)~$\ast$(\-U32$\ast$)(debug\-\_\-addr)=debug\-\_\-addr+4
+\begin{DoxyCompactList}\small\item\em \-These macros are used to add traces memory. \end{DoxyCompactList}\item 
+\#define \hyperlink{debug_8h_a91278a91a4af5988028c3cb3fae0664c}{\-Uc3\-\_\-trace}(debug\-\_\-addr, x)
+\item 
+\#define \hyperlink{debug_8h_a12474d91b3b05bbf9677cb258f4daf53}{\-Insert\-\_\-label}(name)~\-\_\-\-\_\-asm\-\_\-\-\_\- \-\_\-\-\_\-volatile\-\_\-\-\_\- (\-S\-T\-R\-I\-N\-G\-Z(name)\char`\"{}\-:\char`\"{});
+\begin{DoxyCompactList}\small\item\em \-This macro is used to insert labels into assembly output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\-U32 \hyperlink{debug_8h_af786e504aac20ce8c93920ee2ac564ef}{get\-\_\-heap\-\_\-free\-\_\-size} (void)
+\begin{DoxyCompactList}\small\item\em \-Returns the number of free bytes in the \-H\-E\-A\-P. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\paragraph*{\-Traces function using a round buffer}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{debug_8h_ad5062f1eb8420dbb61011ae649b9f509}{uc3\-\_\-round\-\_\-trace\-\_\-init} (void $\ast$buf, \-U32 size)
+\begin{DoxyCompactList}\small\item\em \-Initialize the trace using a round buffer. \end{DoxyCompactList}\item 
+void \hyperlink{debug_8h_a6813952940e48f9a674a12c7077497bc}{uc3\-\_\-round\-\_\-trace} (\-U32 val)
+\begin{DoxyCompactList}\small\item\em \-Trace a data in the round buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{\-Detailed \-Description}
+\-Macros and functions dedicated to debug purposes. 
+\begin{DoxyItemize}
+\item \-Compiler\-: \-I\-A\-R \-E\-W\-A\-V\-R32 and \-G\-N\-U \-G\-C\-C for \-A\-V\-R32
+\item \-Supported devices\-: \-All \-A\-V\-R32 devices with a \-U\-S\-A\-R\-T module can be used.
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{\-Author}
+\-Atmel \-Corporation\-: \href{http://www.atmel.com}{\tt http\-://www.\-atmel.\-com} \par
+ \-Support and \-F\-A\-Q\-: \href{http://support.atmel.no/}{\tt http\-://support.\-atmel.\-no/} 
+\end{DoxyAuthor}
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{debug_8h_a12474d91b3b05bbf9677cb258f4daf53}{
+\index{debug.\-h@{debug.\-h}!\-Insert\-\_\-label@{\-Insert\-\_\-label}}
+\index{\-Insert\-\_\-label@{\-Insert\-\_\-label}!debug.h@{debug.\-h}}
+\subsubsection[{\-Insert\-\_\-label}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Insert\-\_\-label(
+\begin{DoxyParamCaption}
+\item[{}]{name}
+\end{DoxyParamCaption}
+)~\-\_\-\-\_\-asm\-\_\-\-\_\- \-\_\-\-\_\-volatile\-\_\-\-\_\- (\-S\-T\-R\-I\-N\-G\-Z(name)\char`\"{}\-:\char`\"{});}}
+\label{debug_8h_a12474d91b3b05bbf9677cb258f4daf53}
+
+
+\-This macro is used to insert labels into assembly output. 
+
+\hypertarget{debug_8h_a91278a91a4af5988028c3cb3fae0664c}{
+\index{debug.\-h@{debug.\-h}!\-Uc3\-\_\-trace@{\-Uc3\-\_\-trace}}
+\index{\-Uc3\-\_\-trace@{\-Uc3\-\_\-trace}!debug.h@{debug.\-h}}
+\subsubsection[{\-Uc3\-\_\-trace}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Uc3\-\_\-trace(
+\begin{DoxyParamCaption}
+\item[{}]{debug\-\_\-addr, }
+\item[{}]{x}
+\end{DoxyParamCaption}
+)}}
+\label{debug_8h_a91278a91a4af5988028c3cb3fae0664c}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+*(U32*)(*(U32*)(debug_addr)  ) = (U32)(x)   ;\
+      *(U32*)(*(U32*)(debug_addr)+4) = 0xdeadbeef ;\
+      *(U32*)(debug_addr  ) = *(U32*)(debug_addr)+4
+\end{DoxyCode}
+\hypertarget{debug_8h_ab92d932ad29de0d43f5e4a8e15f062fd}{
+\index{debug.\-h@{debug.\-h}!\-Uc3\-\_\-trace\-\_\-init@{\-Uc3\-\_\-trace\-\_\-init}}
+\index{\-Uc3\-\_\-trace\-\_\-init@{\-Uc3\-\_\-trace\-\_\-init}!debug.h@{debug.\-h}}
+\subsubsection[{\-Uc3\-\_\-trace\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Uc3\-\_\-trace\-\_\-init(
+\begin{DoxyParamCaption}
+\item[{}]{debug\-\_\-addr}
+\end{DoxyParamCaption}
+)~$\ast$(\-U32$\ast$)(debug\-\_\-addr)=debug\-\_\-addr+4}}
+\label{debug_8h_ab92d932ad29de0d43f5e4a8e15f062fd}
+
+
+\-These macros are used to add traces memory. 
+
+\-First, initialise the trace with \hyperlink{debug_8h_ab92d932ad29de0d43f5e4a8e15f062fd}{\-Uc3\-\_\-trace\-\_\-init(pointer)}, giving the start address of the memory location where will be stored the trace. \-Use \hyperlink{debug_8h_a91278a91a4af5988028c3cb3fae0664c}{\-Uc3\-\_\-trace(something)} to store \char`\"{}something\char`\"{} into the memory. \-The end of the trace is signaled by the \char`\"{}0xdeadbeef\char`\"{} pattern. 
+
+\subsection{\-Function \-Documentation}
+\hypertarget{debug_8h_af786e504aac20ce8c93920ee2ac564ef}{
+\index{debug.\-h@{debug.\-h}!get\-\_\-heap\-\_\-free\-\_\-size@{get\-\_\-heap\-\_\-free\-\_\-size}}
+\index{get\-\_\-heap\-\_\-free\-\_\-size@{get\-\_\-heap\-\_\-free\-\_\-size}!debug.h@{debug.\-h}}
+\subsubsection[{get\-\_\-heap\-\_\-free\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}\-U32 get\-\_\-heap\-\_\-free\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{debug_8h_af786e504aac20ce8c93920ee2ac564ef}
+
+
+\-Returns the number of free bytes in the \-H\-E\-A\-P. 
+
+\-This funtion tries to allocate the maximum number of bytes by dichotomical method.
+
+
+\begin{DoxyRetVals}{\-Return values}
+{\em number} & of free bytes. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{debug_8h_a6813952940e48f9a674a12c7077497bc}{
+\index{debug.\-h@{debug.\-h}!uc3\-\_\-round\-\_\-trace@{uc3\-\_\-round\-\_\-trace}}
+\index{uc3\-\_\-round\-\_\-trace@{uc3\-\_\-round\-\_\-trace}!debug.h@{debug.\-h}}
+\subsubsection[{uc3\-\_\-round\-\_\-trace}]{\setlength{\rightskip}{0pt plus 5cm}void uc3\-\_\-round\-\_\-trace (
+\begin{DoxyParamCaption}
+\item[{\-U32}]{val}
+\end{DoxyParamCaption}
+)}}
+\label{debug_8h_a6813952940e48f9a674a12c7077497bc}
+
+
+\-Trace a data in the round buffer. 
+
+\-The end of the trace is signaled by the \char`\"{}0xdeadbeef\char`\"{} pattern. 
+\begin{DoxyParams}{\-Parameters}
+{\em val} & \-Data to trace; \\
+\hline
+\end{DoxyParams}
+\hypertarget{debug_8h_ad5062f1eb8420dbb61011ae649b9f509}{
+\index{debug.\-h@{debug.\-h}!uc3\-\_\-round\-\_\-trace\-\_\-init@{uc3\-\_\-round\-\_\-trace\-\_\-init}}
+\index{uc3\-\_\-round\-\_\-trace\-\_\-init@{uc3\-\_\-round\-\_\-trace\-\_\-init}!debug.h@{debug.\-h}}
+\subsubsection[{uc3\-\_\-round\-\_\-trace\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void uc3\-\_\-round\-\_\-trace\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{buf, }
+\item[{\-U32}]{size}
+\end{DoxyParamCaption}
+)}}
+\label{debug_8h_ad5062f1eb8420dbb61011ae649b9f509}
+
+
+\-Initialize the trace using a round buffer. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em buf} & \-Base address of the buffer used for the trace. \\
+\hline
+{\em size} & \-Size of the round buffer. \-Must be a power of 2. \\
+\hline
+\end{DoxyParams}

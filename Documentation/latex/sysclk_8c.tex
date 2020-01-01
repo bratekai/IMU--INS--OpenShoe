@@ -1,0 +1,48 @@
+\hypertarget{sysclk_8c}{
+\section{sysclk.c \-File \-Reference}
+\label{sysclk_8c}\index{sysclk.\-c@{sysclk.\-c}}
+}
+
+
+\-Chip-\/specific system clock management functions.  
+
+
+{\ttfamily \#include $<$avr32/io.\-h$>$}\*
+{\ttfamily \#include $<$compiler.\-h$>$}\*
+{\ttfamily \#include $<$stdbool.\-h$>$}\*
+{\ttfamily \#include $<$sysclk.\-h$>$}\*
+{\ttfamily \#include $<$flashc.\-h$>$}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__sysclk__group_gabd8c9eaed83f9b71734a80f4b66742b3}{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-C\-P\-U\-M\-A\-S\-K}
+\item 
+\#define \hyperlink{group__sysclk__group_ga7bd0214b8ad00652adb81da9b5c1b165}{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-H\-S\-B\-M\-A\-S\-K}
+\item 
+\#define \hyperlink{group__sysclk__group_ga25425ac0f90eb3e96a7c303e6707b282}{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-A\-M\-A\-S\-K}
+\item 
+\#define \hyperlink{group__sysclk__group_ga02a23ab95f0213faeb009f4411d0a3aa}{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-B\-M\-A\-S\-K}~0
+\item 
+\#define \hyperlink{group__sysclk__group_ga5088dc19411a34aad978c46e7ab44525}{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-C\-M\-A\-S\-K}~0
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__sysclk__group_ga74da4af4f93582fe3dd33dd75596cdf4}{sysclk\-\_\-priv\-\_\-enable\-\_\-module} (unsigned int bus\-\_\-id, unsigned int module\-\_\-index)
+\item 
+void \hyperlink{group__sysclk__group_ga9d3035baba081035de71adb2dd059ce7}{sysclk\-\_\-priv\-\_\-disable\-\_\-module} (unsigned int bus\-\_\-id, unsigned int module\-\_\-index)
+\item 
+void \hyperlink{group__sysclk__group_ga9e93d93c137135fee8a1a7102367042e}{sysclk\-\_\-set\-\_\-prescalers} (unsigned int cpu\-\_\-shift, unsigned int pba\-\_\-shift, unsigned int pbb\-\_\-shift, unsigned int pbc\-\_\-shift)
+\begin{DoxyCompactList}\small\item\em \-Set system clock prescaler configuration. \end{DoxyCompactList}\item 
+void \hyperlink{group__sysclk__group_ga222a121dfaac21b0c0af9d4dcb39496c}{sysclk\-\_\-set\-\_\-source} (uint\-\_\-fast8\-\_\-t src)
+\begin{DoxyCompactList}\small\item\em \-Change the source of the main system clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\paragraph*{\-System \-Clock \-Initialization}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__sysclk__group_ga242399e48a97739c88b4d0c00f6101de}{sysclk\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em \-Initialize the synchronous clock system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{\-Detailed \-Description}
+\-Chip-\/specific system clock management functions. \-Copyright (\-C) 2009 \-Atmel \-Corporation. \-All rights reserved. 

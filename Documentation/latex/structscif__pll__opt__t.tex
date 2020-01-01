@@ -1,0 +1,104 @@
+\hypertarget{structscif__pll__opt__t}{
+\section{scif\-\_\-pll\-\_\-opt\-\_\-t \-Struct \-Reference}
+\label{structscif__pll__opt__t}\index{scif\-\_\-pll\-\_\-opt\-\_\-t@{scif\-\_\-pll\-\_\-opt\-\_\-t}}
+}
+
+
+\-P\-L\-L0/\-P\-L\-L1 startup options.  
+
+
+
+
+{\ttfamily \#include $<$scif\-\_\-uc3c.\-h$>$}
+
+\subsection*{\-Data \-Fields}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \hyperlink{structscif__pll__opt__t_ae397f441f9093a691a6e74fa777dd939}{pll\-\_\-freq}
+\begin{DoxyCompactList}\small\item\em \-Set to 1 for \-V\-C\-O frequency range 80-\/180\-M\-Hz, set to 0 for \-V\-C\-O frequency range 160-\/240\-Mhz. \end{DoxyCompactList}\item 
+unsigned char \hyperlink{structscif__pll__opt__t_a4740e279139f74bfc8e5b0a03877afea}{pll\-\_\-wbwdisable}
+\begin{DoxyCompactList}\small\item\em 1 \-Disable the \-Wide-\/\-Bandith \-Mode (\-Wide-\/\-Bandwith mode allow a faster startup time and out-\/of-\/lock time). 0 to enable the \-Wide-\/\-Bandith \-Mode. \end{DoxyCompactList}\item 
+unsigned char \hyperlink{structscif__pll__opt__t_af1afe250ff51e752c3edf06da9f25aad}{pll\-\_\-div2}
+\begin{DoxyCompactList}\small\item\em \-Divide the \-P\-L\-L output frequency by 2. (this settings does not change the \-F\-V\-C\-O value) \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structscif__pll__opt__t_aae5047440f34de93ea589e39e4ce94da}{mul}
+\begin{DoxyCompactList}\small\item\em \-P\-L\-L \-M\-U\-L in the \-P\-L\-L formula. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structscif__pll__opt__t_ac5f2397759d35572bfeeab93dda0c776}{div}
+\begin{DoxyCompactList}\small\item\em \-P\-L\-L \-D\-I\-V in the \-P\-L\-L formula. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structscif__pll__opt__t_a34359a906929e13a238b290925d1dff8}{lockcount}
+\begin{DoxyCompactList}\small\item\em \-P\-L\-L lockount. \end{DoxyCompactList}\item 
+unsigned char \hyperlink{structscif__pll__opt__t_aee09a41840d5059cbb116689ea851d0f}{osc}
+\begin{DoxyCompactList}\small\item\em \-Specify the scillator input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-P\-L\-L0/\-P\-L\-L1 startup options. 
+
+\subsection{\-Field \-Documentation}
+\hypertarget{structscif__pll__opt__t_ac5f2397759d35572bfeeab93dda0c776}{
+\index{scif\-\_\-pll\-\_\-opt\-\_\-t@{scif\-\_\-pll\-\_\-opt\-\_\-t}!div@{div}}
+\index{div@{div}!scif_pll_opt_t@{scif\-\_\-pll\-\_\-opt\-\_\-t}}
+\subsubsection[{div}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf scif\-\_\-pll\-\_\-opt\-\_\-t\-::div}}}
+\label{structscif__pll__opt__t_ac5f2397759d35572bfeeab93dda0c776}
+
+
+\-P\-L\-L \-D\-I\-V in the \-P\-L\-L formula. 
+
+\hypertarget{structscif__pll__opt__t_a34359a906929e13a238b290925d1dff8}{
+\index{scif\-\_\-pll\-\_\-opt\-\_\-t@{scif\-\_\-pll\-\_\-opt\-\_\-t}!lockcount@{lockcount}}
+\index{lockcount@{lockcount}!scif_pll_opt_t@{scif\-\_\-pll\-\_\-opt\-\_\-t}}
+\subsubsection[{lockcount}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf scif\-\_\-pll\-\_\-opt\-\_\-t\-::lockcount}}}
+\label{structscif__pll__opt__t_a34359a906929e13a238b290925d1dff8}
+
+
+\-P\-L\-L lockount. 
+
+\hypertarget{structscif__pll__opt__t_aae5047440f34de93ea589e39e4ce94da}{
+\index{scif\-\_\-pll\-\_\-opt\-\_\-t@{scif\-\_\-pll\-\_\-opt\-\_\-t}!mul@{mul}}
+\index{mul@{mul}!scif_pll_opt_t@{scif\-\_\-pll\-\_\-opt\-\_\-t}}
+\subsubsection[{mul}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf scif\-\_\-pll\-\_\-opt\-\_\-t\-::mul}}}
+\label{structscif__pll__opt__t_aae5047440f34de93ea589e39e4ce94da}
+
+
+\-P\-L\-L \-M\-U\-L in the \-P\-L\-L formula. 
+
+\hypertarget{structscif__pll__opt__t_aee09a41840d5059cbb116689ea851d0f}{
+\index{scif\-\_\-pll\-\_\-opt\-\_\-t@{scif\-\_\-pll\-\_\-opt\-\_\-t}!osc@{osc}}
+\index{osc@{osc}!scif_pll_opt_t@{scif\-\_\-pll\-\_\-opt\-\_\-t}}
+\subsubsection[{osc}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf scif\-\_\-pll\-\_\-opt\-\_\-t\-::osc}}}
+\label{structscif__pll__opt__t_aee09a41840d5059cbb116689ea851d0f}
+
+
+\-Specify the scillator input. 
+
+\hypertarget{structscif__pll__opt__t_af1afe250ff51e752c3edf06da9f25aad}{
+\index{scif\-\_\-pll\-\_\-opt\-\_\-t@{scif\-\_\-pll\-\_\-opt\-\_\-t}!pll\-\_\-div2@{pll\-\_\-div2}}
+\index{pll\-\_\-div2@{pll\-\_\-div2}!scif_pll_opt_t@{scif\-\_\-pll\-\_\-opt\-\_\-t}}
+\subsubsection[{pll\-\_\-div2}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf scif\-\_\-pll\-\_\-opt\-\_\-t\-::pll\-\_\-div2}}}
+\label{structscif__pll__opt__t_af1afe250ff51e752c3edf06da9f25aad}
+
+
+\-Divide the \-P\-L\-L output frequency by 2. (this settings does not change the \-F\-V\-C\-O value) 
+
+\hypertarget{structscif__pll__opt__t_ae397f441f9093a691a6e74fa777dd939}{
+\index{scif\-\_\-pll\-\_\-opt\-\_\-t@{scif\-\_\-pll\-\_\-opt\-\_\-t}!pll\-\_\-freq@{pll\-\_\-freq}}
+\index{pll\-\_\-freq@{pll\-\_\-freq}!scif_pll_opt_t@{scif\-\_\-pll\-\_\-opt\-\_\-t}}
+\subsubsection[{pll\-\_\-freq}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf scif\-\_\-pll\-\_\-opt\-\_\-t\-::pll\-\_\-freq}}}
+\label{structscif__pll__opt__t_ae397f441f9093a691a6e74fa777dd939}
+
+
+\-Set to 1 for \-V\-C\-O frequency range 80-\/180\-M\-Hz, set to 0 for \-V\-C\-O frequency range 160-\/240\-Mhz. 
+
+\hypertarget{structscif__pll__opt__t_a4740e279139f74bfc8e5b0a03877afea}{
+\index{scif\-\_\-pll\-\_\-opt\-\_\-t@{scif\-\_\-pll\-\_\-opt\-\_\-t}!pll\-\_\-wbwdisable@{pll\-\_\-wbwdisable}}
+\index{pll\-\_\-wbwdisable@{pll\-\_\-wbwdisable}!scif_pll_opt_t@{scif\-\_\-pll\-\_\-opt\-\_\-t}}
+\subsubsection[{pll\-\_\-wbwdisable}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf scif\-\_\-pll\-\_\-opt\-\_\-t\-::pll\-\_\-wbwdisable}}}
+\label{structscif__pll__opt__t_a4740e279139f74bfc8e5b0a03877afea}
+
+
+1 \-Disable the \-Wide-\/\-Bandith \-Mode (\-Wide-\/\-Bandwith mode allow a faster startup time and out-\/of-\/lock time). 0 to enable the \-Wide-\/\-Bandith \-Mode. 
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{scif__uc3c_8h}{scif\-\_\-uc3c.\-h}\end{DoxyCompactItemize}

@@ -1,0 +1,84 @@
+\hypertarget{group__interrupt__group}{
+\section{\-Global interrupt management}
+\label{group__interrupt__group}\index{\-Global interrupt management@{\-Global interrupt management}}
+}
+\subsection*{\-Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__interrupt__deprecated__group}{\-Deprecated interrupt definitions}
+\end{DoxyCompactItemize}
+\subsection*{\-Global interrupt levels}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__interrupt__group_gaac8bab36e8dbe3b526b7869e18f827ea}{cpu\-\_\-irq\-\_\-level\-\_\-is\-\_\-enabled}(level)
+\begin{DoxyCompactList}\small\item\em \-Check if interrupt level is enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Global interrupt flags}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint32\-\_\-t \hyperlink{group__interrupt__group_ga9aa1f52defc97531b6343233abeea613}{irqflags\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Type used for holding state of interrupt flag. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__interrupt__group_gae1545a2473614564550b9c4015c94978}{cpu\-\_\-irq\-\_\-is\-\_\-enabled}()~cpu\-\_\-irq\-\_\-is\-\_\-enabled\-\_\-flags(sysreg\-\_\-read(\-A\-V\-R32\-\_\-\-S\-R))
+\begin{DoxyCompactList}\small\item\em \-Check if interrupts are globally enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-This is a driver for global enabling and disabling of interrupts. 
+
+\subsection{\-Define \-Documentation}
+\hypertarget{group__interrupt__group_gae1545a2473614564550b9c4015c94978}{
+\index{\-Global interrupt management@{\-Global interrupt management}!cpu\-\_\-irq\-\_\-is\-\_\-enabled@{cpu\-\_\-irq\-\_\-is\-\_\-enabled}}
+\index{cpu\-\_\-irq\-\_\-is\-\_\-enabled@{cpu\-\_\-irq\-\_\-is\-\_\-enabled}!Global interrupt management@{\-Global interrupt management}}
+\subsubsection[{cpu\-\_\-irq\-\_\-is\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}\#define cpu\-\_\-irq\-\_\-is\-\_\-enabled(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~cpu\-\_\-irq\-\_\-is\-\_\-enabled\-\_\-flags(sysreg\-\_\-read(\-A\-V\-R32\-\_\-\-S\-R))}}
+\label{group__interrupt__group_gae1545a2473614564550b9c4015c94978}
+
+
+\-Check if interrupts are globally enabled. 
+
+\begin{DoxyReturn}{\-Returns}
+\-True if interrupts are enabled. 
+\end{DoxyReturn}
+\hypertarget{group__interrupt__group_gaac8bab36e8dbe3b526b7869e18f827ea}{
+\index{\-Global interrupt management@{\-Global interrupt management}!cpu\-\_\-irq\-\_\-level\-\_\-is\-\_\-enabled@{cpu\-\_\-irq\-\_\-level\-\_\-is\-\_\-enabled}}
+\index{cpu\-\_\-irq\-\_\-level\-\_\-is\-\_\-enabled@{cpu\-\_\-irq\-\_\-level\-\_\-is\-\_\-enabled}!Global interrupt management@{\-Global interrupt management}}
+\subsubsection[{cpu\-\_\-irq\-\_\-level\-\_\-is\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}\#define cpu\-\_\-irq\-\_\-level\-\_\-is\-\_\-enabled(
+\begin{DoxyParamCaption}
+\item[{}]{level}
+\end{DoxyParamCaption}
+)}}
+\label{group__interrupt__group_gaac8bab36e8dbe3b526b7869e18f827ea}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+cpu_irq_level_is_enabled_flags(sysreg_read(AVR32_SR),             \
+                        TPASTE3(AVR32_SR_I, level, M_OFFSET))
+\end{DoxyCode}
+
+
+\-Check if interrupt level is enabled. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em level} & \-Interrupt level (0 to 3).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-True if interrupt level {\itshape level\/} is enabled.
+\end{DoxyReturn}
+\begin{DoxyNote}{\-Note}
+\-The interrupt level must be known at compile time. 
+\end{DoxyNote}
+
+
+\subsection{\-Typedef \-Documentation}
+\hypertarget{group__interrupt__group_ga9aa1f52defc97531b6343233abeea613}{
+\index{\-Global interrupt management@{\-Global interrupt management}!irqflags\-\_\-t@{irqflags\-\_\-t}}
+\index{irqflags\-\_\-t@{irqflags\-\_\-t}!Global interrupt management@{\-Global interrupt management}}
+\subsubsection[{irqflags\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}{\bf irqflags\-\_\-t}}}
+\label{group__interrupt__group_ga9aa1f52defc97531b6343233abeea613}
+
+
+\-Type used for holding state of interrupt flag. 
+

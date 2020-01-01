@@ -1,0 +1,35 @@
+\hypertarget{system__states_8c}{
+\section{system\-\_\-states.c \-File \-Reference}
+\label{system__states_8c}\index{system\-\_\-states.\-c@{system\-\_\-states.\-c}}
+}
+
+
+\-Declaration of external system states.  
+
+
+{\ttfamily \#include \char`\"{}control\-\_\-tables.\-h\char`\"{}}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__control__tables_gae8c28d3d1938044d7d44c2e587542ff0}{system\-\_\-states\-\_\-init} (void)
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structstate__t__info}{state\-\_\-t\-\_\-info} $\ast$ \hyperlink{group__control__tables_gac88bd7197a23c03d99042566d75f3884}{state\-\_\-info\-\_\-access\-\_\-by\-\_\-id} \mbox{[}\-S\-I\-D\-\_\-\-L\-I\-M\-I\-T\mbox{]}
+\end{DoxyCompactItemize}
+\begin{Indent}\paragraph*{\-External state information}
+{\em \-Structs containing information and pointers to the externally accessible system states. }\end{Indent}
+
+
+\subsection{\-Detailed \-Description}
+\-Declaration of external system states. \-This files contain extern declaration and definition of static state structs for all external states. \-External states mean that these states might be requested from the system. \-Consequently, if any states are to be output from the system, they should be added here.
+
+\-The file also contain an initialization function to fill up some arrays of states structs. \-This initialization function must be called before the arrays are used. \-This should eventually be replaced by some code generating script which explicitly declear the arrays.
+
+\begin{DoxyAuthor}{\-Authors}
+\-John-\/\-Olof \-Nilsson, \-Isaac \-Skog 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{\-Copyright}
+\-Copyright (c) 2011 \-Open\-Shoe, \-I\-S\-C \-License (open source) 
+\end{DoxyCopyright}

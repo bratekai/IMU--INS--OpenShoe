@@ -1,0 +1,36 @@
+\hypertarget{process__sequence_8c}{
+\section{process\-\_\-sequence.c \-File \-Reference}
+\label{process__sequence_8c}\index{process\-\_\-sequence.\-c@{process\-\_\-sequence.\-c}}
+}
+
+
+\-Functions for manipulating and running process sequence.  
+
+
+{\ttfamily \#include \char`\"{}process\-\_\-sequence.\-h\char`\"{}}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__proc__sequence_ga9cdcede43262de22e0dae58805e2c9c0}{run\-\_\-process\-\_\-sequence} (void)
+\begin{DoxyCompactList}\small\item\em \-Execute all non-\/\-N\-U\-L\-L functions in the processing sequence. \end{DoxyCompactList}\item 
+void \hyperlink{group__proc__sequence_ga1411bde99978e76b94f77665c370e6f4}{empty\-\_\-process\-\_\-sequence} (void)
+\begin{DoxyCompactList}\small\item\em \-Sets alla elements in processing sequence to \-N\-U\-L\-L. \end{DoxyCompactList}\item 
+void \hyperlink{group__proc__sequence_gaaca35dad858ccdc82751cfd34d4535a6}{store\-\_\-and\-\_\-empty\-\_\-process\-\_\-sequence} (void)
+\begin{DoxyCompactList}\small\item\em \-Copy processing sequence to temporary storage and sets all elements to \-N\-U\-L\-L. \end{DoxyCompactList}\item 
+void \hyperlink{group__proc__sequence_gaa734084dcdd99e68958aa61e0ed4c1bc}{restore\-\_\-process\-\_\-sequence} (void)
+\begin{DoxyCompactList}\small\item\em \-Copy the content of the \#process\-\_\-sequence\-\_\-storage to the \#process\-\_\-sequence. \end{DoxyCompactList}\item 
+void \hyperlink{group__proc__sequence_ga8839f3427b43cb0e9c707ec27dfb46d3}{set\-\_\-last\-\_\-process\-\_\-sequence\-\_\-element} (\hyperlink{group__proc__sequence_ga5fcb98b03e729c4ec685656d28ba37e2}{processing\-\_\-function\-\_\-p} elem\-\_\-value)
+\begin{DoxyCompactList}\small\item\em \-Sets last element in the process sequence to the argument function pointer. \end{DoxyCompactList}\item 
+void \hyperlink{group__proc__sequence_gad6e1709729ab982734163a29b20bcc70}{set\-\_\-elem\-\_\-in\-\_\-process\-\_\-sequence} (\hyperlink{group__proc__sequence_ga5fcb98b03e729c4ec685656d28ba37e2}{processing\-\_\-function\-\_\-p} elem\-\_\-value, uint8\-\_\-t elem\-\_\-nr)
+\begin{DoxyCompactList}\small\item\em \-Sets process sequence element number to elem\-\_\-value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Functions for manipulating and running process sequence. \-An internal arrary of functions pointers (\#process\-\_\-sequence) are use to store pointers to functions which are to be executed for some processing sequence. \-The pointers are of (void) (f$\ast$)(void) type meaning that they have to communicate via some global or c-\/file internal variables. \-The functions in this file are used for manipulating the \#process\-\_\-sequence and to execute the whole processing function sequence.
+
+\begin{DoxyAuthor}{\-Authors}
+\-John-\/\-Olof \-Nilsson, \-Isaac \-Skog 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{\-Copyright}
+\-Copyright (c) 2011 \-Open\-Shoe, \-I\-S\-C \-License (open source) 
+\end{DoxyCopyright}

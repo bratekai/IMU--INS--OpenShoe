@@ -1,0 +1,330 @@
+\hypertarget{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h}{
+\section{tpaste.h \-File \-Reference}
+\label{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h}\index{tpaste.\-h@{tpaste.\-h}}
+}
+
+
+\-Preprocessor token pasting utils.  
+
+
+\subsection*{\-Defines}
+\begin{Indent}\paragraph*{\-Token \-Paste}
+{\em \-Paste \-N preprocessing tokens together, these tokens being allowed to be \#defined.
+
+\-May be used only within macros with the tokens passed as arguments if the tokens are \#defined.
+
+\-For example, writing \hyperlink{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a55fb148844f5ba993a992b609728e82e}{\-T\-P\-A\-S\-T\-E2(\-U, W\-I\-D\-T\-H)} within a macro \#defined by \-U\-T\-Y\-P\-E(\-W\-I\-D\-T\-H) and invoked as \-U\-T\-Y\-P\-E(\-U\-L\-\_\-\-W\-I\-D\-T\-H) with \-U\-L\-\_\-\-W\-I\-D\-T\-H \#defined as 32 is equivalent to writing \-U32. }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a55fb148844f5ba993a992b609728e82e}{\-T\-P\-A\-S\-T\-E2}(a, b)~a\#\#b
+\item 
+\#define \hyperlink{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a3774e5e321825e6ab4a27fef2a0deb14}{\-T\-P\-A\-S\-T\-E3}(a, b, c)~a\#\#b\#\#c
+\item 
+\#define \hyperlink{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a7df52ac8ee04480944ef404ef9418b38}{\-T\-P\-A\-S\-T\-E4}(a, b, c, d)~a\#\#b\#\#c\#\#d
+\item 
+\#define \hyperlink{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_ac9624b958617cbb3281de7ec41f53230}{\-T\-P\-A\-S\-T\-E5}(a, b, c, d, e)~a\#\#b\#\#c\#\#d\#\#e
+\item 
+\#define \hyperlink{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a2c4dbcf9049d7553366bbf9b9bc4e801}{\-T\-P\-A\-S\-T\-E6}(a, b, c, d, e, f)~a\#\#b\#\#c\#\#d\#\#e\#\#f
+\item 
+\#define \hyperlink{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_ad36c0d6224338a4f8738aa25659afc14}{\-T\-P\-A\-S\-T\-E7}(a, b, c, d, e, f, \hyperlink{nav__eq_8c_ac7d75e5db7af21a75e50ad6437827947}{g})~a\#\#b\#\#c\#\#d\#\#e\#\#f\#\#\hyperlink{nav__eq_8c_ac7d75e5db7af21a75e50ad6437827947}{g}
+\item 
+\#define \hyperlink{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_af7aff743d5c0d66a81a13268b1a7e222}{\-T\-P\-A\-S\-T\-E8}(a, b, c, d, e, f, \hyperlink{nav__eq_8c_ac7d75e5db7af21a75e50ad6437827947}{g}, h)~a\#\#b\#\#c\#\#d\#\#e\#\#f\#\#\hyperlink{nav__eq_8c_ac7d75e5db7af21a75e50ad6437827947}{g}\#\#h
+\item 
+\#define \hyperlink{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a5440e5a665d859bec7c3527312d0889d}{\-T\-P\-A\-S\-T\-E9}(a, b, c, d, e, f, \hyperlink{nav__eq_8c_ac7d75e5db7af21a75e50ad6437827947}{g}, h, i)~a\#\#b\#\#c\#\#d\#\#e\#\#f\#\#\hyperlink{nav__eq_8c_ac7d75e5db7af21a75e50ad6437827947}{g}\#\#h\#\#i
+\item 
+\#define \hyperlink{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a0235b2e4ccf7a5b1d022a729a17a78a2}{\-T\-P\-A\-S\-T\-E10}(a, b, c, d, e, f, \hyperlink{nav__eq_8c_ac7d75e5db7af21a75e50ad6437827947}{g}, h, i, j)~a\#\#b\#\#c\#\#d\#\#e\#\#f\#\#\hyperlink{nav__eq_8c_ac7d75e5db7af21a75e50ad6437827947}{g}\#\#h\#\#i\#\#j
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Absolute \-Token \-Paste}
+{\em \-Paste \-N preprocessing tokens together, these tokens being allowed to be \#defined.
+
+\-No restriction of use if the tokens are \#defined.
+
+\-For example, writing \hyperlink{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_afd3b4e313492a0862292dc3072d8e347}{\-A\-T\-P\-A\-S\-T\-E2(\-U, U\-L\-\_\-\-W\-I\-D\-T\-H)} anywhere with \-U\-L\-\_\-\-W\-I\-D\-T\-H \#defined as 32 is equivalent to writing \-U32. }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_afd3b4e313492a0862292dc3072d8e347}{\-A\-T\-P\-A\-S\-T\-E2}(a, b)~\-T\-P\-A\-S\-T\-E2( a, b)
+\item 
+\#define \hyperlink{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a80b7594516326045fbcaec54d7759c20}{\-A\-T\-P\-A\-S\-T\-E3}(a, b, c)~\-T\-P\-A\-S\-T\-E3( a, b, c)
+\item 
+\#define \hyperlink{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_ad9dcc51074148a4ff01810033a41e282}{\-A\-T\-P\-A\-S\-T\-E4}(a, b, c, d)~\-T\-P\-A\-S\-T\-E4( a, b, c, d)
+\item 
+\#define \hyperlink{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a4e4994267872724c11e31f1274c1a84c}{\-A\-T\-P\-A\-S\-T\-E5}(a, b, c, d, e)~\-T\-P\-A\-S\-T\-E5( a, b, c, d, e)
+\item 
+\#define \hyperlink{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a5bbd1842581ea1fa81616d3222bda308}{\-A\-T\-P\-A\-S\-T\-E6}(a, b, c, d, e, f)~\-T\-P\-A\-S\-T\-E6( a, b, c, d, e, f)
+\item 
+\#define \hyperlink{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_abecc8ad964051f6f877f14dd13919b18}{\-A\-T\-P\-A\-S\-T\-E7}(a, b, c, d, e, f, \hyperlink{nav__eq_8c_ac7d75e5db7af21a75e50ad6437827947}{g})~\-T\-P\-A\-S\-T\-E7( a, b, c, d, e, f, \hyperlink{nav__eq_8c_ac7d75e5db7af21a75e50ad6437827947}{g})
+\item 
+\#define \hyperlink{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a303651436fcc8283bd17c13578476c8e}{\-A\-T\-P\-A\-S\-T\-E8}(a, b, c, d, e, f, \hyperlink{nav__eq_8c_ac7d75e5db7af21a75e50ad6437827947}{g}, h)~\-T\-P\-A\-S\-T\-E8( a, b, c, d, e, f, \hyperlink{nav__eq_8c_ac7d75e5db7af21a75e50ad6437827947}{g}, h)
+\item 
+\#define \hyperlink{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a5305e79258b2256febfac6ebec8838c2}{\-A\-T\-P\-A\-S\-T\-E9}(a, b, c, d, e, f, \hyperlink{nav__eq_8c_ac7d75e5db7af21a75e50ad6437827947}{g}, h, i)~\-T\-P\-A\-S\-T\-E9( a, b, c, d, e, f, \hyperlink{nav__eq_8c_ac7d75e5db7af21a75e50ad6437827947}{g}, h, i)
+\item 
+\#define \hyperlink{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a3b9c4ca2ffbcec13ec3083ab95664ac9}{\-A\-T\-P\-A\-S\-T\-E10}(a, b, c, d, e, f, \hyperlink{nav__eq_8c_ac7d75e5db7af21a75e50ad6437827947}{g}, h, i, j)~\-T\-P\-A\-S\-T\-E10(a, b, c, d, e, f, \hyperlink{nav__eq_8c_ac7d75e5db7af21a75e50ad6437827947}{g}, h, i, j)
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{\-Detailed \-Description}
+\-Preprocessor token pasting utils. 
+\begin{DoxyItemize}
+\item \-Compiler\-: \-I\-A\-R \-E\-W\-A\-V\-R32 and \-G\-N\-U \-G\-C\-C for \-A\-V\-R32
+\item \-Supported devices\-: \-All \-A\-V\-R32 devices can be used.
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{\-Author}
+\-Atmel \-Corporation\-: \href{http://www.atmel.com}{\tt http\-://www.\-atmel.\-com} \par
+ \-Support and \-F\-A\-Q\-: \href{http://support.atmel.no/}{\tt http\-://support.\-atmel.\-no/} 
+\end{DoxyAuthor}
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a3b9c4ca2ffbcec13ec3083ab95664ac9}{
+\index{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}!\-A\-T\-P\-A\-S\-T\-E10@{\-A\-T\-P\-A\-S\-T\-E10}}
+\index{\-A\-T\-P\-A\-S\-T\-E10@{\-A\-T\-P\-A\-S\-T\-E10}!Navigation_algorithms/src/asf/avr32/utils/preprocessor/tpaste.h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}}
+\subsubsection[{\-A\-T\-P\-A\-S\-T\-E10}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-T\-P\-A\-S\-T\-E10(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c, }
+\item[{}]{d, }
+\item[{}]{e, }
+\item[{}]{f, }
+\item[{}]{{\bf g}, }
+\item[{}]{h, }
+\item[{}]{i, }
+\item[{}]{j}
+\end{DoxyParamCaption}
+)~\-T\-P\-A\-S\-T\-E10(a, b, c, d, e, f, {\bf g}, h, i, j)}}
+\label{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a3b9c4ca2ffbcec13ec3083ab95664ac9}
+\hypertarget{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_afd3b4e313492a0862292dc3072d8e347}{
+\index{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}!\-A\-T\-P\-A\-S\-T\-E2@{\-A\-T\-P\-A\-S\-T\-E2}}
+\index{\-A\-T\-P\-A\-S\-T\-E2@{\-A\-T\-P\-A\-S\-T\-E2}!Navigation_algorithms/src/asf/avr32/utils/preprocessor/tpaste.h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}}
+\subsubsection[{\-A\-T\-P\-A\-S\-T\-E2}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-T\-P\-A\-S\-T\-E2(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~\-T\-P\-A\-S\-T\-E2( a, b)}}
+\label{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_afd3b4e313492a0862292dc3072d8e347}
+\hypertarget{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a80b7594516326045fbcaec54d7759c20}{
+\index{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}!\-A\-T\-P\-A\-S\-T\-E3@{\-A\-T\-P\-A\-S\-T\-E3}}
+\index{\-A\-T\-P\-A\-S\-T\-E3@{\-A\-T\-P\-A\-S\-T\-E3}!Navigation_algorithms/src/asf/avr32/utils/preprocessor/tpaste.h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}}
+\subsubsection[{\-A\-T\-P\-A\-S\-T\-E3}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-T\-P\-A\-S\-T\-E3(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c}
+\end{DoxyParamCaption}
+)~\-T\-P\-A\-S\-T\-E3( a, b, c)}}
+\label{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a80b7594516326045fbcaec54d7759c20}
+\hypertarget{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_ad9dcc51074148a4ff01810033a41e282}{
+\index{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}!\-A\-T\-P\-A\-S\-T\-E4@{\-A\-T\-P\-A\-S\-T\-E4}}
+\index{\-A\-T\-P\-A\-S\-T\-E4@{\-A\-T\-P\-A\-S\-T\-E4}!Navigation_algorithms/src/asf/avr32/utils/preprocessor/tpaste.h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}}
+\subsubsection[{\-A\-T\-P\-A\-S\-T\-E4}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-T\-P\-A\-S\-T\-E4(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c, }
+\item[{}]{d}
+\end{DoxyParamCaption}
+)~\-T\-P\-A\-S\-T\-E4( a, b, c, d)}}
+\label{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_ad9dcc51074148a4ff01810033a41e282}
+\hypertarget{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a4e4994267872724c11e31f1274c1a84c}{
+\index{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}!\-A\-T\-P\-A\-S\-T\-E5@{\-A\-T\-P\-A\-S\-T\-E5}}
+\index{\-A\-T\-P\-A\-S\-T\-E5@{\-A\-T\-P\-A\-S\-T\-E5}!Navigation_algorithms/src/asf/avr32/utils/preprocessor/tpaste.h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}}
+\subsubsection[{\-A\-T\-P\-A\-S\-T\-E5}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-T\-P\-A\-S\-T\-E5(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c, }
+\item[{}]{d, }
+\item[{}]{e}
+\end{DoxyParamCaption}
+)~\-T\-P\-A\-S\-T\-E5( a, b, c, d, e)}}
+\label{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a4e4994267872724c11e31f1274c1a84c}
+\hypertarget{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a5bbd1842581ea1fa81616d3222bda308}{
+\index{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}!\-A\-T\-P\-A\-S\-T\-E6@{\-A\-T\-P\-A\-S\-T\-E6}}
+\index{\-A\-T\-P\-A\-S\-T\-E6@{\-A\-T\-P\-A\-S\-T\-E6}!Navigation_algorithms/src/asf/avr32/utils/preprocessor/tpaste.h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}}
+\subsubsection[{\-A\-T\-P\-A\-S\-T\-E6}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-T\-P\-A\-S\-T\-E6(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c, }
+\item[{}]{d, }
+\item[{}]{e, }
+\item[{}]{f}
+\end{DoxyParamCaption}
+)~\-T\-P\-A\-S\-T\-E6( a, b, c, d, e, f)}}
+\label{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a5bbd1842581ea1fa81616d3222bda308}
+\hypertarget{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_abecc8ad964051f6f877f14dd13919b18}{
+\index{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}!\-A\-T\-P\-A\-S\-T\-E7@{\-A\-T\-P\-A\-S\-T\-E7}}
+\index{\-A\-T\-P\-A\-S\-T\-E7@{\-A\-T\-P\-A\-S\-T\-E7}!Navigation_algorithms/src/asf/avr32/utils/preprocessor/tpaste.h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}}
+\subsubsection[{\-A\-T\-P\-A\-S\-T\-E7}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-T\-P\-A\-S\-T\-E7(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c, }
+\item[{}]{d, }
+\item[{}]{e, }
+\item[{}]{f, }
+\item[{}]{{\bf g}}
+\end{DoxyParamCaption}
+)~\-T\-P\-A\-S\-T\-E7( a, b, c, d, e, f, {\bf g})}}
+\label{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_abecc8ad964051f6f877f14dd13919b18}
+\hypertarget{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a303651436fcc8283bd17c13578476c8e}{
+\index{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}!\-A\-T\-P\-A\-S\-T\-E8@{\-A\-T\-P\-A\-S\-T\-E8}}
+\index{\-A\-T\-P\-A\-S\-T\-E8@{\-A\-T\-P\-A\-S\-T\-E8}!Navigation_algorithms/src/asf/avr32/utils/preprocessor/tpaste.h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}}
+\subsubsection[{\-A\-T\-P\-A\-S\-T\-E8}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-T\-P\-A\-S\-T\-E8(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c, }
+\item[{}]{d, }
+\item[{}]{e, }
+\item[{}]{f, }
+\item[{}]{{\bf g}, }
+\item[{}]{h}
+\end{DoxyParamCaption}
+)~\-T\-P\-A\-S\-T\-E8( a, b, c, d, e, f, {\bf g}, h)}}
+\label{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a303651436fcc8283bd17c13578476c8e}
+\hypertarget{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a5305e79258b2256febfac6ebec8838c2}{
+\index{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}!\-A\-T\-P\-A\-S\-T\-E9@{\-A\-T\-P\-A\-S\-T\-E9}}
+\index{\-A\-T\-P\-A\-S\-T\-E9@{\-A\-T\-P\-A\-S\-T\-E9}!Navigation_algorithms/src/asf/avr32/utils/preprocessor/tpaste.h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}}
+\subsubsection[{\-A\-T\-P\-A\-S\-T\-E9}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-T\-P\-A\-S\-T\-E9(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c, }
+\item[{}]{d, }
+\item[{}]{e, }
+\item[{}]{f, }
+\item[{}]{{\bf g}, }
+\item[{}]{h, }
+\item[{}]{i}
+\end{DoxyParamCaption}
+)~\-T\-P\-A\-S\-T\-E9( a, b, c, d, e, f, {\bf g}, h, i)}}
+\label{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a5305e79258b2256febfac6ebec8838c2}
+\hypertarget{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a0235b2e4ccf7a5b1d022a729a17a78a2}{
+\index{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}!\-T\-P\-A\-S\-T\-E10@{\-T\-P\-A\-S\-T\-E10}}
+\index{\-T\-P\-A\-S\-T\-E10@{\-T\-P\-A\-S\-T\-E10}!Navigation_algorithms/src/asf/avr32/utils/preprocessor/tpaste.h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}}
+\subsubsection[{\-T\-P\-A\-S\-T\-E10}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-T\-P\-A\-S\-T\-E10(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c, }
+\item[{}]{d, }
+\item[{}]{e, }
+\item[{}]{f, }
+\item[{}]{{\bf g}, }
+\item[{}]{h, }
+\item[{}]{i, }
+\item[{}]{j}
+\end{DoxyParamCaption}
+)~a\#\#b\#\#c\#\#d\#\#e\#\#f\#\#{\bf g}\#\#h\#\#i\#\#j}}
+\label{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a0235b2e4ccf7a5b1d022a729a17a78a2}
+\hypertarget{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a55fb148844f5ba993a992b609728e82e}{
+\index{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}!\-T\-P\-A\-S\-T\-E2@{\-T\-P\-A\-S\-T\-E2}}
+\index{\-T\-P\-A\-S\-T\-E2@{\-T\-P\-A\-S\-T\-E2}!Navigation_algorithms/src/asf/avr32/utils/preprocessor/tpaste.h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}}
+\subsubsection[{\-T\-P\-A\-S\-T\-E2}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-T\-P\-A\-S\-T\-E2(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b}
+\end{DoxyParamCaption}
+)~a\#\#b}}
+\label{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a55fb148844f5ba993a992b609728e82e}
+\hypertarget{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a3774e5e321825e6ab4a27fef2a0deb14}{
+\index{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}!\-T\-P\-A\-S\-T\-E3@{\-T\-P\-A\-S\-T\-E3}}
+\index{\-T\-P\-A\-S\-T\-E3@{\-T\-P\-A\-S\-T\-E3}!Navigation_algorithms/src/asf/avr32/utils/preprocessor/tpaste.h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}}
+\subsubsection[{\-T\-P\-A\-S\-T\-E3}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-T\-P\-A\-S\-T\-E3(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c}
+\end{DoxyParamCaption}
+)~a\#\#b\#\#c}}
+\label{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a3774e5e321825e6ab4a27fef2a0deb14}
+\hypertarget{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a7df52ac8ee04480944ef404ef9418b38}{
+\index{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}!\-T\-P\-A\-S\-T\-E4@{\-T\-P\-A\-S\-T\-E4}}
+\index{\-T\-P\-A\-S\-T\-E4@{\-T\-P\-A\-S\-T\-E4}!Navigation_algorithms/src/asf/avr32/utils/preprocessor/tpaste.h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}}
+\subsubsection[{\-T\-P\-A\-S\-T\-E4}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-T\-P\-A\-S\-T\-E4(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c, }
+\item[{}]{d}
+\end{DoxyParamCaption}
+)~a\#\#b\#\#c\#\#d}}
+\label{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a7df52ac8ee04480944ef404ef9418b38}
+\hypertarget{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_ac9624b958617cbb3281de7ec41f53230}{
+\index{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}!\-T\-P\-A\-S\-T\-E5@{\-T\-P\-A\-S\-T\-E5}}
+\index{\-T\-P\-A\-S\-T\-E5@{\-T\-P\-A\-S\-T\-E5}!Navigation_algorithms/src/asf/avr32/utils/preprocessor/tpaste.h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}}
+\subsubsection[{\-T\-P\-A\-S\-T\-E5}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-T\-P\-A\-S\-T\-E5(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c, }
+\item[{}]{d, }
+\item[{}]{e}
+\end{DoxyParamCaption}
+)~a\#\#b\#\#c\#\#d\#\#e}}
+\label{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_ac9624b958617cbb3281de7ec41f53230}
+\hypertarget{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a2c4dbcf9049d7553366bbf9b9bc4e801}{
+\index{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}!\-T\-P\-A\-S\-T\-E6@{\-T\-P\-A\-S\-T\-E6}}
+\index{\-T\-P\-A\-S\-T\-E6@{\-T\-P\-A\-S\-T\-E6}!Navigation_algorithms/src/asf/avr32/utils/preprocessor/tpaste.h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}}
+\subsubsection[{\-T\-P\-A\-S\-T\-E6}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-T\-P\-A\-S\-T\-E6(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c, }
+\item[{}]{d, }
+\item[{}]{e, }
+\item[{}]{f}
+\end{DoxyParamCaption}
+)~a\#\#b\#\#c\#\#d\#\#e\#\#f}}
+\label{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a2c4dbcf9049d7553366bbf9b9bc4e801}
+\hypertarget{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_ad36c0d6224338a4f8738aa25659afc14}{
+\index{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}!\-T\-P\-A\-S\-T\-E7@{\-T\-P\-A\-S\-T\-E7}}
+\index{\-T\-P\-A\-S\-T\-E7@{\-T\-P\-A\-S\-T\-E7}!Navigation_algorithms/src/asf/avr32/utils/preprocessor/tpaste.h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}}
+\subsubsection[{\-T\-P\-A\-S\-T\-E7}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-T\-P\-A\-S\-T\-E7(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c, }
+\item[{}]{d, }
+\item[{}]{e, }
+\item[{}]{f, }
+\item[{}]{{\bf g}}
+\end{DoxyParamCaption}
+)~a\#\#b\#\#c\#\#d\#\#e\#\#f\#\#{\bf g}}}
+\label{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_ad36c0d6224338a4f8738aa25659afc14}
+\hypertarget{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_af7aff743d5c0d66a81a13268b1a7e222}{
+\index{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}!\-T\-P\-A\-S\-T\-E8@{\-T\-P\-A\-S\-T\-E8}}
+\index{\-T\-P\-A\-S\-T\-E8@{\-T\-P\-A\-S\-T\-E8}!Navigation_algorithms/src/asf/avr32/utils/preprocessor/tpaste.h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}}
+\subsubsection[{\-T\-P\-A\-S\-T\-E8}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-T\-P\-A\-S\-T\-E8(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c, }
+\item[{}]{d, }
+\item[{}]{e, }
+\item[{}]{f, }
+\item[{}]{{\bf g}, }
+\item[{}]{h}
+\end{DoxyParamCaption}
+)~a\#\#b\#\#c\#\#d\#\#e\#\#f\#\#{\bf g}\#\#h}}
+\label{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_af7aff743d5c0d66a81a13268b1a7e222}
+\hypertarget{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a5440e5a665d859bec7c3527312d0889d}{
+\index{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}!\-T\-P\-A\-S\-T\-E9@{\-T\-P\-A\-S\-T\-E9}}
+\index{\-T\-P\-A\-S\-T\-E9@{\-T\-P\-A\-S\-T\-E9}!Navigation_algorithms/src/asf/avr32/utils/preprocessor/tpaste.h@{\-Navigation\-\_\-algorithms/src/asf/avr32/utils/preprocessor/tpaste.\-h}}
+\subsubsection[{\-T\-P\-A\-S\-T\-E9}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-T\-P\-A\-S\-T\-E9(
+\begin{DoxyParamCaption}
+\item[{}]{a, }
+\item[{}]{b, }
+\item[{}]{c, }
+\item[{}]{d, }
+\item[{}]{e, }
+\item[{}]{f, }
+\item[{}]{{\bf g}, }
+\item[{}]{h, }
+\item[{}]{i}
+\end{DoxyParamCaption}
+)~a\#\#b\#\#c\#\#d\#\#e\#\#f\#\#{\bf g}\#\#h\#\#i}}
+\label{_navigation__algorithms_2src_2asf_2avr32_2utils_2preprocessor_2tpaste_8h_a5440e5a665d859bec7c3527312d0889d}

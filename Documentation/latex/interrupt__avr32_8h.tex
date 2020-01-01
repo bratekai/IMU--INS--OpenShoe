@@ -1,0 +1,53 @@
+\hypertarget{interrupt__avr32_8h}{
+\section{interrupt\-\_\-avr32.h \-File \-Reference}
+\label{interrupt__avr32_8h}\index{interrupt\-\_\-avr32.\-h@{interrupt\-\_\-avr32.\-h}}
+}
+
+
+\-Global interrupt management for 32-\/bit \-A\-V\-R.  
+
+
+{\ttfamily \#include $<$compiler.\-h$>$}\*
+{\ttfamily \#include $<$preprocessor/tpaste.\-h$>$}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__interrupt__deprecated__group_gaebdc47e7800e11d79b9e5e2da1fecaa6}{\-Enable\-\_\-global\-\_\-interrupt}()~cpu\-\_\-irq\-\_\-enable()
+\item 
+\#define \hyperlink{group__interrupt__deprecated__group_ga4834270e1b8984fe025bce15e7ae1564}{\-Disable\-\_\-global\-\_\-interrupt}()~cpu\-\_\-irq\-\_\-disable()
+\item 
+\#define \hyperlink{group__interrupt__deprecated__group_gab7b13c60d26b190e73e540586f1868f8}{\-Is\-\_\-global\-\_\-interrupt\-\_\-enabled}()~cpu\-\_\-irq\-\_\-is\-\_\-enabled()
+\item 
+\#define \hyperlink{group__interrupt__deprecated__group_gaf356f020be969d92c1761afcb98cbc5b}{\-Enable\-\_\-interrupt\-\_\-level}(level)~cpu\-\_\-irq\-\_\-enable\-\_\-level(level)
+\item 
+\#define \hyperlink{group__interrupt__deprecated__group_ga8bd9b64c87e586fccd12bc168117ec7e}{\-Disable\-\_\-interrupt\-\_\-level}(level)~cpu\-\_\-irq\-\_\-disable\-\_\-level(level)
+\item 
+\#define \hyperlink{group__interrupt__deprecated__group_ga2da97a4e1ac3493674ecf983dcecaa38}{\-Is\-\_\-interrupt\-\_\-level\-\_\-enabled}(level)~cpu\-\_\-irq\-\_\-level\-\_\-is\-\_\-enabled(level)
+\end{DoxyCompactItemize}
+\begin{Indent}\paragraph*{\-Interrupt protection of code sections}
+{\em \begin{DoxyNote}{\-Note}
+\-Use cpu\-\_\-irq\-\_\-save and cpu\-\_\-irq\-\_\-restore instead of these macros. 
+\end{DoxyNote}
+}\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__interrupt__deprecated__group_ga6614d1866189f3f0c9a66e5c18e6a261}{\-A\-V\-R32\-\_\-\-E\-N\-T\-E\-R\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L\-\_\-\-R\-E\-G\-I\-O\-N}()
+\begin{DoxyCompactList}\small\item\em \-Start section with code protected against interrupts. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__interrupt__deprecated__group_ga85b7f1705a7949f2e8dfacb071e00c6a}{\-A\-V\-R32\-\_\-\-L\-E\-A\-V\-E\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L\-\_\-\-R\-E\-G\-I\-O\-N}()
+\begin{DoxyCompactList}\small\item\em \-End section with code protected against interrupts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-Global interrupt levels}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__interrupt__group_gaac8bab36e8dbe3b526b7869e18f827ea}{cpu\-\_\-irq\-\_\-level\-\_\-is\-\_\-enabled}(level)
+\begin{DoxyCompactList}\small\item\em \-Check if interrupt level is enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Global interrupt flags}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__interrupt__group_gae1545a2473614564550b9c4015c94978}{cpu\-\_\-irq\-\_\-is\-\_\-enabled}()~cpu\-\_\-irq\-\_\-is\-\_\-enabled\-\_\-flags(sysreg\-\_\-read(\-A\-V\-R32\-\_\-\-S\-R))
+\begin{DoxyCompactList}\small\item\em \-Check if interrupts are globally enabled. \end{DoxyCompactList}\item 
+typedef uint32\-\_\-t \hyperlink{group__interrupt__group_ga9aa1f52defc97531b6343233abeea613}{irqflags\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Type used for holding state of interrupt flag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Global interrupt management for 32-\/bit \-A\-V\-R. \-Copyright (\-C) 2010 \-Atmel \-Corporation. \-All rights reserved. 

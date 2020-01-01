@@ -1,0 +1,159 @@
+\hypertarget{group__proc__sequence}{
+\section{\-Processing sequence}
+\label{group__proc__sequence}\index{\-Processing sequence@{\-Processing sequence}}
+}
+
+
+\-This groupe contains the processing sequence declarations and definitions.  
+
+
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__proc__sequence_gaeda836195bc58fa7dc02a15d8b6e37ff}{\-P\-R\-O\-C\-E\-S\-S\-\_\-\-S\-E\-Q\-U\-E\-N\-C\-E\-\_\-\-S\-I\-Z\-E}~10
+\begin{DoxyCompactList}\small\item\em \-Size of process sequence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{group__proc__sequence_ga5fcb98b03e729c4ec685656d28ba37e2}{processing\-\_\-function\-\_\-p} )(void)
+\begin{DoxyCompactList}\small\item\em \-Typedefinition for functions in the process sequence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__proc__sequence_ga9cdcede43262de22e0dae58805e2c9c0}{run\-\_\-process\-\_\-sequence} (void)
+\begin{DoxyCompactList}\small\item\em \-Execute all non-\/\-N\-U\-L\-L functions in the processing sequence. \end{DoxyCompactList}\item 
+void \hyperlink{group__proc__sequence_ga1411bde99978e76b94f77665c370e6f4}{empty\-\_\-process\-\_\-sequence} (void)
+\begin{DoxyCompactList}\small\item\em \-Sets alla elements in processing sequence to \-N\-U\-L\-L. \end{DoxyCompactList}\item 
+void \hyperlink{group__proc__sequence_gaaca35dad858ccdc82751cfd34d4535a6}{store\-\_\-and\-\_\-empty\-\_\-process\-\_\-sequence} (void)
+\begin{DoxyCompactList}\small\item\em \-Copy processing sequence to temporary storage and sets all elements to \-N\-U\-L\-L. \end{DoxyCompactList}\item 
+void \hyperlink{group__proc__sequence_gaa734084dcdd99e68958aa61e0ed4c1bc}{restore\-\_\-process\-\_\-sequence} (void)
+\begin{DoxyCompactList}\small\item\em \-Copy the content of the \#process\-\_\-sequence\-\_\-storage to the \#process\-\_\-sequence. \end{DoxyCompactList}\item 
+void \hyperlink{group__proc__sequence_ga8839f3427b43cb0e9c707ec27dfb46d3}{set\-\_\-last\-\_\-process\-\_\-sequence\-\_\-element} (\hyperlink{group__proc__sequence_ga5fcb98b03e729c4ec685656d28ba37e2}{processing\-\_\-function\-\_\-p} elem\-\_\-value)
+\begin{DoxyCompactList}\small\item\em \-Sets last element in the process sequence to the argument function pointer. \end{DoxyCompactList}\item 
+void \hyperlink{group__proc__sequence_gad6e1709729ab982734163a29b20bcc70}{set\-\_\-elem\-\_\-in\-\_\-process\-\_\-sequence} (\hyperlink{group__proc__sequence_ga5fcb98b03e729c4ec685656d28ba37e2}{processing\-\_\-function\-\_\-p} elem\-\_\-value, uint8\-\_\-t elem\-\_\-nr)
+\begin{DoxyCompactList}\small\item\em \-Sets process sequence element number to elem\-\_\-value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-This groupe contains the processing sequence declarations and definitions. 
+
+\subsection{\-Define \-Documentation}
+\hypertarget{group__proc__sequence_gaeda836195bc58fa7dc02a15d8b6e37ff}{
+\index{\-Processing sequence@{\-Processing sequence}!\-P\-R\-O\-C\-E\-S\-S\-\_\-\-S\-E\-Q\-U\-E\-N\-C\-E\-\_\-\-S\-I\-Z\-E@{\-P\-R\-O\-C\-E\-S\-S\-\_\-\-S\-E\-Q\-U\-E\-N\-C\-E\-\_\-\-S\-I\-Z\-E}}
+\index{\-P\-R\-O\-C\-E\-S\-S\-\_\-\-S\-E\-Q\-U\-E\-N\-C\-E\-\_\-\-S\-I\-Z\-E@{\-P\-R\-O\-C\-E\-S\-S\-\_\-\-S\-E\-Q\-U\-E\-N\-C\-E\-\_\-\-S\-I\-Z\-E}!Processing sequence@{\-Processing sequence}}
+\subsubsection[{\-P\-R\-O\-C\-E\-S\-S\-\_\-\-S\-E\-Q\-U\-E\-N\-C\-E\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-R\-O\-C\-E\-S\-S\-\_\-\-S\-E\-Q\-U\-E\-N\-C\-E\-\_\-\-S\-I\-Z\-E~10}}
+\label{group__proc__sequence_gaeda836195bc58fa7dc02a15d8b6e37ff}
+
+
+\-Size of process sequence. 
+
+
+
+\subsection{\-Typedef \-Documentation}
+\hypertarget{group__proc__sequence_ga5fcb98b03e729c4ec685656d28ba37e2}{
+\index{\-Processing sequence@{\-Processing sequence}!processing\-\_\-function\-\_\-p@{processing\-\_\-function\-\_\-p}}
+\index{processing\-\_\-function\-\_\-p@{processing\-\_\-function\-\_\-p}!Processing sequence@{\-Processing sequence}}
+\subsubsection[{processing\-\_\-function\-\_\-p}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ {\bf processing\-\_\-function\-\_\-p})(void)}}
+\label{group__proc__sequence_ga5fcb98b03e729c4ec685656d28ba37e2}
+
+
+\-Typedefinition for functions in the process sequence. 
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__proc__sequence_ga1411bde99978e76b94f77665c370e6f4}{
+\index{\-Processing sequence@{\-Processing sequence}!empty\-\_\-process\-\_\-sequence@{empty\-\_\-process\-\_\-sequence}}
+\index{empty\-\_\-process\-\_\-sequence@{empty\-\_\-process\-\_\-sequence}!Processing sequence@{\-Processing sequence}}
+\subsubsection[{empty\-\_\-process\-\_\-sequence}]{\setlength{\rightskip}{0pt plus 5cm}void empty\-\_\-process\-\_\-sequence (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc__sequence_ga1411bde99978e76b94f77665c370e6f4}
+
+
+\-Sets alla elements in processing sequence to \-N\-U\-L\-L. 
+
+\hypertarget{group__proc__sequence_gaa734084dcdd99e68958aa61e0ed4c1bc}{
+\index{\-Processing sequence@{\-Processing sequence}!restore\-\_\-process\-\_\-sequence@{restore\-\_\-process\-\_\-sequence}}
+\index{restore\-\_\-process\-\_\-sequence@{restore\-\_\-process\-\_\-sequence}!Processing sequence@{\-Processing sequence}}
+\subsubsection[{restore\-\_\-process\-\_\-sequence}]{\setlength{\rightskip}{0pt plus 5cm}void restore\-\_\-process\-\_\-sequence (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc__sequence_gaa734084dcdd99e68958aa61e0ed4c1bc}
+
+
+\-Copy the content of the \#process\-\_\-sequence\-\_\-storage to the \#process\-\_\-sequence. 
+
+\-This assumes that the store\-\_\-and\-\_\-empty\-\_\-process\-\_\-sequence routine has been run prior to this routine call. \hypertarget{group__proc__sequence_ga9cdcede43262de22e0dae58805e2c9c0}{
+\index{\-Processing sequence@{\-Processing sequence}!run\-\_\-process\-\_\-sequence@{run\-\_\-process\-\_\-sequence}}
+\index{run\-\_\-process\-\_\-sequence@{run\-\_\-process\-\_\-sequence}!Processing sequence@{\-Processing sequence}}
+\subsubsection[{run\-\_\-process\-\_\-sequence}]{\setlength{\rightskip}{0pt plus 5cm}void run\-\_\-process\-\_\-sequence (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc__sequence_ga9cdcede43262de22e0dae58805e2c9c0}
+
+
+\-Execute all non-\/\-N\-U\-L\-L functions in the processing sequence. 
+
+\hypertarget{group__proc__sequence_gad6e1709729ab982734163a29b20bcc70}{
+\index{\-Processing sequence@{\-Processing sequence}!set\-\_\-elem\-\_\-in\-\_\-process\-\_\-sequence@{set\-\_\-elem\-\_\-in\-\_\-process\-\_\-sequence}}
+\index{set\-\_\-elem\-\_\-in\-\_\-process\-\_\-sequence@{set\-\_\-elem\-\_\-in\-\_\-process\-\_\-sequence}!Processing sequence@{\-Processing sequence}}
+\subsubsection[{set\-\_\-elem\-\_\-in\-\_\-process\-\_\-sequence}]{\setlength{\rightskip}{0pt plus 5cm}void set\-\_\-elem\-\_\-in\-\_\-process\-\_\-sequence (
+\begin{DoxyParamCaption}
+\item[{{\bf processing\-\_\-function\-\_\-p}}]{elem\-\_\-value, }
+\item[{uint8\-\_\-t}]{elem\-\_\-nr}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc__sequence_gad6e1709729ab982734163a29b20bcc70}
+
+
+\-Sets process sequence element number to elem\-\_\-value. 
+
+\-If elem\-\_\-nr is less than \#process\-\_\-sequence length (less than \#\-P\-R\-O\-C\-E\-S\-S\-\_\-\-S\-E\-Q\-U\-E\-N\-C\-E\-\_\-\-S\-I\-Z\-E), sets the element value to elem\-\_\-value. \-If the value is larger no action is taken. \-It is left up to the user to ensure that the elem\-\_\-nr is valid. \-For this purpose the \#\-P\-R\-O\-C\-E\-S\-S\-\_\-\-S\-E\-Q\-U\-E\-N\-C\-E\-\_\-\-S\-I\-Z\-E macro can be used.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em elem\-\_\-value} & \-Function pointer to insert into \#process\-\_\-sequence. \\
+\hline
+\mbox{\tt in}  & {\em elem\-\_\-nr} & \#process\-\_\-sequence element index \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__proc__sequence_ga8839f3427b43cb0e9c707ec27dfb46d3}{
+\index{\-Processing sequence@{\-Processing sequence}!set\-\_\-last\-\_\-process\-\_\-sequence\-\_\-element@{set\-\_\-last\-\_\-process\-\_\-sequence\-\_\-element}}
+\index{set\-\_\-last\-\_\-process\-\_\-sequence\-\_\-element@{set\-\_\-last\-\_\-process\-\_\-sequence\-\_\-element}!Processing sequence@{\-Processing sequence}}
+\subsubsection[{set\-\_\-last\-\_\-process\-\_\-sequence\-\_\-element}]{\setlength{\rightskip}{0pt plus 5cm}void set\-\_\-last\-\_\-process\-\_\-sequence\-\_\-element (
+\begin{DoxyParamCaption}
+\item[{{\bf processing\-\_\-function\-\_\-p}}]{elem\-\_\-value}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc__sequence_ga8839f3427b43cb0e9c707ec27dfb46d3}
+
+
+\-Sets last element in the process sequence to the argument function pointer. 
+
+\-Sets last element in the process sequence to the argument function pointer. \-This is often used for clean-\/up functions which will in turn empty, restore, or manipulate the process\-\_\-sequence.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in}  & {\em elem\-\_\-value} & \-Function pointer to insert into \#process\-\_\-sequence. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__proc__sequence_gaaca35dad858ccdc82751cfd34d4535a6}{
+\index{\-Processing sequence@{\-Processing sequence}!store\-\_\-and\-\_\-empty\-\_\-process\-\_\-sequence@{store\-\_\-and\-\_\-empty\-\_\-process\-\_\-sequence}}
+\index{store\-\_\-and\-\_\-empty\-\_\-process\-\_\-sequence@{store\-\_\-and\-\_\-empty\-\_\-process\-\_\-sequence}!Processing sequence@{\-Processing sequence}}
+\subsubsection[{store\-\_\-and\-\_\-empty\-\_\-process\-\_\-sequence}]{\setlength{\rightskip}{0pt plus 5cm}void store\-\_\-and\-\_\-empty\-\_\-process\-\_\-sequence (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc__sequence_gaaca35dad858ccdc82751cfd34d4535a6}
+
+
+\-Copy processing sequence to temporary storage and sets all elements to \-N\-U\-L\-L. 
+

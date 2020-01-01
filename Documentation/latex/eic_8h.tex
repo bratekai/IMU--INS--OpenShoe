@@ -1,0 +1,635 @@
+\hypertarget{eic_8h}{
+\section{eic.h \-File \-Reference}
+\label{eic_8h}\index{eic.\-h@{eic.\-h}}
+}
+
+
+\-E\-I\-C driver for \-A\-V\-R32 \-U\-C3.  
+
+
+{\ttfamily \#include \char`\"{}compiler.\-h\char`\"{}}\*
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structeic__options__t}{eic\-\_\-options\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Configuration parameters of the \-E\-I\-C module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{Indent}\paragraph*{\-External \-Interrupt lines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{eic_8h_a1607129b3853bd4e31dffd5ab3a7c058}{\-E\-X\-T\-\_\-\-I\-N\-T0}~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-I\-N\-T1
+\begin{DoxyCompactList}\small\item\em \-Line 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{eic_8h_a747ac8a90f3494ef4c29dc6ef10ae1b0}{\-E\-X\-T\-\_\-\-I\-N\-T1}~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-I\-N\-T2
+\begin{DoxyCompactList}\small\item\em \-Line 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{eic_8h_afd82757ef10befab4762b35594d96df9}{\-E\-X\-T\-\_\-\-I\-N\-T2}~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-I\-N\-T3
+\begin{DoxyCompactList}\small\item\em \-Line 2. \end{DoxyCompactList}\item 
+\#define \hyperlink{eic_8h_a98d3773b322cddf417ef11e37ab1544c}{\-E\-X\-T\-\_\-\-I\-N\-T3}~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-I\-N\-T4
+\begin{DoxyCompactList}\small\item\em \-Line 3. \end{DoxyCompactList}\item 
+\#define \hyperlink{eic_8h_a778a1650e2af266ae2bc171eed01788c}{\-E\-X\-T\-\_\-\-I\-N\-T4}~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-I\-N\-T5
+\begin{DoxyCompactList}\small\item\em \-Line 4. \end{DoxyCompactList}\item 
+\#define \hyperlink{eic_8h_a32c58999e29eef1a32337f96b446263e}{\-E\-X\-T\-\_\-\-I\-N\-T5}~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-I\-N\-T6
+\begin{DoxyCompactList}\small\item\em \-Line 5. \end{DoxyCompactList}\item 
+\#define \hyperlink{eic_8h_a013188be6ce12f3ada8d5dd2dbba0235}{\-E\-X\-T\-\_\-\-I\-N\-T6}~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-I\-N\-T7
+\begin{DoxyCompactList}\small\item\em \-Line 6. \end{DoxyCompactList}\item 
+\#define \hyperlink{eic_8h_ac7876d6d35a161cc0aef38e4fbbb541a}{\-E\-X\-T\-\_\-\-I\-N\-T7}~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-I\-N\-T8
+\begin{DoxyCompactList}\small\item\em \-Line 7. \end{DoxyCompactList}\item 
+\#define \hyperlink{eic_8h_ab501be880e8398de26c4ad9dcb67eaa4}{\-E\-X\-T\-\_\-\-N\-M\-I}~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-N\-M\-I
+\begin{DoxyCompactList}\small\item\em \-Line 8. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Mode \-Trigger \-Options}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{eic_8h_a02163f82f5d8605cd87e4318fa224d32}{\-E\-I\-C\-\_\-\-M\-O\-D\-E\-\_\-\-E\-D\-G\-E\-\_\-\-T\-R\-I\-G\-G\-E\-R\-E\-D}~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-E\-D\-G\-E\-\_\-\-I\-R\-Q
+\item 
+\#define \hyperlink{eic_8h_a929d497d45e02a5314c596570e71005b}{\-E\-I\-C\-\_\-\-M\-O\-D\-E\-\_\-\-L\-E\-V\-E\-L\-\_\-\-T\-R\-I\-G\-G\-E\-R\-E\-D}~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-\-I\-R\-Q
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Edge level \-Options}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{eic_8h_ad0532c0f00af371725d20a6db531eb71}{\-E\-I\-C\-\_\-\-E\-D\-G\-E\-\_\-\-F\-A\-L\-L\-I\-N\-G\-\_\-\-E\-D\-G\-E}~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-F\-A\-L\-L\-I\-N\-G\-\_\-\-E\-D\-G\-E
+\item 
+\#define \hyperlink{eic_8h_a7a37b7460a7cfcb9043c30e8a8fd46d2}{\-E\-I\-C\-\_\-\-E\-D\-G\-E\-\_\-\-R\-I\-S\-I\-N\-G\-\_\-\-E\-D\-G\-E}~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-R\-I\-S\-I\-N\-G\-\_\-\-E\-D\-G\-E
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Level \-Options}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{eic_8h_a33791b823a3a113f8f9669307df11a8f}{\-E\-I\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-\-L\-O\-W\-\_\-\-L\-E\-V\-E\-L}~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-L\-O\-W\-\_\-\-L\-E\-V\-E\-L
+\item 
+\#define \hyperlink{eic_8h_a69768f41d958049c58b908e3bb790317}{\-E\-I\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-\-H\-I\-G\-H\-\_\-\-L\-E\-V\-E\-L}~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-H\-I\-G\-H\-\_\-\-L\-E\-V\-E\-L
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Filter \-Options}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{eic_8h_a761efc2f6fc52a0aa3ab36bc76bfadc3}{\-E\-I\-C\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-O\-N
+\item 
+\#define \hyperlink{eic_8h_a45cdfbc4e7ac351dfc34d11eb1909da9}{\-E\-I\-C\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-D\-I\-S\-A\-B\-L\-E\-D}~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-O\-F\-F
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Synch \-Mode \-Options}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{eic_8h_a83946e4acae0ccaf0dec1e5c333bd36c}{\-E\-I\-C\-\_\-\-S\-Y\-N\-C\-H\-\_\-\-M\-O\-D\-E}~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-S\-Y\-N\-C
+\item 
+\#define \hyperlink{eic_8h_a6fcfdb608b0a4feefd8996f1a5365874}{\-E\-I\-C\-\_\-\-A\-S\-Y\-N\-C\-H\-\_\-\-M\-O\-D\-E}~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-U\-S\-E\-\_\-\-A\-S\-Y\-N\-C
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{eic_8h_ae1608e38e94d6e4bde41949fc78c492e}{eic\-\_\-init} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, const \hyperlink{structeic__options__t}{eic\-\_\-options\-\_\-t} $\ast$opt, uint32\-\_\-t nb\-\_\-lines)
+\begin{DoxyCompactList}\small\item\em \-Init the \-E\-I\-C driver. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8h_a511b84fe79f7dc5ed93810593fdfed52}{eic\-\_\-enable\-\_\-lines} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t mask\-\_\-lines)
+\begin{DoxyCompactList}\small\item\em \-Enable the \-E\-I\-C driver. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8h_a129602a787421d2ec2d326e71027bd98}{eic\-\_\-enable\-\_\-line} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t line\-\_\-number)
+\begin{DoxyCompactList}\small\item\em \-Enable the \-E\-I\-C driver. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8h_a03ff7de891cf2c55d48c328dfd4ff7f2}{eic\-\_\-disable\-\_\-lines} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t mask\-\_\-lines)
+\begin{DoxyCompactList}\small\item\em \-Disable the \-E\-I\-C driver. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8h_a9db33f5cf499e075b970e3cbe2a97e16}{eic\-\_\-disable\-\_\-line} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t line\-\_\-number)
+\begin{DoxyCompactList}\small\item\em \-Disable the \-E\-I\-C driver. \end{DoxyCompactList}\item 
+bool \hyperlink{eic_8h_ad4d6bedacd14d41eb9ec805be94ce7d6}{eic\-\_\-is\-\_\-line\-\_\-enabled} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t line\-\_\-number)
+\begin{DoxyCompactList}\small\item\em \-Tells whether an \-E\-I\-C line is enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\paragraph*{\-Interrupt \-Control \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{eic_8h_a3fee668085da1fbb549954ec4dbb5554}{eic\-\_\-enable\-\_\-interrupt\-\_\-lines} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t mask\-\_\-lines)
+\begin{DoxyCompactList}\small\item\em \-Enable the interrupt feature of the \-E\-I\-C. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8h_a75971c52d0a242666964a9ec88931140}{eic\-\_\-enable\-\_\-interrupt\-\_\-line} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t line\-\_\-number)
+\begin{DoxyCompactList}\small\item\em \-Enable the interrupt feature of the \-E\-I\-C. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8h_ad5ea8778d71e0c982ea064c9eaaac222}{eic\-\_\-disable\-\_\-interrupt\-\_\-lines} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t mask\-\_\-lines)
+\begin{DoxyCompactList}\small\item\em \-Disable the interrupt feature of the \-E\-I\-C. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8h_a3a16844763e59d16cf42b93d725e3293}{eic\-\_\-disable\-\_\-interrupt\-\_\-line} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t line\-\_\-number)
+\begin{DoxyCompactList}\small\item\em \-Disable the interrupt feature of the \-E\-I\-C. \end{DoxyCompactList}\item 
+bool \hyperlink{eic_8h_aee31f395ae232d5ac6ec778d66205e5d}{eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-enabled} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t line\-\_\-number)
+\begin{DoxyCompactList}\small\item\em \-Tells whether an \-E\-I\-C interrupt line is enabled. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8h_adb957c6835848c15b7b76385dadd6b49}{eic\-\_\-clear\-\_\-interrupt\-\_\-lines} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t mask\-\_\-lines)
+\begin{DoxyCompactList}\small\item\em \-Clear the interrupt flag. \-Call this function once you've handled the interrupt. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8h_a37cc18c4bb814da1a305dd8f5fc25231}{eic\-\_\-clear\-\_\-interrupt\-\_\-line} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t line\-\_\-number)
+\begin{DoxyCompactList}\small\item\em \-Clear the interrupt flag. \-Call this function once you've handled the interrupt. \end{DoxyCompactList}\item 
+bool \hyperlink{eic_8h_a46c6c5b4cbeb455f26ae1cd31824796e}{eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-pending} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t line\-\_\-number)
+\begin{DoxyCompactList}\small\item\em \-Tells whether an \-E\-I\-C interrupt line is pending. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8h_acd988ec03638a59eac9a0b92ba63ca52}{eic\-\_\-enable\-\_\-interrupt\-\_\-scan} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic, uint32\-\_\-t presc)
+\begin{DoxyCompactList}\small\item\em \-Enable the interrupt scan feature of the \-E\-I\-C. \end{DoxyCompactList}\item 
+void \hyperlink{eic_8h_ac5240f85be89cf587fd89dd5ab5bd5b7}{eic\-\_\-disable\-\_\-interrupt\-\_\-scan} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic)
+\begin{DoxyCompactList}\small\item\em \-Disable the interrupt scan feature of the \-E\-I\-C. \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{eic_8h_a67eb56b4cc52b76df768af4b0bc7e58f}{eic\-\_\-get\-\_\-interrupt\-\_\-pad\-\_\-scan} (volatile avr32\-\_\-eic\-\_\-t $\ast$eic)
+\begin{DoxyCompactList}\small\item\em \-Return scan pad number that causes interrupt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{\-Detailed \-Description}
+\-E\-I\-C driver for \-A\-V\-R32 \-U\-C3. \-A\-V\-R32 \-External \-Interrupt \-Controller driver module.
+
+
+\begin{DoxyItemize}
+\item \-Compiler\-: \-I\-A\-R \-E\-W\-A\-V\-R32 and \-G\-N\-U \-G\-C\-C for \-A\-V\-R32
+\item \-Supported devices\-: \-All \-A\-V\-R32 devices with an \-E\-I\-C module can be used.
+\item \-App\-Note\-:
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{\-Author}
+\-Atmel \-Corporation\-: \href{http://www.atmel.com}{\tt http\-://www.\-atmel.\-com} \par
+ \-Support and \-F\-A\-Q\-: \href{http://support.atmel.no/}{\tt http\-://support.\-atmel.\-no/} 
+\end{DoxyAuthor}
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{eic_8h_a6fcfdb608b0a4feefd8996f1a5365874}{
+\index{eic.\-h@{eic.\-h}!\-E\-I\-C\-\_\-\-A\-S\-Y\-N\-C\-H\-\_\-\-M\-O\-D\-E@{\-E\-I\-C\-\_\-\-A\-S\-Y\-N\-C\-H\-\_\-\-M\-O\-D\-E}}
+\index{\-E\-I\-C\-\_\-\-A\-S\-Y\-N\-C\-H\-\_\-\-M\-O\-D\-E@{\-E\-I\-C\-\_\-\-A\-S\-Y\-N\-C\-H\-\_\-\-M\-O\-D\-E}!eic.h@{eic.\-h}}
+\subsubsection[{\-E\-I\-C\-\_\-\-A\-S\-Y\-N\-C\-H\-\_\-\-M\-O\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-E\-I\-C\-\_\-\-A\-S\-Y\-N\-C\-H\-\_\-\-M\-O\-D\-E~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-U\-S\-E\-\_\-\-A\-S\-Y\-N\-C}}
+\label{eic_8h_a6fcfdb608b0a4feefd8996f1a5365874}
+\hypertarget{eic_8h_ad0532c0f00af371725d20a6db531eb71}{
+\index{eic.\-h@{eic.\-h}!\-E\-I\-C\-\_\-\-E\-D\-G\-E\-\_\-\-F\-A\-L\-L\-I\-N\-G\-\_\-\-E\-D\-G\-E@{\-E\-I\-C\-\_\-\-E\-D\-G\-E\-\_\-\-F\-A\-L\-L\-I\-N\-G\-\_\-\-E\-D\-G\-E}}
+\index{\-E\-I\-C\-\_\-\-E\-D\-G\-E\-\_\-\-F\-A\-L\-L\-I\-N\-G\-\_\-\-E\-D\-G\-E@{\-E\-I\-C\-\_\-\-E\-D\-G\-E\-\_\-\-F\-A\-L\-L\-I\-N\-G\-\_\-\-E\-D\-G\-E}!eic.h@{eic.\-h}}
+\subsubsection[{\-E\-I\-C\-\_\-\-E\-D\-G\-E\-\_\-\-F\-A\-L\-L\-I\-N\-G\-\_\-\-E\-D\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-E\-I\-C\-\_\-\-E\-D\-G\-E\-\_\-\-F\-A\-L\-L\-I\-N\-G\-\_\-\-E\-D\-G\-E~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-F\-A\-L\-L\-I\-N\-G\-\_\-\-E\-D\-G\-E}}
+\label{eic_8h_ad0532c0f00af371725d20a6db531eb71}
+\hypertarget{eic_8h_a7a37b7460a7cfcb9043c30e8a8fd46d2}{
+\index{eic.\-h@{eic.\-h}!\-E\-I\-C\-\_\-\-E\-D\-G\-E\-\_\-\-R\-I\-S\-I\-N\-G\-\_\-\-E\-D\-G\-E@{\-E\-I\-C\-\_\-\-E\-D\-G\-E\-\_\-\-R\-I\-S\-I\-N\-G\-\_\-\-E\-D\-G\-E}}
+\index{\-E\-I\-C\-\_\-\-E\-D\-G\-E\-\_\-\-R\-I\-S\-I\-N\-G\-\_\-\-E\-D\-G\-E@{\-E\-I\-C\-\_\-\-E\-D\-G\-E\-\_\-\-R\-I\-S\-I\-N\-G\-\_\-\-E\-D\-G\-E}!eic.h@{eic.\-h}}
+\subsubsection[{\-E\-I\-C\-\_\-\-E\-D\-G\-E\-\_\-\-R\-I\-S\-I\-N\-G\-\_\-\-E\-D\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-E\-I\-C\-\_\-\-E\-D\-G\-E\-\_\-\-R\-I\-S\-I\-N\-G\-\_\-\-E\-D\-G\-E~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-R\-I\-S\-I\-N\-G\-\_\-\-E\-D\-G\-E}}
+\label{eic_8h_a7a37b7460a7cfcb9043c30e8a8fd46d2}
+\hypertarget{eic_8h_a45cdfbc4e7ac351dfc34d11eb1909da9}{
+\index{eic.\-h@{eic.\-h}!\-E\-I\-C\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-D\-I\-S\-A\-B\-L\-E\-D@{\-E\-I\-C\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-D\-I\-S\-A\-B\-L\-E\-D}}
+\index{\-E\-I\-C\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-D\-I\-S\-A\-B\-L\-E\-D@{\-E\-I\-C\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-D\-I\-S\-A\-B\-L\-E\-D}!eic.h@{eic.\-h}}
+\subsubsection[{\-E\-I\-C\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-D\-I\-S\-A\-B\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-E\-I\-C\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-D\-I\-S\-A\-B\-L\-E\-D~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-O\-F\-F}}
+\label{eic_8h_a45cdfbc4e7ac351dfc34d11eb1909da9}
+\hypertarget{eic_8h_a761efc2f6fc52a0aa3ab36bc76bfadc3}{
+\index{eic.\-h@{eic.\-h}!\-E\-I\-C\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-E\-I\-C\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}}
+\index{\-E\-I\-C\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D@{\-E\-I\-C\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}!eic.h@{eic.\-h}}
+\subsubsection[{\-E\-I\-C\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-E\-I\-C\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-E\-N\-A\-B\-L\-E\-D~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-O\-N}}
+\label{eic_8h_a761efc2f6fc52a0aa3ab36bc76bfadc3}
+\hypertarget{eic_8h_a69768f41d958049c58b908e3bb790317}{
+\index{eic.\-h@{eic.\-h}!\-E\-I\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-\-H\-I\-G\-H\-\_\-\-L\-E\-V\-E\-L@{\-E\-I\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-\-H\-I\-G\-H\-\_\-\-L\-E\-V\-E\-L}}
+\index{\-E\-I\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-\-H\-I\-G\-H\-\_\-\-L\-E\-V\-E\-L@{\-E\-I\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-\-H\-I\-G\-H\-\_\-\-L\-E\-V\-E\-L}!eic.h@{eic.\-h}}
+\subsubsection[{\-E\-I\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-\-H\-I\-G\-H\-\_\-\-L\-E\-V\-E\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-E\-I\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-\-H\-I\-G\-H\-\_\-\-L\-E\-V\-E\-L~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-H\-I\-G\-H\-\_\-\-L\-E\-V\-E\-L}}
+\label{eic_8h_a69768f41d958049c58b908e3bb790317}
+\hypertarget{eic_8h_a33791b823a3a113f8f9669307df11a8f}{
+\index{eic.\-h@{eic.\-h}!\-E\-I\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-\-L\-O\-W\-\_\-\-L\-E\-V\-E\-L@{\-E\-I\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-\-L\-O\-W\-\_\-\-L\-E\-V\-E\-L}}
+\index{\-E\-I\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-\-L\-O\-W\-\_\-\-L\-E\-V\-E\-L@{\-E\-I\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-\-L\-O\-W\-\_\-\-L\-E\-V\-E\-L}!eic.h@{eic.\-h}}
+\subsubsection[{\-E\-I\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-\-L\-O\-W\-\_\-\-L\-E\-V\-E\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-E\-I\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-\-L\-O\-W\-\_\-\-L\-E\-V\-E\-L~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-L\-O\-W\-\_\-\-L\-E\-V\-E\-L}}
+\label{eic_8h_a33791b823a3a113f8f9669307df11a8f}
+\hypertarget{eic_8h_a02163f82f5d8605cd87e4318fa224d32}{
+\index{eic.\-h@{eic.\-h}!\-E\-I\-C\-\_\-\-M\-O\-D\-E\-\_\-\-E\-D\-G\-E\-\_\-\-T\-R\-I\-G\-G\-E\-R\-E\-D@{\-E\-I\-C\-\_\-\-M\-O\-D\-E\-\_\-\-E\-D\-G\-E\-\_\-\-T\-R\-I\-G\-G\-E\-R\-E\-D}}
+\index{\-E\-I\-C\-\_\-\-M\-O\-D\-E\-\_\-\-E\-D\-G\-E\-\_\-\-T\-R\-I\-G\-G\-E\-R\-E\-D@{\-E\-I\-C\-\_\-\-M\-O\-D\-E\-\_\-\-E\-D\-G\-E\-\_\-\-T\-R\-I\-G\-G\-E\-R\-E\-D}!eic.h@{eic.\-h}}
+\subsubsection[{\-E\-I\-C\-\_\-\-M\-O\-D\-E\-\_\-\-E\-D\-G\-E\-\_\-\-T\-R\-I\-G\-G\-E\-R\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-E\-I\-C\-\_\-\-M\-O\-D\-E\-\_\-\-E\-D\-G\-E\-\_\-\-T\-R\-I\-G\-G\-E\-R\-E\-D~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-E\-D\-G\-E\-\_\-\-I\-R\-Q}}
+\label{eic_8h_a02163f82f5d8605cd87e4318fa224d32}
+\hypertarget{eic_8h_a929d497d45e02a5314c596570e71005b}{
+\index{eic.\-h@{eic.\-h}!\-E\-I\-C\-\_\-\-M\-O\-D\-E\-\_\-\-L\-E\-V\-E\-L\-\_\-\-T\-R\-I\-G\-G\-E\-R\-E\-D@{\-E\-I\-C\-\_\-\-M\-O\-D\-E\-\_\-\-L\-E\-V\-E\-L\-\_\-\-T\-R\-I\-G\-G\-E\-R\-E\-D}}
+\index{\-E\-I\-C\-\_\-\-M\-O\-D\-E\-\_\-\-L\-E\-V\-E\-L\-\_\-\-T\-R\-I\-G\-G\-E\-R\-E\-D@{\-E\-I\-C\-\_\-\-M\-O\-D\-E\-\_\-\-L\-E\-V\-E\-L\-\_\-\-T\-R\-I\-G\-G\-E\-R\-E\-D}!eic.h@{eic.\-h}}
+\subsubsection[{\-E\-I\-C\-\_\-\-M\-O\-D\-E\-\_\-\-L\-E\-V\-E\-L\-\_\-\-T\-R\-I\-G\-G\-E\-R\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-E\-I\-C\-\_\-\-M\-O\-D\-E\-\_\-\-L\-E\-V\-E\-L\-\_\-\-T\-R\-I\-G\-G\-E\-R\-E\-D~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-L\-E\-V\-E\-L\-\_\-\-I\-R\-Q}}
+\label{eic_8h_a929d497d45e02a5314c596570e71005b}
+\hypertarget{eic_8h_a83946e4acae0ccaf0dec1e5c333bd36c}{
+\index{eic.\-h@{eic.\-h}!\-E\-I\-C\-\_\-\-S\-Y\-N\-C\-H\-\_\-\-M\-O\-D\-E@{\-E\-I\-C\-\_\-\-S\-Y\-N\-C\-H\-\_\-\-M\-O\-D\-E}}
+\index{\-E\-I\-C\-\_\-\-S\-Y\-N\-C\-H\-\_\-\-M\-O\-D\-E@{\-E\-I\-C\-\_\-\-S\-Y\-N\-C\-H\-\_\-\-M\-O\-D\-E}!eic.h@{eic.\-h}}
+\subsubsection[{\-E\-I\-C\-\_\-\-S\-Y\-N\-C\-H\-\_\-\-M\-O\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-E\-I\-C\-\_\-\-S\-Y\-N\-C\-H\-\_\-\-M\-O\-D\-E~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-S\-Y\-N\-C}}
+\label{eic_8h_a83946e4acae0ccaf0dec1e5c333bd36c}
+\hypertarget{eic_8h_a1607129b3853bd4e31dffd5ab3a7c058}{
+\index{eic.\-h@{eic.\-h}!\-E\-X\-T\-\_\-\-I\-N\-T0@{\-E\-X\-T\-\_\-\-I\-N\-T0}}
+\index{\-E\-X\-T\-\_\-\-I\-N\-T0@{\-E\-X\-T\-\_\-\-I\-N\-T0}!eic.h@{eic.\-h}}
+\subsubsection[{\-E\-X\-T\-\_\-\-I\-N\-T0}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-E\-X\-T\-\_\-\-I\-N\-T0~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-I\-N\-T1}}
+\label{eic_8h_a1607129b3853bd4e31dffd5ab3a7c058}
+
+
+\-Line 0. 
+
+\hypertarget{eic_8h_a747ac8a90f3494ef4c29dc6ef10ae1b0}{
+\index{eic.\-h@{eic.\-h}!\-E\-X\-T\-\_\-\-I\-N\-T1@{\-E\-X\-T\-\_\-\-I\-N\-T1}}
+\index{\-E\-X\-T\-\_\-\-I\-N\-T1@{\-E\-X\-T\-\_\-\-I\-N\-T1}!eic.h@{eic.\-h}}
+\subsubsection[{\-E\-X\-T\-\_\-\-I\-N\-T1}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-E\-X\-T\-\_\-\-I\-N\-T1~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-I\-N\-T2}}
+\label{eic_8h_a747ac8a90f3494ef4c29dc6ef10ae1b0}
+
+
+\-Line 1. 
+
+\hypertarget{eic_8h_afd82757ef10befab4762b35594d96df9}{
+\index{eic.\-h@{eic.\-h}!\-E\-X\-T\-\_\-\-I\-N\-T2@{\-E\-X\-T\-\_\-\-I\-N\-T2}}
+\index{\-E\-X\-T\-\_\-\-I\-N\-T2@{\-E\-X\-T\-\_\-\-I\-N\-T2}!eic.h@{eic.\-h}}
+\subsubsection[{\-E\-X\-T\-\_\-\-I\-N\-T2}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-E\-X\-T\-\_\-\-I\-N\-T2~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-I\-N\-T3}}
+\label{eic_8h_afd82757ef10befab4762b35594d96df9}
+
+
+\-Line 2. 
+
+\hypertarget{eic_8h_a98d3773b322cddf417ef11e37ab1544c}{
+\index{eic.\-h@{eic.\-h}!\-E\-X\-T\-\_\-\-I\-N\-T3@{\-E\-X\-T\-\_\-\-I\-N\-T3}}
+\index{\-E\-X\-T\-\_\-\-I\-N\-T3@{\-E\-X\-T\-\_\-\-I\-N\-T3}!eic.h@{eic.\-h}}
+\subsubsection[{\-E\-X\-T\-\_\-\-I\-N\-T3}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-E\-X\-T\-\_\-\-I\-N\-T3~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-I\-N\-T4}}
+\label{eic_8h_a98d3773b322cddf417ef11e37ab1544c}
+
+
+\-Line 3. 
+
+\hypertarget{eic_8h_a778a1650e2af266ae2bc171eed01788c}{
+\index{eic.\-h@{eic.\-h}!\-E\-X\-T\-\_\-\-I\-N\-T4@{\-E\-X\-T\-\_\-\-I\-N\-T4}}
+\index{\-E\-X\-T\-\_\-\-I\-N\-T4@{\-E\-X\-T\-\_\-\-I\-N\-T4}!eic.h@{eic.\-h}}
+\subsubsection[{\-E\-X\-T\-\_\-\-I\-N\-T4}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-E\-X\-T\-\_\-\-I\-N\-T4~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-I\-N\-T5}}
+\label{eic_8h_a778a1650e2af266ae2bc171eed01788c}
+
+
+\-Line 4. 
+
+\hypertarget{eic_8h_a32c58999e29eef1a32337f96b446263e}{
+\index{eic.\-h@{eic.\-h}!\-E\-X\-T\-\_\-\-I\-N\-T5@{\-E\-X\-T\-\_\-\-I\-N\-T5}}
+\index{\-E\-X\-T\-\_\-\-I\-N\-T5@{\-E\-X\-T\-\_\-\-I\-N\-T5}!eic.h@{eic.\-h}}
+\subsubsection[{\-E\-X\-T\-\_\-\-I\-N\-T5}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-E\-X\-T\-\_\-\-I\-N\-T5~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-I\-N\-T6}}
+\label{eic_8h_a32c58999e29eef1a32337f96b446263e}
+
+
+\-Line 5. 
+
+\hypertarget{eic_8h_a013188be6ce12f3ada8d5dd2dbba0235}{
+\index{eic.\-h@{eic.\-h}!\-E\-X\-T\-\_\-\-I\-N\-T6@{\-E\-X\-T\-\_\-\-I\-N\-T6}}
+\index{\-E\-X\-T\-\_\-\-I\-N\-T6@{\-E\-X\-T\-\_\-\-I\-N\-T6}!eic.h@{eic.\-h}}
+\subsubsection[{\-E\-X\-T\-\_\-\-I\-N\-T6}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-E\-X\-T\-\_\-\-I\-N\-T6~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-I\-N\-T7}}
+\label{eic_8h_a013188be6ce12f3ada8d5dd2dbba0235}
+
+
+\-Line 6. 
+
+\hypertarget{eic_8h_ac7876d6d35a161cc0aef38e4fbbb541a}{
+\index{eic.\-h@{eic.\-h}!\-E\-X\-T\-\_\-\-I\-N\-T7@{\-E\-X\-T\-\_\-\-I\-N\-T7}}
+\index{\-E\-X\-T\-\_\-\-I\-N\-T7@{\-E\-X\-T\-\_\-\-I\-N\-T7}!eic.h@{eic.\-h}}
+\subsubsection[{\-E\-X\-T\-\_\-\-I\-N\-T7}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-E\-X\-T\-\_\-\-I\-N\-T7~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-I\-N\-T8}}
+\label{eic_8h_ac7876d6d35a161cc0aef38e4fbbb541a}
+
+
+\-Line 7. 
+
+\hypertarget{eic_8h_ab501be880e8398de26c4ad9dcb67eaa4}{
+\index{eic.\-h@{eic.\-h}!\-E\-X\-T\-\_\-\-N\-M\-I@{\-E\-X\-T\-\_\-\-N\-M\-I}}
+\index{\-E\-X\-T\-\_\-\-N\-M\-I@{\-E\-X\-T\-\_\-\-N\-M\-I}!eic.h@{eic.\-h}}
+\subsubsection[{\-E\-X\-T\-\_\-\-N\-M\-I}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-E\-X\-T\-\_\-\-N\-M\-I~\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-N\-M\-I}}
+\label{eic_8h_ab501be880e8398de26c4ad9dcb67eaa4}
+
+
+\-Line 8. 
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{eic_8h_a37cc18c4bb814da1a305dd8f5fc25231}{
+\index{eic.\-h@{eic.\-h}!eic\-\_\-clear\-\_\-interrupt\-\_\-line@{eic\-\_\-clear\-\_\-interrupt\-\_\-line}}
+\index{eic\-\_\-clear\-\_\-interrupt\-\_\-line@{eic\-\_\-clear\-\_\-interrupt\-\_\-line}!eic.h@{eic.\-h}}
+\subsubsection[{eic\-\_\-clear\-\_\-interrupt\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-clear\-\_\-interrupt\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{line\-\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8h_a37cc18c4bb814da1a305dd8f5fc25231}
+
+
+\-Clear the interrupt flag. \-Call this function once you've handled the interrupt. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C (i.\-e. \&\-A\-V\-R32\-\_\-\-E\-I\-C). \\
+\hline
+{\em line\-\_\-number} & \-Line number to clear \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8h_adb957c6835848c15b7b76385dadd6b49}{
+\index{eic.\-h@{eic.\-h}!eic\-\_\-clear\-\_\-interrupt\-\_\-lines@{eic\-\_\-clear\-\_\-interrupt\-\_\-lines}}
+\index{eic\-\_\-clear\-\_\-interrupt\-\_\-lines@{eic\-\_\-clear\-\_\-interrupt\-\_\-lines}!eic.h@{eic.\-h}}
+\subsubsection[{eic\-\_\-clear\-\_\-interrupt\-\_\-lines}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-clear\-\_\-interrupt\-\_\-lines (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{mask\-\_\-lines}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8h_adb957c6835848c15b7b76385dadd6b49}
+
+
+\-Clear the interrupt flag. \-Call this function once you've handled the interrupt. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C (i.\-e. \&\-A\-V\-R32\-\_\-\-E\-I\-C). \\
+\hline
+{\em mask\-\_\-lines} & \-Mask for current selected lines \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8h_a3a16844763e59d16cf42b93d725e3293}{
+\index{eic.\-h@{eic.\-h}!eic\-\_\-disable\-\_\-interrupt\-\_\-line@{eic\-\_\-disable\-\_\-interrupt\-\_\-line}}
+\index{eic\-\_\-disable\-\_\-interrupt\-\_\-line@{eic\-\_\-disable\-\_\-interrupt\-\_\-line}!eic.h@{eic.\-h}}
+\subsubsection[{eic\-\_\-disable\-\_\-interrupt\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-disable\-\_\-interrupt\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{line\-\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8h_a3a16844763e59d16cf42b93d725e3293}
+
+
+\-Disable the interrupt feature of the \-E\-I\-C. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C (i.\-e. \&\-A\-V\-R32\-\_\-\-E\-I\-C). \\
+\hline
+{\em line\-\_\-number} & \-Line number to disable \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8h_ad5ea8778d71e0c982ea064c9eaaac222}{
+\index{eic.\-h@{eic.\-h}!eic\-\_\-disable\-\_\-interrupt\-\_\-lines@{eic\-\_\-disable\-\_\-interrupt\-\_\-lines}}
+\index{eic\-\_\-disable\-\_\-interrupt\-\_\-lines@{eic\-\_\-disable\-\_\-interrupt\-\_\-lines}!eic.h@{eic.\-h}}
+\subsubsection[{eic\-\_\-disable\-\_\-interrupt\-\_\-lines}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-disable\-\_\-interrupt\-\_\-lines (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{mask\-\_\-lines}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8h_ad5ea8778d71e0c982ea064c9eaaac222}
+
+
+\-Disable the interrupt feature of the \-E\-I\-C. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C (i.\-e. \&\-A\-V\-R32\-\_\-\-E\-I\-C). \\
+\hline
+{\em mask\-\_\-lines} & \-Mask for current selected lines \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8h_ac5240f85be89cf587fd89dd5ab5bd5b7}{
+\index{eic.\-h@{eic.\-h}!eic\-\_\-disable\-\_\-interrupt\-\_\-scan@{eic\-\_\-disable\-\_\-interrupt\-\_\-scan}}
+\index{eic\-\_\-disable\-\_\-interrupt\-\_\-scan@{eic\-\_\-disable\-\_\-interrupt\-\_\-scan}!eic.h@{eic.\-h}}
+\subsubsection[{eic\-\_\-disable\-\_\-interrupt\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-disable\-\_\-interrupt\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8h_ac5240f85be89cf587fd89dd5ab5bd5b7}
+
+
+\-Disable the interrupt scan feature of the \-E\-I\-C. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C (i.\-e. \&\-A\-V\-R32\-\_\-\-E\-I\-C). \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8h_a9db33f5cf499e075b970e3cbe2a97e16}{
+\index{eic.\-h@{eic.\-h}!eic\-\_\-disable\-\_\-line@{eic\-\_\-disable\-\_\-line}}
+\index{eic\-\_\-disable\-\_\-line@{eic\-\_\-disable\-\_\-line}!eic.h@{eic.\-h}}
+\subsubsection[{eic\-\_\-disable\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-disable\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{line\-\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8h_a9db33f5cf499e075b970e3cbe2a97e16}
+
+
+\-Disable the \-E\-I\-C driver. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C module \\
+\hline
+{\em line\-\_\-number} & \-Line number to disable \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8h_a03ff7de891cf2c55d48c328dfd4ff7f2}{
+\index{eic.\-h@{eic.\-h}!eic\-\_\-disable\-\_\-lines@{eic\-\_\-disable\-\_\-lines}}
+\index{eic\-\_\-disable\-\_\-lines@{eic\-\_\-disable\-\_\-lines}!eic.h@{eic.\-h}}
+\subsubsection[{eic\-\_\-disable\-\_\-lines}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-disable\-\_\-lines (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{mask\-\_\-lines}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8h_a03ff7de891cf2c55d48c328dfd4ff7f2}
+
+
+\-Disable the \-E\-I\-C driver. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C module \\
+\hline
+{\em mask\-\_\-lines} & \-Mask for current selected lines \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8h_a75971c52d0a242666964a9ec88931140}{
+\index{eic.\-h@{eic.\-h}!eic\-\_\-enable\-\_\-interrupt\-\_\-line@{eic\-\_\-enable\-\_\-interrupt\-\_\-line}}
+\index{eic\-\_\-enable\-\_\-interrupt\-\_\-line@{eic\-\_\-enable\-\_\-interrupt\-\_\-line}!eic.h@{eic.\-h}}
+\subsubsection[{eic\-\_\-enable\-\_\-interrupt\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-enable\-\_\-interrupt\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{line\-\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8h_a75971c52d0a242666964a9ec88931140}
+
+
+\-Enable the interrupt feature of the \-E\-I\-C. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C (i.\-e. \&\-A\-V\-R32\-\_\-\-E\-I\-C). \\
+\hline
+{\em line\-\_\-number} & \-Line number to enable \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8h_a3fee668085da1fbb549954ec4dbb5554}{
+\index{eic.\-h@{eic.\-h}!eic\-\_\-enable\-\_\-interrupt\-\_\-lines@{eic\-\_\-enable\-\_\-interrupt\-\_\-lines}}
+\index{eic\-\_\-enable\-\_\-interrupt\-\_\-lines@{eic\-\_\-enable\-\_\-interrupt\-\_\-lines}!eic.h@{eic.\-h}}
+\subsubsection[{eic\-\_\-enable\-\_\-interrupt\-\_\-lines}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-enable\-\_\-interrupt\-\_\-lines (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{mask\-\_\-lines}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8h_a3fee668085da1fbb549954ec4dbb5554}
+
+
+\-Enable the interrupt feature of the \-E\-I\-C. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C (i.\-e. \&\-A\-V\-R32\-\_\-\-E\-I\-C). \\
+\hline
+{\em mask\-\_\-lines} & \-Mask for current selected lines \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8h_acd988ec03638a59eac9a0b92ba63ca52}{
+\index{eic.\-h@{eic.\-h}!eic\-\_\-enable\-\_\-interrupt\-\_\-scan@{eic\-\_\-enable\-\_\-interrupt\-\_\-scan}}
+\index{eic\-\_\-enable\-\_\-interrupt\-\_\-scan@{eic\-\_\-enable\-\_\-interrupt\-\_\-scan}!eic.h@{eic.\-h}}
+\subsubsection[{eic\-\_\-enable\-\_\-interrupt\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-enable\-\_\-interrupt\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{presc}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8h_acd988ec03638a59eac9a0b92ba63ca52}
+
+
+\-Enable the interrupt scan feature of the \-E\-I\-C. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C (i.\-e. \&\-A\-V\-R32\-\_\-\-E\-I\-C). \\
+\hline
+{\em presc} & \-Prescale select for the keypad scan rate in the range \mbox{[}0,31\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8h_a129602a787421d2ec2d326e71027bd98}{
+\index{eic.\-h@{eic.\-h}!eic\-\_\-enable\-\_\-line@{eic\-\_\-enable\-\_\-line}}
+\index{eic\-\_\-enable\-\_\-line@{eic\-\_\-enable\-\_\-line}!eic.h@{eic.\-h}}
+\subsubsection[{eic\-\_\-enable\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-enable\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{line\-\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8h_a129602a787421d2ec2d326e71027bd98}
+
+
+\-Enable the \-E\-I\-C driver. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C module \\
+\hline
+{\em line\-\_\-number} & \-Line number to enable \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8h_a511b84fe79f7dc5ed93810593fdfed52}{
+\index{eic.\-h@{eic.\-h}!eic\-\_\-enable\-\_\-lines@{eic\-\_\-enable\-\_\-lines}}
+\index{eic\-\_\-enable\-\_\-lines@{eic\-\_\-enable\-\_\-lines}!eic.h@{eic.\-h}}
+\subsubsection[{eic\-\_\-enable\-\_\-lines}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-enable\-\_\-lines (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{mask\-\_\-lines}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8h_a511b84fe79f7dc5ed93810593fdfed52}
+
+
+\-Enable the \-E\-I\-C driver. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C module \\
+\hline
+{\em mask\-\_\-lines} & \-Mask for current selected lines \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8h_a67eb56b4cc52b76df768af4b0bc7e58f}{
+\index{eic.\-h@{eic.\-h}!eic\-\_\-get\-\_\-interrupt\-\_\-pad\-\_\-scan@{eic\-\_\-get\-\_\-interrupt\-\_\-pad\-\_\-scan}}
+\index{eic\-\_\-get\-\_\-interrupt\-\_\-pad\-\_\-scan@{eic\-\_\-get\-\_\-interrupt\-\_\-pad\-\_\-scan}!eic.h@{eic.\-h}}
+\subsubsection[{eic\-\_\-get\-\_\-interrupt\-\_\-pad\-\_\-scan}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t eic\-\_\-get\-\_\-interrupt\-\_\-pad\-\_\-scan (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8h_a67eb56b4cc52b76df768af4b0bc7e58f}
+
+
+\-Return scan pad number that causes interrupt. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C (i.\-e. \&\-A\-V\-R32\-\_\-\-E\-I\-C). \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8h_ae1608e38e94d6e4bde41949fc78c492e}{
+\index{eic.\-h@{eic.\-h}!eic\-\_\-init@{eic\-\_\-init}}
+\index{eic\-\_\-init@{eic\-\_\-init}!eic.h@{eic.\-h}}
+\subsubsection[{eic\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{const {\bf eic\-\_\-options\-\_\-t} $\ast$}]{opt, }
+\item[{uint32\-\_\-t}]{nb\-\_\-lines}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8h_ae1608e38e94d6e4bde41949fc78c492e}
+
+
+\-Init the \-E\-I\-C driver. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C module \\
+\hline
+{\em opt} & \-Configuration parameters of the \-E\-I\-C module (see \hyperlink{structeic__options__t}{eic\-\_\-options\-\_\-t}) \\
+\hline
+{\em nb\-\_\-lines} & \-Number of lines to consider, equal to size of opt buffer \\
+\hline
+\end{DoxyParams}
+\hypertarget{eic_8h_aee31f395ae232d5ac6ec778d66205e5d}{
+\index{eic.\-h@{eic.\-h}!eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-enabled@{eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-enabled}}
+\index{eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-enabled@{eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-enabled}!eic.h@{eic.\-h}}
+\subsubsection[{eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-enabled (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{line\-\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8h_aee31f395ae232d5ac6ec778d66205e5d}
+
+
+\-Tells whether an \-E\-I\-C interrupt line is enabled. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C module \\
+\hline
+{\em line\-\_\-number} & \-Line number to test\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Whether an \-E\-I\-C interrupt line is enabled. 
+\end{DoxyReturn}
+\hypertarget{eic_8h_a46c6c5b4cbeb455f26ae1cd31824796e}{
+\index{eic.\-h@{eic.\-h}!eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-pending@{eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-pending}}
+\index{eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-pending@{eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-pending}!eic.h@{eic.\-h}}
+\subsubsection[{eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-pending}]{\setlength{\rightskip}{0pt plus 5cm}bool eic\-\_\-is\-\_\-interrupt\-\_\-line\-\_\-pending (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{line\-\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8h_a46c6c5b4cbeb455f26ae1cd31824796e}
+
+
+\-Tells whether an \-E\-I\-C interrupt line is pending. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C module \\
+\hline
+{\em line\-\_\-number} & \-Line number to test\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Whether an \-E\-I\-C interrupt line is pending. 
+\end{DoxyReturn}
+\hypertarget{eic_8h_ad4d6bedacd14d41eb9ec805be94ce7d6}{
+\index{eic.\-h@{eic.\-h}!eic\-\_\-is\-\_\-line\-\_\-enabled@{eic\-\_\-is\-\_\-line\-\_\-enabled}}
+\index{eic\-\_\-is\-\_\-line\-\_\-enabled@{eic\-\_\-is\-\_\-line\-\_\-enabled}!eic.h@{eic.\-h}}
+\subsubsection[{eic\-\_\-is\-\_\-line\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool eic\-\_\-is\-\_\-line\-\_\-enabled (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-eic\-\_\-t $\ast$}]{eic, }
+\item[{uint32\-\_\-t}]{line\-\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{eic_8h_ad4d6bedacd14d41eb9ec805be94ce7d6}
+
+
+\-Tells whether an \-E\-I\-C line is enabled. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em eic} & \-Base address of the \-E\-I\-C module \\
+\hline
+{\em line\-\_\-number} & \-Line number to test\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Whether an \-E\-I\-C line is enabled. 
+\end{DoxyReturn}

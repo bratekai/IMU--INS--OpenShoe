@@ -1,0 +1,393 @@
+\hypertarget{usb__protocol__cdc_8h}{
+\section{usb\-\_\-protocol\-\_\-cdc.h \-File \-Reference}
+\label{usb__protocol__cdc_8h}\index{usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}}
+}
+
+
+\-U\-S\-B \-Communication \-Device \-Class (\-C\-D\-C) protocol definitions.  
+
+
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structusb__cdc__hdr__desc__t}{usb\-\_\-cdc\-\_\-hdr\-\_\-desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-C\-D\-C \-Header \-Functional \-Descriptor. \end{DoxyCompactList}\item 
+struct \hyperlink{structusb__cdc__call__mgmt__desc__t}{usb\-\_\-cdc\-\_\-call\-\_\-mgmt\-\_\-desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-C\-D\-C \-Call \-Management \-Functional \-Descriptor. \end{DoxyCompactList}\item 
+struct \hyperlink{structusb__cdc__acm__desc__t}{usb\-\_\-cdc\-\_\-acm\-\_\-desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-C\-D\-C \-A\-C\-M \-Functional \-Descriptor. \end{DoxyCompactList}\item 
+struct \hyperlink{structusb__cdc__union__desc__t}{usb\-\_\-cdc\-\_\-union\-\_\-desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-C\-D\-C \-Union \-Functional \-Descriptor. \end{DoxyCompactList}\item 
+struct \hyperlink{structusb__cdc__line__coding__t}{usb\-\_\-cdc\-\_\-line\-\_\-coding\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Line \-Coding structure. \end{DoxyCompactList}\item 
+struct \hyperlink{structusb__cdc__control__signal__t}{usb\-\_\-cdc\-\_\-control\-\_\-signal\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Control signal structure. \end{DoxyCompactList}\item 
+struct \hyperlink{structusb__cdc__notify__msg__t}{usb\-\_\-cdc\-\_\-notify\-\_\-msg\-\_\-t}
+\item 
+struct \hyperlink{structusb__cdc__notify__serial__state__t}{usb\-\_\-cdc\-\_\-notify\-\_\-serial\-\_\-state\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Hardware handshake support (cdc spec 1.\-1 chapter 6.\-3.\-5) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{Indent}\paragraph*{\-Possible values of class}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga4c62892f7e7d3aeba3909c2687ce8a44}{\-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-D\-E\-V\-I\-C\-E}~0x02
+\begin{DoxyCompactList}\small\item\em \-U\-S\-B \-Communication \-Device \-Class. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gaf3d488254ba4df34163f9938fe515746}{\-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-C\-O\-M\-M}~0x02
+\begin{DoxyCompactList}\small\item\em \-C\-D\-C \-Communication \-Class \-Interface. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga799bb47bad1d048e420886c575835eb4}{\-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-D\-A\-T\-A}~0x0\-A
+\begin{DoxyCompactList}\small\item\em \-C\-D\-C \-Data \-Class \-Interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-U\-S\-B \-C\-D\-C \-Subclass \-I\-Ds}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga9d555a2c20cdda9166df1f1a0deb2fe6}{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-D\-L\-C\-M}~0x01
+\begin{DoxyCompactList}\small\item\em \-Direct \-Line \-Control \-Model. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gacce3aedc4473cc5526efc16448b89221}{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-A\-C\-M}~0x02
+\begin{DoxyCompactList}\small\item\em \-Abstract \-Control \-Model. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga8e66107828e9b10a8b37823cb4436209}{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-T\-C\-M}~0x03
+\begin{DoxyCompactList}\small\item\em \-Telephone \-Control \-Model. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga279c0e93e9cf1c328e9551e62ebdc342}{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-M\-C\-C\-M}~0x04
+\begin{DoxyCompactList}\small\item\em \-Multi-\/\-Channel \-Control \-Model. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gac03be4247341651b8a14fa4c57955bca}{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-C\-C\-M}~0x05
+\begin{DoxyCompactList}\small\item\em \-C\-A\-P\-I \-Control \-Model. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gaa5ab06b184069e6a8692c6e82b2595b3}{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-E\-T\-H}~0x06
+\begin{DoxyCompactList}\small\item\em \-Ethernet \-Networking \-Control \-Model. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gaf1a7d3d1e1dd78003500d6fccd205461}{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-A\-T\-M}~0x07
+\begin{DoxyCompactList}\small\item\em \-A\-T\-M \-Networking \-Control \-Model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-U\-S\-B \-C\-D\-C \-Communication \-Interface \-Protocol \-I\-Ds}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga987e4a1ebce34edcea106094d6241032}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V25\-T\-E\-R}~0x01
+\begin{DoxyCompactList}\small\item\em \-Common \-A\-T commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-U\-S\-B \-C\-D\-C \-Data \-Interface \-Protocol \-I\-Ds}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga34f6a52b0c21cc0df8558a89ab6244aa}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-I430}~0x30
+\begin{DoxyCompactList}\small\item\em \-I\-S\-D\-N \-B\-R\-I. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gaf4adc6afe3a8d15272d6063942fe1b1d}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-D\-L\-C}~0x31
+\begin{DoxyCompactList}\small\item\em \-H\-D\-L\-C. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga23a4cfd8c12e8d75a57bda51845abc0a}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-T\-R\-A\-N\-S}~0x32
+\begin{DoxyCompactList}\small\item\em \-Transparent. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga304da80f158210479728ae1158f48498}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921\-M}~0x50
+\begin{DoxyCompactList}\small\item\em \-Q.\-921 management protocol. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gab4efd3c7d98b5d12bf01238259a50707}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921}~0x51
+\begin{DoxyCompactList}\small\item\em \-Q.\-931 \mbox{[}sic\mbox{]} \-Data link protocol. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga4a1fc0e0435a322372f24b797bdccbc6}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921\-T\-M}~0x52
+\begin{DoxyCompactList}\small\item\em \-Q.\-921 \-T\-E\-I-\/multiplexor. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga230095dec563e53ab1231c981ee9d05f}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V42\-B\-I\-S}~0x90
+\begin{DoxyCompactList}\small\item\em \-Data compression procedures. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga0083ef9581e965b89b52d55bf315e419}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q931}~0x91
+\begin{DoxyCompactList}\small\item\em \-Euro-\/\-I\-S\-D\-N protocol control. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga208090ddb75268f1f49e8e815400b6e3}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V120}~0x92
+\begin{DoxyCompactList}\small\item\em \-V.\-24 rate adaption to \-I\-S\-D\-N. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga4ae176ca7b4078cfc2506faff308d049}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-C\-A\-P\-I20}~0x93
+\begin{DoxyCompactList}\small\item\em \-C\-A\-P\-I \-Commands. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gae3fb87c639e467c9e9a1cab674a53463}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-O\-S\-T}~0x\-F\-D
+\begin{DoxyCompactList}\small\item\em \-Host based driver. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gaa4704c0876c47f0fc9b4e1e2812a746c}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-P\-U\-F\-D}~0x\-F\-E
+\begin{DoxyCompactList}\small\item\em \-Describes the \-Protocol \-Unit \-Functional \-Descriptors \mbox{[}sic\mbox{]} on \-Communication \-Class \-Interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-U\-S\-B \-C\-D\-C \-Functional \-Descriptor \-Types}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gafe0ca40b5aacc5c750f952af952583d2}{\-C\-D\-C\-\_\-\-C\-S\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E}~0x24
+\begin{DoxyCompactList}\small\item\em \-Interface \-Functional \-Descriptor. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gae07e10978a48ff63df33c3aeedf84c3a}{\-C\-D\-C\-\_\-\-C\-S\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T}~0x25
+\begin{DoxyCompactList}\small\item\em \-Endpoint \-Functional \-Descriptor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-U\-S\-B \-C\-D\-C \-Functional \-Descriptor \-Subtypes}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gafb7ba01e68938e255cfb6727c5a02f23}{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-H\-E\-A\-D\-E\-R}~0x00
+\begin{DoxyCompactList}\small\item\em \-Header \-Functional \-Descriptor. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gaeda25d7337f810f2bd205b579510ebd4}{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T}~0x01
+\begin{DoxyCompactList}\small\item\em \-Call \-Management. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gac06eb7a8f7ac43f6be353cc8cc5f8ce8}{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-A\-C\-M}~0x02
+\begin{DoxyCompactList}\small\item\em \-Abstract \-Control \-Management. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga27581d98e9052d843b2f4767f7d39110}{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-U\-N\-I\-O\-N}~0x06
+\begin{DoxyCompactList}\small\item\em \-Union \-Functional \-Descriptor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-U\-S\-B \-C\-D\-C \-Request \-I\-Ds}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gac9488d02fd62ae9c3cbaea21a92ab06c}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-E\-N\-C\-A\-P\-S\-U\-L\-A\-T\-E\-D\-\_\-\-C\-O\-M\-M\-A\-N\-D}~0x00
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gaea0db4450686edfe7f5ecbd7772db08c}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-N\-C\-A\-P\-S\-U\-L\-A\-T\-E\-D\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}~0x01
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga84c2ea5b5542b229be667ba6ad81d97f}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E}~0x02
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gaf04ea09f95ab7fb012462f7679c126d4}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E}~0x03
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga85bffa3729c58e2ac4cbec0c3bc0873c}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-C\-L\-E\-A\-R\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E}~0x04
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga283df094c43680698900ac8fdefb7687}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-U\-X\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E}~0x10
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga193e50f401d74557e36be10f8be0ddbd}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-H\-O\-O\-K\-\_\-\-S\-T\-A\-T\-E}~0x11
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga2c303c4a845634355a8f96ac1c965c15}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-P\-U\-L\-S\-E\-\_\-\-S\-E\-T\-U\-P}~0x12
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gace1ba968487e94d8accfa1817b56899a}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-P\-U\-L\-S\-E}~0x13
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gaa95ef54582b5f30d9b343cd1be5b9051}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-I\-M\-E}~0x14
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga2373fab42c699e4ed789b88a3755255a}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-R\-I\-N\-G\-\_\-\-A\-U\-X\-\_\-\-J\-A\-C\-K}~0x15
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga4e36b0b1795b8fb8d47f0864fbc50120}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-C\-O\-D\-I\-N\-G}~0x20
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga4225199eaffc265eb87f5fd50729428b}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-C\-O\-D\-I\-N\-G}~0x21
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga5095b668106c8843dda529f539e0eed1}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-N\-T\-R\-O\-L\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E}~0x22
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga7cba4467d40cd6532019864a7d068c8d}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-B\-R\-E\-A\-K}~0x23
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gaacab4e30847dde3f01d792290ebea666}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-R\-I\-N\-G\-E\-R\-\_\-\-P\-A\-R\-M\-S}~0x30
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gafb80f6a095d4508e211ed5e775b2c500}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-R\-I\-N\-G\-E\-R\-\_\-\-P\-A\-R\-M\-S}~0x31
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gad3375aed1f7a5e7df4685126d66f09b6}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N\-\_\-\-P\-A\-R\-M\-S}~0x32
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga69f047ea3ec9e3a356ff005a81a6dbad}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N\-\_\-\-P\-A\-R\-M\-S}~0x33
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga3683e27c05ec1d65d1a22a014b665792}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-P\-A\-R\-M\-S}~0x34
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gafe2f2f77e0f6fa768d3fae25131ef7fb}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-P\-A\-R\-M\-S}~0x35
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga68985a9191870bd17d55657d413a17da}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-D\-I\-A\-L\-\_\-\-D\-I\-G\-I\-T\-S}~0x36
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gaa9d1d583e759b94bec18d8ae2c5b830c}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R}~0x37
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gaa1dbd05f95ee9fa9b0a18c3baaf70510}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R}~0x38
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga27d474737f5224baecff3f702aea647c}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-C\-L\-E\-A\-R\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R}~0x39
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga4f0045336cd0d38e988a424bbcb8fce3}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-P\-R\-O\-F\-I\-L\-E}~0x3\-A
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga68617aa6e12d072222b232ab71f9e226}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-M\-U\-L\-T\-I\-C\-A\-S\-T\-\_\-\-F\-I\-L\-T\-E\-R\-S}~0x40
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga43abcd76b528dfc9cf1efbf3ba37bab0}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-O\-W\-E\-R\-\_\-\-M\-A\-N\-A\-G\-E\-M\-E\-N\-T\-\_\-\-P\-A\-T\-T\-E\-R\-N\-F\-I\-L\-T\-E\-R}~0x41
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga4bcd264cbcf653c18532ed313b818ee5}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-O\-W\-E\-R\-\_\-\-M\-A\-N\-A\-G\-E\-M\-E\-N\-T\-\_\-\-P\-A\-T\-T\-E\-R\-N\-F\-I\-L\-T\-E\-R}~0x42
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga7d4e4730f093e5af9870351470093562}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-F\-I\-L\-T\-E\-R}~0x43
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gaa035e847093134f53d71bd46d346a7fc}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C}~0x44
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga95ef1719d5a884fec7ee4c2d7db80d82}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-A\-T\-A\-\_\-\-F\-O\-R\-M\-A\-T}~0x50
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga51a6c3496ca4f926d0401126e3e9aee6}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C\-S}~0x51
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gabb6d36ab906dfa74e80b42e7d87660ee}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-V\-C}~0x52
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga84ff24c8cbc01c595db2ba129640befb}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-A\-T\-M\-\_\-\-V\-C\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C\-S}~0x53
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gab920e7b71fb8698431c35cef60126777}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-R\-I\-N\-G\-\_\-\-D\-E\-T\-E\-C\-T}~0x09
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga55b0f0c908d50cb9aa8553a17f118e12}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E}~0x20
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gafa88febd1fa012a2546955f369dda31a}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-C\-A\-L\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-H\-A\-N\-G\-E}~0x28
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga56a8138659ffd7322ba8be458deacb85}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-H\-A\-N\-G\-E}~0x29
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-U\-S\-B \-C\-D\-C \-Call \-Management \-Capabilities}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gadba5c50400705310683bce4604525634}{\-C\-D\-C\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D}~(1 $<$$<$ 0)
+\begin{DoxyCompactList}\small\item\em \-Device handles call management itself. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga84beb2dffd6b294aed339d1dcf4dadf2}{\-C\-D\-C\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T\-\_\-\-O\-V\-E\-R\-\_\-\-D\-C\-I}~(1 $<$$<$ 1)
+\begin{DoxyCompactList}\small\item\em \-Device can send/receive call management info over a \-Data \-Class interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-U\-S\-B \-C\-D\-C \-A\-C\-M \-Capabilities}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gab1dab8b998f3a80f796edaf74567d4a7}{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S}~(1 $<$$<$ 0)
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gacba280f60d9dacf049a41a6711b1e9b2}{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-L\-I\-N\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S}~(1 $<$$<$ 1)
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga5e20369c655ed417fb699944b064ebdc}{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-S\-E\-N\-D\-B\-R\-E\-A\-K\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S}~(1 $<$$<$ 2)
+\begin{DoxyCompactList}\small\item\em \-Device supports the request \-Send\-\_\-\-Break. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gac7cc3782b884395213a99ffae74b159f}{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S}~(1 $<$$<$ 3)
+\begin{DoxyCompactList}\small\item\em \-Device supports the notification \-Network\-\_\-\-Connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Possible values in usb\-\_\-cdc\-\_\-control\-\_\-signal\-\_\-t}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{usb__protocol__cdc_8h_ab1402f7560badaf983e3823a2e75b39c}{\-C\-D\-C\-\_\-\-C\-T\-R\-L\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-A\-C\-T\-I\-V\-A\-T\-E\-\_\-\-C\-A\-R\-R\-I\-E\-R}~(1 $<$$<$ 1)
+\item 
+\#define \hyperlink{usb__protocol__cdc_8h_a232b776307e37e07eca6fd106aa5f320}{\-C\-D\-C\-\_\-\-C\-T\-R\-L\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-D\-T\-E\-\_\-\-P\-R\-E\-S\-E\-N\-T}~(1 $<$$<$ 0)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Possible values in usb\-\_\-cdc\-\_\-notify\-\_\-serial\-\_\-state\-\_\-t}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{usb__protocol__cdc_8h_aafa95b6c5abafaa3421902df70428398}{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-D\-C\-D}~\-C\-P\-U\-\_\-\-T\-O\-\_\-\-L\-E16((1$<$$<$0))
+\item 
+\#define \hyperlink{usb__protocol__cdc_8h_af4d6d8d6990a49d2d690f4a2221d2ea4}{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-D\-S\-R}~\-C\-P\-U\-\_\-\-T\-O\-\_\-\-L\-E16((1$<$$<$1))
+\item 
+\#define \hyperlink{usb__protocol__cdc_8h_a4f4568a9c419e1f6c6049e6351f4fb8a}{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-R\-E\-A\-K}~\-C\-P\-U\-\_\-\-T\-O\-\_\-\-L\-E16((1$<$$<$2))
+\item 
+\#define \hyperlink{usb__protocol__cdc_8h_a50e133d334a1d269f11dbfddf7584aa2}{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-I\-N\-G}~\-C\-P\-U\-\_\-\-T\-O\-\_\-\-L\-E16((1$<$$<$3))
+\item 
+\#define \hyperlink{usb__protocol__cdc_8h_a1d2b66027b86544993305f5602612a72}{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-F\-R\-A\-M\-I\-N\-G}~\-C\-P\-U\-\_\-\-T\-O\-\_\-\-L\-E16((1$<$$<$4))
+\item 
+\#define \hyperlink{usb__protocol__cdc_8h_ac1a2e84a7444f8d9c22467d48b250449}{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-P\-A\-R\-I\-T\-Y}~\-C\-P\-U\-\_\-\-T\-O\-\_\-\-L\-E16((1$<$$<$5))
+\item 
+\#define \hyperlink{usb__protocol__cdc_8h_a460608200d65e5aaa071185af20973e6}{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-O\-V\-E\-R\-R\-U\-N}~\-C\-P\-U\-\_\-\-T\-O\-\_\-\-L\-E16((1$<$$<$6))
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-Enumerations}
+\begin{Indent}\paragraph*{\-U\-S\-B \-C\-D\-C line coding}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{usb__protocol__cdc_8h_a3c7a6043e6bad9fdb2397cd55c42a42b}{cdc\-\_\-char\-\_\-format} \{ \hyperlink{usb__protocol__cdc_8h_a3c7a6043e6bad9fdb2397cd55c42a42ba91a98e65c928f90dda87311124146570}{\-C\-D\-C\-\_\-\-S\-T\-O\-P\-\_\-\-B\-I\-T\-S\-\_\-1} =  0, 
+\hyperlink{usb__protocol__cdc_8h_a3c7a6043e6bad9fdb2397cd55c42a42ba14a3ecd9c4ca08a01c752ab7812cbe9f}{\-C\-D\-C\-\_\-\-S\-T\-O\-P\-\_\-\-B\-I\-T\-S\-\_\-1\-\_\-5} =  1, 
+\hyperlink{usb__protocol__cdc_8h_a3c7a6043e6bad9fdb2397cd55c42a42ba49b5d7493d3e79ca260a9350f833e8cd}{\-C\-D\-C\-\_\-\-S\-T\-O\-P\-\_\-\-B\-I\-T\-S\-\_\-2} =  2
+ \}
+\begin{DoxyCompactList}\small\item\em \-Possible values of b\-Char\-Format. \end{DoxyCompactList}\item 
+enum \hyperlink{usb__protocol__cdc_8h_abbab0861d65d43845f1a506fc381ca1b}{cdc\-\_\-parity} \{ \*
+\hyperlink{usb__protocol__cdc_8h_abbab0861d65d43845f1a506fc381ca1ba3786e873183eaa7eb298fe1016ea426a}{\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-N\-O\-N\-E} =  0, 
+\hyperlink{usb__protocol__cdc_8h_abbab0861d65d43845f1a506fc381ca1baa3aae67136b342609025e31396404509}{\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-O\-D\-D} =  1, 
+\hyperlink{usb__protocol__cdc_8h_abbab0861d65d43845f1a506fc381ca1ba98b459946d7640a15eb64fceb8149374}{\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-E\-V\-E\-N} =  2, 
+\hyperlink{usb__protocol__cdc_8h_abbab0861d65d43845f1a506fc381ca1ba132be49b0d35205cf8d116d19eb8785d}{\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-M\-A\-R\-K} =  3, 
+\*
+\hyperlink{usb__protocol__cdc_8h_abbab0861d65d43845f1a506fc381ca1baa102d02cecbe45dbc5c7feda8cf88096}{\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-S\-P\-A\-C\-E} =  4
+ \}
+\begin{DoxyCompactList}\small\item\em \-Possible values of b\-Parity\-Type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__cdc__protocol__group_ga14096700b3ed8c5168615c5c5ee1c68d}{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T} (1)
+\item 
+\hyperlink{usb__protocol__cdc_8h_abe317a1520896eaf568afab27dc71540}{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-R\-E\-S\-E\-T} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-U\-S\-B \-Communication \-Device \-Class (\-C\-D\-C) protocol definitions. \-Copyright (\-C) 2009 \-Atmel \-Corporation. \-All rights reserved. 
+
+\subsection{\-Define \-Documentation}
+\hypertarget{usb__protocol__cdc_8h_ab1402f7560badaf983e3823a2e75b39c}{
+\index{usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}!\-C\-D\-C\-\_\-\-C\-T\-R\-L\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-A\-C\-T\-I\-V\-A\-T\-E\-\_\-\-C\-A\-R\-R\-I\-E\-R@{\-C\-D\-C\-\_\-\-C\-T\-R\-L\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-A\-C\-T\-I\-V\-A\-T\-E\-\_\-\-C\-A\-R\-R\-I\-E\-R}}
+\index{\-C\-D\-C\-\_\-\-C\-T\-R\-L\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-A\-C\-T\-I\-V\-A\-T\-E\-\_\-\-C\-A\-R\-R\-I\-E\-R@{\-C\-D\-C\-\_\-\-C\-T\-R\-L\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-A\-C\-T\-I\-V\-A\-T\-E\-\_\-\-C\-A\-R\-R\-I\-E\-R}!usb_protocol_cdc.h@{usb\-\_\-protocol\-\_\-cdc.\-h}}
+\subsubsection[{\-C\-D\-C\-\_\-\-C\-T\-R\-L\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-A\-C\-T\-I\-V\-A\-T\-E\-\_\-\-C\-A\-R\-R\-I\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-C\-T\-R\-L\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-A\-C\-T\-I\-V\-A\-T\-E\-\_\-\-C\-A\-R\-R\-I\-E\-R~(1 $<$$<$ 1)}}
+\label{usb__protocol__cdc_8h_ab1402f7560badaf983e3823a2e75b39c}
+\-Carrier control for half duplex modems. \-This signal corresponds to \-V.\-24 signal 105 and \-R\-S-\/232 signal \-R\-T\-S. \-The device ignores the value of this bit when operating in full duplex mode. \hypertarget{usb__protocol__cdc_8h_a232b776307e37e07eca6fd106aa5f320}{
+\index{usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}!\-C\-D\-C\-\_\-\-C\-T\-R\-L\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-D\-T\-E\-\_\-\-P\-R\-E\-S\-E\-N\-T@{\-C\-D\-C\-\_\-\-C\-T\-R\-L\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-D\-T\-E\-\_\-\-P\-R\-E\-S\-E\-N\-T}}
+\index{\-C\-D\-C\-\_\-\-C\-T\-R\-L\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-D\-T\-E\-\_\-\-P\-R\-E\-S\-E\-N\-T@{\-C\-D\-C\-\_\-\-C\-T\-R\-L\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-D\-T\-E\-\_\-\-P\-R\-E\-S\-E\-N\-T}!usb_protocol_cdc.h@{usb\-\_\-protocol\-\_\-cdc.\-h}}
+\subsubsection[{\-C\-D\-C\-\_\-\-C\-T\-R\-L\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-D\-T\-E\-\_\-\-P\-R\-E\-S\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-C\-T\-R\-L\-\_\-\-S\-I\-G\-N\-A\-L\-\_\-\-D\-T\-E\-\_\-\-P\-R\-E\-S\-E\-N\-T~(1 $<$$<$ 0)}}
+\label{usb__protocol__cdc_8h_a232b776307e37e07eca6fd106aa5f320}
+\-Indicates to \-D\-C\-E if \-D\-T\-E is present or not. \-This signal corresponds to \-V.\-24 signal 108/2 and \-R\-S-\/232 signal \-D\-T\-R. \hypertarget{usb__protocol__cdc_8h_a4f4568a9c419e1f6c6049e6351f4fb8a}{
+\index{usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}!\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-R\-E\-A\-K@{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-R\-E\-A\-K}}
+\index{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-R\-E\-A\-K@{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-R\-E\-A\-K}!usb_protocol_cdc.h@{usb\-\_\-protocol\-\_\-cdc.\-h}}
+\subsubsection[{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-R\-E\-A\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-B\-R\-E\-A\-K~\-C\-P\-U\-\_\-\-T\-O\-\_\-\-L\-E16((1$<$$<$2))}}
+\label{usb__protocol__cdc_8h_a4f4568a9c419e1f6c6049e6351f4fb8a}
+\hypertarget{usb__protocol__cdc_8h_aafa95b6c5abafaa3421902df70428398}{
+\index{usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}!\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-D\-C\-D@{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-D\-C\-D}}
+\index{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-D\-C\-D@{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-D\-C\-D}!usb_protocol_cdc.h@{usb\-\_\-protocol\-\_\-cdc.\-h}}
+\subsubsection[{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-D\-C\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-D\-C\-D~\-C\-P\-U\-\_\-\-T\-O\-\_\-\-L\-E16((1$<$$<$0))}}
+\label{usb__protocol__cdc_8h_aafa95b6c5abafaa3421902df70428398}
+\hypertarget{usb__protocol__cdc_8h_af4d6d8d6990a49d2d690f4a2221d2ea4}{
+\index{usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}!\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-D\-S\-R@{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-D\-S\-R}}
+\index{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-D\-S\-R@{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-D\-S\-R}!usb_protocol_cdc.h@{usb\-\_\-protocol\-\_\-cdc.\-h}}
+\subsubsection[{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-D\-S\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-D\-S\-R~\-C\-P\-U\-\_\-\-T\-O\-\_\-\-L\-E16((1$<$$<$1))}}
+\label{usb__protocol__cdc_8h_af4d6d8d6990a49d2d690f4a2221d2ea4}
+\hypertarget{usb__protocol__cdc_8h_a1d2b66027b86544993305f5602612a72}{
+\index{usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}!\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-F\-R\-A\-M\-I\-N\-G@{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-F\-R\-A\-M\-I\-N\-G}}
+\index{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-F\-R\-A\-M\-I\-N\-G@{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-F\-R\-A\-M\-I\-N\-G}!usb_protocol_cdc.h@{usb\-\_\-protocol\-\_\-cdc.\-h}}
+\subsubsection[{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-F\-R\-A\-M\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-F\-R\-A\-M\-I\-N\-G~\-C\-P\-U\-\_\-\-T\-O\-\_\-\-L\-E16((1$<$$<$4))}}
+\label{usb__protocol__cdc_8h_a1d2b66027b86544993305f5602612a72}
+\hypertarget{usb__protocol__cdc_8h_a460608200d65e5aaa071185af20973e6}{
+\index{usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}!\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-O\-V\-E\-R\-R\-U\-N@{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-O\-V\-E\-R\-R\-U\-N}}
+\index{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-O\-V\-E\-R\-R\-U\-N@{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-O\-V\-E\-R\-R\-U\-N}!usb_protocol_cdc.h@{usb\-\_\-protocol\-\_\-cdc.\-h}}
+\subsubsection[{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-O\-V\-E\-R\-R\-U\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-O\-V\-E\-R\-R\-U\-N~\-C\-P\-U\-\_\-\-T\-O\-\_\-\-L\-E16((1$<$$<$6))}}
+\label{usb__protocol__cdc_8h_a460608200d65e5aaa071185af20973e6}
+\hypertarget{usb__protocol__cdc_8h_ac1a2e84a7444f8d9c22467d48b250449}{
+\index{usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}!\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-P\-A\-R\-I\-T\-Y@{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-P\-A\-R\-I\-T\-Y}}
+\index{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-P\-A\-R\-I\-T\-Y@{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-P\-A\-R\-I\-T\-Y}!usb_protocol_cdc.h@{usb\-\_\-protocol\-\_\-cdc.\-h}}
+\subsubsection[{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-P\-A\-R\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-P\-A\-R\-I\-T\-Y~\-C\-P\-U\-\_\-\-T\-O\-\_\-\-L\-E16((1$<$$<$5))}}
+\label{usb__protocol__cdc_8h_ac1a2e84a7444f8d9c22467d48b250449}
+\hypertarget{usb__protocol__cdc_8h_a50e133d334a1d269f11dbfddf7584aa2}{
+\index{usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}!\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-I\-N\-G@{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-I\-N\-G}}
+\index{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-I\-N\-G@{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-I\-N\-G}!usb_protocol_cdc.h@{usb\-\_\-protocol\-\_\-cdc.\-h}}
+\subsubsection[{\-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-R\-I\-N\-G~\-C\-P\-U\-\_\-\-T\-O\-\_\-\-L\-E16((1$<$$<$3))}}
+\label{usb__protocol__cdc_8h_a50e133d334a1d269f11dbfddf7584aa2}
+
+
+\subsection{\-Enumeration \-Type \-Documentation}
+\hypertarget{usb__protocol__cdc_8h_a3c7a6043e6bad9fdb2397cd55c42a42b}{
+\index{usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}!cdc\-\_\-char\-\_\-format@{cdc\-\_\-char\-\_\-format}}
+\index{cdc\-\_\-char\-\_\-format@{cdc\-\_\-char\-\_\-format}!usb_protocol_cdc.h@{usb\-\_\-protocol\-\_\-cdc.\-h}}
+\subsubsection[{cdc\-\_\-char\-\_\-format}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cdc\-\_\-char\-\_\-format}}}
+\label{usb__protocol__cdc_8h_a3c7a6043e6bad9fdb2397cd55c42a42b}
+
+
+\-Possible values of b\-Char\-Format. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-C\-D\-C\-\_\-\-S\-T\-O\-P\-\_\-\-B\-I\-T\-S\-\_\-1@{\-C\-D\-C\-\_\-\-S\-T\-O\-P\-\_\-\-B\-I\-T\-S\-\_\-1}!usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}}\index{usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}!\-C\-D\-C\-\_\-\-S\-T\-O\-P\-\_\-\-B\-I\-T\-S\-\_\-1@{\-C\-D\-C\-\_\-\-S\-T\-O\-P\-\_\-\-B\-I\-T\-S\-\_\-1}}\item[{\em 
+\hypertarget{usb__protocol__cdc_8h_a3c7a6043e6bad9fdb2397cd55c42a42ba91a98e65c928f90dda87311124146570}{
+\-C\-D\-C\-\_\-\-S\-T\-O\-P\-\_\-\-B\-I\-T\-S\-\_\-1}
+\label{usb__protocol__cdc_8h_a3c7a6043e6bad9fdb2397cd55c42a42ba91a98e65c928f90dda87311124146570}
+}]1 stop bit \index{\-C\-D\-C\-\_\-\-S\-T\-O\-P\-\_\-\-B\-I\-T\-S\-\_\-1\-\_\-5@{\-C\-D\-C\-\_\-\-S\-T\-O\-P\-\_\-\-B\-I\-T\-S\-\_\-1\-\_\-5}!usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}}\index{usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}!\-C\-D\-C\-\_\-\-S\-T\-O\-P\-\_\-\-B\-I\-T\-S\-\_\-1\-\_\-5@{\-C\-D\-C\-\_\-\-S\-T\-O\-P\-\_\-\-B\-I\-T\-S\-\_\-1\-\_\-5}}\item[{\em 
+\hypertarget{usb__protocol__cdc_8h_a3c7a6043e6bad9fdb2397cd55c42a42ba14a3ecd9c4ca08a01c752ab7812cbe9f}{
+\-C\-D\-C\-\_\-\-S\-T\-O\-P\-\_\-\-B\-I\-T\-S\-\_\-1\-\_\-5}
+\label{usb__protocol__cdc_8h_a3c7a6043e6bad9fdb2397cd55c42a42ba14a3ecd9c4ca08a01c752ab7812cbe9f}
+}]1.\-5 stop bits \index{\-C\-D\-C\-\_\-\-S\-T\-O\-P\-\_\-\-B\-I\-T\-S\-\_\-2@{\-C\-D\-C\-\_\-\-S\-T\-O\-P\-\_\-\-B\-I\-T\-S\-\_\-2}!usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}}\index{usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}!\-C\-D\-C\-\_\-\-S\-T\-O\-P\-\_\-\-B\-I\-T\-S\-\_\-2@{\-C\-D\-C\-\_\-\-S\-T\-O\-P\-\_\-\-B\-I\-T\-S\-\_\-2}}\item[{\em 
+\hypertarget{usb__protocol__cdc_8h_a3c7a6043e6bad9fdb2397cd55c42a42ba49b5d7493d3e79ca260a9350f833e8cd}{
+\-C\-D\-C\-\_\-\-S\-T\-O\-P\-\_\-\-B\-I\-T\-S\-\_\-2}
+\label{usb__protocol__cdc_8h_a3c7a6043e6bad9fdb2397cd55c42a42ba49b5d7493d3e79ca260a9350f833e8cd}
+}]2 stop bits \end{description}
+\end{Desc}
+
+\hypertarget{usb__protocol__cdc_8h_abbab0861d65d43845f1a506fc381ca1b}{
+\index{usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}!cdc\-\_\-parity@{cdc\-\_\-parity}}
+\index{cdc\-\_\-parity@{cdc\-\_\-parity}!usb_protocol_cdc.h@{usb\-\_\-protocol\-\_\-cdc.\-h}}
+\subsubsection[{cdc\-\_\-parity}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cdc\-\_\-parity}}}
+\label{usb__protocol__cdc_8h_abbab0861d65d43845f1a506fc381ca1b}
+
+
+\-Possible values of b\-Parity\-Type. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-N\-O\-N\-E@{\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-N\-O\-N\-E}!usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}}\index{usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}!\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-N\-O\-N\-E@{\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-N\-O\-N\-E}}\item[{\em 
+\hypertarget{usb__protocol__cdc_8h_abbab0861d65d43845f1a506fc381ca1ba3786e873183eaa7eb298fe1016ea426a}{
+\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-N\-O\-N\-E}
+\label{usb__protocol__cdc_8h_abbab0861d65d43845f1a506fc381ca1ba3786e873183eaa7eb298fe1016ea426a}
+}]\-No parity. \index{\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-O\-D\-D@{\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-O\-D\-D}!usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}}\index{usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}!\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-O\-D\-D@{\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-O\-D\-D}}\item[{\em 
+\hypertarget{usb__protocol__cdc_8h_abbab0861d65d43845f1a506fc381ca1baa3aae67136b342609025e31396404509}{
+\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-O\-D\-D}
+\label{usb__protocol__cdc_8h_abbab0861d65d43845f1a506fc381ca1baa3aae67136b342609025e31396404509}
+}]\-Odd parity. \index{\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-E\-V\-E\-N@{\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-E\-V\-E\-N}!usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}}\index{usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}!\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-E\-V\-E\-N@{\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-E\-V\-E\-N}}\item[{\em 
+\hypertarget{usb__protocol__cdc_8h_abbab0861d65d43845f1a506fc381ca1ba98b459946d7640a15eb64fceb8149374}{
+\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-E\-V\-E\-N}
+\label{usb__protocol__cdc_8h_abbab0861d65d43845f1a506fc381ca1ba98b459946d7640a15eb64fceb8149374}
+}]\-Even parity. \index{\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-M\-A\-R\-K@{\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-M\-A\-R\-K}!usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}}\index{usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}!\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-M\-A\-R\-K@{\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-M\-A\-R\-K}}\item[{\em 
+\hypertarget{usb__protocol__cdc_8h_abbab0861d65d43845f1a506fc381ca1ba132be49b0d35205cf8d116d19eb8785d}{
+\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-M\-A\-R\-K}
+\label{usb__protocol__cdc_8h_abbab0861d65d43845f1a506fc381ca1ba132be49b0d35205cf8d116d19eb8785d}
+}]\-Parity forced to 0 (space) \index{\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-S\-P\-A\-C\-E@{\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-S\-P\-A\-C\-E}!usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}}\index{usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}!\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-S\-P\-A\-C\-E@{\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-S\-P\-A\-C\-E}}\item[{\em 
+\hypertarget{usb__protocol__cdc_8h_abbab0861d65d43845f1a506fc381ca1baa102d02cecbe45dbc5c7feda8cf88096}{
+\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-S\-P\-A\-C\-E}
+\label{usb__protocol__cdc_8h_abbab0861d65d43845f1a506fc381ca1baa102d02cecbe45dbc5c7feda8cf88096}
+}]\-Parity forced to 1 (mark) \end{description}
+\end{Desc}
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{usb__protocol__cdc_8h_abe317a1520896eaf568afab27dc71540}{
+\index{usb\-\_\-protocol\-\_\-cdc.\-h@{usb\-\_\-protocol\-\_\-cdc.\-h}!\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-R\-E\-S\-E\-T@{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-R\-E\-S\-E\-T}}
+\index{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-R\-E\-S\-E\-T@{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-R\-E\-S\-E\-T}!usb_protocol_cdc.h@{usb\-\_\-protocol\-\_\-cdc.\-h}}
+\subsubsection[{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-R\-E\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-R\-E\-S\-E\-T (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{usb__protocol__cdc_8h_abe317a1520896eaf568afab27dc71540}

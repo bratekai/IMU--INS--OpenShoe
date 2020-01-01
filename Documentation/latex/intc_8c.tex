@@ -1,0 +1,150 @@
+\hypertarget{intc_8c}{
+\section{intc.c \-File \-Reference}
+\label{intc_8c}\index{intc.\-c@{intc.\-c}}
+}
+
+
+\-I\-N\-T\-C driver for \-A\-V\-R32 \-U\-C3.  
+
+
+{\ttfamily \#include $<$avr32/io.\-h$>$}\*
+{\ttfamily \#include \char`\"{}compiler.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}preprocessor.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}intc.\-h\char`\"{}}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{intc_8c_ab4bcc23d8dd9265f7372840212cad918}{\-I\-N\-S\-E\-R\-T\-\_\-\-I\-N\-T\-\_\-\-L\-I\-N\-E\-\_\-\-H\-A\-N\-D\-L\-E\-R\-\_\-\-T\-A\-B\-L\-E}(\-G\-R\-P, unused)~\{\-A\-V\-R32\-\_\-\-I\-N\-T\-C\-\_\-\-N\-U\-M\-\_\-\-I\-R\-Q\-S\-\_\-\-P\-E\-R\-\_\-\-G\-R\-P\#\#\-G\-R\-P, \-\_\-int\-\_\-line\-\_\-handler\-\_\-table\-\_\-\#\#\-G\-R\-P\},
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\-\_\-\-\_\-int\-\_\-handler \hyperlink{intc_8c_abe97421986ff23051373ba86b17bcc8f}{\-\_\-get\-\_\-interrupt\-\_\-handler} (unsigned int int\-\_\-level)
+\begin{DoxyCompactList}\small\item\em \-Gets the interrupt handler of the current event at the {\itshape int\-\_\-level\/} interrupt priority level (called from exception.\-S). \end{DoxyCompactList}\item 
+\hyperlink{intc_8c_a3f26ae8340f75e7955132319e4846c7b}{\-M\-R\-E\-P\-E\-A\-T} (\-A\-V\-R32\-\_\-\-I\-N\-T\-C\-\_\-\-N\-U\-M\-\_\-\-I\-N\-T\-\_\-\-G\-R\-P\-S, \-D\-E\-C\-L\-\_\-\-I\-N\-T\-\_\-\-L\-I\-N\-E\-\_\-\-H\-A\-N\-D\-L\-E\-R\-\_\-\-T\-A\-B\-L\-E,$\sim$)
+\item 
+void \hyperlink{intc_8c_a226ee553d4c11b51b88d7be105c44d34}{\-I\-N\-T\-C\-\_\-init\-\_\-interrupts} (void)
+\item 
+void \hyperlink{intc_8c_a5d1a4ab34a29ecdb96c5b18070595aca}{\-I\-N\-T\-C\-\_\-register\-\_\-interrupt} (\-\_\-\-\_\-int\-\_\-handler handler, unsigned int irq, unsigned int int\-\_\-level)
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{intc_8c_a84b84a734c9b1f49ca0c36e405b76c29}{\-\_\-evba}
+\item 
+const unsigned int \hyperlink{intc_8c_aefb0f06776684a9f90d2cb2ec3450395}{ipr\-\_\-val} \mbox{[}\-A\-V\-R32\-\_\-\-I\-N\-T\-C\-\_\-\-N\-U\-M\-\_\-\-I\-N\-T\-\_\-\-L\-E\-V\-E\-L\-S\mbox{]}
+\begin{DoxyCompactList}\small\item\em \-Values to store in the interrupt priority registers for the various interrupt priority levels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-I\-N\-T\-C driver for \-A\-V\-R32 \-U\-C3. \-A\-V\-R32 \-Interrupt \-Controller driver module.
+
+
+\begin{DoxyItemize}
+\item \-Compiler\-: \-I\-A\-R \-E\-W\-A\-V\-R32 and \-G\-N\-U \-G\-C\-C for \-A\-V\-R32
+\item \-Supported devices\-: \-All \-A\-V\-R32 devices with an \-I\-N\-T\-C module can be used.
+\item \-App\-Note\-:
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{\-Author}
+\-Atmel \-Corporation\-: \href{http://www.atmel.com}{\tt http\-://www.\-atmel.\-com} \par
+ \-Support and \-F\-A\-Q\-: \href{http://support.atmel.no/}{\tt http\-://support.\-atmel.\-no/} 
+\end{DoxyAuthor}
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{intc_8c_ab4bcc23d8dd9265f7372840212cad918}{
+\index{intc.\-c@{intc.\-c}!\-I\-N\-S\-E\-R\-T\-\_\-\-I\-N\-T\-\_\-\-L\-I\-N\-E\-\_\-\-H\-A\-N\-D\-L\-E\-R\-\_\-\-T\-A\-B\-L\-E@{\-I\-N\-S\-E\-R\-T\-\_\-\-I\-N\-T\-\_\-\-L\-I\-N\-E\-\_\-\-H\-A\-N\-D\-L\-E\-R\-\_\-\-T\-A\-B\-L\-E}}
+\index{\-I\-N\-S\-E\-R\-T\-\_\-\-I\-N\-T\-\_\-\-L\-I\-N\-E\-\_\-\-H\-A\-N\-D\-L\-E\-R\-\_\-\-T\-A\-B\-L\-E@{\-I\-N\-S\-E\-R\-T\-\_\-\-I\-N\-T\-\_\-\-L\-I\-N\-E\-\_\-\-H\-A\-N\-D\-L\-E\-R\-\_\-\-T\-A\-B\-L\-E}!intc.c@{intc.\-c}}
+\subsubsection[{\-I\-N\-S\-E\-R\-T\-\_\-\-I\-N\-T\-\_\-\-L\-I\-N\-E\-\_\-\-H\-A\-N\-D\-L\-E\-R\-\_\-\-T\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-I\-N\-S\-E\-R\-T\-\_\-\-I\-N\-T\-\_\-\-L\-I\-N\-E\-\_\-\-H\-A\-N\-D\-L\-E\-R\-\_\-\-T\-A\-B\-L\-E(
+\begin{DoxyParamCaption}
+\item[{}]{\-G\-R\-P, }
+\item[{}]{unused}
+\end{DoxyParamCaption}
+)~\{\-A\-V\-R32\-\_\-\-I\-N\-T\-C\-\_\-\-N\-U\-M\-\_\-\-I\-R\-Q\-S\-\_\-\-P\-E\-R\-\_\-\-G\-R\-P\#\#\-G\-R\-P, \-\_\-int\-\_\-line\-\_\-handler\-\_\-table\-\_\-\#\#\-G\-R\-P\},}}
+\label{intc_8c_ab4bcc23d8dd9265f7372840212cad918}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{intc_8c_abe97421986ff23051373ba86b17bcc8f}{
+\index{intc.\-c@{intc.\-c}!\-\_\-get\-\_\-interrupt\-\_\-handler@{\-\_\-get\-\_\-interrupt\-\_\-handler}}
+\index{\-\_\-get\-\_\-interrupt\-\_\-handler@{\-\_\-get\-\_\-interrupt\-\_\-handler}!intc.c@{intc.\-c}}
+\subsubsection[{\-\_\-get\-\_\-interrupt\-\_\-handler}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-int\-\_\-handler \-\_\-get\-\_\-interrupt\-\_\-handler (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{int\-\_\-level}
+\end{DoxyParamCaption}
+)}}
+\label{intc_8c_abe97421986ff23051373ba86b17bcc8f}
+
+
+\-Gets the interrupt handler of the current event at the {\itshape int\-\_\-level\/} interrupt priority level (called from exception.\-S). 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em int\-\_\-level} & \-Interrupt priority level to handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Interrupt handler to execute.
+\end{DoxyReturn}
+\begin{DoxyNote}{\-Note}
+\-Taken and adapted from \-Newlib. 
+\end{DoxyNote}
+\hypertarget{intc_8c_a226ee553d4c11b51b88d7be105c44d34}{
+\index{intc.\-c@{intc.\-c}!\-I\-N\-T\-C\-\_\-init\-\_\-interrupts@{\-I\-N\-T\-C\-\_\-init\-\_\-interrupts}}
+\index{\-I\-N\-T\-C\-\_\-init\-\_\-interrupts@{\-I\-N\-T\-C\-\_\-init\-\_\-interrupts}!intc.c@{intc.\-c}}
+\subsubsection[{\-I\-N\-T\-C\-\_\-init\-\_\-interrupts}]{\setlength{\rightskip}{0pt plus 5cm}void \-I\-N\-T\-C\-\_\-init\-\_\-interrupts (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{intc_8c_a226ee553d4c11b51b88d7be105c44d34}
+\hypertarget{intc_8c_a5d1a4ab34a29ecdb96c5b18070595aca}{
+\index{intc.\-c@{intc.\-c}!\-I\-N\-T\-C\-\_\-register\-\_\-interrupt@{\-I\-N\-T\-C\-\_\-register\-\_\-interrupt}}
+\index{\-I\-N\-T\-C\-\_\-register\-\_\-interrupt@{\-I\-N\-T\-C\-\_\-register\-\_\-interrupt}!intc.c@{intc.\-c}}
+\subsubsection[{\-I\-N\-T\-C\-\_\-register\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}void \-I\-N\-T\-C\-\_\-register\-\_\-interrupt (
+\begin{DoxyParamCaption}
+\item[{\-\_\-\-\_\-int\-\_\-handler}]{handler, }
+\item[{unsigned int}]{irq, }
+\item[{unsigned int}]{int\-\_\-level}
+\end{DoxyParamCaption}
+)}}
+\label{intc_8c_a5d1a4ab34a29ecdb96c5b18070595aca}
+\hypertarget{intc_8c_a3f26ae8340f75e7955132319e4846c7b}{
+\index{intc.\-c@{intc.\-c}!\-M\-R\-E\-P\-E\-A\-T@{\-M\-R\-E\-P\-E\-A\-T}}
+\index{\-M\-R\-E\-P\-E\-A\-T@{\-M\-R\-E\-P\-E\-A\-T}!intc.c@{intc.\-c}}
+\subsubsection[{\-M\-R\-E\-P\-E\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}\-M\-R\-E\-P\-E\-A\-T (
+\begin{DoxyParamCaption}
+\item[{\-A\-V\-R32\-\_\-\-I\-N\-T\-C\-\_\-\-N\-U\-M\-\_\-\-I\-N\-T\-\_\-\-G\-R\-P\-S}]{, }
+\item[{\-D\-E\-C\-L\-\_\-\-I\-N\-T\-\_\-\-L\-I\-N\-E\-\_\-\-H\-A\-N\-D\-L\-E\-R\-\_\-\-T\-A\-B\-L\-E}]{, }
+\item[{$\sim$}]{}
+\end{DoxyParamCaption}
+)}}
+\label{intc_8c_a3f26ae8340f75e7955132319e4846c7b}
+\-Creates a table of interrupt line handlers per interrupt group in order to optimize \-R\-A\-M space. \-Each line handler table contains a set of pointers to interrupt handlers. 
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{intc_8c_a84b84a734c9b1f49ca0c36e405b76c29}{
+\index{intc.\-c@{intc.\-c}!\-\_\-evba@{\-\_\-evba}}
+\index{\-\_\-evba@{\-\_\-evba}!intc.c@{intc.\-c}}
+\subsubsection[{\-\_\-evba}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf \-\_\-evba}}}
+\label{intc_8c_a84b84a734c9b1f49ca0c36e405b76c29}
+\hypertarget{intc_8c_aaf7f977a07dd8d229bed589b2202873f}{
+\index{intc.\-c@{intc.\-c}!\-\_\-int\-\_\-line\-\_\-handler\-\_\-table@{\-\_\-int\-\_\-line\-\_\-handler\-\_\-table}}
+\index{\-\_\-int\-\_\-line\-\_\-handler\-\_\-table@{\-\_\-int\-\_\-line\-\_\-handler\-\_\-table}!intc.c@{intc.\-c}}
+\subsubsection[{\-\_\-int\-\_\-line\-\_\-handler\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}volatile \-\_\-\-\_\-int\-\_\-handler$\ast$ {\bf \-\_\-int\-\_\-line\-\_\-handler\-\_\-table}}}
+\label{intc_8c_aaf7f977a07dd8d229bed589b2202873f}
+\hypertarget{intc_8c_aefb0f06776684a9f90d2cb2ec3450395}{
+\index{intc.\-c@{intc.\-c}!ipr\-\_\-val@{ipr\-\_\-val}}
+\index{ipr\-\_\-val@{ipr\-\_\-val}!intc.c@{intc.\-c}}
+\subsubsection[{ipr\-\_\-val}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int {\bf ipr\-\_\-val}\mbox{[}\-A\-V\-R32\-\_\-\-I\-N\-T\-C\-\_\-\-N\-U\-M\-\_\-\-I\-N\-T\-\_\-\-L\-E\-V\-E\-L\-S\mbox{]}}}
+\label{intc_8c_aefb0f06776684a9f90d2cb2ec3450395}
+
+
+\-Values to store in the interrupt priority registers for the various interrupt priority levels. 
+
+\hypertarget{intc_8c_a1c78431e2cf894281731a81403dd6f39}{
+\index{intc.\-c@{intc.\-c}!num\-\_\-irqs@{num\-\_\-irqs}}
+\index{num\-\_\-irqs@{num\-\_\-irqs}!intc.c@{intc.\-c}}
+\subsubsection[{num\-\_\-irqs}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf num\-\_\-irqs}}}
+\label{intc_8c_a1c78431e2cf894281731a81403dd6f39}

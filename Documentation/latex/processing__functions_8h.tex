@@ -1,0 +1,68 @@
+\hypertarget{processing__functions_8h}{
+\section{processing\-\_\-functions.h \-File \-Reference}
+\label{processing__functions_8h}\index{processing\-\_\-functions.\-h@{processing\-\_\-functions.\-h}}
+}
+
+
+\-Declarations of functions intended for the processing sequence and related information tables.  
+
+
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structproc__func__info}{proc\-\_\-func\-\_\-info}
+\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__tables_gac644d2e05254dadd0b19a93c12c0afd9}{\-U\-P\-D\-A\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R}~0x04
+\item 
+\#define \hyperlink{group__tables_ga88f8e60882c5d69d913d1b616687465d}{\-I\-N\-I\-T\-I\-A\-L\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T}~0x05
+\item 
+\#define \hyperlink{group__tables_gaec182aad2e49484d086d38c7ed1f9fe4}{\-M\-E\-C\-H\-A\-N\-I\-Z\-A\-T\-I\-O\-N}~0x06
+\item 
+\#define \hyperlink{group__tables_ga72e2455cf02251f80606a36183764cd1}{\-T\-I\-M\-E\-\_\-\-U\-P\-D\-A\-T\-E}~0x07
+\item 
+\#define \hyperlink{group__tables_ga2ea883c0ff4e6a5d37f32290ab3524b7}{\-Z\-U\-P\-T\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R}~0x08
+\item 
+\#define \hyperlink{group__tables_ga7d004ff741f1e7caad510eaa0a548fc1}{\-Z\-U\-P\-T\-\_\-\-U\-P\-D\-A\-T\-E}~0x09
+\item 
+\#define \hyperlink{group__tables_ga5f00f42fc2574820abde7c7dd797a036}{\-G\-Y\-R\-O\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N}~0x10
+\item 
+\#define \hyperlink{group__tables_ga8b4361d794c38610770d0078d5a581f3}{\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N}~0x11
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__tables_gaae1bbd924940610e1709300d40ca5a0f}{update\-\_\-imu\-\_\-data\-\_\-buffers} (void)
+\item 
+void \hyperlink{group__tables_ga8b0f8dc8c2ae1ff3f5e4f27284cf8e77}{initialize\-\_\-navigation\-\_\-algorithm} (void)
+\item 
+void \hyperlink{group__tables_ga9169808fbcb9f517deb908960a69ca7a}{strapdown\-\_\-mechanisation\-\_\-equations} (void)
+\item 
+void \hyperlink{group__tables_gac80ad2aa648edb47edb8f62883cb2a7d}{time\-\_\-up\-\_\-data} (void)
+\item 
+void \hyperlink{group__tables_gaf0b7424f50d37755b6b0736808082299}{\-Z\-U\-P\-T\-\_\-detector} (void)
+\item 
+void \hyperlink{group__tables_ga0b4ee34435eebb426eb367120ee79d72}{zupt\-\_\-update} (void)
+\item 
+void \hyperlink{group__tables_ga71833d5eb4e7c71baaaa9e707a6c1f8d}{precision\-\_\-gyro\-\_\-bias\-\_\-null\-\_\-calibration} (void)
+\item 
+void \hyperlink{group__tables_gabb3f28a44a35898c77d789734914c4c2}{calibrate\-\_\-accelerometers} (void)
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{structproc__func__info}{proc\-\_\-func\-\_\-info} $\ast$ \hyperlink{group__tables_ga41846acfd74bdde84b592227e9875931}{processing\-\_\-functions} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Declarations of functions intended for the processing sequence and related information tables. \-This header file contains 1) \-Declarations of functions intended for the processing sequence. 2) \-Definitions of tables containing information about the functions intended for the processing sequence. \-The functions can be defined across the program. \-This file just gather the declarations together such that the related information tables can be filled in. \-The information tables are used for output functions in external\-\_\-interfaces.\-c. \-This file contians multiple static variables so it should only be included where necessary.
+
+\begin{DoxyAuthor}{\-Authors}
+\-John-\/\-Olof \-Nilsson, \-Isaac \-Skog 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{\-Copyright}
+\-Copyright (c) 2011 \-Open\-Shoe, \-I\-S\-C \-License (open source) 
+\end{DoxyCopyright}

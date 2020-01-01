@@ -1,0 +1,44 @@
+\hypertarget{process__sequence_8h}{
+\section{process\-\_\-sequence.h \-File \-Reference}
+\label{process__sequence_8h}\index{process\-\_\-sequence.\-h@{process\-\_\-sequence.\-h}}
+}
+
+
+\-Header file containing declarations for functions for manipulating and running process sequence.  
+
+
+{\ttfamily \#include \char`\"{}compiler.\-h\char`\"{}}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__proc__sequence_gaeda836195bc58fa7dc02a15d8b6e37ff}{\-P\-R\-O\-C\-E\-S\-S\-\_\-\-S\-E\-Q\-U\-E\-N\-C\-E\-\_\-\-S\-I\-Z\-E}~10
+\begin{DoxyCompactList}\small\item\em \-Size of process sequence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{group__proc__sequence_ga5fcb98b03e729c4ec685656d28ba37e2}{processing\-\_\-function\-\_\-p} )(void)
+\begin{DoxyCompactList}\small\item\em \-Typedefinition for functions in the process sequence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__proc__sequence_ga9cdcede43262de22e0dae58805e2c9c0}{run\-\_\-process\-\_\-sequence} (void)
+\begin{DoxyCompactList}\small\item\em \-Execute all non-\/\-N\-U\-L\-L functions in the processing sequence. \end{DoxyCompactList}\item 
+void \hyperlink{group__proc__sequence_ga1411bde99978e76b94f77665c370e6f4}{empty\-\_\-process\-\_\-sequence} (void)
+\begin{DoxyCompactList}\small\item\em \-Sets alla elements in processing sequence to \-N\-U\-L\-L. \end{DoxyCompactList}\item 
+void \hyperlink{group__proc__sequence_gaaca35dad858ccdc82751cfd34d4535a6}{store\-\_\-and\-\_\-empty\-\_\-process\-\_\-sequence} (void)
+\begin{DoxyCompactList}\small\item\em \-Copy processing sequence to temporary storage and sets all elements to \-N\-U\-L\-L. \end{DoxyCompactList}\item 
+void \hyperlink{group__proc__sequence_gaa734084dcdd99e68958aa61e0ed4c1bc}{restore\-\_\-process\-\_\-sequence} (void)
+\begin{DoxyCompactList}\small\item\em \-Copy the content of the \#process\-\_\-sequence\-\_\-storage to the \#process\-\_\-sequence. \end{DoxyCompactList}\item 
+void \hyperlink{group__proc__sequence_ga8839f3427b43cb0e9c707ec27dfb46d3}{set\-\_\-last\-\_\-process\-\_\-sequence\-\_\-element} (\hyperlink{group__proc__sequence_ga5fcb98b03e729c4ec685656d28ba37e2}{processing\-\_\-function\-\_\-p} elem\-\_\-value)
+\begin{DoxyCompactList}\small\item\em \-Sets last element in the process sequence to the argument function pointer. \end{DoxyCompactList}\item 
+void \hyperlink{group__proc__sequence_gad6e1709729ab982734163a29b20bcc70}{set\-\_\-elem\-\_\-in\-\_\-process\-\_\-sequence} (\hyperlink{group__proc__sequence_ga5fcb98b03e729c4ec685656d28ba37e2}{processing\-\_\-function\-\_\-p} elem\-\_\-value, uint8\-\_\-t elem\-\_\-nr)
+\begin{DoxyCompactList}\small\item\em \-Sets process sequence element number to elem\-\_\-value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Header file containing declarations for functions for manipulating and running process sequence. \begin{DoxyAuthor}{\-Authors}
+\-John-\/\-Olof \-Nilsson, \-Isaac \-Skog 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{\-Copyright}
+\-Copyright (c) 2011 \-Open\-Shoe, \-I\-S\-C \-License (open source) 
+\end{DoxyCopyright}

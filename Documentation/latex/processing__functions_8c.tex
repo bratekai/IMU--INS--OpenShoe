@@ -1,0 +1,51 @@
+\hypertarget{processing__functions_8c}{
+\section{processing\-\_\-functions.c \-File \-Reference}
+\label{processing__functions_8c}\index{processing\-\_\-functions.\-c@{processing\-\_\-functions.\-c}}
+}
+
+
+\-Declarations of externally controlled process sequence frunctions.  
+
+
+{\ttfamily \#include \char`\"{}control\-\_\-tables.\-h\char`\"{}}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__control__tables_gaae1bbd924940610e1709300d40ca5a0f}{update\-\_\-imu\-\_\-data\-\_\-buffers} (void)
+\item 
+void \hyperlink{group__control__tables_ga8b0f8dc8c2ae1ff3f5e4f27284cf8e77}{initialize\-\_\-navigation\-\_\-algorithm} (void)
+\item 
+void \hyperlink{group__control__tables_ga9169808fbcb9f517deb908960a69ca7a}{strapdown\-\_\-mechanisation\-\_\-equations} (void)
+\item 
+void \hyperlink{group__control__tables_gac80ad2aa648edb47edb8f62883cb2a7d}{time\-\_\-up\-\_\-data} (void)
+\item 
+void \hyperlink{group__control__tables_gaf0b7424f50d37755b6b0736808082299}{\-Z\-U\-P\-T\-\_\-detector} (void)
+\item 
+void \hyperlink{group__control__tables_ga0b4ee34435eebb426eb367120ee79d72}{zupt\-\_\-update} (void)
+\begin{DoxyCompactList}\small\item\em \-Routine collecting the functions which need to be run to make a \-Z\-U\-P\-T update. \end{DoxyCompactList}\item 
+void \hyperlink{group__control__tables_ga71833d5eb4e7c71baaaa9e707a6c1f8d}{precision\-\_\-gyro\-\_\-bias\-\_\-null\-\_\-calibration} (void)
+\begin{DoxyCompactList}\small\item\em \-Initializes the internal \-I\-M\-U gyro calibration routine. \end{DoxyCompactList}\item 
+void \hyperlink{group__control__tables_gabb3f28a44a35898c77d789734914c4c2}{calibrate\-\_\-accelerometers} (void)
+\item 
+void \hyperlink{group__control__tables_gab9fa06115589056892bdb7bb02b138c8}{processing\-\_\-functions\-\_\-init} (void)
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structproc__func__info}{proc\-\_\-func\-\_\-info} $\ast$ \hyperlink{group__control__tables_ga71b229d28824a0096f4f05aed00960a0}{processing\-\_\-functions\-\_\-by\-\_\-id} \mbox{[}256\mbox{]}
+\end{DoxyCompactItemize}
+\begin{Indent}\paragraph*{\-Processing functions information}
+{\em \-Structs containing information and pointers to functions intended for the process sequence }\end{Indent}
+
+
+\subsection{\-Detailed \-Description}
+\-Declarations of externally controlled process sequence frunctions. \-This file contain declarations of functions which can be added to the process sequence and definitions of information structs to these functions. \-The functions are declared and defined elsewhere in the system. \-This is just a place where the are all gathered. \-This will facilitate the management of all processing functions. \-Any function which should be inserted in to the process sequence should be added to this file.
+
+\-The file also contain an initialization function to fill up some arrays of states structs. \-This initialization function must be called before the arrays are used. \-This should eventually be replaced by some code generating script which explicitly declear the arrays.
+
+\begin{DoxyAuthor}{\-Authors}
+\-John-\/\-Olof \-Nilsson, \-Isaac \-Skog 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{\-Copyright}
+\-Copyright (c) 2011 \-Open\-Shoe, \-I\-S\-C \-License (open source) 
+\end{DoxyCopyright}

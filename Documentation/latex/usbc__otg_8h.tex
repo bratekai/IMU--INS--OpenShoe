@@ -1,0 +1,684 @@
+\hypertarget{usbc__otg_8h}{
+\section{usbc\-\_\-otg.h \-File \-Reference}
+\label{usbc__otg_8h}\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}}
+}
+
+
+\-U\-S\-B\-C \-O\-T\-G \-Driver header file.  
+
+
+{\ttfamily \#include \char`\"{}compiler.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}preprocessor.\-h\char`\"{}}\*
+\subsection*{\-Defines}
+\begin{Indent}\paragraph*{\-U\-S\-B\-C \-I\-P properties}
+{\em \-These macros give access to \-I\-P properties }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__otg__group_ga276fd7e676117783fc8d3a45aeda3351}{otg\-\_\-get\-\_\-ip\-\_\-name}()~(((uint64\-\_\-t)\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-uname2$<$$<$32)$|$(uint64\-\_\-t)\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-uname1)
+\begin{DoxyCompactList}\small\item\em \-Get \-I\-P name part 1 or 2. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga60eb9bc13cc48c77512db1849b54c4eb}{otg\-\_\-data\-\_\-memory\-\_\-barrier}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-uvers)
+\begin{DoxyCompactList}\small\item\em \-Instruction to access at a peripheral register after interrupt clear, see \-A\-V\-R32002 -\/ \-A\-V\-R32\-U\-C \-Technical reference \$6.\-6 \-Memory barriers. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga44d71ccfd479392e4bbfd49057c4bf32}{otg\-\_\-get\-\_\-ip\-\_\-version}()~(\-Rd\-\_\-bitfield(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-uvers, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-V\-E\-R\-S\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-N\-U\-M\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Get \-I\-P version. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga9ed10ed0cd9edede61a871d74b1d6859}{otg\-\_\-get\-\_\-metal\-\_\-fix\-\_\-nbr}()~(\-Rd\-\_\-bitfield(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-uvers, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-V\-E\-R\-S\-\_\-\-M\-E\-T\-A\-L\-\_\-\-F\-I\-X\-\_\-\-N\-U\-M\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Get number of metal fixes. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_gadfdcbe969406b8f621bfd82699361e5c}{otg\-\_\-get\-\_\-dpram\-\_\-size}()~(128 $<$$<$ \-Rd\-\_\-bitfield(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-ufeatures, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-F\-E\-A\-T\-U\-R\-E\-S\-\_\-\-F\-I\-F\-O\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Get \-D\-P\-R\-A\-M size (\-F\-I\-F\-O maximal size) in bytes. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_gac0da3ffdf225df7c33fef4f535147db0}{\-Is\-\_\-otg\-\_\-dpram\-\_\-byte\-\_\-write\-\_\-capable}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-ufeatures, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-F\-E\-A\-T\-U\-R\-E\-S\-\_\-\-B\-Y\-T\-E\-\_\-\-W\-R\-I\-T\-E\-\_\-\-D\-P\-R\-A\-M\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Test if \-D\-P\-R\-A\-M is natively byte write capable. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga00fe620dc8bbaa5707c691621f77321c}{otg\-\_\-get\-\_\-ip\-\_\-paddress\-\_\-size}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-uaddrsize)
+\begin{DoxyCompactList}\small\item\em \-Get size of \-U\-S\-B\-C \-P\-B address space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-U\-S\-B\-C \-O\-T\-G \-I\-D pin management}
+{\em \-These macros manage the \-I\-D pin use or not to switch between \-Host or \-Device mode }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__otg__group_ga1eac01e72e370946e44c6e372e77a394}{\-O\-T\-G\-\_\-\-I\-D\-\_\-\-P\-I\-N}~\-A\-T\-P\-A\-S\-T\-E2(\-O\-T\-G\-\_\-\-I\-D, \-\_\-\-P\-I\-N)
+\begin{DoxyCompactList}\small\item\em \-Pin and function for \-U\-S\-B\-\_\-\-I\-D according to configuration from \-O\-T\-G\-\_\-\-I\-D. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga67896e3d73053c7c3abfa5956dc47dbd}{\-O\-T\-G\-\_\-\-I\-D\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N}~\-A\-T\-P\-A\-S\-T\-E2(\-O\-T\-G\-\_\-\-I\-D, \-\_\-\-F\-U\-N\-C\-T\-I\-O\-N)
+\item 
+\#define \hyperlink{group__otg__group_gaa8520a37f119fe71fa225da806595233}{otg\-\_\-input\-\_\-id\-\_\-pin}()
+\begin{DoxyCompactList}\small\item\em \-Input \-O\-T\-G\-\_\-\-I\-D from its pin. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_gaf5cc6e51a0bd88c118f63a999e7cf759}{\-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-input}()
+\begin{DoxyCompactList}\small\item\em \-Test if \-O\-T\-G\-\_\-\-I\-D is input from its pin. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga8c345f8663b1f3432cb9882298e90a5b}{otg\-\_\-enable\-\_\-id\-\_\-pin}()~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-I\-D\-E\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Enable external \-O\-T\-G\-\_\-\-I\-D pin (listened to by \-U\-S\-B) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga8ad60737541846833dbddf8e92828e40}{otg\-\_\-disable\-\_\-id\-\_\-pin}()~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-I\-D\-E\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Disable external \-O\-T\-G\-\_\-\-I\-D pin (ignored by \-U\-S\-B) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga0c4344aeac9372eb1c455f23a844e1c8}{\-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-enabled}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-I\-D\-E\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Test if external \-O\-T\-G\-\_\-\-I\-D pin enabled (listened to by \-U\-S\-B) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga0a20b90b831ebf250983ef5e15f6d561}{otg\-\_\-force\-\_\-device\-\_\-mode}()~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-I\-M\-O\-D\-\_\-\-M\-A\-S\-K), otg\-\_\-disable\-\_\-id\-\_\-pin())
+\begin{DoxyCompactList}\small\item\em \-Disable external \-O\-T\-G\-\_\-\-I\-D pin and force device mode. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_gab9ff6cbcfe6c371a2cb9493c182fa6a8}{\-Is\-\_\-otg\-\_\-device\-\_\-mode\-\_\-forced}()~(!\-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-enabled() \&\& \-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-I\-M\-O\-D\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Test if device mode is forced. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga7a96147ad9ff7531f799c5e2127efad1}{otg\-\_\-force\-\_\-host\-\_\-mode}()~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-I\-M\-O\-D\-\_\-\-M\-A\-S\-K), otg\-\_\-disable\-\_\-id\-\_\-pin())
+\begin{DoxyCompactList}\small\item\em \-Disable external \-O\-T\-G\-\_\-\-I\-D pin and force host mode. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga8d245cf2f27f09d9ae4dd6e68ef451eb}{\-Is\-\_\-otg\-\_\-host\-\_\-mode\-\_\-forced}()~(!\-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-enabled() \&\& !\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-I\-M\-O\-D\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Test if host mode is forced. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-U\-S\-B\-C \-O\-T\-G \-I\-D pin interrupt management}
+{\em \-These macros manage the \-I\-D pin interrupt }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__otg__group_ga873ba3797934aa55fdf0d179496e0e89}{otg\-\_\-enable\-\_\-id\-\_\-interrupt}()~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-I\-D\-T\-E\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__otg__group_ga88d47c2dfdbd1c720326b011db6a7ebd}{otg\-\_\-disable\-\_\-id\-\_\-interrupt}()~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-I\-D\-T\-E\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__otg__group_gaee416d9364a73b24f67271cab0f697c5}{\-Is\-\_\-otg\-\_\-id\-\_\-interrupt\-\_\-enabled}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-I\-D\-T\-E\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__otg__group_ga75ab090e520e22605a84c77048814e9a}{\-Is\-\_\-otg\-\_\-id\-\_\-device}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbsta, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-\_\-\-I\-D\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__otg__group_ga473adb587b33ff08bc9afa2a916087b0}{otg\-\_\-ack\-\_\-id\-\_\-transition}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-C\-L\-R\-\_\-\-I\-D\-T\-I\-C\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__otg__group_ga221ed96e5450a2d29fdf265a99c430fc}{otg\-\_\-raise\-\_\-id\-\_\-transition}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-S\-E\-T\-\_\-\-I\-D\-T\-I\-S\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__otg__group_gad080cf4cce7110b5540021accd4e7f4c}{\-Is\-\_\-otg\-\_\-id\-\_\-transition}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbsta, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-\_\-\-I\-D\-T\-I\-\_\-\-M\-A\-S\-K))
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-U\-S\-B\-C \-O\-T\-G main management}
+{\em \-These macros allows to enable/disable pad and \-U\-S\-B\-C hardware }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{usbc__otg_8h_a75d73881ecb7e5bb189945a44eaca926}{otg\-\_\-enable}()~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-S\-B\-E\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Enable \-U\-S\-B macro. \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_abded673e54cd1ae77635e96b8014fde0}{otg\-\_\-disable}()~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-S\-B\-E\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Disable \-U\-S\-B macro. \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_a8b59dd3e898747ba11b77e043721269d}{\-Is\-\_\-otg\-\_\-enabled}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-S\-B\-E\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{usbc__otg_8h_a17f769bdbef3aa2b409e7d1f38a476e2}{otg\-\_\-enable\-\_\-pad}()~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-O\-T\-G\-P\-A\-D\-E\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Enable \-O\-T\-G pad. \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_afb8ac7fd28e55bb74eca244bb55e5aa9}{otg\-\_\-disable\-\_\-pad}()~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-O\-T\-G\-P\-A\-D\-E\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Disable \-O\-T\-G pad. \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_a27d435d22716763155f5adc4e554ddc6}{\-Is\-\_\-otg\-\_\-pad\-\_\-enabled}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-O\-T\-G\-P\-A\-D\-E\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{usbc__otg_8h_a810838fc4e0d3e2c8e85d5437f95f43b}{\-Is\-\_\-clock\-\_\-usable}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbsta, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-\_\-\-C\-L\-K\-U\-S\-A\-B\-L\-E\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{usbc__otg_8h_a077fe50b8211bbffb2e85af21bdd7270}{otg\-\_\-freeze\-\_\-clock}()~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-F\-R\-Z\-C\-L\-K\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Stop (freeze) internal \-U\-S\-B clock. \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_a5ae16bfde864eeae8d476100598ed30f}{otg\-\_\-unfreeze\-\_\-clock}()~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-F\-R\-Z\-C\-L\-K\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{usbc__otg_8h_acd2a715ca89a19b1666139d2e0a8e16b}{\-Is\-\_\-otg\-\_\-clock\-\_\-frozen}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-F\-R\-Z\-C\-L\-K\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{usbc__otg_8h_a16a8c715695f8bd79f4d92612b4e31dd}{otg\-\_\-configure\-\_\-timeout}(timer, timeout)
+\begin{DoxyCompactList}\small\item\em \-Configure time-\/out of specified \-O\-T\-G timer. \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_a20d5c018f8b887738566a4c72b98a985}{otg\-\_\-get\-\_\-timeout}(timer)
+\begin{DoxyCompactList}\small\item\em \-Get configured time-\/out of specified \-O\-T\-G timer. \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_a1363f07ff7661cd17b377a123c7909e6}{otg\-\_\-get\-\_\-fsm\-\_\-drd\-\_\-state}()~(\-Rd\-\_\-bitfield(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbfsm, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-F\-S\-M\-\_\-\-D\-R\-D\-S\-T\-A\-T\-E\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Get the dual-\/role device state of the internal \-U\-S\-B finite state machine of the \-U\-S\-B\-C controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-U\-S\-B\-C \-O\-T\-G hardware protocol}
+{\em \-These macros manages the hardware \-O\-T\-G protocol }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{usbc__otg_8h_a1c36c82d1a43f6ebc4fd3dfb94c11ec9}{otg\-\_\-device\-\_\-initiate\-\_\-hnp}()~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-H\-N\-P\-R\-E\-Q\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em initiates a \-Host \-Negociation \-Protocol \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_a633db7d6340f7efb1394bb8e980ccb20}{otg\-\_\-host\-\_\-accept\-\_\-hnp}()~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-H\-N\-P\-R\-E\-Q\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em accepts a \-Host \-Negociation \-Protocol \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_a4da32aa5db53b7cfd8af8d90924bb230}{otg\-\_\-host\-\_\-reject\-\_\-hnp}()~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-H\-N\-P\-R\-E\-Q\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em rejects a \-Host \-Negociation \-Protocol \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_ae135432701d4f044161b713685365e72}{otg\-\_\-device\-\_\-initiate\-\_\-srp}()~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-S\-R\-P\-R\-E\-Q\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em initiates a \-Session \-Request \-Protocol \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_af495eeaf0931f16f8dc5c9d84e81a18f}{otg\-\_\-select\-\_\-vbus\-\_\-srp\-\_\-method}()~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-S\-R\-P\-S\-E\-L\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em selects \-V\-Bus as \-S\-R\-P method \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_a3bdcb7b1a692501cfd3917fc63a696d0}{\-Is\-\_\-otg\-\_\-vbus\-\_\-srp\-\_\-method\-\_\-selected}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-S\-R\-P\-S\-E\-L\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{usbc__otg_8h_a84d0299bcf24c2f5c7d120cc285bd9cb}{otg\-\_\-select\-\_\-data\-\_\-srp\-\_\-method}()~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-S\-R\-P\-S\-E\-L\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em selects data line as \-S\-R\-P method \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_aaa8eabadd478e11ed88f864fbfdbf22e}{\-Is\-\_\-otg\-\_\-data\-\_\-srp\-\_\-method\-\_\-selected}()~(!\-Is\-\_\-otg\-\_\-vbus\-\_\-srp\-\_\-method\-\_\-selected())
+\item 
+\#define \hyperlink{usbc__otg_8h_a7182496d8ec7719dd1d416667d957a8f}{\-Is\-\_\-otg\-\_\-hnp}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-H\-N\-P\-R\-E\-Q\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em tests if a \-H\-N\-P occurs \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_a3569130bf8220eb9399d4961a04ae581}{\-Is\-\_\-otg\-\_\-device\-\_\-srp}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-S\-R\-P\-R\-E\-Q\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em tests if a \-S\-R\-P from device occurs \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_a455df45be6edd15b0997a8770f315244}{otg\-\_\-enable\-\_\-hnp\-\_\-error\-\_\-interrupt}()~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-H\-N\-P\-E\-R\-R\-E\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em enables \-H\-N\-P error interrupt \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_a59af15ff1a2c87e443811121eb4183d5}{otg\-\_\-disable\-\_\-hnp\-\_\-error\-\_\-interrupt}()~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-H\-N\-P\-E\-R\-R\-E\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em disables \-H\-N\-P error interrupt \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_a733df4614f72f42895ed72dfbfba74cf}{\-Is\-\_\-otg\-\_\-hnp\-\_\-error\-\_\-interrupt\-\_\-enabled}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-H\-N\-P\-E\-R\-R\-E\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{usbc__otg_8h_ab9cc97891223d01fe86dc9a6fee326be}{otg\-\_\-ack\-\_\-hnp\-\_\-error\-\_\-interrupt}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-C\-L\-R\-\_\-\-H\-N\-P\-E\-R\-R\-I\-C\-\_\-\-M\-A\-S\-K)
+\begin{DoxyCompactList}\small\item\em acks \-H\-N\-P error interrupt \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_aee546eff445b99ac231391901e7854aa}{otg\-\_\-raise\-\_\-hnp\-\_\-error\-\_\-interrupt}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-S\-E\-T\-\_\-\-H\-N\-P\-E\-R\-R\-I\-S\-\_\-\-M\-A\-S\-K)
+\begin{DoxyCompactList}\small\item\em raises \-H\-N\-P error interrupt \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_a224b13bd3ddfffca1fa08aacb55364f3}{\-Is\-\_\-otg\-\_\-hnp\-\_\-error\-\_\-interrupt}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbsta, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-\_\-\-H\-N\-P\-E\-R\-R\-I\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em tests if a \-H\-N\-P error occurs \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_ac5c0b8f0ee712ecfb8673aef9aac94da}{otg\-\_\-enable\-\_\-role\-\_\-exchange\-\_\-interrupt}()~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-R\-O\-L\-E\-E\-X\-E\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em enables role exchange interrupt \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_a032a4c6aef484f02cd80b795f1c7173c}{otg\-\_\-disable\-\_\-role\-\_\-exchange\-\_\-interrupt}()~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-R\-O\-L\-E\-E\-X\-E\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em disables role exchange interrupt \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_a041dcf4542463a455dd91ba7c2e1364c}{\-Is\-\_\-otg\-\_\-role\-\_\-exchange\-\_\-interrupt\-\_\-enabled}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-R\-O\-L\-E\-E\-X\-E\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{usbc__otg_8h_a5ea461b564ec80f5a8e7ae55eebed3bb}{otg\-\_\-ack\-\_\-role\-\_\-exchange\-\_\-interrupt}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-C\-L\-R\-\_\-\-R\-O\-L\-E\-E\-X\-I\-C\-\_\-\-M\-A\-S\-K)
+\begin{DoxyCompactList}\small\item\em acks role exchange interrupt \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_a053451388b18df7fabfae4ca2515ee37}{otg\-\_\-raise\-\_\-role\-\_\-exchange\-\_\-interrupt}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-S\-E\-T\-\_\-\-R\-O\-L\-E\-E\-X\-I\-S\-\_\-\-M\-A\-S\-K)
+\begin{DoxyCompactList}\small\item\em raises role exchange interrupt \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_a6a029c290011fb9b6b90528b70559607}{\-Is\-\_\-otg\-\_\-role\-\_\-exchange\-\_\-interrupt}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbsta, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-\_\-\-R\-O\-L\-E\-E\-X\-I\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em tests if a role exchange occurs \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_a1a4a2560928e0c885afe7a2e3248df64}{otg\-\_\-enable\-\_\-srp\-\_\-interrupt}()~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-S\-R\-P\-E\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em enables \-S\-R\-P interrupt \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_ac06a1dc7871c5776746a0cbeb59a4d46}{otg\-\_\-disable\-\_\-srp\-\_\-interrupt}()~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-S\-R\-P\-E\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em disables \-S\-R\-P interrupt \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_a74f9c5c01442893c41d57407643bc0ba}{\-Is\-\_\-otg\-\_\-srp\-\_\-interrupt\-\_\-enabled}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-S\-R\-P\-E\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{usbc__otg_8h_a69db3b99dccd18690c93a20d5593bd08}{otg\-\_\-ack\-\_\-srp\-\_\-interrupt}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-C\-L\-R\-\_\-\-S\-R\-P\-I\-C\-\_\-\-M\-A\-S\-K)
+\begin{DoxyCompactList}\small\item\em acks \-S\-R\-P interrupt \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_ad4d6485b59f1a95a60c447fa6b9f046f}{otg\-\_\-raise\-\_\-srp\-\_\-interrupt}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-S\-E\-T\-\_\-\-S\-R\-P\-I\-S\-\_\-\-M\-A\-S\-K)
+\begin{DoxyCompactList}\small\item\em raises \-S\-R\-P interrupt \end{DoxyCompactList}\item 
+\#define \hyperlink{usbc__otg_8h_ac8632ba7878c2ca7c7d12facb279b25b}{\-Is\-\_\-otg\-\_\-srp\-\_\-interrupt}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbsta, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-\_\-\-S\-R\-P\-I\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em tests if a \-S\-R\-P occurs \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{\-Detailed \-Description}
+\-U\-S\-B\-C \-O\-T\-G \-Driver header file. \-Copyright (\-C) 2009 \-Atmel \-Corporation. \-All rights reserved. 
+
+\subsection{\-Define \-Documentation}
+\hypertarget{usbc__otg_8h_a810838fc4e0d3e2c8e85d5437f95f43b}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!\-Is\-\_\-clock\-\_\-usable@{\-Is\-\_\-clock\-\_\-usable}}
+\index{\-Is\-\_\-clock\-\_\-usable@{\-Is\-\_\-clock\-\_\-usable}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{\-Is\-\_\-clock\-\_\-usable}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-clock\-\_\-usable(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbsta, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-\_\-\-C\-L\-K\-U\-S\-A\-B\-L\-E\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a810838fc4e0d3e2c8e85d5437f95f43b}
+\-Check \-Clock \-Usable \-For parts with \-H\-S feature, this one corresponding at \-U\-T\-M\-I clock \hypertarget{usbc__otg_8h_acd2a715ca89a19b1666139d2e0a8e16b}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!\-Is\-\_\-otg\-\_\-clock\-\_\-frozen@{\-Is\-\_\-otg\-\_\-clock\-\_\-frozen}}
+\index{\-Is\-\_\-otg\-\_\-clock\-\_\-frozen@{\-Is\-\_\-otg\-\_\-clock\-\_\-frozen}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{\-Is\-\_\-otg\-\_\-clock\-\_\-frozen}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-otg\-\_\-clock\-\_\-frozen(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-F\-R\-Z\-C\-L\-K\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_acd2a715ca89a19b1666139d2e0a8e16b}
+\hypertarget{usbc__otg_8h_aaa8eabadd478e11ed88f864fbfdbf22e}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!\-Is\-\_\-otg\-\_\-data\-\_\-srp\-\_\-method\-\_\-selected@{\-Is\-\_\-otg\-\_\-data\-\_\-srp\-\_\-method\-\_\-selected}}
+\index{\-Is\-\_\-otg\-\_\-data\-\_\-srp\-\_\-method\-\_\-selected@{\-Is\-\_\-otg\-\_\-data\-\_\-srp\-\_\-method\-\_\-selected}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{\-Is\-\_\-otg\-\_\-data\-\_\-srp\-\_\-method\-\_\-selected}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-otg\-\_\-data\-\_\-srp\-\_\-method\-\_\-selected(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(!\-Is\-\_\-otg\-\_\-vbus\-\_\-srp\-\_\-method\-\_\-selected())}}
+\label{usbc__otg_8h_aaa8eabadd478e11ed88f864fbfdbf22e}
+\hypertarget{usbc__otg_8h_a3569130bf8220eb9399d4961a04ae581}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!\-Is\-\_\-otg\-\_\-device\-\_\-srp@{\-Is\-\_\-otg\-\_\-device\-\_\-srp}}
+\index{\-Is\-\_\-otg\-\_\-device\-\_\-srp@{\-Is\-\_\-otg\-\_\-device\-\_\-srp}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{\-Is\-\_\-otg\-\_\-device\-\_\-srp}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-otg\-\_\-device\-\_\-srp(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-S\-R\-P\-R\-E\-Q\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a3569130bf8220eb9399d4961a04ae581}
+
+
+tests if a \-S\-R\-P from device occurs 
+
+\hypertarget{usbc__otg_8h_a8b59dd3e898747ba11b77e043721269d}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!\-Is\-\_\-otg\-\_\-enabled@{\-Is\-\_\-otg\-\_\-enabled}}
+\index{\-Is\-\_\-otg\-\_\-enabled@{\-Is\-\_\-otg\-\_\-enabled}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{\-Is\-\_\-otg\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-otg\-\_\-enabled(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-S\-B\-E\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a8b59dd3e898747ba11b77e043721269d}
+\hypertarget{usbc__otg_8h_a7182496d8ec7719dd1d416667d957a8f}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!\-Is\-\_\-otg\-\_\-hnp@{\-Is\-\_\-otg\-\_\-hnp}}
+\index{\-Is\-\_\-otg\-\_\-hnp@{\-Is\-\_\-otg\-\_\-hnp}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{\-Is\-\_\-otg\-\_\-hnp}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-otg\-\_\-hnp(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-H\-N\-P\-R\-E\-Q\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a7182496d8ec7719dd1d416667d957a8f}
+
+
+tests if a \-H\-N\-P occurs 
+
+\hypertarget{usbc__otg_8h_a224b13bd3ddfffca1fa08aacb55364f3}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!\-Is\-\_\-otg\-\_\-hnp\-\_\-error\-\_\-interrupt@{\-Is\-\_\-otg\-\_\-hnp\-\_\-error\-\_\-interrupt}}
+\index{\-Is\-\_\-otg\-\_\-hnp\-\_\-error\-\_\-interrupt@{\-Is\-\_\-otg\-\_\-hnp\-\_\-error\-\_\-interrupt}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{\-Is\-\_\-otg\-\_\-hnp\-\_\-error\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-otg\-\_\-hnp\-\_\-error\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbsta, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-\_\-\-H\-N\-P\-E\-R\-R\-I\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a224b13bd3ddfffca1fa08aacb55364f3}
+
+
+tests if a \-H\-N\-P error occurs 
+
+\hypertarget{usbc__otg_8h_a733df4614f72f42895ed72dfbfba74cf}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!\-Is\-\_\-otg\-\_\-hnp\-\_\-error\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-otg\-\_\-hnp\-\_\-error\-\_\-interrupt\-\_\-enabled}}
+\index{\-Is\-\_\-otg\-\_\-hnp\-\_\-error\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-otg\-\_\-hnp\-\_\-error\-\_\-interrupt\-\_\-enabled}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{\-Is\-\_\-otg\-\_\-hnp\-\_\-error\-\_\-interrupt\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-otg\-\_\-hnp\-\_\-error\-\_\-interrupt\-\_\-enabled(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-H\-N\-P\-E\-R\-R\-E\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a733df4614f72f42895ed72dfbfba74cf}
+\hypertarget{usbc__otg_8h_a27d435d22716763155f5adc4e554ddc6}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!\-Is\-\_\-otg\-\_\-pad\-\_\-enabled@{\-Is\-\_\-otg\-\_\-pad\-\_\-enabled}}
+\index{\-Is\-\_\-otg\-\_\-pad\-\_\-enabled@{\-Is\-\_\-otg\-\_\-pad\-\_\-enabled}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{\-Is\-\_\-otg\-\_\-pad\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-otg\-\_\-pad\-\_\-enabled(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-O\-T\-G\-P\-A\-D\-E\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a27d435d22716763155f5adc4e554ddc6}
+\hypertarget{usbc__otg_8h_a6a029c290011fb9b6b90528b70559607}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!\-Is\-\_\-otg\-\_\-role\-\_\-exchange\-\_\-interrupt@{\-Is\-\_\-otg\-\_\-role\-\_\-exchange\-\_\-interrupt}}
+\index{\-Is\-\_\-otg\-\_\-role\-\_\-exchange\-\_\-interrupt@{\-Is\-\_\-otg\-\_\-role\-\_\-exchange\-\_\-interrupt}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{\-Is\-\_\-otg\-\_\-role\-\_\-exchange\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-otg\-\_\-role\-\_\-exchange\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbsta, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-\_\-\-R\-O\-L\-E\-E\-X\-I\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a6a029c290011fb9b6b90528b70559607}
+
+
+tests if a role exchange occurs 
+
+\hypertarget{usbc__otg_8h_a041dcf4542463a455dd91ba7c2e1364c}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!\-Is\-\_\-otg\-\_\-role\-\_\-exchange\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-otg\-\_\-role\-\_\-exchange\-\_\-interrupt\-\_\-enabled}}
+\index{\-Is\-\_\-otg\-\_\-role\-\_\-exchange\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-otg\-\_\-role\-\_\-exchange\-\_\-interrupt\-\_\-enabled}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{\-Is\-\_\-otg\-\_\-role\-\_\-exchange\-\_\-interrupt\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-otg\-\_\-role\-\_\-exchange\-\_\-interrupt\-\_\-enabled(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-R\-O\-L\-E\-E\-X\-E\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a041dcf4542463a455dd91ba7c2e1364c}
+\hypertarget{usbc__otg_8h_ac8632ba7878c2ca7c7d12facb279b25b}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!\-Is\-\_\-otg\-\_\-srp\-\_\-interrupt@{\-Is\-\_\-otg\-\_\-srp\-\_\-interrupt}}
+\index{\-Is\-\_\-otg\-\_\-srp\-\_\-interrupt@{\-Is\-\_\-otg\-\_\-srp\-\_\-interrupt}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{\-Is\-\_\-otg\-\_\-srp\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-otg\-\_\-srp\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbsta, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-\_\-\-S\-R\-P\-I\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_ac8632ba7878c2ca7c7d12facb279b25b}
+
+
+tests if a \-S\-R\-P occurs 
+
+\hypertarget{usbc__otg_8h_a74f9c5c01442893c41d57407643bc0ba}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!\-Is\-\_\-otg\-\_\-srp\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-otg\-\_\-srp\-\_\-interrupt\-\_\-enabled}}
+\index{\-Is\-\_\-otg\-\_\-srp\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-otg\-\_\-srp\-\_\-interrupt\-\_\-enabled}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{\-Is\-\_\-otg\-\_\-srp\-\_\-interrupt\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-otg\-\_\-srp\-\_\-interrupt\-\_\-enabled(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-S\-R\-P\-E\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a74f9c5c01442893c41d57407643bc0ba}
+\hypertarget{usbc__otg_8h_a3bdcb7b1a692501cfd3917fc63a696d0}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!\-Is\-\_\-otg\-\_\-vbus\-\_\-srp\-\_\-method\-\_\-selected@{\-Is\-\_\-otg\-\_\-vbus\-\_\-srp\-\_\-method\-\_\-selected}}
+\index{\-Is\-\_\-otg\-\_\-vbus\-\_\-srp\-\_\-method\-\_\-selected@{\-Is\-\_\-otg\-\_\-vbus\-\_\-srp\-\_\-method\-\_\-selected}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{\-Is\-\_\-otg\-\_\-vbus\-\_\-srp\-\_\-method\-\_\-selected}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-otg\-\_\-vbus\-\_\-srp\-\_\-method\-\_\-selected(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-S\-R\-P\-S\-E\-L\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a3bdcb7b1a692501cfd3917fc63a696d0}
+\hypertarget{usbc__otg_8h_ab9cc97891223d01fe86dc9a6fee326be}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-ack\-\_\-hnp\-\_\-error\-\_\-interrupt@{otg\-\_\-ack\-\_\-hnp\-\_\-error\-\_\-interrupt}}
+\index{otg\-\_\-ack\-\_\-hnp\-\_\-error\-\_\-interrupt@{otg\-\_\-ack\-\_\-hnp\-\_\-error\-\_\-interrupt}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-ack\-\_\-hnp\-\_\-error\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-ack\-\_\-hnp\-\_\-error\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-C\-L\-R\-\_\-\-H\-N\-P\-E\-R\-R\-I\-C\-\_\-\-M\-A\-S\-K)}}
+\label{usbc__otg_8h_ab9cc97891223d01fe86dc9a6fee326be}
+
+
+acks \-H\-N\-P error interrupt 
+
+\hypertarget{usbc__otg_8h_a5ea461b564ec80f5a8e7ae55eebed3bb}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-ack\-\_\-role\-\_\-exchange\-\_\-interrupt@{otg\-\_\-ack\-\_\-role\-\_\-exchange\-\_\-interrupt}}
+\index{otg\-\_\-ack\-\_\-role\-\_\-exchange\-\_\-interrupt@{otg\-\_\-ack\-\_\-role\-\_\-exchange\-\_\-interrupt}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-ack\-\_\-role\-\_\-exchange\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-ack\-\_\-role\-\_\-exchange\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-C\-L\-R\-\_\-\-R\-O\-L\-E\-E\-X\-I\-C\-\_\-\-M\-A\-S\-K)}}
+\label{usbc__otg_8h_a5ea461b564ec80f5a8e7ae55eebed3bb}
+
+
+acks role exchange interrupt 
+
+\hypertarget{usbc__otg_8h_a69db3b99dccd18690c93a20d5593bd08}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-ack\-\_\-srp\-\_\-interrupt@{otg\-\_\-ack\-\_\-srp\-\_\-interrupt}}
+\index{otg\-\_\-ack\-\_\-srp\-\_\-interrupt@{otg\-\_\-ack\-\_\-srp\-\_\-interrupt}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-ack\-\_\-srp\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-ack\-\_\-srp\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-C\-L\-R\-\_\-\-S\-R\-P\-I\-C\-\_\-\-M\-A\-S\-K)}}
+\label{usbc__otg_8h_a69db3b99dccd18690c93a20d5593bd08}
+
+
+acks \-S\-R\-P interrupt 
+
+\hypertarget{usbc__otg_8h_a16a8c715695f8bd79f4d92612b4e31dd}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-configure\-\_\-timeout@{otg\-\_\-configure\-\_\-timeout}}
+\index{otg\-\_\-configure\-\_\-timeout@{otg\-\_\-configure\-\_\-timeout}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-configure\-\_\-timeout}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-configure\-\_\-timeout(
+\begin{DoxyParamCaption}
+\item[{}]{timer, }
+\item[{}]{timeout}
+\end{DoxyParamCaption}
+)}}
+\label{usbc__otg_8h_a16a8c715695f8bd79f4d92612b4e31dd}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+(Set_bits(AVR32_USBC.usbcon, AVR32_USBC_USBCON_UNLOCK_MASK),\
+                                             Wr_bitfield(AVR32_USBC.usbcon, 
+      AVR32_USBC_USBCON_TIMPAGE_MASK, timer),\
+                                             Wr_bitfield(AVR32_USBC.usbcon, 
+      AVR32_USBC_USBCON_TIMVALUE_MASK, timeout),\
+                                             Clr_bits(AVR32_USBC.usbcon, 
+      AVR32_USBC_USBCON_UNLOCK_MASK))
+\end{DoxyCode}
+
+
+\-Configure time-\/out of specified \-O\-T\-G timer. 
+
+\hypertarget{usbc__otg_8h_a1c36c82d1a43f6ebc4fd3dfb94c11ec9}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-device\-\_\-initiate\-\_\-hnp@{otg\-\_\-device\-\_\-initiate\-\_\-hnp}}
+\index{otg\-\_\-device\-\_\-initiate\-\_\-hnp@{otg\-\_\-device\-\_\-initiate\-\_\-hnp}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-device\-\_\-initiate\-\_\-hnp}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-device\-\_\-initiate\-\_\-hnp(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-H\-N\-P\-R\-E\-Q\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a1c36c82d1a43f6ebc4fd3dfb94c11ec9}
+
+
+initiates a \-Host \-Negociation \-Protocol 
+
+\hypertarget{usbc__otg_8h_ae135432701d4f044161b713685365e72}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-device\-\_\-initiate\-\_\-srp@{otg\-\_\-device\-\_\-initiate\-\_\-srp}}
+\index{otg\-\_\-device\-\_\-initiate\-\_\-srp@{otg\-\_\-device\-\_\-initiate\-\_\-srp}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-device\-\_\-initiate\-\_\-srp}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-device\-\_\-initiate\-\_\-srp(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-S\-R\-P\-R\-E\-Q\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_ae135432701d4f044161b713685365e72}
+
+
+initiates a \-Session \-Request \-Protocol 
+
+\hypertarget{usbc__otg_8h_abded673e54cd1ae77635e96b8014fde0}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-disable@{otg\-\_\-disable}}
+\index{otg\-\_\-disable@{otg\-\_\-disable}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-disable}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-disable(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-S\-B\-E\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_abded673e54cd1ae77635e96b8014fde0}
+
+
+\-Disable \-U\-S\-B macro. 
+
+\hypertarget{usbc__otg_8h_a59af15ff1a2c87e443811121eb4183d5}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-disable\-\_\-hnp\-\_\-error\-\_\-interrupt@{otg\-\_\-disable\-\_\-hnp\-\_\-error\-\_\-interrupt}}
+\index{otg\-\_\-disable\-\_\-hnp\-\_\-error\-\_\-interrupt@{otg\-\_\-disable\-\_\-hnp\-\_\-error\-\_\-interrupt}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-disable\-\_\-hnp\-\_\-error\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-disable\-\_\-hnp\-\_\-error\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-H\-N\-P\-E\-R\-R\-E\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a59af15ff1a2c87e443811121eb4183d5}
+
+
+disables \-H\-N\-P error interrupt 
+
+\hypertarget{usbc__otg_8h_afb8ac7fd28e55bb74eca244bb55e5aa9}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-disable\-\_\-pad@{otg\-\_\-disable\-\_\-pad}}
+\index{otg\-\_\-disable\-\_\-pad@{otg\-\_\-disable\-\_\-pad}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-disable\-\_\-pad}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-disable\-\_\-pad(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-O\-T\-G\-P\-A\-D\-E\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_afb8ac7fd28e55bb74eca244bb55e5aa9}
+
+
+\-Disable \-O\-T\-G pad. 
+
+\hypertarget{usbc__otg_8h_a032a4c6aef484f02cd80b795f1c7173c}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-disable\-\_\-role\-\_\-exchange\-\_\-interrupt@{otg\-\_\-disable\-\_\-role\-\_\-exchange\-\_\-interrupt}}
+\index{otg\-\_\-disable\-\_\-role\-\_\-exchange\-\_\-interrupt@{otg\-\_\-disable\-\_\-role\-\_\-exchange\-\_\-interrupt}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-disable\-\_\-role\-\_\-exchange\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-disable\-\_\-role\-\_\-exchange\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-R\-O\-L\-E\-E\-X\-E\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a032a4c6aef484f02cd80b795f1c7173c}
+
+
+disables role exchange interrupt 
+
+\hypertarget{usbc__otg_8h_ac06a1dc7871c5776746a0cbeb59a4d46}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-disable\-\_\-srp\-\_\-interrupt@{otg\-\_\-disable\-\_\-srp\-\_\-interrupt}}
+\index{otg\-\_\-disable\-\_\-srp\-\_\-interrupt@{otg\-\_\-disable\-\_\-srp\-\_\-interrupt}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-disable\-\_\-srp\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-disable\-\_\-srp\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-S\-R\-P\-E\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_ac06a1dc7871c5776746a0cbeb59a4d46}
+
+
+disables \-S\-R\-P interrupt 
+
+\hypertarget{usbc__otg_8h_a75d73881ecb7e5bb189945a44eaca926}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-enable@{otg\-\_\-enable}}
+\index{otg\-\_\-enable@{otg\-\_\-enable}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-enable}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-enable(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-S\-B\-E\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a75d73881ecb7e5bb189945a44eaca926}
+
+
+\-Enable \-U\-S\-B macro. 
+
+\hypertarget{usbc__otg_8h_a455df45be6edd15b0997a8770f315244}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-enable\-\_\-hnp\-\_\-error\-\_\-interrupt@{otg\-\_\-enable\-\_\-hnp\-\_\-error\-\_\-interrupt}}
+\index{otg\-\_\-enable\-\_\-hnp\-\_\-error\-\_\-interrupt@{otg\-\_\-enable\-\_\-hnp\-\_\-error\-\_\-interrupt}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-enable\-\_\-hnp\-\_\-error\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-enable\-\_\-hnp\-\_\-error\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-H\-N\-P\-E\-R\-R\-E\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a455df45be6edd15b0997a8770f315244}
+
+
+enables \-H\-N\-P error interrupt 
+
+\hypertarget{usbc__otg_8h_a17f769bdbef3aa2b409e7d1f38a476e2}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-enable\-\_\-pad@{otg\-\_\-enable\-\_\-pad}}
+\index{otg\-\_\-enable\-\_\-pad@{otg\-\_\-enable\-\_\-pad}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-enable\-\_\-pad}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-enable\-\_\-pad(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-O\-T\-G\-P\-A\-D\-E\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a17f769bdbef3aa2b409e7d1f38a476e2}
+
+
+\-Enable \-O\-T\-G pad. 
+
+\hypertarget{usbc__otg_8h_ac5c0b8f0ee712ecfb8673aef9aac94da}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-enable\-\_\-role\-\_\-exchange\-\_\-interrupt@{otg\-\_\-enable\-\_\-role\-\_\-exchange\-\_\-interrupt}}
+\index{otg\-\_\-enable\-\_\-role\-\_\-exchange\-\_\-interrupt@{otg\-\_\-enable\-\_\-role\-\_\-exchange\-\_\-interrupt}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-enable\-\_\-role\-\_\-exchange\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-enable\-\_\-role\-\_\-exchange\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-R\-O\-L\-E\-E\-X\-E\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_ac5c0b8f0ee712ecfb8673aef9aac94da}
+
+
+enables role exchange interrupt 
+
+\hypertarget{usbc__otg_8h_a1a4a2560928e0c885afe7a2e3248df64}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-enable\-\_\-srp\-\_\-interrupt@{otg\-\_\-enable\-\_\-srp\-\_\-interrupt}}
+\index{otg\-\_\-enable\-\_\-srp\-\_\-interrupt@{otg\-\_\-enable\-\_\-srp\-\_\-interrupt}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-enable\-\_\-srp\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-enable\-\_\-srp\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-S\-R\-P\-E\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a1a4a2560928e0c885afe7a2e3248df64}
+
+
+enables \-S\-R\-P interrupt 
+
+\hypertarget{usbc__otg_8h_a077fe50b8211bbffb2e85af21bdd7270}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-freeze\-\_\-clock@{otg\-\_\-freeze\-\_\-clock}}
+\index{otg\-\_\-freeze\-\_\-clock@{otg\-\_\-freeze\-\_\-clock}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-freeze\-\_\-clock}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-freeze\-\_\-clock(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-F\-R\-Z\-C\-L\-K\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a077fe50b8211bbffb2e85af21bdd7270}
+
+
+\-Stop (freeze) internal \-U\-S\-B clock. 
+
+\hypertarget{usbc__otg_8h_a1363f07ff7661cd17b377a123c7909e6}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-get\-\_\-fsm\-\_\-drd\-\_\-state@{otg\-\_\-get\-\_\-fsm\-\_\-drd\-\_\-state}}
+\index{otg\-\_\-get\-\_\-fsm\-\_\-drd\-\_\-state@{otg\-\_\-get\-\_\-fsm\-\_\-drd\-\_\-state}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-get\-\_\-fsm\-\_\-drd\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-get\-\_\-fsm\-\_\-drd\-\_\-state(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Rd\-\_\-bitfield(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbfsm, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-F\-S\-M\-\_\-\-D\-R\-D\-S\-T\-A\-T\-E\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a1363f07ff7661cd17b377a123c7909e6}
+
+
+\-Get the dual-\/role device state of the internal \-U\-S\-B finite state machine of the \-U\-S\-B\-C controller. 
+
+\hypertarget{usbc__otg_8h_a20d5c018f8b887738566a4c72b98a985}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-get\-\_\-timeout@{otg\-\_\-get\-\_\-timeout}}
+\index{otg\-\_\-get\-\_\-timeout@{otg\-\_\-get\-\_\-timeout}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-get\-\_\-timeout}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-get\-\_\-timeout(
+\begin{DoxyParamCaption}
+\item[{}]{timer}
+\end{DoxyParamCaption}
+)}}
+\label{usbc__otg_8h_a20d5c018f8b887738566a4c72b98a985}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+(Set_bits(AVR32_USBC.usbcon, AVR32_USBC_USBCON_UNLOCK_MASK),\
+                                             Wr_bitfield(AVR32_USBC.usbcon, 
+      AVR32_USBC_USBCON_TIMPAGE_MASK, timer),\
+                                             Clr_bits(AVR32_USBC.usbcon, 
+      AVR32_USBC_USBCON_UNLOCK_MASK),\
+                                             Rd_bitfield(AVR32_USBC.usbcon, 
+      AVR32_USBC_USBCON_TIMVALUE_MASK))
+\end{DoxyCode}
+
+
+\-Get configured time-\/out of specified \-O\-T\-G timer. 
+
+\hypertarget{usbc__otg_8h_a633db7d6340f7efb1394bb8e980ccb20}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-host\-\_\-accept\-\_\-hnp@{otg\-\_\-host\-\_\-accept\-\_\-hnp}}
+\index{otg\-\_\-host\-\_\-accept\-\_\-hnp@{otg\-\_\-host\-\_\-accept\-\_\-hnp}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-host\-\_\-accept\-\_\-hnp}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-host\-\_\-accept\-\_\-hnp(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-H\-N\-P\-R\-E\-Q\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a633db7d6340f7efb1394bb8e980ccb20}
+
+
+accepts a \-Host \-Negociation \-Protocol 
+
+\hypertarget{usbc__otg_8h_a4da32aa5db53b7cfd8af8d90924bb230}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-host\-\_\-reject\-\_\-hnp@{otg\-\_\-host\-\_\-reject\-\_\-hnp}}
+\index{otg\-\_\-host\-\_\-reject\-\_\-hnp@{otg\-\_\-host\-\_\-reject\-\_\-hnp}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-host\-\_\-reject\-\_\-hnp}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-host\-\_\-reject\-\_\-hnp(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-H\-N\-P\-R\-E\-Q\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a4da32aa5db53b7cfd8af8d90924bb230}
+
+
+rejects a \-Host \-Negociation \-Protocol 
+
+\hypertarget{usbc__otg_8h_aee546eff445b99ac231391901e7854aa}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-raise\-\_\-hnp\-\_\-error\-\_\-interrupt@{otg\-\_\-raise\-\_\-hnp\-\_\-error\-\_\-interrupt}}
+\index{otg\-\_\-raise\-\_\-hnp\-\_\-error\-\_\-interrupt@{otg\-\_\-raise\-\_\-hnp\-\_\-error\-\_\-interrupt}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-raise\-\_\-hnp\-\_\-error\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-raise\-\_\-hnp\-\_\-error\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-S\-E\-T\-\_\-\-H\-N\-P\-E\-R\-R\-I\-S\-\_\-\-M\-A\-S\-K)}}
+\label{usbc__otg_8h_aee546eff445b99ac231391901e7854aa}
+
+
+raises \-H\-N\-P error interrupt 
+
+\hypertarget{usbc__otg_8h_a053451388b18df7fabfae4ca2515ee37}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-raise\-\_\-role\-\_\-exchange\-\_\-interrupt@{otg\-\_\-raise\-\_\-role\-\_\-exchange\-\_\-interrupt}}
+\index{otg\-\_\-raise\-\_\-role\-\_\-exchange\-\_\-interrupt@{otg\-\_\-raise\-\_\-role\-\_\-exchange\-\_\-interrupt}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-raise\-\_\-role\-\_\-exchange\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-raise\-\_\-role\-\_\-exchange\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-S\-E\-T\-\_\-\-R\-O\-L\-E\-E\-X\-I\-S\-\_\-\-M\-A\-S\-K)}}
+\label{usbc__otg_8h_a053451388b18df7fabfae4ca2515ee37}
+
+
+raises role exchange interrupt 
+
+\hypertarget{usbc__otg_8h_ad4d6485b59f1a95a60c447fa6b9f046f}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-raise\-\_\-srp\-\_\-interrupt@{otg\-\_\-raise\-\_\-srp\-\_\-interrupt}}
+\index{otg\-\_\-raise\-\_\-srp\-\_\-interrupt@{otg\-\_\-raise\-\_\-srp\-\_\-interrupt}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-raise\-\_\-srp\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-raise\-\_\-srp\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-S\-E\-T\-\_\-\-S\-R\-P\-I\-S\-\_\-\-M\-A\-S\-K)}}
+\label{usbc__otg_8h_ad4d6485b59f1a95a60c447fa6b9f046f}
+
+
+raises \-S\-R\-P interrupt 
+
+\hypertarget{usbc__otg_8h_a84d0299bcf24c2f5c7d120cc285bd9cb}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-select\-\_\-data\-\_\-srp\-\_\-method@{otg\-\_\-select\-\_\-data\-\_\-srp\-\_\-method}}
+\index{otg\-\_\-select\-\_\-data\-\_\-srp\-\_\-method@{otg\-\_\-select\-\_\-data\-\_\-srp\-\_\-method}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-select\-\_\-data\-\_\-srp\-\_\-method}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-select\-\_\-data\-\_\-srp\-\_\-method(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-S\-R\-P\-S\-E\-L\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a84d0299bcf24c2f5c7d120cc285bd9cb}
+
+
+selects data line as \-S\-R\-P method 
+
+\hypertarget{usbc__otg_8h_af495eeaf0931f16f8dc5c9d84e81a18f}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-select\-\_\-vbus\-\_\-srp\-\_\-method@{otg\-\_\-select\-\_\-vbus\-\_\-srp\-\_\-method}}
+\index{otg\-\_\-select\-\_\-vbus\-\_\-srp\-\_\-method@{otg\-\_\-select\-\_\-vbus\-\_\-srp\-\_\-method}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-select\-\_\-vbus\-\_\-srp\-\_\-method}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-select\-\_\-vbus\-\_\-srp\-\_\-method(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-S\-R\-P\-S\-E\-L\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_af495eeaf0931f16f8dc5c9d84e81a18f}
+
+
+selects \-V\-Bus as \-S\-R\-P method 
+
+\hypertarget{usbc__otg_8h_a5ae16bfde864eeae8d476100598ed30f}{
+\index{usbc\-\_\-otg.\-h@{usbc\-\_\-otg.\-h}!otg\-\_\-unfreeze\-\_\-clock@{otg\-\_\-unfreeze\-\_\-clock}}
+\index{otg\-\_\-unfreeze\-\_\-clock@{otg\-\_\-unfreeze\-\_\-clock}!usbc_otg.h@{usbc\-\_\-otg.\-h}}
+\subsubsection[{otg\-\_\-unfreeze\-\_\-clock}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-unfreeze\-\_\-clock(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-F\-R\-Z\-C\-L\-K\-\_\-\-M\-A\-S\-K))}}
+\label{usbc__otg_8h_a5ae16bfde864eeae8d476100598ed30f}

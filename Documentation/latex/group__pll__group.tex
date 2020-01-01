@@ -1,0 +1,344 @@
+\hypertarget{group__pll__group}{
+\section{\-P\-L\-L \-Management}
+\label{group__pll__group}\index{\-P\-L\-L Management@{\-P\-L\-L Management}}
+}
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structpll__config}{pll\-\_\-config}
+\begin{DoxyCompactList}\small\item\em \-Hardware-\/specific representation of \-P\-L\-L configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pll__group_ga3778ecbe3fb3e8480ce23312a613a0aa}{\-P\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-M\-S}~div\-\_\-ceil(1000 $\ast$ (\-P\-L\-L\-\_\-\-M\-A\-X\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-\-C\-Y\-C\-L\-E\-S $\ast$ 2), \-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-M\-I\-N\-\_\-\-H\-Z)
+\begin{DoxyCompactList}\small\item\em \-Number of milliseconds to wait for \-P\-L\-L lock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group__pll__group_gacfb06d8fc0ffbe934077438884ae697f}{pll\-\_\-source} \{ \hyperlink{group__pll__group_ggacfb06d8fc0ffbe934077438884ae697fa060f32d7388cf128f527739090aa4217}{\-P\-L\-L\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0} =  0, 
+\hyperlink{group__pll__group_ggacfb06d8fc0ffbe934077438884ae697fa28e003235f43b85c6ee49bbe81b67218}{\-P\-L\-L\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1} =  1, 
+\hyperlink{group__pll__group_ggacfb06d8fc0ffbe934077438884ae697fa87507b481d2c92b721d802a5ae6cc8a5}{\-P\-L\-L\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M} =  2, 
+\hyperlink{group__pll__group_ggacfb06d8fc0ffbe934077438884ae697fa5020b47784b860efae2c423d33999dcc}{\-P\-L\-L\-\_\-\-N\-R\-\_\-\-S\-O\-U\-R\-C\-E\-S}
+ \}
+\begin{DoxyCompactList}\small\item\em \-P\-L\-L clock source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__pll__group_gaeee0be729bfa596c973cf6f725a89d45}{pll\-\_\-config\-\_\-write} (const struct \hyperlink{structpll__config}{pll\-\_\-config} $\ast$cfg, unsigned int pll\-\_\-id)
+\begin{DoxyCompactList}\small\item\em \-Activate the configuration {\itshape cfg\/} on {\itshape pll\-\_\-id\/}. \end{DoxyCompactList}\item 
+void \hyperlink{group__pll__group_gaede6e280289cb0759af0f5a34f5a627f}{pll\-\_\-enable} (const struct \hyperlink{structpll__config}{pll\-\_\-config} $\ast$cfg, unsigned int pll\-\_\-id)
+\begin{DoxyCompactList}\small\item\em \-Activate the configuration {\itshape cfg\/} and enable \-P\-L\-L {\itshape pll\-\_\-id\/}. \end{DoxyCompactList}\item 
+void \hyperlink{group__pll__group_ga9b369b5f673b10a6adf14cd3c9fea5ad}{pll\-\_\-disable} (unsigned int pll\-\_\-id)
+\begin{DoxyCompactList}\small\item\em \-Disable the \-P\-L\-L identified by {\itshape pll\-\_\-id\/}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Chip-\/specific \-P\-L\-L characteristics}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pll__group_ga3a7cd8f570834e0f208037619b798aef}{\-P\-L\-L\-\_\-\-M\-A\-X\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-\-C\-Y\-C\-L\-E\-S}~((1 $<$$<$ \-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-P\-L\-L\-C\-O\-U\-N\-T\-\_\-\-S\-I\-Z\-E) -\/ 1)
+\begin{DoxyCompactList}\small\item\em \-Maximum \-P\-L\-L startup time in number of slow clock cycles. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__pll__group_ga23ebd75638f609ce613b82e773ea48a5}{\-N\-R\-\_\-\-P\-L\-L\-S}~2
+\begin{DoxyCompactList}\small\item\em \-Number of on-\/chip \-P\-L\-Ls. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__pll__group_ga58acd4425beaa32dad5ccffa073cb0a5}{\-P\-L\-L\-\_\-\-M\-I\-N\-\_\-\-H\-Z}~40000000
+\begin{DoxyCompactList}\small\item\em \-Minimum frequency that the \-P\-L\-L can generate. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__pll__group_gaeced77fb7ec635ab33085a71a0c15227}{\-P\-L\-L\-\_\-\-M\-A\-X\-\_\-\-H\-Z}~240000000
+\begin{DoxyCompactList}\small\item\em \-Maximum frequency that the \-P\-L\-L can generate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-P\-L\-L configuration}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pll__group_ga2b9ba9ce6a7290303f6e8d41191fd0d8}{pll\-\_\-config\-\_\-defaults}(cfg, pll\-\_\-id)
+\begin{DoxyCompactList}\small\item\em \-Initialize \-P\-L\-L configuration using default parameters. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__pll__group_ga16c8db5e3f1a2c759a88371120579c4d}{pll\-\_\-get\-\_\-default\-\_\-rate}(pll\-\_\-id)
+\begin{DoxyCompactList}\small\item\em \-Get the default rate in \-Hz of {\itshape pll\-\_\-id\/}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Chip-\/specific \-P\-L\-L options}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pll__group_gae74457d5b4073fdb82cb6b9f3d8b76e2}{\-P\-L\-L\-\_\-\-N\-R\-\_\-\-O\-P\-T\-I\-O\-N\-S}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-P\-L\-L\-O\-P\-T\-\_\-\-S\-I\-Z\-E
+\begin{DoxyCompactList}\small\item\em \-Number of \-P\-L\-L option bits. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__pll__group_ga03717c32c87c59df4b94a4233a5c2e3e}{\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E\-\_\-\-L\-O\-W}~0
+\begin{DoxyCompactList}\small\item\em \-V\-C\-O frequency range is 80-\/180 \-M\-Hz (160-\/240 \-M\-Hz if unset). \end{DoxyCompactList}\item 
+\#define \hyperlink{group__pll__group_ga0ab4eb3395991501ba1c8aa8a7c606be}{\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-D\-I\-V}~1
+\begin{DoxyCompactList}\small\item\em \-Divide output frequency by two. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__pll__group_gaa2d0c945bda195002b421eb79d2c87ca}{\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-W\-B\-M\-\_\-\-D\-I\-S\-A\-B\-L\-E}~2
+\begin{DoxyCompactList}\small\item\em \-Disable wide-\/bandwidth mode. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__pll__group_ga49eaeabf6add7c1be4000c77cb8b2bff}{\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-L\-O\-W\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}
+\begin{DoxyCompactList}\small\item\em \-The threshold under which to set the \hyperlink{group__pll__group_ga03717c32c87c59df4b94a4233a5c2e3e}{\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E\-\_\-\-L\-O\-W} option. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-This group contains functions and definitions related to configuring and enabling/disabling on-\/chip \-P\-L\-Ls. \-A \-P\-L\-L will take an input signal (the {\itshape source\/}), optionally divide the frequency by a configurable {\itshape divider\/}, and then multiply the frequency by a configurable {\itshape multiplier\/}.
+
+\-Some devices don't support input dividers; specifying any other divisor than 1 on these devices will result in an assertion failure. \-Other devices may have various restrictions to the frequency range of the input and output signals.
+
+\begin{DoxyParagraph}{\-Example\-: \-Setting up \-P\-L\-L0 with default parameters}
+
+\end{DoxyParagraph}
+\-The following example shows how to configure and enable \-P\-L\-L0 using the default parameters specified using the configuration symbols listed above, and with \-Wide \-Bandwidth \-Mode disabled (a \-U\-C3\-A3-\/specific \-P\-L\-L option.) 
+\begin{DoxyCode}
+        struct pll_config pllcfg;
+
+        pll_config_defaults(&pllcfg, 0);
+        pll_config_set_option(&pllcfg, PLL_OPT_WBM_DISABLE);
+        pll_enable(&pllcfg, 0);
+        pll_wait_for_lock(0); 
+\end{DoxyCode}
+
+
+\-When the last function call returns, \-P\-L\-L0 is ready to be used as the main system clock source.\hypertarget{group__pll__group_pll_group_config}{}\subsection{\-Configuration Symbols}\label{group__pll__group_pll_group_config}
+\-Each \-P\-L\-L has a set of default parameters determined by the following configuration symbols in the application's configuration \href{file:}{\tt file\-:}
+\begin{DoxyItemize}
+\item {\bfseries \-C\-O\-N\-F\-I\-G\-\_\-\-P\-L\-Ln\-\_\-\-S\-O\-U\-R\-C\-E\-:} \-The default clock source connected to the input of \-P\-L\-L {\itshape n\/}. \-Must be one of the values defined by the \hyperlink{group__pll__group_gacfb06d8fc0ffbe934077438884ae697f}{pll\-\_\-source} enum.
+\item {\bfseries \-C\-O\-N\-F\-I\-G\-\_\-\-P\-L\-Ln\-\_\-\-M\-U\-L\-:} \-The default multiplier (loop divider) of \-P\-L\-L {\itshape n\/}.
+\item {\bfseries \-C\-O\-N\-F\-I\-G\-\_\-\-P\-L\-Ln\-\_\-\-D\-I\-V\-:} \-The default input divider of \-P\-L\-L {\itshape n\/}.
+\end{DoxyItemize}
+
+\-These configuration symbols determine the result of calling \hyperlink{group__pll__group_ga2b9ba9ce6a7290303f6e8d41191fd0d8}{pll\-\_\-config\-\_\-defaults()} and \hyperlink{group__pll__group_ga16c8db5e3f1a2c759a88371120579c4d}{pll\-\_\-get\-\_\-default\-\_\-rate()}. 
+
+\subsection{\-Define \-Documentation}
+\hypertarget{group__pll__group_ga23ebd75638f609ce613b82e773ea48a5}{
+\index{\-P\-L\-L Management@{\-P\-L\-L Management}!\-N\-R\-\_\-\-P\-L\-L\-S@{\-N\-R\-\_\-\-P\-L\-L\-S}}
+\index{\-N\-R\-\_\-\-P\-L\-L\-S@{\-N\-R\-\_\-\-P\-L\-L\-S}!PLL Management@{\-P\-L\-L Management}}
+\subsubsection[{\-N\-R\-\_\-\-P\-L\-L\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-N\-R\-\_\-\-P\-L\-L\-S~2}}
+\label{group__pll__group_ga23ebd75638f609ce613b82e773ea48a5}
+
+
+\-Number of on-\/chip \-P\-L\-Ls. 
+
+\hypertarget{group__pll__group_ga2b9ba9ce6a7290303f6e8d41191fd0d8}{
+\index{\-P\-L\-L Management@{\-P\-L\-L Management}!pll\-\_\-config\-\_\-defaults@{pll\-\_\-config\-\_\-defaults}}
+\index{pll\-\_\-config\-\_\-defaults@{pll\-\_\-config\-\_\-defaults}!PLL Management@{\-P\-L\-L Management}}
+\subsubsection[{pll\-\_\-config\-\_\-defaults}]{\setlength{\rightskip}{0pt plus 5cm}\#define pll\-\_\-config\-\_\-defaults(
+\begin{DoxyParamCaption}
+\item[{}]{cfg, }
+\item[{}]{pll\-\_\-id}
+\end{DoxyParamCaption}
+)}}
+\label{group__pll__group_ga2b9ba9ce6a7290303f6e8d41191fd0d8}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+pll_config_init(cfg,                                                   \
+                        CONFIG_PLL##pll_id##_SOURCE,                           
+      \
+                        CONFIG_PLL##pll_id##_DIV,                              
+      \
+                        CONFIG_PLL##pll_id##_MUL)
+\end{DoxyCode}
+
+
+\-Initialize \-P\-L\-L configuration using default parameters. 
+
+\-After this function returns, {\itshape cfg\/} will contain a configuration which will make the \-P\-L\-L run at (\-C\-O\-N\-F\-I\-G\-\_\-\-P\-L\-Lx\-\_\-\-M\-U\-L / \-C\-O\-N\-F\-I\-G\-\_\-\-P\-L\-Lx\-\_\-\-D\-I\-V) times the frequency of \-C\-O\-N\-F\-I\-G\-\_\-\-P\-L\-Lx\-\_\-\-S\-O\-U\-R\-C\-E.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em cfg} & \-The \-P\-L\-L configuration to be initialized. \\
+\hline
+{\em pll\-\_\-id} & \-Use defaults for this \-P\-L\-L. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__pll__group_ga16c8db5e3f1a2c759a88371120579c4d}{
+\index{\-P\-L\-L Management@{\-P\-L\-L Management}!pll\-\_\-get\-\_\-default\-\_\-rate@{pll\-\_\-get\-\_\-default\-\_\-rate}}
+\index{pll\-\_\-get\-\_\-default\-\_\-rate@{pll\-\_\-get\-\_\-default\-\_\-rate}!PLL Management@{\-P\-L\-L Management}}
+\subsubsection[{pll\-\_\-get\-\_\-default\-\_\-rate}]{\setlength{\rightskip}{0pt plus 5cm}\#define pll\-\_\-get\-\_\-default\-\_\-rate(
+\begin{DoxyParamCaption}
+\item[{}]{pll\-\_\-id}
+\end{DoxyParamCaption}
+)}}
+\label{group__pll__group_ga16c8db5e3f1a2c759a88371120579c4d}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+((osc_get_rate(CONFIG_PLL##pll_id##_SOURCE)                            \
+                        * CONFIG_PLL##pll_id##_MUL)                            
+      \
+                        / CONFIG_PLL##pll_id##_DIV)
+\end{DoxyCode}
+
+
+\-Get the default rate in \-Hz of {\itshape pll\-\_\-id\/}. 
+
+\hypertarget{group__pll__group_gaeced77fb7ec635ab33085a71a0c15227}{
+\index{\-P\-L\-L Management@{\-P\-L\-L Management}!\-P\-L\-L\-\_\-\-M\-A\-X\-\_\-\-H\-Z@{\-P\-L\-L\-\_\-\-M\-A\-X\-\_\-\-H\-Z}}
+\index{\-P\-L\-L\-\_\-\-M\-A\-X\-\_\-\-H\-Z@{\-P\-L\-L\-\_\-\-M\-A\-X\-\_\-\-H\-Z}!PLL Management@{\-P\-L\-L Management}}
+\subsubsection[{\-P\-L\-L\-\_\-\-M\-A\-X\-\_\-\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-L\-L\-\_\-\-M\-A\-X\-\_\-\-H\-Z~240000000}}
+\label{group__pll__group_gaeced77fb7ec635ab33085a71a0c15227}
+
+
+\-Maximum frequency that the \-P\-L\-L can generate. 
+
+\hypertarget{group__pll__group_ga3a7cd8f570834e0f208037619b798aef}{
+\index{\-P\-L\-L Management@{\-P\-L\-L Management}!\-P\-L\-L\-\_\-\-M\-A\-X\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-\-C\-Y\-C\-L\-E\-S@{\-P\-L\-L\-\_\-\-M\-A\-X\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-\-C\-Y\-C\-L\-E\-S}}
+\index{\-P\-L\-L\-\_\-\-M\-A\-X\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-\-C\-Y\-C\-L\-E\-S@{\-P\-L\-L\-\_\-\-M\-A\-X\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-\-C\-Y\-C\-L\-E\-S}!PLL Management@{\-P\-L\-L Management}}
+\subsubsection[{\-P\-L\-L\-\_\-\-M\-A\-X\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-\-C\-Y\-C\-L\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-L\-L\-\_\-\-M\-A\-X\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-\-C\-Y\-C\-L\-E\-S~((1 $<$$<$ \-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-P\-L\-L\-C\-O\-U\-N\-T\-\_\-\-S\-I\-Z\-E) -\/ 1)}}
+\label{group__pll__group_ga3a7cd8f570834e0f208037619b798aef}
+
+
+\-Maximum \-P\-L\-L startup time in number of slow clock cycles. 
+
+\hypertarget{group__pll__group_ga58acd4425beaa32dad5ccffa073cb0a5}{
+\index{\-P\-L\-L Management@{\-P\-L\-L Management}!\-P\-L\-L\-\_\-\-M\-I\-N\-\_\-\-H\-Z@{\-P\-L\-L\-\_\-\-M\-I\-N\-\_\-\-H\-Z}}
+\index{\-P\-L\-L\-\_\-\-M\-I\-N\-\_\-\-H\-Z@{\-P\-L\-L\-\_\-\-M\-I\-N\-\_\-\-H\-Z}!PLL Management@{\-P\-L\-L Management}}
+\subsubsection[{\-P\-L\-L\-\_\-\-M\-I\-N\-\_\-\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-L\-L\-\_\-\-M\-I\-N\-\_\-\-H\-Z~40000000}}
+\label{group__pll__group_ga58acd4425beaa32dad5ccffa073cb0a5}
+
+
+\-Minimum frequency that the \-P\-L\-L can generate. 
+
+\begin{DoxyNote}{\-Note}
+\-The \-P\-L\-L must run at twice this frequency internally, but the output frequency may be divided by two by setting the \-P\-L\-L\-O\-P\-T\mbox{[}1\mbox{]} bit. 
+\end{DoxyNote}
+\hypertarget{group__pll__group_gae74457d5b4073fdb82cb6b9f3d8b76e2}{
+\index{\-P\-L\-L Management@{\-P\-L\-L Management}!\-P\-L\-L\-\_\-\-N\-R\-\_\-\-O\-P\-T\-I\-O\-N\-S@{\-P\-L\-L\-\_\-\-N\-R\-\_\-\-O\-P\-T\-I\-O\-N\-S}}
+\index{\-P\-L\-L\-\_\-\-N\-R\-\_\-\-O\-P\-T\-I\-O\-N\-S@{\-P\-L\-L\-\_\-\-N\-R\-\_\-\-O\-P\-T\-I\-O\-N\-S}!PLL Management@{\-P\-L\-L Management}}
+\subsubsection[{\-P\-L\-L\-\_\-\-N\-R\-\_\-\-O\-P\-T\-I\-O\-N\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-L\-L\-\_\-\-N\-R\-\_\-\-O\-P\-T\-I\-O\-N\-S~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-P\-L\-L\-O\-P\-T\-\_\-\-S\-I\-Z\-E}}
+\label{group__pll__group_gae74457d5b4073fdb82cb6b9f3d8b76e2}
+
+
+\-Number of \-P\-L\-L option bits. 
+
+\-Number of \-P\-L\-L options. \hypertarget{group__pll__group_ga0ab4eb3395991501ba1c8aa8a7c606be}{
+\index{\-P\-L\-L Management@{\-P\-L\-L Management}!\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-D\-I\-V@{\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-D\-I\-V}}
+\index{\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-D\-I\-V@{\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-D\-I\-V}!PLL Management@{\-P\-L\-L Management}}
+\subsubsection[{\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-D\-I\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-D\-I\-V~1}}
+\label{group__pll__group_ga0ab4eb3395991501ba1c8aa8a7c606be}
+
+
+\-Divide output frequency by two. 
+
+\hypertarget{group__pll__group_ga03717c32c87c59df4b94a4233a5c2e3e}{
+\index{\-P\-L\-L Management@{\-P\-L\-L Management}!\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E\-\_\-\-L\-O\-W@{\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E\-\_\-\-L\-O\-W}}
+\index{\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E\-\_\-\-L\-O\-W@{\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E\-\_\-\-L\-O\-W}!PLL Management@{\-P\-L\-L Management}}
+\subsubsection[{\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E\-\_\-\-L\-O\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E\-\_\-\-L\-O\-W~0}}
+\label{group__pll__group_ga03717c32c87c59df4b94a4233a5c2e3e}
+
+
+\-V\-C\-O frequency range is 80-\/180 \-M\-Hz (160-\/240 \-M\-Hz if unset). 
+
+\hypertarget{group__pll__group_gaa2d0c945bda195002b421eb79d2c87ca}{
+\index{\-P\-L\-L Management@{\-P\-L\-L Management}!\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-W\-B\-M\-\_\-\-D\-I\-S\-A\-B\-L\-E@{\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-W\-B\-M\-\_\-\-D\-I\-S\-A\-B\-L\-E}}
+\index{\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-W\-B\-M\-\_\-\-D\-I\-S\-A\-B\-L\-E@{\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-W\-B\-M\-\_\-\-D\-I\-S\-A\-B\-L\-E}!PLL Management@{\-P\-L\-L Management}}
+\subsubsection[{\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-W\-B\-M\-\_\-\-D\-I\-S\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-W\-B\-M\-\_\-\-D\-I\-S\-A\-B\-L\-E~2}}
+\label{group__pll__group_gaa2d0c945bda195002b421eb79d2c87ca}
+
+
+\-Disable wide-\/bandwidth mode. 
+
+\hypertarget{group__pll__group_ga3778ecbe3fb3e8480ce23312a613a0aa}{
+\index{\-P\-L\-L Management@{\-P\-L\-L Management}!\-P\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-M\-S@{\-P\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-M\-S}}
+\index{\-P\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-M\-S@{\-P\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-M\-S}!PLL Management@{\-P\-L\-L Management}}
+\subsubsection[{\-P\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-M\-S~div\-\_\-ceil(1000 $\ast$ (\-P\-L\-L\-\_\-\-M\-A\-X\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-\-C\-Y\-C\-L\-E\-S $\ast$ 2), \-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-M\-I\-N\-\_\-\-H\-Z)}}
+\label{group__pll__group_ga3778ecbe3fb3e8480ce23312a613a0aa}
+
+
+\-Number of milliseconds to wait for \-P\-L\-L lock. 
+
+\hypertarget{group__pll__group_ga49eaeabf6add7c1be4000c77cb8b2bff}{
+\index{\-P\-L\-L Management@{\-P\-L\-L Management}!\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-L\-O\-W\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D@{\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-L\-O\-W\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}}
+\index{\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-L\-O\-W\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D@{\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-L\-O\-W\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}!PLL Management@{\-P\-L\-L Management}}
+\subsubsection[{\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-L\-O\-W\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-L\-O\-W\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}}
+\label{group__pll__group_ga49eaeabf6add7c1be4000c77cb8b2bff}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+((AVR32_SCIF_PLL_VCO_RANGE0_MIN_FREQ         \
+                + AVR32_SCIF_PLL_VCO_RANGE1_MAX_FREQ) / 2)
+\end{DoxyCode}
+
+
+\-The threshold under which to set the \hyperlink{group__pll__group_ga03717c32c87c59df4b94a4233a5c2e3e}{\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E\-\_\-\-L\-O\-W} option. 
+
+
+
+\subsection{\-Enumeration \-Type \-Documentation}
+\hypertarget{group__pll__group_gacfb06d8fc0ffbe934077438884ae697f}{
+\index{\-P\-L\-L Management@{\-P\-L\-L Management}!pll\-\_\-source@{pll\-\_\-source}}
+\index{pll\-\_\-source@{pll\-\_\-source}!PLL Management@{\-P\-L\-L Management}}
+\subsubsection[{pll\-\_\-source}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf pll\-\_\-source}}}
+\label{group__pll__group_gacfb06d8fc0ffbe934077438884ae697f}
+
+
+\-P\-L\-L clock source. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-P\-L\-L\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0@{\-P\-L\-L\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0}!\-P\-L\-L Management@{\-P\-L\-L Management}}\index{\-P\-L\-L Management@{\-P\-L\-L Management}!\-P\-L\-L\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0@{\-P\-L\-L\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0}}\item[{\em 
+\hypertarget{group__pll__group_ggacfb06d8fc0ffbe934077438884ae697fa060f32d7388cf128f527739090aa4217}{
+\-P\-L\-L\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0}
+\label{group__pll__group_ggacfb06d8fc0ffbe934077438884ae697fa060f32d7388cf128f527739090aa4217}
+}]\-Oscillator 0. \index{\-P\-L\-L\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1@{\-P\-L\-L\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1}!\-P\-L\-L Management@{\-P\-L\-L Management}}\index{\-P\-L\-L Management@{\-P\-L\-L Management}!\-P\-L\-L\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1@{\-P\-L\-L\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1}}\item[{\em 
+\hypertarget{group__pll__group_ggacfb06d8fc0ffbe934077438884ae697fa28e003235f43b85c6ee49bbe81b67218}{
+\-P\-L\-L\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1}
+\label{group__pll__group_ggacfb06d8fc0ffbe934077438884ae697fa28e003235f43b85c6ee49bbe81b67218}
+}]\-Oscillator 1. \index{\-P\-L\-L\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M@{\-P\-L\-L\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M}!\-P\-L\-L Management@{\-P\-L\-L Management}}\index{\-P\-L\-L Management@{\-P\-L\-L Management}!\-P\-L\-L\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M@{\-P\-L\-L\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M}}\item[{\em 
+\hypertarget{group__pll__group_ggacfb06d8fc0ffbe934077438884ae697fa87507b481d2c92b721d802a5ae6cc8a5}{
+\-P\-L\-L\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M}
+\label{group__pll__group_ggacfb06d8fc0ffbe934077438884ae697fa87507b481d2c92b721d802a5ae6cc8a5}
+}]8\-M\-Hz/1\-M\-Hz \-R\-C oscillator \index{\-P\-L\-L\-\_\-\-N\-R\-\_\-\-S\-O\-U\-R\-C\-E\-S@{\-P\-L\-L\-\_\-\-N\-R\-\_\-\-S\-O\-U\-R\-C\-E\-S}!\-P\-L\-L Management@{\-P\-L\-L Management}}\index{\-P\-L\-L Management@{\-P\-L\-L Management}!\-P\-L\-L\-\_\-\-N\-R\-\_\-\-S\-O\-U\-R\-C\-E\-S@{\-P\-L\-L\-\_\-\-N\-R\-\_\-\-S\-O\-U\-R\-C\-E\-S}}\item[{\em 
+\hypertarget{group__pll__group_ggacfb06d8fc0ffbe934077438884ae697fa5020b47784b860efae2c423d33999dcc}{
+\-P\-L\-L\-\_\-\-N\-R\-\_\-\-S\-O\-U\-R\-C\-E\-S}
+\label{group__pll__group_ggacfb06d8fc0ffbe934077438884ae697fa5020b47784b860efae2c423d33999dcc}
+}]\-Number of \-P\-L\-L sources. \end{description}
+\end{Desc}
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__pll__group_gaeee0be729bfa596c973cf6f725a89d45}{
+\index{\-P\-L\-L Management@{\-P\-L\-L Management}!pll\-\_\-config\-\_\-write@{pll\-\_\-config\-\_\-write}}
+\index{pll\-\_\-config\-\_\-write@{pll\-\_\-config\-\_\-write}!PLL Management@{\-P\-L\-L Management}}
+\subsubsection[{pll\-\_\-config\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}void pll\-\_\-config\-\_\-write (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf pll\-\_\-config} $\ast$}]{cfg, }
+\item[{unsigned int}]{pll\-\_\-id}
+\end{DoxyParamCaption}
+)}}
+\label{group__pll__group_gaeee0be729bfa596c973cf6f725a89d45}
+
+
+\-Activate the configuration {\itshape cfg\/} on {\itshape pll\-\_\-id\/}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em cfg} & \-The configuration object representing the \-P\-L\-L configuration to be activated. \\
+\hline
+{\em pll\-\_\-id} & \-The \-I\-D of the \-P\-L\-L to be updated. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__pll__group_ga9b369b5f673b10a6adf14cd3c9fea5ad}{
+\index{\-P\-L\-L Management@{\-P\-L\-L Management}!pll\-\_\-disable@{pll\-\_\-disable}}
+\index{pll\-\_\-disable@{pll\-\_\-disable}!PLL Management@{\-P\-L\-L Management}}
+\subsubsection[{pll\-\_\-disable}]{\setlength{\rightskip}{0pt plus 5cm}void pll\-\_\-disable (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{pll\-\_\-id}
+\end{DoxyParamCaption}
+)}}
+\label{group__pll__group_ga9b369b5f673b10a6adf14cd3c9fea5ad}
+
+
+\-Disable the \-P\-L\-L identified by {\itshape pll\-\_\-id\/}. 
+
+\-After this function is called, the \-P\-L\-L identified by {\itshape pll\-\_\-id\/} will be disabled. \-The \-P\-L\-L configuration stored in hardware may be affected by this, so if the caller needs to restore the same configuration later, it should either do a pll\-\_\-config\-\_\-read() before disabling the \-P\-L\-L, or remember the last configuration written to the \-P\-L\-L.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pll\-\_\-id} & \-The \-I\-D of the \-P\-L\-L to be disabled. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__pll__group_gaede6e280289cb0759af0f5a34f5a627f}{
+\index{\-P\-L\-L Management@{\-P\-L\-L Management}!pll\-\_\-enable@{pll\-\_\-enable}}
+\index{pll\-\_\-enable@{pll\-\_\-enable}!PLL Management@{\-P\-L\-L Management}}
+\subsubsection[{pll\-\_\-enable}]{\setlength{\rightskip}{0pt plus 5cm}void pll\-\_\-enable (
+\begin{DoxyParamCaption}
+\item[{const struct {\bf pll\-\_\-config} $\ast$}]{cfg, }
+\item[{unsigned int}]{pll\-\_\-id}
+\end{DoxyParamCaption}
+)}}
+\label{group__pll__group_gaede6e280289cb0759af0f5a34f5a627f}
+
+
+\-Activate the configuration {\itshape cfg\/} and enable \-P\-L\-L {\itshape pll\-\_\-id\/}. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em cfg} & \-The \-P\-L\-L configuration to be activated. \\
+\hline
+{\em pll\-\_\-id} & \-The \-I\-D of the \-P\-L\-L to be enabled. \\
+\hline
+\end{DoxyParams}

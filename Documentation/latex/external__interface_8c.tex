@@ -1,0 +1,241 @@
+\hypertarget{external__interface_8c}{
+\section{external\-\_\-interface.c \-File \-Reference}
+\label{external__interface_8c}\index{external\-\_\-interface.\-c@{external\-\_\-interface.\-c}}
+}
+
+
+\-High level external user interface (\-U\-S\-B).  
+
+
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include \char`\"{}external\-\_\-interface.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}control\-\_\-tables.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}conf\-\_\-usb.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}udd.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}udc.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}udi\-\_\-cdc.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}usbc\-\_\-device.\-h\char`\"{}}\*
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bfseries rxtx\-\_\-buffer}
+\begin{DoxyCompactList}\small\item\em \-Receive and transmit buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{external__interface_8c_ab0b7565efe6045bdf8da57c2824308e2}{\-C\-H\-E\-C\-K\-S\-U\-M\-\_\-\-B\-Y\-T\-E\-S}~2
+\item 
+\#define \hyperlink{external__interface_8c_aab204372f31ec0358765c2e72639fbbd}{\-H\-E\-A\-D\-E\-R\-\_\-\-B\-Y\-T\-E\-S}~1
+\item 
+\#define \hyperlink{external__interface_8c_a0ad0666a1726541270e5b2a3594f242c}{\-M\-A\-X\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-A\-R\-G\-S}~10
+\item 
+\#define \hyperlink{external__interface_8c_a85ee2537246c608f7869fd334744e7a2}{\-N\-O\-\_\-\-E\-X\-P\-E\-C\-T\-E\-D\-\_\-\-B\-Y\-T\-E\-S}~0
+\item 
+\#define \hyperlink{external__interface_8c_a0476a858145c6a1c65bcbcf1aba36658}{\-S\-I\-N\-G\-L\-E\-\_\-\-B\-Y\-T\-E\-\_\-\-E\-X\-P\-E\-C\-T\-E\-D}~1
+\item 
+\#define \hyperlink{external__interface_8c_aeb6e0eb56e05a6f98329c4176732ade0}{\-U\-S\-B\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-C\-O\-U\-N\-T}~200000000
+\item 
+\#define \hyperlink{external__interface_8c_ac5a15380349cdf6021cc71c6ff3a94fd}{\-N\-O\-\_\-\-I\-N\-I\-T\-I\-A\-T\-E\-D\-\_\-\-T\-R\-A\-N\-S\-M\-I\-S\-S\-I\-O\-N}~0
+\item 
+\#define \hyperlink{external__interface_8c_acfa667889e35d0fbd78d7715d6e13784}{\-C\-O\-U\-N\-T\-E\-R\-\_\-\-R\-E\-S\-E\-T\-\_\-\-V\-A\-L\-U\-E}~0
+\item 
+\#define \hyperlink{external__interface_8c_a95fd3f70cf5c50ee3e0d917496b6f204}{\-N\-O\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-R\-E\-C\-E\-I\-V\-E\-D\-\_\-\-Y\-E\-T}~0
+\item 
+\#define \hyperlink{external__interface_8c_aebff9f5f6164c79d9fe98bc66f068dce}{\-S\-T\-A\-T\-E\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-H\-E\-A\-D\-E\-R}~0x\-A\-A
+\item 
+\#define \hyperlink{external__interface_8c_ab64b9b0e54ed62e2093f9b170cff8f4b}{receive\-\_\-limit\-\_\-not\-\_\-reached}(rx\-\_\-nrb\-\_\-counter)~((rx\-\_\-nrb\-\_\-counter)$<$\-M\-A\-X\-\_\-\-R\-X\-\_\-\-N\-R\-B)
+\item 
+\#define \hyperlink{external__interface_8c_a315ae12e6f397325554618c1eecc488d}{reset\-\_\-timer}(timer)~((timer) = \-Get\-\_\-system\-\_\-register(\-A\-V\-R32\-\_\-\-C\-O\-U\-N\-T))
+\item 
+\#define \hyperlink{external__interface_8c_a7b2aea1a29fa2b5e05aafaefebe8b534}{is\-\_\-new\-\_\-header}(exp\-\_\-nrb)~((exp\-\_\-nrb) == \-N\-O\-\_\-\-E\-X\-P\-E\-C\-T\-E\-D\-\_\-\-B\-Y\-T\-E\-S)
+\item 
+\#define \hyperlink{external__interface_8c_a71e04660769623e038e129e3d09815bb}{is\-\_\-end\-\_\-of\-\_\-command}(exp\-\_\-nrb)~(exp\-\_\-nrb) == \-S\-I\-N\-G\-L\-E\-\_\-\-B\-Y\-T\-E\-\_\-\-E\-X\-P\-E\-C\-T\-E\-D
+\item 
+\#define \hyperlink{external__interface_8c_a92cbfd9df581c1c96c978137f9ae85e9}{has\-\_\-timed\-\_\-out}(timeout\-\_\-counter, exp\-\_\-nrb)~((timeout\-\_\-counter) + \-U\-S\-B\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-C\-O\-U\-N\-T $<$ \-Get\-\_\-system\-\_\-register(\-A\-V\-R32\-\_\-\-C\-O\-U\-N\-T) \&\& (exp\-\_\-nrb) $>$ 0)
+\item 
+\#define \hyperlink{external__interface_8c_a9fab502e54b472d27148f709b5327b87}{increment\-\_\-counter}(counter)~((counter)++)
+\item 
+\#define \hyperlink{external__interface_8c_a04ff3f72917b938ba22fa386e25e39dd}{decrement\-\_\-counter}(counter)~((counter)-\/-\/)
+\item 
+\#define \hyperlink{external__interface_8c_a2094d35bac01c6011ec3aac7891041db}{\-F\-I\-R\-S\-T\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-B\-Y\-T\-E}~(state\-\_\-output\-\_\-header\-\_\-p+2)
+\item 
+\#define \hyperlink{external__interface_8c_ad6a64f7bdea946fc03f79f174e90a6b2}{\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-S\-I\-Z\-E\-\_\-\-B\-Y\-T\-E}~(state\-\_\-output\-\_\-header\-\_\-p+1)
+\end{DoxyCompactItemize}
+\begin{Indent}\paragraph*{\-Buffer settings}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__user__interface_ga739a2a1a0047c98ac1b18ecd25dac092}{\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}~20
+\item 
+\#define \hyperlink{group__user__interface_ga9ab33647617098646990fe263600b650}{\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}~60
+\item 
+\#define \hyperlink{group__user__interface_ga0846b13f494cb412b27a5d30d2e227e6}{\-S\-I\-N\-G\-L\-E\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}~10
+\item 
+\#define \hyperlink{group__user__interface_ga36568984b1040a53e0d7d64d67066de4}{\-M\-A\-X\-\_\-\-R\-X\-\_\-\-N\-R\-B}~10
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-State output divider limits}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__user__interface_ga9f7db6d016bae1297a6e75263dd6d186}{\-M\-A\-X\-\_\-\-L\-O\-G2\-\_\-\-D\-I\-V\-I\-D\-E\-R}~14
+\item 
+\#define \hyperlink{group__user__interface_gabef3d4b97cf2ed7d11401dafdd3fb6ea}{\-M\-I\-N\-\_\-\-L\-O\-G2\-\_\-\-D\-I\-V\-I\-D\-E\-R}~0
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__user__interface_ga87a9b575684eea3d1a804e597236b40f}{com\-\_\-interface\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em \-Initialization function for communication interface. \end{DoxyCompactList}\item 
+void \hyperlink{group__user__interface_ga328bb6c7a4ed590a8a4eb1b2a60943f1}{receive\-\_\-command} (void)
+\begin{DoxyCompactList}\small\item\em \-Main function for receiving commands from user. \end{DoxyCompactList}\item 
+void \hyperlink{group__user__interface_ga9926a12daaecdbb4d8106ed110510d49}{transmit\-\_\-data} (void)
+\begin{DoxyCompactList}\small\item\em \-Main function to output data to user. \end{DoxyCompactList}\item 
+void \hyperlink{group__user__interface_ga56ca2a8f03cbdf960d6928e9a7ad68ba}{set\-\_\-state\-\_\-output} (uint8\-\_\-t state\-\_\-id, uint8\-\_\-t divider)
+\begin{DoxyCompactList}\small\item\em \-Sets state\-\_\-id state to be output with interrupt frequency divided by 2$^\wedge$(divider-\/1). \-Divider=0 turns off output. \end{DoxyCompactList}\item 
+void \hyperlink{group__user__interface_gad8c48701618a71f6bcc9ec12d139ba32}{reset\-\_\-output\-\_\-counters} (void)
+\begin{DoxyCompactList}\small\item\em \-Reset the output counter such that the output become synchronized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t \hyperlink{group__user__interface_ga3f996476795917a4b1ace8c6c5e4b28a}{error\-\_\-signal} = 0
+\begin{DoxyCompactList}\small\item\em \-Error signaling vector. \-If zero no error has occurred. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\paragraph*{\-State output rate control variables}
+\end{Indent}
+
+
+\subsection{\-Detailed \-Description}
+\-High level external user interface (\-U\-S\-B). \-This file contains the functions for 1) receiving and parsing commands and executing commands responses 2) determining what to transmit and to transmit data to the system user via \-U\-S\-B.
+
+\begin{DoxyAuthor}{\-Authors}
+\-John-\/\-Olof \-Nilsson, \-Isaac \-Skog 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{\-Copyright}
+\-Copyright (c) 2011 \-Open\-Shoe, \-I\-S\-C \-License (open source) 
+\end{DoxyCopyright}
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{external__interface_8c_ab0b7565efe6045bdf8da57c2824308e2}{
+\index{external\-\_\-interface.\-c@{external\-\_\-interface.\-c}!\-C\-H\-E\-C\-K\-S\-U\-M\-\_\-\-B\-Y\-T\-E\-S@{\-C\-H\-E\-C\-K\-S\-U\-M\-\_\-\-B\-Y\-T\-E\-S}}
+\index{\-C\-H\-E\-C\-K\-S\-U\-M\-\_\-\-B\-Y\-T\-E\-S@{\-C\-H\-E\-C\-K\-S\-U\-M\-\_\-\-B\-Y\-T\-E\-S}!external_interface.c@{external\-\_\-interface.\-c}}
+\subsubsection[{\-C\-H\-E\-C\-K\-S\-U\-M\-\_\-\-B\-Y\-T\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-H\-E\-C\-K\-S\-U\-M\-\_\-\-B\-Y\-T\-E\-S~2}}
+\label{external__interface_8c_ab0b7565efe6045bdf8da57c2824308e2}
+\hypertarget{external__interface_8c_acfa667889e35d0fbd78d7715d6e13784}{
+\index{external\-\_\-interface.\-c@{external\-\_\-interface.\-c}!\-C\-O\-U\-N\-T\-E\-R\-\_\-\-R\-E\-S\-E\-T\-\_\-\-V\-A\-L\-U\-E@{\-C\-O\-U\-N\-T\-E\-R\-\_\-\-R\-E\-S\-E\-T\-\_\-\-V\-A\-L\-U\-E}}
+\index{\-C\-O\-U\-N\-T\-E\-R\-\_\-\-R\-E\-S\-E\-T\-\_\-\-V\-A\-L\-U\-E@{\-C\-O\-U\-N\-T\-E\-R\-\_\-\-R\-E\-S\-E\-T\-\_\-\-V\-A\-L\-U\-E}!external_interface.c@{external\-\_\-interface.\-c}}
+\subsubsection[{\-C\-O\-U\-N\-T\-E\-R\-\_\-\-R\-E\-S\-E\-T\-\_\-\-V\-A\-L\-U\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-O\-U\-N\-T\-E\-R\-\_\-\-R\-E\-S\-E\-T\-\_\-\-V\-A\-L\-U\-E~0}}
+\label{external__interface_8c_acfa667889e35d0fbd78d7715d6e13784}
+\hypertarget{external__interface_8c_a04ff3f72917b938ba22fa386e25e39dd}{
+\index{external\-\_\-interface.\-c@{external\-\_\-interface.\-c}!decrement\-\_\-counter@{decrement\-\_\-counter}}
+\index{decrement\-\_\-counter@{decrement\-\_\-counter}!external_interface.c@{external\-\_\-interface.\-c}}
+\subsubsection[{decrement\-\_\-counter}]{\setlength{\rightskip}{0pt plus 5cm}\#define decrement\-\_\-counter(
+\begin{DoxyParamCaption}
+\item[{}]{counter}
+\end{DoxyParamCaption}
+)~((counter)-\/-\/)}}
+\label{external__interface_8c_a04ff3f72917b938ba22fa386e25e39dd}
+\hypertarget{external__interface_8c_a2094d35bac01c6011ec3aac7891041db}{
+\index{external\-\_\-interface.\-c@{external\-\_\-interface.\-c}!\-F\-I\-R\-S\-T\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-B\-Y\-T\-E@{\-F\-I\-R\-S\-T\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-B\-Y\-T\-E}}
+\index{\-F\-I\-R\-S\-T\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-B\-Y\-T\-E@{\-F\-I\-R\-S\-T\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-B\-Y\-T\-E}!external_interface.c@{external\-\_\-interface.\-c}}
+\subsubsection[{\-F\-I\-R\-S\-T\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-B\-Y\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-F\-I\-R\-S\-T\-\_\-\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-B\-Y\-T\-E~(state\-\_\-output\-\_\-header\-\_\-p+2)}}
+\label{external__interface_8c_a2094d35bac01c6011ec3aac7891041db}
+\hypertarget{external__interface_8c_a92cbfd9df581c1c96c978137f9ae85e9}{
+\index{external\-\_\-interface.\-c@{external\-\_\-interface.\-c}!has\-\_\-timed\-\_\-out@{has\-\_\-timed\-\_\-out}}
+\index{has\-\_\-timed\-\_\-out@{has\-\_\-timed\-\_\-out}!external_interface.c@{external\-\_\-interface.\-c}}
+\subsubsection[{has\-\_\-timed\-\_\-out}]{\setlength{\rightskip}{0pt plus 5cm}\#define has\-\_\-timed\-\_\-out(
+\begin{DoxyParamCaption}
+\item[{}]{timeout\-\_\-counter, }
+\item[{}]{exp\-\_\-nrb}
+\end{DoxyParamCaption}
+)~((timeout\-\_\-counter) + \-U\-S\-B\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-C\-O\-U\-N\-T $<$ \-Get\-\_\-system\-\_\-register(\-A\-V\-R32\-\_\-\-C\-O\-U\-N\-T) \&\& (exp\-\_\-nrb) $>$ 0)}}
+\label{external__interface_8c_a92cbfd9df581c1c96c978137f9ae85e9}
+\hypertarget{external__interface_8c_aab204372f31ec0358765c2e72639fbbd}{
+\index{external\-\_\-interface.\-c@{external\-\_\-interface.\-c}!\-H\-E\-A\-D\-E\-R\-\_\-\-B\-Y\-T\-E\-S@{\-H\-E\-A\-D\-E\-R\-\_\-\-B\-Y\-T\-E\-S}}
+\index{\-H\-E\-A\-D\-E\-R\-\_\-\-B\-Y\-T\-E\-S@{\-H\-E\-A\-D\-E\-R\-\_\-\-B\-Y\-T\-E\-S}!external_interface.c@{external\-\_\-interface.\-c}}
+\subsubsection[{\-H\-E\-A\-D\-E\-R\-\_\-\-B\-Y\-T\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-H\-E\-A\-D\-E\-R\-\_\-\-B\-Y\-T\-E\-S~1}}
+\label{external__interface_8c_aab204372f31ec0358765c2e72639fbbd}
+\hypertarget{external__interface_8c_a9fab502e54b472d27148f709b5327b87}{
+\index{external\-\_\-interface.\-c@{external\-\_\-interface.\-c}!increment\-\_\-counter@{increment\-\_\-counter}}
+\index{increment\-\_\-counter@{increment\-\_\-counter}!external_interface.c@{external\-\_\-interface.\-c}}
+\subsubsection[{increment\-\_\-counter}]{\setlength{\rightskip}{0pt plus 5cm}\#define increment\-\_\-counter(
+\begin{DoxyParamCaption}
+\item[{}]{counter}
+\end{DoxyParamCaption}
+)~((counter)++)}}
+\label{external__interface_8c_a9fab502e54b472d27148f709b5327b87}
+\hypertarget{external__interface_8c_a71e04660769623e038e129e3d09815bb}{
+\index{external\-\_\-interface.\-c@{external\-\_\-interface.\-c}!is\-\_\-end\-\_\-of\-\_\-command@{is\-\_\-end\-\_\-of\-\_\-command}}
+\index{is\-\_\-end\-\_\-of\-\_\-command@{is\-\_\-end\-\_\-of\-\_\-command}!external_interface.c@{external\-\_\-interface.\-c}}
+\subsubsection[{is\-\_\-end\-\_\-of\-\_\-command}]{\setlength{\rightskip}{0pt plus 5cm}\#define is\-\_\-end\-\_\-of\-\_\-command(
+\begin{DoxyParamCaption}
+\item[{}]{exp\-\_\-nrb}
+\end{DoxyParamCaption}
+)~(exp\-\_\-nrb) == \-S\-I\-N\-G\-L\-E\-\_\-\-B\-Y\-T\-E\-\_\-\-E\-X\-P\-E\-C\-T\-E\-D}}
+\label{external__interface_8c_a71e04660769623e038e129e3d09815bb}
+\hypertarget{external__interface_8c_a7b2aea1a29fa2b5e05aafaefebe8b534}{
+\index{external\-\_\-interface.\-c@{external\-\_\-interface.\-c}!is\-\_\-new\-\_\-header@{is\-\_\-new\-\_\-header}}
+\index{is\-\_\-new\-\_\-header@{is\-\_\-new\-\_\-header}!external_interface.c@{external\-\_\-interface.\-c}}
+\subsubsection[{is\-\_\-new\-\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}\#define is\-\_\-new\-\_\-header(
+\begin{DoxyParamCaption}
+\item[{}]{exp\-\_\-nrb}
+\end{DoxyParamCaption}
+)~((exp\-\_\-nrb) == \-N\-O\-\_\-\-E\-X\-P\-E\-C\-T\-E\-D\-\_\-\-B\-Y\-T\-E\-S)}}
+\label{external__interface_8c_a7b2aea1a29fa2b5e05aafaefebe8b534}
+\hypertarget{external__interface_8c_a0ad0666a1726541270e5b2a3594f242c}{
+\index{external\-\_\-interface.\-c@{external\-\_\-interface.\-c}!\-M\-A\-X\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-A\-R\-G\-S@{\-M\-A\-X\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-A\-R\-G\-S}}
+\index{\-M\-A\-X\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-A\-R\-G\-S@{\-M\-A\-X\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-A\-R\-G\-S}!external_interface.c@{external\-\_\-interface.\-c}}
+\subsubsection[{\-M\-A\-X\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-A\-R\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-M\-A\-X\-\_\-\-C\-O\-M\-M\-A\-N\-D\-\_\-\-A\-R\-G\-S~10}}
+\label{external__interface_8c_a0ad0666a1726541270e5b2a3594f242c}
+\hypertarget{external__interface_8c_a95fd3f70cf5c50ee3e0d917496b6f204}{
+\index{external\-\_\-interface.\-c@{external\-\_\-interface.\-c}!\-N\-O\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-R\-E\-C\-E\-I\-V\-E\-D\-\_\-\-Y\-E\-T@{\-N\-O\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-R\-E\-C\-E\-I\-V\-E\-D\-\_\-\-Y\-E\-T}}
+\index{\-N\-O\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-R\-E\-C\-E\-I\-V\-E\-D\-\_\-\-Y\-E\-T@{\-N\-O\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-R\-E\-C\-E\-I\-V\-E\-D\-\_\-\-Y\-E\-T}!external_interface.c@{external\-\_\-interface.\-c}}
+\subsubsection[{\-N\-O\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-R\-E\-C\-E\-I\-V\-E\-D\-\_\-\-Y\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-N\-O\-\_\-\-B\-Y\-T\-E\-S\-\_\-\-R\-E\-C\-E\-I\-V\-E\-D\-\_\-\-Y\-E\-T~0}}
+\label{external__interface_8c_a95fd3f70cf5c50ee3e0d917496b6f204}
+\hypertarget{external__interface_8c_a85ee2537246c608f7869fd334744e7a2}{
+\index{external\-\_\-interface.\-c@{external\-\_\-interface.\-c}!\-N\-O\-\_\-\-E\-X\-P\-E\-C\-T\-E\-D\-\_\-\-B\-Y\-T\-E\-S@{\-N\-O\-\_\-\-E\-X\-P\-E\-C\-T\-E\-D\-\_\-\-B\-Y\-T\-E\-S}}
+\index{\-N\-O\-\_\-\-E\-X\-P\-E\-C\-T\-E\-D\-\_\-\-B\-Y\-T\-E\-S@{\-N\-O\-\_\-\-E\-X\-P\-E\-C\-T\-E\-D\-\_\-\-B\-Y\-T\-E\-S}!external_interface.c@{external\-\_\-interface.\-c}}
+\subsubsection[{\-N\-O\-\_\-\-E\-X\-P\-E\-C\-T\-E\-D\-\_\-\-B\-Y\-T\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-N\-O\-\_\-\-E\-X\-P\-E\-C\-T\-E\-D\-\_\-\-B\-Y\-T\-E\-S~0}}
+\label{external__interface_8c_a85ee2537246c608f7869fd334744e7a2}
+\hypertarget{external__interface_8c_ac5a15380349cdf6021cc71c6ff3a94fd}{
+\index{external\-\_\-interface.\-c@{external\-\_\-interface.\-c}!\-N\-O\-\_\-\-I\-N\-I\-T\-I\-A\-T\-E\-D\-\_\-\-T\-R\-A\-N\-S\-M\-I\-S\-S\-I\-O\-N@{\-N\-O\-\_\-\-I\-N\-I\-T\-I\-A\-T\-E\-D\-\_\-\-T\-R\-A\-N\-S\-M\-I\-S\-S\-I\-O\-N}}
+\index{\-N\-O\-\_\-\-I\-N\-I\-T\-I\-A\-T\-E\-D\-\_\-\-T\-R\-A\-N\-S\-M\-I\-S\-S\-I\-O\-N@{\-N\-O\-\_\-\-I\-N\-I\-T\-I\-A\-T\-E\-D\-\_\-\-T\-R\-A\-N\-S\-M\-I\-S\-S\-I\-O\-N}!external_interface.c@{external\-\_\-interface.\-c}}
+\subsubsection[{\-N\-O\-\_\-\-I\-N\-I\-T\-I\-A\-T\-E\-D\-\_\-\-T\-R\-A\-N\-S\-M\-I\-S\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-N\-O\-\_\-\-I\-N\-I\-T\-I\-A\-T\-E\-D\-\_\-\-T\-R\-A\-N\-S\-M\-I\-S\-S\-I\-O\-N~0}}
+\label{external__interface_8c_ac5a15380349cdf6021cc71c6ff3a94fd}
+\hypertarget{external__interface_8c_ad6a64f7bdea946fc03f79f174e90a6b2}{
+\index{external\-\_\-interface.\-c@{external\-\_\-interface.\-c}!\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-S\-I\-Z\-E\-\_\-\-B\-Y\-T\-E@{\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-S\-I\-Z\-E\-\_\-\-B\-Y\-T\-E}}
+\index{\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-S\-I\-Z\-E\-\_\-\-B\-Y\-T\-E@{\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-S\-I\-Z\-E\-\_\-\-B\-Y\-T\-E}!external_interface.c@{external\-\_\-interface.\-c}}
+\subsubsection[{\-P\-A\-Y\-L\-O\-A\-D\-\_\-\-S\-I\-Z\-E\-\_\-\-B\-Y\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-A\-Y\-L\-O\-A\-D\-\_\-\-S\-I\-Z\-E\-\_\-\-B\-Y\-T\-E~(state\-\_\-output\-\_\-header\-\_\-p+1)}}
+\label{external__interface_8c_ad6a64f7bdea946fc03f79f174e90a6b2}
+\hypertarget{external__interface_8c_ab64b9b0e54ed62e2093f9b170cff8f4b}{
+\index{external\-\_\-interface.\-c@{external\-\_\-interface.\-c}!receive\-\_\-limit\-\_\-not\-\_\-reached@{receive\-\_\-limit\-\_\-not\-\_\-reached}}
+\index{receive\-\_\-limit\-\_\-not\-\_\-reached@{receive\-\_\-limit\-\_\-not\-\_\-reached}!external_interface.c@{external\-\_\-interface.\-c}}
+\subsubsection[{receive\-\_\-limit\-\_\-not\-\_\-reached}]{\setlength{\rightskip}{0pt plus 5cm}\#define receive\-\_\-limit\-\_\-not\-\_\-reached(
+\begin{DoxyParamCaption}
+\item[{}]{rx\-\_\-nrb\-\_\-counter}
+\end{DoxyParamCaption}
+)~((rx\-\_\-nrb\-\_\-counter)$<$\-M\-A\-X\-\_\-\-R\-X\-\_\-\-N\-R\-B)}}
+\label{external__interface_8c_ab64b9b0e54ed62e2093f9b170cff8f4b}
+\hypertarget{external__interface_8c_a315ae12e6f397325554618c1eecc488d}{
+\index{external\-\_\-interface.\-c@{external\-\_\-interface.\-c}!reset\-\_\-timer@{reset\-\_\-timer}}
+\index{reset\-\_\-timer@{reset\-\_\-timer}!external_interface.c@{external\-\_\-interface.\-c}}
+\subsubsection[{reset\-\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}\#define reset\-\_\-timer(
+\begin{DoxyParamCaption}
+\item[{}]{timer}
+\end{DoxyParamCaption}
+)~((timer) = \-Get\-\_\-system\-\_\-register(\-A\-V\-R32\-\_\-\-C\-O\-U\-N\-T))}}
+\label{external__interface_8c_a315ae12e6f397325554618c1eecc488d}
+\hypertarget{external__interface_8c_a0476a858145c6a1c65bcbcf1aba36658}{
+\index{external\-\_\-interface.\-c@{external\-\_\-interface.\-c}!\-S\-I\-N\-G\-L\-E\-\_\-\-B\-Y\-T\-E\-\_\-\-E\-X\-P\-E\-C\-T\-E\-D@{\-S\-I\-N\-G\-L\-E\-\_\-\-B\-Y\-T\-E\-\_\-\-E\-X\-P\-E\-C\-T\-E\-D}}
+\index{\-S\-I\-N\-G\-L\-E\-\_\-\-B\-Y\-T\-E\-\_\-\-E\-X\-P\-E\-C\-T\-E\-D@{\-S\-I\-N\-G\-L\-E\-\_\-\-B\-Y\-T\-E\-\_\-\-E\-X\-P\-E\-C\-T\-E\-D}!external_interface.c@{external\-\_\-interface.\-c}}
+\subsubsection[{\-S\-I\-N\-G\-L\-E\-\_\-\-B\-Y\-T\-E\-\_\-\-E\-X\-P\-E\-C\-T\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-I\-N\-G\-L\-E\-\_\-\-B\-Y\-T\-E\-\_\-\-E\-X\-P\-E\-C\-T\-E\-D~1}}
+\label{external__interface_8c_a0476a858145c6a1c65bcbcf1aba36658}
+\hypertarget{external__interface_8c_aebff9f5f6164c79d9fe98bc66f068dce}{
+\index{external\-\_\-interface.\-c@{external\-\_\-interface.\-c}!\-S\-T\-A\-T\-E\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-H\-E\-A\-D\-E\-R@{\-S\-T\-A\-T\-E\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-H\-E\-A\-D\-E\-R}}
+\index{\-S\-T\-A\-T\-E\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-H\-E\-A\-D\-E\-R@{\-S\-T\-A\-T\-E\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-H\-E\-A\-D\-E\-R}!external_interface.c@{external\-\_\-interface.\-c}}
+\subsubsection[{\-S\-T\-A\-T\-E\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-H\-E\-A\-D\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-T\-A\-T\-E\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-H\-E\-A\-D\-E\-R~0x\-A\-A}}
+\label{external__interface_8c_aebff9f5f6164c79d9fe98bc66f068dce}
+\hypertarget{external__interface_8c_aeb6e0eb56e05a6f98329c4176732ade0}{
+\index{external\-\_\-interface.\-c@{external\-\_\-interface.\-c}!\-U\-S\-B\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-C\-O\-U\-N\-T@{\-U\-S\-B\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-C\-O\-U\-N\-T}}
+\index{\-U\-S\-B\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-C\-O\-U\-N\-T@{\-U\-S\-B\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-C\-O\-U\-N\-T}!external_interface.c@{external\-\_\-interface.\-c}}
+\subsubsection[{\-U\-S\-B\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-C\-O\-U\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-C\-O\-U\-N\-T~200000000}}
+\label{external__interface_8c_aeb6e0eb56e05a6f98329c4176732ade0}

@@ -1,0 +1,579 @@
+\hypertarget{power__clocks__lib_8h}{
+\section{power\-\_\-clocks\-\_\-lib.h \-File \-Reference}
+\label{power__clocks__lib_8h}\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}}
+}
+
+
+\-High-\/level library abstracting features such as oscillators/pll/dfll configuration, clock configuration, \-System-\/sensible parameters configuration, buses clocks configuration, sleep mode, reset.  
+
+
+{\ttfamily \#include $<$avr32/io.\-h$>$}\*
+{\ttfamily \#include \char`\"{}compiler.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}pm.\-h\char`\"{}}\*
+\subsection*{\-Functions}
+\begin{Indent}\paragraph*{\-Power \-Management}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long \hyperlink{power__clocks__lib_8h_a1f0120dade42a19b5d5a0f2f217b857a}{pcl\-\_\-read\-\_\-gplp} (unsigned long gplp)
+\begin{DoxyCompactList}\small\item\em \-Read the content of the \-G\-P\-L\-P registers. \end{DoxyCompactList}\item 
+void \hyperlink{power__clocks__lib_8h_a22234c65b535937b477c7e988ec2fec5}{pcl\-\_\-write\-\_\-gplp} (unsigned long gplp, unsigned long value)
+\begin{DoxyCompactList}\small\item\em \-Write into the \-G\-P\-L\-P registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-Clocks \-Management}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{power__clocks__lib_8h_ae5d58ccb6ba7a33fc31a4d746be5c1f8}{pcl\-\_\-freq\-\_\-param\-\_\-t}~pm\-\_\-freq\-\_\-param\-\_\-t
+\begin{DoxyCompactList}\small\item\em \-Input and output parameters to configure clocks with \hyperlink{power__clocks__lib_8c_a6a10f502b3248fff54863a281af1da9e}{pcl\-\_\-configure\-\_\-clocks()}. \end{DoxyCompactList}\item 
+\#define \hyperlink{power__clocks__lib_8h_a59e0f4c56cd3a4bbe8048c5f25f29d0a}{\-P\-C\-L\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D}~(-\/10000)
+\begin{DoxyCompactList}\small\item\em \-Define \char`\"{}not supported\char`\"{} for the lib. \end{DoxyCompactList}\item 
+\#define \hyperlink{power__clocks__lib_8h_a74e5a86210c3b80bd700df9389e215c8}{pcl\-\_\-enable\-\_\-module}(module)~pm\-\_\-enable\-\_\-module(\&\-A\-V\-R32\-\_\-\-P\-M, module)
+\begin{DoxyCompactList}\small\item\em \-Enable the clock of a module. \end{DoxyCompactList}\item 
+\#define \hyperlink{power__clocks__lib_8h_a06bdd6244939aa44609ceca5bc036570}{pcl\-\_\-disable\-\_\-module}(module)~pm\-\_\-disable\-\_\-module(\&\-A\-V\-R32\-\_\-\-P\-M, module)
+\begin{DoxyCompactList}\small\item\em \-Disable the clock of a module. \end{DoxyCompactList}\item 
+enum \hyperlink{power__clocks__lib_8h_af1e177f049f666a68c4969ab118bac6b}{pcl\-\_\-osc\-\_\-t} \{ \hyperlink{power__clocks__lib_8h_af1e177f049f666a68c4969ab118bac6ba1de109897efb1a7aa0945ff267cb7a5c}{\-P\-C\-L\-\_\-\-O\-S\-C0} =  0, 
+\hyperlink{power__clocks__lib_8h_af1e177f049f666a68c4969ab118bac6ba4c5069c1dc660a89db3752fdff54b8ae}{\-P\-C\-L\-\_\-\-O\-S\-C1} =  1
+ \}
+\begin{DoxyCompactList}\small\item\em \-The different oscillators. \end{DoxyCompactList}\item 
+enum \hyperlink{power__clocks__lib_8h_af9cae9b1b110d1b3d27c23593a757074}{pcl\-\_\-dfll\-\_\-t} \{ \hyperlink{power__clocks__lib_8h_af9cae9b1b110d1b3d27c23593a757074a50aa495ad526c0d2daf92cad1b3d5d7b}{\-P\-C\-L\-\_\-\-D\-F\-L\-L0} =  0, 
+\hyperlink{power__clocks__lib_8h_af9cae9b1b110d1b3d27c23593a757074a8325a65259a575f4ae34f1a796b5cd99}{\-P\-C\-L\-\_\-\-D\-F\-L\-L1} =  1
+ \}
+\begin{DoxyCompactList}\small\item\em \-The different \-D\-F\-L\-Ls. \end{DoxyCompactList}\item 
+enum \hyperlink{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011b}{pcl\-\_\-mainclk\-\_\-t} \{ \*
+\hyperlink{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011baa2c1cfc43f78e8d6f4fd6b320b2166e4}{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-R\-C\-S\-Y\-S}, 
+\hyperlink{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba167075b7136f979cd69680823ab75588}{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C0}, 
+\hyperlink{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba72088d029d0fe1971673ad00462dff9a}{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C1}, 
+\hyperlink{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba1823c6c5e3ae6bf50d4b3f01184c2584}{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C0\-\_\-\-P\-L\-L0}, 
+\*
+\hyperlink{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011bae6334cb514de83b881d9b3c9c7c51a14}{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C1\-\_\-\-P\-L\-L0}, 
+\hyperlink{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba1830fbd30b05dd549301185c02ed642b}{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C0\-\_\-\-P\-L\-L1}, 
+\hyperlink{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011baff81d68a3173246658eaa6562ab7537e}{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C1\-\_\-\-P\-L\-L1}, 
+\hyperlink{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba00c460fd0a7c48c4c4e2b8885d2add6c}{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-D\-F\-L\-L0}, 
+\*
+\hyperlink{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba5693f6f428fbbb249094fb998b80d056}{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-D\-F\-L\-L1}, 
+\hyperlink{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011bad0a4e4975a1dba0e60a656863836641b}{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-R\-C120\-M}, 
+\hyperlink{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba3aa38440bf297cb450e3964a7124ba5a}{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-R\-C8\-M}, 
+\hyperlink{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba6c9a242dc5a97294c077bfba858055f8}{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-C\-R\-I\-P\-O\-S\-C}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Possible \-Main \-Clock \-Sources. \end{DoxyCompactList}\item 
+long int \hyperlink{power__clocks__lib_8h_a6a10f502b3248fff54863a281af1da9e}{pcl\-\_\-configure\-\_\-clocks} (pcl\-\_\-freq\-\_\-param\-\_\-t $\ast$param)
+\begin{DoxyCompactList}\small\item\em \-Automatically configure the \-C\-P\-U, \-P\-B\-A, \-P\-B\-B, and \-H\-S\-B clocks. \end{DoxyCompactList}\item 
+long int \hyperlink{power__clocks__lib_8h_a37e123796912716a80c10045f483e618}{pcl\-\_\-configure\-\_\-clocks\-\_\-rcsys} (pcl\-\_\-freq\-\_\-param\-\_\-t $\ast$param)
+\begin{DoxyCompactList}\small\item\em \-Automatically configure the \-C\-P\-U, \-P\-B\-A, \-P\-B\-B, and \-H\-S\-B clocks using the \-R\-C\-S\-Y\-S osc as main source clock. \end{DoxyCompactList}\item 
+long int \hyperlink{power__clocks__lib_8h_a73982b53f03832280909af1b437220ba}{pcl\-\_\-configure\-\_\-clocks\-\_\-rc120m} (pcl\-\_\-freq\-\_\-param\-\_\-t $\ast$param)
+\begin{DoxyCompactList}\small\item\em \-Automatically configure the \-C\-P\-U, \-P\-B\-A, \-P\-B\-B, and \-H\-S\-B clocks using the \-R\-C120\-M osc as main source clock. \end{DoxyCompactList}\item 
+long int \hyperlink{power__clocks__lib_8h_a4ff3149ebc8bf3064e77dc4b158aafad}{pcl\-\_\-configure\-\_\-clocks\-\_\-osc0} (pcl\-\_\-freq\-\_\-param\-\_\-t $\ast$param)
+\begin{DoxyCompactList}\small\item\em \-Automatically configure the \-C\-P\-U, \-P\-B\-A, \-P\-B\-B, and \-H\-S\-B clocks using the \-O\-S\-C0 osc as main source clock. \end{DoxyCompactList}\item 
+long int \hyperlink{power__clocks__lib_8h_a8528af6e455a48f6d7b134bbd51d5840}{pcl\-\_\-configure\-\_\-clocks\-\_\-dfll0} (pcl\-\_\-freq\-\_\-param\-\_\-t $\ast$param)
+\begin{DoxyCompactList}\small\item\em \-Automatically configure the \-C\-P\-U, \-P\-B\-A, \-P\-B\-B, and \-H\-S\-B clocks using the \-D\-F\-L\-L0 as main source clock. \end{DoxyCompactList}\item 
+long int \hyperlink{power__clocks__lib_8h_ac557cb29483bdd41f36dea2dba5bf9ab}{pcl\-\_\-switch\-\_\-to\-\_\-osc} (\hyperlink{power__clocks__lib_8h_af1e177f049f666a68c4969ab118bac6b}{pcl\-\_\-osc\-\_\-t} osc, unsigned int fcrystal, unsigned int startup)
+\begin{DoxyCompactList}\small\item\em \-Switch the main clock source to \-Osc0 configured in crystal mode. \end{DoxyCompactList}\item 
+long int \hyperlink{power__clocks__lib_8h_a8c02993a038be7348f0363675e6e836a}{pcl\-\_\-configure\-\_\-usb\-\_\-clock} (void)
+\begin{DoxyCompactList}\small\item\em \-Configure the \-U\-S\-B \-Clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-High-\/level library abstracting features such as oscillators/pll/dfll configuration, clock configuration, \-System-\/sensible parameters configuration, buses clocks configuration, sleep mode, reset. 
+\begin{DoxyItemize}
+\item \-Compiler\-: \-I\-A\-R \-E\-W\-A\-V\-R32 and \-G\-N\-U \-G\-C\-C for \-A\-V\-R32
+\item \-Supported devices\-: \-All \-A\-V\-R32 devices.
+\item \-App\-Note\-:
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{\-Author}
+\-Atmel \-Corporation\-: \href{http://www.atmel.com}{\tt http\-://www.\-atmel.\-com} \par
+ \-Support and \-F\-A\-Q\-: \href{http://support.atmel.no/}{\tt http\-://support.\-atmel.\-no/} 
+\end{DoxyAuthor}
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{power__clocks__lib_8h_a06bdd6244939aa44609ceca5bc036570}{
+\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!pcl\-\_\-disable\-\_\-module@{pcl\-\_\-disable\-\_\-module}}
+\index{pcl\-\_\-disable\-\_\-module@{pcl\-\_\-disable\-\_\-module}!power_clocks_lib.h@{power\-\_\-clocks\-\_\-lib.\-h}}
+\subsubsection[{pcl\-\_\-disable\-\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}\#define pcl\-\_\-disable\-\_\-module(
+\begin{DoxyParamCaption}
+\item[{}]{module}
+\end{DoxyParamCaption}
+)~pm\-\_\-disable\-\_\-module(\&\-A\-V\-R32\-\_\-\-P\-M, module)}}
+\label{power__clocks__lib_8h_a06bdd6244939aa44609ceca5bc036570}
+
+
+\-Disable the clock of a module. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em module} & \-The module to shut down (use one of the defines in the part-\/specific header file under \char`\"{}toolchain folder\char`\"{}/avr32/inc(lude)/avr32/; depending on the clock domain, look for the sections \char`\"{}\-C\-P\-U clocks\char`\"{}, \char`\"{}\-H\-S\-B clocks\char`\"{}, \char`\"{}\-P\-Bx clocks\char`\"{} or look in the module section).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Success. \\
+\hline
+{\em $<$0} & \-An error occured. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{power__clocks__lib_8h_a74e5a86210c3b80bd700df9389e215c8}{
+\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!pcl\-\_\-enable\-\_\-module@{pcl\-\_\-enable\-\_\-module}}
+\index{pcl\-\_\-enable\-\_\-module@{pcl\-\_\-enable\-\_\-module}!power_clocks_lib.h@{power\-\_\-clocks\-\_\-lib.\-h}}
+\subsubsection[{pcl\-\_\-enable\-\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}\#define pcl\-\_\-enable\-\_\-module(
+\begin{DoxyParamCaption}
+\item[{}]{module}
+\end{DoxyParamCaption}
+)~pm\-\_\-enable\-\_\-module(\&\-A\-V\-R32\-\_\-\-P\-M, module)}}
+\label{power__clocks__lib_8h_a74e5a86210c3b80bd700df9389e215c8}
+
+
+\-Enable the clock of a module. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em module} & \-The module to clock (use one of the defines in the part-\/specific header file under \char`\"{}toolchain folder\char`\"{}/avr32/inc(lude)/avr32/; depending on the clock domain, look for the sections \char`\"{}\-C\-P\-U clocks\char`\"{}, \char`\"{}\-H\-S\-B clocks\char`\"{}, \char`\"{}\-P\-Bx clocks\char`\"{} or look in the module section).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Success. \\
+\hline
+{\em $<$0} & \-An error occured. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{power__clocks__lib_8h_ae5d58ccb6ba7a33fc31a4d746be5c1f8}{
+\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!pcl\-\_\-freq\-\_\-param\-\_\-t@{pcl\-\_\-freq\-\_\-param\-\_\-t}}
+\index{pcl\-\_\-freq\-\_\-param\-\_\-t@{pcl\-\_\-freq\-\_\-param\-\_\-t}!power_clocks_lib.h@{power\-\_\-clocks\-\_\-lib.\-h}}
+\subsubsection[{pcl\-\_\-freq\-\_\-param\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}\#define pcl\-\_\-freq\-\_\-param\-\_\-t~pm\-\_\-freq\-\_\-param\-\_\-t}}
+\label{power__clocks__lib_8h_ae5d58ccb6ba7a33fc31a4d746be5c1f8}
+
+
+\-Input and output parameters to configure clocks with \hyperlink{power__clocks__lib_8c_a6a10f502b3248fff54863a281af1da9e}{pcl\-\_\-configure\-\_\-clocks()}. 
+
+\hypertarget{power__clocks__lib_8h_a59e0f4c56cd3a4bbe8048c5f25f29d0a}{
+\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!\-P\-C\-L\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D@{\-P\-C\-L\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D}}
+\index{\-P\-C\-L\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D@{\-P\-C\-L\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D}!power_clocks_lib.h@{power\-\_\-clocks\-\_\-lib.\-h}}
+\subsubsection[{\-P\-C\-L\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-C\-L\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D~(-\/10000)}}
+\label{power__clocks__lib_8h_a59e0f4c56cd3a4bbe8048c5f25f29d0a}
+
+
+\-Define \char`\"{}not supported\char`\"{} for the lib. 
+
+
+
+\subsection{\-Enumeration \-Type \-Documentation}
+\hypertarget{power__clocks__lib_8h_af9cae9b1b110d1b3d27c23593a757074}{
+\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!pcl\-\_\-dfll\-\_\-t@{pcl\-\_\-dfll\-\_\-t}}
+\index{pcl\-\_\-dfll\-\_\-t@{pcl\-\_\-dfll\-\_\-t}!power_clocks_lib.h@{power\-\_\-clocks\-\_\-lib.\-h}}
+\subsubsection[{pcl\-\_\-dfll\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf pcl\-\_\-dfll\-\_\-t}}}
+\label{power__clocks__lib_8h_af9cae9b1b110d1b3d27c23593a757074}
+
+
+\-The different \-D\-F\-L\-Ls. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-P\-C\-L\-\_\-\-D\-F\-L\-L0@{\-P\-C\-L\-\_\-\-D\-F\-L\-L0}!power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}}\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!\-P\-C\-L\-\_\-\-D\-F\-L\-L0@{\-P\-C\-L\-\_\-\-D\-F\-L\-L0}}\item[{\em 
+\hypertarget{power__clocks__lib_8h_af9cae9b1b110d1b3d27c23593a757074a50aa495ad526c0d2daf92cad1b3d5d7b}{
+\-P\-C\-L\-\_\-\-D\-F\-L\-L0}
+\label{power__clocks__lib_8h_af9cae9b1b110d1b3d27c23593a757074a50aa495ad526c0d2daf92cad1b3d5d7b}
+}]\index{\-P\-C\-L\-\_\-\-D\-F\-L\-L1@{\-P\-C\-L\-\_\-\-D\-F\-L\-L1}!power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}}\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!\-P\-C\-L\-\_\-\-D\-F\-L\-L1@{\-P\-C\-L\-\_\-\-D\-F\-L\-L1}}\item[{\em 
+\hypertarget{power__clocks__lib_8h_af9cae9b1b110d1b3d27c23593a757074a8325a65259a575f4ae34f1a796b5cd99}{
+\-P\-C\-L\-\_\-\-D\-F\-L\-L1}
+\label{power__clocks__lib_8h_af9cae9b1b110d1b3d27c23593a757074a8325a65259a575f4ae34f1a796b5cd99}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011b}{
+\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!pcl\-\_\-mainclk\-\_\-t@{pcl\-\_\-mainclk\-\_\-t}}
+\index{pcl\-\_\-mainclk\-\_\-t@{pcl\-\_\-mainclk\-\_\-t}!power_clocks_lib.h@{power\-\_\-clocks\-\_\-lib.\-h}}
+\subsubsection[{pcl\-\_\-mainclk\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf pcl\-\_\-mainclk\-\_\-t}}}
+\label{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011b}
+
+
+\-Possible \-Main \-Clock \-Sources. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-R\-C\-S\-Y\-S@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-R\-C\-S\-Y\-S}!power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}}\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!\-P\-C\-L\-\_\-\-M\-C\-\_\-\-R\-C\-S\-Y\-S@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-R\-C\-S\-Y\-S}}\item[{\em 
+\hypertarget{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011baa2c1cfc43f78e8d6f4fd6b320b2166e4}{
+\-P\-C\-L\-\_\-\-M\-C\-\_\-\-R\-C\-S\-Y\-S}
+\label{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011baa2c1cfc43f78e8d6f4fd6b320b2166e4}
+}]\index{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C0@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C0}!power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}}\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C0@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C0}}\item[{\em 
+\hypertarget{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba167075b7136f979cd69680823ab75588}{
+\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C0}
+\label{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba167075b7136f979cd69680823ab75588}
+}]\index{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C1@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C1}!power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}}\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C1@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C1}}\item[{\em 
+\hypertarget{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba72088d029d0fe1971673ad00462dff9a}{
+\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C1}
+\label{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba72088d029d0fe1971673ad00462dff9a}
+}]\index{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C0\-\_\-\-P\-L\-L0@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C0\-\_\-\-P\-L\-L0}!power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}}\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C0\-\_\-\-P\-L\-L0@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C0\-\_\-\-P\-L\-L0}}\item[{\em 
+\hypertarget{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba1823c6c5e3ae6bf50d4b3f01184c2584}{
+\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C0\-\_\-\-P\-L\-L0}
+\label{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba1823c6c5e3ae6bf50d4b3f01184c2584}
+}]\index{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C1\-\_\-\-P\-L\-L0@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C1\-\_\-\-P\-L\-L0}!power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}}\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C1\-\_\-\-P\-L\-L0@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C1\-\_\-\-P\-L\-L0}}\item[{\em 
+\hypertarget{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011bae6334cb514de83b881d9b3c9c7c51a14}{
+\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C1\-\_\-\-P\-L\-L0}
+\label{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011bae6334cb514de83b881d9b3c9c7c51a14}
+}]\index{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C0\-\_\-\-P\-L\-L1@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C0\-\_\-\-P\-L\-L1}!power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}}\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C0\-\_\-\-P\-L\-L1@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C0\-\_\-\-P\-L\-L1}}\item[{\em 
+\hypertarget{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba1830fbd30b05dd549301185c02ed642b}{
+\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C0\-\_\-\-P\-L\-L1}
+\label{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba1830fbd30b05dd549301185c02ed642b}
+}]\index{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C1\-\_\-\-P\-L\-L1@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C1\-\_\-\-P\-L\-L1}!power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}}\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C1\-\_\-\-P\-L\-L1@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C1\-\_\-\-P\-L\-L1}}\item[{\em 
+\hypertarget{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011baff81d68a3173246658eaa6562ab7537e}{
+\-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C1\-\_\-\-P\-L\-L1}
+\label{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011baff81d68a3173246658eaa6562ab7537e}
+}]\index{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-D\-F\-L\-L0@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-D\-F\-L\-L0}!power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}}\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!\-P\-C\-L\-\_\-\-M\-C\-\_\-\-D\-F\-L\-L0@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-D\-F\-L\-L0}}\item[{\em 
+\hypertarget{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba00c460fd0a7c48c4c4e2b8885d2add6c}{
+\-P\-C\-L\-\_\-\-M\-C\-\_\-\-D\-F\-L\-L0}
+\label{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba00c460fd0a7c48c4c4e2b8885d2add6c}
+}]\index{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-D\-F\-L\-L1@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-D\-F\-L\-L1}!power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}}\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!\-P\-C\-L\-\_\-\-M\-C\-\_\-\-D\-F\-L\-L1@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-D\-F\-L\-L1}}\item[{\em 
+\hypertarget{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba5693f6f428fbbb249094fb998b80d056}{
+\-P\-C\-L\-\_\-\-M\-C\-\_\-\-D\-F\-L\-L1}
+\label{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba5693f6f428fbbb249094fb998b80d056}
+}]\index{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-R\-C120\-M@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-R\-C120\-M}!power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}}\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!\-P\-C\-L\-\_\-\-M\-C\-\_\-\-R\-C120\-M@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-R\-C120\-M}}\item[{\em 
+\hypertarget{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011bad0a4e4975a1dba0e60a656863836641b}{
+\-P\-C\-L\-\_\-\-M\-C\-\_\-\-R\-C120\-M}
+\label{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011bad0a4e4975a1dba0e60a656863836641b}
+}]\index{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-R\-C8\-M@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-R\-C8\-M}!power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}}\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!\-P\-C\-L\-\_\-\-M\-C\-\_\-\-R\-C8\-M@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-R\-C8\-M}}\item[{\em 
+\hypertarget{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba3aa38440bf297cb450e3964a7124ba5a}{
+\-P\-C\-L\-\_\-\-M\-C\-\_\-\-R\-C8\-M}
+\label{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba3aa38440bf297cb450e3964a7124ba5a}
+}]\index{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-C\-R\-I\-P\-O\-S\-C@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-C\-R\-I\-P\-O\-S\-C}!power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}}\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!\-P\-C\-L\-\_\-\-M\-C\-\_\-\-C\-R\-I\-P\-O\-S\-C@{\-P\-C\-L\-\_\-\-M\-C\-\_\-\-C\-R\-I\-P\-O\-S\-C}}\item[{\em 
+\hypertarget{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba6c9a242dc5a97294c077bfba858055f8}{
+\-P\-C\-L\-\_\-\-M\-C\-\_\-\-C\-R\-I\-P\-O\-S\-C}
+\label{power__clocks__lib_8h_a262b8e2623fe509dd4eb8d46bfe6011ba6c9a242dc5a97294c077bfba858055f8}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{power__clocks__lib_8h_af1e177f049f666a68c4969ab118bac6b}{
+\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!pcl\-\_\-osc\-\_\-t@{pcl\-\_\-osc\-\_\-t}}
+\index{pcl\-\_\-osc\-\_\-t@{pcl\-\_\-osc\-\_\-t}!power_clocks_lib.h@{power\-\_\-clocks\-\_\-lib.\-h}}
+\subsubsection[{pcl\-\_\-osc\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf pcl\-\_\-osc\-\_\-t}}}
+\label{power__clocks__lib_8h_af1e177f049f666a68c4969ab118bac6b}
+
+
+\-The different oscillators. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-P\-C\-L\-\_\-\-O\-S\-C0@{\-P\-C\-L\-\_\-\-O\-S\-C0}!power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}}\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!\-P\-C\-L\-\_\-\-O\-S\-C0@{\-P\-C\-L\-\_\-\-O\-S\-C0}}\item[{\em 
+\hypertarget{power__clocks__lib_8h_af1e177f049f666a68c4969ab118bac6ba1de109897efb1a7aa0945ff267cb7a5c}{
+\-P\-C\-L\-\_\-\-O\-S\-C0}
+\label{power__clocks__lib_8h_af1e177f049f666a68c4969ab118bac6ba1de109897efb1a7aa0945ff267cb7a5c}
+}]\index{\-P\-C\-L\-\_\-\-O\-S\-C1@{\-P\-C\-L\-\_\-\-O\-S\-C1}!power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}}\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!\-P\-C\-L\-\_\-\-O\-S\-C1@{\-P\-C\-L\-\_\-\-O\-S\-C1}}\item[{\em 
+\hypertarget{power__clocks__lib_8h_af1e177f049f666a68c4969ab118bac6ba4c5069c1dc660a89db3752fdff54b8ae}{
+\-P\-C\-L\-\_\-\-O\-S\-C1}
+\label{power__clocks__lib_8h_af1e177f049f666a68c4969ab118bac6ba4c5069c1dc660a89db3752fdff54b8ae}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{power__clocks__lib_8h_a6a10f502b3248fff54863a281af1da9e}{
+\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!pcl\-\_\-configure\-\_\-clocks@{pcl\-\_\-configure\-\_\-clocks}}
+\index{pcl\-\_\-configure\-\_\-clocks@{pcl\-\_\-configure\-\_\-clocks}!power_clocks_lib.h@{power\-\_\-clocks\-\_\-lib.\-h}}
+\subsubsection[{pcl\-\_\-configure\-\_\-clocks}]{\setlength{\rightskip}{0pt plus 5cm}long int pcl\-\_\-configure\-\_\-clocks (
+\begin{DoxyParamCaption}
+\item[{pcl\-\_\-freq\-\_\-param\-\_\-t $\ast$}]{param}
+\end{DoxyParamCaption}
+)}}
+\label{power__clocks__lib_8h_a6a10f502b3248fff54863a281af1da9e}
+
+
+\-Automatically configure the \-C\-P\-U, \-P\-B\-A, \-P\-B\-B, and \-H\-S\-B clocks. 
+
+\-This function needs some parameters stored in a pcl\-\_\-freq\-\_\-param\-\_\-t structure\-:
+\begin{DoxyItemize}
+\item main\-\_\-clk\-\_\-src is the id of the main clock source to use,
+\item cpu\-\_\-f and pba\-\_\-f and pbb\-\_\-f are the wanted frequencies,
+\item osc0\-\_\-f is the oscillator 0's external crystal (or external clock) on-\/board frequency (e.\-g. \-F\-O\-S\-C0),
+\item osc0\-\_\-startup is the oscillator 0's external crystal (or external clock) startup time (e.\-g. \-O\-S\-C0\-\_\-\-S\-T\-A\-R\-T\-U\-P).
+\item dfll\-\_\-f is the target \-D\-F\-L\-L frequency to set-\/up if main\-\_\-clk\-\_\-src is the dfll.
+\end{DoxyItemize}
+
+\-The \-C\-P\-U, \-H\-S\-B and \-P\-B\-A frequencies programmed after configuration are stored back into cpu\-\_\-f and pba\-\_\-f.
+
+\begin{DoxyNote}{\-Note}
+\-: since it is dynamically computing the appropriate field values of the configuration registers from the parameters structure, this function is not optimal in terms of code size. \-For a code size optimal solution, it is better to create a new function from \hyperlink{power__clocks__lib_8c_a6a10f502b3248fff54863a281af1da9e}{pcl\-\_\-configure\-\_\-clocks()} and modify it to use preprocessor computation from pre-\/defined target frequencies.
+\end{DoxyNote}
+
+\begin{DoxyParams}{\-Parameters}
+{\em param} & pointer on the configuration structure.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Success. \\
+\hline
+{\em $<$0} & \-The configuration cannot be performed. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{power__clocks__lib_8h_a8528af6e455a48f6d7b134bbd51d5840}{
+\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!pcl\-\_\-configure\-\_\-clocks\-\_\-dfll0@{pcl\-\_\-configure\-\_\-clocks\-\_\-dfll0}}
+\index{pcl\-\_\-configure\-\_\-clocks\-\_\-dfll0@{pcl\-\_\-configure\-\_\-clocks\-\_\-dfll0}!power_clocks_lib.h@{power\-\_\-clocks\-\_\-lib.\-h}}
+\subsubsection[{pcl\-\_\-configure\-\_\-clocks\-\_\-dfll0}]{\setlength{\rightskip}{0pt plus 5cm}long int pcl\-\_\-configure\-\_\-clocks\-\_\-dfll0 (
+\begin{DoxyParamCaption}
+\item[{pcl\-\_\-freq\-\_\-param\-\_\-t $\ast$}]{param}
+\end{DoxyParamCaption}
+)}}
+\label{power__clocks__lib_8h_a8528af6e455a48f6d7b134bbd51d5840}
+
+
+\-Automatically configure the \-C\-P\-U, \-P\-B\-A, \-P\-B\-B, and \-H\-S\-B clocks using the \-D\-F\-L\-L0 as main source clock. 
+
+\-This function needs some parameters stored in a pcl\-\_\-freq\-\_\-param\-\_\-t structure\-:
+\begin{DoxyItemize}
+\item cpu\-\_\-f and pba\-\_\-f and pbb\-\_\-f are the wanted frequencies,
+\item dfll\-\_\-f is the target \-D\-F\-L\-L frequency to set-\/up
+\end{DoxyItemize}
+
+\begin{DoxyNote}{\-Note}
+\-: when the \-D\-F\-L\-L0 is to be used as main source clock for the synchronous clocks, the target frequency of the \-D\-F\-L\-L should be chosen to be as high as possible within the specification range (for stability reasons); the target cpu and pbx frequencies will then be reached by appropriate division ratio.
+\end{DoxyNote}
+\-Supported main clock sources\-: \-P\-C\-L\-\_\-\-M\-C\-\_\-\-D\-F\-L\-L0
+
+\-Supported synchronous clocks frequencies\-: (these obviously depend on the \-D\-F\-L\-L target frequency; we'll take 100\-M\-Hz as an example) 50\-M\-Hz, 25\-M\-Hz, 12.\-5\-M\-Hz, 6.\-25\-M\-Hz, 3.\-125\-M\-Hz, 1562.\-5k\-Hz, 781.\-25k\-Hz, 390.\-625k\-Hz.
+
+\begin{DoxyNote}{\-Note}
+\-: by default, this implementation doesn't perform thorough checks on the input parameters. \-To enable the checks, define \-A\-V\-R32\-S\-F\-W\-\_\-\-I\-N\-P\-U\-T\-\_\-\-C\-H\-E\-C\-K.
+
+\-: since it is dynamically computing the appropriate field values of the configuration registers from the parameters structure, this function is not optimal in terms of code size. \-For a code size optimal solution, it is better to create a new function from \hyperlink{power__clocks__lib_8h_a8528af6e455a48f6d7b134bbd51d5840}{pcl\-\_\-configure\-\_\-clocks\-\_\-dfll0()} and modify it to use preprocessor computation from pre-\/defined target frequencies.
+\end{DoxyNote}
+
+\begin{DoxyParams}{\-Parameters}
+{\em param} & pointer on the configuration structure.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Success. \\
+\hline
+{\em $<$0} & \-The configuration cannot be performed. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{power__clocks__lib_8h_a4ff3149ebc8bf3064e77dc4b158aafad}{
+\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!pcl\-\_\-configure\-\_\-clocks\-\_\-osc0@{pcl\-\_\-configure\-\_\-clocks\-\_\-osc0}}
+\index{pcl\-\_\-configure\-\_\-clocks\-\_\-osc0@{pcl\-\_\-configure\-\_\-clocks\-\_\-osc0}!power_clocks_lib.h@{power\-\_\-clocks\-\_\-lib.\-h}}
+\subsubsection[{pcl\-\_\-configure\-\_\-clocks\-\_\-osc0}]{\setlength{\rightskip}{0pt plus 5cm}long int pcl\-\_\-configure\-\_\-clocks\-\_\-osc0 (
+\begin{DoxyParamCaption}
+\item[{pcl\-\_\-freq\-\_\-param\-\_\-t $\ast$}]{param}
+\end{DoxyParamCaption}
+)}}
+\label{power__clocks__lib_8h_a4ff3149ebc8bf3064e77dc4b158aafad}
+
+
+\-Automatically configure the \-C\-P\-U, \-P\-B\-A, \-P\-B\-B, and \-H\-S\-B clocks using the \-O\-S\-C0 osc as main source clock. 
+
+\-This function needs some parameters stored in a pcl\-\_\-freq\-\_\-param\-\_\-t structure\-:
+\begin{DoxyItemize}
+\item cpu\-\_\-f and pba\-\_\-f and pbb\-\_\-f are the wanted frequencies,
+\item osc0\-\_\-f is the oscillator 0's external crystal (or external clock) on-\/board frequency (e.\-g. \-F\-O\-S\-C0),
+\item osc0\-\_\-startup is the oscillator 0's external crystal (or external clock) startup time (e.\-g. \-O\-S\-C0\-\_\-\-S\-T\-A\-R\-T\-U\-P).
+\end{DoxyItemize}
+
+\-Supported main clock sources\-: \-P\-C\-L\-\_\-\-M\-C\-\_\-\-O\-S\-C0
+
+\-Supported synchronous clocks frequencies\-: (these obviously depend on the \-O\-S\-C0 frequency; we'll take 16\-M\-Hz as an example) 16\-M\-Hz, 8\-M\-Hz, 4\-M\-Hz, 2\-M\-Hz, 1\-M\-Hz, 500k\-Hz, 250k\-Hz, 125k\-Hz, 62.\-5k\-Hz.
+
+\begin{DoxyNote}{\-Note}
+\-: by default, this implementation doesn't perform thorough checks on the input parameters. \-To enable the checks, define \-A\-V\-R32\-S\-F\-W\-\_\-\-I\-N\-P\-U\-T\-\_\-\-C\-H\-E\-C\-K.
+
+\-: since it is dynamically computing the appropriate field values of the configuration registers from the parameters structure, this function is not optimal in terms of code size. \-For a code size optimal solution, it is better to create a new function from \hyperlink{power__clocks__lib_8h_a4ff3149ebc8bf3064e77dc4b158aafad}{pcl\-\_\-configure\-\_\-clocks\-\_\-osc0()} and modify it to use preprocessor computation from pre-\/defined target frequencies.
+\end{DoxyNote}
+
+\begin{DoxyParams}{\-Parameters}
+{\em param} & pointer on the configuration structure.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Success. \\
+\hline
+{\em $<$0} & \-The configuration cannot be performed. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{power__clocks__lib_8h_a73982b53f03832280909af1b437220ba}{
+\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!pcl\-\_\-configure\-\_\-clocks\-\_\-rc120m@{pcl\-\_\-configure\-\_\-clocks\-\_\-rc120m}}
+\index{pcl\-\_\-configure\-\_\-clocks\-\_\-rc120m@{pcl\-\_\-configure\-\_\-clocks\-\_\-rc120m}!power_clocks_lib.h@{power\-\_\-clocks\-\_\-lib.\-h}}
+\subsubsection[{pcl\-\_\-configure\-\_\-clocks\-\_\-rc120m}]{\setlength{\rightskip}{0pt plus 5cm}long int pcl\-\_\-configure\-\_\-clocks\-\_\-rc120m (
+\begin{DoxyParamCaption}
+\item[{pcl\-\_\-freq\-\_\-param\-\_\-t $\ast$}]{param}
+\end{DoxyParamCaption}
+)}}
+\label{power__clocks__lib_8h_a73982b53f03832280909af1b437220ba}
+
+
+\-Automatically configure the \-C\-P\-U, \-P\-B\-A, \-P\-B\-B, and \-H\-S\-B clocks using the \-R\-C120\-M osc as main source clock. 
+
+\-This function needs some parameters stored in a pcl\-\_\-freq\-\_\-param\-\_\-t structure\-:
+\begin{DoxyItemize}
+\item cpu\-\_\-f and pba\-\_\-f and pbb\-\_\-f are the wanted frequencies
+\end{DoxyItemize}
+
+\-Supported main clock sources\-: \-P\-C\-L\-\_\-\-M\-C\-\_\-\-R\-C120\-M
+
+\-Supported synchronous clocks frequencies\-: 30\-M\-Hz, 15\-M\-Hz, 7.\-5\-M\-Hz, 3.\-75\-M\-Hz, 1.\-875\-M\-Hz, 937.\-5k\-Hz, 468.\-75k\-Hz.
+
+\begin{DoxyNote}{\-Note}
+\-: by default, this implementation doesn't perform thorough checks on the input parameters. \-To enable the checks, define \-A\-V\-R32\-S\-F\-W\-\_\-\-I\-N\-P\-U\-T\-\_\-\-C\-H\-E\-C\-K.
+
+\-: since it is dynamically computing the appropriate field values of the configuration registers from the parameters structure, this function is not optimal in terms of code size. \-For a code size optimal solution, it is better to create a new function from \hyperlink{power__clocks__lib_8h_a73982b53f03832280909af1b437220ba}{pcl\-\_\-configure\-\_\-clocks\-\_\-rc120m()} and modify it to use preprocessor computation from pre-\/defined target frequencies.
+\end{DoxyNote}
+
+\begin{DoxyParams}{\-Parameters}
+{\em param} & pointer on the configuration structure.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Success. \\
+\hline
+{\em $<$0} & \-The configuration cannot be performed. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{power__clocks__lib_8h_a37e123796912716a80c10045f483e618}{
+\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!pcl\-\_\-configure\-\_\-clocks\-\_\-rcsys@{pcl\-\_\-configure\-\_\-clocks\-\_\-rcsys}}
+\index{pcl\-\_\-configure\-\_\-clocks\-\_\-rcsys@{pcl\-\_\-configure\-\_\-clocks\-\_\-rcsys}!power_clocks_lib.h@{power\-\_\-clocks\-\_\-lib.\-h}}
+\subsubsection[{pcl\-\_\-configure\-\_\-clocks\-\_\-rcsys}]{\setlength{\rightskip}{0pt plus 5cm}long int pcl\-\_\-configure\-\_\-clocks\-\_\-rcsys (
+\begin{DoxyParamCaption}
+\item[{pcl\-\_\-freq\-\_\-param\-\_\-t $\ast$}]{param}
+\end{DoxyParamCaption}
+)}}
+\label{power__clocks__lib_8h_a37e123796912716a80c10045f483e618}
+
+
+\-Automatically configure the \-C\-P\-U, \-P\-B\-A, \-P\-B\-B, and \-H\-S\-B clocks using the \-R\-C\-S\-Y\-S osc as main source clock. 
+
+\-This function needs some parameters stored in a pcl\-\_\-freq\-\_\-param\-\_\-t structure\-:
+\begin{DoxyItemize}
+\item cpu\-\_\-f and pba\-\_\-f and pbb\-\_\-f are the wanted frequencies
+\end{DoxyItemize}
+
+\-Supported main clock sources\-: \-P\-C\-L\-\_\-\-M\-C\-\_\-\-R\-C\-S\-Y\-S
+
+\-Supported synchronous clocks frequencies\-: 115200\-Hz, 57600\-Hz, 28800\-Hz, 14400\-Hz, 7200\-Hz, 3600\-Hz, 1800\-Hz, 900\-Hz, 450\-Hz.
+
+\begin{DoxyNote}{\-Note}
+\-: by default, this implementation doesn't perform thorough checks on the input parameters. \-To enable the checks, define \-A\-V\-R32\-S\-F\-W\-\_\-\-I\-N\-P\-U\-T\-\_\-\-C\-H\-E\-C\-K.
+
+\-: since it is dynamically computing the appropriate field values of the configuration registers from the parameters structure, this function is not optimal in terms of code size. \-For a code size optimal solution, it is better to create a new function from \hyperlink{power__clocks__lib_8h_a37e123796912716a80c10045f483e618}{pcl\-\_\-configure\-\_\-clocks\-\_\-rcsys()} and modify it to use preprocessor computation from pre-\/defined target frequencies.
+\end{DoxyNote}
+
+\begin{DoxyParams}{\-Parameters}
+{\em param} & pointer on the configuration structure.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Success. \\
+\hline
+{\em $<$0} & \-The configuration cannot be performed. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{power__clocks__lib_8h_a8c02993a038be7348f0363675e6e836a}{
+\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!pcl\-\_\-configure\-\_\-usb\-\_\-clock@{pcl\-\_\-configure\-\_\-usb\-\_\-clock}}
+\index{pcl\-\_\-configure\-\_\-usb\-\_\-clock@{pcl\-\_\-configure\-\_\-usb\-\_\-clock}!power_clocks_lib.h@{power\-\_\-clocks\-\_\-lib.\-h}}
+\subsubsection[{pcl\-\_\-configure\-\_\-usb\-\_\-clock}]{\setlength{\rightskip}{0pt plus 5cm}long int pcl\-\_\-configure\-\_\-usb\-\_\-clock (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{power__clocks__lib_8h_a8c02993a038be7348f0363675e6e836a}
+
+
+\-Configure the \-U\-S\-B \-Clock. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Success. \\
+\hline
+{\em $<$0} & \-An error occured. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{power__clocks__lib_8h_a1f0120dade42a19b5d5a0f2f217b857a}{
+\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!pcl\-\_\-read\-\_\-gplp@{pcl\-\_\-read\-\_\-gplp}}
+\index{pcl\-\_\-read\-\_\-gplp@{pcl\-\_\-read\-\_\-gplp}!power_clocks_lib.h@{power\-\_\-clocks\-\_\-lib.\-h}}
+\subsubsection[{pcl\-\_\-read\-\_\-gplp}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long pcl\-\_\-read\-\_\-gplp (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{gplp}
+\end{DoxyParamCaption}
+)}}
+\label{power__clocks__lib_8h_a1f0120dade42a19b5d5a0f2f217b857a}
+
+
+\-Read the content of the \-G\-P\-L\-P registers. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em gplp} & \-G\-P\-L\-P register index (0,1,... depending on the number of \-G\-P\-L\-P registers for a given part)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The content of the chosen \-G\-P\-L\-P register. 
+\end{DoxyReturn}
+\hypertarget{power__clocks__lib_8h_ac557cb29483bdd41f36dea2dba5bf9ab}{
+\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!pcl\-\_\-switch\-\_\-to\-\_\-osc@{pcl\-\_\-switch\-\_\-to\-\_\-osc}}
+\index{pcl\-\_\-switch\-\_\-to\-\_\-osc@{pcl\-\_\-switch\-\_\-to\-\_\-osc}!power_clocks_lib.h@{power\-\_\-clocks\-\_\-lib.\-h}}
+\subsubsection[{pcl\-\_\-switch\-\_\-to\-\_\-osc}]{\setlength{\rightskip}{0pt plus 5cm}long int pcl\-\_\-switch\-\_\-to\-\_\-osc (
+\begin{DoxyParamCaption}
+\item[{{\bf pcl\-\_\-osc\-\_\-t}}]{osc, }
+\item[{unsigned int}]{fcrystal, }
+\item[{unsigned int}]{startup}
+\end{DoxyParamCaption}
+)}}
+\label{power__clocks__lib_8h_ac557cb29483bdd41f36dea2dba5bf9ab}
+
+
+\-Switch the main clock source to \-Osc0 configured in crystal mode. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em osc} & \-The oscillator to enable and switch to. \\
+\hline
+{\em fcrystal} & \-Oscillator external crystal frequency (\-Hz) \\
+\hline
+{\em startup} & \-Oscillator startup time.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Success. \\
+\hline
+{\em $<$0} & \-An error occured.\\
+\hline
+\end{DoxyRetVals}
+\-Switch the main clock source to \-Osc0 configured in crystal mode.
+
+\-U\-C3\-C \-Device-\/specific implementation \hypertarget{power__clocks__lib_8h_a22234c65b535937b477c7e988ec2fec5}{
+\index{power\-\_\-clocks\-\_\-lib.\-h@{power\-\_\-clocks\-\_\-lib.\-h}!pcl\-\_\-write\-\_\-gplp@{pcl\-\_\-write\-\_\-gplp}}
+\index{pcl\-\_\-write\-\_\-gplp@{pcl\-\_\-write\-\_\-gplp}!power_clocks_lib.h@{power\-\_\-clocks\-\_\-lib.\-h}}
+\subsubsection[{pcl\-\_\-write\-\_\-gplp}]{\setlength{\rightskip}{0pt plus 5cm}void pcl\-\_\-write\-\_\-gplp (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{gplp, }
+\item[{unsigned long}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{power__clocks__lib_8h_a22234c65b535937b477c7e988ec2fec5}
+
+
+\-Write into the \-G\-P\-L\-P registers. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em gplp} & \-G\-P\-L\-P register index (0,1,... depending on the number of \-G\-P\-L\-P registers for a given part) \\
+\hline
+{\em value} & \-Value to write \\
+\hline
+\end{DoxyParams}

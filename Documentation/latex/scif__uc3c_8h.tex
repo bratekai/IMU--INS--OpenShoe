@@ -1,0 +1,1278 @@
+\hypertarget{scif__uc3c_8h}{
+\section{scif\-\_\-uc3c.h \-File \-Reference}
+\label{scif__uc3c_8h}\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}}
+}
+
+
+\-System \-Control \-Inter\-Face(\-S\-C\-I\-F) driver interface.  
+
+
+{\ttfamily \#include \char`\"{}compiler.\-h\char`\"{}}\*
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structscif__osc__opt__t}{scif\-\_\-osc\-\_\-opt\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-O\-S\-C0/\-O\-S\-C1 startup options. \end{DoxyCompactList}\item 
+struct \hyperlink{structscif__pll__opt__t}{scif\-\_\-pll\-\_\-opt\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-P\-L\-L0/\-P\-L\-L1 startup options. \end{DoxyCompactList}\item 
+struct \hyperlink{structscif__osc32__opt__t}{scif\-\_\-osc32\-\_\-opt\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-O\-S\-C32 startup options. \end{DoxyCompactList}\item 
+struct \hyperlink{structscif__gclk__opt__t}{scif\-\_\-gclk\-\_\-opt\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Generic clock generation settings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{scif__uc3c_8h_a6ec08d0cd02a6104e0f98f22b94d0fb4}{\-S\-C\-I\-F\-\_\-\-E\-X\-T\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-M\-I\-N\-\_\-\-F\-R\-E\-Q\-\_\-\-H\-Z}~4000000
+\begin{DoxyCompactList}\small\item\em \-Device-\/specific data. \end{DoxyCompactList}\item 
+\#define \hyperlink{scif__uc3c_8h_a00368dbc88219075cb01d352b2725c82}{\-S\-C\-I\-F\-\_\-\-E\-X\-T\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-M\-A\-X\-\_\-\-F\-R\-E\-Q\-\_\-\-H\-Z}~20000000
+\item 
+\#define \hyperlink{scif__uc3c_8h_a8758fcbbde760fe3498dd00acf238407}{\-S\-C\-I\-F\-\_\-\-P\-O\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T}~100000
+\begin{DoxyCompactList}\small\item\em \-The timeguard used for polling in ticks. \end{DoxyCompactList}\item 
+\#define \hyperlink{scif__uc3c_8h_a00f126703767e0cf0e9ba6796e32869a}{\-S\-C\-I\-F\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D}~(-\/10000)
+\begin{DoxyCompactList}\small\item\em \-Define \char`\"{}not supported\char`\"{} for the chosen implementation. \end{DoxyCompactList}\item 
+\#define \hyperlink{scif__uc3c_8h_af06c6a1ecbab9e8c283124c594846dea}{\-S\-C\-I\-F\-\_\-\-U\-N\-L\-O\-C\-K}(reg)~(\-A\-V\-R32\-\_\-\-S\-C\-I\-F.\-unlock = (\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-U\-N\-L\-O\-C\-K\-\_\-\-K\-E\-Y\-\_\-\-V\-A\-L\-U\-E $<$$<$ \-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-U\-N\-L\-O\-C\-K\-\_\-\-K\-E\-Y\-\_\-\-O\-F\-F\-S\-E\-T)$|$(reg))
+\begin{DoxyCompactList}\small\item\em \-Unlock \-S\-C\-I\-F register macro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0}{scif\-\_\-gcctrl\-\_\-oscsel\-\_\-t} \{ \*
+\hyperlink{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0a43e5e892e6ff3d8eda9ecc018c01bea3}{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-S\-L\-O\-W\-C\-L\-O\-C\-K} =  \-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-G\-C\-\_\-\-U\-S\-E\-S\-\_\-\-C\-L\-K\-\_\-\-S\-L\-O\-W, 
+\hyperlink{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0ac088ce669da91221d941efed215feaad}{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C32\-K} =  \-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-G\-C\-\_\-\-U\-S\-E\-S\-\_\-\-C\-L\-K\-\_\-32, 
+\hyperlink{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0a20a5bfe0f8be03f80ca1cd79b8f4729f}{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C0} =  \-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-G\-C\-\_\-\-U\-S\-E\-S\-\_\-\-O\-S\-C0, 
+\hyperlink{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0a4a2a1cac2ae4273c6a2f45227f82c530}{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C1} =  \-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-G\-C\-\_\-\-U\-S\-E\-S\-\_\-\-O\-S\-C1, 
+\*
+\hyperlink{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0af62c810c63a4f09772877ec072de8ca5}{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-L\-L0} =  \-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-G\-C\-\_\-\-U\-S\-E\-S\-\_\-\-P\-L\-L0, 
+\hyperlink{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0aec3246839ddf9191be74d5ceab574fa6}{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-L\-L1} =  \-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-G\-C\-\_\-\-U\-S\-E\-S\-\_\-\-P\-L\-L1, 
+\hyperlink{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0a8a5678d41fd2e569b7fa901c50354460}{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-R\-C8\-M} =  \-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-G\-C\-\_\-\-U\-S\-E\-S\-\_\-\-R\-C\-O\-S\-C8, 
+\hyperlink{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0a5c1a2fd50e4196675e4dcd726e926ef6}{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-C\-P\-U\-C\-L\-O\-C\-K} =  \-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-G\-C\-\_\-\-U\-S\-E\-S\-\_\-\-C\-L\-K\-\_\-\-C\-P\-U, 
+\*
+\hyperlink{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0a0a4e09084b5a92331c0682b3e58e2c6b}{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-H\-S\-B\-C\-L\-O\-C\-K} =  \-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-G\-C\-\_\-\-U\-S\-E\-S\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B, 
+\hyperlink{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0af5fbd96176bafd864ecde5d8df17c7f6}{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-B\-A\-C\-L\-O\-C\-K} =  \-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-G\-C\-\_\-\-U\-S\-E\-S\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A, 
+\hyperlink{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0abf0a044de6699515bef2685fdc6093a1}{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-B\-B\-C\-L\-O\-C\-K} =  \-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-G\-C\-\_\-\-U\-S\-E\-S\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B, 
+\hyperlink{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0a6c6ccb2e6b36df23583746f07f23c7c4}{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C\-S\-E\-L\-\_\-\-I\-N\-V\-A\-L\-I\-D}
+ \}
+\begin{DoxyCompactList}\small\item\em \-The different clock source for the generic clocks. \end{DoxyCompactList}\item 
+enum \hyperlink{scif__uc3c_8h_af09989f8fb441a8d3806b7fe60fdc644}{scif\-\_\-osc\-\_\-t} \{ \hyperlink{scif__uc3c_8h_af09989f8fb441a8d3806b7fe60fdc644a6cbdcff7051100ba50af09439fbb0122}{\-S\-C\-I\-F\-\_\-\-O\-S\-C0} =  0, 
+\hyperlink{scif__uc3c_8h_af09989f8fb441a8d3806b7fe60fdc644a79fa8a5ea1f7726cd4a35c556cf83380}{\-S\-C\-I\-F\-\_\-\-O\-S\-C1} =  1
+ \}
+\begin{DoxyCompactList}\small\item\em \-The different oscillators. \end{DoxyCompactList}\item 
+enum \hyperlink{scif__uc3c_8h_aee67e9247cde3191caf3a6ec8cc49131}{scif\-\_\-pll\-\_\-t} \{ \hyperlink{scif__uc3c_8h_aee67e9247cde3191caf3a6ec8cc49131afb73f3e6fe0f1649f6e70bb74f447536}{\-S\-C\-I\-F\-\_\-\-P\-L\-L0} =  0, 
+\hyperlink{scif__uc3c_8h_aee67e9247cde3191caf3a6ec8cc49131a1fe4b13fa40ed138fe42446463c1ab6e}{\-S\-C\-I\-F\-\_\-\-P\-L\-L1} =  1
+ \}
+\begin{DoxyCompactList}\small\item\em \-The different plls. \end{DoxyCompactList}\item 
+enum \hyperlink{scif__uc3c_8h_a9a708e94c5df197717f5859f6b8b257c}{scif\-\_\-osc\-\_\-mode\-\_\-t} \{ \hyperlink{scif__uc3c_8h_a9a708e94c5df197717f5859f6b8b257caab4ef315627644c27b21ace5afcc3aac}{\-S\-C\-I\-F\-\_\-\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-\_\-\-C\-L\-K} =  0, 
+\hyperlink{scif__uc3c_8h_a9a708e94c5df197717f5859f6b8b257ca3b93142664c5679290dcacf047360aae}{\-S\-C\-I\-F\-\_\-\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-2\-P\-I\-N\-\_\-\-C\-R\-Y\-S\-T\-A\-L} =  1, 
+\hyperlink{scif__uc3c_8h_a9a708e94c5df197717f5859f6b8b257ca5dc91e7de7e69bf2958bb036dd090eee}{\-S\-C\-I\-F\-\_\-\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-2\-P\-I\-N\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-H\-I\-C\-U\-R} =  2
+ \}
+\begin{DoxyCompactList}\small\item\em \-The different oscillator modes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{Indent}\paragraph*{\-Interrupt \-Functions}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Power and \-Clocks \-Status \-Functions}
+\end{Indent}
+\begin{Indent}\paragraph*{\-O\-S\-C0/\-O\-S\-C1 \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+long int \hyperlink{scif__uc3c_8h_a00ceb53ef51dd175ee30bc461155763b}{scif\-\_\-start\-\_\-osc} (\hyperlink{scif__uc3c_8h_af09989f8fb441a8d3806b7fe60fdc644}{scif\-\_\-osc\-\_\-t} osc, const \hyperlink{structscif__osc__opt__t}{scif\-\_\-osc\-\_\-opt\-\_\-t} $\ast$opt, bool wait\-\_\-for\-\_\-ready)
+\begin{DoxyCompactList}\small\item\em \-Configure and start an \-O\-S\-C0/\-O\-S\-C1 oscillator. \end{DoxyCompactList}\item 
+bool \hyperlink{scif__uc3c_8h_a4d8aa2fd50f3bee4bd1b0f7cd9559f72}{scif\-\_\-is\-\_\-osc\-\_\-ready} (\hyperlink{scif__uc3c_8h_af09989f8fb441a8d3806b7fe60fdc644}{scif\-\_\-osc\-\_\-t} osc)
+\begin{DoxyCompactList}\small\item\em \-Is an oscillator stable and ready to be used as clock source? \end{DoxyCompactList}\item 
+long int \hyperlink{scif__uc3c_8h_a5dca9b966cbe139223b6044b160509e5}{scif\-\_\-stop\-\_\-osc} (\hyperlink{scif__uc3c_8h_af09989f8fb441a8d3806b7fe60fdc644}{scif\-\_\-osc\-\_\-t} osc)
+\begin{DoxyCompactList}\small\item\em \-Stop an oscillator. \end{DoxyCompactList}\item 
+long int \hyperlink{scif__uc3c_8h_a07a99c5e193620b3d4a6825bcd054e37}{scif\-\_\-configure\-\_\-osc\-\_\-crystalmode} (\hyperlink{scif__uc3c_8h_af09989f8fb441a8d3806b7fe60fdc644}{scif\-\_\-osc\-\_\-t} osc, unsigned int fcrystal)
+\begin{DoxyCompactList}\small\item\em \-Configure an oscillator in crystal mode. \end{DoxyCompactList}\item 
+long int \hyperlink{scif__uc3c_8h_a4406d9a27fdfbedf364ff4b571fd9fa2}{scif\-\_\-configure\-\_\-osc\-\_\-extmode} (\hyperlink{scif__uc3c_8h_af09989f8fb441a8d3806b7fe60fdc644}{scif\-\_\-osc\-\_\-t} osc)
+\begin{DoxyCompactList}\small\item\em \-Configure an external clock as input clock. \end{DoxyCompactList}\item 
+long int \hyperlink{scif__uc3c_8h_ae6a41bbff30ad3544abd620bb8b50612}{scif\-\_\-enable\-\_\-osc} (\hyperlink{scif__uc3c_8h_af09989f8fb441a8d3806b7fe60fdc644}{scif\-\_\-osc\-\_\-t} osc, unsigned int startup, bool wait\-\_\-for\-\_\-ready)
+\begin{DoxyCompactList}\small\item\em \-Enable an oscillator with a given startup time. \end{DoxyCompactList}\item 
+long int \hyperlink{scif__uc3c_8h_a78cb0ccfb114e27d63cc8fd317648def}{scif\-\_\-enable\-\_\-extosc} (\hyperlink{scif__uc3c_8h_af09989f8fb441a8d3806b7fe60fdc644}{scif\-\_\-osc\-\_\-t} osc)
+\begin{DoxyCompactList}\small\item\em \-Enable external clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-P\-L\-L0/\-P\-L\-L1 \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+long int \hyperlink{scif__uc3c_8h_a0762c326026298131479b2eb6c66966e}{scif\-\_\-pll\-\_\-setup} (\hyperlink{scif__uc3c_8h_aee67e9247cde3191caf3a6ec8cc49131}{scif\-\_\-pll\-\_\-t} pll, const \hyperlink{structscif__pll__opt__t}{scif\-\_\-pll\-\_\-opt\-\_\-t} opt)
+\begin{DoxyCompactList}\small\item\em \-This function will setup a \-P\-L\-L. \end{DoxyCompactList}\item 
+long int \hyperlink{scif__uc3c_8h_afb379ef54174ea12680afe48a82c14b9}{scif\-\_\-pll\-\_\-enable} (\hyperlink{scif__uc3c_8h_aee67e9247cde3191caf3a6ec8cc49131}{scif\-\_\-pll\-\_\-t} pll)
+\begin{DoxyCompactList}\small\item\em \-This function will enable a \-P\-L\-L. \end{DoxyCompactList}\item 
+long int \hyperlink{scif__uc3c_8h_a9fe5c285353fbea44393e996d603d257}{scif\-\_\-pll\-\_\-disable} (\hyperlink{scif__uc3c_8h_aee67e9247cde3191caf3a6ec8cc49131}{scif\-\_\-pll\-\_\-t} pll)
+\begin{DoxyCompactList}\small\item\em \-This function will disable a \-P\-L\-L. \end{DoxyCompactList}\item 
+long int \hyperlink{scif__uc3c_8h_a8d9f1c5f02e409cac54b5e518eb6b717}{scif\-\_\-wait\-\_\-for\-\_\-pll\-\_\-locked} (\hyperlink{scif__uc3c_8h_aee67e9247cde3191caf3a6ec8cc49131}{scif\-\_\-pll\-\_\-t} pll)
+\begin{DoxyCompactList}\small\item\em \-This function will wait for \-P\-L\-L locked. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-O\-S\-C32 \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+long int \hyperlink{scif__uc3c_8h_a1a5d5f264ce6f288aa94fecbc8b24b10}{scif\-\_\-start\-\_\-osc32} (const \hyperlink{structscif__osc32__opt__t}{scif\-\_\-osc32\-\_\-opt\-\_\-t} $\ast$opt, bool wait\-\_\-for\-\_\-ready)
+\begin{DoxyCompactList}\small\item\em \-Configure and start the \-O\-S\-C32 oscillator. \end{DoxyCompactList}\item 
+long int \hyperlink{scif__uc3c_8h_acc245a2bbf963e3d223881edde52e9a0}{scif\-\_\-stop\-\_\-osc32} (void)
+\begin{DoxyCompactList}\small\item\em \-Stop the \-O\-S\-C32 oscillator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Calibration \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{scif__uc3c_8h_a180ec409dbfab40b802e883e43e7edba}{scif\-\_\-bod18\-\_\-enable\-\_\-irq} (void)
+\begin{DoxyCompactList}\small\item\em \-Enables the 1.\-8\-V \-Brown-\/\-Out \-Detector interrupt. \end{DoxyCompactList}\item 
+void \hyperlink{scif__uc3c_8h_a6855400b530bc304abe596e2aa6b7bc8}{scif\-\_\-bod18\-\_\-disable\-\_\-irq} (void)
+\begin{DoxyCompactList}\small\item\em \-Disables the 1.\-8\-V \-Brown-\/\-Out \-Detector interrupt. \end{DoxyCompactList}\item 
+void \hyperlink{scif__uc3c_8h_a32c4bf1084e3462837559441eb4f2455}{scif\-\_\-bod18\-\_\-clear\-\_\-irq} (void)
+\begin{DoxyCompactList}\small\item\em \-Clears the 1.\-8\-V \-Brown-\/\-Out \-Detector interrupt flag. \end{DoxyCompactList}\item 
+unsigned long \hyperlink{scif__uc3c_8h_ad518d8685614797a31c212e961d8725f}{scif\-\_\-bod18\-\_\-get\-\_\-irq\-\_\-status} (void)
+\begin{DoxyCompactList}\small\item\em \-Gets the 1.\-8\-V \-Brown-\/\-Out \-Detector interrupt flag. \end{DoxyCompactList}\item 
+unsigned long \hyperlink{scif__uc3c_8h_aa9b3ed37bade8509a107e86916e18805}{scif\-\_\-bod18\-\_\-get\-\_\-irq\-\_\-enable\-\_\-bit} (void)
+\begin{DoxyCompactList}\small\item\em \-Gets the 1.\-8\-V \-Brown-\/\-Out \-Detector interrupt enable status. \end{DoxyCompactList}\item 
+unsigned long \hyperlink{scif__uc3c_8h_ab9def9f54fbc0861e37b52f7ccd00d06}{scif\-\_\-bod18\-\_\-get\-\_\-level} (void)
+\begin{DoxyCompactList}\small\item\em \-Gets the triggering threshold of the 1.\-8\-V \-Brown-\/\-Out \-Detector. \end{DoxyCompactList}\item 
+void \hyperlink{scif__uc3c_8h_a41885a5f7da5d63fd6e6ed8e58608fe7}{scif\-\_\-bod33\-\_\-enable\-\_\-irq} (void)
+\begin{DoxyCompactList}\small\item\em \-Enables the 3.\-3\-V \-Brown-\/\-Out \-Detector interrupt. \end{DoxyCompactList}\item 
+void \hyperlink{scif__uc3c_8h_a41673b52a3fc9749f9ff34a3faa977ef}{scif\-\_\-bod33\-\_\-disable\-\_\-irq} (void)
+\begin{DoxyCompactList}\small\item\em \-Disables the 3.\-3\-V \-Brown-\/\-Out \-Detector interrupt. \end{DoxyCompactList}\item 
+void \hyperlink{scif__uc3c_8h_a72c758d2924ea2814d4bcfe1c122022f}{scif\-\_\-bod33\-\_\-clear\-\_\-irq} (void)
+\begin{DoxyCompactList}\small\item\em \-Clears the 3.\-3\-V \-Brown-\/\-Out \-Detector interrupt flag. \end{DoxyCompactList}\item 
+unsigned long \hyperlink{scif__uc3c_8h_a651f36eaffe08306358f55b5f1880332}{scif\-\_\-bod33\-\_\-get\-\_\-irq\-\_\-status} (void)
+\begin{DoxyCompactList}\small\item\em \-Gets the 3.\-3\-V \-Brown-\/\-Out \-Detector interrupt flag. \end{DoxyCompactList}\item 
+unsigned long \hyperlink{scif__uc3c_8h_a35f2e5cca380e07e793b74f43cfd6149}{scif\-\_\-bod33\-\_\-get\-\_\-irq\-\_\-enable\-\_\-bit} (void)
+\begin{DoxyCompactList}\small\item\em \-Gets the 3.\-3\-V \-Brown-\/\-Out \-Detector interrupt enable status. \end{DoxyCompactList}\item 
+unsigned long \hyperlink{scif__uc3c_8h_ab9960fafcbb182162fd5c1605b0c9b7b}{scif\-\_\-bod33\-\_\-get\-\_\-level} (void)
+\begin{DoxyCompactList}\small\item\em \-Gets the triggering threshold of the 3.\-3\-V \-Brown-\/\-Out \-Detector. \end{DoxyCompactList}\item 
+void \hyperlink{scif__uc3c_8h_a2bb02cf9fc20b9e72ba0582727e0fcba}{scif\-\_\-bod50\-\_\-enable\-\_\-irq} (void)
+\begin{DoxyCompactList}\small\item\em \-Enables the 5.\-0\-V \-Brown-\/\-Out \-Detector interrupt. \end{DoxyCompactList}\item 
+void \hyperlink{scif__uc3c_8h_a4ebccdb22b97237b7a435403e7464969}{scif\-\_\-bod50\-\_\-disable\-\_\-irq} (void)
+\begin{DoxyCompactList}\small\item\em \-Disables the 5.\-0\-V \-Brown-\/\-Out \-Detector interrupt. \end{DoxyCompactList}\item 
+void \hyperlink{scif__uc3c_8h_a06a5914736539eec3f64773c3ab46244}{scif\-\_\-bod50\-\_\-clear\-\_\-irq} (void)
+\begin{DoxyCompactList}\small\item\em \-Clears the 5.\-0\-V \-Brown-\/\-Out \-Detector interrupt flag. \end{DoxyCompactList}\item 
+unsigned long \hyperlink{scif__uc3c_8h_adadb46f98e9bdc8a8b8adbab790d4527}{scif\-\_\-bod50\-\_\-get\-\_\-irq\-\_\-status} (void)
+\begin{DoxyCompactList}\small\item\em \-Gets the 5.\-0\-V \-Brown-\/\-Out \-Detector interrupt flag. \end{DoxyCompactList}\item 
+unsigned long \hyperlink{scif__uc3c_8h_a9b98a43164cc8adce3ac426aa16324d5}{scif\-\_\-bod50\-\_\-get\-\_\-irq\-\_\-enable\-\_\-bit} (void)
+\begin{DoxyCompactList}\small\item\em \-Gets the 5.\-0\-V \-Brown-\/\-Out \-Detector interrupt enable status. \end{DoxyCompactList}\item 
+unsigned long \hyperlink{scif__uc3c_8h_a06d74e1911e65c5549e6251b9da57f81}{scif\-\_\-bod50\-\_\-get\-\_\-level} (void)
+\begin{DoxyCompactList}\small\item\em \-Gets the triggering threshold of the 5.\-0\-V \-Brown-\/\-Out \-Detector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{8\-M\-Hz \-R\-Cosc \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{scif__uc3c_8h_a98d84a449826183d517302ad4bb6a013}{scif\-\_\-start\-\_\-rc8\-M} (void)
+\begin{DoxyCompactList}\small\item\em \-Start the 8\-M\-Hz internal \-R\-Cosc (\-R\-C8\-M) clock. \end{DoxyCompactList}\item 
+void \hyperlink{scif__uc3c_8h_ab2638cbe755096f6c9782a4248bef530}{scif\-\_\-stop\-\_\-rc8\-M} (void)
+\begin{DoxyCompactList}\small\item\em \-Stop the 8\-M\-Hz internal \-R\-Cosc (\-R\-C8\-M) clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{120\-M\-Hz \-R\-Cosc \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{scif__uc3c_8h_a059e71c82dac925ae59dc36cdbf30222}{scif\-\_\-start\-\_\-rc120\-M} (void)
+\begin{DoxyCompactList}\small\item\em \-Start the 120\-M\-Hz internal \-R\-Cosc (\-R\-C120\-M) clock. \end{DoxyCompactList}\item 
+void \hyperlink{scif__uc3c_8h_a371afeca81ee2c2158e2c210f15440f9}{scif\-\_\-stop\-\_\-rc120\-M} (void)
+\begin{DoxyCompactList}\small\item\em \-Stop the 120\-M\-Hz internal \-R\-Cosc (\-R\-C120\-M) clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Generic \-Clock \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+long int \hyperlink{scif__uc3c_8h_a966f2ea463bfc21d1fbc8f5bd62365dd}{scif\-\_\-start\-\_\-gclk} (unsigned int gclk, const \hyperlink{structscif__gclk__opt__t}{scif\-\_\-gclk\-\_\-opt\-\_\-t} $\ast$opt)
+\begin{DoxyCompactList}\small\item\em \-Setup and start a generic clock. \end{DoxyCompactList}\item 
+long int \hyperlink{scif__uc3c_8h_a703046a65be951d33d8907ca284d963a}{scif\-\_\-stop\-\_\-gclk} (unsigned int gclk)
+\begin{DoxyCompactList}\small\item\em \-Stop a generic clock. \end{DoxyCompactList}\item 
+long int \hyperlink{scif__uc3c_8h_ac355443257f05c78943fdd41d8b8fb90}{scif\-\_\-gc\-\_\-setup} (unsigned int gclk, \hyperlink{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0}{scif\-\_\-gcctrl\-\_\-oscsel\-\_\-t} clk\-\_\-src, unsigned int diven, unsigned int divfactor)
+\begin{DoxyCompactList}\small\item\em \-Setup a generic clock. \end{DoxyCompactList}\item 
+long int \hyperlink{scif__uc3c_8h_a97cca4b2eb1d71d681f7b81f54e672c3}{scif\-\_\-gc\-\_\-enable} (unsigned int gclk)
+\begin{DoxyCompactList}\small\item\em \-Enable a generic clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Backup \-Registers \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long \hyperlink{scif__uc3c_8h_a5fcd05f3e28de6dae627d4d8bc1d73f5}{scif\-\_\-read\-\_\-gplp} (unsigned long gplp)
+\begin{DoxyCompactList}\small\item\em \-Read the content of the \-S\-C\-I\-F \-G\-P\-L\-P registers. \end{DoxyCompactList}\item 
+void \hyperlink{scif__uc3c_8h_ada5eb12275d8fb7f8040bfcd043e5cc3}{scif\-\_\-write\-\_\-gplp} (int gplp, unsigned long value)
+\begin{DoxyCompactList}\small\item\em \-Write into the \-S\-C\-I\-F \-G\-P\-L\-P registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Temperature \-Sensor \-Management \-Functions}
+\end{Indent}
+
+
+\subsection{\-Detailed \-Description}
+\-System \-Control \-Inter\-Face(\-S\-C\-I\-F) driver interface. 
+\begin{DoxyItemize}
+\item \-Compiler\-: \-I\-A\-R \-E\-W\-A\-V\-R32 and \-G\-N\-U \-G\-C\-C for \-A\-V\-R32
+\item \-Supported devices\-: \-All \-A\-V\-R32 \-U\-C3\-C devices.
+\item \-App\-Note\-:
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{\-Author}
+\-Atmel \-Corporation\-: \href{http://www.atmel.com}{\tt http\-://www.\-atmel.\-com} \par
+ \-Support and \-F\-A\-Q\-: \href{http://support.atmel.no/}{\tt http\-://support.\-atmel.\-no/} 
+\end{DoxyAuthor}
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{scif__uc3c_8h_a00368dbc88219075cb01d352b2725c82}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-E\-X\-T\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-M\-A\-X\-\_\-\-F\-R\-E\-Q\-\_\-\-H\-Z@{\-S\-C\-I\-F\-\_\-\-E\-X\-T\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-M\-A\-X\-\_\-\-F\-R\-E\-Q\-\_\-\-H\-Z}}
+\index{\-S\-C\-I\-F\-\_\-\-E\-X\-T\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-M\-A\-X\-\_\-\-F\-R\-E\-Q\-\_\-\-H\-Z@{\-S\-C\-I\-F\-\_\-\-E\-X\-T\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-M\-A\-X\-\_\-\-F\-R\-E\-Q\-\_\-\-H\-Z}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{\-S\-C\-I\-F\-\_\-\-E\-X\-T\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-M\-A\-X\-\_\-\-F\-R\-E\-Q\-\_\-\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-C\-I\-F\-\_\-\-E\-X\-T\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-M\-A\-X\-\_\-\-F\-R\-E\-Q\-\_\-\-H\-Z~20000000}}
+\label{scif__uc3c_8h_a00368dbc88219075cb01d352b2725c82}
+\hypertarget{scif__uc3c_8h_a6ec08d0cd02a6104e0f98f22b94d0fb4}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-E\-X\-T\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-M\-I\-N\-\_\-\-F\-R\-E\-Q\-\_\-\-H\-Z@{\-S\-C\-I\-F\-\_\-\-E\-X\-T\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-M\-I\-N\-\_\-\-F\-R\-E\-Q\-\_\-\-H\-Z}}
+\index{\-S\-C\-I\-F\-\_\-\-E\-X\-T\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-M\-I\-N\-\_\-\-F\-R\-E\-Q\-\_\-\-H\-Z@{\-S\-C\-I\-F\-\_\-\-E\-X\-T\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-M\-I\-N\-\_\-\-F\-R\-E\-Q\-\_\-\-H\-Z}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{\-S\-C\-I\-F\-\_\-\-E\-X\-T\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-M\-I\-N\-\_\-\-F\-R\-E\-Q\-\_\-\-H\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-C\-I\-F\-\_\-\-E\-X\-T\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-M\-I\-N\-\_\-\-F\-R\-E\-Q\-\_\-\-H\-Z~4000000}}
+\label{scif__uc3c_8h_a6ec08d0cd02a6104e0f98f22b94d0fb4}
+
+
+\-Device-\/specific data. 
+
+$<$ \-External crystal/clock min frequency (in \-Herz) \-External crystal/clock max frequency (in \-Herz) \hypertarget{scif__uc3c_8h_a00f126703767e0cf0e9ba6796e32869a}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D@{\-S\-C\-I\-F\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D}}
+\index{\-S\-C\-I\-F\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D@{\-S\-C\-I\-F\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{\-S\-C\-I\-F\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-C\-I\-F\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D~(-\/10000)}}
+\label{scif__uc3c_8h_a00f126703767e0cf0e9ba6796e32869a}
+
+
+\-Define \char`\"{}not supported\char`\"{} for the chosen implementation. 
+
+\hypertarget{scif__uc3c_8h_a8758fcbbde760fe3498dd00acf238407}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-P\-O\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T@{\-S\-C\-I\-F\-\_\-\-P\-O\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T}}
+\index{\-S\-C\-I\-F\-\_\-\-P\-O\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T@{\-S\-C\-I\-F\-\_\-\-P\-O\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{\-S\-C\-I\-F\-\_\-\-P\-O\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-C\-I\-F\-\_\-\-P\-O\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T~100000}}
+\label{scif__uc3c_8h_a8758fcbbde760fe3498dd00acf238407}
+
+
+\-The timeguard used for polling in ticks. 
+
+\hypertarget{scif__uc3c_8h_af06c6a1ecbab9e8c283124c594846dea}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-U\-N\-L\-O\-C\-K@{\-S\-C\-I\-F\-\_\-\-U\-N\-L\-O\-C\-K}}
+\index{\-S\-C\-I\-F\-\_\-\-U\-N\-L\-O\-C\-K@{\-S\-C\-I\-F\-\_\-\-U\-N\-L\-O\-C\-K}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{\-S\-C\-I\-F\-\_\-\-U\-N\-L\-O\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-C\-I\-F\-\_\-\-U\-N\-L\-O\-C\-K(
+\begin{DoxyParamCaption}
+\item[{}]{reg}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-S\-C\-I\-F.\-unlock = (\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-U\-N\-L\-O\-C\-K\-\_\-\-K\-E\-Y\-\_\-\-V\-A\-L\-U\-E $<$$<$ \-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-U\-N\-L\-O\-C\-K\-\_\-\-K\-E\-Y\-\_\-\-O\-F\-F\-S\-E\-T)$|$(reg))}}
+\label{scif__uc3c_8h_af06c6a1ecbab9e8c283124c594846dea}
+
+
+\-Unlock \-S\-C\-I\-F register macro. 
+
+
+
+\subsection{\-Enumeration \-Type \-Documentation}
+\hypertarget{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-gcctrl\-\_\-oscsel\-\_\-t@{scif\-\_\-gcctrl\-\_\-oscsel\-\_\-t}}
+\index{scif\-\_\-gcctrl\-\_\-oscsel\-\_\-t@{scif\-\_\-gcctrl\-\_\-oscsel\-\_\-t}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-gcctrl\-\_\-oscsel\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf scif\-\_\-gcctrl\-\_\-oscsel\-\_\-t}}}
+\label{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0}
+
+
+\-The different clock source for the generic clocks. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-S\-L\-O\-W\-C\-L\-O\-C\-K@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-S\-L\-O\-W\-C\-L\-O\-C\-K}!scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}}\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-S\-L\-O\-W\-C\-L\-O\-C\-K@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-S\-L\-O\-W\-C\-L\-O\-C\-K}}\item[{\em 
+\hypertarget{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0a43e5e892e6ff3d8eda9ecc018c01bea3}{
+\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-S\-L\-O\-W\-C\-L\-O\-C\-K}
+\label{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0a43e5e892e6ff3d8eda9ecc018c01bea3}
+}]\index{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C32\-K@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C32\-K}!scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}}\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C32\-K@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C32\-K}}\item[{\em 
+\hypertarget{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0ac088ce669da91221d941efed215feaad}{
+\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C32\-K}
+\label{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0ac088ce669da91221d941efed215feaad}
+}]\index{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C0@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C0}!scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}}\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C0@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C0}}\item[{\em 
+\hypertarget{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0a20a5bfe0f8be03f80ca1cd79b8f4729f}{
+\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C0}
+\label{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0a20a5bfe0f8be03f80ca1cd79b8f4729f}
+}]\index{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C1@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C1}!scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}}\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C1@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C1}}\item[{\em 
+\hypertarget{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0a4a2a1cac2ae4273c6a2f45227f82c530}{
+\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C1}
+\label{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0a4a2a1cac2ae4273c6a2f45227f82c530}
+}]\index{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-L\-L0@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-L\-L0}!scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}}\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-L\-L0@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-L\-L0}}\item[{\em 
+\hypertarget{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0af62c810c63a4f09772877ec072de8ca5}{
+\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-L\-L0}
+\label{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0af62c810c63a4f09772877ec072de8ca5}
+}]\index{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-L\-L1@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-L\-L1}!scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}}\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-L\-L1@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-L\-L1}}\item[{\em 
+\hypertarget{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0aec3246839ddf9191be74d5ceab574fa6}{
+\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-L\-L1}
+\label{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0aec3246839ddf9191be74d5ceab574fa6}
+}]\index{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-R\-C8\-M@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-R\-C8\-M}!scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}}\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-R\-C8\-M@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-R\-C8\-M}}\item[{\em 
+\hypertarget{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0a8a5678d41fd2e569b7fa901c50354460}{
+\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-R\-C8\-M}
+\label{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0a8a5678d41fd2e569b7fa901c50354460}
+}]\index{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-C\-P\-U\-C\-L\-O\-C\-K@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-C\-P\-U\-C\-L\-O\-C\-K}!scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}}\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-C\-P\-U\-C\-L\-O\-C\-K@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-C\-P\-U\-C\-L\-O\-C\-K}}\item[{\em 
+\hypertarget{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0a5c1a2fd50e4196675e4dcd726e926ef6}{
+\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-C\-P\-U\-C\-L\-O\-C\-K}
+\label{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0a5c1a2fd50e4196675e4dcd726e926ef6}
+}]\index{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-H\-S\-B\-C\-L\-O\-C\-K@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-H\-S\-B\-C\-L\-O\-C\-K}!scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}}\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-H\-S\-B\-C\-L\-O\-C\-K@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-H\-S\-B\-C\-L\-O\-C\-K}}\item[{\em 
+\hypertarget{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0a0a4e09084b5a92331c0682b3e58e2c6b}{
+\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-H\-S\-B\-C\-L\-O\-C\-K}
+\label{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0a0a4e09084b5a92331c0682b3e58e2c6b}
+}]\index{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-B\-A\-C\-L\-O\-C\-K@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-B\-A\-C\-L\-O\-C\-K}!scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}}\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-B\-A\-C\-L\-O\-C\-K@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-B\-A\-C\-L\-O\-C\-K}}\item[{\em 
+\hypertarget{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0af5fbd96176bafd864ecde5d8df17c7f6}{
+\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-B\-A\-C\-L\-O\-C\-K}
+\label{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0af5fbd96176bafd864ecde5d8df17c7f6}
+}]\index{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-B\-B\-C\-L\-O\-C\-K@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-B\-B\-C\-L\-O\-C\-K}!scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}}\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-B\-B\-C\-L\-O\-C\-K@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-B\-B\-C\-L\-O\-C\-K}}\item[{\em 
+\hypertarget{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0abf0a044de6699515bef2685fdc6093a1}{
+\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-P\-B\-B\-C\-L\-O\-C\-K}
+\label{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0abf0a044de6699515bef2685fdc6093a1}
+}]\index{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C\-S\-E\-L\-\_\-\-I\-N\-V\-A\-L\-I\-D@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C\-S\-E\-L\-\_\-\-I\-N\-V\-A\-L\-I\-D}!scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}}\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C\-S\-E\-L\-\_\-\-I\-N\-V\-A\-L\-I\-D@{\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C\-S\-E\-L\-\_\-\-I\-N\-V\-A\-L\-I\-D}}\item[{\em 
+\hypertarget{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0a6c6ccb2e6b36df23583746f07f23c7c4}{
+\-S\-C\-I\-F\-\_\-\-G\-C\-C\-T\-R\-L\-\_\-\-O\-S\-C\-S\-E\-L\-\_\-\-I\-N\-V\-A\-L\-I\-D}
+\label{scif__uc3c_8h_a2a2e11f06784f5133dd912e595fde6f0a6c6ccb2e6b36df23583746f07f23c7c4}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{scif__uc3c_8h_a9a708e94c5df197717f5859f6b8b257c}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-osc\-\_\-mode\-\_\-t@{scif\-\_\-osc\-\_\-mode\-\_\-t}}
+\index{scif\-\_\-osc\-\_\-mode\-\_\-t@{scif\-\_\-osc\-\_\-mode\-\_\-t}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-osc\-\_\-mode\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf scif\-\_\-osc\-\_\-mode\-\_\-t}}}
+\label{scif__uc3c_8h_a9a708e94c5df197717f5859f6b8b257c}
+
+
+\-The different oscillator modes. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-S\-C\-I\-F\-\_\-\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-\_\-\-C\-L\-K@{\-S\-C\-I\-F\-\_\-\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-\_\-\-C\-L\-K}!scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}}\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-\_\-\-C\-L\-K@{\-S\-C\-I\-F\-\_\-\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-\_\-\-C\-L\-K}}\item[{\em 
+\hypertarget{scif__uc3c_8h_a9a708e94c5df197717f5859f6b8b257caab4ef315627644c27b21ace5afcc3aac}{
+\-S\-C\-I\-F\-\_\-\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-\-E\-X\-T\-\_\-\-C\-L\-K}
+\label{scif__uc3c_8h_a9a708e94c5df197717f5859f6b8b257caab4ef315627644c27b21ace5afcc3aac}
+}]\index{\-S\-C\-I\-F\-\_\-\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-2\-P\-I\-N\-\_\-\-C\-R\-Y\-S\-T\-A\-L@{\-S\-C\-I\-F\-\_\-\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-2\-P\-I\-N\-\_\-\-C\-R\-Y\-S\-T\-A\-L}!scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}}\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-2\-P\-I\-N\-\_\-\-C\-R\-Y\-S\-T\-A\-L@{\-S\-C\-I\-F\-\_\-\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-2\-P\-I\-N\-\_\-\-C\-R\-Y\-S\-T\-A\-L}}\item[{\em 
+\hypertarget{scif__uc3c_8h_a9a708e94c5df197717f5859f6b8b257ca3b93142664c5679290dcacf047360aae}{
+\-S\-C\-I\-F\-\_\-\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-2\-P\-I\-N\-\_\-\-C\-R\-Y\-S\-T\-A\-L}
+\label{scif__uc3c_8h_a9a708e94c5df197717f5859f6b8b257ca3b93142664c5679290dcacf047360aae}
+}]\index{\-S\-C\-I\-F\-\_\-\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-2\-P\-I\-N\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-H\-I\-C\-U\-R@{\-S\-C\-I\-F\-\_\-\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-2\-P\-I\-N\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-H\-I\-C\-U\-R}!scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}}\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-2\-P\-I\-N\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-H\-I\-C\-U\-R@{\-S\-C\-I\-F\-\_\-\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-2\-P\-I\-N\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-H\-I\-C\-U\-R}}\item[{\em 
+\hypertarget{scif__uc3c_8h_a9a708e94c5df197717f5859f6b8b257ca5dc91e7de7e69bf2958bb036dd090eee}{
+\-S\-C\-I\-F\-\_\-\-O\-S\-C\-\_\-\-M\-O\-D\-E\-\_\-2\-P\-I\-N\-\_\-\-C\-R\-Y\-S\-T\-A\-L\-\_\-\-H\-I\-C\-U\-R}
+\label{scif__uc3c_8h_a9a708e94c5df197717f5859f6b8b257ca5dc91e7de7e69bf2958bb036dd090eee}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{scif__uc3c_8h_af09989f8fb441a8d3806b7fe60fdc644}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-osc\-\_\-t@{scif\-\_\-osc\-\_\-t}}
+\index{scif\-\_\-osc\-\_\-t@{scif\-\_\-osc\-\_\-t}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-osc\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf scif\-\_\-osc\-\_\-t}}}
+\label{scif__uc3c_8h_af09989f8fb441a8d3806b7fe60fdc644}
+
+
+\-The different oscillators. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-S\-C\-I\-F\-\_\-\-O\-S\-C0@{\-S\-C\-I\-F\-\_\-\-O\-S\-C0}!scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}}\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-O\-S\-C0@{\-S\-C\-I\-F\-\_\-\-O\-S\-C0}}\item[{\em 
+\hypertarget{scif__uc3c_8h_af09989f8fb441a8d3806b7fe60fdc644a6cbdcff7051100ba50af09439fbb0122}{
+\-S\-C\-I\-F\-\_\-\-O\-S\-C0}
+\label{scif__uc3c_8h_af09989f8fb441a8d3806b7fe60fdc644a6cbdcff7051100ba50af09439fbb0122}
+}]\index{\-S\-C\-I\-F\-\_\-\-O\-S\-C1@{\-S\-C\-I\-F\-\_\-\-O\-S\-C1}!scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}}\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-O\-S\-C1@{\-S\-C\-I\-F\-\_\-\-O\-S\-C1}}\item[{\em 
+\hypertarget{scif__uc3c_8h_af09989f8fb441a8d3806b7fe60fdc644a79fa8a5ea1f7726cd4a35c556cf83380}{
+\-S\-C\-I\-F\-\_\-\-O\-S\-C1}
+\label{scif__uc3c_8h_af09989f8fb441a8d3806b7fe60fdc644a79fa8a5ea1f7726cd4a35c556cf83380}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{scif__uc3c_8h_aee67e9247cde3191caf3a6ec8cc49131}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-pll\-\_\-t@{scif\-\_\-pll\-\_\-t}}
+\index{scif\-\_\-pll\-\_\-t@{scif\-\_\-pll\-\_\-t}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-pll\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf scif\-\_\-pll\-\_\-t}}}
+\label{scif__uc3c_8h_aee67e9247cde3191caf3a6ec8cc49131}
+
+
+\-The different plls. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-S\-C\-I\-F\-\_\-\-P\-L\-L0@{\-S\-C\-I\-F\-\_\-\-P\-L\-L0}!scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}}\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-P\-L\-L0@{\-S\-C\-I\-F\-\_\-\-P\-L\-L0}}\item[{\em 
+\hypertarget{scif__uc3c_8h_aee67e9247cde3191caf3a6ec8cc49131afb73f3e6fe0f1649f6e70bb74f447536}{
+\-S\-C\-I\-F\-\_\-\-P\-L\-L0}
+\label{scif__uc3c_8h_aee67e9247cde3191caf3a6ec8cc49131afb73f3e6fe0f1649f6e70bb74f447536}
+}]\index{\-S\-C\-I\-F\-\_\-\-P\-L\-L1@{\-S\-C\-I\-F\-\_\-\-P\-L\-L1}!scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}}\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!\-S\-C\-I\-F\-\_\-\-P\-L\-L1@{\-S\-C\-I\-F\-\_\-\-P\-L\-L1}}\item[{\em 
+\hypertarget{scif__uc3c_8h_aee67e9247cde3191caf3a6ec8cc49131a1fe4b13fa40ed138fe42446463c1ab6e}{
+\-S\-C\-I\-F\-\_\-\-P\-L\-L1}
+\label{scif__uc3c_8h_aee67e9247cde3191caf3a6ec8cc49131a1fe4b13fa40ed138fe42446463c1ab6e}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{scif__uc3c_8h_a32c4bf1084e3462837559441eb4f2455}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-bod18\-\_\-clear\-\_\-irq@{scif\-\_\-bod18\-\_\-clear\-\_\-irq}}
+\index{scif\-\_\-bod18\-\_\-clear\-\_\-irq@{scif\-\_\-bod18\-\_\-clear\-\_\-irq}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-bod18\-\_\-clear\-\_\-irq}]{\setlength{\rightskip}{0pt plus 5cm}void scif\-\_\-bod18\-\_\-clear\-\_\-irq (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a32c4bf1084e3462837559441eb4f2455}
+
+
+\-Clears the 1.\-8\-V \-Brown-\/\-Out \-Detector interrupt flag. 
+
+\hypertarget{scif__uc3c_8h_a6855400b530bc304abe596e2aa6b7bc8}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-bod18\-\_\-disable\-\_\-irq@{scif\-\_\-bod18\-\_\-disable\-\_\-irq}}
+\index{scif\-\_\-bod18\-\_\-disable\-\_\-irq@{scif\-\_\-bod18\-\_\-disable\-\_\-irq}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-bod18\-\_\-disable\-\_\-irq}]{\setlength{\rightskip}{0pt plus 5cm}void scif\-\_\-bod18\-\_\-disable\-\_\-irq (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a6855400b530bc304abe596e2aa6b7bc8}
+
+
+\-Disables the 1.\-8\-V \-Brown-\/\-Out \-Detector interrupt. 
+
+\hypertarget{scif__uc3c_8h_a180ec409dbfab40b802e883e43e7edba}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-bod18\-\_\-enable\-\_\-irq@{scif\-\_\-bod18\-\_\-enable\-\_\-irq}}
+\index{scif\-\_\-bod18\-\_\-enable\-\_\-irq@{scif\-\_\-bod18\-\_\-enable\-\_\-irq}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-bod18\-\_\-enable\-\_\-irq}]{\setlength{\rightskip}{0pt plus 5cm}void scif\-\_\-bod18\-\_\-enable\-\_\-irq (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a180ec409dbfab40b802e883e43e7edba}
+
+
+\-Enables the 1.\-8\-V \-Brown-\/\-Out \-Detector interrupt. 
+
+\hypertarget{scif__uc3c_8h_aa9b3ed37bade8509a107e86916e18805}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-bod18\-\_\-get\-\_\-irq\-\_\-enable\-\_\-bit@{scif\-\_\-bod18\-\_\-get\-\_\-irq\-\_\-enable\-\_\-bit}}
+\index{scif\-\_\-bod18\-\_\-get\-\_\-irq\-\_\-enable\-\_\-bit@{scif\-\_\-bod18\-\_\-get\-\_\-irq\-\_\-enable\-\_\-bit}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-bod18\-\_\-get\-\_\-irq\-\_\-enable\-\_\-bit}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long scif\-\_\-bod18\-\_\-get\-\_\-irq\-\_\-enable\-\_\-bit (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_aa9b3ed37bade8509a107e86916e18805}
+
+
+\-Gets the 1.\-8\-V \-Brown-\/\-Out \-Detector interrupt enable status. 
+
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-B\-O\-D interrupt disabled. \\
+\hline
+{\em 1} & \-B\-O\-D interrupt enabled. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{scif__uc3c_8h_ad518d8685614797a31c212e961d8725f}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-bod18\-\_\-get\-\_\-irq\-\_\-status@{scif\-\_\-bod18\-\_\-get\-\_\-irq\-\_\-status}}
+\index{scif\-\_\-bod18\-\_\-get\-\_\-irq\-\_\-status@{scif\-\_\-bod18\-\_\-get\-\_\-irq\-\_\-status}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-bod18\-\_\-get\-\_\-irq\-\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long scif\-\_\-bod18\-\_\-get\-\_\-irq\-\_\-status (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_ad518d8685614797a31c212e961d8725f}
+
+
+\-Gets the 1.\-8\-V \-Brown-\/\-Out \-Detector interrupt flag. 
+
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-No \-B\-O\-D interrupt. \\
+\hline
+{\em 1} & \-B\-O\-D interrupt pending. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{scif__uc3c_8h_ab9def9f54fbc0861e37b52f7ccd00d06}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-bod18\-\_\-get\-\_\-level@{scif\-\_\-bod18\-\_\-get\-\_\-level}}
+\index{scif\-\_\-bod18\-\_\-get\-\_\-level@{scif\-\_\-bod18\-\_\-get\-\_\-level}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-bod18\-\_\-get\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long scif\-\_\-bod18\-\_\-get\-\_\-level (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_ab9def9f54fbc0861e37b52f7ccd00d06}
+
+
+\-Gets the triggering threshold of the 1.\-8\-V \-Brown-\/\-Out \-Detector. 
+
+\hypertarget{scif__uc3c_8h_a72c758d2924ea2814d4bcfe1c122022f}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-bod33\-\_\-clear\-\_\-irq@{scif\-\_\-bod33\-\_\-clear\-\_\-irq}}
+\index{scif\-\_\-bod33\-\_\-clear\-\_\-irq@{scif\-\_\-bod33\-\_\-clear\-\_\-irq}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-bod33\-\_\-clear\-\_\-irq}]{\setlength{\rightskip}{0pt plus 5cm}void scif\-\_\-bod33\-\_\-clear\-\_\-irq (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a72c758d2924ea2814d4bcfe1c122022f}
+
+
+\-Clears the 3.\-3\-V \-Brown-\/\-Out \-Detector interrupt flag. 
+
+\hypertarget{scif__uc3c_8h_a41673b52a3fc9749f9ff34a3faa977ef}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-bod33\-\_\-disable\-\_\-irq@{scif\-\_\-bod33\-\_\-disable\-\_\-irq}}
+\index{scif\-\_\-bod33\-\_\-disable\-\_\-irq@{scif\-\_\-bod33\-\_\-disable\-\_\-irq}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-bod33\-\_\-disable\-\_\-irq}]{\setlength{\rightskip}{0pt plus 5cm}void scif\-\_\-bod33\-\_\-disable\-\_\-irq (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a41673b52a3fc9749f9ff34a3faa977ef}
+
+
+\-Disables the 3.\-3\-V \-Brown-\/\-Out \-Detector interrupt. 
+
+\hypertarget{scif__uc3c_8h_a41885a5f7da5d63fd6e6ed8e58608fe7}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-bod33\-\_\-enable\-\_\-irq@{scif\-\_\-bod33\-\_\-enable\-\_\-irq}}
+\index{scif\-\_\-bod33\-\_\-enable\-\_\-irq@{scif\-\_\-bod33\-\_\-enable\-\_\-irq}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-bod33\-\_\-enable\-\_\-irq}]{\setlength{\rightskip}{0pt plus 5cm}void scif\-\_\-bod33\-\_\-enable\-\_\-irq (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a41885a5f7da5d63fd6e6ed8e58608fe7}
+
+
+\-Enables the 3.\-3\-V \-Brown-\/\-Out \-Detector interrupt. 
+
+\hypertarget{scif__uc3c_8h_a35f2e5cca380e07e793b74f43cfd6149}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-bod33\-\_\-get\-\_\-irq\-\_\-enable\-\_\-bit@{scif\-\_\-bod33\-\_\-get\-\_\-irq\-\_\-enable\-\_\-bit}}
+\index{scif\-\_\-bod33\-\_\-get\-\_\-irq\-\_\-enable\-\_\-bit@{scif\-\_\-bod33\-\_\-get\-\_\-irq\-\_\-enable\-\_\-bit}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-bod33\-\_\-get\-\_\-irq\-\_\-enable\-\_\-bit}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long scif\-\_\-bod33\-\_\-get\-\_\-irq\-\_\-enable\-\_\-bit (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a35f2e5cca380e07e793b74f43cfd6149}
+
+
+\-Gets the 3.\-3\-V \-Brown-\/\-Out \-Detector interrupt enable status. 
+
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-B\-O\-D interrupt disabled. \\
+\hline
+{\em 1} & \-B\-O\-D interrupt enabled. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{scif__uc3c_8h_a651f36eaffe08306358f55b5f1880332}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-bod33\-\_\-get\-\_\-irq\-\_\-status@{scif\-\_\-bod33\-\_\-get\-\_\-irq\-\_\-status}}
+\index{scif\-\_\-bod33\-\_\-get\-\_\-irq\-\_\-status@{scif\-\_\-bod33\-\_\-get\-\_\-irq\-\_\-status}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-bod33\-\_\-get\-\_\-irq\-\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long scif\-\_\-bod33\-\_\-get\-\_\-irq\-\_\-status (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a651f36eaffe08306358f55b5f1880332}
+
+
+\-Gets the 3.\-3\-V \-Brown-\/\-Out \-Detector interrupt flag. 
+
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-No \-B\-O\-D interrupt. \\
+\hline
+{\em 1} & \-B\-O\-D interrupt pending. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{scif__uc3c_8h_ab9960fafcbb182162fd5c1605b0c9b7b}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-bod33\-\_\-get\-\_\-level@{scif\-\_\-bod33\-\_\-get\-\_\-level}}
+\index{scif\-\_\-bod33\-\_\-get\-\_\-level@{scif\-\_\-bod33\-\_\-get\-\_\-level}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-bod33\-\_\-get\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long scif\-\_\-bod33\-\_\-get\-\_\-level (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_ab9960fafcbb182162fd5c1605b0c9b7b}
+
+
+\-Gets the triggering threshold of the 3.\-3\-V \-Brown-\/\-Out \-Detector. 
+
+\hypertarget{scif__uc3c_8h_a06a5914736539eec3f64773c3ab46244}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-bod50\-\_\-clear\-\_\-irq@{scif\-\_\-bod50\-\_\-clear\-\_\-irq}}
+\index{scif\-\_\-bod50\-\_\-clear\-\_\-irq@{scif\-\_\-bod50\-\_\-clear\-\_\-irq}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-bod50\-\_\-clear\-\_\-irq}]{\setlength{\rightskip}{0pt plus 5cm}void scif\-\_\-bod50\-\_\-clear\-\_\-irq (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a06a5914736539eec3f64773c3ab46244}
+
+
+\-Clears the 5.\-0\-V \-Brown-\/\-Out \-Detector interrupt flag. 
+
+\hypertarget{scif__uc3c_8h_a4ebccdb22b97237b7a435403e7464969}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-bod50\-\_\-disable\-\_\-irq@{scif\-\_\-bod50\-\_\-disable\-\_\-irq}}
+\index{scif\-\_\-bod50\-\_\-disable\-\_\-irq@{scif\-\_\-bod50\-\_\-disable\-\_\-irq}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-bod50\-\_\-disable\-\_\-irq}]{\setlength{\rightskip}{0pt plus 5cm}void scif\-\_\-bod50\-\_\-disable\-\_\-irq (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a4ebccdb22b97237b7a435403e7464969}
+
+
+\-Disables the 5.\-0\-V \-Brown-\/\-Out \-Detector interrupt. 
+
+\hypertarget{scif__uc3c_8h_a2bb02cf9fc20b9e72ba0582727e0fcba}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-bod50\-\_\-enable\-\_\-irq@{scif\-\_\-bod50\-\_\-enable\-\_\-irq}}
+\index{scif\-\_\-bod50\-\_\-enable\-\_\-irq@{scif\-\_\-bod50\-\_\-enable\-\_\-irq}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-bod50\-\_\-enable\-\_\-irq}]{\setlength{\rightskip}{0pt plus 5cm}void scif\-\_\-bod50\-\_\-enable\-\_\-irq (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a2bb02cf9fc20b9e72ba0582727e0fcba}
+
+
+\-Enables the 5.\-0\-V \-Brown-\/\-Out \-Detector interrupt. 
+
+\hypertarget{scif__uc3c_8h_a9b98a43164cc8adce3ac426aa16324d5}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-bod50\-\_\-get\-\_\-irq\-\_\-enable\-\_\-bit@{scif\-\_\-bod50\-\_\-get\-\_\-irq\-\_\-enable\-\_\-bit}}
+\index{scif\-\_\-bod50\-\_\-get\-\_\-irq\-\_\-enable\-\_\-bit@{scif\-\_\-bod50\-\_\-get\-\_\-irq\-\_\-enable\-\_\-bit}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-bod50\-\_\-get\-\_\-irq\-\_\-enable\-\_\-bit}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long scif\-\_\-bod50\-\_\-get\-\_\-irq\-\_\-enable\-\_\-bit (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a9b98a43164cc8adce3ac426aa16324d5}
+
+
+\-Gets the 5.\-0\-V \-Brown-\/\-Out \-Detector interrupt enable status. 
+
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-B\-O\-D interrupt disabled. \\
+\hline
+{\em 1} & \-B\-O\-D interrupt enabled. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{scif__uc3c_8h_adadb46f98e9bdc8a8b8adbab790d4527}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-bod50\-\_\-get\-\_\-irq\-\_\-status@{scif\-\_\-bod50\-\_\-get\-\_\-irq\-\_\-status}}
+\index{scif\-\_\-bod50\-\_\-get\-\_\-irq\-\_\-status@{scif\-\_\-bod50\-\_\-get\-\_\-irq\-\_\-status}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-bod50\-\_\-get\-\_\-irq\-\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long scif\-\_\-bod50\-\_\-get\-\_\-irq\-\_\-status (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_adadb46f98e9bdc8a8b8adbab790d4527}
+
+
+\-Gets the 5.\-0\-V \-Brown-\/\-Out \-Detector interrupt flag. 
+
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-No \-B\-O\-D interrupt. \\
+\hline
+{\em 1} & \-B\-O\-D interrupt pending. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{scif__uc3c_8h_a06d74e1911e65c5549e6251b9da57f81}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-bod50\-\_\-get\-\_\-level@{scif\-\_\-bod50\-\_\-get\-\_\-level}}
+\index{scif\-\_\-bod50\-\_\-get\-\_\-level@{scif\-\_\-bod50\-\_\-get\-\_\-level}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-bod50\-\_\-get\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long scif\-\_\-bod50\-\_\-get\-\_\-level (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a06d74e1911e65c5549e6251b9da57f81}
+
+
+\-Gets the triggering threshold of the 5.\-0\-V \-Brown-\/\-Out \-Detector. 
+
+\hypertarget{scif__uc3c_8h_a07a99c5e193620b3d4a6825bcd054e37}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-configure\-\_\-osc\-\_\-crystalmode@{scif\-\_\-configure\-\_\-osc\-\_\-crystalmode}}
+\index{scif\-\_\-configure\-\_\-osc\-\_\-crystalmode@{scif\-\_\-configure\-\_\-osc\-\_\-crystalmode}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-configure\-\_\-osc\-\_\-crystalmode}]{\setlength{\rightskip}{0pt plus 5cm}long int scif\-\_\-configure\-\_\-osc\-\_\-crystalmode (
+\begin{DoxyParamCaption}
+\item[{{\bf scif\-\_\-osc\-\_\-t}}]{osc, }
+\item[{unsigned int}]{fcrystal}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a07a99c5e193620b3d4a6825bcd054e37}
+
+
+\-Configure an oscillator in crystal mode. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em osc} & \-The oscillator to configure \mbox{[}\-I\-N\-P\-U\-T\mbox{]} \\
+\hline
+{\em fcrystal} & \-Crystal frequency (\-Hz) \mbox{[}\-I\-N\-P\-U\-T\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Oscillator successfully configured. \\
+\hline
+{\em $<$0} & \-Error configuring the oscillator. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{scif__uc3c_8h_a4406d9a27fdfbedf364ff4b571fd9fa2}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-configure\-\_\-osc\-\_\-extmode@{scif\-\_\-configure\-\_\-osc\-\_\-extmode}}
+\index{scif\-\_\-configure\-\_\-osc\-\_\-extmode@{scif\-\_\-configure\-\_\-osc\-\_\-extmode}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-configure\-\_\-osc\-\_\-extmode}]{\setlength{\rightskip}{0pt plus 5cm}long int scif\-\_\-configure\-\_\-osc\-\_\-extmode (
+\begin{DoxyParamCaption}
+\item[{{\bf scif\-\_\-osc\-\_\-t}}]{osc}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a4406d9a27fdfbedf364ff4b571fd9fa2}
+
+
+\-Configure an external clock as input clock. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em osc} & \-The external clock to configure \mbox{[}\-I\-N\-P\-U\-T\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-External clock successfully configured. \\
+\hline
+{\em $<$0} & \-Error configuring the external clock. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{scif__uc3c_8h_a78cb0ccfb114e27d63cc8fd317648def}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-enable\-\_\-extosc@{scif\-\_\-enable\-\_\-extosc}}
+\index{scif\-\_\-enable\-\_\-extosc@{scif\-\_\-enable\-\_\-extosc}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-enable\-\_\-extosc}]{\setlength{\rightskip}{0pt plus 5cm}long int scif\-\_\-enable\-\_\-extosc (
+\begin{DoxyParamCaption}
+\item[{{\bf scif\-\_\-osc\-\_\-t}}]{osc}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a78cb0ccfb114e27d63cc8fd317648def}
+
+
+\-Enable external clock. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em osc} & \-The oscillator to configure \mbox{[}\-I\-N\-P\-U\-T\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Oscillator successfully started \\
+\hline
+{\em $<$0} & \-Error starting the oscillator. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{scif__uc3c_8h_ae6a41bbff30ad3544abd620bb8b50612}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-enable\-\_\-osc@{scif\-\_\-enable\-\_\-osc}}
+\index{scif\-\_\-enable\-\_\-osc@{scif\-\_\-enable\-\_\-osc}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-enable\-\_\-osc}]{\setlength{\rightskip}{0pt plus 5cm}long int scif\-\_\-enable\-\_\-osc (
+\begin{DoxyParamCaption}
+\item[{{\bf scif\-\_\-osc\-\_\-t}}]{osc, }
+\item[{unsigned int}]{startup, }
+\item[{bool}]{wait\-\_\-for\-\_\-ready}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_ae6a41bbff30ad3544abd620bb8b50612}
+
+
+\-Enable an oscillator with a given startup time. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em osc} & \-The oscillator to configure \mbox{[}\-I\-N\-P\-U\-T\mbox{]} \\
+\hline
+{\em startup} & \-Oscillator startup time (one of \-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-O\-S\-C\-C\-T\-R\-Lx\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-x\-\_\-\-R\-C\-O\-S\-C) \mbox{[}\-I\-N\-P\-U\-T\mbox{]} \\
+\hline
+{\em wait\-\_\-for\-\_\-ready} & \-Wait for the oscillator to be stable before return \mbox{[}\-I\-N\-P\-U\-T\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Oscillator successfully started \\
+\hline
+{\em $<$0} & \-Error starting the oscillator. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{scif__uc3c_8h_a97cca4b2eb1d71d681f7b81f54e672c3}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-gc\-\_\-enable@{scif\-\_\-gc\-\_\-enable}}
+\index{scif\-\_\-gc\-\_\-enable@{scif\-\_\-gc\-\_\-enable}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-gc\-\_\-enable}]{\setlength{\rightskip}{0pt plus 5cm}long int scif\-\_\-gc\-\_\-enable (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{gclk}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a97cca4b2eb1d71d681f7b81f54e672c3}
+
+
+\-Enable a generic clock. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em gclk} & generic clock number (0 for gc0...)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Success. \\
+\hline
+{\em $<$0} & \-An error occured. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{scif__uc3c_8h_ac355443257f05c78943fdd41d8b8fb90}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-gc\-\_\-setup@{scif\-\_\-gc\-\_\-setup}}
+\index{scif\-\_\-gc\-\_\-setup@{scif\-\_\-gc\-\_\-setup}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-gc\-\_\-setup}]{\setlength{\rightskip}{0pt plus 5cm}long int scif\-\_\-gc\-\_\-setup (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{gclk, }
+\item[{{\bf scif\-\_\-gcctrl\-\_\-oscsel\-\_\-t}}]{clk\-\_\-src, }
+\item[{unsigned int}]{diven, }
+\item[{unsigned int}]{divfactor}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_ac355443257f05c78943fdd41d8b8fb90}
+
+
+\-Setup a generic clock. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em gclk} & generic clock number (0 for gc0...) \\
+\hline
+{\em clk\-\_\-src} & \-The input clock source to use for the generic clock \\
+\hline
+{\em diven} & \-Generic clock divisor enable \\
+\hline
+{\em divfactor} & \-Generic clock divisor\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Note}
+\-If the generic clock is already enabled, this function will disable it, apply the configuration then restart the generic clock.
+\end{DoxyNote}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Success. \\
+\hline
+{\em $<$0} & \-An error occured. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{scif__uc3c_8h_a4d8aa2fd50f3bee4bd1b0f7cd9559f72}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-is\-\_\-osc\-\_\-ready@{scif\-\_\-is\-\_\-osc\-\_\-ready}}
+\index{scif\-\_\-is\-\_\-osc\-\_\-ready@{scif\-\_\-is\-\_\-osc\-\_\-ready}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-is\-\_\-osc\-\_\-ready}]{\setlength{\rightskip}{0pt plus 5cm}bool scif\-\_\-is\-\_\-osc\-\_\-ready (
+\begin{DoxyParamCaption}
+\item[{{\bf scif\-\_\-osc\-\_\-t}}]{osc}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a4d8aa2fd50f3bee4bd1b0f7cd9559f72}
+
+
+\-Is an oscillator stable and ready to be used as clock source? 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em osc} & \-The oscillator \mbox{[}\-I\-N\-P\-U\-T\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em true} & oscillator stable and ready \\
+\hline
+{\em false} & oscillator not enabled or not ready. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{scif__uc3c_8h_a9fe5c285353fbea44393e996d603d257}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-pll\-\_\-disable@{scif\-\_\-pll\-\_\-disable}}
+\index{scif\-\_\-pll\-\_\-disable@{scif\-\_\-pll\-\_\-disable}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-pll\-\_\-disable}]{\setlength{\rightskip}{0pt plus 5cm}long int scif\-\_\-pll\-\_\-disable (
+\begin{DoxyParamCaption}
+\item[{{\bf scif\-\_\-pll\-\_\-t}}]{pll}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a9fe5c285353fbea44393e996d603d257}
+
+
+\-This function will disable a \-P\-L\-L. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pll} & \-The \-P\-L\-L to configure \mbox{[}\-I\-N\-P\-U\-T\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-P\-L\-L successfully started \\
+\hline
+{\em $<$0} & \-Error starting the \-P\-L\-L. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{scif__uc3c_8h_afb379ef54174ea12680afe48a82c14b9}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-pll\-\_\-enable@{scif\-\_\-pll\-\_\-enable}}
+\index{scif\-\_\-pll\-\_\-enable@{scif\-\_\-pll\-\_\-enable}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-pll\-\_\-enable}]{\setlength{\rightskip}{0pt plus 5cm}long int scif\-\_\-pll\-\_\-enable (
+\begin{DoxyParamCaption}
+\item[{{\bf scif\-\_\-pll\-\_\-t}}]{pll}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_afb379ef54174ea12680afe48a82c14b9}
+
+
+\-This function will enable a \-P\-L\-L. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pll} & \-The \-P\-L\-L to configure \mbox{[}\-I\-N\-P\-U\-T\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-P\-L\-L successfully started \\
+\hline
+{\em $<$0} & \-Error starting the \-P\-L\-L. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{scif__uc3c_8h_a0762c326026298131479b2eb6c66966e}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-pll\-\_\-setup@{scif\-\_\-pll\-\_\-setup}}
+\index{scif\-\_\-pll\-\_\-setup@{scif\-\_\-pll\-\_\-setup}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-pll\-\_\-setup}]{\setlength{\rightskip}{0pt plus 5cm}long int scif\-\_\-pll\-\_\-setup (
+\begin{DoxyParamCaption}
+\item[{{\bf scif\-\_\-pll\-\_\-t}}]{pll, }
+\item[{const {\bf scif\-\_\-pll\-\_\-opt\-\_\-t}}]{opt}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a0762c326026298131479b2eb6c66966e}
+
+
+\-This function will setup a \-P\-L\-L. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pll} & \-The \-P\-L\-L to configure \mbox{[}\-I\-N\-P\-U\-T\mbox{]} \\
+\hline
+{\em opt} & \-The configuration of the \-P\-L\-L \mbox{[}\-I\-N\-P\-U\-T\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-P\-L\-L successfully started \\
+\hline
+{\em $<$0} & \-Error starting the \-P\-L\-L.\\
+\hline
+\end{DoxyRetVals}
+\-P\-L\-L0/\-P\-L\-L1 \-Functions \hypertarget{scif__uc3c_8h_a5fcd05f3e28de6dae627d4d8bc1d73f5}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-read\-\_\-gplp@{scif\-\_\-read\-\_\-gplp}}
+\index{scif\-\_\-read\-\_\-gplp@{scif\-\_\-read\-\_\-gplp}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-read\-\_\-gplp}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long scif\-\_\-read\-\_\-gplp (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{gplp}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a5fcd05f3e28de6dae627d4d8bc1d73f5}
+
+
+\-Read the content of the \-S\-C\-I\-F \-G\-P\-L\-P registers. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em gplp} & \-G\-P\-L\-P register index (0,1,... depending on the number of \-G\-P\-L\-P registers for a given part)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The content of the chosen \-G\-P\-L\-P register. 
+\end{DoxyReturn}
+\hypertarget{scif__uc3c_8h_a966f2ea463bfc21d1fbc8f5bd62365dd}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-start\-\_\-gclk@{scif\-\_\-start\-\_\-gclk}}
+\index{scif\-\_\-start\-\_\-gclk@{scif\-\_\-start\-\_\-gclk}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-start\-\_\-gclk}]{\setlength{\rightskip}{0pt plus 5cm}long int scif\-\_\-start\-\_\-gclk (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{gclk, }
+\item[{const {\bf scif\-\_\-gclk\-\_\-opt\-\_\-t} $\ast$}]{opt}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a966f2ea463bfc21d1fbc8f5bd62365dd}
+
+
+\-Setup and start a generic clock. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em gclk} & \-The generic clock number to setup and start (cf. datasheet) \\
+\hline
+{\em opt} & \-The settings for the generic clock.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Success. \\
+\hline
+{\em $<$0} & \-An error occured.\\
+\hline
+\end{DoxyRetVals}
+\-Generic \-Clock \-Functions \hypertarget{scif__uc3c_8h_a00ceb53ef51dd175ee30bc461155763b}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-start\-\_\-osc@{scif\-\_\-start\-\_\-osc}}
+\index{scif\-\_\-start\-\_\-osc@{scif\-\_\-start\-\_\-osc}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-start\-\_\-osc}]{\setlength{\rightskip}{0pt plus 5cm}long int scif\-\_\-start\-\_\-osc (
+\begin{DoxyParamCaption}
+\item[{{\bf scif\-\_\-osc\-\_\-t}}]{osc, }
+\item[{const {\bf scif\-\_\-osc\-\_\-opt\-\_\-t} $\ast$}]{opt, }
+\item[{bool}]{wait\-\_\-for\-\_\-ready}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a00ceb53ef51dd175ee30bc461155763b}
+
+
+\-Configure and start an \-O\-S\-C0/\-O\-S\-C1 oscillator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em osc} & \-The oscillator to start \mbox{[}\-I\-N\-P\-U\-T\mbox{]} \\
+\hline
+{\em opt} & \-The configuration of the oscillator \mbox{[}\-I\-N\-P\-U\-T\mbox{]} \\
+\hline
+{\em wait\-\_\-for\-\_\-ready} & \-Wait for the oscillator to be stable before return \mbox{[}\-I\-N\-P\-U\-T\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Note}
+\-To avoid an infinite loop, this function checks the osc0 ready flag \-S\-C\-I\-F\-\_\-\-P\-O\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T times.
+\end{DoxyNote}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Oscillator start successfull. \\
+\hline
+{\em $<$0} & \-Error starting the oscillator.\\
+\hline
+\end{DoxyRetVals}
+\-Interrupt \-Functions \-Power and \-Clocks \-Status \-Functions \-O\-S\-C0/\-O\-S\-C1 \-Functions \hypertarget{scif__uc3c_8h_a1a5d5f264ce6f288aa94fecbc8b24b10}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-start\-\_\-osc32@{scif\-\_\-start\-\_\-osc32}}
+\index{scif\-\_\-start\-\_\-osc32@{scif\-\_\-start\-\_\-osc32}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-start\-\_\-osc32}]{\setlength{\rightskip}{0pt plus 5cm}long int scif\-\_\-start\-\_\-osc32 (
+\begin{DoxyParamCaption}
+\item[{const {\bf scif\-\_\-osc32\-\_\-opt\-\_\-t} $\ast$}]{opt, }
+\item[{bool}]{wait\-\_\-for\-\_\-ready}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a1a5d5f264ce6f288aa94fecbc8b24b10}
+
+
+\-Configure and start the \-O\-S\-C32 oscillator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em opt} & \-The configuration of the oscillator \mbox{[}\-I\-N\-P\-U\-T\mbox{]} \\
+\hline
+{\em wait\-\_\-for\-\_\-ready} & \-Wait for the oscillator to be stable before return \mbox{[}\-I\-N\-P\-U\-T\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Note}
+\-To avoid an infinite loop, this function checks the osc32 ready flag \-S\-C\-I\-F\-\_\-\-P\-O\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T times.
+\end{DoxyNote}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Oscillator start successfull. \\
+\hline
+{\em $<$0} & \-Error starting the oscillator.\\
+\hline
+\end{DoxyRetVals}
+\-O\-S\-C32 \-Functions \hypertarget{scif__uc3c_8h_a059e71c82dac925ae59dc36cdbf30222}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-start\-\_\-rc120\-M@{scif\-\_\-start\-\_\-rc120\-M}}
+\index{scif\-\_\-start\-\_\-rc120\-M@{scif\-\_\-start\-\_\-rc120\-M}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-start\-\_\-rc120\-M}]{\setlength{\rightskip}{0pt plus 5cm}void scif\-\_\-start\-\_\-rc120\-M (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a059e71c82dac925ae59dc36cdbf30222}
+
+
+\-Start the 120\-M\-Hz internal \-R\-Cosc (\-R\-C120\-M) clock. 
+
+120\-M\-Hz \-R\-Cosc \-Functions \hypertarget{scif__uc3c_8h_a98d84a449826183d517302ad4bb6a013}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-start\-\_\-rc8\-M@{scif\-\_\-start\-\_\-rc8\-M}}
+\index{scif\-\_\-start\-\_\-rc8\-M@{scif\-\_\-start\-\_\-rc8\-M}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-start\-\_\-rc8\-M}]{\setlength{\rightskip}{0pt plus 5cm}void scif\-\_\-start\-\_\-rc8\-M (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a98d84a449826183d517302ad4bb6a013}
+
+
+\-Start the 8\-M\-Hz internal \-R\-Cosc (\-R\-C8\-M) clock. 
+
+\-Calibration \-Functions \-Critical \-Path \-Oscillator \-Functions 8\-M\-Hz \-R\-Cosc \-Functions \hypertarget{scif__uc3c_8h_a703046a65be951d33d8907ca284d963a}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-stop\-\_\-gclk@{scif\-\_\-stop\-\_\-gclk}}
+\index{scif\-\_\-stop\-\_\-gclk@{scif\-\_\-stop\-\_\-gclk}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-stop\-\_\-gclk}]{\setlength{\rightskip}{0pt plus 5cm}long int scif\-\_\-stop\-\_\-gclk (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{gclk}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a703046a65be951d33d8907ca284d963a}
+
+
+\-Stop a generic clock. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em gclk} & \-The generic clock number to stop.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Note}
+\-To avoid an infinite loop, this function checks the \-Clock enable flag \-S\-C\-I\-F\-\_\-\-P\-O\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T times.
+\end{DoxyNote}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Success. \\
+\hline
+{\em $<$0} & \-Unable to stop generic clock. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{scif__uc3c_8h_a5dca9b966cbe139223b6044b160509e5}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-stop\-\_\-osc@{scif\-\_\-stop\-\_\-osc}}
+\index{scif\-\_\-stop\-\_\-osc@{scif\-\_\-stop\-\_\-osc}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-stop\-\_\-osc}]{\setlength{\rightskip}{0pt plus 5cm}long int scif\-\_\-stop\-\_\-osc (
+\begin{DoxyParamCaption}
+\item[{{\bf scif\-\_\-osc\-\_\-t}}]{osc}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a5dca9b966cbe139223b6044b160509e5}
+
+
+\-Stop an oscillator. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em osc} & \-The oscillator to stop\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Oscillator successfully stopped. \\
+\hline
+{\em $<$0} & \-An error occured when stopping the oscillator. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{scif__uc3c_8h_acc245a2bbf963e3d223881edde52e9a0}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-stop\-\_\-osc32@{scif\-\_\-stop\-\_\-osc32}}
+\index{scif\-\_\-stop\-\_\-osc32@{scif\-\_\-stop\-\_\-osc32}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-stop\-\_\-osc32}]{\setlength{\rightskip}{0pt plus 5cm}long int scif\-\_\-stop\-\_\-osc32 (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_acc245a2bbf963e3d223881edde52e9a0}
+
+
+\-Stop the \-O\-S\-C32 oscillator. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Oscillator successfully stopped. \\
+\hline
+{\em $<$0} & \-An error occured when stopping the oscillator. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{scif__uc3c_8h_a371afeca81ee2c2158e2c210f15440f9}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-stop\-\_\-rc120\-M@{scif\-\_\-stop\-\_\-rc120\-M}}
+\index{scif\-\_\-stop\-\_\-rc120\-M@{scif\-\_\-stop\-\_\-rc120\-M}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-stop\-\_\-rc120\-M}]{\setlength{\rightskip}{0pt plus 5cm}void scif\-\_\-stop\-\_\-rc120\-M (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a371afeca81ee2c2158e2c210f15440f9}
+
+
+\-Stop the 120\-M\-Hz internal \-R\-Cosc (\-R\-C120\-M) clock. 
+
+\hypertarget{scif__uc3c_8h_ab2638cbe755096f6c9782a4248bef530}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-stop\-\_\-rc8\-M@{scif\-\_\-stop\-\_\-rc8\-M}}
+\index{scif\-\_\-stop\-\_\-rc8\-M@{scif\-\_\-stop\-\_\-rc8\-M}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-stop\-\_\-rc8\-M}]{\setlength{\rightskip}{0pt plus 5cm}void scif\-\_\-stop\-\_\-rc8\-M (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_ab2638cbe755096f6c9782a4248bef530}
+
+
+\-Stop the 8\-M\-Hz internal \-R\-Cosc (\-R\-C8\-M) clock. 
+
+\hypertarget{scif__uc3c_8h_a8d9f1c5f02e409cac54b5e518eb6b717}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-wait\-\_\-for\-\_\-pll\-\_\-locked@{scif\-\_\-wait\-\_\-for\-\_\-pll\-\_\-locked}}
+\index{scif\-\_\-wait\-\_\-for\-\_\-pll\-\_\-locked@{scif\-\_\-wait\-\_\-for\-\_\-pll\-\_\-locked}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-wait\-\_\-for\-\_\-pll\-\_\-locked}]{\setlength{\rightskip}{0pt plus 5cm}long int scif\-\_\-wait\-\_\-for\-\_\-pll\-\_\-locked (
+\begin{DoxyParamCaption}
+\item[{{\bf scif\-\_\-pll\-\_\-t}}]{pll}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_a8d9f1c5f02e409cac54b5e518eb6b717}
+
+
+\-This function will wait for \-P\-L\-L locked. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pll} & \-The \-P\-L\-L to configure \mbox{[}\-I\-N\-P\-U\-T\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-P\-L\-L successfully started \\
+\hline
+{\em $<$0} & \-Error starting the \-P\-L\-L. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{scif__uc3c_8h_ada5eb12275d8fb7f8040bfcd043e5cc3}{
+\index{scif\-\_\-uc3c.\-h@{scif\-\_\-uc3c.\-h}!scif\-\_\-write\-\_\-gplp@{scif\-\_\-write\-\_\-gplp}}
+\index{scif\-\_\-write\-\_\-gplp@{scif\-\_\-write\-\_\-gplp}!scif_uc3c.h@{scif\-\_\-uc3c.\-h}}
+\subsubsection[{scif\-\_\-write\-\_\-gplp}]{\setlength{\rightskip}{0pt plus 5cm}void scif\-\_\-write\-\_\-gplp (
+\begin{DoxyParamCaption}
+\item[{int}]{gplp, }
+\item[{unsigned long}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{scif__uc3c_8h_ada5eb12275d8fb7f8040bfcd043e5cc3}
+
+
+\-Write into the \-S\-C\-I\-F \-G\-P\-L\-P registers. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em gplp} & \-G\-P\-L\-P register index (0,1,... depending on the number of \-G\-P\-L\-P registers for a given part) \\
+\hline
+{\em value} & \-Value to write \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,1371 @@
+\hypertarget{group__udd__group}{
+\section{\-U\-S\-B \-Device \-Driver (\-U\-D\-D)}
+\label{group__udd__group}\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+}
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structudd__setup__req__t}{udd\-\_\-setup\-\_\-req\-\_\-t}
+\item 
+struct \hyperlink{structudd__ctrl__request__t}{udd\-\_\-ctrl\-\_\-request\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Global variable to give and record information of the setup request management. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__udd__group_gaffd9b7cf165cd149868373fa12595d12}{\-Udd\-\_\-setup\-\_\-is\-\_\-in}()~(\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-I\-N == (udd\-\_\-g\-\_\-ctrlreq.\-req.\-bm\-Request\-Type \& \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Return true if the setup request {\itshape udd\-\_\-g\-\_\-ctrlreq\/} indicates \-I\-N data transfer. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__udd__group_gaf67b7c8de30fdc881b567385f2345926}{\-Udd\-\_\-setup\-\_\-is\-\_\-out}()~(\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T == (udd\-\_\-g\-\_\-ctrlreq.\-req.\-bm\-Request\-Type \& \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Return true if the setup request {\itshape udd\-\_\-g\-\_\-ctrlreq\/} indicates \-O\-U\-T data transfer. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__udd__group_ga85dc2b7b6c270e8dd8323fa4779a7ca2}{\-Udd\-\_\-setup\-\_\-type}()~(udd\-\_\-g\-\_\-ctrlreq.\-req.\-bm\-Request\-Type \& \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K)
+\begin{DoxyCompactList}\small\item\em \-Return the type of the \-S\-E\-T\-U\-P request {\itshape udd\-\_\-g\-\_\-ctrlreq\/}. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__udd__group_gac963bb7b8a965c2fec45a71c9faca6f5}{\-Udd\-\_\-setup\-\_\-recipient}()~(udd\-\_\-g\-\_\-ctrlreq.\-req.\-bm\-Request\-Type \& \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-M\-A\-S\-K)
+\begin{DoxyCompactList}\small\item\em \-Return the recipient of the \-S\-E\-T\-U\-P request {\itshape udd\-\_\-g\-\_\-ctrlreq\/}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint8\-\_\-t \hyperlink{group__udd__group_ga6f25ea016c07bd48c3074f51d8ef8b01}{udd\-\_\-ep\-\_\-id\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Endpoint identifier. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{group__udd__group_ga7ab8d43f0761ecfb4d48770ac4ebb661}{udd\-\_\-callback\-\_\-halt\-\_\-cleared\-\_\-t} )(void)
+\begin{DoxyCompactList}\small\item\em \-End of halt callback function type. \-Registered by routine udd\-\_\-ep\-\_\-wait\-\_\-stall\-\_\-clear() \-Callback called when endpoint stall is cleared. \end{DoxyCompactList}\item 
+typedef void($\ast$ \hyperlink{group__udd__group_gad866ed9444482edcf92a28dce807e3d3}{udd\-\_\-callback\-\_\-trans\-\_\-t} )(\hyperlink{group__udd__group_gac0f77f5a0e085af1242b48fd1054959a}{udd\-\_\-ep\-\_\-status\-\_\-t} status, iram\-\_\-size\-\_\-t nb\-\_\-transfered)
+\begin{DoxyCompactList}\small\item\em \-End of transfer callback function type. \-Registered by routine udd\-\_\-ep\-\_\-run() \-Callback called by \-U\-S\-B interrupt after data transfer or abort (reset,...). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group__udd__group_gac0f77f5a0e085af1242b48fd1054959a}{udd\-\_\-ep\-\_\-status\-\_\-t} \{ \hyperlink{group__udd__group_ggac0f77f5a0e085af1242b48fd1054959aad52bb23180c67dc3d6a1d1dfedf74102}{\-U\-D\-D\-\_\-\-E\-P\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-\_\-\-O\-K} =  0, 
+\hyperlink{group__udd__group_ggac0f77f5a0e085af1242b48fd1054959aa010443246cb439e4f6f52b13c9d6e29c}{\-U\-D\-D\-\_\-\-E\-P\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-\_\-\-A\-B\-O\-R\-T} =  1
+ \}
+\begin{DoxyCompactList}\small\item\em \-Endpoint transfer status \-Returned in parameters of callback register via udd\-\_\-ep\-\_\-run routine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__udd__group_ga14096700b3ed8c5168615c5c5ee1c68d}{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T} (1)
+\begin{DoxyCompactList}\small\item\em \-A \-U\-S\-B \-Device \-S\-E\-T\-U\-P request. \end{DoxyCompactList}\item 
+\hyperlink{group__udd__group_gabe317a1520896eaf568afab27dc71540}{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-R\-E\-S\-E\-T} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structudd__ctrl__request__t}{udd\-\_\-ctrl\-\_\-request\-\_\-t} \hyperlink{group__udd__group_ga360872da67c7f8ecebe1238bbd4a536e}{udd\-\_\-g\-\_\-ctrlreq}
+\begin{DoxyCompactList}\small\item\em \-Global variable to give and record information about setup request management. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Power management routine.}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__udd__group_gaf5ca2932775dabb853197df18706c469}{\-U\-S\-B\-C\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E\-\_\-\-U\-S\-B\-\_\-\-S\-U\-S\-P\-E\-N\-D}~\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-A\-T\-I\-C
+\begin{DoxyCompactList}\small\item\em \-Definition of sleep levels. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__udd__group_ga90aeabbf00db4be8f0a1feef5cf0bbb3}{\-U\-S\-B\-C\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E\-\_\-\-U\-S\-B\-\_\-\-I\-D\-L\-E}~\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-I\-D\-L\-E
+\end{DoxyCompactItemize}
+\subsection*{\-Control endpoint low level management routine.}
+\label{_amgrpc60f904f933dd5c177261b92bc2abc62}%
+ \-This function performs control endpoint mangement. \-It handle the \-S\-E\-T\-U\-P/\-D\-A\-T\-A/\-H\-A\-N\-D\-S\-H\-A\-K\-E phases of a control transaction. \begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group__udd__group_gabc925782d47feeb37f6f943579038b84}{udd\-\_\-ctrl\-\_\-ep\-\_\-state\-\_\-t} \{ \*
+\hyperlink{group__udd__group_ggabc925782d47feeb37f6f943579038b84a2357a1ac77f59da70848f4121a016e77}{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-S\-E\-T\-U\-P} =  0, 
+\hyperlink{group__udd__group_ggabc925782d47feeb37f6f943579038b84acf3cc280a0061ecf321e0191d37dc53c}{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-D\-A\-T\-A\-\_\-\-O\-U\-T} =  1, 
+\hyperlink{group__udd__group_ggabc925782d47feeb37f6f943579038b84a57e63cb5de1f85c276dbfa8c3c00deed}{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-D\-A\-T\-A\-\_\-\-I\-N} =  2, 
+\hyperlink{group__udd__group_ggabc925782d47feeb37f6f943579038b84aadbf4f42e07b8589262e727b3cf8b900}{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-H\-A\-N\-D\-S\-H\-A\-K\-E\-\_\-\-W\-A\-I\-T\-\_\-\-I\-N\-\_\-\-Z\-L\-P} =  3, 
+\*
+\hyperlink{group__udd__group_ggabc925782d47feeb37f6f943579038b84ae5dd6cabf3ebb1aab6a80d7a92a89513}{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-H\-A\-N\-D\-S\-H\-A\-K\-E\-\_\-\-W\-A\-I\-T\-\_\-\-O\-U\-T\-\_\-\-Z\-L\-P} =  4, 
+\hyperlink{group__udd__group_ggabc925782d47feeb37f6f943579038b84a8d44562cd9ac18661adcf35015f8972e}{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-S\-T\-A\-L\-L\-\_\-\-R\-E\-Q} =  5
+ \}
+\begin{DoxyCompactList}\small\item\em \-Bit definitions about endpoint control state machine for udd\-\_\-ep\-\_\-control\-\_\-state. \end{DoxyCompactList}\item 
+\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-W\-O\-R\-D\-\_\-\-A\-L\-I\-G\-N\-E\-D \*
+\hyperlink{structudd__ctrl__request__t}{udd\-\_\-ctrl\-\_\-request\-\_\-t} \hyperlink{group__udd__group_ga2a41c2b14c5be825bdce7fde8c365a30}{udd\-\_\-g\-\_\-ctrlreq}
+\begin{DoxyCompactList}\small\item\em \-Global variable to give and record information about setup request management. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Management of bulk/interrupt/isochronous endpoints}
+\label{_amgrpeb26be1d47656a473f2b25d5d9510dc8}%
+\-Buffer to store the data received on control endpoint (\-S\-E\-T\-U\-P/\-O\-U\-T endpoint 0)
+
+\-Used to avoid a \-R\-A\-M buffer overflow in case of the payload buffer is smaller than control endpoint size
+
+\-The \-U\-D\-D manages the data transfer on endpoints\-:
+\begin{DoxyItemize}
+\item \-Start data tranfer on endpoint with \-U\-S\-B \-Device \-D\-M\-A
+\item \-Send a \-Z\-L\-P packet if requested
+\item \-Call callback registered to signal end of transfer \-The transfer abort and stall feature are supported. 
+\end{DoxyItemize}\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{group__udd__group_gaa4cac8c35ae056e26cf4ab5b426bbe09}{udd\-\_\-include\-\_\-vbus\-\_\-monitoring} (void)
+\begin{DoxyCompactList}\small\item\em \-Authorizes the \-V\-B\-U\-S event. \end{DoxyCompactList}\item 
+void \hyperlink{group__udd__group_ga9792d1899ae058e3984d6a622fe2ad42}{udd\-\_\-enable} (void)
+\begin{DoxyCompactList}\small\item\em \-Enables the \-U\-S\-B \-Device mode. \end{DoxyCompactList}\item 
+void \hyperlink{group__udd__group_gab283432057b934e9d73ac9282d9b0f11}{udd\-\_\-disable} (void)
+\begin{DoxyCompactList}\small\item\em \-Disables the \-U\-S\-B \-Device mode. \end{DoxyCompactList}\item 
+void \hyperlink{group__udd__group_ga7a7c0d9236c922c2af33c6702565a99f}{udd\-\_\-attach} (void)
+\begin{DoxyCompactList}\small\item\em \-Attach device to the bus when possible. \end{DoxyCompactList}\item 
+void \hyperlink{group__udd__group_ga03e59eaa264f1dbe5a52559311d0520e}{udd\-\_\-detach} (void)
+\begin{DoxyCompactList}\small\item\em \-Detaches the device from the bus. \end{DoxyCompactList}\item 
+bool \hyperlink{group__udd__group_ga85f403ddb78776b1ba014dafd3ffec2c}{udd\-\_\-is\-\_\-high\-\_\-speed} (void)
+\begin{DoxyCompactList}\small\item\em \-Test whether the \-U\-S\-B \-Device \-Controller is running at high speed or not. \end{DoxyCompactList}\item 
+void \hyperlink{group__udd__group_ga05da762e0faf9d478e532de40afa71f6}{udd\-\_\-set\-\_\-address} (uint8\-\_\-t address)
+\begin{DoxyCompactList}\small\item\em \-Changes the \-U\-S\-B address of device. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__udd__group_gaebd36638d482f6df00a8aff006ef2246}{udd\-\_\-getaddress} (void)
+\begin{DoxyCompactList}\small\item\em \-Returns the \-U\-S\-B address of device. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{group__udd__group_ga96dc248cc05e07ffe2cf21e4d7465320}{udd\-\_\-get\-\_\-frame\-\_\-number} (void)
+\begin{DoxyCompactList}\small\item\em \-Returns the current start of frame number. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{group__udd__group_ga63047eec59b8e8798ca1d3366472d82b}{udd\-\_\-get\-\_\-micro\-\_\-frame\-\_\-number} (void)
+\begin{DoxyCompactList}\small\item\em \-Returns the current micro start of frame number. \end{DoxyCompactList}\item 
+void \hyperlink{group__udd__group_ga14ae6068206556d6ae8766b1baa2f686}{udd\-\_\-send\-\_\-wake\-\_\-up} (void)
+\begin{DoxyCompactList}\small\item\em \-The \-U\-S\-B driver sends a resume signal called \-Upstream \-Resume. \end{DoxyCompactList}\item 
+void \hyperlink{group__udd__group_ga017ef5ea7626be258c24d345218976f9}{udd\-\_\-set\-\_\-setup\-\_\-payload} (uint8\-\_\-t $\ast$payload, uint16\-\_\-t payload\-\_\-size)
+\begin{DoxyCompactList}\small\item\em \-Load setup payload. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-U\-S\-B\-C \-Device \-I\-P properties}
+\label{_amgrp55d0406ba5e21eb26b437407f55e3f47}%
+ \-These macros give access to \-I\-P properties \begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__udd__group_ga4f3fc518ef0e369cc01a7bf7c6516844}{\-U\-D\-D\-\_\-get\-\_\-endpoint\-\_\-max\-\_\-nbr}()~(((\-Rd\-\_\-bitfield(\-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-ufeatures, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-F\-E\-A\-T\-U\-R\-E\-S\-\_\-\-E\-P\-T\-\_\-\-N\-B\-R\-\_\-\-M\-A\-X\-\_\-\-M\-A\-S\-K) -\/ 1) \& ((1 $<$$<$ \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-F\-E\-A\-T\-U\-R\-E\-S\-\_\-\-E\-P\-T\-\_\-\-N\-B\-R\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E) -\/ 1)) + 1)
+\begin{DoxyCompactList}\small\item\em \-Get maximal number of endpoints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-U\-S\-B\-C \-Device speeds management}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__udd__group_gaf272a0d4210ee260d0a267bba460fb0c}{udd\-\_\-low\-\_\-speed\-\_\-enable}()~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-C\-O\-N\-\_\-\-L\-S\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Enable/disable device low-\/speed mode. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__udd__group_ga6471bbaea371bb9bb2654333236c9f29}{udd\-\_\-low\-\_\-speed\-\_\-disable}()~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-C\-O\-N\-\_\-\-L\-S\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__udd__group_gaedea021600d07a71a1672b393c550c39}{\-Is\-\_\-udd\-\_\-low\-\_\-speed\-\_\-enable}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-C\-O\-N\-\_\-\-L\-S\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Test if device low-\/speed mode is forced. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__udd__group_gae014bb3adcdf212fd61196307be88802}{udd\-\_\-high\-\_\-speed\-\_\-enable}()~do \{ \} while (0)
+\item 
+\#define \hyperlink{group__udd__group_ga7adf42a2ec72e7f2429a9b02799333af}{udd\-\_\-high\-\_\-speed\-\_\-disable}()~do \{ \} while (0)
+\item 
+\#define \hyperlink{group__udd__group_ga977c78f164f32fa910802518aab7b0ed}{\-Is\-\_\-udd\-\_\-full\-\_\-speed\-\_\-mode}()~true
+\end{DoxyCompactItemize}
+\subsection*{\-U\-S\-B\-C \-Device vbus management}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__udd__group_gaf80c5f873a9d926ab3324b6a91dfd872}{udd\-\_\-enable\-\_\-vbus\-\_\-interrupt}()~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-V\-B\-U\-S\-T\-E\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__udd__group_gad11887e29c08ad9cc6d67e3e6b4f9e9a}{udd\-\_\-disable\-\_\-vbus\-\_\-interrupt}()~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-V\-B\-U\-S\-T\-E\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__udd__group_gaed8ac44b2b2082c1797e873e120867c8}{\-Is\-\_\-udd\-\_\-vbus\-\_\-interrupt\-\_\-enabled}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-V\-B\-U\-S\-T\-E\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__udd__group_ga10bc6d84d73e1ecccae3318d4098c41a}{\-Is\-\_\-udd\-\_\-vbus\-\_\-high}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbsta, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-\_\-\-V\-B\-U\-S\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__udd__group_ga6f962d911e1863d143614d1ee01df89a}{\-Is\-\_\-udd\-\_\-vbus\-\_\-low}()~(!\-Is\-\_\-udd\-\_\-vbus\-\_\-high())
+\item 
+\#define \hyperlink{group__udd__group_gac6886b5956566ddb81744bbcfb27c08d}{udd\-\_\-ack\-\_\-vbus\-\_\-transition}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-C\-L\-R\-\_\-\-V\-B\-U\-S\-T\-I\-C\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_ga8761342ea2dc32e0f0252508b1f7c47a}{udd\-\_\-raise\-\_\-vbus\-\_\-transition}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-S\-E\-T\-\_\-\-V\-B\-U\-S\-T\-I\-S\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_gafb6dd005e6fef2574f054b8fe5e8d008}{\-Is\-\_\-udd\-\_\-vbus\-\_\-transition}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbsta, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-\_\-\-V\-B\-U\-S\-T\-I\-\_\-\-M\-A\-S\-K))
+\end{DoxyCompactItemize}
+\subsection*{\-U\-S\-B\-C device attach control}
+\label{_amgrp0e11470ac1c73a71585f2d1aea6db499}%
+ \-These macros manage the \-U\-S\-B\-C \-Device attach. \begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__udd__group_ga1863dacf593fb3c1b5f275b48f1e529a}{udd\-\_\-detach\-\_\-device}()~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-C\-O\-N\-\_\-\-D\-E\-T\-A\-C\-H\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em detaches from \-U\-S\-B bus \end{DoxyCompactList}\item 
+\#define \hyperlink{group__udd__group_ga55686d13fc7b23f4945f527f0dd15906}{udd\-\_\-attach\-\_\-device}()~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-C\-O\-N\-\_\-\-D\-E\-T\-A\-C\-H\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em attaches to \-U\-S\-B bus \end{DoxyCompactList}\item 
+\#define \hyperlink{group__udd__group_gaf8c45e04066c136079dd296c2e28bb62}{\-Is\-\_\-udd\-\_\-detached}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-C\-O\-N\-\_\-\-D\-E\-T\-A\-C\-H\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em test if the device is detached \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-U\-S\-B\-C device bus events control}
+\label{_amgrp8685ab0e6929620c4e0d67ee25ea7fa9}%
+ \-These macros manage the \-U\-S\-B\-C \-Device bus events. \begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__udd__group_gacc4b62140d09930dd38b10f766d30517}{udd\-\_\-initiate\-\_\-remote\-\_\-wake\-\_\-up}()~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-C\-O\-N\-\_\-\-R\-M\-W\-K\-U\-P\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__udd__group_gaf3dab5078ad3286ac92d7b3a8cf8933a}{\-Is\-\_\-udd\-\_\-pending\-\_\-remote\-\_\-wake\-\_\-up}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-C\-O\-N\-\_\-\-R\-M\-W\-K\-U\-P\-\_\-\-M\-A\-S\-K))
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__udd__group_ga0f538482266ca447cbfcfb9a5eb2bd64}{udd\-\_\-enable\-\_\-remote\-\_\-wake\-\_\-up\-\_\-interrupt}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-S\-E\-T\-\_\-\-U\-P\-R\-S\-M\-E\-S\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_gad53f9dce1280a2b17218090cde573368}{udd\-\_\-disable\-\_\-remote\-\_\-wake\-\_\-up\-\_\-interrupt}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-C\-L\-R\-\_\-\-U\-P\-R\-S\-M\-E\-C\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_ga2a4c5935ae7ae26e8edf63a27d3d30d9}{\-Is\-\_\-udd\-\_\-remote\-\_\-wake\-\_\-up\-\_\-interrupt\-\_\-enabled}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinte, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-\_\-\-U\-P\-R\-S\-M\-E\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__udd__group_ga39c4b005d3194988c8969ea622eed23d}{udd\-\_\-ack\-\_\-remote\-\_\-wake\-\_\-up\-\_\-start}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-C\-L\-R\-\_\-\-U\-P\-R\-S\-M\-C\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_ga8e9d45e299d7a26b65bf8a98c8e27546}{udd\-\_\-raise\-\_\-remote\-\_\-wake\-\_\-up\-\_\-start}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-S\-E\-T\-\_\-\-U\-P\-R\-S\-M\-S\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_gacfe73866ea62b418fe69fa061ef6edd3}{\-Is\-\_\-udd\-\_\-remote\-\_\-wake\-\_\-up\-\_\-start}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udint, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-\_\-\-U\-P\-R\-S\-M\-\_\-\-M\-A\-S\-K))
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__udd__group_gad7f806ed3fbecb776acc5dcedcf81f3e}{udd\-\_\-enable\-\_\-resume\-\_\-interrupt}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-S\-E\-T\-\_\-\-E\-O\-R\-S\-M\-E\-S\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_ga8a97ab6519a34ae7d9135fe70c6719e4}{udd\-\_\-disable\-\_\-resume\-\_\-interrupt}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-C\-L\-R\-\_\-\-E\-O\-R\-S\-M\-E\-C\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_ga3cad513921d4190558aa7744d672bfc3}{\-Is\-\_\-udd\-\_\-resume\-\_\-interrupt\-\_\-enabled}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinte, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-\_\-\-E\-O\-R\-S\-M\-E\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__udd__group_gabc25572243c4ab4600a1a870b4b6028b}{udd\-\_\-ack\-\_\-resume}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-C\-L\-R\-\_\-\-E\-O\-R\-S\-M\-C\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_ga32a47c6752a2cac56874691e34728ba5}{udd\-\_\-raise\-\_\-resume}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-S\-E\-T\-\_\-\-E\-O\-R\-S\-M\-S\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_ga1b2ed8acdccb1fa2d295610349979fe5}{\-Is\-\_\-udd\-\_\-resume}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udint, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-\_\-\-E\-O\-R\-S\-M\-\_\-\-M\-A\-S\-K))
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__udd__group_ga1b192f6b945ae10b536deca002c2a1aa}{udd\-\_\-enable\-\_\-wake\-\_\-up\-\_\-interrupt}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-S\-E\-T\-\_\-\-W\-A\-K\-E\-U\-P\-E\-S\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_gaeac784d6d727d949449042d979d9a2ff}{udd\-\_\-disable\-\_\-wake\-\_\-up\-\_\-interrupt}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-C\-L\-R\-\_\-\-W\-A\-K\-E\-U\-P\-E\-C\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_gaeab0126ceda728b5e100675a1368219a}{\-Is\-\_\-udd\-\_\-wake\-\_\-up\-\_\-interrupt\-\_\-enabled}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinte, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-\_\-\-W\-A\-K\-E\-U\-P\-E\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__udd__group_gadf64e48ecbcfc8082ac438156d43311d}{udd\-\_\-ack\-\_\-wake\-\_\-up}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-C\-L\-R\-\_\-\-W\-A\-K\-E\-U\-P\-C\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_ga6b5a8ee09140c447b077c66c2e7668fe}{udd\-\_\-raise\-\_\-wake\-\_\-up}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-S\-E\-T\-\_\-\-W\-A\-K\-E\-U\-P\-S\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_ga27099aac5c46e62ca82775e957ae52a4}{\-Is\-\_\-udd\-\_\-wake\-\_\-up}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udint, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-\_\-\-W\-A\-K\-E\-U\-P\-\_\-\-M\-A\-S\-K))
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__udd__group_gaa4f338d7c02eb47691d55ea26a0b32d7}{udd\-\_\-enable\-\_\-reset\-\_\-interrupt}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-S\-E\-T\-\_\-\-E\-O\-R\-S\-T\-E\-S\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_ga4f19c394e2352deb16c13e15c34c59ff}{udd\-\_\-disable\-\_\-reset\-\_\-interrupt}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-C\-L\-R\-\_\-\-E\-O\-R\-S\-T\-E\-C\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_gae0697533a9d3b806351a6a075100dd9f}{\-Is\-\_\-udd\-\_\-reset\-\_\-interrupt\-\_\-enabled}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinte, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-\_\-\-E\-O\-R\-S\-T\-E\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__udd__group_gae28a4338a4679d081090a536f7bd3ee1}{udd\-\_\-ack\-\_\-reset}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-C\-L\-R\-\_\-\-E\-O\-R\-S\-T\-C\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_ga6c25f895374748a59eaa9a84356a5d58}{udd\-\_\-raise\-\_\-reset}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-S\-E\-T\-\_\-\-E\-O\-R\-S\-T\-S\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_ga8bcb98dbb6f1255a0f25ae73035927db}{\-Is\-\_\-udd\-\_\-reset}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udint, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-\_\-\-E\-O\-R\-S\-T\-\_\-\-M\-A\-S\-K))
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__udd__group_ga307066f7fb27b90020e50f7311b37ff6}{udd\-\_\-enable\-\_\-sof\-\_\-interrupt}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-S\-E\-T\-\_\-\-S\-O\-F\-E\-S\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_ga1210d31d31bcbcaf8374ac4db1521306}{udd\-\_\-disable\-\_\-sof\-\_\-interrupt}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-C\-L\-R\-\_\-\-S\-O\-F\-E\-C\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_gacc090cdf3bd05a4da6888695fd95786b}{\-Is\-\_\-udd\-\_\-sof\-\_\-interrupt\-\_\-enabled}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinte, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-\_\-\-S\-O\-F\-E\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__udd__group_ga0b4140471f2e53d93cfe7f05ebd907d7}{udd\-\_\-ack\-\_\-sof}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-C\-L\-R\-\_\-\-S\-O\-F\-C\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_ga3747765066014e9bbde1bb263334c8a0}{udd\-\_\-raise\-\_\-sof}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-S\-E\-T\-\_\-\-S\-O\-F\-S\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_ga5b5fcaa7cfa64de404ff9a3a257839a9}{\-Is\-\_\-udd\-\_\-sof}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udint, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-\_\-\-S\-O\-F\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__udd__group_gac175ccc890008605691939957098a246}{udd\-\_\-frame\-\_\-number}()~(\-Rd\-\_\-bitfield(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udfnum, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-F\-N\-U\-M\-\_\-\-F\-N\-U\-M\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__udd__group_ga6f519fdc7583b259eb11d33555813182}{\-Is\-\_\-udd\-\_\-frame\-\_\-number\-\_\-crc\-\_\-error}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udfnum, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-F\-N\-U\-M\-\_\-\-F\-N\-C\-E\-R\-R\-\_\-\-M\-A\-S\-K))
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__udd__group_ga298cc43d16d7d9609d58adffe696b5db}{udd\-\_\-enable\-\_\-suspend\-\_\-interrupt}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-S\-E\-T\-\_\-\-S\-U\-S\-P\-E\-S\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_ga1470fba0dbc68e890140d806277ee8c1}{udd\-\_\-disable\-\_\-suspend\-\_\-interrupt}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-C\-L\-R\-\_\-\-S\-U\-S\-P\-E\-C\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_ga2a9c882005f263ea9e181273bf316e27}{\-Is\-\_\-udd\-\_\-suspend\-\_\-interrupt\-\_\-enabled}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinte, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-\_\-\-S\-U\-S\-P\-E\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__udd__group_ga9a61b0228571cf2c0225c86f3e3a618e}{udd\-\_\-ack\-\_\-suspend}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-C\-L\-R\-\_\-\-S\-U\-S\-P\-C\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_ga997d9f1f31efd62ddcce775a4f40a0bd}{udd\-\_\-raise\-\_\-suspend}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-S\-E\-T\-\_\-\-S\-U\-S\-P\-S\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__udd__group_gadfe9e8bbc2b3afefb19bcfd99db8b3fd}{\-Is\-\_\-udd\-\_\-suspend}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udint, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-\_\-\-S\-U\-S\-P\-\_\-\-M\-A\-S\-K))
+\end{DoxyCompactItemize}
+\subsection*{\-High speed test mode management}
+\label{_amgrp2db3720a79ccf99f281dc8b84ab95b6b}%
+ \-The following functions allow the device to jump to a specific test mode required in high speed mode. \begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__udd__group_ga43ba1e91e69f84c1481a659ff8eff143}{udd\-\_\-test\-\_\-mode\-\_\-j} (void)
+\item 
+void \hyperlink{group__udd__group_ga2acd547bcd2b470ee4e1ce34087926a8}{udd\-\_\-test\-\_\-mode\-\_\-k} (void)
+\item 
+void \hyperlink{group__udd__group_gabec7e8b6464e92ca9c8f32c59113bcbb}{udd\-\_\-test\-\_\-mode\-\_\-se0\-\_\-nak} (void)
+\item 
+void \hyperlink{group__udd__group_gab72f68f8d1a50f7e734595a2ff626380}{udd\-\_\-test\-\_\-mode\-\_\-packet} (void)
+\end{DoxyCompactItemize}
+\subsection*{\-U\-D\-C callbacks to provide for \-U\-D\-D}
+\label{_amgrpac0b98f9d000f73c8d3a8c3cb0ebf40a}%
+ \-The following callbacks are used by \-U\-D\-D. \begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{group__udd__group_ga58c2916d7984e0e5b2143cadf4af6080}{udc\-\_\-process\-\_\-setup} (void)
+\begin{DoxyCompactList}\small\item\em \-Decodes and manages a setup request. \end{DoxyCompactList}\item 
+void \hyperlink{group__udd__group_ga11a32ff7928ba06d3b59e95e0a2b7a92}{udc\-\_\-reset} (void)
+\begin{DoxyCompactList}\small\item\em \-Reset the \-U\-D\-C. \end{DoxyCompactList}\item 
+void \hyperlink{group__udd__group_ga4afae313045f44b5eb4c60957ab8ef4e}{udc\-\_\-sof\-\_\-notify} (void)
+\begin{DoxyCompactList}\small\item\em \-To signal that a \-S\-O\-F is occured. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\hypertarget{group__udd__group_USBC_CONF}{}\subsection{\-U\-S\-B\-C Custom configuration}\label{group__udd__group_USBC_CONF}
+\-The following \-U\-S\-B\-C driver configuration must be included in the \hyperlink{conf__usb_8h}{conf\-\_\-usb.\-h} file of the application.
+
+\-U\-D\-D\-\_\-\-U\-S\-B\-\_\-\-I\-N\-T\-\_\-\-L\-E\-V\-E\-L\par
+ \-Option to change the interrupt priority (0 to 3) by default 0 (recommended).\hypertarget{group__udd__group_Callbacks}{}\subsection{management}\label{group__udd__group_Callbacks}
+\-The \-U\-S\-B driver is fully managed by interrupt and does not request periodique task. \-Thereby, the \-U\-S\-B events use callbacks to transfer the information. \-The callbacks are declared in static during compilation or in variable during code execution.
+
+\-Static declarations defined in \hyperlink{conf__usb_8h}{conf\-\_\-usb.\-h}\-:
+\begin{DoxyItemize}
+\item \hyperlink{conf__usb_8h_a009dfd7822890bfe9a8975f14d952508}{\-U\-D\-C\-\_\-\-V\-B\-U\-S\-\_\-\-E\-V\-E\-N\-T(bool b\-\_\-present)}\par
+ \-To signal \-Vbus level change
+\item \-U\-D\-C\-\_\-\-S\-U\-S\-P\-E\-N\-D\-\_\-\-E\-V\-E\-N\-T()\par
+ \-Called when \-U\-S\-B bus enter in suspend mode
+\item \-U\-D\-C\-\_\-\-R\-E\-S\-U\-M\-E\-\_\-\-E\-V\-E\-N\-T()\par
+ \-Called when \-U\-S\-B bus is wakeup
+\item \-U\-D\-C\-\_\-\-S\-O\-F\-\_\-\-E\-V\-E\-N\-T()\par
+ \-Called for each received \-S\-O\-F, \-Note\-: \-Each 1ms in \-H\-S/\-F\-S mode only.
+\end{DoxyItemize}
+
+\-Dynamic callbacks, called \char`\"{}endpoint job\char`\"{} , are registered in udd\-\_\-ep\-\_\-job\-\_\-t structure via the following functions\-:
+\begin{DoxyItemize}
+\item udd\-\_\-ep\-\_\-run()\par
+ \-To call it when a transfer is finish
+\item udd\-\_\-ep\-\_\-wait\-\_\-stall\-\_\-clear()\par
+ \-To call it when a endpoint halt is disabled
+\end{DoxyItemize}\hypertarget{group__udd__group_Power}{}\subsection{mode management}\label{group__udd__group_Power}
+\-The \-Sleep modes authorized \-:
+\begin{DoxyItemize}
+\item in \-U\-S\-B \-I\-D\-L\-E state, the \-U\-S\-B\-C needs of \-U\-S\-B clock and authorizes up to \-I\-D\-L\-E mode
+\item in \-U\-S\-B \-S\-U\-S\-P\-E\-N\-D state, the \-U\-S\-B\-C no needs \-U\-S\-B clock but requests a minimum clock restart timing. \-Thus, it authorizes up to \-S\-T\-A\-T\-I\-C or \-S\-T\-A\-N\-D\-B\-Y mode.
+\item \-V\-B\-U\-S monitoring used in \-U\-S\-B \-Self-\/\-Power mode authorizes up to \-S\-T\-O\-P mode
+\end{DoxyItemize}
+
+\-The \-U\-S\-B\-C\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E\-\_\-\-U\-S\-B\-\_\-\-I\-D\-L\-E equals \-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-I\-D\-L\-E.
+
+\-The \-U\-S\-B\-C\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E\-\_\-\-U\-S\-B\-\_\-\-S\-U\-S\-P\-E\-N\-D depends on \-U\-S\-B \-Power mode, \-U\-S\-B clock startup timing and \-U\-S\-B \-Speed mode\-: $|$ \-Power \-Mode $|$ \-Speed mode $|$ \-Clock \-Startup $|$ \-Sleep mode authorized $|$ $|$ \-X $|$ \-L\-S, \-F\-S $|$ $>$10ms $|$ \-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-D\-B\-Y $|$ $|$ \-X $|$ \-H\-S $|$ $>$3ms $|$ \-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-D\-B\-Y $|$ $|$ \-Self-\/\-Power $|$ \-L\-S, \-F\-S $|$ $<$=10ms $|$ \-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-O\-P $|$ $|$ \-Self-\/\-Power $|$ \-H\-S $|$ $<$=3ms $|$ \-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-O\-P $|$ $|$ \-Bus-\/\-Power $|$ \-L\-S, \-F\-S $|$ $<$=10ms $|$ \-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-A\-T\-I\-C $|$ $|$ \-Bus-\/\-Power $|$ \-H\-S $|$ $<$=3ms $|$ \-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-A\-T\-I\-C $|$
+
+\-U\-S\-B\-C low-\/level driver for \-U\-S\-B \-Device mode
+
+\begin{DoxyWarning}{\-Warning}
+\-Bit-\/masks are used instead of bit-\/fields because \-P\-B registers require 32-\/bit write accesses while \-A\-V\-R32-\/\-G\-C\-C 4.\-0.\-2 builds 8-\/bit accesses even when volatile unsigned int bit-\/fields are specified.
+\end{DoxyWarning}
+\-The \-U\-D\-D driver provides a low-\/level abstraction of the device controller hardware. \-Most events coming from the hardware such as interrupts, which may cause the \-U\-D\-D to call into the \-U\-D\-C and \-U\-D\-I. 
+
+\subsection{\-Define \-Documentation}
+\hypertarget{group__udd__group_gaf8c45e04066c136079dd296c2e28bb62}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Is\-\_\-udd\-\_\-detached@{\-Is\-\_\-udd\-\_\-detached}}
+\index{\-Is\-\_\-udd\-\_\-detached@{\-Is\-\_\-udd\-\_\-detached}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Is\-\_\-udd\-\_\-detached}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-udd\-\_\-detached(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-C\-O\-N\-\_\-\-D\-E\-T\-A\-C\-H\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_gaf8c45e04066c136079dd296c2e28bb62}
+
+
+test if the device is detached 
+
+\hypertarget{group__udd__group_ga6f519fdc7583b259eb11d33555813182}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Is\-\_\-udd\-\_\-frame\-\_\-number\-\_\-crc\-\_\-error@{\-Is\-\_\-udd\-\_\-frame\-\_\-number\-\_\-crc\-\_\-error}}
+\index{\-Is\-\_\-udd\-\_\-frame\-\_\-number\-\_\-crc\-\_\-error@{\-Is\-\_\-udd\-\_\-frame\-\_\-number\-\_\-crc\-\_\-error}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Is\-\_\-udd\-\_\-frame\-\_\-number\-\_\-crc\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-udd\-\_\-frame\-\_\-number\-\_\-crc\-\_\-error(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udfnum, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-F\-N\-U\-M\-\_\-\-F\-N\-C\-E\-R\-R\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_ga6f519fdc7583b259eb11d33555813182}
+\hypertarget{group__udd__group_ga977c78f164f32fa910802518aab7b0ed}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Is\-\_\-udd\-\_\-full\-\_\-speed\-\_\-mode@{\-Is\-\_\-udd\-\_\-full\-\_\-speed\-\_\-mode}}
+\index{\-Is\-\_\-udd\-\_\-full\-\_\-speed\-\_\-mode@{\-Is\-\_\-udd\-\_\-full\-\_\-speed\-\_\-mode}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Is\-\_\-udd\-\_\-full\-\_\-speed\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-udd\-\_\-full\-\_\-speed\-\_\-mode(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~true}}
+\label{group__udd__group_ga977c78f164f32fa910802518aab7b0ed}
+\hypertarget{group__udd__group_gaedea021600d07a71a1672b393c550c39}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Is\-\_\-udd\-\_\-low\-\_\-speed\-\_\-enable@{\-Is\-\_\-udd\-\_\-low\-\_\-speed\-\_\-enable}}
+\index{\-Is\-\_\-udd\-\_\-low\-\_\-speed\-\_\-enable@{\-Is\-\_\-udd\-\_\-low\-\_\-speed\-\_\-enable}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Is\-\_\-udd\-\_\-low\-\_\-speed\-\_\-enable}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-udd\-\_\-low\-\_\-speed\-\_\-enable(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-C\-O\-N\-\_\-\-L\-S\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_gaedea021600d07a71a1672b393c550c39}
+
+
+\-Test if device low-\/speed mode is forced. 
+
+\hypertarget{group__udd__group_gaf3dab5078ad3286ac92d7b3a8cf8933a}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Is\-\_\-udd\-\_\-pending\-\_\-remote\-\_\-wake\-\_\-up@{\-Is\-\_\-udd\-\_\-pending\-\_\-remote\-\_\-wake\-\_\-up}}
+\index{\-Is\-\_\-udd\-\_\-pending\-\_\-remote\-\_\-wake\-\_\-up@{\-Is\-\_\-udd\-\_\-pending\-\_\-remote\-\_\-wake\-\_\-up}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Is\-\_\-udd\-\_\-pending\-\_\-remote\-\_\-wake\-\_\-up}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-udd\-\_\-pending\-\_\-remote\-\_\-wake\-\_\-up(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-C\-O\-N\-\_\-\-R\-M\-W\-K\-U\-P\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_gaf3dab5078ad3286ac92d7b3a8cf8933a}
+\hypertarget{group__udd__group_ga2a4c5935ae7ae26e8edf63a27d3d30d9}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Is\-\_\-udd\-\_\-remote\-\_\-wake\-\_\-up\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-udd\-\_\-remote\-\_\-wake\-\_\-up\-\_\-interrupt\-\_\-enabled}}
+\index{\-Is\-\_\-udd\-\_\-remote\-\_\-wake\-\_\-up\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-udd\-\_\-remote\-\_\-wake\-\_\-up\-\_\-interrupt\-\_\-enabled}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Is\-\_\-udd\-\_\-remote\-\_\-wake\-\_\-up\-\_\-interrupt\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-udd\-\_\-remote\-\_\-wake\-\_\-up\-\_\-interrupt\-\_\-enabled(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinte, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-\_\-\-U\-P\-R\-S\-M\-E\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_ga2a4c5935ae7ae26e8edf63a27d3d30d9}
+\hypertarget{group__udd__group_gacfe73866ea62b418fe69fa061ef6edd3}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Is\-\_\-udd\-\_\-remote\-\_\-wake\-\_\-up\-\_\-start@{\-Is\-\_\-udd\-\_\-remote\-\_\-wake\-\_\-up\-\_\-start}}
+\index{\-Is\-\_\-udd\-\_\-remote\-\_\-wake\-\_\-up\-\_\-start@{\-Is\-\_\-udd\-\_\-remote\-\_\-wake\-\_\-up\-\_\-start}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Is\-\_\-udd\-\_\-remote\-\_\-wake\-\_\-up\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-udd\-\_\-remote\-\_\-wake\-\_\-up\-\_\-start(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udint, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-\_\-\-U\-P\-R\-S\-M\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_gacfe73866ea62b418fe69fa061ef6edd3}
+\hypertarget{group__udd__group_ga8bcb98dbb6f1255a0f25ae73035927db}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Is\-\_\-udd\-\_\-reset@{\-Is\-\_\-udd\-\_\-reset}}
+\index{\-Is\-\_\-udd\-\_\-reset@{\-Is\-\_\-udd\-\_\-reset}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Is\-\_\-udd\-\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-udd\-\_\-reset(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udint, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-\_\-\-E\-O\-R\-S\-T\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_ga8bcb98dbb6f1255a0f25ae73035927db}
+\hypertarget{group__udd__group_gae0697533a9d3b806351a6a075100dd9f}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Is\-\_\-udd\-\_\-reset\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-udd\-\_\-reset\-\_\-interrupt\-\_\-enabled}}
+\index{\-Is\-\_\-udd\-\_\-reset\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-udd\-\_\-reset\-\_\-interrupt\-\_\-enabled}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Is\-\_\-udd\-\_\-reset\-\_\-interrupt\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-udd\-\_\-reset\-\_\-interrupt\-\_\-enabled(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinte, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-\_\-\-E\-O\-R\-S\-T\-E\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_gae0697533a9d3b806351a6a075100dd9f}
+\hypertarget{group__udd__group_ga1b2ed8acdccb1fa2d295610349979fe5}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Is\-\_\-udd\-\_\-resume@{\-Is\-\_\-udd\-\_\-resume}}
+\index{\-Is\-\_\-udd\-\_\-resume@{\-Is\-\_\-udd\-\_\-resume}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Is\-\_\-udd\-\_\-resume}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-udd\-\_\-resume(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udint, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-\_\-\-E\-O\-R\-S\-M\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_ga1b2ed8acdccb1fa2d295610349979fe5}
+\hypertarget{group__udd__group_ga3cad513921d4190558aa7744d672bfc3}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Is\-\_\-udd\-\_\-resume\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-udd\-\_\-resume\-\_\-interrupt\-\_\-enabled}}
+\index{\-Is\-\_\-udd\-\_\-resume\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-udd\-\_\-resume\-\_\-interrupt\-\_\-enabled}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Is\-\_\-udd\-\_\-resume\-\_\-interrupt\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-udd\-\_\-resume\-\_\-interrupt\-\_\-enabled(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinte, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-\_\-\-E\-O\-R\-S\-M\-E\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_ga3cad513921d4190558aa7744d672bfc3}
+\hypertarget{group__udd__group_ga5b5fcaa7cfa64de404ff9a3a257839a9}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Is\-\_\-udd\-\_\-sof@{\-Is\-\_\-udd\-\_\-sof}}
+\index{\-Is\-\_\-udd\-\_\-sof@{\-Is\-\_\-udd\-\_\-sof}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Is\-\_\-udd\-\_\-sof}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-udd\-\_\-sof(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udint, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-\_\-\-S\-O\-F\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_ga5b5fcaa7cfa64de404ff9a3a257839a9}
+\hypertarget{group__udd__group_gacc090cdf3bd05a4da6888695fd95786b}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Is\-\_\-udd\-\_\-sof\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-udd\-\_\-sof\-\_\-interrupt\-\_\-enabled}}
+\index{\-Is\-\_\-udd\-\_\-sof\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-udd\-\_\-sof\-\_\-interrupt\-\_\-enabled}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Is\-\_\-udd\-\_\-sof\-\_\-interrupt\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-udd\-\_\-sof\-\_\-interrupt\-\_\-enabled(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinte, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-\_\-\-S\-O\-F\-E\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_gacc090cdf3bd05a4da6888695fd95786b}
+\hypertarget{group__udd__group_gadfe9e8bbc2b3afefb19bcfd99db8b3fd}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Is\-\_\-udd\-\_\-suspend@{\-Is\-\_\-udd\-\_\-suspend}}
+\index{\-Is\-\_\-udd\-\_\-suspend@{\-Is\-\_\-udd\-\_\-suspend}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Is\-\_\-udd\-\_\-suspend}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-udd\-\_\-suspend(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udint, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-\_\-\-S\-U\-S\-P\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_gadfe9e8bbc2b3afefb19bcfd99db8b3fd}
+\hypertarget{group__udd__group_ga2a9c882005f263ea9e181273bf316e27}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Is\-\_\-udd\-\_\-suspend\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-udd\-\_\-suspend\-\_\-interrupt\-\_\-enabled}}
+\index{\-Is\-\_\-udd\-\_\-suspend\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-udd\-\_\-suspend\-\_\-interrupt\-\_\-enabled}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Is\-\_\-udd\-\_\-suspend\-\_\-interrupt\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-udd\-\_\-suspend\-\_\-interrupt\-\_\-enabled(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinte, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-\_\-\-S\-U\-S\-P\-E\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_ga2a9c882005f263ea9e181273bf316e27}
+\hypertarget{group__udd__group_ga10bc6d84d73e1ecccae3318d4098c41a}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Is\-\_\-udd\-\_\-vbus\-\_\-high@{\-Is\-\_\-udd\-\_\-vbus\-\_\-high}}
+\index{\-Is\-\_\-udd\-\_\-vbus\-\_\-high@{\-Is\-\_\-udd\-\_\-vbus\-\_\-high}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Is\-\_\-udd\-\_\-vbus\-\_\-high}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-udd\-\_\-vbus\-\_\-high(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbsta, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-\_\-\-V\-B\-U\-S\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_ga10bc6d84d73e1ecccae3318d4098c41a}
+\hypertarget{group__udd__group_gaed8ac44b2b2082c1797e873e120867c8}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Is\-\_\-udd\-\_\-vbus\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-udd\-\_\-vbus\-\_\-interrupt\-\_\-enabled}}
+\index{\-Is\-\_\-udd\-\_\-vbus\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-udd\-\_\-vbus\-\_\-interrupt\-\_\-enabled}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Is\-\_\-udd\-\_\-vbus\-\_\-interrupt\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-udd\-\_\-vbus\-\_\-interrupt\-\_\-enabled(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-V\-B\-U\-S\-T\-E\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_gaed8ac44b2b2082c1797e873e120867c8}
+\hypertarget{group__udd__group_ga6f962d911e1863d143614d1ee01df89a}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Is\-\_\-udd\-\_\-vbus\-\_\-low@{\-Is\-\_\-udd\-\_\-vbus\-\_\-low}}
+\index{\-Is\-\_\-udd\-\_\-vbus\-\_\-low@{\-Is\-\_\-udd\-\_\-vbus\-\_\-low}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Is\-\_\-udd\-\_\-vbus\-\_\-low}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-udd\-\_\-vbus\-\_\-low(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(!\-Is\-\_\-udd\-\_\-vbus\-\_\-high())}}
+\label{group__udd__group_ga6f962d911e1863d143614d1ee01df89a}
+\hypertarget{group__udd__group_gafb6dd005e6fef2574f054b8fe5e8d008}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Is\-\_\-udd\-\_\-vbus\-\_\-transition@{\-Is\-\_\-udd\-\_\-vbus\-\_\-transition}}
+\index{\-Is\-\_\-udd\-\_\-vbus\-\_\-transition@{\-Is\-\_\-udd\-\_\-vbus\-\_\-transition}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Is\-\_\-udd\-\_\-vbus\-\_\-transition}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-udd\-\_\-vbus\-\_\-transition(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbsta, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-\_\-\-V\-B\-U\-S\-T\-I\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_gafb6dd005e6fef2574f054b8fe5e8d008}
+\hypertarget{group__udd__group_ga27099aac5c46e62ca82775e957ae52a4}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Is\-\_\-udd\-\_\-wake\-\_\-up@{\-Is\-\_\-udd\-\_\-wake\-\_\-up}}
+\index{\-Is\-\_\-udd\-\_\-wake\-\_\-up@{\-Is\-\_\-udd\-\_\-wake\-\_\-up}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Is\-\_\-udd\-\_\-wake\-\_\-up}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-udd\-\_\-wake\-\_\-up(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udint, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-\_\-\-W\-A\-K\-E\-U\-P\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_ga27099aac5c46e62ca82775e957ae52a4}
+\hypertarget{group__udd__group_gaeab0126ceda728b5e100675a1368219a}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Is\-\_\-udd\-\_\-wake\-\_\-up\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-udd\-\_\-wake\-\_\-up\-\_\-interrupt\-\_\-enabled}}
+\index{\-Is\-\_\-udd\-\_\-wake\-\_\-up\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-udd\-\_\-wake\-\_\-up\-\_\-interrupt\-\_\-enabled}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Is\-\_\-udd\-\_\-wake\-\_\-up\-\_\-interrupt\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-udd\-\_\-wake\-\_\-up\-\_\-interrupt\-\_\-enabled(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinte, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-\_\-\-W\-A\-K\-E\-U\-P\-E\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_gaeab0126ceda728b5e100675a1368219a}
+\hypertarget{group__udd__group_ga39c4b005d3194988c8969ea622eed23d}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-ack\-\_\-remote\-\_\-wake\-\_\-up\-\_\-start@{udd\-\_\-ack\-\_\-remote\-\_\-wake\-\_\-up\-\_\-start}}
+\index{udd\-\_\-ack\-\_\-remote\-\_\-wake\-\_\-up\-\_\-start@{udd\-\_\-ack\-\_\-remote\-\_\-wake\-\_\-up\-\_\-start}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-ack\-\_\-remote\-\_\-wake\-\_\-up\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-ack\-\_\-remote\-\_\-wake\-\_\-up\-\_\-start(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-C\-L\-R\-\_\-\-U\-P\-R\-S\-M\-C\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_ga39c4b005d3194988c8969ea622eed23d}
+\hypertarget{group__udd__group_gae28a4338a4679d081090a536f7bd3ee1}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-ack\-\_\-reset@{udd\-\_\-ack\-\_\-reset}}
+\index{udd\-\_\-ack\-\_\-reset@{udd\-\_\-ack\-\_\-reset}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-ack\-\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-ack\-\_\-reset(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-C\-L\-R\-\_\-\-E\-O\-R\-S\-T\-C\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_gae28a4338a4679d081090a536f7bd3ee1}
+\hypertarget{group__udd__group_gabc25572243c4ab4600a1a870b4b6028b}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-ack\-\_\-resume@{udd\-\_\-ack\-\_\-resume}}
+\index{udd\-\_\-ack\-\_\-resume@{udd\-\_\-ack\-\_\-resume}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-ack\-\_\-resume}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-ack\-\_\-resume(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-C\-L\-R\-\_\-\-E\-O\-R\-S\-M\-C\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_gabc25572243c4ab4600a1a870b4b6028b}
+\hypertarget{group__udd__group_ga0b4140471f2e53d93cfe7f05ebd907d7}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-ack\-\_\-sof@{udd\-\_\-ack\-\_\-sof}}
+\index{udd\-\_\-ack\-\_\-sof@{udd\-\_\-ack\-\_\-sof}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-ack\-\_\-sof}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-ack\-\_\-sof(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-C\-L\-R\-\_\-\-S\-O\-F\-C\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_ga0b4140471f2e53d93cfe7f05ebd907d7}
+\hypertarget{group__udd__group_ga9a61b0228571cf2c0225c86f3e3a618e}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-ack\-\_\-suspend@{udd\-\_\-ack\-\_\-suspend}}
+\index{udd\-\_\-ack\-\_\-suspend@{udd\-\_\-ack\-\_\-suspend}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-ack\-\_\-suspend}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-ack\-\_\-suspend(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-C\-L\-R\-\_\-\-S\-U\-S\-P\-C\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_ga9a61b0228571cf2c0225c86f3e3a618e}
+\hypertarget{group__udd__group_gac6886b5956566ddb81744bbcfb27c08d}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-ack\-\_\-vbus\-\_\-transition@{udd\-\_\-ack\-\_\-vbus\-\_\-transition}}
+\index{udd\-\_\-ack\-\_\-vbus\-\_\-transition@{udd\-\_\-ack\-\_\-vbus\-\_\-transition}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-ack\-\_\-vbus\-\_\-transition}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-ack\-\_\-vbus\-\_\-transition(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-C\-L\-R\-\_\-\-V\-B\-U\-S\-T\-I\-C\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_gac6886b5956566ddb81744bbcfb27c08d}
+\hypertarget{group__udd__group_gadf64e48ecbcfc8082ac438156d43311d}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-ack\-\_\-wake\-\_\-up@{udd\-\_\-ack\-\_\-wake\-\_\-up}}
+\index{udd\-\_\-ack\-\_\-wake\-\_\-up@{udd\-\_\-ack\-\_\-wake\-\_\-up}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-ack\-\_\-wake\-\_\-up}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-ack\-\_\-wake\-\_\-up(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-C\-L\-R\-\_\-\-W\-A\-K\-E\-U\-P\-C\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_gadf64e48ecbcfc8082ac438156d43311d}
+\hypertarget{group__udd__group_ga55686d13fc7b23f4945f527f0dd15906}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-attach\-\_\-device@{udd\-\_\-attach\-\_\-device}}
+\index{udd\-\_\-attach\-\_\-device@{udd\-\_\-attach\-\_\-device}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-attach\-\_\-device}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-attach\-\_\-device(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-C\-O\-N\-\_\-\-D\-E\-T\-A\-C\-H\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_ga55686d13fc7b23f4945f527f0dd15906}
+
+
+attaches to \-U\-S\-B bus 
+
+\hypertarget{group__udd__group_ga1863dacf593fb3c1b5f275b48f1e529a}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-detach\-\_\-device@{udd\-\_\-detach\-\_\-device}}
+\index{udd\-\_\-detach\-\_\-device@{udd\-\_\-detach\-\_\-device}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-detach\-\_\-device}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-detach\-\_\-device(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-C\-O\-N\-\_\-\-D\-E\-T\-A\-C\-H\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_ga1863dacf593fb3c1b5f275b48f1e529a}
+
+
+detaches from \-U\-S\-B bus 
+
+\hypertarget{group__udd__group_gad53f9dce1280a2b17218090cde573368}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-disable\-\_\-remote\-\_\-wake\-\_\-up\-\_\-interrupt@{udd\-\_\-disable\-\_\-remote\-\_\-wake\-\_\-up\-\_\-interrupt}}
+\index{udd\-\_\-disable\-\_\-remote\-\_\-wake\-\_\-up\-\_\-interrupt@{udd\-\_\-disable\-\_\-remote\-\_\-wake\-\_\-up\-\_\-interrupt}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-disable\-\_\-remote\-\_\-wake\-\_\-up\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-disable\-\_\-remote\-\_\-wake\-\_\-up\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-C\-L\-R\-\_\-\-U\-P\-R\-S\-M\-E\-C\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_gad53f9dce1280a2b17218090cde573368}
+\hypertarget{group__udd__group_ga4f19c394e2352deb16c13e15c34c59ff}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-disable\-\_\-reset\-\_\-interrupt@{udd\-\_\-disable\-\_\-reset\-\_\-interrupt}}
+\index{udd\-\_\-disable\-\_\-reset\-\_\-interrupt@{udd\-\_\-disable\-\_\-reset\-\_\-interrupt}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-disable\-\_\-reset\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-disable\-\_\-reset\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-C\-L\-R\-\_\-\-E\-O\-R\-S\-T\-E\-C\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_ga4f19c394e2352deb16c13e15c34c59ff}
+\hypertarget{group__udd__group_ga8a97ab6519a34ae7d9135fe70c6719e4}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-disable\-\_\-resume\-\_\-interrupt@{udd\-\_\-disable\-\_\-resume\-\_\-interrupt}}
+\index{udd\-\_\-disable\-\_\-resume\-\_\-interrupt@{udd\-\_\-disable\-\_\-resume\-\_\-interrupt}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-disable\-\_\-resume\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-disable\-\_\-resume\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-C\-L\-R\-\_\-\-E\-O\-R\-S\-M\-E\-C\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_ga8a97ab6519a34ae7d9135fe70c6719e4}
+\hypertarget{group__udd__group_ga1210d31d31bcbcaf8374ac4db1521306}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-disable\-\_\-sof\-\_\-interrupt@{udd\-\_\-disable\-\_\-sof\-\_\-interrupt}}
+\index{udd\-\_\-disable\-\_\-sof\-\_\-interrupt@{udd\-\_\-disable\-\_\-sof\-\_\-interrupt}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-disable\-\_\-sof\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-disable\-\_\-sof\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-C\-L\-R\-\_\-\-S\-O\-F\-E\-C\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_ga1210d31d31bcbcaf8374ac4db1521306}
+\hypertarget{group__udd__group_ga1470fba0dbc68e890140d806277ee8c1}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-disable\-\_\-suspend\-\_\-interrupt@{udd\-\_\-disable\-\_\-suspend\-\_\-interrupt}}
+\index{udd\-\_\-disable\-\_\-suspend\-\_\-interrupt@{udd\-\_\-disable\-\_\-suspend\-\_\-interrupt}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-disable\-\_\-suspend\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-disable\-\_\-suspend\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-C\-L\-R\-\_\-\-S\-U\-S\-P\-E\-C\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_ga1470fba0dbc68e890140d806277ee8c1}
+\hypertarget{group__udd__group_gad11887e29c08ad9cc6d67e3e6b4f9e9a}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-disable\-\_\-vbus\-\_\-interrupt@{udd\-\_\-disable\-\_\-vbus\-\_\-interrupt}}
+\index{udd\-\_\-disable\-\_\-vbus\-\_\-interrupt@{udd\-\_\-disable\-\_\-vbus\-\_\-interrupt}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-disable\-\_\-vbus\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-disable\-\_\-vbus\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-V\-B\-U\-S\-T\-E\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_gad11887e29c08ad9cc6d67e3e6b4f9e9a}
+\hypertarget{group__udd__group_gaeac784d6d727d949449042d979d9a2ff}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-disable\-\_\-wake\-\_\-up\-\_\-interrupt@{udd\-\_\-disable\-\_\-wake\-\_\-up\-\_\-interrupt}}
+\index{udd\-\_\-disable\-\_\-wake\-\_\-up\-\_\-interrupt@{udd\-\_\-disable\-\_\-wake\-\_\-up\-\_\-interrupt}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-disable\-\_\-wake\-\_\-up\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-disable\-\_\-wake\-\_\-up\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-C\-L\-R\-\_\-\-W\-A\-K\-E\-U\-P\-E\-C\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_gaeac784d6d727d949449042d979d9a2ff}
+\hypertarget{group__udd__group_ga0f538482266ca447cbfcfb9a5eb2bd64}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-enable\-\_\-remote\-\_\-wake\-\_\-up\-\_\-interrupt@{udd\-\_\-enable\-\_\-remote\-\_\-wake\-\_\-up\-\_\-interrupt}}
+\index{udd\-\_\-enable\-\_\-remote\-\_\-wake\-\_\-up\-\_\-interrupt@{udd\-\_\-enable\-\_\-remote\-\_\-wake\-\_\-up\-\_\-interrupt}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-enable\-\_\-remote\-\_\-wake\-\_\-up\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-enable\-\_\-remote\-\_\-wake\-\_\-up\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-S\-E\-T\-\_\-\-U\-P\-R\-S\-M\-E\-S\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_ga0f538482266ca447cbfcfb9a5eb2bd64}
+\-Manage upstream resume event (=remote wakeup) \-The \-U\-S\-B driver sends a resume signal called \char`\"{}\-Upstream Resume\char`\"{} \hypertarget{group__udd__group_gaa4f338d7c02eb47691d55ea26a0b32d7}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-enable\-\_\-reset\-\_\-interrupt@{udd\-\_\-enable\-\_\-reset\-\_\-interrupt}}
+\index{udd\-\_\-enable\-\_\-reset\-\_\-interrupt@{udd\-\_\-enable\-\_\-reset\-\_\-interrupt}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-enable\-\_\-reset\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-enable\-\_\-reset\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-S\-E\-T\-\_\-\-E\-O\-R\-S\-T\-E\-S\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_gaa4f338d7c02eb47691d55ea26a0b32d7}
+\-Manage reset event \-Set when a \-U\-S\-B \char`\"{}\-End of Reset\char`\"{} has been detected \hypertarget{group__udd__group_gad7f806ed3fbecb776acc5dcedcf81f3e}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-enable\-\_\-resume\-\_\-interrupt@{udd\-\_\-enable\-\_\-resume\-\_\-interrupt}}
+\index{udd\-\_\-enable\-\_\-resume\-\_\-interrupt@{udd\-\_\-enable\-\_\-resume\-\_\-interrupt}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-enable\-\_\-resume\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-enable\-\_\-resume\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-S\-E\-T\-\_\-\-E\-O\-R\-S\-M\-E\-S\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_gad7f806ed3fbecb776acc5dcedcf81f3e}
+\-Manage end of resume event (=remote wakeup) \-The \-U\-S\-B controller detects a valid \char`\"{}\-End of Resume\char`\"{} signal initiated by the host \hypertarget{group__udd__group_ga307066f7fb27b90020e50f7311b37ff6}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-enable\-\_\-sof\-\_\-interrupt@{udd\-\_\-enable\-\_\-sof\-\_\-interrupt}}
+\index{udd\-\_\-enable\-\_\-sof\-\_\-interrupt@{udd\-\_\-enable\-\_\-sof\-\_\-interrupt}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-enable\-\_\-sof\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-enable\-\_\-sof\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-S\-E\-T\-\_\-\-S\-O\-F\-E\-S\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_ga307066f7fb27b90020e50f7311b37ff6}
+\-Manage sart of frame event \hypertarget{group__udd__group_ga298cc43d16d7d9609d58adffe696b5db}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-enable\-\_\-suspend\-\_\-interrupt@{udd\-\_\-enable\-\_\-suspend\-\_\-interrupt}}
+\index{udd\-\_\-enable\-\_\-suspend\-\_\-interrupt@{udd\-\_\-enable\-\_\-suspend\-\_\-interrupt}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-enable\-\_\-suspend\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-enable\-\_\-suspend\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-S\-E\-T\-\_\-\-S\-U\-S\-P\-E\-S\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_ga298cc43d16d7d9609d58adffe696b5db}
+\-Manage suspend event \hypertarget{group__udd__group_gaf80c5f873a9d926ab3324b6a91dfd872}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-enable\-\_\-vbus\-\_\-interrupt@{udd\-\_\-enable\-\_\-vbus\-\_\-interrupt}}
+\index{udd\-\_\-enable\-\_\-vbus\-\_\-interrupt@{udd\-\_\-enable\-\_\-vbus\-\_\-interrupt}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-enable\-\_\-vbus\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-enable\-\_\-vbus\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-V\-B\-U\-S\-T\-E\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_gaf80c5f873a9d926ab3324b6a91dfd872}
+\hypertarget{group__udd__group_ga1b192f6b945ae10b536deca002c2a1aa}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-enable\-\_\-wake\-\_\-up\-\_\-interrupt@{udd\-\_\-enable\-\_\-wake\-\_\-up\-\_\-interrupt}}
+\index{udd\-\_\-enable\-\_\-wake\-\_\-up\-\_\-interrupt@{udd\-\_\-enable\-\_\-wake\-\_\-up\-\_\-interrupt}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-enable\-\_\-wake\-\_\-up\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-enable\-\_\-wake\-\_\-up\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udinteset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-E\-S\-E\-T\-\_\-\-W\-A\-K\-E\-U\-P\-E\-S\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_ga1b192f6b945ae10b536deca002c2a1aa}
+\-Manage wake-\/up event (=usb line activity) \-The \-U\-S\-B controller is reactivated by a filtered non-\/idle signal from the lines \hypertarget{group__udd__group_gac175ccc890008605691939957098a246}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-frame\-\_\-number@{udd\-\_\-frame\-\_\-number}}
+\index{udd\-\_\-frame\-\_\-number@{udd\-\_\-frame\-\_\-number}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-frame\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-frame\-\_\-number(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Rd\-\_\-bitfield(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udfnum, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-F\-N\-U\-M\-\_\-\-F\-N\-U\-M\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_gac175ccc890008605691939957098a246}
+\hypertarget{group__udd__group_ga4f3fc518ef0e369cc01a7bf7c6516844}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-U\-D\-D\-\_\-get\-\_\-endpoint\-\_\-max\-\_\-nbr@{\-U\-D\-D\-\_\-get\-\_\-endpoint\-\_\-max\-\_\-nbr}}
+\index{\-U\-D\-D\-\_\-get\-\_\-endpoint\-\_\-max\-\_\-nbr@{\-U\-D\-D\-\_\-get\-\_\-endpoint\-\_\-max\-\_\-nbr}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-U\-D\-D\-\_\-get\-\_\-endpoint\-\_\-max\-\_\-nbr}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-D\-\_\-get\-\_\-endpoint\-\_\-max\-\_\-nbr(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(((\-Rd\-\_\-bitfield(\-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-ufeatures, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-F\-E\-A\-T\-U\-R\-E\-S\-\_\-\-E\-P\-T\-\_\-\-N\-B\-R\-\_\-\-M\-A\-X\-\_\-\-M\-A\-S\-K) -\/ 1) \& ((1 $<$$<$ \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-F\-E\-A\-T\-U\-R\-E\-S\-\_\-\-E\-P\-T\-\_\-\-N\-B\-R\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E) -\/ 1)) + 1)}}
+\label{group__udd__group_ga4f3fc518ef0e369cc01a7bf7c6516844}
+
+
+\-Get maximal number of endpoints. 
+
+\hypertarget{group__udd__group_ga7adf42a2ec72e7f2429a9b02799333af}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-high\-\_\-speed\-\_\-disable@{udd\-\_\-high\-\_\-speed\-\_\-disable}}
+\index{udd\-\_\-high\-\_\-speed\-\_\-disable@{udd\-\_\-high\-\_\-speed\-\_\-disable}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-high\-\_\-speed\-\_\-disable}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-high\-\_\-speed\-\_\-disable(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~do \{ \} while (0)}}
+\label{group__udd__group_ga7adf42a2ec72e7f2429a9b02799333af}
+\hypertarget{group__udd__group_gae014bb3adcdf212fd61196307be88802}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-high\-\_\-speed\-\_\-enable@{udd\-\_\-high\-\_\-speed\-\_\-enable}}
+\index{udd\-\_\-high\-\_\-speed\-\_\-enable@{udd\-\_\-high\-\_\-speed\-\_\-enable}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-high\-\_\-speed\-\_\-enable}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-high\-\_\-speed\-\_\-enable(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~do \{ \} while (0)}}
+\label{group__udd__group_gae014bb3adcdf212fd61196307be88802}
+\hypertarget{group__udd__group_gacc4b62140d09930dd38b10f766d30517}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-initiate\-\_\-remote\-\_\-wake\-\_\-up@{udd\-\_\-initiate\-\_\-remote\-\_\-wake\-\_\-up}}
+\index{udd\-\_\-initiate\-\_\-remote\-\_\-wake\-\_\-up@{udd\-\_\-initiate\-\_\-remote\-\_\-wake\-\_\-up}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-initiate\-\_\-remote\-\_\-wake\-\_\-up}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-initiate\-\_\-remote\-\_\-wake\-\_\-up(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-C\-O\-N\-\_\-\-R\-M\-W\-K\-U\-P\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_gacc4b62140d09930dd38b10f766d30517}
+\-Initiates a remote wake-\/up event \hypertarget{group__udd__group_ga6471bbaea371bb9bb2654333236c9f29}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-low\-\_\-speed\-\_\-disable@{udd\-\_\-low\-\_\-speed\-\_\-disable}}
+\index{udd\-\_\-low\-\_\-speed\-\_\-disable@{udd\-\_\-low\-\_\-speed\-\_\-disable}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-low\-\_\-speed\-\_\-disable}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-low\-\_\-speed\-\_\-disable(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-C\-O\-N\-\_\-\-L\-S\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_ga6471bbaea371bb9bb2654333236c9f29}
+\hypertarget{group__udd__group_gaf272a0d4210ee260d0a267bba460fb0c}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-low\-\_\-speed\-\_\-enable@{udd\-\_\-low\-\_\-speed\-\_\-enable}}
+\index{udd\-\_\-low\-\_\-speed\-\_\-enable@{udd\-\_\-low\-\_\-speed\-\_\-enable}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-low\-\_\-speed\-\_\-enable}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-low\-\_\-speed\-\_\-enable(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-C\-O\-N\-\_\-\-L\-S\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_gaf272a0d4210ee260d0a267bba460fb0c}
+
+
+\-Enable/disable device low-\/speed mode. 
+
+\hypertarget{group__udd__group_ga8e9d45e299d7a26b65bf8a98c8e27546}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-raise\-\_\-remote\-\_\-wake\-\_\-up\-\_\-start@{udd\-\_\-raise\-\_\-remote\-\_\-wake\-\_\-up\-\_\-start}}
+\index{udd\-\_\-raise\-\_\-remote\-\_\-wake\-\_\-up\-\_\-start@{udd\-\_\-raise\-\_\-remote\-\_\-wake\-\_\-up\-\_\-start}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-raise\-\_\-remote\-\_\-wake\-\_\-up\-\_\-start}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-raise\-\_\-remote\-\_\-wake\-\_\-up\-\_\-start(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-S\-E\-T\-\_\-\-U\-P\-R\-S\-M\-S\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_ga8e9d45e299d7a26b65bf8a98c8e27546}
+\hypertarget{group__udd__group_ga6c25f895374748a59eaa9a84356a5d58}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-raise\-\_\-reset@{udd\-\_\-raise\-\_\-reset}}
+\index{udd\-\_\-raise\-\_\-reset@{udd\-\_\-raise\-\_\-reset}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-raise\-\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-raise\-\_\-reset(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-S\-E\-T\-\_\-\-E\-O\-R\-S\-T\-S\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_ga6c25f895374748a59eaa9a84356a5d58}
+\hypertarget{group__udd__group_ga32a47c6752a2cac56874691e34728ba5}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-raise\-\_\-resume@{udd\-\_\-raise\-\_\-resume}}
+\index{udd\-\_\-raise\-\_\-resume@{udd\-\_\-raise\-\_\-resume}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-raise\-\_\-resume}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-raise\-\_\-resume(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-S\-E\-T\-\_\-\-E\-O\-R\-S\-M\-S\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_ga32a47c6752a2cac56874691e34728ba5}
+\hypertarget{group__udd__group_ga3747765066014e9bbde1bb263334c8a0}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-raise\-\_\-sof@{udd\-\_\-raise\-\_\-sof}}
+\index{udd\-\_\-raise\-\_\-sof@{udd\-\_\-raise\-\_\-sof}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-raise\-\_\-sof}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-raise\-\_\-sof(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-S\-E\-T\-\_\-\-S\-O\-F\-S\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_ga3747765066014e9bbde1bb263334c8a0}
+\hypertarget{group__udd__group_ga997d9f1f31efd62ddcce775a4f40a0bd}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-raise\-\_\-suspend@{udd\-\_\-raise\-\_\-suspend}}
+\index{udd\-\_\-raise\-\_\-suspend@{udd\-\_\-raise\-\_\-suspend}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-raise\-\_\-suspend}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-raise\-\_\-suspend(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-S\-E\-T\-\_\-\-S\-U\-S\-P\-S\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_ga997d9f1f31efd62ddcce775a4f40a0bd}
+\hypertarget{group__udd__group_ga8761342ea2dc32e0f0252508b1f7c47a}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-raise\-\_\-vbus\-\_\-transition@{udd\-\_\-raise\-\_\-vbus\-\_\-transition}}
+\index{udd\-\_\-raise\-\_\-vbus\-\_\-transition@{udd\-\_\-raise\-\_\-vbus\-\_\-transition}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-raise\-\_\-vbus\-\_\-transition}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-raise\-\_\-vbus\-\_\-transition(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-S\-E\-T\-\_\-\-V\-B\-U\-S\-T\-I\-S\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_ga8761342ea2dc32e0f0252508b1f7c47a}
+\hypertarget{group__udd__group_ga6b5a8ee09140c447b077c66c2e7668fe}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-raise\-\_\-wake\-\_\-up@{udd\-\_\-raise\-\_\-wake\-\_\-up}}
+\index{udd\-\_\-raise\-\_\-wake\-\_\-up@{udd\-\_\-raise\-\_\-wake\-\_\-up}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-raise\-\_\-wake\-\_\-up}]{\setlength{\rightskip}{0pt plus 5cm}\#define udd\-\_\-raise\-\_\-wake\-\_\-up(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-udintset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-D\-I\-N\-T\-S\-E\-T\-\_\-\-W\-A\-K\-E\-U\-P\-S\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_ga6b5a8ee09140c447b077c66c2e7668fe}
+\hypertarget{group__udd__group_gaffd9b7cf165cd149868373fa12595d12}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Udd\-\_\-setup\-\_\-is\-\_\-in@{\-Udd\-\_\-setup\-\_\-is\-\_\-in}}
+\index{\-Udd\-\_\-setup\-\_\-is\-\_\-in@{\-Udd\-\_\-setup\-\_\-is\-\_\-in}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Udd\-\_\-setup\-\_\-is\-\_\-in}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Udd\-\_\-setup\-\_\-is\-\_\-in(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-I\-N == (udd\-\_\-g\-\_\-ctrlreq.\-req.\-bm\-Request\-Type \& \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_gaffd9b7cf165cd149868373fa12595d12}
+
+
+\-Return true if the setup request {\itshape udd\-\_\-g\-\_\-ctrlreq\/} indicates \-I\-N data transfer. 
+
+\hypertarget{group__udd__group_gaf67b7c8de30fdc881b567385f2345926}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Udd\-\_\-setup\-\_\-is\-\_\-out@{\-Udd\-\_\-setup\-\_\-is\-\_\-out}}
+\index{\-Udd\-\_\-setup\-\_\-is\-\_\-out@{\-Udd\-\_\-setup\-\_\-is\-\_\-out}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Udd\-\_\-setup\-\_\-is\-\_\-out}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Udd\-\_\-setup\-\_\-is\-\_\-out(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T == (udd\-\_\-g\-\_\-ctrlreq.\-req.\-bm\-Request\-Type \& \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-M\-A\-S\-K))}}
+\label{group__udd__group_gaf67b7c8de30fdc881b567385f2345926}
+
+
+\-Return true if the setup request {\itshape udd\-\_\-g\-\_\-ctrlreq\/} indicates \-O\-U\-T data transfer. 
+
+\hypertarget{group__udd__group_gac963bb7b8a965c2fec45a71c9faca6f5}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Udd\-\_\-setup\-\_\-recipient@{\-Udd\-\_\-setup\-\_\-recipient}}
+\index{\-Udd\-\_\-setup\-\_\-recipient@{\-Udd\-\_\-setup\-\_\-recipient}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Udd\-\_\-setup\-\_\-recipient}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Udd\-\_\-setup\-\_\-recipient(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(udd\-\_\-g\-\_\-ctrlreq.\-req.\-bm\-Request\-Type \& \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_gac963bb7b8a965c2fec45a71c9faca6f5}
+
+
+\-Return the recipient of the \-S\-E\-T\-U\-P request {\itshape udd\-\_\-g\-\_\-ctrlreq\/}. 
+
+\begin{DoxySeeAlso}{\-See also}
+usb\-\_\-recipient 
+\end{DoxySeeAlso}
+\hypertarget{group__udd__group_ga85dc2b7b6c270e8dd8323fa4779a7ca2}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-Udd\-\_\-setup\-\_\-type@{\-Udd\-\_\-setup\-\_\-type}}
+\index{\-Udd\-\_\-setup\-\_\-type@{\-Udd\-\_\-setup\-\_\-type}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-Udd\-\_\-setup\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Udd\-\_\-setup\-\_\-type(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(udd\-\_\-g\-\_\-ctrlreq.\-req.\-bm\-Request\-Type \& \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K)}}
+\label{group__udd__group_ga85dc2b7b6c270e8dd8323fa4779a7ca2}
+
+
+\-Return the type of the \-S\-E\-T\-U\-P request {\itshape udd\-\_\-g\-\_\-ctrlreq\/}. 
+
+\begin{DoxySeeAlso}{\-See also}
+usb\-\_\-reqtype. 
+\end{DoxySeeAlso}
+\hypertarget{group__udd__group_ga90aeabbf00db4be8f0a1feef5cf0bbb3}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-U\-S\-B\-C\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E\-\_\-\-U\-S\-B\-\_\-\-I\-D\-L\-E@{\-U\-S\-B\-C\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E\-\_\-\-U\-S\-B\-\_\-\-I\-D\-L\-E}}
+\index{\-U\-S\-B\-C\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E\-\_\-\-U\-S\-B\-\_\-\-I\-D\-L\-E@{\-U\-S\-B\-C\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E\-\_\-\-U\-S\-B\-\_\-\-I\-D\-L\-E}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-U\-S\-B\-C\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E\-\_\-\-U\-S\-B\-\_\-\-I\-D\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-C\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E\-\_\-\-U\-S\-B\-\_\-\-I\-D\-L\-E~\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-I\-D\-L\-E}}
+\label{group__udd__group_ga90aeabbf00db4be8f0a1feef5cf0bbb3}
+\hypertarget{group__udd__group_gaf5ca2932775dabb853197df18706c469}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-U\-S\-B\-C\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E\-\_\-\-U\-S\-B\-\_\-\-S\-U\-S\-P\-E\-N\-D@{\-U\-S\-B\-C\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E\-\_\-\-U\-S\-B\-\_\-\-S\-U\-S\-P\-E\-N\-D}}
+\index{\-U\-S\-B\-C\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E\-\_\-\-U\-S\-B\-\_\-\-S\-U\-S\-P\-E\-N\-D@{\-U\-S\-B\-C\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E\-\_\-\-U\-S\-B\-\_\-\-S\-U\-S\-P\-E\-N\-D}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-U\-S\-B\-C\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E\-\_\-\-U\-S\-B\-\_\-\-S\-U\-S\-P\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-C\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E\-\_\-\-U\-S\-B\-\_\-\-S\-U\-S\-P\-E\-N\-D~\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-A\-T\-I\-C}}
+\label{group__udd__group_gaf5ca2932775dabb853197df18706c469}
+
+
+\-Definition of sleep levels. 
+
+
+
+\subsection{\-Typedef \-Documentation}
+\hypertarget{group__udd__group_ga7ab8d43f0761ecfb4d48770ac4ebb661}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-callback\-\_\-halt\-\_\-cleared\-\_\-t@{udd\-\_\-callback\-\_\-halt\-\_\-cleared\-\_\-t}}
+\index{udd\-\_\-callback\-\_\-halt\-\_\-cleared\-\_\-t@{udd\-\_\-callback\-\_\-halt\-\_\-cleared\-\_\-t}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-callback\-\_\-halt\-\_\-cleared\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ {\bf udd\-\_\-callback\-\_\-halt\-\_\-cleared\-\_\-t})(void)}}
+\label{group__udd__group_ga7ab8d43f0761ecfb4d48770ac4ebb661}
+
+
+\-End of halt callback function type. \-Registered by routine udd\-\_\-ep\-\_\-wait\-\_\-stall\-\_\-clear() \-Callback called when endpoint stall is cleared. 
+
+\hypertarget{group__udd__group_gad866ed9444482edcf92a28dce807e3d3}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-callback\-\_\-trans\-\_\-t@{udd\-\_\-callback\-\_\-trans\-\_\-t}}
+\index{udd\-\_\-callback\-\_\-trans\-\_\-t@{udd\-\_\-callback\-\_\-trans\-\_\-t}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-callback\-\_\-trans\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ {\bf udd\-\_\-callback\-\_\-trans\-\_\-t})({\bf udd\-\_\-ep\-\_\-status\-\_\-t} status, iram\-\_\-size\-\_\-t nb\-\_\-transfered)}}
+\label{group__udd__group_gad866ed9444482edcf92a28dce807e3d3}
+
+
+\-End of transfer callback function type. \-Registered by routine udd\-\_\-ep\-\_\-run() \-Callback called by \-U\-S\-B interrupt after data transfer or abort (reset,...). 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em status} & \-U\-D\-D\-\_\-\-E\-P\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-\_\-\-O\-K, if transfer is complete \\
+\hline
+{\em status} & \-U\-D\-D\-\_\-\-E\-P\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-\_\-\-A\-B\-O\-R\-T, if transfer is aborted \\
+\hline
+{\em n} & number of data transfered \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__udd__group_ga6f25ea016c07bd48c3074f51d8ef8b01}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-ep\-\_\-id\-\_\-t@{udd\-\_\-ep\-\_\-id\-\_\-t}}
+\index{udd\-\_\-ep\-\_\-id\-\_\-t@{udd\-\_\-ep\-\_\-id\-\_\-t}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-ep\-\_\-id\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint8\-\_\-t {\bf udd\-\_\-ep\-\_\-id\-\_\-t}}}
+\label{group__udd__group_ga6f25ea016c07bd48c3074f51d8ef8b01}
+
+
+\-Endpoint identifier. 
+
+
+
+\subsection{\-Enumeration \-Type \-Documentation}
+\hypertarget{group__udd__group_gabc925782d47feeb37f6f943579038b84}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-ctrl\-\_\-ep\-\_\-state\-\_\-t@{udd\-\_\-ctrl\-\_\-ep\-\_\-state\-\_\-t}}
+\index{udd\-\_\-ctrl\-\_\-ep\-\_\-state\-\_\-t@{udd\-\_\-ctrl\-\_\-ep\-\_\-state\-\_\-t}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-ctrl\-\_\-ep\-\_\-state\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf udd\-\_\-ctrl\-\_\-ep\-\_\-state\-\_\-t}}}
+\label{group__udd__group_gabc925782d47feeb37f6f943579038b84}
+
+
+\-Bit definitions about endpoint control state machine for udd\-\_\-ep\-\_\-control\-\_\-state. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-S\-E\-T\-U\-P@{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-S\-E\-T\-U\-P}!\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-S\-E\-T\-U\-P@{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-S\-E\-T\-U\-P}}\item[{\em 
+\hypertarget{group__udd__group_ggabc925782d47feeb37f6f943579038b84a2357a1ac77f59da70848f4121a016e77}{
+\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-S\-E\-T\-U\-P}
+\label{group__udd__group_ggabc925782d47feeb37f6f943579038b84a2357a1ac77f59da70848f4121a016e77}
+}]\-Wait a \-S\-E\-T\-U\-P packet. \index{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-D\-A\-T\-A\-\_\-\-O\-U\-T@{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-D\-A\-T\-A\-\_\-\-O\-U\-T}!\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-D\-A\-T\-A\-\_\-\-O\-U\-T@{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-D\-A\-T\-A\-\_\-\-O\-U\-T}}\item[{\em 
+\hypertarget{group__udd__group_ggabc925782d47feeb37f6f943579038b84acf3cc280a0061ecf321e0191d37dc53c}{
+\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-D\-A\-T\-A\-\_\-\-O\-U\-T}
+\label{group__udd__group_ggabc925782d47feeb37f6f943579038b84acf3cc280a0061ecf321e0191d37dc53c}
+}]\-Wait a \-O\-U\-T data packet. \index{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-D\-A\-T\-A\-\_\-\-I\-N@{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-D\-A\-T\-A\-\_\-\-I\-N}!\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-D\-A\-T\-A\-\_\-\-I\-N@{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-D\-A\-T\-A\-\_\-\-I\-N}}\item[{\em 
+\hypertarget{group__udd__group_ggabc925782d47feeb37f6f943579038b84a57e63cb5de1f85c276dbfa8c3c00deed}{
+\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-D\-A\-T\-A\-\_\-\-I\-N}
+\label{group__udd__group_ggabc925782d47feeb37f6f943579038b84a57e63cb5de1f85c276dbfa8c3c00deed}
+}]\-Wait a \-I\-N data packet. \index{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-H\-A\-N\-D\-S\-H\-A\-K\-E\-\_\-\-W\-A\-I\-T\-\_\-\-I\-N\-\_\-\-Z\-L\-P@{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-H\-A\-N\-D\-S\-H\-A\-K\-E\-\_\-\-W\-A\-I\-T\-\_\-\-I\-N\-\_\-\-Z\-L\-P}!\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-H\-A\-N\-D\-S\-H\-A\-K\-E\-\_\-\-W\-A\-I\-T\-\_\-\-I\-N\-\_\-\-Z\-L\-P@{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-H\-A\-N\-D\-S\-H\-A\-K\-E\-\_\-\-W\-A\-I\-T\-\_\-\-I\-N\-\_\-\-Z\-L\-P}}\item[{\em 
+\hypertarget{group__udd__group_ggabc925782d47feeb37f6f943579038b84aadbf4f42e07b8589262e727b3cf8b900}{
+\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-H\-A\-N\-D\-S\-H\-A\-K\-E\-\_\-\-W\-A\-I\-T\-\_\-\-I\-N\-\_\-\-Z\-L\-P}
+\label{group__udd__group_ggabc925782d47feeb37f6f943579038b84aadbf4f42e07b8589262e727b3cf8b900}
+}]\-Wait a \-I\-N \-Z\-L\-P packet. \index{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-H\-A\-N\-D\-S\-H\-A\-K\-E\-\_\-\-W\-A\-I\-T\-\_\-\-O\-U\-T\-\_\-\-Z\-L\-P@{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-H\-A\-N\-D\-S\-H\-A\-K\-E\-\_\-\-W\-A\-I\-T\-\_\-\-O\-U\-T\-\_\-\-Z\-L\-P}!\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-H\-A\-N\-D\-S\-H\-A\-K\-E\-\_\-\-W\-A\-I\-T\-\_\-\-O\-U\-T\-\_\-\-Z\-L\-P@{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-H\-A\-N\-D\-S\-H\-A\-K\-E\-\_\-\-W\-A\-I\-T\-\_\-\-O\-U\-T\-\_\-\-Z\-L\-P}}\item[{\em 
+\hypertarget{group__udd__group_ggabc925782d47feeb37f6f943579038b84ae5dd6cabf3ebb1aab6a80d7a92a89513}{
+\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-H\-A\-N\-D\-S\-H\-A\-K\-E\-\_\-\-W\-A\-I\-T\-\_\-\-O\-U\-T\-\_\-\-Z\-L\-P}
+\label{group__udd__group_ggabc925782d47feeb37f6f943579038b84ae5dd6cabf3ebb1aab6a80d7a92a89513}
+}]\-Wait a \-O\-U\-T \-Z\-L\-P packet. \index{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-S\-T\-A\-L\-L\-\_\-\-R\-E\-Q@{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-S\-T\-A\-L\-L\-\_\-\-R\-E\-Q}!\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-S\-T\-A\-L\-L\-\_\-\-R\-E\-Q@{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-S\-T\-A\-L\-L\-\_\-\-R\-E\-Q}}\item[{\em 
+\hypertarget{group__udd__group_ggabc925782d47feeb37f6f943579038b84a8d44562cd9ac18661adcf35015f8972e}{
+\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-S\-T\-A\-L\-L\-\_\-\-R\-E\-Q}
+\label{group__udd__group_ggabc925782d47feeb37f6f943579038b84a8d44562cd9ac18661adcf35015f8972e}
+}]\-S\-T\-A\-L\-L enabled on \-I\-N \& \-O\-U\-T packet. \end{description}
+\end{Desc}
+
+\hypertarget{group__udd__group_gac0f77f5a0e085af1242b48fd1054959a}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-ep\-\_\-status\-\_\-t@{udd\-\_\-ep\-\_\-status\-\_\-t}}
+\index{udd\-\_\-ep\-\_\-status\-\_\-t@{udd\-\_\-ep\-\_\-status\-\_\-t}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-ep\-\_\-status\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf udd\-\_\-ep\-\_\-status\-\_\-t}}}
+\label{group__udd__group_gac0f77f5a0e085af1242b48fd1054959a}
+
+
+\-Endpoint transfer status \-Returned in parameters of callback register via udd\-\_\-ep\-\_\-run routine. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-U\-D\-D\-\_\-\-E\-P\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-\_\-\-O\-K@{\-U\-D\-D\-\_\-\-E\-P\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-\_\-\-O\-K}!\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-U\-D\-D\-\_\-\-E\-P\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-\_\-\-O\-K@{\-U\-D\-D\-\_\-\-E\-P\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-\_\-\-O\-K}}\item[{\em 
+\hypertarget{group__udd__group_ggac0f77f5a0e085af1242b48fd1054959aad52bb23180c67dc3d6a1d1dfedf74102}{
+\-U\-D\-D\-\_\-\-E\-P\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-\_\-\-O\-K}
+\label{group__udd__group_ggac0f77f5a0e085af1242b48fd1054959aad52bb23180c67dc3d6a1d1dfedf74102}
+}]\index{\-U\-D\-D\-\_\-\-E\-P\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-\_\-\-A\-B\-O\-R\-T@{\-U\-D\-D\-\_\-\-E\-P\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-\_\-\-A\-B\-O\-R\-T}!\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-U\-D\-D\-\_\-\-E\-P\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-\_\-\-A\-B\-O\-R\-T@{\-U\-D\-D\-\_\-\-E\-P\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-\_\-\-A\-B\-O\-R\-T}}\item[{\em 
+\hypertarget{group__udd__group_ggac0f77f5a0e085af1242b48fd1054959aa010443246cb439e4f6f52b13c9d6e29c}{
+\-U\-D\-D\-\_\-\-E\-P\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-\_\-\-A\-B\-O\-R\-T}
+\label{group__udd__group_ggac0f77f5a0e085af1242b48fd1054959aa010443246cb439e4f6f52b13c9d6e29c}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__udd__group_gabe317a1520896eaf568afab27dc71540}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-R\-E\-S\-E\-T@{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-R\-E\-S\-E\-T}}
+\index{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-R\-E\-S\-E\-T@{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-R\-E\-S\-E\-T}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-R\-E\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-R\-E\-S\-E\-T (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udd__group_gabe317a1520896eaf568afab27dc71540}
+\hypertarget{group__udd__group_ga14096700b3ed8c5168615c5c5ee1c68d}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T@{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T}}
+\index{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T@{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T (
+\begin{DoxyParamCaption}
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udd__group_ga14096700b3ed8c5168615c5c5ee1c68d}
+
+
+\-A \-U\-S\-B \-Device \-S\-E\-T\-U\-P request. 
+
+\-S\-E\-T\-U\-P packet contains following information. \hypertarget{group__udd__group_ga58c2916d7984e0e5b2143cadf4af6080}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udc\-\_\-process\-\_\-setup@{udc\-\_\-process\-\_\-setup}}
+\index{udc\-\_\-process\-\_\-setup@{udc\-\_\-process\-\_\-setup}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udc\-\_\-process\-\_\-setup}]{\setlength{\rightskip}{0pt plus 5cm}bool udc\-\_\-process\-\_\-setup (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udd__group_ga58c2916d7984e0e5b2143cadf4af6080}
+
+
+\-Decodes and manages a setup request. 
+
+\-The driver call it when a \-S\-E\-T\-U\-P packet is received. \-The {\ttfamily udd\-\_\-g\-\_\-ctrlreq} contains the data of \-S\-E\-T\-U\-P packet. \-If this callback accepts the setup request then it must return {\ttfamily 1} and eventually update {\ttfamily udd\-\_\-g\-\_\-ctrlreq} to send or receive data.
+
+\begin{DoxyReturn}{\-Returns}
+{\ttfamily 1} if the request is accepted, otherwise {\ttfamily 0}.
+\end{DoxyReturn}
+\-Decodes and manages a setup request.
+
+\-This function parses a \-U\-S\-B \-S\-E\-T\-U\-P request and submits an appropriate response back to the host or, in the case of \-S\-E\-T\-U\-P \-O\-U\-T requests with data, sets up a buffer for receiving the data payload.
+
+\-The main standard requests defined by the \-U\-S\-B 2.\-0 standard are handled internally. \-The interface requests are sent to \-U\-D\-I, and the specific request sent to a specific application callback.
+
+\begin{DoxyReturn}{\-Returns}
+true if the request is supported, else the request is stalled by \-U\-D\-D 
+\end{DoxyReturn}
+\hypertarget{group__udd__group_ga11a32ff7928ba06d3b59e95e0a2b7a92}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udc\-\_\-reset@{udc\-\_\-reset}}
+\index{udc\-\_\-reset@{udc\-\_\-reset}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udc\-\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}void udc\-\_\-reset (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udd__group_ga11a32ff7928ba06d3b59e95e0a2b7a92}
+
+
+\-Reset the \-U\-D\-C. 
+
+\-The \-U\-D\-C must reset all configuration. \hypertarget{group__udd__group_ga4afae313045f44b5eb4c60957ab8ef4e}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udc\-\_\-sof\-\_\-notify@{udc\-\_\-sof\-\_\-notify}}
+\index{udc\-\_\-sof\-\_\-notify@{udc\-\_\-sof\-\_\-notify}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udc\-\_\-sof\-\_\-notify}]{\setlength{\rightskip}{0pt plus 5cm}void udc\-\_\-sof\-\_\-notify (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udd__group_ga4afae313045f44b5eb4c60957ab8ef4e}
+
+
+\-To signal that a \-S\-O\-F is occured. 
+
+\-The \-U\-D\-C must send the signal to all \-U\-D\-Is enabled \hypertarget{group__udd__group_ga7a7c0d9236c922c2af33c6702565a99f}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-attach@{udd\-\_\-attach}}
+\index{udd\-\_\-attach@{udd\-\_\-attach}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-attach}]{\setlength{\rightskip}{0pt plus 5cm}void udd\-\_\-attach (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udd__group_ga7a7c0d9236c922c2af33c6702565a99f}
+
+
+\-Attach device to the bus when possible. 
+
+\begin{DoxyWarning}{\-Warning}
+\-If a \-V\-Bus control is included in driver, then it will attach device when an acceptable \-Vbus level from the host is detected. 
+\end{DoxyWarning}
+\hypertarget{group__udd__group_ga03e59eaa264f1dbe5a52559311d0520e}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-detach@{udd\-\_\-detach}}
+\index{udd\-\_\-detach@{udd\-\_\-detach}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-detach}]{\setlength{\rightskip}{0pt plus 5cm}void udd\-\_\-detach (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udd__group_ga03e59eaa264f1dbe5a52559311d0520e}
+
+
+\-Detaches the device from the bus. 
+
+\-The driver must remove pull-\/up on \-U\-S\-B line \-D-\/ or \-D+. \hypertarget{group__udd__group_gab283432057b934e9d73ac9282d9b0f11}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-disable@{udd\-\_\-disable}}
+\index{udd\-\_\-disable@{udd\-\_\-disable}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-disable}]{\setlength{\rightskip}{0pt plus 5cm}void udd\-\_\-disable (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udd__group_gab283432057b934e9d73ac9282d9b0f11}
+
+
+\-Disables the \-U\-S\-B \-Device mode. 
+
+\hypertarget{group__udd__group_ga9792d1899ae058e3984d6a622fe2ad42}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-enable@{udd\-\_\-enable}}
+\index{udd\-\_\-enable@{udd\-\_\-enable}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-enable}]{\setlength{\rightskip}{0pt plus 5cm}void udd\-\_\-enable (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udd__group_ga9792d1899ae058e3984d6a622fe2ad42}
+
+
+\-Enables the \-U\-S\-B \-Device mode. 
+
+\hypertarget{group__udd__group_ga96dc248cc05e07ffe2cf21e4d7465320}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-get\-\_\-frame\-\_\-number@{udd\-\_\-get\-\_\-frame\-\_\-number}}
+\index{udd\-\_\-get\-\_\-frame\-\_\-number@{udd\-\_\-get\-\_\-frame\-\_\-number}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-get\-\_\-frame\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t udd\-\_\-get\-\_\-frame\-\_\-number (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udd__group_ga96dc248cc05e07ffe2cf21e4d7465320}
+
+
+\-Returns the current start of frame number. 
+
+\begin{DoxyReturn}{\-Returns}
+current start of frame number. 
+\end{DoxyReturn}
+\hypertarget{group__udd__group_ga63047eec59b8e8798ca1d3366472d82b}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-get\-\_\-micro\-\_\-frame\-\_\-number@{udd\-\_\-get\-\_\-micro\-\_\-frame\-\_\-number}}
+\index{udd\-\_\-get\-\_\-micro\-\_\-frame\-\_\-number@{udd\-\_\-get\-\_\-micro\-\_\-frame\-\_\-number}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-get\-\_\-micro\-\_\-frame\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t udd\-\_\-get\-\_\-micro\-\_\-frame\-\_\-number (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udd__group_ga63047eec59b8e8798ca1d3366472d82b}
+
+
+\-Returns the current micro start of frame number. 
+
+\begin{DoxyReturn}{\-Returns}
+current micro start of frame number required in high speed mode. 
+\end{DoxyReturn}
+\hypertarget{group__udd__group_gaebd36638d482f6df00a8aff006ef2246}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-getaddress@{udd\-\_\-getaddress}}
+\index{udd\-\_\-getaddress@{udd\-\_\-getaddress}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-getaddress}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t udd\-\_\-getaddress (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udd__group_gaebd36638d482f6df00a8aff006ef2246}
+
+
+\-Returns the \-U\-S\-B address of device. 
+
+\begin{DoxyReturn}{\-Returns}
+\-U\-S\-B address 
+\end{DoxyReturn}
+\hypertarget{group__udd__group_gaa4cac8c35ae056e26cf4ab5b426bbe09}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-include\-\_\-vbus\-\_\-monitoring@{udd\-\_\-include\-\_\-vbus\-\_\-monitoring}}
+\index{udd\-\_\-include\-\_\-vbus\-\_\-monitoring@{udd\-\_\-include\-\_\-vbus\-\_\-monitoring}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-include\-\_\-vbus\-\_\-monitoring}]{\setlength{\rightskip}{0pt plus 5cm}bool udd\-\_\-include\-\_\-vbus\-\_\-monitoring (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udd__group_gaa4cac8c35ae056e26cf4ab5b426bbe09}
+
+
+\-Authorizes the \-V\-B\-U\-S event. 
+
+\begin{DoxyReturn}{\-Returns}
+true, if the \-V\-B\-U\-S monitoring is possible. 
+\end{DoxyReturn}
+\hypertarget{group__udd__group_ga85f403ddb78776b1ba014dafd3ffec2c}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-is\-\_\-high\-\_\-speed@{udd\-\_\-is\-\_\-high\-\_\-speed}}
+\index{udd\-\_\-is\-\_\-high\-\_\-speed@{udd\-\_\-is\-\_\-high\-\_\-speed}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-is\-\_\-high\-\_\-speed}]{\setlength{\rightskip}{0pt plus 5cm}bool udd\-\_\-is\-\_\-high\-\_\-speed (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udd__group_ga85f403ddb78776b1ba014dafd3ffec2c}
+
+
+\-Test whether the \-U\-S\-B \-Device \-Controller is running at high speed or not. 
+
+\begin{DoxyReturn}{\-Returns}
+{\ttfamily true} if the \-Device is running at high speed mode, otherwise {\ttfamily false}. 
+\end{DoxyReturn}
+\hypertarget{group__udd__group_ga14ae6068206556d6ae8766b1baa2f686}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-send\-\_\-wake\-\_\-up@{udd\-\_\-send\-\_\-wake\-\_\-up}}
+\index{udd\-\_\-send\-\_\-wake\-\_\-up@{udd\-\_\-send\-\_\-wake\-\_\-up}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-send\-\_\-wake\-\_\-up}]{\setlength{\rightskip}{0pt plus 5cm}void udd\-\_\-send\-\_\-wake\-\_\-up (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udd__group_ga14ae6068206556d6ae8766b1baa2f686}
+
+
+\-The \-U\-S\-B driver sends a resume signal called \-Upstream \-Resume. 
+
+\hypertarget{group__udd__group_ga05da762e0faf9d478e532de40afa71f6}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-set\-\_\-address@{udd\-\_\-set\-\_\-address}}
+\index{udd\-\_\-set\-\_\-address@{udd\-\_\-set\-\_\-address}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-set\-\_\-address}]{\setlength{\rightskip}{0pt plus 5cm}void udd\-\_\-set\-\_\-address (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{address}
+\end{DoxyParamCaption}
+)}}
+\label{group__udd__group_ga05da762e0faf9d478e532de40afa71f6}
+
+
+\-Changes the \-U\-S\-B address of device. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em address} & \-New \-U\-S\-B address \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__udd__group_ga017ef5ea7626be258c24d345218976f9}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-set\-\_\-setup\-\_\-payload@{udd\-\_\-set\-\_\-setup\-\_\-payload}}
+\index{udd\-\_\-set\-\_\-setup\-\_\-payload@{udd\-\_\-set\-\_\-setup\-\_\-payload}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-set\-\_\-setup\-\_\-payload}]{\setlength{\rightskip}{0pt plus 5cm}void udd\-\_\-set\-\_\-setup\-\_\-payload (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{payload, }
+\item[{uint16\-\_\-t}]{payload\-\_\-size}
+\end{DoxyParamCaption}
+)}}
+\label{group__udd__group_ga017ef5ea7626be258c24d345218976f9}
+
+
+\-Load setup payload. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em payload} & \-Pointer on payload \\
+\hline
+{\em payload\-\_\-size} & \-Size of payload \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__udd__group_ga43ba1e91e69f84c1481a659ff8eff143}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-test\-\_\-mode\-\_\-j@{udd\-\_\-test\-\_\-mode\-\_\-j}}
+\index{udd\-\_\-test\-\_\-mode\-\_\-j@{udd\-\_\-test\-\_\-mode\-\_\-j}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-test\-\_\-mode\-\_\-j}]{\setlength{\rightskip}{0pt plus 5cm}void udd\-\_\-test\-\_\-mode\-\_\-j (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udd__group_ga43ba1e91e69f84c1481a659ff8eff143}
+\hypertarget{group__udd__group_ga2acd547bcd2b470ee4e1ce34087926a8}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-test\-\_\-mode\-\_\-k@{udd\-\_\-test\-\_\-mode\-\_\-k}}
+\index{udd\-\_\-test\-\_\-mode\-\_\-k@{udd\-\_\-test\-\_\-mode\-\_\-k}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-test\-\_\-mode\-\_\-k}]{\setlength{\rightskip}{0pt plus 5cm}void udd\-\_\-test\-\_\-mode\-\_\-k (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udd__group_ga2acd547bcd2b470ee4e1ce34087926a8}
+\hypertarget{group__udd__group_gab72f68f8d1a50f7e734595a2ff626380}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-test\-\_\-mode\-\_\-packet@{udd\-\_\-test\-\_\-mode\-\_\-packet}}
+\index{udd\-\_\-test\-\_\-mode\-\_\-packet@{udd\-\_\-test\-\_\-mode\-\_\-packet}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-test\-\_\-mode\-\_\-packet}]{\setlength{\rightskip}{0pt plus 5cm}void udd\-\_\-test\-\_\-mode\-\_\-packet (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udd__group_gab72f68f8d1a50f7e734595a2ff626380}
+\hypertarget{group__udd__group_gabec7e8b6464e92ca9c8f32c59113bcbb}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-test\-\_\-mode\-\_\-se0\-\_\-nak@{udd\-\_\-test\-\_\-mode\-\_\-se0\-\_\-nak}}
+\index{udd\-\_\-test\-\_\-mode\-\_\-se0\-\_\-nak@{udd\-\_\-test\-\_\-mode\-\_\-se0\-\_\-nak}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-test\-\_\-mode\-\_\-se0\-\_\-nak}]{\setlength{\rightskip}{0pt plus 5cm}void udd\-\_\-test\-\_\-mode\-\_\-se0\-\_\-nak (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udd__group_gabec7e8b6464e92ca9c8f32c59113bcbb}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{group__udd__group_ga360872da67c7f8ecebe1238bbd4a536e}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-g\-\_\-ctrlreq@{udd\-\_\-g\-\_\-ctrlreq}}
+\index{udd\-\_\-g\-\_\-ctrlreq@{udd\-\_\-g\-\_\-ctrlreq}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-g\-\_\-ctrlreq}]{\setlength{\rightskip}{0pt plus 5cm}{\bf udd\-\_\-ctrl\-\_\-request\-\_\-t} {\bf udd\-\_\-g\-\_\-ctrlreq}}}
+\label{group__udd__group_ga360872da67c7f8ecebe1238bbd4a536e}
+
+
+\-Global variable to give and record information about setup request management. 
+
+\hypertarget{group__udd__group_ga2a41c2b14c5be825bdce7fde8c365a30}{
+\index{\-U\-S\-B Device Driver (\-U\-D\-D)@{\-U\-S\-B Device Driver (\-U\-D\-D)}!udd\-\_\-g\-\_\-ctrlreq@{udd\-\_\-g\-\_\-ctrlreq}}
+\index{udd\-\_\-g\-\_\-ctrlreq@{udd\-\_\-g\-\_\-ctrlreq}!USB Device Driver (UDD)@{\-U\-S\-B Device Driver (\-U\-D\-D)}}
+\subsubsection[{udd\-\_\-g\-\_\-ctrlreq}]{\setlength{\rightskip}{0pt plus 5cm}\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-W\-O\-R\-D\-\_\-\-A\-L\-I\-G\-N\-E\-D {\bf udd\-\_\-ctrl\-\_\-request\-\_\-t} {\bf udd\-\_\-g\-\_\-ctrlreq}}}
+\label{group__udd__group_ga2a41c2b14c5be825bdce7fde8c365a30}
+
+
+\-Global variable to give and record information about setup request management. 
+

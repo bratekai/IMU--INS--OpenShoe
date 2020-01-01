@@ -1,0 +1,110 @@
+\hypertarget{uc3c_2pll_8h}{
+\section{pll.h \-File \-Reference}
+\label{uc3c_2pll_8h}\index{pll.\-h@{pll.\-h}}
+}
+
+
+\-Chip-\/specific \-P\-L\-L definitions.  
+
+
+{\ttfamily \#include $<$avr32/io.\-h$>$}\*
+{\ttfamily \#include $<$osc.\-h$>$}\*
+{\ttfamily \#include $<$stdbool.\-h$>$}\*
+{\ttfamily \#include $<$stdint.\-h$>$}\*
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structpll__config}{pll\-\_\-config}
+\begin{DoxyCompactList}\small\item\em \-Hardware-\/specific representation of \-P\-L\-L configuration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{uc3c_2pll_8h_a07643f13da0314cb5324f12c11f326dd}{\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E0\-\_\-\-M\-A\-X\-\_\-\-F\-R\-E\-Q}~240000000
+\item 
+\#define \hyperlink{uc3c_2pll_8h_aabe42b8f766d0b3a02385d4c04494810}{\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E0\-\_\-\-M\-I\-N\-\_\-\-F\-R\-E\-Q}~160000000
+\item 
+\#define \hyperlink{uc3c_2pll_8h_ac443c8c74126291df314757d411a14f5}{\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E1\-\_\-\-M\-A\-X\-\_\-\-F\-R\-E\-Q}~180000000
+\item 
+\#define \hyperlink{uc3c_2pll_8h_a39aa078b560b8e913eb40001f6a857ca}{\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E1\-\_\-\-M\-I\-N\-\_\-\-F\-R\-E\-Q}~80000000
+\item 
+\#define \hyperlink{group__pll__group_ga3778ecbe3fb3e8480ce23312a613a0aa}{\-P\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T\-\_\-\-M\-S}~div\-\_\-ceil(1000 $\ast$ (\-P\-L\-L\-\_\-\-M\-A\-X\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-\-C\-Y\-C\-L\-E\-S $\ast$ 2), \-O\-S\-C\-\_\-\-R\-C\-S\-Y\-S\-\_\-\-M\-I\-N\-\_\-\-H\-Z)
+\begin{DoxyCompactList}\small\item\em \-Number of milliseconds to wait for \-P\-L\-L lock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\paragraph*{\-Chip-\/specific \-P\-L\-L characteristics}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pll__group_ga3a7cd8f570834e0f208037619b798aef}{\-P\-L\-L\-\_\-\-M\-A\-X\-\_\-\-S\-T\-A\-R\-T\-U\-P\-\_\-\-C\-Y\-C\-L\-E\-S}~((1 $<$$<$ \-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-P\-L\-L\-C\-O\-U\-N\-T\-\_\-\-S\-I\-Z\-E) -\/ 1)
+\begin{DoxyCompactList}\small\item\em \-Maximum \-P\-L\-L startup time in number of slow clock cycles. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__pll__group_ga23ebd75638f609ce613b82e773ea48a5}{\-N\-R\-\_\-\-P\-L\-L\-S}~2
+\begin{DoxyCompactList}\small\item\em \-Number of on-\/chip \-P\-L\-Ls. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__pll__group_ga58acd4425beaa32dad5ccffa073cb0a5}{\-P\-L\-L\-\_\-\-M\-I\-N\-\_\-\-H\-Z}~40000000
+\begin{DoxyCompactList}\small\item\em \-Minimum frequency that the \-P\-L\-L can generate. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__pll__group_gaeced77fb7ec635ab33085a71a0c15227}{\-P\-L\-L\-\_\-\-M\-A\-X\-\_\-\-H\-Z}~240000000
+\begin{DoxyCompactList}\small\item\em \-Maximum frequency that the \-P\-L\-L can generate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Chip-\/specific \-P\-L\-L options}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pll__group_ga03717c32c87c59df4b94a4233a5c2e3e}{\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E\-\_\-\-L\-O\-W}~0
+\begin{DoxyCompactList}\small\item\em \-V\-C\-O frequency range is 80-\/180 \-M\-Hz (160-\/240 \-M\-Hz if unset). \end{DoxyCompactList}\item 
+\#define \hyperlink{group__pll__group_ga0ab4eb3395991501ba1c8aa8a7c606be}{\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-O\-U\-T\-P\-U\-T\-\_\-\-D\-I\-V}~1
+\begin{DoxyCompactList}\small\item\em \-Divide output frequency by two. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__pll__group_gaa2d0c945bda195002b421eb79d2c87ca}{\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-W\-B\-M\-\_\-\-D\-I\-S\-A\-B\-L\-E}~2
+\begin{DoxyCompactList}\small\item\em \-Disable wide-\/bandwidth mode. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__pll__group_gae74457d5b4073fdb82cb6b9f3d8b76e2}{\-P\-L\-L\-\_\-\-N\-R\-\_\-\-O\-P\-T\-I\-O\-N\-S}~\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-P\-L\-L\-O\-P\-T\-\_\-\-S\-I\-Z\-E
+\begin{DoxyCompactList}\small\item\em \-Number of \-P\-L\-L option bits. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__pll__group_ga49eaeabf6add7c1be4000c77cb8b2bff}{\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-L\-O\-W\-\_\-\-T\-H\-R\-E\-S\-H\-O\-L\-D}
+\begin{DoxyCompactList}\small\item\em \-The threshold under which to set the \hyperlink{group__pll__group_ga03717c32c87c59df4b94a4233a5c2e3e}{\-P\-L\-L\-\_\-\-O\-P\-T\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E\-\_\-\-L\-O\-W} option. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group__pll__group_gacfb06d8fc0ffbe934077438884ae697f}{pll\-\_\-source} \{ \hyperlink{group__pll__group_ggacfb06d8fc0ffbe934077438884ae697fa060f32d7388cf128f527739090aa4217}{\-P\-L\-L\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0} =  0, 
+\hyperlink{group__pll__group_ggacfb06d8fc0ffbe934077438884ae697fa28e003235f43b85c6ee49bbe81b67218}{\-P\-L\-L\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1} =  1, 
+\hyperlink{group__pll__group_ggacfb06d8fc0ffbe934077438884ae697fa87507b481d2c92b721d802a5ae6cc8a5}{\-P\-L\-L\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M} =  2, 
+\hyperlink{group__pll__group_ggacfb06d8fc0ffbe934077438884ae697fa5020b47784b860efae2c423d33999dcc}{\-P\-L\-L\-\_\-\-N\-R\-\_\-\-S\-O\-U\-R\-C\-E\-S}
+ \}
+\begin{DoxyCompactList}\small\item\em \-P\-L\-L clock source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__pll__group_gaeee0be729bfa596c973cf6f725a89d45}{pll\-\_\-config\-\_\-write} (const struct \hyperlink{structpll__config}{pll\-\_\-config} $\ast$cfg, unsigned int pll\-\_\-id)
+\begin{DoxyCompactList}\small\item\em \-Activate the configuration {\itshape cfg\/} on {\itshape pll\-\_\-id\/}. \end{DoxyCompactList}\item 
+void \hyperlink{group__pll__group_gaede6e280289cb0759af0f5a34f5a627f}{pll\-\_\-enable} (const struct \hyperlink{structpll__config}{pll\-\_\-config} $\ast$cfg, unsigned int pll\-\_\-id)
+\begin{DoxyCompactList}\small\item\em \-Activate the configuration {\itshape cfg\/} and enable \-P\-L\-L {\itshape pll\-\_\-id\/}. \end{DoxyCompactList}\item 
+void \hyperlink{group__pll__group_ga9b369b5f673b10a6adf14cd3c9fea5ad}{pll\-\_\-disable} (unsigned int pll\-\_\-id)
+\begin{DoxyCompactList}\small\item\em \-Disable the \-P\-L\-L identified by {\itshape pll\-\_\-id\/}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\paragraph*{\-Interaction with the \-P\-L\-L hardware}
+\end{Indent}
+\subsection*{\-P\-L\-L configuration}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__pll__group_ga16c8db5e3f1a2c759a88371120579c4d}{pll\-\_\-get\-\_\-default\-\_\-rate}(pll\-\_\-id)
+\begin{DoxyCompactList}\small\item\em \-Get the default rate in \-Hz of {\itshape pll\-\_\-id\/}. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__pll__group_ga2b9ba9ce6a7290303f6e8d41191fd0d8}{pll\-\_\-config\-\_\-defaults}(cfg, pll\-\_\-id)
+\begin{DoxyCompactList}\small\item\em \-Initialize \-P\-L\-L configuration using default parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Chip-\/specific \-P\-L\-L definitions. \-Copyright (\-C) 2010 -\/ 2011 \-Atmel \-Corporation. \-All rights reserved. 
+
+\subsection{\-Define \-Documentation}
+\hypertarget{uc3c_2pll_8h_a07643f13da0314cb5324f12c11f326dd}{
+\index{uc3c/pll.\-h@{uc3c/pll.\-h}!\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E0\-\_\-\-M\-A\-X\-\_\-\-F\-R\-E\-Q@{\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E0\-\_\-\-M\-A\-X\-\_\-\-F\-R\-E\-Q}}
+\index{\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E0\-\_\-\-M\-A\-X\-\_\-\-F\-R\-E\-Q@{\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E0\-\_\-\-M\-A\-X\-\_\-\-F\-R\-E\-Q}!uc3c/pll.h@{uc3c/pll.\-h}}
+\subsubsection[{\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E0\-\_\-\-M\-A\-X\-\_\-\-F\-R\-E\-Q}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E0\-\_\-\-M\-A\-X\-\_\-\-F\-R\-E\-Q~240000000}}
+\label{uc3c_2pll_8h_a07643f13da0314cb5324f12c11f326dd}
+\hypertarget{uc3c_2pll_8h_aabe42b8f766d0b3a02385d4c04494810}{
+\index{uc3c/pll.\-h@{uc3c/pll.\-h}!\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E0\-\_\-\-M\-I\-N\-\_\-\-F\-R\-E\-Q@{\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E0\-\_\-\-M\-I\-N\-\_\-\-F\-R\-E\-Q}}
+\index{\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E0\-\_\-\-M\-I\-N\-\_\-\-F\-R\-E\-Q@{\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E0\-\_\-\-M\-I\-N\-\_\-\-F\-R\-E\-Q}!uc3c/pll.h@{uc3c/pll.\-h}}
+\subsubsection[{\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E0\-\_\-\-M\-I\-N\-\_\-\-F\-R\-E\-Q}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E0\-\_\-\-M\-I\-N\-\_\-\-F\-R\-E\-Q~160000000}}
+\label{uc3c_2pll_8h_aabe42b8f766d0b3a02385d4c04494810}
+\hypertarget{uc3c_2pll_8h_ac443c8c74126291df314757d411a14f5}{
+\index{uc3c/pll.\-h@{uc3c/pll.\-h}!\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E1\-\_\-\-M\-A\-X\-\_\-\-F\-R\-E\-Q@{\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E1\-\_\-\-M\-A\-X\-\_\-\-F\-R\-E\-Q}}
+\index{\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E1\-\_\-\-M\-A\-X\-\_\-\-F\-R\-E\-Q@{\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E1\-\_\-\-M\-A\-X\-\_\-\-F\-R\-E\-Q}!uc3c/pll.h@{uc3c/pll.\-h}}
+\subsubsection[{\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E1\-\_\-\-M\-A\-X\-\_\-\-F\-R\-E\-Q}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E1\-\_\-\-M\-A\-X\-\_\-\-F\-R\-E\-Q~180000000}}
+\label{uc3c_2pll_8h_ac443c8c74126291df314757d411a14f5}
+\hypertarget{uc3c_2pll_8h_a39aa078b560b8e913eb40001f6a857ca}{
+\index{uc3c/pll.\-h@{uc3c/pll.\-h}!\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E1\-\_\-\-M\-I\-N\-\_\-\-F\-R\-E\-Q@{\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E1\-\_\-\-M\-I\-N\-\_\-\-F\-R\-E\-Q}}
+\index{\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E1\-\_\-\-M\-I\-N\-\_\-\-F\-R\-E\-Q@{\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E1\-\_\-\-M\-I\-N\-\_\-\-F\-R\-E\-Q}!uc3c/pll.h@{uc3c/pll.\-h}}
+\subsubsection[{\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E1\-\_\-\-M\-I\-N\-\_\-\-F\-R\-E\-Q}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-P\-L\-L\-\_\-\-V\-C\-O\-\_\-\-R\-A\-N\-G\-E1\-\_\-\-M\-I\-N\-\_\-\-F\-R\-E\-Q~80000000}}
+\label{uc3c_2pll_8h_a39aa078b560b8e913eb40001f6a857ca}

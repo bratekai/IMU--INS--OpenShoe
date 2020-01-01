@@ -1,0 +1,655 @@
+\hypertarget{group__control__tables}{
+\section{\-Tabulated information}
+\label{group__control__tables}\index{\-Tabulated information@{\-Tabulated information}}
+}
+
+
+\-This group contains tabulated information for the control and communication.  
+
+
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcommand__structure}{command\-\_\-structure}
+\begin{DoxyCompactList}\small\item\em \-Definition structure of commands. \end{DoxyCompactList}\item 
+struct \hyperlink{structproc__func__info}{proc\-\_\-func\-\_\-info}
+\begin{DoxyCompactList}\small\item\em \-Information struct for processing functions. \end{DoxyCompactList}\item 
+struct \hyperlink{structstate__t__info}{state\-\_\-t\-\_\-info}
+\begin{DoxyCompactList}\small\item\em \-State data type information struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__control__tables_ga3e9ed14716fd984977306110fbf28de0}{commands\-\_\-init} (void)
+\item 
+void \hyperlink{group__control__tables_ga8c4a627db87a50d5f3de3755eef48222}{stop\-\_\-initial\-\_\-alignement} (void)
+\item 
+void \hyperlink{group__control__tables_gad49f6a65369961b5d34c5353f3afdf4d}{new\-\_\-calibration\-\_\-orientation} (void)
+\item 
+bool \hyperlink{group__control__tables_ga93c567d32019e258ebc253b37fabde6c}{is\-\_\-valid\-\_\-header} (uint8\-\_\-t header)
+\item 
+\hyperlink{structcommand__structure}{command\-\_\-structure} $\ast$ \hyperlink{group__control__tables_ga95d9006725f04b028d795b3a3d9b4572}{get\-\_\-command\-\_\-info} (uint8\-\_\-t header)
+\item 
+void \hyperlink{group__control__tables_gab9fa06115589056892bdb7bb02b138c8}{processing\-\_\-functions\-\_\-init} (void)
+\item 
+void \hyperlink{group__control__tables_gae8c28d3d1938044d7d44c2e587542ff0}{system\-\_\-states\-\_\-init} (void)
+\item 
+void \hyperlink{group__control__tables_gaae1bbd924940610e1709300d40ca5a0f}{update\-\_\-imu\-\_\-data\-\_\-buffers} (void)
+\item 
+void \hyperlink{group__control__tables_ga8b0f8dc8c2ae1ff3f5e4f27284cf8e77}{initialize\-\_\-navigation\-\_\-algorithm} (void)
+\item 
+void \hyperlink{group__control__tables_ga9169808fbcb9f517deb908960a69ca7a}{strapdown\-\_\-mechanisation\-\_\-equations} (void)
+\item 
+void \hyperlink{group__control__tables_gac80ad2aa648edb47edb8f62883cb2a7d}{time\-\_\-up\-\_\-data} (void)
+\item 
+void \hyperlink{group__control__tables_gaf0b7424f50d37755b6b0736808082299}{\-Z\-U\-P\-T\-\_\-detector} (void)
+\item 
+void \hyperlink{group__control__tables_ga0b4ee34435eebb426eb367120ee79d72}{zupt\-\_\-update} (void)
+\begin{DoxyCompactList}\small\item\em \-Routine collecting the functions which need to be run to make a \-Z\-U\-P\-T update. \end{DoxyCompactList}\item 
+void \hyperlink{group__control__tables_ga71833d5eb4e7c71baaaa9e707a6c1f8d}{precision\-\_\-gyro\-\_\-bias\-\_\-null\-\_\-calibration} (void)
+\begin{DoxyCompactList}\small\item\em \-Initializes the internal \-I\-M\-U gyro calibration routine. \end{DoxyCompactList}\item 
+void \hyperlink{group__control__tables_gabb3f28a44a35898c77d789734914c4c2}{calibrate\-\_\-accelerometers} (void)
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t \hyperlink{group__control__tables_gad95e17426b114a04135420ae71fad638}{command\-\_\-header\-\_\-table} \mbox{[}32\mbox{]} = \{0\}
+\item 
+\hyperlink{structcommand__structure}{command\-\_\-structure} $\ast$ \hyperlink{group__control__tables_ga787ed232eeca1469a58bea3d268f1ba4}{command\-\_\-info\-\_\-array} \mbox{[}256\mbox{]} = \{\-N\-U\-L\-L\}
+\item 
+uint8\-\_\-t \hyperlink{group__control__tables_gad95e17426b114a04135420ae71fad638}{command\-\_\-header\-\_\-table} \mbox{[}32\mbox{]}
+\item 
+\hyperlink{structcommand__structure}{command\-\_\-structure} $\ast$ \hyperlink{group__control__tables_ga787ed232eeca1469a58bea3d268f1ba4}{command\-\_\-info\-\_\-array} \mbox{[}256\mbox{]}
+\item 
+\hyperlink{structproc__func__info}{proc\-\_\-func\-\_\-info} $\ast$ \hyperlink{group__control__tables_ga71b229d28824a0096f4f05aed00960a0}{processing\-\_\-functions\-\_\-by\-\_\-id} \mbox{[}256\mbox{]}
+\item 
+\hyperlink{structstate__t__info}{state\-\_\-t\-\_\-info} $\ast$ \hyperlink{group__control__tables_gac88bd7197a23c03d99042566d75f3884}{state\-\_\-info\-\_\-access\-\_\-by\-\_\-id} \mbox{[}\-S\-I\-D\-\_\-\-L\-I\-M\-I\-T\mbox{]}
+\item 
+\hyperlink{structproc__func__info}{proc\-\_\-func\-\_\-info} $\ast$ \hyperlink{group__control__tables_ga71b229d28824a0096f4f05aed00960a0}{processing\-\_\-functions\-\_\-by\-\_\-id} \mbox{[}256\mbox{]}
+\item 
+\hyperlink{structstate__t__info}{state\-\_\-t\-\_\-info} $\ast$ \hyperlink{group__control__tables_gac88bd7197a23c03d99042566d75f3884}{state\-\_\-info\-\_\-access\-\_\-by\-\_\-id} \mbox{[}\-S\-I\-D\-\_\-\-L\-I\-M\-I\-T\mbox{]}
+\end{DoxyCompactItemize}
+\subsection*{\-Command response functions}
+\label{_amgrpc5b25f46ab968a62146105797e9fb528}%
+ \-Functions which are executed in response to commands. \begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__control__tables_ga154e99940eadddeab0a978ebaaf4af29}{output\-\_\-state} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_gaf49fcc59b85d00300cceac3381af50ac}{turn\-\_\-off\-\_\-output} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_ga144f167d203bfaa934388244862c2e66}{get\-\_\-mcu\-\_\-serial} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_ga18b9c076238f0421e0c613aba24c1e96}{toggle\-\_\-inertial\-\_\-output} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_gade63f6b7485456459a562107079a76a8}{position\-\_\-plus\-\_\-zupt} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_ga73d5a4fdd7dbdf0707007e03b69dd7aa}{output\-\_\-navigational\-\_\-states} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_ga2f8eeda3ee360ccf29e05fbfda016f47}{processing\-\_\-onoff} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_gae59981ff1a5486c063329824f812d6ef}{reset\-\_\-zupt\-\_\-aided\-\_\-ins} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_ga208e711393802848a2f84f913ef3cb84}{gyro\-\_\-self\-\_\-calibration} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_ga29fdeaec38ab911e7c4a5ffd19dc178d}{acc\-\_\-calibration} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_ga84aa612912a72fcafffbcccebb850768}{set\-\_\-low\-\_\-pass\-\_\-imu} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_ga346604881a8eab56c9d83fbc21479aff}{add\-\_\-sync\-\_\-output} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_gad63b1df6af95332351b359c4765e67fa}{sync\-\_\-output} (uint8\-\_\-t $\ast$$\ast$)
+\end{DoxyCompactItemize}
+\subsection*{\-Processing functions \-I\-Ds}
+\label{_amgrp770404d72304ce44b8f2271ee9f5d4c5}%
+ \-Macros for processing functions \-I\-Ds \begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__control__tables_gac644d2e05254dadd0b19a93c12c0afd9}{\-U\-P\-D\-A\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R}~0x04
+\item 
+\#define \hyperlink{group__control__tables_ga88f8e60882c5d69d913d1b616687465d}{\-I\-N\-I\-T\-I\-A\-L\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T}~0x05
+\item 
+\#define \hyperlink{group__control__tables_gaec182aad2e49484d086d38c7ed1f9fe4}{\-M\-E\-C\-H\-A\-N\-I\-Z\-A\-T\-I\-O\-N}~0x06
+\item 
+\#define \hyperlink{group__control__tables_ga72e2455cf02251f80606a36183764cd1}{\-T\-I\-M\-E\-\_\-\-U\-P\-D\-A\-T\-E}~0x07
+\item 
+\#define \hyperlink{group__control__tables_ga2ea883c0ff4e6a5d37f32290ab3524b7}{\-Z\-U\-P\-T\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R}~0x08
+\item 
+\#define \hyperlink{group__control__tables_ga7d004ff741f1e7caad510eaa0a548fc1}{\-Z\-U\-P\-T\-\_\-\-U\-P\-D\-A\-T\-E}~0x09
+\item 
+\#define \hyperlink{group__control__tables_ga5f00f42fc2574820abde7c7dd797a036}{\-G\-Y\-R\-O\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N}~0x10
+\item 
+\#define \hyperlink{group__control__tables_ga8b4361d794c38610770d0078d5a581f3}{\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N}~0x11
+\end{DoxyCompactItemize}
+\subsection*{\-External state \-I\-Ds}
+\label{_amgrpd4b29b39767bb9a4ca484ce162256199}%
+ \-Macros for external state \-I\-Ds \begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__control__tables_gaeadb9947c80d097da4413c55179afe6f}{\-S\-I\-D\-\_\-\-L\-I\-M\-I\-T}~0x\-F\-F
+\item 
+\#define \hyperlink{group__control__tables_gae04e393e8b250dad55fddb546ef61111}{\-S\-P\-E\-C\-I\-F\-I\-C\-\_\-\-F\-O\-R\-C\-E\-\_\-\-S\-I\-D}~0x01
+\item 
+\#define \hyperlink{group__control__tables_ga4bae6e7de487043575d61cb52dff4cf3}{\-A\-N\-G\-U\-L\-A\-R\-\_\-\-R\-A\-T\-E\-\_\-\-S\-I\-D}~0x02
+\item 
+\#define \hyperlink{group__control__tables_gad5186a188194306bbc87ddddc7644ddd}{\-I\-M\-U\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-S\-\_\-\-S\-I\-D}~0x03
+\item 
+\#define \hyperlink{group__control__tables_gad0a37f572243f76ea1f2b79fc14b2a30}{\-I\-M\-U\-\_\-\-S\-U\-P\-P\-L\-Y\-\_\-\-V\-O\-L\-T\-A\-G\-E\-\_\-\-S\-I\-D}~0x04
+\item 
+\#define \hyperlink{group__control__tables_gaafd3e23709eecfd5bfdc358f8a07b991}{\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-S\-I\-D}~0x11
+\item 
+\#define \hyperlink{group__control__tables_ga6b3256a3e116aaefe13352f9b493c279}{\-V\-E\-L\-O\-C\-I\-T\-Y\-\_\-\-S\-I\-D}~0x12
+\item 
+\#define \hyperlink{group__control__tables_gae1fc29b0358f36a68b7ba9bde85e16fd}{\-Q\-U\-A\-T\-E\-R\-N\-I\-O\-N\-\_\-\-S\-I\-D}~0x13
+\item 
+\#define \hyperlink{group__control__tables_ga1c2e91b10f17814f52bf09f647909d83}{\-Z\-U\-P\-T\-\_\-\-S\-I\-D}~0x14
+\item 
+\#define \hyperlink{group__control__tables_gab3382d5f9c6e647fc9b795596dd14646}{\-I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-S\-I\-D}~0x21
+\item 
+\#define \hyperlink{group__control__tables_gaf0c693bf22229a5eba03b2bad37b07bf}{\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-B\-I\-A\-S\-E\-S\-\_\-\-S\-I\-D}~0x35
+\end{DoxyCompactItemize}
+\subsection*{\-Command \-I\-Ds}
+\label{_amgrpdd8e66e4161fe2b0a7d453e3b74a9976}%
+ \-Macros for command \-I\-Ds \begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__control__tables_gac08e4ee0ee7d39737aad3c8f0345125f}{\-O\-N\-L\-Y\-\_\-\-A\-C\-K}~0x01
+\item 
+\#define \hyperlink{group__control__tables_ga6b19b2455c7df9d39618ea3a8b76862f}{\-M\-C\-U\-\_\-\-I\-D}~0x02
+\item 
+\#define \hyperlink{group__control__tables_gac99194fc1af41c8aa6d9efd08ede1f22}{\-O\-U\-T\-P\-U\-T\-\_\-\-S\-T\-A\-T\-E}~0x20
+\item 
+\#define \hyperlink{group__control__tables_gae0b2c5c10091e2d401594f7b1ca994bd}{\-O\-U\-T\-P\-U\-T\-\_\-\-A\-L\-L\-\_\-\-O\-F\-F}~0x21
+\item 
+\#define \hyperlink{group__control__tables_ga237ed802e40a56c4819fae1c02bb0ef2}{\-O\-U\-T\-P\-U\-T\-\_\-\-O\-N\-O\-F\-F\-\_\-\-I\-N\-E\-R\-T}~0x22
+\item 
+\#define \hyperlink{group__control__tables_gaa36cf28d2178f23468bb7d841ef2751c}{\-O\-U\-T\-P\-U\-T\-\_\-\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-P\-L\-U\-S\-\_\-\-Z\-U\-P\-T}~0x23
+\item 
+\#define \hyperlink{group__control__tables_ga0c9de18d6dd10a57ecac1e77ea348070}{\-O\-U\-T\-P\-U\-T\-\_\-\-N\-A\-V\-I\-G\-A\-T\-I\-O\-N\-A\-L\-\_\-\-S\-T\-A\-T\-E\-S}~0x24
+\item 
+\#define \hyperlink{group__control__tables_ga4a949ef22a9067dfeab6d8a1f5dcdcb2}{\-P\-R\-O\-C\-E\-S\-S\-I\-N\-G\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-O\-N\-O\-F\-F}~0x30
+\item 
+\#define \hyperlink{group__control__tables_gafcdf5f9fe1453405ee1fa33d809a0e33}{\-R\-E\-S\-E\-T\-\_\-\-Z\-U\-P\-T\-\_\-\-A\-I\-D\-E\-D\-\_\-\-I\-N\-S}~0x10
+\item 
+\#define \hyperlink{group__control__tables_gaf9005cd230f9c8b3987cad4597a80d3f}{\-G\-Y\-R\-O\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-N\-I\-T}~0x11
+\item 
+\#define \hyperlink{group__control__tables_ga4fa18373c8638280f359f99358fcc685}{\-A\-C\-C\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-N\-I\-T}~0x12
+\item 
+\#define \hyperlink{group__control__tables_ga8bcc9a14d954ffead9edfa80f68dc99c}{\-S\-E\-T\-\_\-\-L\-O\-W\-P\-A\-S\-S\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-I\-M\-U}~0x13
+\item 
+\#define \hyperlink{group__control__tables_gadd0f9ff2a48d64e6b6fde44116089531}{\-A\-D\-D\-\_\-\-S\-Y\-N\-C\-\_\-\-O\-U\-T\-P\-U\-T}~0x25
+\item 
+\#define \hyperlink{group__control__tables_ga6a4fabc408d6210436da0220b2e92ae0}{\-S\-Y\-N\-C\-\_\-\-O\-U\-T\-P\-U\-T}~0x26
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-This group contains tabulated information for the control and communication. 
+
+\subsection{\-Define \-Documentation}
+\hypertarget{group__control__tables_ga4fa18373c8638280f359f99358fcc685}{
+\index{\-Tabulated information@{\-Tabulated information}!\-A\-C\-C\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-N\-I\-T@{\-A\-C\-C\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-N\-I\-T}}
+\index{\-A\-C\-C\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-N\-I\-T@{\-A\-C\-C\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-N\-I\-T}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-A\-C\-C\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-N\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-C\-C\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-N\-I\-T~0x12}}
+\label{group__control__tables_ga4fa18373c8638280f359f99358fcc685}
+\hypertarget{group__control__tables_gaf0c693bf22229a5eba03b2bad37b07bf}{
+\index{\-Tabulated information@{\-Tabulated information}!\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-B\-I\-A\-S\-E\-S\-\_\-\-S\-I\-D@{\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-B\-I\-A\-S\-E\-S\-\_\-\-S\-I\-D}}
+\index{\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-B\-I\-A\-S\-E\-S\-\_\-\-S\-I\-D@{\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-B\-I\-A\-S\-E\-S\-\_\-\-S\-I\-D}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-B\-I\-A\-S\-E\-S\-\_\-\-S\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-B\-I\-A\-S\-E\-S\-\_\-\-S\-I\-D~0x35}}
+\label{group__control__tables_gaf0c693bf22229a5eba03b2bad37b07bf}
+\hypertarget{group__control__tables_ga8b4361d794c38610770d0078d5a581f3}{
+\index{\-Tabulated information@{\-Tabulated information}!\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N@{\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N}}
+\index{\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N@{\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N~0x11}}
+\label{group__control__tables_ga8b4361d794c38610770d0078d5a581f3}
+\hypertarget{group__control__tables_gadd0f9ff2a48d64e6b6fde44116089531}{
+\index{\-Tabulated information@{\-Tabulated information}!\-A\-D\-D\-\_\-\-S\-Y\-N\-C\-\_\-\-O\-U\-T\-P\-U\-T@{\-A\-D\-D\-\_\-\-S\-Y\-N\-C\-\_\-\-O\-U\-T\-P\-U\-T}}
+\index{\-A\-D\-D\-\_\-\-S\-Y\-N\-C\-\_\-\-O\-U\-T\-P\-U\-T@{\-A\-D\-D\-\_\-\-S\-Y\-N\-C\-\_\-\-O\-U\-T\-P\-U\-T}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-A\-D\-D\-\_\-\-S\-Y\-N\-C\-\_\-\-O\-U\-T\-P\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-D\-D\-\_\-\-S\-Y\-N\-C\-\_\-\-O\-U\-T\-P\-U\-T~0x25}}
+\label{group__control__tables_gadd0f9ff2a48d64e6b6fde44116089531}
+\hypertarget{group__control__tables_ga4bae6e7de487043575d61cb52dff4cf3}{
+\index{\-Tabulated information@{\-Tabulated information}!\-A\-N\-G\-U\-L\-A\-R\-\_\-\-R\-A\-T\-E\-\_\-\-S\-I\-D@{\-A\-N\-G\-U\-L\-A\-R\-\_\-\-R\-A\-T\-E\-\_\-\-S\-I\-D}}
+\index{\-A\-N\-G\-U\-L\-A\-R\-\_\-\-R\-A\-T\-E\-\_\-\-S\-I\-D@{\-A\-N\-G\-U\-L\-A\-R\-\_\-\-R\-A\-T\-E\-\_\-\-S\-I\-D}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-A\-N\-G\-U\-L\-A\-R\-\_\-\-R\-A\-T\-E\-\_\-\-S\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-N\-G\-U\-L\-A\-R\-\_\-\-R\-A\-T\-E\-\_\-\-S\-I\-D~0x02}}
+\label{group__control__tables_ga4bae6e7de487043575d61cb52dff4cf3}
+\hypertarget{group__control__tables_ga5f00f42fc2574820abde7c7dd797a036}{
+\index{\-Tabulated information@{\-Tabulated information}!\-G\-Y\-R\-O\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N@{\-G\-Y\-R\-O\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N}}
+\index{\-G\-Y\-R\-O\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N@{\-G\-Y\-R\-O\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-G\-Y\-R\-O\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-Y\-R\-O\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N~0x10}}
+\label{group__control__tables_ga5f00f42fc2574820abde7c7dd797a036}
+\hypertarget{group__control__tables_gaf9005cd230f9c8b3987cad4597a80d3f}{
+\index{\-Tabulated information@{\-Tabulated information}!\-G\-Y\-R\-O\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-N\-I\-T@{\-G\-Y\-R\-O\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-N\-I\-T}}
+\index{\-G\-Y\-R\-O\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-N\-I\-T@{\-G\-Y\-R\-O\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-N\-I\-T}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-G\-Y\-R\-O\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-N\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-Y\-R\-O\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-N\-I\-T~0x11}}
+\label{group__control__tables_gaf9005cd230f9c8b3987cad4597a80d3f}
+\hypertarget{group__control__tables_gad0a37f572243f76ea1f2b79fc14b2a30}{
+\index{\-Tabulated information@{\-Tabulated information}!\-I\-M\-U\-\_\-\-S\-U\-P\-P\-L\-Y\-\_\-\-V\-O\-L\-T\-A\-G\-E\-\_\-\-S\-I\-D@{\-I\-M\-U\-\_\-\-S\-U\-P\-P\-L\-Y\-\_\-\-V\-O\-L\-T\-A\-G\-E\-\_\-\-S\-I\-D}}
+\index{\-I\-M\-U\-\_\-\-S\-U\-P\-P\-L\-Y\-\_\-\-V\-O\-L\-T\-A\-G\-E\-\_\-\-S\-I\-D@{\-I\-M\-U\-\_\-\-S\-U\-P\-P\-L\-Y\-\_\-\-V\-O\-L\-T\-A\-G\-E\-\_\-\-S\-I\-D}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-I\-M\-U\-\_\-\-S\-U\-P\-P\-L\-Y\-\_\-\-V\-O\-L\-T\-A\-G\-E\-\_\-\-S\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-I\-M\-U\-\_\-\-S\-U\-P\-P\-L\-Y\-\_\-\-V\-O\-L\-T\-A\-G\-E\-\_\-\-S\-I\-D~0x04}}
+\label{group__control__tables_gad0a37f572243f76ea1f2b79fc14b2a30}
+\hypertarget{group__control__tables_gad5186a188194306bbc87ddddc7644ddd}{
+\index{\-Tabulated information@{\-Tabulated information}!\-I\-M\-U\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-S\-\_\-\-S\-I\-D@{\-I\-M\-U\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-S\-\_\-\-S\-I\-D}}
+\index{\-I\-M\-U\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-S\-\_\-\-S\-I\-D@{\-I\-M\-U\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-S\-\_\-\-S\-I\-D}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-I\-M\-U\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-S\-\_\-\-S\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-I\-M\-U\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-S\-\_\-\-S\-I\-D~0x03}}
+\label{group__control__tables_gad5186a188194306bbc87ddddc7644ddd}
+\hypertarget{group__control__tables_ga88f8e60882c5d69d913d1b616687465d}{
+\index{\-Tabulated information@{\-Tabulated information}!\-I\-N\-I\-T\-I\-A\-L\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T@{\-I\-N\-I\-T\-I\-A\-L\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T}}
+\index{\-I\-N\-I\-T\-I\-A\-L\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T@{\-I\-N\-I\-T\-I\-A\-L\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-I\-N\-I\-T\-I\-A\-L\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-I\-N\-I\-T\-I\-A\-L\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T~0x05}}
+\label{group__control__tables_ga88f8e60882c5d69d913d1b616687465d}
+\hypertarget{group__control__tables_gab3382d5f9c6e647fc9b795596dd14646}{
+\index{\-Tabulated information@{\-Tabulated information}!\-I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-S\-I\-D@{\-I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-S\-I\-D}}
+\index{\-I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-S\-I\-D@{\-I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-S\-I\-D}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-S\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-S\-I\-D~0x21}}
+\label{group__control__tables_gab3382d5f9c6e647fc9b795596dd14646}
+\hypertarget{group__control__tables_ga6b19b2455c7df9d39618ea3a8b76862f}{
+\index{\-Tabulated information@{\-Tabulated information}!\-M\-C\-U\-\_\-\-I\-D@{\-M\-C\-U\-\_\-\-I\-D}}
+\index{\-M\-C\-U\-\_\-\-I\-D@{\-M\-C\-U\-\_\-\-I\-D}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-M\-C\-U\-\_\-\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-M\-C\-U\-\_\-\-I\-D~0x02}}
+\label{group__control__tables_ga6b19b2455c7df9d39618ea3a8b76862f}
+\hypertarget{group__control__tables_gaec182aad2e49484d086d38c7ed1f9fe4}{
+\index{\-Tabulated information@{\-Tabulated information}!\-M\-E\-C\-H\-A\-N\-I\-Z\-A\-T\-I\-O\-N@{\-M\-E\-C\-H\-A\-N\-I\-Z\-A\-T\-I\-O\-N}}
+\index{\-M\-E\-C\-H\-A\-N\-I\-Z\-A\-T\-I\-O\-N@{\-M\-E\-C\-H\-A\-N\-I\-Z\-A\-T\-I\-O\-N}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-M\-E\-C\-H\-A\-N\-I\-Z\-A\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-M\-E\-C\-H\-A\-N\-I\-Z\-A\-T\-I\-O\-N~0x06}}
+\label{group__control__tables_gaec182aad2e49484d086d38c7ed1f9fe4}
+\hypertarget{group__control__tables_gac08e4ee0ee7d39737aad3c8f0345125f}{
+\index{\-Tabulated information@{\-Tabulated information}!\-O\-N\-L\-Y\-\_\-\-A\-C\-K@{\-O\-N\-L\-Y\-\_\-\-A\-C\-K}}
+\index{\-O\-N\-L\-Y\-\_\-\-A\-C\-K@{\-O\-N\-L\-Y\-\_\-\-A\-C\-K}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-O\-N\-L\-Y\-\_\-\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-N\-L\-Y\-\_\-\-A\-C\-K~0x01}}
+\label{group__control__tables_gac08e4ee0ee7d39737aad3c8f0345125f}
+\hypertarget{group__control__tables_gae0b2c5c10091e2d401594f7b1ca994bd}{
+\index{\-Tabulated information@{\-Tabulated information}!\-O\-U\-T\-P\-U\-T\-\_\-\-A\-L\-L\-\_\-\-O\-F\-F@{\-O\-U\-T\-P\-U\-T\-\_\-\-A\-L\-L\-\_\-\-O\-F\-F}}
+\index{\-O\-U\-T\-P\-U\-T\-\_\-\-A\-L\-L\-\_\-\-O\-F\-F@{\-O\-U\-T\-P\-U\-T\-\_\-\-A\-L\-L\-\_\-\-O\-F\-F}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-O\-U\-T\-P\-U\-T\-\_\-\-A\-L\-L\-\_\-\-O\-F\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-U\-T\-P\-U\-T\-\_\-\-A\-L\-L\-\_\-\-O\-F\-F~0x21}}
+\label{group__control__tables_gae0b2c5c10091e2d401594f7b1ca994bd}
+\hypertarget{group__control__tables_ga0c9de18d6dd10a57ecac1e77ea348070}{
+\index{\-Tabulated information@{\-Tabulated information}!\-O\-U\-T\-P\-U\-T\-\_\-\-N\-A\-V\-I\-G\-A\-T\-I\-O\-N\-A\-L\-\_\-\-S\-T\-A\-T\-E\-S@{\-O\-U\-T\-P\-U\-T\-\_\-\-N\-A\-V\-I\-G\-A\-T\-I\-O\-N\-A\-L\-\_\-\-S\-T\-A\-T\-E\-S}}
+\index{\-O\-U\-T\-P\-U\-T\-\_\-\-N\-A\-V\-I\-G\-A\-T\-I\-O\-N\-A\-L\-\_\-\-S\-T\-A\-T\-E\-S@{\-O\-U\-T\-P\-U\-T\-\_\-\-N\-A\-V\-I\-G\-A\-T\-I\-O\-N\-A\-L\-\_\-\-S\-T\-A\-T\-E\-S}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-O\-U\-T\-P\-U\-T\-\_\-\-N\-A\-V\-I\-G\-A\-T\-I\-O\-N\-A\-L\-\_\-\-S\-T\-A\-T\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-U\-T\-P\-U\-T\-\_\-\-N\-A\-V\-I\-G\-A\-T\-I\-O\-N\-A\-L\-\_\-\-S\-T\-A\-T\-E\-S~0x24}}
+\label{group__control__tables_ga0c9de18d6dd10a57ecac1e77ea348070}
+\hypertarget{group__control__tables_ga237ed802e40a56c4819fae1c02bb0ef2}{
+\index{\-Tabulated information@{\-Tabulated information}!\-O\-U\-T\-P\-U\-T\-\_\-\-O\-N\-O\-F\-F\-\_\-\-I\-N\-E\-R\-T@{\-O\-U\-T\-P\-U\-T\-\_\-\-O\-N\-O\-F\-F\-\_\-\-I\-N\-E\-R\-T}}
+\index{\-O\-U\-T\-P\-U\-T\-\_\-\-O\-N\-O\-F\-F\-\_\-\-I\-N\-E\-R\-T@{\-O\-U\-T\-P\-U\-T\-\_\-\-O\-N\-O\-F\-F\-\_\-\-I\-N\-E\-R\-T}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-O\-U\-T\-P\-U\-T\-\_\-\-O\-N\-O\-F\-F\-\_\-\-I\-N\-E\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-U\-T\-P\-U\-T\-\_\-\-O\-N\-O\-F\-F\-\_\-\-I\-N\-E\-R\-T~0x22}}
+\label{group__control__tables_ga237ed802e40a56c4819fae1c02bb0ef2}
+\hypertarget{group__control__tables_gaa36cf28d2178f23468bb7d841ef2751c}{
+\index{\-Tabulated information@{\-Tabulated information}!\-O\-U\-T\-P\-U\-T\-\_\-\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-P\-L\-U\-S\-\_\-\-Z\-U\-P\-T@{\-O\-U\-T\-P\-U\-T\-\_\-\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-P\-L\-U\-S\-\_\-\-Z\-U\-P\-T}}
+\index{\-O\-U\-T\-P\-U\-T\-\_\-\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-P\-L\-U\-S\-\_\-\-Z\-U\-P\-T@{\-O\-U\-T\-P\-U\-T\-\_\-\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-P\-L\-U\-S\-\_\-\-Z\-U\-P\-T}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-O\-U\-T\-P\-U\-T\-\_\-\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-P\-L\-U\-S\-\_\-\-Z\-U\-P\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-U\-T\-P\-U\-T\-\_\-\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-P\-L\-U\-S\-\_\-\-Z\-U\-P\-T~0x23}}
+\label{group__control__tables_gaa36cf28d2178f23468bb7d841ef2751c}
+\hypertarget{group__control__tables_gac99194fc1af41c8aa6d9efd08ede1f22}{
+\index{\-Tabulated information@{\-Tabulated information}!\-O\-U\-T\-P\-U\-T\-\_\-\-S\-T\-A\-T\-E@{\-O\-U\-T\-P\-U\-T\-\_\-\-S\-T\-A\-T\-E}}
+\index{\-O\-U\-T\-P\-U\-T\-\_\-\-S\-T\-A\-T\-E@{\-O\-U\-T\-P\-U\-T\-\_\-\-S\-T\-A\-T\-E}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-O\-U\-T\-P\-U\-T\-\_\-\-S\-T\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-U\-T\-P\-U\-T\-\_\-\-S\-T\-A\-T\-E~0x20}}
+\label{group__control__tables_gac99194fc1af41c8aa6d9efd08ede1f22}
+\hypertarget{group__control__tables_gaafd3e23709eecfd5bfdc358f8a07b991}{
+\index{\-Tabulated information@{\-Tabulated information}!\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-S\-I\-D@{\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-S\-I\-D}}
+\index{\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-S\-I\-D@{\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-S\-I\-D}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-S\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-S\-I\-D~0x11}}
+\label{group__control__tables_gaafd3e23709eecfd5bfdc358f8a07b991}
+\hypertarget{group__control__tables_ga4a949ef22a9067dfeab6d8a1f5dcdcb2}{
+\index{\-Tabulated information@{\-Tabulated information}!\-P\-R\-O\-C\-E\-S\-S\-I\-N\-G\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-O\-N\-O\-F\-F@{\-P\-R\-O\-C\-E\-S\-S\-I\-N\-G\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-O\-N\-O\-F\-F}}
+\index{\-P\-R\-O\-C\-E\-S\-S\-I\-N\-G\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-O\-N\-O\-F\-F@{\-P\-R\-O\-C\-E\-S\-S\-I\-N\-G\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-O\-N\-O\-F\-F}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-P\-R\-O\-C\-E\-S\-S\-I\-N\-G\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-O\-N\-O\-F\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-R\-O\-C\-E\-S\-S\-I\-N\-G\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-O\-N\-O\-F\-F~0x30}}
+\label{group__control__tables_ga4a949ef22a9067dfeab6d8a1f5dcdcb2}
+\hypertarget{group__control__tables_gae1fc29b0358f36a68b7ba9bde85e16fd}{
+\index{\-Tabulated information@{\-Tabulated information}!\-Q\-U\-A\-T\-E\-R\-N\-I\-O\-N\-\_\-\-S\-I\-D@{\-Q\-U\-A\-T\-E\-R\-N\-I\-O\-N\-\_\-\-S\-I\-D}}
+\index{\-Q\-U\-A\-T\-E\-R\-N\-I\-O\-N\-\_\-\-S\-I\-D@{\-Q\-U\-A\-T\-E\-R\-N\-I\-O\-N\-\_\-\-S\-I\-D}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-Q\-U\-A\-T\-E\-R\-N\-I\-O\-N\-\_\-\-S\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Q\-U\-A\-T\-E\-R\-N\-I\-O\-N\-\_\-\-S\-I\-D~0x13}}
+\label{group__control__tables_gae1fc29b0358f36a68b7ba9bde85e16fd}
+\hypertarget{group__control__tables_gafcdf5f9fe1453405ee1fa33d809a0e33}{
+\index{\-Tabulated information@{\-Tabulated information}!\-R\-E\-S\-E\-T\-\_\-\-Z\-U\-P\-T\-\_\-\-A\-I\-D\-E\-D\-\_\-\-I\-N\-S@{\-R\-E\-S\-E\-T\-\_\-\-Z\-U\-P\-T\-\_\-\-A\-I\-D\-E\-D\-\_\-\-I\-N\-S}}
+\index{\-R\-E\-S\-E\-T\-\_\-\-Z\-U\-P\-T\-\_\-\-A\-I\-D\-E\-D\-\_\-\-I\-N\-S@{\-R\-E\-S\-E\-T\-\_\-\-Z\-U\-P\-T\-\_\-\-A\-I\-D\-E\-D\-\_\-\-I\-N\-S}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-R\-E\-S\-E\-T\-\_\-\-Z\-U\-P\-T\-\_\-\-A\-I\-D\-E\-D\-\_\-\-I\-N\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-R\-E\-S\-E\-T\-\_\-\-Z\-U\-P\-T\-\_\-\-A\-I\-D\-E\-D\-\_\-\-I\-N\-S~0x10}}
+\label{group__control__tables_gafcdf5f9fe1453405ee1fa33d809a0e33}
+\hypertarget{group__control__tables_ga8bcc9a14d954ffead9edfa80f68dc99c}{
+\index{\-Tabulated information@{\-Tabulated information}!\-S\-E\-T\-\_\-\-L\-O\-W\-P\-A\-S\-S\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-I\-M\-U@{\-S\-E\-T\-\_\-\-L\-O\-W\-P\-A\-S\-S\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-I\-M\-U}}
+\index{\-S\-E\-T\-\_\-\-L\-O\-W\-P\-A\-S\-S\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-I\-M\-U@{\-S\-E\-T\-\_\-\-L\-O\-W\-P\-A\-S\-S\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-I\-M\-U}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-S\-E\-T\-\_\-\-L\-O\-W\-P\-A\-S\-S\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-I\-M\-U}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-E\-T\-\_\-\-L\-O\-W\-P\-A\-S\-S\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-I\-M\-U~0x13}}
+\label{group__control__tables_ga8bcc9a14d954ffead9edfa80f68dc99c}
+\hypertarget{group__control__tables_gaeadb9947c80d097da4413c55179afe6f}{
+\index{\-Tabulated information@{\-Tabulated information}!\-S\-I\-D\-\_\-\-L\-I\-M\-I\-T@{\-S\-I\-D\-\_\-\-L\-I\-M\-I\-T}}
+\index{\-S\-I\-D\-\_\-\-L\-I\-M\-I\-T@{\-S\-I\-D\-\_\-\-L\-I\-M\-I\-T}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-S\-I\-D\-\_\-\-L\-I\-M\-I\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-I\-D\-\_\-\-L\-I\-M\-I\-T~0x\-F\-F}}
+\label{group__control__tables_gaeadb9947c80d097da4413c55179afe6f}
+\hypertarget{group__control__tables_gae04e393e8b250dad55fddb546ef61111}{
+\index{\-Tabulated information@{\-Tabulated information}!\-S\-P\-E\-C\-I\-F\-I\-C\-\_\-\-F\-O\-R\-C\-E\-\_\-\-S\-I\-D@{\-S\-P\-E\-C\-I\-F\-I\-C\-\_\-\-F\-O\-R\-C\-E\-\_\-\-S\-I\-D}}
+\index{\-S\-P\-E\-C\-I\-F\-I\-C\-\_\-\-F\-O\-R\-C\-E\-\_\-\-S\-I\-D@{\-S\-P\-E\-C\-I\-F\-I\-C\-\_\-\-F\-O\-R\-C\-E\-\_\-\-S\-I\-D}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-S\-P\-E\-C\-I\-F\-I\-C\-\_\-\-F\-O\-R\-C\-E\-\_\-\-S\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-P\-E\-C\-I\-F\-I\-C\-\_\-\-F\-O\-R\-C\-E\-\_\-\-S\-I\-D~0x01}}
+\label{group__control__tables_gae04e393e8b250dad55fddb546ef61111}
+\hypertarget{group__control__tables_ga6a4fabc408d6210436da0220b2e92ae0}{
+\index{\-Tabulated information@{\-Tabulated information}!\-S\-Y\-N\-C\-\_\-\-O\-U\-T\-P\-U\-T@{\-S\-Y\-N\-C\-\_\-\-O\-U\-T\-P\-U\-T}}
+\index{\-S\-Y\-N\-C\-\_\-\-O\-U\-T\-P\-U\-T@{\-S\-Y\-N\-C\-\_\-\-O\-U\-T\-P\-U\-T}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-S\-Y\-N\-C\-\_\-\-O\-U\-T\-P\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-N\-C\-\_\-\-O\-U\-T\-P\-U\-T~0x26}}
+\label{group__control__tables_ga6a4fabc408d6210436da0220b2e92ae0}
+\hypertarget{group__control__tables_ga72e2455cf02251f80606a36183764cd1}{
+\index{\-Tabulated information@{\-Tabulated information}!\-T\-I\-M\-E\-\_\-\-U\-P\-D\-A\-T\-E@{\-T\-I\-M\-E\-\_\-\-U\-P\-D\-A\-T\-E}}
+\index{\-T\-I\-M\-E\-\_\-\-U\-P\-D\-A\-T\-E@{\-T\-I\-M\-E\-\_\-\-U\-P\-D\-A\-T\-E}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-T\-I\-M\-E\-\_\-\-U\-P\-D\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-T\-I\-M\-E\-\_\-\-U\-P\-D\-A\-T\-E~0x07}}
+\label{group__control__tables_ga72e2455cf02251f80606a36183764cd1}
+\hypertarget{group__control__tables_gac644d2e05254dadd0b19a93c12c0afd9}{
+\index{\-Tabulated information@{\-Tabulated information}!\-U\-P\-D\-A\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R@{\-U\-P\-D\-A\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R}}
+\index{\-U\-P\-D\-A\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R@{\-U\-P\-D\-A\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-U\-P\-D\-A\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-P\-D\-A\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R~0x04}}
+\label{group__control__tables_gac644d2e05254dadd0b19a93c12c0afd9}
+\hypertarget{group__control__tables_ga6b3256a3e116aaefe13352f9b493c279}{
+\index{\-Tabulated information@{\-Tabulated information}!\-V\-E\-L\-O\-C\-I\-T\-Y\-\_\-\-S\-I\-D@{\-V\-E\-L\-O\-C\-I\-T\-Y\-\_\-\-S\-I\-D}}
+\index{\-V\-E\-L\-O\-C\-I\-T\-Y\-\_\-\-S\-I\-D@{\-V\-E\-L\-O\-C\-I\-T\-Y\-\_\-\-S\-I\-D}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-V\-E\-L\-O\-C\-I\-T\-Y\-\_\-\-S\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-V\-E\-L\-O\-C\-I\-T\-Y\-\_\-\-S\-I\-D~0x12}}
+\label{group__control__tables_ga6b3256a3e116aaefe13352f9b493c279}
+\hypertarget{group__control__tables_ga2ea883c0ff4e6a5d37f32290ab3524b7}{
+\index{\-Tabulated information@{\-Tabulated information}!\-Z\-U\-P\-T\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R@{\-Z\-U\-P\-T\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R}}
+\index{\-Z\-U\-P\-T\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R@{\-Z\-U\-P\-T\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-Z\-U\-P\-T\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Z\-U\-P\-T\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R~0x08}}
+\label{group__control__tables_ga2ea883c0ff4e6a5d37f32290ab3524b7}
+\hypertarget{group__control__tables_ga1c2e91b10f17814f52bf09f647909d83}{
+\index{\-Tabulated information@{\-Tabulated information}!\-Z\-U\-P\-T\-\_\-\-S\-I\-D@{\-Z\-U\-P\-T\-\_\-\-S\-I\-D}}
+\index{\-Z\-U\-P\-T\-\_\-\-S\-I\-D@{\-Z\-U\-P\-T\-\_\-\-S\-I\-D}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-Z\-U\-P\-T\-\_\-\-S\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Z\-U\-P\-T\-\_\-\-S\-I\-D~0x14}}
+\label{group__control__tables_ga1c2e91b10f17814f52bf09f647909d83}
+\hypertarget{group__control__tables_ga7d004ff741f1e7caad510eaa0a548fc1}{
+\index{\-Tabulated information@{\-Tabulated information}!\-Z\-U\-P\-T\-\_\-\-U\-P\-D\-A\-T\-E@{\-Z\-U\-P\-T\-\_\-\-U\-P\-D\-A\-T\-E}}
+\index{\-Z\-U\-P\-T\-\_\-\-U\-P\-D\-A\-T\-E@{\-Z\-U\-P\-T\-\_\-\-U\-P\-D\-A\-T\-E}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-Z\-U\-P\-T\-\_\-\-U\-P\-D\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Z\-U\-P\-T\-\_\-\-U\-P\-D\-A\-T\-E~0x09}}
+\label{group__control__tables_ga7d004ff741f1e7caad510eaa0a548fc1}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__control__tables_ga29fdeaec38ab911e7c4a5ffd19dc178d}{
+\index{\-Tabulated information@{\-Tabulated information}!acc\-\_\-calibration@{acc\-\_\-calibration}}
+\index{acc\-\_\-calibration@{acc\-\_\-calibration}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{acc\-\_\-calibration}]{\setlength{\rightskip}{0pt plus 5cm}void acc\-\_\-calibration (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$$\ast$}]{cmd\-\_\-arg}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_ga29fdeaec38ab911e7c4a5ffd19dc178d}
+\hypertarget{group__control__tables_ga346604881a8eab56c9d83fbc21479aff}{
+\index{\-Tabulated information@{\-Tabulated information}!add\-\_\-sync\-\_\-output@{add\-\_\-sync\-\_\-output}}
+\index{add\-\_\-sync\-\_\-output@{add\-\_\-sync\-\_\-output}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{add\-\_\-sync\-\_\-output}]{\setlength{\rightskip}{0pt plus 5cm}void add\-\_\-sync\-\_\-output (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$$\ast$}]{cmd\-\_\-arg}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_ga346604881a8eab56c9d83fbc21479aff}
+\hypertarget{group__control__tables_gabb3f28a44a35898c77d789734914c4c2}{
+\index{\-Tabulated information@{\-Tabulated information}!calibrate\-\_\-accelerometers@{calibrate\-\_\-accelerometers}}
+\index{calibrate\-\_\-accelerometers@{calibrate\-\_\-accelerometers}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{calibrate\-\_\-accelerometers}]{\setlength{\rightskip}{0pt plus 5cm}void calibrate\-\_\-accelerometers (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_gabb3f28a44a35898c77d789734914c4c2}
+\hypertarget{group__control__tables_ga3e9ed14716fd984977306110fbf28de0}{
+\index{\-Tabulated information@{\-Tabulated information}!commands\-\_\-init@{commands\-\_\-init}}
+\index{commands\-\_\-init@{commands\-\_\-init}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{commands\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void commands\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_ga3e9ed14716fd984977306110fbf28de0}
+\hypertarget{group__control__tables_ga95d9006725f04b028d795b3a3d9b4572}{
+\index{\-Tabulated information@{\-Tabulated information}!get\-\_\-command\-\_\-info@{get\-\_\-command\-\_\-info}}
+\index{get\-\_\-command\-\_\-info@{get\-\_\-command\-\_\-info}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{get\-\_\-command\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf command\-\_\-structure}$\ast$ get\-\_\-command\-\_\-info (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{header}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{group__control__tables_ga95d9006725f04b028d795b3a3d9b4572}
+\hypertarget{group__control__tables_ga144f167d203bfaa934388244862c2e66}{
+\index{\-Tabulated information@{\-Tabulated information}!get\-\_\-mcu\-\_\-serial@{get\-\_\-mcu\-\_\-serial}}
+\index{get\-\_\-mcu\-\_\-serial@{get\-\_\-mcu\-\_\-serial}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{get\-\_\-mcu\-\_\-serial}]{\setlength{\rightskip}{0pt plus 5cm}void get\-\_\-mcu\-\_\-serial (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$$\ast$}]{arg}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_ga144f167d203bfaa934388244862c2e66}
+\hypertarget{group__control__tables_ga208e711393802848a2f84f913ef3cb84}{
+\index{\-Tabulated information@{\-Tabulated information}!gyro\-\_\-self\-\_\-calibration@{gyro\-\_\-self\-\_\-calibration}}
+\index{gyro\-\_\-self\-\_\-calibration@{gyro\-\_\-self\-\_\-calibration}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{gyro\-\_\-self\-\_\-calibration}]{\setlength{\rightskip}{0pt plus 5cm}void gyro\-\_\-self\-\_\-calibration (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$$\ast$}]{no\-\_\-arg}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_ga208e711393802848a2f84f913ef3cb84}
+\hypertarget{group__control__tables_ga8b0f8dc8c2ae1ff3f5e4f27284cf8e77}{
+\index{\-Tabulated information@{\-Tabulated information}!initialize\-\_\-navigation\-\_\-algorithm@{initialize\-\_\-navigation\-\_\-algorithm}}
+\index{initialize\-\_\-navigation\-\_\-algorithm@{initialize\-\_\-navigation\-\_\-algorithm}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{initialize\-\_\-navigation\-\_\-algorithm}]{\setlength{\rightskip}{0pt plus 5cm}void initialize\-\_\-navigation\-\_\-algorithm (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_ga8b0f8dc8c2ae1ff3f5e4f27284cf8e77}
+\hypertarget{group__control__tables_ga93c567d32019e258ebc253b37fabde6c}{
+\index{\-Tabulated information@{\-Tabulated information}!is\-\_\-valid\-\_\-header@{is\-\_\-valid\-\_\-header}}
+\index{is\-\_\-valid\-\_\-header@{is\-\_\-valid\-\_\-header}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{is\-\_\-valid\-\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}bool is\-\_\-valid\-\_\-header (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{header}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{group__control__tables_ga93c567d32019e258ebc253b37fabde6c}
+\hypertarget{group__control__tables_gad49f6a65369961b5d34c5353f3afdf4d}{
+\index{\-Tabulated information@{\-Tabulated information}!new\-\_\-calibration\-\_\-orientation@{new\-\_\-calibration\-\_\-orientation}}
+\index{new\-\_\-calibration\-\_\-orientation@{new\-\_\-calibration\-\_\-orientation}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{new\-\_\-calibration\-\_\-orientation}]{\setlength{\rightskip}{0pt plus 5cm}void new\-\_\-calibration\-\_\-orientation (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_gad49f6a65369961b5d34c5353f3afdf4d}
+\hypertarget{group__control__tables_ga73d5a4fdd7dbdf0707007e03b69dd7aa}{
+\index{\-Tabulated information@{\-Tabulated information}!output\-\_\-navigational\-\_\-states@{output\-\_\-navigational\-\_\-states}}
+\index{output\-\_\-navigational\-\_\-states@{output\-\_\-navigational\-\_\-states}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{output\-\_\-navigational\-\_\-states}]{\setlength{\rightskip}{0pt plus 5cm}void output\-\_\-navigational\-\_\-states (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$$\ast$}]{cmd\-\_\-arg}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_ga73d5a4fdd7dbdf0707007e03b69dd7aa}
+\hypertarget{group__control__tables_ga154e99940eadddeab0a978ebaaf4af29}{
+\index{\-Tabulated information@{\-Tabulated information}!output\-\_\-state@{output\-\_\-state}}
+\index{output\-\_\-state@{output\-\_\-state}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{output\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}void output\-\_\-state (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$$\ast$}]{cmd\-\_\-arg}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_ga154e99940eadddeab0a978ebaaf4af29}
+\hypertarget{group__control__tables_gade63f6b7485456459a562107079a76a8}{
+\index{\-Tabulated information@{\-Tabulated information}!position\-\_\-plus\-\_\-zupt@{position\-\_\-plus\-\_\-zupt}}
+\index{position\-\_\-plus\-\_\-zupt@{position\-\_\-plus\-\_\-zupt}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{position\-\_\-plus\-\_\-zupt}]{\setlength{\rightskip}{0pt plus 5cm}void position\-\_\-plus\-\_\-zupt (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$$\ast$}]{cmd\-\_\-arg}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_gade63f6b7485456459a562107079a76a8}
+\hypertarget{group__control__tables_ga71833d5eb4e7c71baaaa9e707a6c1f8d}{
+\index{\-Tabulated information@{\-Tabulated information}!precision\-\_\-gyro\-\_\-bias\-\_\-null\-\_\-calibration@{precision\-\_\-gyro\-\_\-bias\-\_\-null\-\_\-calibration}}
+\index{precision\-\_\-gyro\-\_\-bias\-\_\-null\-\_\-calibration@{precision\-\_\-gyro\-\_\-bias\-\_\-null\-\_\-calibration}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{precision\-\_\-gyro\-\_\-bias\-\_\-null\-\_\-calibration}]{\setlength{\rightskip}{0pt plus 5cm}void precision\-\_\-gyro\-\_\-bias\-\_\-null\-\_\-calibration (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_ga71833d5eb4e7c71baaaa9e707a6c1f8d}
+
+
+\-Initializes the internal \-I\-M\-U gyro calibration routine. 
+
+\-The internal gyro calibration routine will take the mean gyro value over approx. 15s. \-During this time the \-I\-M\-U will be off-\/line (not sending out any interrupts). \-During this period the \-I\-M\-U should be kept statinarry. \hypertarget{group__control__tables_gab9fa06115589056892bdb7bb02b138c8}{
+\index{\-Tabulated information@{\-Tabulated information}!processing\-\_\-functions\-\_\-init@{processing\-\_\-functions\-\_\-init}}
+\index{processing\-\_\-functions\-\_\-init@{processing\-\_\-functions\-\_\-init}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{processing\-\_\-functions\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void processing\-\_\-functions\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_gab9fa06115589056892bdb7bb02b138c8}
+\hypertarget{group__control__tables_ga2f8eeda3ee360ccf29e05fbfda016f47}{
+\index{\-Tabulated information@{\-Tabulated information}!processing\-\_\-onoff@{processing\-\_\-onoff}}
+\index{processing\-\_\-onoff@{processing\-\_\-onoff}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{processing\-\_\-onoff}]{\setlength{\rightskip}{0pt plus 5cm}void processing\-\_\-onoff (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$$\ast$}]{cmd\-\_\-arg}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_ga2f8eeda3ee360ccf29e05fbfda016f47}
+\hypertarget{group__control__tables_gae59981ff1a5486c063329824f812d6ef}{
+\index{\-Tabulated information@{\-Tabulated information}!reset\-\_\-zupt\-\_\-aided\-\_\-ins@{reset\-\_\-zupt\-\_\-aided\-\_\-ins}}
+\index{reset\-\_\-zupt\-\_\-aided\-\_\-ins@{reset\-\_\-zupt\-\_\-aided\-\_\-ins}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{reset\-\_\-zupt\-\_\-aided\-\_\-ins}]{\setlength{\rightskip}{0pt plus 5cm}void reset\-\_\-zupt\-\_\-aided\-\_\-ins (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$$\ast$}]{no\-\_\-arg}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_gae59981ff1a5486c063329824f812d6ef}
+\hypertarget{group__control__tables_ga84aa612912a72fcafffbcccebb850768}{
+\index{\-Tabulated information@{\-Tabulated information}!set\-\_\-low\-\_\-pass\-\_\-imu@{set\-\_\-low\-\_\-pass\-\_\-imu}}
+\index{set\-\_\-low\-\_\-pass\-\_\-imu@{set\-\_\-low\-\_\-pass\-\_\-imu}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{set\-\_\-low\-\_\-pass\-\_\-imu}]{\setlength{\rightskip}{0pt plus 5cm}void set\-\_\-low\-\_\-pass\-\_\-imu (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$$\ast$}]{cmd\-\_\-arg}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_ga84aa612912a72fcafffbcccebb850768}
+\hypertarget{group__control__tables_ga8c4a627db87a50d5f3de3755eef48222}{
+\index{\-Tabulated information@{\-Tabulated information}!stop\-\_\-initial\-\_\-alignement@{stop\-\_\-initial\-\_\-alignement}}
+\index{stop\-\_\-initial\-\_\-alignement@{stop\-\_\-initial\-\_\-alignement}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{stop\-\_\-initial\-\_\-alignement}]{\setlength{\rightskip}{0pt plus 5cm}void stop\-\_\-initial\-\_\-alignement (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_ga8c4a627db87a50d5f3de3755eef48222}
+\hypertarget{group__control__tables_ga9169808fbcb9f517deb908960a69ca7a}{
+\index{\-Tabulated information@{\-Tabulated information}!strapdown\-\_\-mechanisation\-\_\-equations@{strapdown\-\_\-mechanisation\-\_\-equations}}
+\index{strapdown\-\_\-mechanisation\-\_\-equations@{strapdown\-\_\-mechanisation\-\_\-equations}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{strapdown\-\_\-mechanisation\-\_\-equations}]{\setlength{\rightskip}{0pt plus 5cm}void strapdown\-\_\-mechanisation\-\_\-equations (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_ga9169808fbcb9f517deb908960a69ca7a}
+\hypertarget{group__control__tables_gad63b1df6af95332351b359c4765e67fa}{
+\index{\-Tabulated information@{\-Tabulated information}!sync\-\_\-output@{sync\-\_\-output}}
+\index{sync\-\_\-output@{sync\-\_\-output}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{sync\-\_\-output}]{\setlength{\rightskip}{0pt plus 5cm}void sync\-\_\-output (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$$\ast$}]{no\-\_\-arg}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_gad63b1df6af95332351b359c4765e67fa}
+\hypertarget{group__control__tables_gae8c28d3d1938044d7d44c2e587542ff0}{
+\index{\-Tabulated information@{\-Tabulated information}!system\-\_\-states\-\_\-init@{system\-\_\-states\-\_\-init}}
+\index{system\-\_\-states\-\_\-init@{system\-\_\-states\-\_\-init}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{system\-\_\-states\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void system\-\_\-states\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_gae8c28d3d1938044d7d44c2e587542ff0}
+\hypertarget{group__control__tables_gac80ad2aa648edb47edb8f62883cb2a7d}{
+\index{\-Tabulated information@{\-Tabulated information}!time\-\_\-up\-\_\-data@{time\-\_\-up\-\_\-data}}
+\index{time\-\_\-up\-\_\-data@{time\-\_\-up\-\_\-data}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{time\-\_\-up\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void time\-\_\-up\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_gac80ad2aa648edb47edb8f62883cb2a7d}
+\hypertarget{group__control__tables_ga18b9c076238f0421e0c613aba24c1e96}{
+\index{\-Tabulated information@{\-Tabulated information}!toggle\-\_\-inertial\-\_\-output@{toggle\-\_\-inertial\-\_\-output}}
+\index{toggle\-\_\-inertial\-\_\-output@{toggle\-\_\-inertial\-\_\-output}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{toggle\-\_\-inertial\-\_\-output}]{\setlength{\rightskip}{0pt plus 5cm}void toggle\-\_\-inertial\-\_\-output (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$$\ast$}]{cmd\-\_\-arg}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_ga18b9c076238f0421e0c613aba24c1e96}
+\hypertarget{group__control__tables_gaf49fcc59b85d00300cceac3381af50ac}{
+\index{\-Tabulated information@{\-Tabulated information}!turn\-\_\-off\-\_\-output@{turn\-\_\-off\-\_\-output}}
+\index{turn\-\_\-off\-\_\-output@{turn\-\_\-off\-\_\-output}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{turn\-\_\-off\-\_\-output}]{\setlength{\rightskip}{0pt plus 5cm}void turn\-\_\-off\-\_\-output (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$$\ast$}]{cmd\-\_\-arg}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_gaf49fcc59b85d00300cceac3381af50ac}
+\hypertarget{group__control__tables_gaae1bbd924940610e1709300d40ca5a0f}{
+\index{\-Tabulated information@{\-Tabulated information}!update\-\_\-imu\-\_\-data\-\_\-buffers@{update\-\_\-imu\-\_\-data\-\_\-buffers}}
+\index{update\-\_\-imu\-\_\-data\-\_\-buffers@{update\-\_\-imu\-\_\-data\-\_\-buffers}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{update\-\_\-imu\-\_\-data\-\_\-buffers}]{\setlength{\rightskip}{0pt plus 5cm}void update\-\_\-imu\-\_\-data\-\_\-buffers (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_gaae1bbd924940610e1709300d40ca5a0f}
+\hypertarget{group__control__tables_gaf0b7424f50d37755b6b0736808082299}{
+\index{\-Tabulated information@{\-Tabulated information}!\-Z\-U\-P\-T\-\_\-detector@{\-Z\-U\-P\-T\-\_\-detector}}
+\index{\-Z\-U\-P\-T\-\_\-detector@{\-Z\-U\-P\-T\-\_\-detector}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{\-Z\-U\-P\-T\-\_\-detector}]{\setlength{\rightskip}{0pt plus 5cm}void \-Z\-U\-P\-T\-\_\-detector (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_gaf0b7424f50d37755b6b0736808082299}
+\hypertarget{group__control__tables_ga0b4ee34435eebb426eb367120ee79d72}{
+\index{\-Tabulated information@{\-Tabulated information}!zupt\-\_\-update@{zupt\-\_\-update}}
+\index{zupt\-\_\-update@{zupt\-\_\-update}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{zupt\-\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}void zupt\-\_\-update (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__control__tables_ga0b4ee34435eebb426eb367120ee79d72}
+
+
+\-Routine collecting the functions which need to be run to make a \-Z\-U\-P\-T update. 
+
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{group__control__tables_gad95e17426b114a04135420ae71fad638}{
+\index{\-Tabulated information@{\-Tabulated information}!command\-\_\-header\-\_\-table@{command\-\_\-header\-\_\-table}}
+\index{command\-\_\-header\-\_\-table@{command\-\_\-header\-\_\-table}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{command\-\_\-header\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf command\-\_\-header\-\_\-table}\mbox{[}32\mbox{]} = \{0\}}}
+\label{group__control__tables_gad95e17426b114a04135420ae71fad638}
+\hypertarget{group__control__tables_gad95e17426b114a04135420ae71fad638}{
+\index{\-Tabulated information@{\-Tabulated information}!command\-\_\-header\-\_\-table@{command\-\_\-header\-\_\-table}}
+\index{command\-\_\-header\-\_\-table@{command\-\_\-header\-\_\-table}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{command\-\_\-header\-\_\-table}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf command\-\_\-header\-\_\-table}\mbox{[}32\mbox{]}}}
+\label{group__control__tables_gad95e17426b114a04135420ae71fad638}
+\hypertarget{group__control__tables_ga787ed232eeca1469a58bea3d268f1ba4}{
+\index{\-Tabulated information@{\-Tabulated information}!command\-\_\-info\-\_\-array@{command\-\_\-info\-\_\-array}}
+\index{command\-\_\-info\-\_\-array@{command\-\_\-info\-\_\-array}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{command\-\_\-info\-\_\-array}]{\setlength{\rightskip}{0pt plus 5cm}{\bf command\-\_\-structure}$\ast$ {\bf command\-\_\-info\-\_\-array}\mbox{[}256\mbox{]} = \{\-N\-U\-L\-L\}}}
+\label{group__control__tables_ga787ed232eeca1469a58bea3d268f1ba4}
+\hypertarget{group__control__tables_ga787ed232eeca1469a58bea3d268f1ba4}{
+\index{\-Tabulated information@{\-Tabulated information}!command\-\_\-info\-\_\-array@{command\-\_\-info\-\_\-array}}
+\index{command\-\_\-info\-\_\-array@{command\-\_\-info\-\_\-array}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{command\-\_\-info\-\_\-array}]{\setlength{\rightskip}{0pt plus 5cm}{\bf command\-\_\-structure}$\ast$ {\bf command\-\_\-info\-\_\-array}\mbox{[}256\mbox{]}}}
+\label{group__control__tables_ga787ed232eeca1469a58bea3d268f1ba4}
+\hypertarget{group__control__tables_ga71b229d28824a0096f4f05aed00960a0}{
+\index{\-Tabulated information@{\-Tabulated information}!processing\-\_\-functions\-\_\-by\-\_\-id@{processing\-\_\-functions\-\_\-by\-\_\-id}}
+\index{processing\-\_\-functions\-\_\-by\-\_\-id@{processing\-\_\-functions\-\_\-by\-\_\-id}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{processing\-\_\-functions\-\_\-by\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf proc\-\_\-func\-\_\-info}$\ast$ {\bf processing\-\_\-functions\-\_\-by\-\_\-id}\mbox{[}256\mbox{]}}}
+\label{group__control__tables_ga71b229d28824a0096f4f05aed00960a0}
+\hypertarget{group__control__tables_ga71b229d28824a0096f4f05aed00960a0}{
+\index{\-Tabulated information@{\-Tabulated information}!processing\-\_\-functions\-\_\-by\-\_\-id@{processing\-\_\-functions\-\_\-by\-\_\-id}}
+\index{processing\-\_\-functions\-\_\-by\-\_\-id@{processing\-\_\-functions\-\_\-by\-\_\-id}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{processing\-\_\-functions\-\_\-by\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf proc\-\_\-func\-\_\-info}$\ast$ {\bf processing\-\_\-functions\-\_\-by\-\_\-id}\mbox{[}256\mbox{]}}}
+\label{group__control__tables_ga71b229d28824a0096f4f05aed00960a0}
+\hypertarget{group__control__tables_gac88bd7197a23c03d99042566d75f3884}{
+\index{\-Tabulated information@{\-Tabulated information}!state\-\_\-info\-\_\-access\-\_\-by\-\_\-id@{state\-\_\-info\-\_\-access\-\_\-by\-\_\-id}}
+\index{state\-\_\-info\-\_\-access\-\_\-by\-\_\-id@{state\-\_\-info\-\_\-access\-\_\-by\-\_\-id}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{state\-\_\-info\-\_\-access\-\_\-by\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf state\-\_\-t\-\_\-info}$\ast$ {\bf state\-\_\-info\-\_\-access\-\_\-by\-\_\-id}\mbox{[}\-S\-I\-D\-\_\-\-L\-I\-M\-I\-T\mbox{]}}}
+\label{group__control__tables_gac88bd7197a23c03d99042566d75f3884}
+\hypertarget{group__control__tables_gac88bd7197a23c03d99042566d75f3884}{
+\index{\-Tabulated information@{\-Tabulated information}!state\-\_\-info\-\_\-access\-\_\-by\-\_\-id@{state\-\_\-info\-\_\-access\-\_\-by\-\_\-id}}
+\index{state\-\_\-info\-\_\-access\-\_\-by\-\_\-id@{state\-\_\-info\-\_\-access\-\_\-by\-\_\-id}!Tabulated information@{\-Tabulated information}}
+\subsubsection[{state\-\_\-info\-\_\-access\-\_\-by\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf state\-\_\-t\-\_\-info}$\ast$ {\bf state\-\_\-info\-\_\-access\-\_\-by\-\_\-id}\mbox{[}\-S\-I\-D\-\_\-\-L\-I\-M\-I\-T\mbox{]}}}
+\label{group__control__tables_gac88bd7197a23c03d99042566d75f3884}

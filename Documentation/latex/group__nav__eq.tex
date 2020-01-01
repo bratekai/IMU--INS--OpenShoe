@@ -1,0 +1,906 @@
+\hypertarget{group__nav__eq}{
+\section{\-Open\-Shoe filtering algorithms}
+\label{group__nav__eq}\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+}
+\subsection*{\-Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__aux__func}{\-Auxilliary functions}
+\begin{DoxyCompactList}\small\item\em \-Auxilliary functions for calculation various matrix and scalar operations. \end{DoxyCompactList}\item 
+\hyperlink{group__miscel}{\-Miscellaneous}
+\begin{DoxyCompactList}\small\item\em \-Miscellaneous routines. \end{DoxyCompactList}\item 
+\hyperlink{group__main__func}{\-Z\-U\-P\-T aided I\-N\-S functions}
+\begin{DoxyCompactList}\small\item\em the main functions for running the \-Z\-U\-P\-T aided \-I\-N\-S. \end{DoxyCompactList}\item 
+\hyperlink{group__init}{\-Initialization routines}
+\begin{DoxyCompactList}\small\item\em \-Routines for initializing the system. \-Only coarse initial alignment is implemented. \end{DoxyCompactList}\item 
+\hyperlink{group__calib}{\-Calibration routines}
+\begin{DoxyCompactList}\small\item\em \-Calibration routines. \-Only accelerometer calibration is implemented since basic gyro calibration (bias) is trivial and is available on the \-I\-M\-U. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__nav__eq_gac33a980808c64969262d91fa090eae7d}{\-M\-A\-X\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S}~12
+\begin{DoxyCompactList}\small\item\em \-Maximum numbers of orientations that can be used in the accelerometer calibration. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__nav__eq_ga4a21daf1ec76403dafe6b89d46fedbce}{\-M\-I\-N\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S}~3
+\begin{DoxyCompactList}\small\item\em \-Minimum numbers of orientations that can be used in the accelerometer calibration. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__nav__eq_ga2543e63d374d215bd7e64b4afb54287f}{\-M\-A\-T\-R\-I\-X\-\_\-\-I\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-E\-R\-R\-O\-R}~1
+\begin{DoxyCompactList}\small\item\em \-Value returned in the error message if an error occurred in the matrix inversion. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__nav__eq_gad356bf235d99e4983077623c35c068c0}{\-A\-C\-C\-\_\-\-S\-T\-A\-T\-I\-O\-N\-A\-R\-I\-T\-Y\-\_\-\-E\-R\-R\-O\-R}~2
+\begin{DoxyCompactList}\small\item\em \-Value returned in the error message if the \-I\-M\-U was not stationary during the accelerometer calibration. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__nav__eq_ga831d1c30dc8456f94b32e61f65409f4d}{\-A\-C\-C\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-L\-L\-C\-O\-N\-D\-I\-T\-I\-O\-N\-E\-D}~3
+\begin{DoxyCompactList}\small\item\em \-Value returned in the error message if the orientations used in the accelerometer calibration were poorly chosen. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__nav__eq_gae34482207df685c69af65539f47656fa}{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S\-\_\-\-T\-O\-\_\-\-L\-A\-R\-G\-E}~4
+\begin{DoxyCompactList}\small\item\em \-Value returned in the error message if the number of orientations specified for the accelerometer calibration is to large. \-It has been changed to 12. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__nav__eq_gad656aa8d45ef9064bf607734a3af16a1}{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S\-\_\-\-T\-O\-\_\-\-S\-M\-A\-L\-L}~5
+\begin{DoxyCompactList}\small\item\em \-Value returned in the error message if the number of orientations specified for the accelerometer calibration is to few. \-It has been changed to 3. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__nav__eq_ga8add91659e5cb9c98d3a32c44269f034}{absf}(a)~(a$>$0 ? a\-:-\/a)
+\begin{DoxyCompactList}\small\item\em \-Absolute value of a floating point variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__nav__eq_gabb3f28a44a35898c77d789734914c4c2}{calibrate\-\_\-accelerometers} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for calibrating the accelerometer biases. \end{DoxyCompactList}\item 
+void \hyperlink{group__nav__eq_ga272f4012a72ac416888be28bff0236e6}{estimate\-\_\-accelerometer\-\_\-biases} (void)
+\begin{DoxyCompactList}\small\item\em \-Function that estimates the accelerometer biases given a matrix of the mean of the measured acceleration at different orientations. \end{DoxyCompactList}\item 
+void \hyperlink{group__nav__eq_ga8812381ada5c2786a10e378e4ca34377}{correct\-\_\-navigation\-\_\-states} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for correcting the navigation states given a zero-\/velocity detection. \end{DoxyCompactList}\item 
+void \hyperlink{group__nav__eq_ga75c4a936b2db01f930ba89babb822f69}{gain\-\_\-matrix} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for calculating the \-Kalman filter gain matrix. \end{DoxyCompactList}\item 
+void \hyperlink{group__nav__eq_ga8b0f8dc8c2ae1ff3f5e4f27284cf8e77}{initialize\-\_\-navigation\-\_\-algorithm} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for initializing the navigation algorithm. \end{DoxyCompactList}\item 
+void \hyperlink{group__nav__eq_gaa1673f6cf928e97c6372c56eddb4cc72}{measurement\-\_\-update} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for doing a measurement update of the \-Kalman filter covariance. \end{DoxyCompactList}\item 
+void \hyperlink{group__nav__eq_ga9169808fbcb9f517deb908960a69ca7a}{strapdown\-\_\-mechanisation\-\_\-equations} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for doing a time update of the mechanized navigation equations. \end{DoxyCompactList}\item 
+void \hyperlink{group__nav__eq_gac80ad2aa648edb47edb8f62883cb2a7d}{time\-\_\-up\-\_\-data} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for doing a time update of the \-Kalman filter state covariance. \end{DoxyCompactList}\item 
+void \hyperlink{group__nav__eq_gaae1bbd924940610e1709300d40ca5a0f}{update\-\_\-imu\-\_\-data\-\_\-buffers} (void)
+\begin{DoxyCompactList}\small\item\em \-Function that updates the \-I\-M\-U data buffers with the latest values read from the \-I\-M\-U, and writes the \-I\-M\-U data to that should be process at the current iteration to the processing variables. \end{DoxyCompactList}\item 
+void \hyperlink{group__nav__eq_gaf0b7424f50d37755b6b0736808082299}{\-Z\-U\-P\-T\-\_\-detector} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for detecting when the system has zero-\/velocity. \end{DoxyCompactList}\item 
+void \hyperlink{group__nav__eq_ga0b4ee34435eebb426eb367120ee79d72}{zupt\-\_\-update} (void)
+\begin{DoxyCompactList}\small\item\em \-Wrapper function that checks if a zero-\/velocity update should be done, and then calls all navigation algorithm functions that should be executed during a zero-\/velocity update. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Accelerometer calibration parameters.}
+\label{_amgrp498a39b5e61b8b18fd67982a4b1746b8}%
+ \-Parameters controlling accelerometer calibration, and vectors and matrices used store the biases. \begin{DoxyCompactItemize}
+\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_ga1089eea940f41eff26a6cba1172089e9}{accelerometer\-\_\-biases}
+\begin{DoxyCompactList}\small\item\em \-Accelerometer biases (x,y,z-\/axis) \mbox{[} $m/s^2$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_gad5049be4d6ed3b9f92063c6ca6413b46}{acceleration\-\_\-variance\-\_\-threshold} = 0.\-002
+\begin{DoxyCompactList}\small\item\em \-Threshold used to check that accelerometers were stationary during the calibration \mbox{[} $(m/s^2)^2$\mbox{]}. \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{group__nav__eq_gab9d05ce5927a225127eff6993856da19}{nr\-\_\-of\-\_\-calibration\-\_\-samples} = 800
+\begin{DoxyCompactList}\small\item\em \-Number of samples used at each orientation in the calibration procedure. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__nav__eq_ga642a3ad33a0242f4e12fe46a13b0303f}{nr\-\_\-of\-\_\-calibration\-\_\-orientations} = 6
+\begin{DoxyCompactList}\small\item\em \-Number of orientations used in the accelerometer calibration procedure. \-O\-B\-S! \-Most be at least 3 and less than 13. \end{DoxyCompactList}\item 
+\-Bool \hyperlink{group__nav__eq_ga9340627920ea2445fe1469547bc64eae}{new\-\_\-orientation\-\_\-flag} = false
+\begin{DoxyCompactList}\small\item\em \-Flag that is set to true when the \-I\-M\-U should be place in a new orientation. \-Should be set to false when the calibration procedure is started, and when the \-I\-M\-U has been placed in a new orientation by the user. \end{DoxyCompactList}\item 
+\-Bool \hyperlink{group__nav__eq_gaa3b35b0b909a9a4b40d82658fab54349}{acc\-\_\-calibration\-\_\-finished\-\_\-flag} = false
+\begin{DoxyCompactList}\small\item\em \-Flag that is set to true when the calibration is finished. \-Must be set to false before the calibration is started. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-General control parameters.}
+\label{_amgrp043d227d7d75d0dd1cb5b6e51032aaac}%
+ \-Parameters controlling general settings of the navigation algorithm \begin{DoxyCompactItemize}
+\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_ga98eaf96c6c207db4b40273a599149ebe}{latitude} = 13
+\begin{DoxyCompactList}\small\item\em \-Rough latitude of the system \mbox{[} $degrees$\mbox{]}. (\-Used to calculate the magnitude of the gravity vector) \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_ga0387cded24d9bdfa34c78dc27bef01e8}{altitude} = 920
+\begin{DoxyCompactList}\small\item\em \-Rough altitude of the system \mbox{[} $m$\mbox{]}. (\-Used to calculate the magnitude of the gravity vector) \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_gac7d75e5db7af21a75e50ad6437827947}{g} = 9.\-782940329221166
+\begin{DoxyCompactList}\small\item\em \-Magnitude of the local gravity acceleration \mbox{[} $m/s^2$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_gae7e97f885bb0d70931c5c70ad200880d}{dt} = 0.\-001220703125000
+\begin{DoxyCompactList}\small\item\em \-Sampling period \mbox{[} $s$\mbox{]}. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__nav__eq_ga3f996476795917a4b1ace8c6c5e4b28a}{error\-\_\-signal}
+\begin{DoxyCompactList}\small\item\em \-Error signaling vector. \-If zero no error has occurred. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-I\-M\-U data buffer variables.}
+\label{_amgrpc25420e6089685cb041e1744e731c61a}%
+ \-Vectors and variables related to the \-I\-M\-U data buffer. \begin{DoxyCompactItemize}
+\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_gaf92cab44915b7d9faaf5aeadb328bae6}{accelerations\-\_\-in}
+\begin{DoxyCompactList}\small\item\em \-Accelerations read from the \-I\-M\-U \mbox{[} $m/s^2$\mbox{]}. \-These are written into the \-I\-M\-U data buffer. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_ga8cac4b2812dcb492989d7122c5eb0bfb}{angular\-\_\-rates\-\_\-in}
+\begin{DoxyCompactList}\small\item\em \-Angular rates read from the \-I\-M\-U \mbox{[} $rad/s$\mbox{]}. \-These are written into the \-I\-M\-U data buffer. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_ga0e1577a397995052e34d61ddbf578956}{accelerations\-\_\-out}
+\begin{DoxyCompactList}\small\item\em \-Accelerations outputted from the \-I\-M\-U data buffer \mbox{[} $m/s^2$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_gabdb2113f7c6caefe1b25826c1f7c8324}{angular\-\_\-rates\-\_\-out}
+\begin{DoxyCompactList}\small\item\em \-Angular rates outputted from the \-I\-M\-U data buffer \mbox{[} $rad/s$\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Initialization control parameters}
+\label{_amgrpa118b835fc84476bcd7bcacc21f1e294}%
+ \-Parameters controlling the initialization of the navigation algorithm, i.\-e., the initial states of the inertial navigation system equations and the initial \-Kalman filter covariance matrix. \begin{DoxyCompactItemize}
+\item 
+\-Bool \hyperlink{group__nav__eq_gac64a954fe1bf13df62e1e96920a36035}{initialize\-\_\-flag} = true
+\begin{DoxyCompactList}\small\item\em \-A flag that should be set to true when initialization is started and that becomes false when the initialization is finished. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__nav__eq_gaf3c89a8b1365434986dc0314c1c541cf}{nr\-\_\-of\-\_\-inital\-\_\-alignment\-\_\-samples} = 16
+\begin{DoxyCompactList}\small\item\em \-Number of samples used in the initial alignment. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_gaf18deb1376fcc761f2ec2d947cf004e7}{initial\-\_\-heading} = 0
+\begin{DoxyCompactList}\small\item\em \-Initial heading \mbox{[} $rad$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_ga7cd4f9c9472377e6ef5935727ada7109}{initial\-\_\-pos} = \{0, 0, 0\}
+\begin{DoxyCompactList}\small\item\em \-Initial position (\-North, \-East, \-Down) \mbox{[} $m$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_ga0ace968269836475a5c59c16280d1bf1}{sigma\-\_\-initial\-\_\-position} = \{0.\-00001,0.\-00001,0.\-00001\}
+\begin{DoxyCompactList}\small\item\em \-Standard deviations in the initial position uncertainties \mbox{[} $m$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_ga5abe69320e5702cb7f4b79abb9bcf297}{sigma\-\_\-initial\-\_\-velocity} = \{0.\-01,0.\-01,0.\-01\}
+\begin{DoxyCompactList}\small\item\em \-Standard deviations in the initial velocity uncertainties \mbox{[} $m/s$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_gaad9757cf97cfd938818e7785a3beafe1}{sigma\-\_\-initial\-\_\-attitude} = \{0.\-00174,0.\-00174,0.\-00174\}
+\begin{DoxyCompactList}\small\item\em \-Standard deviations in the initial attitude uncertainties \mbox{[} $rad$\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Kalman filter control parameters}
+\label{_amgrp5a5d8141c51eafd0fafa7b9cf62a2515}%
+ \-Parameters controlling the behavior of the \-Kalman filter. \-The parameters can be changed while the filter is running to adapt the filter to the current motion dynamics.
+
+\begin{DoxyNote}{\-Note}
+\-The default noise standard deviation figures are not set to reflect the true noise figures of the \-I\-M\-U sensors, but rather to model the sum of all the errors (biases, scale factors, nonlinearities, etc.) in the system and the measurement model. 
+\end{DoxyNote}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_ga5add0877d1169e9e1d4dd227c1bcc83d}{sigma\-\_\-acceleration} = 0.\-7
+\begin{DoxyCompactList}\small\item\em \-Accelerometer process noise standard deviation \mbox{[} $m/s^2$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_gab6e7cd8a13de230fbcef8ad4e8001eb6}{sigma\-\_\-gyroscope} = 0.\-005235987755983
+\begin{DoxyCompactList}\small\item\em \-Gyroscope process noise standard deviation \mbox{[} $rad/s$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_gae79b582d3d0132b84117242e1f6103f3}{sigma\-\_\-velocity} = \{0.\-1,0.\-1,0.\-1\}
+\begin{DoxyCompactList}\small\item\em \-Pseudo zero-\/velocity measurement noise standard deviations (north, east, down) \mbox{[} $m/s$\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Navigation and filter state variables.}
+\label{_amgrp0f8fa76f99fe991372a251de33492bc0}%
+ \-Vectors that holds the current navigation state estimate and the covariance and gain of the \-Kalman filter. \begin{DoxyCompactItemize}
+\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_ga2807b9fb4b79e01dfde022b613d2575f}{position}
+\begin{DoxyCompactList}\small\item\em \-Position estimate (\-North,\-East,\-Down) \mbox{[} $m$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_ga589efe00d8bd4e8a69613f98390a04c7}{velocity}
+\begin{DoxyCompactList}\small\item\em \-Velocity estimate (\-North,\-East,\-Down) \mbox{[} $m/s$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_ad9a64f455fa02affaba6740746aae7b2}{quat\-\_\-vec} \hyperlink{group__nav__eq_ga059b83d370e7e6a5e9728a8f91943051}{quaternions}
+\begin{DoxyCompactList}\small\item\em \-Attitude (quaternions) estimate. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_ab7675278cb555aa98b43c97694753329}{mat3} \hyperlink{group__nav__eq_ga42753cbc9ae76483da3cbc331a011586}{\-Rb2t}
+\begin{DoxyCompactList}\small\item\em \-Rotation matrix used as an \char`\"{}aiding\char`\"{} variable in the filter algorithm. \-Holds the same information as the quaternions. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a0f4089eb3ad75e0675d7f7d3914fddeb}{mat9sym} \hyperlink{group__nav__eq_ga74c09cdfc5b901e7f842dbe42ed8f4f4}{cov\-\_\-vector}
+\begin{DoxyCompactList}\small\item\em \-Vector representation of the \-Kalman filter covariance matrix. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_af1d09a15760e21f5de26f0839f1b6c62}{mat9by3} \hyperlink{group__nav__eq_gac1df051c6f380aa8d1598b15ee9e6eca}{kalman\-\_\-gain}
+\begin{DoxyCompactList}\small\item\em \-Vector representation of the \-Kalman filter gain matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Zero-\/velocity detector control parameters}
+\label{_amgrp9b098e683e94baa665e2c2dccf093fdc}%
+ \-Parameters controlling the behavior of the zero-\/velocity detector. \-All the detector control parameters, except the {\itshape detector\-\_\-\-Window\-\_\-size\/} may be changed will the navigation algorithm is running in order to adapt the behavior of the detector to the current motion dynamics. \begin{DoxyCompactItemize}
+\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_ga519e1c68258a371960249e09c24e9943}{sigma\-\_\-acc\-\_\-det} = 0.\-035
+\begin{DoxyCompactList}\small\item\em \-Accelerometer noise standard deviation figure \mbox{[} $m/s^2$\mbox{]}, which is used to control how much the detector should trusts the accelerometer data. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_ga779a972b079accc690d64bcd7bef3c91}{sigma\-\_\-gyro\-\_\-det} = 0.\-006
+\begin{DoxyCompactList}\small\item\em \-Gyroscope noise standard deviation figure \mbox{[} $rad/s$\mbox{]}, which is used to control how much the detector should trusts the gyroscope data. \end{DoxyCompactList}\item 
+volatile uint8\-\_\-t \hyperlink{group__nav__eq_ga9e9b826ff87a8e0e4400661c27988682}{detector\-\_\-\-Window\-\_\-size} = 3
+\begin{DoxyCompactList}\small\item\em \-The data window size used in the detector (\-O\-B\-S! \-Must be an odd number.). \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_ga34d28cf12521d9706da4ddfca54106bf}{detector\-\_\-threshold} = 50000
+\begin{DoxyCompactList}\small\item\em \-Threshold used in the detector. \end{DoxyCompactList}\item 
+bool \hyperlink{group__nav__eq_gabd51dc1d49060099533807a22acc61d4}{zupt} = false
+\begin{DoxyCompactList}\small\item\em \-Flag that is set to true if a zero-\/velocity update should be done. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_gae420c23e5d1fdf5b157535212ddeba9e}{\-Test\-\_\-statistics} = 0
+\begin{DoxyCompactList}\small\item\em \-Variable holding the test statistics for the generalized likelihood ratio test, i.\-e., the zero-\/velocity detector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-This group contain the filtering algorithms written for \-Open\-Shoe. \-That is, the \-Z\-U\-P\-T aided \-I\-N\-S and calibration algorithms 
+
+\subsection{\-Define \-Documentation}
+\hypertarget{group__nav__eq_ga8add91659e5cb9c98d3a32c44269f034}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!absf@{absf}}
+\index{absf@{absf}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{absf}]{\setlength{\rightskip}{0pt plus 5cm}\#define absf(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~(a$>$0 ? a\-:-\/a)}}
+\label{group__nav__eq_ga8add91659e5cb9c98d3a32c44269f034}
+
+
+\-Absolute value of a floating point variable. 
+
+\hypertarget{group__nav__eq_ga831d1c30dc8456f94b32e61f65409f4d}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!\-A\-C\-C\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-L\-L\-C\-O\-N\-D\-I\-T\-I\-O\-N\-E\-D@{\-A\-C\-C\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-L\-L\-C\-O\-N\-D\-I\-T\-I\-O\-N\-E\-D}}
+\index{\-A\-C\-C\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-L\-L\-C\-O\-N\-D\-I\-T\-I\-O\-N\-E\-D@{\-A\-C\-C\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-L\-L\-C\-O\-N\-D\-I\-T\-I\-O\-N\-E\-D}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{\-A\-C\-C\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-L\-L\-C\-O\-N\-D\-I\-T\-I\-O\-N\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-C\-C\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-L\-L\-C\-O\-N\-D\-I\-T\-I\-O\-N\-E\-D~3}}
+\label{group__nav__eq_ga831d1c30dc8456f94b32e61f65409f4d}
+
+
+\-Value returned in the error message if the orientations used in the accelerometer calibration were poorly chosen. 
+
+\hypertarget{group__nav__eq_gad356bf235d99e4983077623c35c068c0}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!\-A\-C\-C\-\_\-\-S\-T\-A\-T\-I\-O\-N\-A\-R\-I\-T\-Y\-\_\-\-E\-R\-R\-O\-R@{\-A\-C\-C\-\_\-\-S\-T\-A\-T\-I\-O\-N\-A\-R\-I\-T\-Y\-\_\-\-E\-R\-R\-O\-R}}
+\index{\-A\-C\-C\-\_\-\-S\-T\-A\-T\-I\-O\-N\-A\-R\-I\-T\-Y\-\_\-\-E\-R\-R\-O\-R@{\-A\-C\-C\-\_\-\-S\-T\-A\-T\-I\-O\-N\-A\-R\-I\-T\-Y\-\_\-\-E\-R\-R\-O\-R}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{\-A\-C\-C\-\_\-\-S\-T\-A\-T\-I\-O\-N\-A\-R\-I\-T\-Y\-\_\-\-E\-R\-R\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-C\-C\-\_\-\-S\-T\-A\-T\-I\-O\-N\-A\-R\-I\-T\-Y\-\_\-\-E\-R\-R\-O\-R~2}}
+\label{group__nav__eq_gad356bf235d99e4983077623c35c068c0}
+
+
+\-Value returned in the error message if the \-I\-M\-U was not stationary during the accelerometer calibration. 
+
+\hypertarget{group__nav__eq_ga2543e63d374d215bd7e64b4afb54287f}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!\-M\-A\-T\-R\-I\-X\-\_\-\-I\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-E\-R\-R\-O\-R@{\-M\-A\-T\-R\-I\-X\-\_\-\-I\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-E\-R\-R\-O\-R}}
+\index{\-M\-A\-T\-R\-I\-X\-\_\-\-I\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-E\-R\-R\-O\-R@{\-M\-A\-T\-R\-I\-X\-\_\-\-I\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-E\-R\-R\-O\-R}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{\-M\-A\-T\-R\-I\-X\-\_\-\-I\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-E\-R\-R\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-M\-A\-T\-R\-I\-X\-\_\-\-I\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-E\-R\-R\-O\-R~1}}
+\label{group__nav__eq_ga2543e63d374d215bd7e64b4afb54287f}
+
+
+\-Value returned in the error message if an error occurred in the matrix inversion. 
+
+\hypertarget{group__nav__eq_gac33a980808c64969262d91fa090eae7d}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!\-M\-A\-X\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S@{\-M\-A\-X\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S}}
+\index{\-M\-A\-X\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S@{\-M\-A\-X\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{\-M\-A\-X\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-M\-A\-X\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S~12}}
+\label{group__nav__eq_gac33a980808c64969262d91fa090eae7d}
+
+
+\-Maximum numbers of orientations that can be used in the accelerometer calibration. 
+
+\hypertarget{group__nav__eq_ga4a21daf1ec76403dafe6b89d46fedbce}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!\-M\-I\-N\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S@{\-M\-I\-N\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S}}
+\index{\-M\-I\-N\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S@{\-M\-I\-N\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{\-M\-I\-N\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-M\-I\-N\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S~3}}
+\label{group__nav__eq_ga4a21daf1ec76403dafe6b89d46fedbce}
+
+
+\-Minimum numbers of orientations that can be used in the accelerometer calibration. 
+
+\hypertarget{group__nav__eq_gae34482207df685c69af65539f47656fa}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S\-\_\-\-T\-O\-\_\-\-L\-A\-R\-G\-E@{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S\-\_\-\-T\-O\-\_\-\-L\-A\-R\-G\-E}}
+\index{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S\-\_\-\-T\-O\-\_\-\-L\-A\-R\-G\-E@{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S\-\_\-\-T\-O\-\_\-\-L\-A\-R\-G\-E}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S\-\_\-\-T\-O\-\_\-\-L\-A\-R\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S\-\_\-\-T\-O\-\_\-\-L\-A\-R\-G\-E~4}}
+\label{group__nav__eq_gae34482207df685c69af65539f47656fa}
+
+
+\-Value returned in the error message if the number of orientations specified for the accelerometer calibration is to large. \-It has been changed to 12. 
+
+\hypertarget{group__nav__eq_gad656aa8d45ef9064bf607734a3af16a1}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S\-\_\-\-T\-O\-\_\-\-S\-M\-A\-L\-L@{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S\-\_\-\-T\-O\-\_\-\-S\-M\-A\-L\-L}}
+\index{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S\-\_\-\-T\-O\-\_\-\-S\-M\-A\-L\-L@{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S\-\_\-\-T\-O\-\_\-\-S\-M\-A\-L\-L}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S\-\_\-\-T\-O\-\_\-\-S\-M\-A\-L\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S\-\_\-\-T\-O\-\_\-\-S\-M\-A\-L\-L~5}}
+\label{group__nav__eq_gad656aa8d45ef9064bf607734a3af16a1}
+
+
+\-Value returned in the error message if the number of orientations specified for the accelerometer calibration is to few. \-It has been changed to 3. 
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__nav__eq_gabb3f28a44a35898c77d789734914c4c2}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!calibrate\-\_\-accelerometers@{calibrate\-\_\-accelerometers}}
+\index{calibrate\-\_\-accelerometers@{calibrate\-\_\-accelerometers}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{calibrate\-\_\-accelerometers}]{\setlength{\rightskip}{0pt plus 5cm}void calibrate\-\_\-accelerometers (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__nav__eq_gabb3f28a44a35898c77d789734914c4c2}
+
+
+\-Function for calibrating the accelerometer biases. 
+
+\-This function is used to calibrate the biases of the accelerometers in the \-I\-M\-U and requires the users to place the \-I\-M\-U into at least three different orientations. \-The calibration method is based upon the calibration algorithm described in the paper \href{https://eeweb01.ee.kth.se/upload/publications/reports/2010/IR-EE-SB_2010_046.pdf}{\tt \-Calibration of the \-Accelerometer \-Triad of an \-Inertial \-Measurement \-Unit, \-Maximum \-Likelihood \-Estimation and \-Cramer-\/\-Rao \-Bound}, but does only calibrate the accelerometer bias.
+
+\-Before the calibration is started the flags {\itshape new\-\_\-orientation\-\_\-flag\/} and {\itshape acc\-\_\-calibration\-\_\-successful\-\_\-flag\/} should be set to false. \-Then the function should called every time new \-I\-M\-U-\/data have been read from the \-I\-M\-U and as long as the new flags {\itshape new\-\_\-orientation\-\_\-flag\/} and {\itshape acc\-\_\-calibration\-\_\-successful\-\_\-flag\/} are false. \-When the flag {\itshape new\-\_\-orientation\-\_\-flag\/} becomes true a message should be sent to the user, which then should place the \-I\-M\-U in a new orientation and reset the flag. \-When the flag {\itshape acc\-\_\-calibration\-\_\-successful\-\_\-flag\/} becomes true the calibration is finished and the accelerometer calibration parameters have been written into the memory of the \-I\-M\-U.
+
+\begin{DoxyNote}{\-Note}
+\-The function can return one error and one warning message that are stored in the variable \#error\-\_\-vec. \-The error message may be sent if the was no stationary during one of the calibration phases and new accelerometer data most be recorded with the \-I\-M\-U in the same orientation. \-A warning message may be sent if the orientations the \-I\-M\-U was placed in may have caused a poor estimate of the accelerometer biases.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em error\-\_\-vec} & \-A variable that is set non zero value of an error/warning has occurred during the \\
+\hline
+\mbox{\tt in,out}  & {\em acc\-\_\-calibration\-\_\-successful\-\_\-flag} & \-A flag that should be false when calibration is started and that becomes true when the calibration is finished. \\
+\hline
+\mbox{\tt in,out}  & {\em new\-\_\-orientation\-\_\-flag} & \-A flag that should be false when calibration is started and that becomes true when \-I\-M\-U should be placed in a new orientation. \-When the \-I\-M\-U has been placed in a new orientation it should be set to false. execution of the function. \\
+\hline
+\mbox{\tt in}  & {\em accelerations\-\_\-in} & \-The from the \-I\-M\-U latest read acceleration data. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__nav__eq_ga8812381ada5c2786a10e378e4ca34377}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!correct\-\_\-navigation\-\_\-states@{correct\-\_\-navigation\-\_\-states}}
+\index{correct\-\_\-navigation\-\_\-states@{correct\-\_\-navigation\-\_\-states}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{correct\-\_\-navigation\-\_\-states}]{\setlength{\rightskip}{0pt plus 5cm}void correct\-\_\-navigation\-\_\-states (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__nav__eq_ga8812381ada5c2786a10e378e4ca34377}
+
+
+\-Function for correcting the navigation states given a zero-\/velocity detection. 
+
+\-When called this function takes the velocity estimate of the navigation system and treat it as an observation of the current velocity error of the system. \-The errors in all navigation states (position, velocity, and attitude) are then estimated by multiplying the \char`\"{}velocity error\char`\"{} with the \-Kalman gain. \-The estimated errors in the navigation states are then used to correct the navigation states.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in,out}  & {\em position} & \-The position estimate of the navigation system. \\
+\hline
+\mbox{\tt in,out}  & {\em velocity} & \-The velocity estimate of the navigation system. \\
+\hline
+\mbox{\tt out}  & {\em quaternions} & \-The orientation estimate of the navigation system. \\
+\hline
+\mbox{\tt in}  & {\em \-Rb2t} & \-The vector representation of the body to navigation coordinate system rotation matrix estimate. \\
+\hline
+\mbox{\tt in}  & {\em kalman\-\_\-gain} & \-The vector representation of the \-Kalman filter gain matrix. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__nav__eq_ga272f4012a72ac416888be28bff0236e6}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!estimate\-\_\-accelerometer\-\_\-biases@{estimate\-\_\-accelerometer\-\_\-biases}}
+\index{estimate\-\_\-accelerometer\-\_\-biases@{estimate\-\_\-accelerometer\-\_\-biases}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{estimate\-\_\-accelerometer\-\_\-biases}]{\setlength{\rightskip}{0pt plus 5cm}void estimate\-\_\-accelerometer\-\_\-biases (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__nav__eq_ga272f4012a72ac416888be28bff0236e6}
+
+
+\-Function that estimates the accelerometer biases given a matrix of the mean of the measured acceleration at different orientations. 
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em max\-\_\-v} & \-Largest value of the input vector. \\
+\hline
+\mbox{\tt out}  & {\em index} & \-Index of the vector element holding the largest value. \\
+\hline
+\mbox{\tt in}  & {\em arg\-\_\-vec} & \-The input vector. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__nav__eq_ga75c4a936b2db01f930ba89babb822f69}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!gain\-\_\-matrix@{gain\-\_\-matrix}}
+\index{gain\-\_\-matrix@{gain\-\_\-matrix}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{gain\-\_\-matrix}]{\setlength{\rightskip}{0pt plus 5cm}void gain\-\_\-matrix (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__nav__eq_ga75c4a936b2db01f930ba89babb822f69}
+
+
+\-Function for calculating the \-Kalman filter gain matrix. 
+
+\-When called the function calculates the \-Kalman filter gain and store it in the vector {\itshape kalman\-\_\-gain\/}. \-To calculate the gain the function uses the \-Kalman filter covariance and the pseudo velocity measurement noise standard deviation.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em kalman\-\_\-gain} & \-The vector representation of the \-Kalman filter gain matrix. \\
+\hline
+\mbox{\tt in}  & {\em cov\-\_\-vector} & \-The vector representation of the \-Kalman filter covariance matrix. \\
+\hline
+\mbox{\tt in}  & {\em sigma\-\_\-velocity} & \-The standard deviation of the pseudo velocity measurement error (\-Note\-: \-This parameters enters the function through a sub-\/function.). \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__nav__eq_ga8b0f8dc8c2ae1ff3f5e4f27284cf8e77}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!initialize\-\_\-navigation\-\_\-algorithm@{initialize\-\_\-navigation\-\_\-algorithm}}
+\index{initialize\-\_\-navigation\-\_\-algorithm@{initialize\-\_\-navigation\-\_\-algorithm}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{initialize\-\_\-navigation\-\_\-algorithm}]{\setlength{\rightskip}{0pt plus 5cm}void initialize\-\_\-navigation\-\_\-algorithm (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__nav__eq_ga8b0f8dc8c2ae1ff3f5e4f27284cf8e77}
+
+
+\-Function for initializing the navigation algorithm. 
+
+\-This function initializes the navigation algorithm and should during the initialization of the navigation system be called every time new \-I\-M\-U-\/data have been read from the \-I\-M\-U. \-Before the initialization is started the flag {\itshape initialize\-\_\-flag\/} should be set to true, and the counter {\itshape initialize\-\_\-sample\-\_\-ctr\/} to zero. \-The initialization is finished when the flag {\itshape initialize\-\_\-flag\/} becomes false.
+
+\-The initialization function first runs an initial alignment of the navigation system, where the roll and pitch are estimated from the average of the accelerometer readings. \-Then, the function sets the initial navigation states (position, velocity, and quaternions) and the initial \-Kalman filter covariance.
+
+\begin{DoxyNote}{\-Note}
+\-The navigation system most be stationary during the initialization, and the number of samples used in the initial alignment most be larger than the length of the zero-\/velocity detector window.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em position} & \-The position estimate of the navigation system. \\
+\hline
+\mbox{\tt out}  & {\em velocity} & \-The velocity estimate of the navigation system. \\
+\hline
+\mbox{\tt out}  & {\em quaternions} & \-The orientation estimate of the navigation system. \\
+\hline
+\mbox{\tt out}  & {\em cov\-\_\-vector} & \-The vector representation of the \-Kalman filter covariance matrix. \\
+\hline
+\mbox{\tt in,out}  & {\em initialize\-\_\-flag} & \-A flag that should be set to true when initialization is started and that becomes false when the initialization is finished. \\
+\hline
+\mbox{\tt in}  & {\em nr\-\_\-of\-\_\-inital\-\_\-alignment\-\_\-samples} & \-The number of samples used in the initial alignment. \\
+\hline
+\mbox{\tt in}  & {\em initial\-\_\-heading} & \-The initial heading of the navigation system. \\
+\hline
+\mbox{\tt in}  & {\em initial\-\_\-pos} & \-The initial position of the navigation system. \\
+\hline
+\mbox{\tt in}  & {\em sigma\-\_\-initial\-\_\-position} & \-The standard deviations of the uncertainties in the initial position. \\
+\hline
+\mbox{\tt in}  & {\em sigma\-\_\-initial\-\_\-velocity} & \-The standard deviations of the uncertainties in the initial velocity. \\
+\hline
+\mbox{\tt in}  & {\em sigma\-\_\-initial\-\_\-attitude} & \-The standard deviations of the uncertainties in the initial attitude. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__nav__eq_gaa1673f6cf928e97c6372c56eddb4cc72}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!measurement\-\_\-update@{measurement\-\_\-update}}
+\index{measurement\-\_\-update@{measurement\-\_\-update}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{measurement\-\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}void measurement\-\_\-update (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__nav__eq_gaa1673f6cf928e97c6372c56eddb4cc72}
+
+
+\-Function for doing a measurement update of the \-Kalman filter covariance. 
+
+\-When called the function does a measurement update of the \-Kalman filter state covariance matrix stored in the vector {\itshape cov\-\_\-vector\/}.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in,out}  & {\em cov\-\_\-vector} & \-The vector representation of the \-Kalman filter covariance matrix. \\
+\hline
+\mbox{\tt in}  & {\em kalman\-\_\-gain} & \-The vector representation of the \-Kalman filter gain matrix. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__nav__eq_ga9169808fbcb9f517deb908960a69ca7a}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!strapdown\-\_\-mechanisation\-\_\-equations@{strapdown\-\_\-mechanisation\-\_\-equations}}
+\index{strapdown\-\_\-mechanisation\-\_\-equations@{strapdown\-\_\-mechanisation\-\_\-equations}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{strapdown\-\_\-mechanisation\-\_\-equations}]{\setlength{\rightskip}{0pt plus 5cm}void strapdown\-\_\-mechanisation\-\_\-equations (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__nav__eq_ga9169808fbcb9f517deb908960a69ca7a}
+
+
+\-Function for doing a time update of the mechanized navigation equations. 
+
+\-When called the function does a time update of the mechanized inertial navigation system equations. \-That is, first the quaternions stored in {\itshape quaternions\/} is updated using the angular rate measurements in {\itshape angular\-\_\-rates\-\_\-out\/}. \-Then the position and velocity state vectors {\itshape position\/} and {\itshape velocity\/} are updated using the acceleration measurements in {\itshape accelerations\-\_\-out\/}. \-The function also updates the ''aiding'' vector {\itshape \-Rb2t\/} (body to navigation coordinate system rotation matrix) which is used in the \-Kalman filter.
+
+\begin{DoxyNote}{\-Note}
+\-This is a rudimentary mechanization of the inertial navigation equations which only is suitable for use with systems that uses low-\/cost/low-\/performance inertial sensors and where only short periods of free inertial navigation is expected.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in,out}  & {\em position} & \-The position estimate of the navigation system. \\
+\hline
+\mbox{\tt in,out}  & {\em velocity} & \-The velocity estimate of the navigation system. \\
+\hline
+\mbox{\tt in,out}  & {\em quaternions} & \-The orientation estimate of the navigation system. \\
+\hline
+\mbox{\tt out}  & {\em \-Rb2t} & \-The body to navigation coordinate system rotation matrix estimate. \\
+\hline
+\mbox{\tt in}  & {\em accelerations\-\_\-out} & \-The acceleration measurements used in the update of the inertial navigation system equations. \\
+\hline
+\mbox{\tt in}  & {\em angular\-\_\-rates\-\_\-out} & \-The angular rate measurements used in the update of the inertial navigation system equations. \\
+\hline
+\mbox{\tt in}  & {\em dt} & \-The sampling period of the system. \\
+\hline
+\mbox{\tt in}  & {\em g} & \-The magnitude of the local gravity vector. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__nav__eq_gac80ad2aa648edb47edb8f62883cb2a7d}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!time\-\_\-up\-\_\-data@{time\-\_\-up\-\_\-data}}
+\index{time\-\_\-up\-\_\-data@{time\-\_\-up\-\_\-data}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{time\-\_\-up\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void time\-\_\-up\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__nav__eq_gac80ad2aa648edb47edb8f62883cb2a7d}
+
+
+\-Function for doing a time update of the \-Kalman filter state covariance. 
+
+\-When called the function does a time update of the \-Kalman filter state covariance matrix stored in the vector {\itshape cov\-\_\-vector\/}.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in,out}  & {\em cov\-\_\-vector} & \-The vector representation of the \-Kalman filter covariance matrix. \\
+\hline
+\mbox{\tt in}  & {\em dt} & \-The sampling period of the system. \\
+\hline
+\mbox{\tt in}  & {\em sigma\-\_\-acceleration} & \-The standard deviation of the accelerometer process noise. \\
+\hline
+\mbox{\tt in}  & {\em sigma\-\_\-gyroscope} & \-The standard deviation of the gyroscope process noise. \\
+\hline
+\mbox{\tt in}  & {\em accelerations\-\_\-out} & \-The acceleration measurements used in the update of the inertial navigation system equations. \\
+\hline
+\mbox{\tt in}  & {\em \-Rb2t} & \-The vector current body to navigation coordinate system rotation matrix estimate. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__nav__eq_gaae1bbd924940610e1709300d40ca5a0f}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!update\-\_\-imu\-\_\-data\-\_\-buffers@{update\-\_\-imu\-\_\-data\-\_\-buffers}}
+\index{update\-\_\-imu\-\_\-data\-\_\-buffers@{update\-\_\-imu\-\_\-data\-\_\-buffers}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{update\-\_\-imu\-\_\-data\-\_\-buffers}]{\setlength{\rightskip}{0pt plus 5cm}void update\-\_\-imu\-\_\-data\-\_\-buffers (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__nav__eq_gaae1bbd924940610e1709300d40ca5a0f}
+
+
+\-Function that updates the \-I\-M\-U data buffers with the latest values read from the \-I\-M\-U, and writes the \-I\-M\-U data to that should be process at the current iteration to the processing variables. 
+
+\-The function updates the \-I\-M\-U data buffers {\itshape acc\-\_\-buffer\-\_\-x\-\_\-axis\/}, {\itshape acc\-\_\-buffer\-\_\-y\-\_\-axis\/}, {\itshape acc\-\_\-buffer\-\_\-z\-\_\-axis\/}, {\itshape gyro\-\_\-buffer\-\_\-x\-\_\-axis\/}, {\itshape gyro\-\_\-buffer\-\_\-y\-\_\-axis\/}, {\itshape gyro\-\_\-buffer\-\_\-z\-\_\-axis\/} with the values stored in the vectors {\itshape accelerations\-\_\-in\/} and {\itshape angular\-\_\-rates\-\_\-in\/}. \-The function also updates the vectors {\itshape accelerations\-\_\-out\/} and {\itshape angular\-\_\-rates\-\_\-out\/}. \-The data stored in these vectors is the data processed in the next iteration of the navigation algorithm.
+
+\begin{DoxyNote}{\-Note}
+\-This function should be called after data have been read from the \-I\-M\-U through the \-S\-P\-I interface and before the navigation algorithm is processed.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em accelerations\-\_\-out} & \-The acceleration data that is to be used in the next iteration of the navigation algorithm. \\
+\hline
+\mbox{\tt out}  & {\em angular\-\_\-rates\-\_\-out} & \-The angular rate data that is to be used in the next iteration of the navigation algorithm. \\
+\hline
+\mbox{\tt in}  & {\em accelerations\-\_\-in} & \-The from the \-I\-M\-U latest read acceleration data. \\
+\hline
+\mbox{\tt in}  & {\em angular\-\_\-rates\-\_\-in} & \-The from the \-I\-M\-U latest read angular rate data. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__nav__eq_gaf0b7424f50d37755b6b0736808082299}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!\-Z\-U\-P\-T\-\_\-detector@{\-Z\-U\-P\-T\-\_\-detector}}
+\index{\-Z\-U\-P\-T\-\_\-detector@{\-Z\-U\-P\-T\-\_\-detector}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{\-Z\-U\-P\-T\-\_\-detector}]{\setlength{\rightskip}{0pt plus 5cm}void \-Z\-U\-P\-T\-\_\-detector (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__nav__eq_gaf0b7424f50d37755b6b0736808082299}
+
+
+\-Function for detecting when the system has zero-\/velocity. 
+
+\-When called this function takes the acceleration and angular rate measurements stored in the \-I\-M\-U data buffers and runs a generalized likelihood ratio test to determine if the navigation system is stationary or moving. \-More information about the detector and it characteristics can be found in following papers\-:
+
+\begin{DoxyItemize}
+\item \href{https://eeweb01.ee.kth.se/upload/publications/reports/2010/IR-EE-SB_2010_038.pdf}{\tt \-Zero-\/\-Velocity \-Detection -\/-\/ \-An \-Algorithm \-Evaluation} \item \href{https://eeweb01.ee.kth.se/upload/publications/reports/2010/IR-EE-SB_2010_043.pdf}{\tt \-Evaluation of \-Zero-\/\-Velocity \-Detectors for \-Foot-\/\-Mounted \-Inertial \-Navigation \-Systems}\end{DoxyItemize}
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em zupt} & \-The zero-\/velocity detection flag \\
+\hline
+\mbox{\tt in}  & {\em detector\-\_\-\-Window\-\_\-size} & \-The window size of the zero-\/velocity detector. \\
+\hline
+\mbox{\tt in}  & {\em detector\-\_\-threshold} & \-The threshold used in the detector. \\
+\hline
+\mbox{\tt in}  & {\em sigma\-\_\-acc\-\_\-det} & \-The standard deviation figure used to control the importance of the accelerometer measurements in the detection algorithm. \\
+\hline
+\mbox{\tt in}  & {\em sigma\-\_\-gyro\-\_\-det} & \-The standard deviation figure used to control the importance of the gyroscope measurements in the detection algorithm. \\
+\hline
+\mbox{\tt in}  & {\em g} & \-The magnitude of the local gravity vector. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__nav__eq_ga0b4ee34435eebb426eb367120ee79d72}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!zupt\-\_\-update@{zupt\-\_\-update}}
+\index{zupt\-\_\-update@{zupt\-\_\-update}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{zupt\-\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}void zupt\-\_\-update (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__nav__eq_ga0b4ee34435eebb426eb367120ee79d72}
+
+
+\-Wrapper function that checks if a zero-\/velocity update should be done, and then calls all navigation algorithm functions that should be executed during a zero-\/velocity update. 
+
+\-Wrapper function that checks if a zero-\/velocity update should be done, and then calls all navigation algorithm functions that should be executed during a zero-\/velocity update. \-The function first calls {\itshape \-Z\-U\-P\-T\-\_\-detector\/}. \-If then flag {\itshape zupt\/} is set to true, it also calls the following functions\-:
+
+\begin{DoxyItemize}
+\item gain\-\_\-matrix \item correct\-\_\-navigation\-\_\-states \item measurement\-\_\-update \end{DoxyItemize}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{group__nav__eq_gaa3b35b0b909a9a4b40d82658fab54349}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!acc\-\_\-calibration\-\_\-finished\-\_\-flag@{acc\-\_\-calibration\-\_\-finished\-\_\-flag}}
+\index{acc\-\_\-calibration\-\_\-finished\-\_\-flag@{acc\-\_\-calibration\-\_\-finished\-\_\-flag}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{acc\-\_\-calibration\-\_\-finished\-\_\-flag}]{\setlength{\rightskip}{0pt plus 5cm}\-Bool {\bf acc\-\_\-calibration\-\_\-finished\-\_\-flag} = false}}
+\label{group__nav__eq_gaa3b35b0b909a9a4b40d82658fab54349}
+
+
+\-Flag that is set to true when the calibration is finished. \-Must be set to false before the calibration is started. 
+
+\hypertarget{group__nav__eq_gad5049be4d6ed3b9f92063c6ca6413b46}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!acceleration\-\_\-variance\-\_\-threshold@{acceleration\-\_\-variance\-\_\-threshold}}
+\index{acceleration\-\_\-variance\-\_\-threshold@{acceleration\-\_\-variance\-\_\-threshold}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{acceleration\-\_\-variance\-\_\-threshold}]{\setlength{\rightskip}{0pt plus 5cm}{\bf precision} {\bf acceleration\-\_\-variance\-\_\-threshold} = 0.\-002}}
+\label{group__nav__eq_gad5049be4d6ed3b9f92063c6ca6413b46}
+
+
+\-Threshold used to check that accelerometers were stationary during the calibration \mbox{[} $(m/s^2)^2$\mbox{]}. 
+
+\hypertarget{group__nav__eq_gaf92cab44915b7d9faaf5aeadb328bae6}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!accelerations\-\_\-in@{accelerations\-\_\-in}}
+\index{accelerations\-\_\-in@{accelerations\-\_\-in}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{accelerations\-\_\-in}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} {\bf accelerations\-\_\-in}}}
+\label{group__nav__eq_gaf92cab44915b7d9faaf5aeadb328bae6}
+
+
+\-Accelerations read from the \-I\-M\-U \mbox{[} $m/s^2$\mbox{]}. \-These are written into the \-I\-M\-U data buffer. 
+
+\hypertarget{group__nav__eq_ga0e1577a397995052e34d61ddbf578956}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!accelerations\-\_\-out@{accelerations\-\_\-out}}
+\index{accelerations\-\_\-out@{accelerations\-\_\-out}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{accelerations\-\_\-out}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} {\bf accelerations\-\_\-out}}}
+\label{group__nav__eq_ga0e1577a397995052e34d61ddbf578956}
+
+
+\-Accelerations outputted from the \-I\-M\-U data buffer \mbox{[} $m/s^2$\mbox{]}. 
+
+\hypertarget{group__nav__eq_ga1089eea940f41eff26a6cba1172089e9}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!accelerometer\-\_\-biases@{accelerometer\-\_\-biases}}
+\index{accelerometer\-\_\-biases@{accelerometer\-\_\-biases}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{accelerometer\-\_\-biases}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} {\bf accelerometer\-\_\-biases}}}
+\label{group__nav__eq_ga1089eea940f41eff26a6cba1172089e9}
+
+
+\-Accelerometer biases (x,y,z-\/axis) \mbox{[} $m/s^2$\mbox{]}. 
+
+\hypertarget{group__nav__eq_ga0387cded24d9bdfa34c78dc27bef01e8}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!altitude@{altitude}}
+\index{altitude@{altitude}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{altitude}]{\setlength{\rightskip}{0pt plus 5cm}{\bf precision} {\bf altitude} = 920}}
+\label{group__nav__eq_ga0387cded24d9bdfa34c78dc27bef01e8}
+
+
+\-Rough altitude of the system \mbox{[} $m$\mbox{]}. (\-Used to calculate the magnitude of the gravity vector) 
+
+\hypertarget{group__nav__eq_ga8cac4b2812dcb492989d7122c5eb0bfb}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!angular\-\_\-rates\-\_\-in@{angular\-\_\-rates\-\_\-in}}
+\index{angular\-\_\-rates\-\_\-in@{angular\-\_\-rates\-\_\-in}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{angular\-\_\-rates\-\_\-in}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} {\bf angular\-\_\-rates\-\_\-in}}}
+\label{group__nav__eq_ga8cac4b2812dcb492989d7122c5eb0bfb}
+
+
+\-Angular rates read from the \-I\-M\-U \mbox{[} $rad/s$\mbox{]}. \-These are written into the \-I\-M\-U data buffer. 
+
+\hypertarget{group__nav__eq_gabdb2113f7c6caefe1b25826c1f7c8324}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!angular\-\_\-rates\-\_\-out@{angular\-\_\-rates\-\_\-out}}
+\index{angular\-\_\-rates\-\_\-out@{angular\-\_\-rates\-\_\-out}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{angular\-\_\-rates\-\_\-out}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} {\bf angular\-\_\-rates\-\_\-out}}}
+\label{group__nav__eq_gabdb2113f7c6caefe1b25826c1f7c8324}
+
+
+\-Angular rates outputted from the \-I\-M\-U data buffer \mbox{[} $rad/s$\mbox{]}. 
+
+\hypertarget{group__nav__eq_ga74c09cdfc5b901e7f842dbe42ed8f4f4}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!cov\-\_\-vector@{cov\-\_\-vector}}
+\index{cov\-\_\-vector@{cov\-\_\-vector}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{cov\-\_\-vector}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat9sym} {\bf cov\-\_\-vector}}}
+\label{group__nav__eq_ga74c09cdfc5b901e7f842dbe42ed8f4f4}
+
+
+\-Vector representation of the \-Kalman filter covariance matrix. 
+
+\hypertarget{group__nav__eq_ga34d28cf12521d9706da4ddfca54106bf}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!detector\-\_\-threshold@{detector\-\_\-threshold}}
+\index{detector\-\_\-threshold@{detector\-\_\-threshold}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{detector\-\_\-threshold}]{\setlength{\rightskip}{0pt plus 5cm}{\bf precision} {\bf detector\-\_\-threshold} = 50000}}
+\label{group__nav__eq_ga34d28cf12521d9706da4ddfca54106bf}
+
+
+\-Threshold used in the detector. 
+
+\hypertarget{group__nav__eq_ga9e9b826ff87a8e0e4400661c27988682}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!detector\-\_\-\-Window\-\_\-size@{detector\-\_\-\-Window\-\_\-size}}
+\index{detector\-\_\-\-Window\-\_\-size@{detector\-\_\-\-Window\-\_\-size}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{detector\-\_\-\-Window\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}volatile uint8\-\_\-t {\bf detector\-\_\-\-Window\-\_\-size} = 3}}
+\label{group__nav__eq_ga9e9b826ff87a8e0e4400661c27988682}
+
+
+\-The data window size used in the detector (\-O\-B\-S! \-Must be an odd number.). 
+
+\hypertarget{group__nav__eq_gae7e97f885bb0d70931c5c70ad200880d}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!dt@{dt}}
+\index{dt@{dt}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{dt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf precision} {\bf dt} = 0.\-001220703125000}}
+\label{group__nav__eq_gae7e97f885bb0d70931c5c70ad200880d}
+
+
+\-Sampling period \mbox{[} $s$\mbox{]}. 
+
+\hypertarget{group__nav__eq_ga3f996476795917a4b1ace8c6c5e4b28a}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!error\-\_\-signal@{error\-\_\-signal}}
+\index{error\-\_\-signal@{error\-\_\-signal}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{error\-\_\-signal}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf error\-\_\-signal}}}
+\label{group__nav__eq_ga3f996476795917a4b1ace8c6c5e4b28a}
+
+
+\-Error signaling vector. \-If zero no error has occurred. 
+
+\hypertarget{group__nav__eq_gac7d75e5db7af21a75e50ad6437827947}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!g@{g}}
+\index{g@{g}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{g}]{\setlength{\rightskip}{0pt plus 5cm}{\bf precision} {\bf g} = 9.\-782940329221166}}
+\label{group__nav__eq_gac7d75e5db7af21a75e50ad6437827947}
+
+
+\-Magnitude of the local gravity acceleration \mbox{[} $m/s^2$\mbox{]}. 
+
+\hypertarget{group__nav__eq_gaf18deb1376fcc761f2ec2d947cf004e7}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!initial\-\_\-heading@{initial\-\_\-heading}}
+\index{initial\-\_\-heading@{initial\-\_\-heading}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{initial\-\_\-heading}]{\setlength{\rightskip}{0pt plus 5cm}{\bf precision} {\bf initial\-\_\-heading} = 0}}
+\label{group__nav__eq_gaf18deb1376fcc761f2ec2d947cf004e7}
+
+
+\-Initial heading \mbox{[} $rad$\mbox{]}. 
+
+\hypertarget{group__nav__eq_ga7cd4f9c9472377e6ef5935727ada7109}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!initial\-\_\-pos@{initial\-\_\-pos}}
+\index{initial\-\_\-pos@{initial\-\_\-pos}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{initial\-\_\-pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} {\bf initial\-\_\-pos} = \{0, 0, 0\}}}
+\label{group__nav__eq_ga7cd4f9c9472377e6ef5935727ada7109}
+
+
+\-Initial position (\-North, \-East, \-Down) \mbox{[} $m$\mbox{]}. 
+
+\hypertarget{group__nav__eq_gac64a954fe1bf13df62e1e96920a36035}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!initialize\-\_\-flag@{initialize\-\_\-flag}}
+\index{initialize\-\_\-flag@{initialize\-\_\-flag}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{initialize\-\_\-flag}]{\setlength{\rightskip}{0pt plus 5cm}\-Bool {\bf initialize\-\_\-flag} = true}}
+\label{group__nav__eq_gac64a954fe1bf13df62e1e96920a36035}
+
+
+\-A flag that should be set to true when initialization is started and that becomes false when the initialization is finished. 
+
+\hypertarget{group__nav__eq_gac1df051c6f380aa8d1598b15ee9e6eca}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!kalman\-\_\-gain@{kalman\-\_\-gain}}
+\index{kalman\-\_\-gain@{kalman\-\_\-gain}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{kalman\-\_\-gain}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat9by3} {\bf kalman\-\_\-gain}}}
+\label{group__nav__eq_gac1df051c6f380aa8d1598b15ee9e6eca}
+
+
+\-Vector representation of the \-Kalman filter gain matrix. 
+
+\hypertarget{group__nav__eq_ga98eaf96c6c207db4b40273a599149ebe}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!latitude@{latitude}}
+\index{latitude@{latitude}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{latitude}]{\setlength{\rightskip}{0pt plus 5cm}{\bf precision} {\bf latitude} = 13}}
+\label{group__nav__eq_ga98eaf96c6c207db4b40273a599149ebe}
+
+
+\-Rough latitude of the system \mbox{[} $degrees$\mbox{]}. (\-Used to calculate the magnitude of the gravity vector) 
+
+\hypertarget{group__nav__eq_ga9340627920ea2445fe1469547bc64eae}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!new\-\_\-orientation\-\_\-flag@{new\-\_\-orientation\-\_\-flag}}
+\index{new\-\_\-orientation\-\_\-flag@{new\-\_\-orientation\-\_\-flag}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{new\-\_\-orientation\-\_\-flag}]{\setlength{\rightskip}{0pt plus 5cm}\-Bool {\bf new\-\_\-orientation\-\_\-flag} = false}}
+\label{group__nav__eq_ga9340627920ea2445fe1469547bc64eae}
+
+
+\-Flag that is set to true when the \-I\-M\-U should be place in a new orientation. \-Should be set to false when the calibration procedure is started, and when the \-I\-M\-U has been placed in a new orientation by the user. 
+
+\hypertarget{group__nav__eq_ga642a3ad33a0242f4e12fe46a13b0303f}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!nr\-\_\-of\-\_\-calibration\-\_\-orientations@{nr\-\_\-of\-\_\-calibration\-\_\-orientations}}
+\index{nr\-\_\-of\-\_\-calibration\-\_\-orientations@{nr\-\_\-of\-\_\-calibration\-\_\-orientations}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{nr\-\_\-of\-\_\-calibration\-\_\-orientations}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf nr\-\_\-of\-\_\-calibration\-\_\-orientations} = 6}}
+\label{group__nav__eq_ga642a3ad33a0242f4e12fe46a13b0303f}
+
+
+\-Number of orientations used in the accelerometer calibration procedure. \-O\-B\-S! \-Most be at least 3 and less than 13. 
+
+\hypertarget{group__nav__eq_gab9d05ce5927a225127eff6993856da19}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!nr\-\_\-of\-\_\-calibration\-\_\-samples@{nr\-\_\-of\-\_\-calibration\-\_\-samples}}
+\index{nr\-\_\-of\-\_\-calibration\-\_\-samples@{nr\-\_\-of\-\_\-calibration\-\_\-samples}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{nr\-\_\-of\-\_\-calibration\-\_\-samples}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf nr\-\_\-of\-\_\-calibration\-\_\-samples} = 800}}
+\label{group__nav__eq_gab9d05ce5927a225127eff6993856da19}
+
+
+\-Number of samples used at each orientation in the calibration procedure. 
+
+\hypertarget{group__nav__eq_gaf3c89a8b1365434986dc0314c1c541cf}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!nr\-\_\-of\-\_\-inital\-\_\-alignment\-\_\-samples@{nr\-\_\-of\-\_\-inital\-\_\-alignment\-\_\-samples}}
+\index{nr\-\_\-of\-\_\-inital\-\_\-alignment\-\_\-samples@{nr\-\_\-of\-\_\-inital\-\_\-alignment\-\_\-samples}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{nr\-\_\-of\-\_\-inital\-\_\-alignment\-\_\-samples}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf nr\-\_\-of\-\_\-inital\-\_\-alignment\-\_\-samples} = 16}}
+\label{group__nav__eq_gaf3c89a8b1365434986dc0314c1c541cf}
+
+
+\-Number of samples used in the initial alignment. 
+
+\hypertarget{group__nav__eq_ga2807b9fb4b79e01dfde022b613d2575f}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!position@{position}}
+\index{position@{position}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} {\bf position}}}
+\label{group__nav__eq_ga2807b9fb4b79e01dfde022b613d2575f}
+
+
+\-Position estimate (\-North,\-East,\-Down) \mbox{[} $m$\mbox{]}. 
+
+\hypertarget{group__nav__eq_ga059b83d370e7e6a5e9728a8f91943051}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!quaternions@{quaternions}}
+\index{quaternions@{quaternions}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{quaternions}]{\setlength{\rightskip}{0pt plus 5cm}{\bf quat\-\_\-vec} {\bf quaternions}}}
+\label{group__nav__eq_ga059b83d370e7e6a5e9728a8f91943051}
+
+
+\-Attitude (quaternions) estimate. 
+
+\hypertarget{group__nav__eq_ga42753cbc9ae76483da3cbc331a011586}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!\-Rb2t@{\-Rb2t}}
+\index{\-Rb2t@{\-Rb2t}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{\-Rb2t}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat3} {\bf \-Rb2t}}}
+\label{group__nav__eq_ga42753cbc9ae76483da3cbc331a011586}
+
+
+\-Rotation matrix used as an \char`\"{}aiding\char`\"{} variable in the filter algorithm. \-Holds the same information as the quaternions. 
+
+\hypertarget{group__nav__eq_ga519e1c68258a371960249e09c24e9943}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!sigma\-\_\-acc\-\_\-det@{sigma\-\_\-acc\-\_\-det}}
+\index{sigma\-\_\-acc\-\_\-det@{sigma\-\_\-acc\-\_\-det}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{sigma\-\_\-acc\-\_\-det}]{\setlength{\rightskip}{0pt plus 5cm}{\bf precision} {\bf sigma\-\_\-acc\-\_\-det} = 0.\-035}}
+\label{group__nav__eq_ga519e1c68258a371960249e09c24e9943}
+
+
+\-Accelerometer noise standard deviation figure \mbox{[} $m/s^2$\mbox{]}, which is used to control how much the detector should trusts the accelerometer data. 
+
+\hypertarget{group__nav__eq_ga5add0877d1169e9e1d4dd227c1bcc83d}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!sigma\-\_\-acceleration@{sigma\-\_\-acceleration}}
+\index{sigma\-\_\-acceleration@{sigma\-\_\-acceleration}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{sigma\-\_\-acceleration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf precision} {\bf sigma\-\_\-acceleration} = 0.\-7}}
+\label{group__nav__eq_ga5add0877d1169e9e1d4dd227c1bcc83d}
+
+
+\-Accelerometer process noise standard deviation \mbox{[} $m/s^2$\mbox{]}. 
+
+\hypertarget{group__nav__eq_ga779a972b079accc690d64bcd7bef3c91}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!sigma\-\_\-gyro\-\_\-det@{sigma\-\_\-gyro\-\_\-det}}
+\index{sigma\-\_\-gyro\-\_\-det@{sigma\-\_\-gyro\-\_\-det}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{sigma\-\_\-gyro\-\_\-det}]{\setlength{\rightskip}{0pt plus 5cm}{\bf precision} {\bf sigma\-\_\-gyro\-\_\-det} = 0.\-006}}
+\label{group__nav__eq_ga779a972b079accc690d64bcd7bef3c91}
+
+
+\-Gyroscope noise standard deviation figure \mbox{[} $rad/s$\mbox{]}, which is used to control how much the detector should trusts the gyroscope data. 
+
+\hypertarget{group__nav__eq_gab6e7cd8a13de230fbcef8ad4e8001eb6}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!sigma\-\_\-gyroscope@{sigma\-\_\-gyroscope}}
+\index{sigma\-\_\-gyroscope@{sigma\-\_\-gyroscope}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{sigma\-\_\-gyroscope}]{\setlength{\rightskip}{0pt plus 5cm}{\bf precision} {\bf sigma\-\_\-gyroscope} = 0.\-005235987755983}}
+\label{group__nav__eq_gab6e7cd8a13de230fbcef8ad4e8001eb6}
+
+
+\-Gyroscope process noise standard deviation \mbox{[} $rad/s$\mbox{]}. 
+
+\hypertarget{group__nav__eq_gaad9757cf97cfd938818e7785a3beafe1}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!sigma\-\_\-initial\-\_\-attitude@{sigma\-\_\-initial\-\_\-attitude}}
+\index{sigma\-\_\-initial\-\_\-attitude@{sigma\-\_\-initial\-\_\-attitude}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{sigma\-\_\-initial\-\_\-attitude}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} {\bf sigma\-\_\-initial\-\_\-attitude} = \{0.\-00174,0.\-00174,0.\-00174\}}}
+\label{group__nav__eq_gaad9757cf97cfd938818e7785a3beafe1}
+
+
+\-Standard deviations in the initial attitude uncertainties \mbox{[} $rad$\mbox{]}. 
+
+\hypertarget{group__nav__eq_ga0ace968269836475a5c59c16280d1bf1}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!sigma\-\_\-initial\-\_\-position@{sigma\-\_\-initial\-\_\-position}}
+\index{sigma\-\_\-initial\-\_\-position@{sigma\-\_\-initial\-\_\-position}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{sigma\-\_\-initial\-\_\-position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} {\bf sigma\-\_\-initial\-\_\-position} = \{0.\-00001,0.\-00001,0.\-00001\}}}
+\label{group__nav__eq_ga0ace968269836475a5c59c16280d1bf1}
+
+
+\-Standard deviations in the initial position uncertainties \mbox{[} $m$\mbox{]}. 
+
+\hypertarget{group__nav__eq_ga5abe69320e5702cb7f4b79abb9bcf297}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!sigma\-\_\-initial\-\_\-velocity@{sigma\-\_\-initial\-\_\-velocity}}
+\index{sigma\-\_\-initial\-\_\-velocity@{sigma\-\_\-initial\-\_\-velocity}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{sigma\-\_\-initial\-\_\-velocity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} {\bf sigma\-\_\-initial\-\_\-velocity} = \{0.\-01,0.\-01,0.\-01\}}}
+\label{group__nav__eq_ga5abe69320e5702cb7f4b79abb9bcf297}
+
+
+\-Standard deviations in the initial velocity uncertainties \mbox{[} $m/s$\mbox{]}. 
+
+\hypertarget{group__nav__eq_gae79b582d3d0132b84117242e1f6103f3}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!sigma\-\_\-velocity@{sigma\-\_\-velocity}}
+\index{sigma\-\_\-velocity@{sigma\-\_\-velocity}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{sigma\-\_\-velocity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} {\bf sigma\-\_\-velocity} = \{0.\-1,0.\-1,0.\-1\}}}
+\label{group__nav__eq_gae79b582d3d0132b84117242e1f6103f3}
+
+
+\-Pseudo zero-\/velocity measurement noise standard deviations (north, east, down) \mbox{[} $m/s$\mbox{]}. 
+
+\hypertarget{group__nav__eq_gae420c23e5d1fdf5b157535212ddeba9e}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!\-Test\-\_\-statistics@{\-Test\-\_\-statistics}}
+\index{\-Test\-\_\-statistics@{\-Test\-\_\-statistics}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{\-Test\-\_\-statistics}]{\setlength{\rightskip}{0pt plus 5cm}{\bf precision} {\bf \-Test\-\_\-statistics} = 0}}
+\label{group__nav__eq_gae420c23e5d1fdf5b157535212ddeba9e}
+
+
+\-Variable holding the test statistics for the generalized likelihood ratio test, i.\-e., the zero-\/velocity detector. 
+
+\hypertarget{group__nav__eq_ga589efe00d8bd4e8a69613f98390a04c7}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!velocity@{velocity}}
+\index{velocity@{velocity}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{velocity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} {\bf velocity}}}
+\label{group__nav__eq_ga589efe00d8bd4e8a69613f98390a04c7}
+
+
+\-Velocity estimate (\-North,\-East,\-Down) \mbox{[} $m/s$\mbox{]}. 
+
+\hypertarget{group__nav__eq_gabd51dc1d49060099533807a22acc61d4}{
+\index{\-Open\-Shoe filtering algorithms@{\-Open\-Shoe filtering algorithms}!zupt@{zupt}}
+\index{zupt@{zupt}!OpenShoe filtering algorithms@{\-Open\-Shoe filtering algorithms}}
+\subsubsection[{zupt}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf zupt} = false}}
+\label{group__nav__eq_gabd51dc1d49060099533807a22acc61d4}
+
+
+\-Flag that is set to true if a zero-\/velocity update should be done. 
+

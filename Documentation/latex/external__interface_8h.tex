@@ -1,0 +1,32 @@
+\hypertarget{external__interface_8h}{
+\section{external\-\_\-interface.h \-File \-Reference}
+\label{external__interface_8h}\index{external\-\_\-interface.\-h@{external\-\_\-interface.\-h}}
+}
+
+
+\-High level external user interface (\-U\-S\-B) header file.  
+
+
+{\ttfamily \#include \char`\"{}compiler.\-h\char`\"{}}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__user__interface_ga87a9b575684eea3d1a804e597236b40f}{com\-\_\-interface\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em \-Initialization function for communication interface. \end{DoxyCompactList}\item 
+void \hyperlink{group__user__interface_ga9926a12daaecdbb4d8106ed110510d49}{transmit\-\_\-data} (void)
+\begin{DoxyCompactList}\small\item\em \-Main function to output data to user. \end{DoxyCompactList}\item 
+void \hyperlink{group__user__interface_ga328bb6c7a4ed590a8a4eb1b2a60943f1}{receive\-\_\-command} (void)
+\begin{DoxyCompactList}\small\item\em \-Main function for receiving commands from user. \end{DoxyCompactList}\item 
+void \hyperlink{group__user__interface_ga56ca2a8f03cbdf960d6928e9a7ad68ba}{set\-\_\-state\-\_\-output} (uint8\-\_\-t state\-\_\-id, uint8\-\_\-t divider)
+\begin{DoxyCompactList}\small\item\em \-Sets state\-\_\-id state to be output with interrupt frequency divided by 2$^\wedge$(divider-\/1). \-Divider=0 turns off output. \end{DoxyCompactList}\item 
+void \hyperlink{group__user__interface_gad8c48701618a71f6bcc9ec12d139ba32}{reset\-\_\-output\-\_\-counters} (void)
+\begin{DoxyCompactList}\small\item\em \-Reset the output counter such that the output become synchronized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-High level external user interface (\-U\-S\-B) header file. \begin{DoxyAuthor}{\-Authors}
+\-John-\/\-Olof \-Nilsson, \-Isaac \-Skog 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{\-Copyright}
+\-Copyright (c) 2011 \-Open\-Shoe, \-I\-S\-C \-License (open source) 
+\end{DoxyCopyright}

@@ -1,0 +1,384 @@
+\hypertarget{group__otg__group}{
+\section{\-U\-S\-B \-O\-T\-G \-Driver (\-O\-T\-G)}
+\label{group__otg__group}\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+}
+\subsection*{\-U\-S\-B\-C \-I\-P properties}
+\label{_amgrp4ec4dc4c51d9d708aedf03b334b1cf86}%
+ \-These macros give access to \-I\-P properties \begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__otg__group_ga276fd7e676117783fc8d3a45aeda3351}{otg\-\_\-get\-\_\-ip\-\_\-name}()~(((uint64\-\_\-t)\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-uname2$<$$<$32)$|$(uint64\-\_\-t)\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-uname1)
+\begin{DoxyCompactList}\small\item\em \-Get \-I\-P name part 1 or 2. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga60eb9bc13cc48c77512db1849b54c4eb}{otg\-\_\-data\-\_\-memory\-\_\-barrier}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-uvers)
+\begin{DoxyCompactList}\small\item\em \-Instruction to access at a peripheral register after interrupt clear, see \-A\-V\-R32002 -\/ \-A\-V\-R32\-U\-C \-Technical reference \$6.\-6 \-Memory barriers. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga44d71ccfd479392e4bbfd49057c4bf32}{otg\-\_\-get\-\_\-ip\-\_\-version}()~(\-Rd\-\_\-bitfield(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-uvers, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-V\-E\-R\-S\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-N\-U\-M\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Get \-I\-P version. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga9ed10ed0cd9edede61a871d74b1d6859}{otg\-\_\-get\-\_\-metal\-\_\-fix\-\_\-nbr}()~(\-Rd\-\_\-bitfield(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-uvers, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-V\-E\-R\-S\-\_\-\-M\-E\-T\-A\-L\-\_\-\-F\-I\-X\-\_\-\-N\-U\-M\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Get number of metal fixes. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_gadfdcbe969406b8f621bfd82699361e5c}{otg\-\_\-get\-\_\-dpram\-\_\-size}()~(128 $<$$<$ \-Rd\-\_\-bitfield(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-ufeatures, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-F\-E\-A\-T\-U\-R\-E\-S\-\_\-\-F\-I\-F\-O\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Get \-D\-P\-R\-A\-M size (\-F\-I\-F\-O maximal size) in bytes. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_gac0da3ffdf225df7c33fef4f535147db0}{\-Is\-\_\-otg\-\_\-dpram\-\_\-byte\-\_\-write\-\_\-capable}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-ufeatures, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-F\-E\-A\-T\-U\-R\-E\-S\-\_\-\-B\-Y\-T\-E\-\_\-\-W\-R\-I\-T\-E\-\_\-\-D\-P\-R\-A\-M\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Test if \-D\-P\-R\-A\-M is natively byte write capable. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga00fe620dc8bbaa5707c691621f77321c}{otg\-\_\-get\-\_\-ip\-\_\-paddress\-\_\-size}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-uaddrsize)
+\begin{DoxyCompactList}\small\item\em \-Get size of \-U\-S\-B\-C \-P\-B address space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-U\-S\-B\-C \-O\-T\-G \-I\-D pin management}
+\label{_amgrp233477b48fb98e7cebdb297ab0a04a74}%
+ \-These macros manage the \-I\-D pin use or not to switch between \-Host or \-Device mode \begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__otg__group_ga1eac01e72e370946e44c6e372e77a394}{\-O\-T\-G\-\_\-\-I\-D\-\_\-\-P\-I\-N}~\-A\-T\-P\-A\-S\-T\-E2(\-O\-T\-G\-\_\-\-I\-D, \-\_\-\-P\-I\-N)
+\begin{DoxyCompactList}\small\item\em \-Pin and function for \-U\-S\-B\-\_\-\-I\-D according to configuration from \-O\-T\-G\-\_\-\-I\-D. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga67896e3d73053c7c3abfa5956dc47dbd}{\-O\-T\-G\-\_\-\-I\-D\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N}~\-A\-T\-P\-A\-S\-T\-E2(\-O\-T\-G\-\_\-\-I\-D, \-\_\-\-F\-U\-N\-C\-T\-I\-O\-N)
+\item 
+\#define \hyperlink{group__otg__group_gaa8520a37f119fe71fa225da806595233}{otg\-\_\-input\-\_\-id\-\_\-pin}()
+\begin{DoxyCompactList}\small\item\em \-Input \-O\-T\-G\-\_\-\-I\-D from its pin. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_gaf5cc6e51a0bd88c118f63a999e7cf759}{\-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-input}()
+\begin{DoxyCompactList}\small\item\em \-Test if \-O\-T\-G\-\_\-\-I\-D is input from its pin. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga8c345f8663b1f3432cb9882298e90a5b}{otg\-\_\-enable\-\_\-id\-\_\-pin}()~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-I\-D\-E\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Enable external \-O\-T\-G\-\_\-\-I\-D pin (listened to by \-U\-S\-B) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga8ad60737541846833dbddf8e92828e40}{otg\-\_\-disable\-\_\-id\-\_\-pin}()~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-I\-D\-E\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Disable external \-O\-T\-G\-\_\-\-I\-D pin (ignored by \-U\-S\-B) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga0c4344aeac9372eb1c455f23a844e1c8}{\-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-enabled}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-I\-D\-E\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Test if external \-O\-T\-G\-\_\-\-I\-D pin enabled (listened to by \-U\-S\-B) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga0a20b90b831ebf250983ef5e15f6d561}{otg\-\_\-force\-\_\-device\-\_\-mode}()~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-I\-M\-O\-D\-\_\-\-M\-A\-S\-K), otg\-\_\-disable\-\_\-id\-\_\-pin())
+\begin{DoxyCompactList}\small\item\em \-Disable external \-O\-T\-G\-\_\-\-I\-D pin and force device mode. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_gab9ff6cbcfe6c371a2cb9493c182fa6a8}{\-Is\-\_\-otg\-\_\-device\-\_\-mode\-\_\-forced}()~(!\-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-enabled() \&\& \-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-I\-M\-O\-D\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Test if device mode is forced. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga7a96147ad9ff7531f799c5e2127efad1}{otg\-\_\-force\-\_\-host\-\_\-mode}()~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-I\-M\-O\-D\-\_\-\-M\-A\-S\-K), otg\-\_\-disable\-\_\-id\-\_\-pin())
+\begin{DoxyCompactList}\small\item\em \-Disable external \-O\-T\-G\-\_\-\-I\-D pin and force host mode. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__otg__group_ga8d245cf2f27f09d9ae4dd6e68ef451eb}{\-Is\-\_\-otg\-\_\-host\-\_\-mode\-\_\-forced}()~(!\-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-enabled() \&\& !\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-I\-M\-O\-D\-\_\-\-M\-A\-S\-K))
+\begin{DoxyCompactList}\small\item\em \-Test if host mode is forced. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-U\-S\-B\-C \-O\-T\-G \-I\-D pin interrupt management}
+\label{_amgrpb4d7c037f10d64941693e7f82d9338bc}%
+ \-These macros manage the \-I\-D pin interrupt \begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__otg__group_ga873ba3797934aa55fdf0d179496e0e89}{otg\-\_\-enable\-\_\-id\-\_\-interrupt}()~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-I\-D\-T\-E\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__otg__group_ga88d47c2dfdbd1c720326b011db6a7ebd}{otg\-\_\-disable\-\_\-id\-\_\-interrupt}()~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-I\-D\-T\-E\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__otg__group_gaee416d9364a73b24f67271cab0f697c5}{\-Is\-\_\-otg\-\_\-id\-\_\-interrupt\-\_\-enabled}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-I\-D\-T\-E\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__otg__group_ga75ab090e520e22605a84c77048814e9a}{\-Is\-\_\-otg\-\_\-id\-\_\-device}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbsta, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-\_\-\-I\-D\-\_\-\-M\-A\-S\-K))
+\item 
+\#define \hyperlink{group__otg__group_ga473adb587b33ff08bc9afa2a916087b0}{otg\-\_\-ack\-\_\-id\-\_\-transition}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-C\-L\-R\-\_\-\-I\-D\-T\-I\-C\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__otg__group_ga221ed96e5450a2d29fdf265a99c430fc}{otg\-\_\-raise\-\_\-id\-\_\-transition}()~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-S\-E\-T\-\_\-\-I\-D\-T\-I\-S\-\_\-\-M\-A\-S\-K)
+\item 
+\#define \hyperlink{group__otg__group_gad080cf4cce7110b5540021accd4e7f4c}{\-Is\-\_\-otg\-\_\-id\-\_\-transition}()~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbsta, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-\_\-\-I\-D\-T\-I\-\_\-\-M\-A\-S\-K))
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-U\-S\-B\-C low-\/level driver for \-O\-T\-G features
+
+\begin{DoxyWarning}{\-Warning}
+\-Bit-\/masks are used instead of bit-\/fields because \-P\-B registers require 32-\/bit write accesses while \-A\-V\-R32-\/\-G\-C\-C 4.\-0.\-2 builds 8-\/bit accesses even when volatile unsigned int bit-\/fields are specified. 
+\end{DoxyWarning}
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{group__otg__group_gab9ff6cbcfe6c371a2cb9493c182fa6a8}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!\-Is\-\_\-otg\-\_\-device\-\_\-mode\-\_\-forced@{\-Is\-\_\-otg\-\_\-device\-\_\-mode\-\_\-forced}}
+\index{\-Is\-\_\-otg\-\_\-device\-\_\-mode\-\_\-forced@{\-Is\-\_\-otg\-\_\-device\-\_\-mode\-\_\-forced}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{\-Is\-\_\-otg\-\_\-device\-\_\-mode\-\_\-forced}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-otg\-\_\-device\-\_\-mode\-\_\-forced(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(!\-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-enabled() \&\& \-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-I\-M\-O\-D\-\_\-\-M\-A\-S\-K))}}
+\label{group__otg__group_gab9ff6cbcfe6c371a2cb9493c182fa6a8}
+
+
+\-Test if device mode is forced. 
+
+\hypertarget{group__otg__group_gac0da3ffdf225df7c33fef4f535147db0}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!\-Is\-\_\-otg\-\_\-dpram\-\_\-byte\-\_\-write\-\_\-capable@{\-Is\-\_\-otg\-\_\-dpram\-\_\-byte\-\_\-write\-\_\-capable}}
+\index{\-Is\-\_\-otg\-\_\-dpram\-\_\-byte\-\_\-write\-\_\-capable@{\-Is\-\_\-otg\-\_\-dpram\-\_\-byte\-\_\-write\-\_\-capable}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{\-Is\-\_\-otg\-\_\-dpram\-\_\-byte\-\_\-write\-\_\-capable}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-otg\-\_\-dpram\-\_\-byte\-\_\-write\-\_\-capable(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-ufeatures, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-F\-E\-A\-T\-U\-R\-E\-S\-\_\-\-B\-Y\-T\-E\-\_\-\-W\-R\-I\-T\-E\-\_\-\-D\-P\-R\-A\-M\-\_\-\-M\-A\-S\-K))}}
+\label{group__otg__group_gac0da3ffdf225df7c33fef4f535147db0}
+
+
+\-Test if \-D\-P\-R\-A\-M is natively byte write capable. 
+
+\hypertarget{group__otg__group_ga8d245cf2f27f09d9ae4dd6e68ef451eb}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!\-Is\-\_\-otg\-\_\-host\-\_\-mode\-\_\-forced@{\-Is\-\_\-otg\-\_\-host\-\_\-mode\-\_\-forced}}
+\index{\-Is\-\_\-otg\-\_\-host\-\_\-mode\-\_\-forced@{\-Is\-\_\-otg\-\_\-host\-\_\-mode\-\_\-forced}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{\-Is\-\_\-otg\-\_\-host\-\_\-mode\-\_\-forced}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-otg\-\_\-host\-\_\-mode\-\_\-forced(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(!\-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-enabled() \&\& !\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-I\-M\-O\-D\-\_\-\-M\-A\-S\-K))}}
+\label{group__otg__group_ga8d245cf2f27f09d9ae4dd6e68ef451eb}
+
+
+\-Test if host mode is forced. 
+
+\hypertarget{group__otg__group_ga75ab090e520e22605a84c77048814e9a}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!\-Is\-\_\-otg\-\_\-id\-\_\-device@{\-Is\-\_\-otg\-\_\-id\-\_\-device}}
+\index{\-Is\-\_\-otg\-\_\-id\-\_\-device@{\-Is\-\_\-otg\-\_\-id\-\_\-device}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{\-Is\-\_\-otg\-\_\-id\-\_\-device}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-otg\-\_\-id\-\_\-device(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbsta, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-\_\-\-I\-D\-\_\-\-M\-A\-S\-K))}}
+\label{group__otg__group_ga75ab090e520e22605a84c77048814e9a}
+\hypertarget{group__otg__group_gaee416d9364a73b24f67271cab0f697c5}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!\-Is\-\_\-otg\-\_\-id\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-otg\-\_\-id\-\_\-interrupt\-\_\-enabled}}
+\index{\-Is\-\_\-otg\-\_\-id\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-otg\-\_\-id\-\_\-interrupt\-\_\-enabled}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{\-Is\-\_\-otg\-\_\-id\-\_\-interrupt\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-otg\-\_\-id\-\_\-interrupt\-\_\-enabled(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-I\-D\-T\-E\-\_\-\-M\-A\-S\-K))}}
+\label{group__otg__group_gaee416d9364a73b24f67271cab0f697c5}
+\hypertarget{group__otg__group_ga0c4344aeac9372eb1c455f23a844e1c8}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!\-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-enabled@{\-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-enabled}}
+\index{\-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-enabled@{\-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-enabled}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{\-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-enabled(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-I\-D\-E\-\_\-\-M\-A\-S\-K))}}
+\label{group__otg__group_ga0c4344aeac9372eb1c455f23a844e1c8}
+
+
+\-Test if external \-O\-T\-G\-\_\-\-I\-D pin enabled (listened to by \-U\-S\-B) 
+
+\hypertarget{group__otg__group_gaf5cc6e51a0bd88c118f63a999e7cf759}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!\-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-input@{\-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-input}}
+\index{\-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-input@{\-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-input}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{\-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-input}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-otg\-\_\-id\-\_\-pin\-\_\-input(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__otg__group_gaf5cc6e51a0bd88c118f63a999e7cf759}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+( !Tst_bits(AVR32_GPIO.port[OTG_ID_PIN >> 5].gper, 1 << (OTG_ID_PIN & 0x1F)) &&
+      \
+               Tst_bits(AVR32_GPIO.port[OTG_ID_PIN >> 5].pmr0, 1 << (OTG_ID_PIN
+       & 0x1F)) == Tst_bits(OTG_ID_PIN, 0x01) &&\
+               Tst_bits(AVR32_GPIO.port[OTG_ID_PIN >> 5].pmr1, 1 << (OTG_ID_PIN
+       & 0x1F)) == Tst_bits(OTG_ID_PIN, 0x02))
+\end{DoxyCode}
+
+
+\-Test if \-O\-T\-G\-\_\-\-I\-D is input from its pin. 
+
+\hypertarget{group__otg__group_gad080cf4cce7110b5540021accd4e7f4c}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!\-Is\-\_\-otg\-\_\-id\-\_\-transition@{\-Is\-\_\-otg\-\_\-id\-\_\-transition}}
+\index{\-Is\-\_\-otg\-\_\-id\-\_\-transition@{\-Is\-\_\-otg\-\_\-id\-\_\-transition}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{\-Is\-\_\-otg\-\_\-id\-\_\-transition}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-otg\-\_\-id\-\_\-transition(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Tst\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbsta, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-\_\-\-I\-D\-T\-I\-\_\-\-M\-A\-S\-K))}}
+\label{group__otg__group_gad080cf4cce7110b5540021accd4e7f4c}
+\hypertarget{group__otg__group_ga473adb587b33ff08bc9afa2a916087b0}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!otg\-\_\-ack\-\_\-id\-\_\-transition@{otg\-\_\-ack\-\_\-id\-\_\-transition}}
+\index{otg\-\_\-ack\-\_\-id\-\_\-transition@{otg\-\_\-ack\-\_\-id\-\_\-transition}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{otg\-\_\-ack\-\_\-id\-\_\-transition}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-ack\-\_\-id\-\_\-transition(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaclr = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-C\-L\-R\-\_\-\-I\-D\-T\-I\-C\-\_\-\-M\-A\-S\-K)}}
+\label{group__otg__group_ga473adb587b33ff08bc9afa2a916087b0}
+\hypertarget{group__otg__group_ga60eb9bc13cc48c77512db1849b54c4eb}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!otg\-\_\-data\-\_\-memory\-\_\-barrier@{otg\-\_\-data\-\_\-memory\-\_\-barrier}}
+\index{otg\-\_\-data\-\_\-memory\-\_\-barrier@{otg\-\_\-data\-\_\-memory\-\_\-barrier}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{otg\-\_\-data\-\_\-memory\-\_\-barrier}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-data\-\_\-memory\-\_\-barrier(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-uvers)}}
+\label{group__otg__group_ga60eb9bc13cc48c77512db1849b54c4eb}
+
+
+\-Instruction to access at a peripheral register after interrupt clear, see \-A\-V\-R32002 -\/ \-A\-V\-R32\-U\-C \-Technical reference \$6.\-6 \-Memory barriers. 
+
+\hypertarget{group__otg__group_ga88d47c2dfdbd1c720326b011db6a7ebd}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!otg\-\_\-disable\-\_\-id\-\_\-interrupt@{otg\-\_\-disable\-\_\-id\-\_\-interrupt}}
+\index{otg\-\_\-disable\-\_\-id\-\_\-interrupt@{otg\-\_\-disable\-\_\-id\-\_\-interrupt}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{otg\-\_\-disable\-\_\-id\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-disable\-\_\-id\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-I\-D\-T\-E\-\_\-\-M\-A\-S\-K))}}
+\label{group__otg__group_ga88d47c2dfdbd1c720326b011db6a7ebd}
+\hypertarget{group__otg__group_ga8ad60737541846833dbddf8e92828e40}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!otg\-\_\-disable\-\_\-id\-\_\-pin@{otg\-\_\-disable\-\_\-id\-\_\-pin}}
+\index{otg\-\_\-disable\-\_\-id\-\_\-pin@{otg\-\_\-disable\-\_\-id\-\_\-pin}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{otg\-\_\-disable\-\_\-id\-\_\-pin}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-disable\-\_\-id\-\_\-pin(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-I\-D\-E\-\_\-\-M\-A\-S\-K))}}
+\label{group__otg__group_ga8ad60737541846833dbddf8e92828e40}
+
+
+\-Disable external \-O\-T\-G\-\_\-\-I\-D pin (ignored by \-U\-S\-B) 
+
+\hypertarget{group__otg__group_ga873ba3797934aa55fdf0d179496e0e89}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!otg\-\_\-enable\-\_\-id\-\_\-interrupt@{otg\-\_\-enable\-\_\-id\-\_\-interrupt}}
+\index{otg\-\_\-enable\-\_\-id\-\_\-interrupt@{otg\-\_\-enable\-\_\-id\-\_\-interrupt}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{otg\-\_\-enable\-\_\-id\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-enable\-\_\-id\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-I\-D\-T\-E\-\_\-\-M\-A\-S\-K))}}
+\label{group__otg__group_ga873ba3797934aa55fdf0d179496e0e89}
+\hypertarget{group__otg__group_ga8c345f8663b1f3432cb9882298e90a5b}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!otg\-\_\-enable\-\_\-id\-\_\-pin@{otg\-\_\-enable\-\_\-id\-\_\-pin}}
+\index{otg\-\_\-enable\-\_\-id\-\_\-pin@{otg\-\_\-enable\-\_\-id\-\_\-pin}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{otg\-\_\-enable\-\_\-id\-\_\-pin}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-enable\-\_\-id\-\_\-pin(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-I\-D\-E\-\_\-\-M\-A\-S\-K))}}
+\label{group__otg__group_ga8c345f8663b1f3432cb9882298e90a5b}
+
+
+\-Enable external \-O\-T\-G\-\_\-\-I\-D pin (listened to by \-U\-S\-B) 
+
+\hypertarget{group__otg__group_ga0a20b90b831ebf250983ef5e15f6d561}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!otg\-\_\-force\-\_\-device\-\_\-mode@{otg\-\_\-force\-\_\-device\-\_\-mode}}
+\index{otg\-\_\-force\-\_\-device\-\_\-mode@{otg\-\_\-force\-\_\-device\-\_\-mode}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{otg\-\_\-force\-\_\-device\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-force\-\_\-device\-\_\-mode(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Set\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-I\-M\-O\-D\-\_\-\-M\-A\-S\-K), otg\-\_\-disable\-\_\-id\-\_\-pin())}}
+\label{group__otg__group_ga0a20b90b831ebf250983ef5e15f6d561}
+
+
+\-Disable external \-O\-T\-G\-\_\-\-I\-D pin and force device mode. 
+
+\hypertarget{group__otg__group_ga7a96147ad9ff7531f799c5e2127efad1}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!otg\-\_\-force\-\_\-host\-\_\-mode@{otg\-\_\-force\-\_\-host\-\_\-mode}}
+\index{otg\-\_\-force\-\_\-host\-\_\-mode@{otg\-\_\-force\-\_\-host\-\_\-mode}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{otg\-\_\-force\-\_\-host\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-force\-\_\-host\-\_\-mode(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Clr\-\_\-bits(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbcon, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-C\-O\-N\-\_\-\-U\-I\-M\-O\-D\-\_\-\-M\-A\-S\-K), otg\-\_\-disable\-\_\-id\-\_\-pin())}}
+\label{group__otg__group_ga7a96147ad9ff7531f799c5e2127efad1}
+
+
+\-Disable external \-O\-T\-G\-\_\-\-I\-D pin and force host mode. 
+
+\hypertarget{group__otg__group_gadfdcbe969406b8f621bfd82699361e5c}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!otg\-\_\-get\-\_\-dpram\-\_\-size@{otg\-\_\-get\-\_\-dpram\-\_\-size}}
+\index{otg\-\_\-get\-\_\-dpram\-\_\-size@{otg\-\_\-get\-\_\-dpram\-\_\-size}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{otg\-\_\-get\-\_\-dpram\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-get\-\_\-dpram\-\_\-size(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(128 $<$$<$ \-Rd\-\_\-bitfield(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-ufeatures, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-F\-E\-A\-T\-U\-R\-E\-S\-\_\-\-F\-I\-F\-O\-\_\-\-M\-A\-X\-\_\-\-S\-I\-Z\-E\-\_\-\-M\-A\-S\-K))}}
+\label{group__otg__group_gadfdcbe969406b8f621bfd82699361e5c}
+
+
+\-Get \-D\-P\-R\-A\-M size (\-F\-I\-F\-O maximal size) in bytes. 
+
+\hypertarget{group__otg__group_ga276fd7e676117783fc8d3a45aeda3351}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!otg\-\_\-get\-\_\-ip\-\_\-name@{otg\-\_\-get\-\_\-ip\-\_\-name}}
+\index{otg\-\_\-get\-\_\-ip\-\_\-name@{otg\-\_\-get\-\_\-ip\-\_\-name}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{otg\-\_\-get\-\_\-ip\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-get\-\_\-ip\-\_\-name(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(((uint64\-\_\-t)\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-uname2$<$$<$32)$|$(uint64\-\_\-t)\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-uname1)}}
+\label{group__otg__group_ga276fd7e676117783fc8d3a45aeda3351}
+
+
+\-Get \-I\-P name part 1 or 2. 
+
+\hypertarget{group__otg__group_ga00fe620dc8bbaa5707c691621f77321c}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!otg\-\_\-get\-\_\-ip\-\_\-paddress\-\_\-size@{otg\-\_\-get\-\_\-ip\-\_\-paddress\-\_\-size}}
+\index{otg\-\_\-get\-\_\-ip\-\_\-paddress\-\_\-size@{otg\-\_\-get\-\_\-ip\-\_\-paddress\-\_\-size}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{otg\-\_\-get\-\_\-ip\-\_\-paddress\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-get\-\_\-ip\-\_\-paddress\-\_\-size(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-uaddrsize)}}
+\label{group__otg__group_ga00fe620dc8bbaa5707c691621f77321c}
+
+
+\-Get size of \-U\-S\-B\-C \-P\-B address space. 
+
+\hypertarget{group__otg__group_ga44d71ccfd479392e4bbfd49057c4bf32}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!otg\-\_\-get\-\_\-ip\-\_\-version@{otg\-\_\-get\-\_\-ip\-\_\-version}}
+\index{otg\-\_\-get\-\_\-ip\-\_\-version@{otg\-\_\-get\-\_\-ip\-\_\-version}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{otg\-\_\-get\-\_\-ip\-\_\-version}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-get\-\_\-ip\-\_\-version(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Rd\-\_\-bitfield(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-uvers, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-V\-E\-R\-S\-\_\-\-V\-E\-R\-S\-I\-O\-N\-\_\-\-N\-U\-M\-\_\-\-M\-A\-S\-K))}}
+\label{group__otg__group_ga44d71ccfd479392e4bbfd49057c4bf32}
+
+
+\-Get \-I\-P version. 
+
+\hypertarget{group__otg__group_ga9ed10ed0cd9edede61a871d74b1d6859}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!otg\-\_\-get\-\_\-metal\-\_\-fix\-\_\-nbr@{otg\-\_\-get\-\_\-metal\-\_\-fix\-\_\-nbr}}
+\index{otg\-\_\-get\-\_\-metal\-\_\-fix\-\_\-nbr@{otg\-\_\-get\-\_\-metal\-\_\-fix\-\_\-nbr}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{otg\-\_\-get\-\_\-metal\-\_\-fix\-\_\-nbr}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-get\-\_\-metal\-\_\-fix\-\_\-nbr(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-Rd\-\_\-bitfield(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-uvers, \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-V\-E\-R\-S\-\_\-\-M\-E\-T\-A\-L\-\_\-\-F\-I\-X\-\_\-\-N\-U\-M\-\_\-\-M\-A\-S\-K))}}
+\label{group__otg__group_ga9ed10ed0cd9edede61a871d74b1d6859}
+
+
+\-Get number of metal fixes. 
+
+\hypertarget{group__otg__group_ga67896e3d73053c7c3abfa5956dc47dbd}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!\-O\-T\-G\-\_\-\-I\-D\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N@{\-O\-T\-G\-\_\-\-I\-D\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N}}
+\index{\-O\-T\-G\-\_\-\-I\-D\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N@{\-O\-T\-G\-\_\-\-I\-D\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{\-O\-T\-G\-\_\-\-I\-D\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-T\-G\-\_\-\-I\-D\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N~\-A\-T\-P\-A\-S\-T\-E2(\-O\-T\-G\-\_\-\-I\-D, \-\_\-\-F\-U\-N\-C\-T\-I\-O\-N)}}
+\label{group__otg__group_ga67896e3d73053c7c3abfa5956dc47dbd}
+\hypertarget{group__otg__group_ga1eac01e72e370946e44c6e372e77a394}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!\-O\-T\-G\-\_\-\-I\-D\-\_\-\-P\-I\-N@{\-O\-T\-G\-\_\-\-I\-D\-\_\-\-P\-I\-N}}
+\index{\-O\-T\-G\-\_\-\-I\-D\-\_\-\-P\-I\-N@{\-O\-T\-G\-\_\-\-I\-D\-\_\-\-P\-I\-N}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{\-O\-T\-G\-\_\-\-I\-D\-\_\-\-P\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-O\-T\-G\-\_\-\-I\-D\-\_\-\-P\-I\-N~\-A\-T\-P\-A\-S\-T\-E2(\-O\-T\-G\-\_\-\-I\-D, \-\_\-\-P\-I\-N)}}
+\label{group__otg__group_ga1eac01e72e370946e44c6e372e77a394}
+
+
+\-Pin and function for \-U\-S\-B\-\_\-\-I\-D according to configuration from \-O\-T\-G\-\_\-\-I\-D. 
+
+\hypertarget{group__otg__group_gaa8520a37f119fe71fa225da806595233}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!otg\-\_\-input\-\_\-id\-\_\-pin@{otg\-\_\-input\-\_\-id\-\_\-pin}}
+\index{otg\-\_\-input\-\_\-id\-\_\-pin@{otg\-\_\-input\-\_\-id\-\_\-pin}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{otg\-\_\-input\-\_\-id\-\_\-pin}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-input\-\_\-id\-\_\-pin(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__otg__group_gaa8520a37f119fe71fa225da806595233}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+{\
+   (Tst_bits(OTG_ID_FUNCTION, 0x01)) ?\
+      (AVR32_GPIO.port[OTG_ID_PIN >> 5].pmr0s = 1 << (OTG_ID_PIN & 0x1F)) :\
+      (AVR32_GPIO.port[OTG_ID_PIN >> 5].pmr0c = 1 << (OTG_ID_PIN & 0x1F)); \
+   (Tst_bits(OTG_ID_FUNCTION, 0x02)) ?\
+      (AVR32_GPIO.port[OTG_ID_PIN >> 5].pmr1s = 1 << (OTG_ID_PIN & 0x1F)) :\
+      (AVR32_GPIO.port[OTG_ID_PIN >> 5].pmr1c = 1 << (OTG_ID_PIN & 0x1F)); \
+   AVR32_GPIO.port[OTG_ID_PIN >> 5].gperc = 1 << (OTG_ID_PIN & 0x1F);\
+   AVR32_GPIO.port[OTG_ID_PIN >> 5].puers = 1 << (OTG_ID_PIN & 0x1F);\
+}
+\end{DoxyCode}
+
+
+\-Input \-O\-T\-G\-\_\-\-I\-D from its pin. 
+
+\hypertarget{group__otg__group_ga221ed96e5450a2d29fdf265a99c430fc}{
+\index{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}!otg\-\_\-raise\-\_\-id\-\_\-transition@{otg\-\_\-raise\-\_\-id\-\_\-transition}}
+\index{otg\-\_\-raise\-\_\-id\-\_\-transition@{otg\-\_\-raise\-\_\-id\-\_\-transition}!USB OTG Driver (OTG)@{\-U\-S\-B O\-T\-G Driver (\-O\-T\-G)}}
+\subsubsection[{otg\-\_\-raise\-\_\-id\-\_\-transition}]{\setlength{\rightskip}{0pt plus 5cm}\#define otg\-\_\-raise\-\_\-id\-\_\-transition(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C.\-usbstaset = \-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-U\-S\-B\-S\-T\-A\-S\-E\-T\-\_\-\-I\-D\-T\-I\-S\-\_\-\-M\-A\-S\-K)}}
+\label{group__otg__group_ga221ed96e5450a2d29fdf265a99c430fc}

@@ -1,0 +1,261 @@
+\hypertarget{uc3c_2sysclk_8h}{
+\section{sysclk.h \-File \-Reference}
+\label{uc3c_2sysclk_8h}\index{sysclk.\-h@{sysclk.\-h}}
+}
+
+
+\-Chip-\/specific system clock management functions.  
+
+
+{\ttfamily \#include $<$board.\-h$>$}\*
+{\ttfamily \#include $<$avr32/io.\-h$>$}\*
+{\ttfamily \#include $<$osc.\-h$>$}\*
+{\ttfamily \#include $<$pll.\-h$>$}\*
+{\ttfamily \#include $<$genclk.\-h$>$}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{uc3c_2sysclk_8h_a1e1d7eaa2a45333b24bbba2d9edb12d8}{\-A\-V\-R32\-\_\-\-P\-D\-C\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}~128
+\item 
+\#define \hyperlink{uc3c_2sysclk_8h_a2033d306bc2ba036e527d44646dafad9}{\-A\-V\-R32\-\_\-\-M\-D\-M\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}~129
+\item 
+\#define \hyperlink{uc3c_2sysclk_8h_a9c60604c1aea2360a48a0ea93da827e3}{\-A\-V\-R32\-\_\-\-U\-S\-A\-R\-T1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}~130
+\item 
+\#define \hyperlink{uc3c_2sysclk_8h_a6bc6681a2dcf0960482cf587d1f00ba9}{\-A\-V\-R32\-\_\-\-S\-P\-I0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}~131
+\item 
+\#define \hyperlink{uc3c_2sysclk_8h_a14996800e45cf8ce3a59237d66de9a37}{\-A\-V\-R32\-\_\-\-C\-A\-N\-I\-F\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}~132
+\item 
+\#define \hyperlink{uc3c_2sysclk_8h_a0a62cca33dfc872eace7a76a614f143e}{\-A\-V\-R32\-\_\-\-T\-C0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}~133
+\item 
+\#define \hyperlink{uc3c_2sysclk_8h_ab66bb8270140c74f2fe0ac8dab2cc44c}{\-A\-V\-R32\-\_\-\-A\-D\-C\-I\-F\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}~134
+\end{DoxyCompactItemize}
+\begin{Indent}\paragraph*{\-Configuration \-Symbols}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__sysclk__group_ga7bb6bbe88b7fb398ef8f0befe936e0e7}{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-O\-U\-R\-C\-E}~\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-S\-Y\-S
+\begin{DoxyCompactList}\small\item\em \-Initial/static main system clock source. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaf8bcf7e1ee2ebd2829ebc31be507c6da}{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-P\-U\-\_\-\-D\-I\-V}~0
+\begin{DoxyCompactList}\small\item\em \-Initial/static \-C\-P\-U/\-H\-S\-B/\-P\-B\-B clock divider (log2) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaa952d8094a06be420e244e68286c2dbf}{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-A\-\_\-\-D\-I\-V}~0
+\begin{DoxyCompactList}\small\item\em \-Initial/static \-P\-B\-A clock divider (log2) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga50962c914daa31fbc279cd4bccf66f98}{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-B\-\_\-\-D\-I\-V}~0
+\begin{DoxyCompactList}\small\item\em \-Initial/static \-P\-B\-B clock divider (log2) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaa31e8248ac7b461b19f7ec827674d16c}{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-C\-\_\-\-D\-I\-V}~0
+\begin{DoxyCompactList}\small\item\em \-Initial/static \-P\-B\-C clock divider (log2) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-System clock source}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__sysclk__group_ga95a749ec308ac07efb9521f2f56ad351}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-S\-Y\-S}~0
+\begin{DoxyCompactList}\small\item\em \-System \-R\-C oscillator. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga40595c85aa33898ff3a6cfbd4f8ef7b9}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0}~1
+\begin{DoxyCompactList}\small\item\em \-Oscillator 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga9d44be291573208b5b1152f2b6ab1d3a}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1}~2
+\begin{DoxyCompactList}\small\item\em \-Oscillator 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gacce44c311c87522d71fe51bf4cd37f58}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0}~3
+\begin{DoxyCompactList}\small\item\em \-Phase \-Locked \-Loop 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaa46c965047bb81e94066d8df57cb719f}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1}~4
+\begin{DoxyCompactList}\small\item\em \-Phase \-Locked \-Loop 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaa3b782df811d75bf3cf9f4ba8c2266b0}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M}~5
+\begin{DoxyCompactList}\small\item\em 8 \-M\-Hz \-R\-C oscillator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-U\-S\-B \-Clock \-Sources}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__sysclk__group_ga2ba06598e685f870cb3f410f27d75703}{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0}~1
+\begin{DoxyCompactList}\small\item\em \-Use \-O\-S\-C0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga5fee2b76449663f9d6c8f7bb34782e77}{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1}~2
+\begin{DoxyCompactList}\small\item\em \-Use \-O\-S\-C1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga969e47c6c1f1d38fd2afaf96f6187296}{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0}~3
+\begin{DoxyCompactList}\small\item\em \-Use \-P\-L\-L0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gae76666294ec5d1ca2bcfa28061cfae3f}{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1}~4
+\begin{DoxyCompactList}\small\item\em \-Use \-P\-L\-L1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Clocks derived from the \-C\-P\-U clock}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__sysclk__group_ga9cbdb318d23dda372bf52dd9b4eb14f5}{\-S\-Y\-S\-C\-L\-K\-\_\-\-O\-C\-D}~\-A\-V\-R32\-\_\-\-O\-C\-D\-\_\-\-C\-L\-K\-\_\-\-C\-P\-U
+\begin{DoxyCompactList}\small\item\em \-On-\/\-Chip \-Debug system. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga619d74a2528721833b011475c6ea1b63}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-Y\-S\-T\-I\-M\-E\-R}~\-A\-V\-R32\-\_\-\-C\-O\-R\-E\-\_\-\-C\-L\-K\-\_\-\-C\-P\-U\-\_\-\-C\-O\-U\-N\-T
+\begin{DoxyCompactList}\small\item\em \-C\-O\-U\-N\-T/\-C\-O\-M\-P\-A\-R\-E system registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Clocks derived from the \-H\-S\-B clock}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__sysclk__group_ga86f02a49fa416cb9618274517c7b6a1b}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-A\-U\-\_\-\-H\-S\-B}~(\-A\-V\-R32\-\_\-\-S\-A\-U\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-Secure \-Access \-Unit \-H\-S\-B interface. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga31a0491a42ddf97870b3218d66921f55}{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-D\-C\-A\-\_\-\-H\-S\-B}~(\-A\-V\-R32\-\_\-\-P\-D\-C\-A\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-P\-D\-C\-A memory interface. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaeb124548e5e161dfa5f3675721da8a82}{\-S\-Y\-S\-C\-L\-K\-\_\-\-M\-D\-M\-A\-\_\-\-H\-S\-B}~(\-A\-V\-R32\-\_\-\-M\-D\-M\-A\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-M\-D\-M\-A memory interface. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga8853a36d0721737ccf4f7dfa2287c729}{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-B\-C\-\_\-\-D\-A\-T\-A}~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-U\-S\-B\-C \-D\-M\-A and \-F\-I\-F\-O interface. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga72bf629f809d2df6ef9877b25712ba76}{\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-A\-N\-I\-F\-\_\-\-D\-A\-T\-A}~(\-A\-V\-R32\-\_\-\-C\-A\-N\-I\-F\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-C\-A\-N\-I\-F \-D\-M\-A interface. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaa4659bfb4205b768f6846cbfcc2ec7dd}{\-S\-Y\-S\-C\-L\-K\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-D\-A\-T\-A}~(\-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-Flash data interface. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga9e400e99e4e4b8f66b3a6d4c7b70611e}{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-A\-\_\-\-B\-R\-I\-D\-G\-E}~(\-A\-V\-R32\-\_\-\-H\-M\-A\-T\-R\-I\-X\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B\-\_\-\-P\-B\-A\-\_\-\-B\-R\-I\-D\-G\-E \% 32)
+\begin{DoxyCompactList}\small\item\em \-H\-S\-B$<$-\/$>$\-P\-B\-A bridge. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaafe37377751bd916833b911fb54de660}{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-B\-\_\-\-B\-R\-I\-D\-G\-E}~(\-A\-V\-R32\-\_\-\-H\-M\-A\-T\-R\-I\-X\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B\-\_\-\-P\-B\-B\-\_\-\-B\-R\-I\-D\-G\-E \% 32)
+\begin{DoxyCompactList}\small\item\em \-H\-S\-B$<$-\/$>$\-P\-B\-B bridge. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga94aa5b488b09dc743ddca6c884660873}{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-C\-\_\-\-B\-R\-I\-D\-G\-E}~(\-A\-V\-R32\-\_\-\-H\-M\-A\-T\-R\-I\-X\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B\-\_\-\-P\-B\-C\-\_\-\-B\-R\-I\-D\-G\-E \% 32)
+\begin{DoxyCompactList}\small\item\em \-H\-S\-B$<$-\/$>$\-P\-B\-C bridge. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaff6d7baf5d4926d22f50ca1bfb738424}{\-S\-Y\-S\-C\-L\-K\-\_\-\-H\-S\-B\-\_\-\-R\-A\-M}~(\-A\-V\-R32\-\_\-\-R\-A\-M\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-H\-S\-B \-R\-A\-M. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga30be147da40e89c8ea7fa6fd0ed30129}{\-S\-Y\-S\-C\-L\-K\-\_\-\-E\-B\-I}~(\-A\-V\-R32\-\_\-\-E\-B\-I\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-External \-Bus \-Interface. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga15c11d0c318f04ca3169fda32aea1bee}{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-E\-V\-C\-\_\-\-H\-S\-B}~(\-A\-V\-R32\-\_\-\-P\-E\-V\-C\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-Peripheral \-Event \-Controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Clocks derived from the \-P\-B\-A clock}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__sysclk__group_ga14d03e228f6f595a55e1a76040b8f169}{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-T\-C}~(\-A\-V\-R32\-\_\-\-I\-N\-T\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Internal interrupt controller. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga0f033dbcbfbd2fa9aadc748fb5c18165}{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-M}~(\-A\-V\-R32\-\_\-\-P\-M\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-P\-M/\-R\-T\-C/\-E\-I\-M configuration. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga49fca3345f07667c997b5ad46db6245b}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-C\-I\-F}~(\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-System \-Control \-Interface. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga6ad9b260e783734ef0e28bb7ac4284a7}{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-S\-T}~(\-A\-V\-R32\-\_\-\-A\-S\-T\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Asynchronous \-Timer. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gae1d87ae47bff0e2e4cab4b417cea4ab1}{\-S\-Y\-S\-C\-L\-K\-\_\-\-W\-D\-T}~(\-A\-V\-R32\-\_\-\-W\-D\-T\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Watchdog \-Timer. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaee7a1048c289fa9dd6abf99eaf64fc46}{\-S\-Y\-S\-C\-L\-K\-\_\-\-E\-I\-C}~(\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-External \-Interrupt \-Controller. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga0bd4c7581ed295f5202efa0631dfe1aa}{\-S\-Y\-S\-C\-L\-K\-\_\-\-F\-R\-E\-Q\-M}~(\-A\-V\-R32\-\_\-\-F\-R\-E\-Q\-M\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Frequency \-Meter. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaafd65ced01805e6f5dfbd3b08e9aa02c}{\-S\-Y\-S\-C\-L\-K\-\_\-\-G\-P\-I\-O}~(\-A\-V\-R32\-\_\-\-G\-P\-I\-O\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-General-\/\-Purpose \-I/\-O. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaeeea970aa1d68f0726f6ac7b19882491}{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T0}~(\-A\-V\-R32\-\_\-\-U\-S\-A\-R\-T0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-U\-S\-A\-R\-T 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gae2bb545878e7dc4040c1b1e9bab34cdd}{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T2}~(\-A\-V\-R32\-\_\-\-U\-S\-A\-R\-T2\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-U\-S\-A\-R\-T 2. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga749a1c474f6bcdfb0c71e76d88371572}{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T3}~(\-A\-V\-R32\-\_\-\-U\-S\-A\-R\-T3\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-U\-S\-A\-R\-T 3. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga2981d1f5ff381253d3ca94c260bbba01}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-P\-I1}~(\-A\-V\-R32\-\_\-\-S\-P\-I1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-S\-P\-I \-Controller 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga8c2db97d4e5879b8e79271ad4317965c}{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-M0}~(\-A\-V\-R32\-\_\-\-T\-W\-I\-M0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-T\-W\-I \-Master 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaa6b40c9fda3fc4cf86201bf5d35c60e4}{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-M1}~(\-A\-V\-R32\-\_\-\-T\-W\-I\-M1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-T\-W\-I \-Master 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaacb0f0e01d42f813394a6dc51171d0f1}{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-S0}~(\-A\-V\-R32\-\_\-\-T\-W\-I\-S0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-T\-W\-I \-Slave 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga8949d9bb62e29e020979d3d428d8fb53}{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-S1}~(\-A\-V\-R32\-\_\-\-T\-W\-I\-S1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-T\-W\-I \-Slave 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaba7d5c176ee1112b9f590ac775615e36}{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-W\-M}~(\-A\-V\-R32\-\_\-\-P\-W\-M\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Pulse \-Width \-Modulator. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gab8b5a16f6564fc83a5627c61468a635a}{\-S\-Y\-S\-C\-L\-K\-\_\-\-Q\-D\-E\-C0}~(\-A\-V\-R32\-\_\-\-Q\-D\-E\-C0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Quadrature \-Decoder 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga82dd53b7213f5e14889c11d00e9172e8}{\-S\-Y\-S\-C\-L\-K\-\_\-\-Q\-D\-E\-C1}~(\-A\-V\-R32\-\_\-\-Q\-D\-E\-C1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Quadrature \-Decoder 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga03be785696a3e76b1b3c6ea6104ac630}{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-C1}~(\-A\-V\-R32\-\_\-\-T\-C1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Timer/\-Counter 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga399953bbca8665cff37fd74a54196281}{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-E\-V\-C\-\_\-\-R\-E\-G\-S}~(\-A\-V\-R32\-\_\-\-P\-E\-V\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Peripheral \-Event \-Controller. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga3d96f4df476b374cae0653bb97b6afa9}{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-C\-I\-F\-A0}~(\-A\-V\-R32\-\_\-\-A\-C\-I\-F\-A0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Analog \-Comparator 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gae446ad78f0e97d6284514f1f37b77b8e}{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-C\-I\-F\-A1}~(\-A\-V\-R32\-\_\-\-A\-C\-I\-F\-A1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Analog \-Comparator 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaca3098d4d705c823acb5a2787a658b2f}{\-S\-Y\-S\-C\-L\-K\-\_\-\-D\-A\-C\-I\-F\-B0}~(\-A\-V\-R32\-\_\-\-D\-A\-C\-I\-F\-B0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-D/\-A \-Converter 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gabafc3d95b374fd0543a080132c6a123f}{\-S\-Y\-S\-C\-L\-K\-\_\-\-D\-A\-C\-I\-F\-B1}~(\-A\-V\-R32\-\_\-\-D\-A\-C\-I\-F\-B1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-D/\-A \-Converter 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga70d3d2ecde2ee79e6cdf0ddf62c5ce14}{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-W}~(\-A\-V\-R32\-\_\-\-A\-W\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em a\-Wire \-U\-A\-R\-T \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Clocks derived from the \-P\-B\-B clock}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__sysclk__group_ga47b081ba5de90a8ea89b8a844e82c14a}{\-S\-Y\-S\-C\-L\-K\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-R\-E\-G\-S}~(\-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-Flash \-Controller registers. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga1f50b29ea7a96a6595b6256118ec6a34}{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-B\-C\-\_\-\-R\-E\-G\-S}~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-U\-S\-B\-B registers. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga766dce154a1fb38bb35e6e98cd51a9b1}{\-S\-Y\-S\-C\-L\-K\-\_\-\-H\-M\-A\-T\-R\-I\-X}~(\-A\-V\-R32\-\_\-\-H\-M\-A\-T\-R\-I\-X\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-H\-S\-B \-Matrix configuration. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gafe8483e2e78077a95841ccf52b2da1a5}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-A\-U\-\_\-\-R\-E\-G\-S}~(\-A\-V\-R32\-\_\-\-S\-A\-U\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-Secure \-Access \-Unit register. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga8425ce428af87e00693efc695ac3b73e}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-M\-C\-\_\-\-R\-E\-G\-S}~(\-A\-V\-R32\-\_\-\-S\-M\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-Static \-Memory \-Controller registers. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga386f643ce38c1c6721d07c559a70f365}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-D\-R\-A\-M\-C\-\_\-\-R\-E\-G\-S}~(\-A\-V\-R32\-\_\-\-S\-D\-R\-A\-M\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-S\-D\-R\-A\-M \-Controller registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Clocks derived from the \-P\-B\-C clock}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__sysclk__group_gac83d44e5be54c7b52b86deb4fc338516}{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-D\-C\-A\-\_\-\-P\-B}~(\-A\-V\-R32\-\_\-\-P\-D\-C\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C \% 32)
+\begin{DoxyCompactList}\small\item\em \-P\-D\-C\-A peripheral bus interface. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gabe01b7586526964dd55bc275e9d40f39}{\-S\-Y\-S\-C\-L\-K\-\_\-\-M\-D\-M\-A\-\_\-\-R\-E\-G\-S}~(\-A\-V\-R32\-\_\-\-M\-D\-M\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C \% 32)
+\begin{DoxyCompactList}\small\item\em \-M\-D\-M\-A registers. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga1acb0cc02d975a6d9d4e92e56a2438a0}{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T1}~(\-A\-V\-R32\-\_\-\-U\-S\-A\-R\-T1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C \% 32)
+\begin{DoxyCompactList}\small\item\em \-U\-S\-A\-R\-T 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga77679d8f496ed32ec8c2476fc28ecf45}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-P\-I0}~(\-A\-V\-R32\-\_\-\-S\-P\-I0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C \% 32)
+\begin{DoxyCompactList}\small\item\em \-S\-P\-I \-Controller 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gadf592c60fdfb5213d813f9b5c753f0f7}{\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-A\-N\-I\-F\-\_\-\-R\-E\-G\-S}~(\-A\-V\-R32\-\_\-\-C\-A\-N\-I\-F\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C \% 32)
+\begin{DoxyCompactList}\small\item\em \-C\-A\-N\-I\-F registers. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gabe7aa477c7c5b3887df1d762a750b04a}{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-C0}~(\-A\-V\-R32\-\_\-\-T\-C0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C \% 32)
+\begin{DoxyCompactList}\small\item\em \-Timer/\-Counter 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga6e40fd22e30fe8f7553443d88ee817aa}{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-D\-C\-I\-F\-A}~(\-A\-V\-R32\-\_\-\-A\-D\-C\-I\-F\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C \% 32)
+\begin{DoxyCompactList}\small\item\em \-A/\-D \-Converter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__sysclk__group_ga74da4af4f93582fe3dd33dd75596cdf4}{sysclk\-\_\-priv\-\_\-enable\-\_\-module} (unsigned int bus\-\_\-id, unsigned int module\-\_\-index)
+\item 
+void \hyperlink{group__sysclk__group_ga9d3035baba081035de71adb2dd059ce7}{sysclk\-\_\-priv\-\_\-disable\-\_\-module} (unsigned int bus\-\_\-id, unsigned int module\-\_\-index)
+\item 
+void \hyperlink{group__sysclk__group_ga242399e48a97739c88b4d0c00f6101de}{sysclk\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em \-Initialize the synchronous clock system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\paragraph*{\-Querying the system clock and its derived clocks}
+{\em \-The following functions may be used to query the current frequency of the system clock and the \-C\-P\-U and bus clocks derived from it. sysclk\-\_\-get\-\_\-main\-\_\-hz() and sysclk\-\_\-get\-\_\-cpu\-\_\-hz() can be assumed to be available on all platforms, although some platforms may define additional accessors for various chip-\/internal bus clocks. \-These are usually not intended to be queried directly by generic code. }\end{Indent}
+\begin{Indent}\paragraph*{\-Enabling and disabling synchronous clocks}
+\end{Indent}
+\begin{Indent}\paragraph*{\-System \-Clock \-Source and \-Prescaler configuration}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__sysclk__group_ga9e93d93c137135fee8a1a7102367042e}{sysclk\-\_\-set\-\_\-prescalers} (unsigned int cpu\-\_\-shift, unsigned int pba\-\_\-shift, unsigned int pbb\-\_\-shift, unsigned int pbc\-\_\-shift)
+\begin{DoxyCompactList}\small\item\em \-Set system clock prescaler configuration. \end{DoxyCompactList}\item 
+void \hyperlink{group__sysclk__group_ga222a121dfaac21b0c0af9d4dcb39496c}{sysclk\-\_\-set\-\_\-source} (uint\-\_\-fast8\-\_\-t src)
+\begin{DoxyCompactList}\small\item\em \-Change the source of the main system clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{\-Detailed \-Description}
+\-Chip-\/specific system clock management functions. \-Copyright (\-C) 2010 -\/ 2011 \-Atmel \-Corporation. \-All rights reserved. 
+
+\subsection{\-Define \-Documentation}
+\hypertarget{uc3c_2sysclk_8h_ab66bb8270140c74f2fe0ac8dab2cc44c}{
+\index{uc3c/sysclk.\-h@{uc3c/sysclk.\-h}!\-A\-V\-R32\-\_\-\-A\-D\-C\-I\-F\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C@{\-A\-V\-R32\-\_\-\-A\-D\-C\-I\-F\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}}
+\index{\-A\-V\-R32\-\_\-\-A\-D\-C\-I\-F\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C@{\-A\-V\-R32\-\_\-\-A\-D\-C\-I\-F\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}!uc3c/sysclk.h@{uc3c/sysclk.\-h}}
+\subsubsection[{\-A\-V\-R32\-\_\-\-A\-D\-C\-I\-F\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-V\-R32\-\_\-\-A\-D\-C\-I\-F\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C~134}}
+\label{uc3c_2sysclk_8h_ab66bb8270140c74f2fe0ac8dab2cc44c}
+\hypertarget{uc3c_2sysclk_8h_a14996800e45cf8ce3a59237d66de9a37}{
+\index{uc3c/sysclk.\-h@{uc3c/sysclk.\-h}!\-A\-V\-R32\-\_\-\-C\-A\-N\-I\-F\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C@{\-A\-V\-R32\-\_\-\-C\-A\-N\-I\-F\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}}
+\index{\-A\-V\-R32\-\_\-\-C\-A\-N\-I\-F\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C@{\-A\-V\-R32\-\_\-\-C\-A\-N\-I\-F\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}!uc3c/sysclk.h@{uc3c/sysclk.\-h}}
+\subsubsection[{\-A\-V\-R32\-\_\-\-C\-A\-N\-I\-F\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-V\-R32\-\_\-\-C\-A\-N\-I\-F\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C~132}}
+\label{uc3c_2sysclk_8h_a14996800e45cf8ce3a59237d66de9a37}
+\hypertarget{uc3c_2sysclk_8h_a2033d306bc2ba036e527d44646dafad9}{
+\index{uc3c/sysclk.\-h@{uc3c/sysclk.\-h}!\-A\-V\-R32\-\_\-\-M\-D\-M\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C@{\-A\-V\-R32\-\_\-\-M\-D\-M\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}}
+\index{\-A\-V\-R32\-\_\-\-M\-D\-M\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C@{\-A\-V\-R32\-\_\-\-M\-D\-M\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}!uc3c/sysclk.h@{uc3c/sysclk.\-h}}
+\subsubsection[{\-A\-V\-R32\-\_\-\-M\-D\-M\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-V\-R32\-\_\-\-M\-D\-M\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C~129}}
+\label{uc3c_2sysclk_8h_a2033d306bc2ba036e527d44646dafad9}
+\hypertarget{uc3c_2sysclk_8h_a1e1d7eaa2a45333b24bbba2d9edb12d8}{
+\index{uc3c/sysclk.\-h@{uc3c/sysclk.\-h}!\-A\-V\-R32\-\_\-\-P\-D\-C\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C@{\-A\-V\-R32\-\_\-\-P\-D\-C\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}}
+\index{\-A\-V\-R32\-\_\-\-P\-D\-C\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C@{\-A\-V\-R32\-\_\-\-P\-D\-C\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}!uc3c/sysclk.h@{uc3c/sysclk.\-h}}
+\subsubsection[{\-A\-V\-R32\-\_\-\-P\-D\-C\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-V\-R32\-\_\-\-P\-D\-C\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C~128}}
+\label{uc3c_2sysclk_8h_a1e1d7eaa2a45333b24bbba2d9edb12d8}
+\hypertarget{uc3c_2sysclk_8h_a6bc6681a2dcf0960482cf587d1f00ba9}{
+\index{uc3c/sysclk.\-h@{uc3c/sysclk.\-h}!\-A\-V\-R32\-\_\-\-S\-P\-I0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C@{\-A\-V\-R32\-\_\-\-S\-P\-I0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}}
+\index{\-A\-V\-R32\-\_\-\-S\-P\-I0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C@{\-A\-V\-R32\-\_\-\-S\-P\-I0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}!uc3c/sysclk.h@{uc3c/sysclk.\-h}}
+\subsubsection[{\-A\-V\-R32\-\_\-\-S\-P\-I0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-V\-R32\-\_\-\-S\-P\-I0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C~131}}
+\label{uc3c_2sysclk_8h_a6bc6681a2dcf0960482cf587d1f00ba9}
+\hypertarget{uc3c_2sysclk_8h_a0a62cca33dfc872eace7a76a614f143e}{
+\index{uc3c/sysclk.\-h@{uc3c/sysclk.\-h}!\-A\-V\-R32\-\_\-\-T\-C0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C@{\-A\-V\-R32\-\_\-\-T\-C0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}}
+\index{\-A\-V\-R32\-\_\-\-T\-C0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C@{\-A\-V\-R32\-\_\-\-T\-C0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}!uc3c/sysclk.h@{uc3c/sysclk.\-h}}
+\subsubsection[{\-A\-V\-R32\-\_\-\-T\-C0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-V\-R32\-\_\-\-T\-C0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C~133}}
+\label{uc3c_2sysclk_8h_a0a62cca33dfc872eace7a76a614f143e}
+\hypertarget{uc3c_2sysclk_8h_a9c60604c1aea2360a48a0ea93da827e3}{
+\index{uc3c/sysclk.\-h@{uc3c/sysclk.\-h}!\-A\-V\-R32\-\_\-\-U\-S\-A\-R\-T1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C@{\-A\-V\-R32\-\_\-\-U\-S\-A\-R\-T1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}}
+\index{\-A\-V\-R32\-\_\-\-U\-S\-A\-R\-T1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C@{\-A\-V\-R32\-\_\-\-U\-S\-A\-R\-T1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}!uc3c/sysclk.h@{uc3c/sysclk.\-h}}
+\subsubsection[{\-A\-V\-R32\-\_\-\-U\-S\-A\-R\-T1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-V\-R32\-\_\-\-U\-S\-A\-R\-T1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C~130}}
+\label{uc3c_2sysclk_8h_a9c60604c1aea2360a48a0ea93da827e3}

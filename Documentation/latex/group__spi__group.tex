@@ -1,0 +1,25 @@
+\hypertarget{group__spi__group}{
+\section{\-Serial \-Peripheral \-Interface (\-S\-P\-I)}
+\label{group__spi__group}\index{\-Serial Peripheral Interface (\-S\-P\-I)@{\-Serial Peripheral Interface (\-S\-P\-I)}}
+}
+\-This is the common \-A\-P\-I for \-S\-P\-Is on \-A\-V\-Rs. \-Additional features are available in the documentation of the specific modules.\hypertarget{group__spi__group_spi_group_platform}{}\subsection{\-Platform Dependencies}\label{group__spi__group_spi_group_platform}
+\-The spi \-A\-P\-I is partially chip-\/ or platform-\/specific. \-While all platforms provide mostly the same functionality, there are some variations around how different bus types and clock tree structures are handled.
+
+\-The following functions are available on all platforms, but there may be variations in the function signature (i.\-e. parameters) and behaviour. \-These functions are typically called by platform-\/specific parts of drivers, and applications that aren't intended to be portable\-:
+\begin{DoxyItemize}
+\item spi\-\_\-master\-\_\-init()
+\item \hyperlink{spi__master_8c_adb8e173ada01040ae56a5f5868b50449}{spi\-\_\-master\-\_\-setup\-\_\-device()}
+\item spi\-\_\-select\-\_\-device()
+\item spi\-\_\-deselect\-\_\-device()
+\item spi\-\_\-write\-\_\-single()
+\item \hyperlink{spi__master_8c_a5eea18b25801b83f702f8ff49cfebc54}{spi\-\_\-write\-\_\-packet()}
+\item spi\-\_\-read\-\_\-single()
+\item \hyperlink{spi__master_8c_aafdacdffa212b9880873c82b0fb6d8e7}{spi\-\_\-read\-\_\-packet()}
+\item \hyperlink{uc3__spi_2spi__master_8h_a7a08995ae2193f27979fdd0613f3f189}{spi\-\_\-is\-\_\-tx\-\_\-empty()}
+\item \hyperlink{uc3__spi_2spi__master_8h_afc0784fc74e3a9c6bbf5de5aa87a413f}{spi\-\_\-is\-\_\-tx\-\_\-ready()}
+\item \hyperlink{uc3__spi_2spi__master_8h_a8ec4bf90b5b8de62f3ce6aae2fdfa752}{spi\-\_\-is\-\_\-rx\-\_\-full()}
+\item \hyperlink{uc3__spi_2spi__master_8h_aa137d54c8ea3799cf6f2b2c710569be6}{spi\-\_\-is\-\_\-rx\-\_\-ready()}
+\item \hyperlink{spi_8c_ac93e5990e8abc811f4ba2fb65e10e94d}{spi\-\_\-enable()}
+\item \hyperlink{spi_8c_a5cc4ac60e6ecf3cdc442265aaa0a63e0}{spi\-\_\-disable()}
+\item \hyperlink{spi_8c_aa945d35a658c234e2cb650a53dcdaa37}{spi\-\_\-is\-\_\-enabled()} 
+\end{DoxyItemize}

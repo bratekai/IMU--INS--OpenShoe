@@ -1,0 +1,95 @@
+\hypertarget{debug_8c}{
+\section{debug.c \-File \-Reference}
+\label{debug_8c}\index{debug.\-c@{debug.\-c}}
+}
+
+
+\-Macros and functions dedicated to debug purposes.  
+
+
+{\ttfamily \#include \char`\"{}compiler.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}debug.\-h\char`\"{}}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\-U32 \hyperlink{debug_8c_af786e504aac20ce8c93920ee2ac564ef}{get\-\_\-heap\-\_\-free\-\_\-size} (void)
+\begin{DoxyCompactList}\small\item\em \-Returns the number of free bytes in the \-H\-E\-A\-P. \end{DoxyCompactList}\item 
+void \hyperlink{debug_8c_ad5062f1eb8420dbb61011ae649b9f509}{uc3\-\_\-round\-\_\-trace\-\_\-init} (void $\ast$buf, \-U32 size)
+\begin{DoxyCompactList}\small\item\em \-Initialize the trace using a round buffer. \end{DoxyCompactList}\item 
+void \hyperlink{debug_8c_a6813952940e48f9a674a12c7077497bc}{uc3\-\_\-round\-\_\-trace} (\-U32 val)
+\begin{DoxyCompactList}\small\item\em \-Trace a data in the round buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Macros and functions dedicated to debug purposes. 
+\begin{DoxyItemize}
+\item \-Compiler\-: \-I\-A\-R \-E\-W\-A\-V\-R32 and \-G\-N\-U \-G\-C\-C for \-A\-V\-R32
+\item \-Supported devices\-: \-All \-A\-V\-R32 devices with a \-U\-S\-A\-R\-T module can be used.
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{\-Author}
+\-Atmel \-Corporation\-: \href{http://www.atmel.com}{\tt http\-://www.\-atmel.\-com} \par
+ \-Support and \-F\-A\-Q\-: \href{http://support.atmel.no/}{\tt http\-://support.\-atmel.\-no/} 
+\end{DoxyAuthor}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{debug_8c_af786e504aac20ce8c93920ee2ac564ef}{
+\index{debug.\-c@{debug.\-c}!get\-\_\-heap\-\_\-free\-\_\-size@{get\-\_\-heap\-\_\-free\-\_\-size}}
+\index{get\-\_\-heap\-\_\-free\-\_\-size@{get\-\_\-heap\-\_\-free\-\_\-size}!debug.c@{debug.\-c}}
+\subsubsection[{get\-\_\-heap\-\_\-free\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}\-U32 get\-\_\-heap\-\_\-free\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{debug_8c_af786e504aac20ce8c93920ee2ac564ef}
+
+
+\-Returns the number of free bytes in the \-H\-E\-A\-P. 
+
+\-This funtion tries to allocate the maximum number of bytes by dichotomical method.
+
+
+\begin{DoxyRetVals}{\-Return values}
+{\em number} & of free bytes. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{debug_8c_a6813952940e48f9a674a12c7077497bc}{
+\index{debug.\-c@{debug.\-c}!uc3\-\_\-round\-\_\-trace@{uc3\-\_\-round\-\_\-trace}}
+\index{uc3\-\_\-round\-\_\-trace@{uc3\-\_\-round\-\_\-trace}!debug.c@{debug.\-c}}
+\subsubsection[{uc3\-\_\-round\-\_\-trace}]{\setlength{\rightskip}{0pt plus 5cm}void uc3\-\_\-round\-\_\-trace (
+\begin{DoxyParamCaption}
+\item[{\-U32}]{val}
+\end{DoxyParamCaption}
+)}}
+\label{debug_8c_a6813952940e48f9a674a12c7077497bc}
+
+
+\-Trace a data in the round buffer. 
+
+\-The end of the trace is signaled by the \char`\"{}0xdeadbeef\char`\"{} pattern. 
+\begin{DoxyParams}{\-Parameters}
+{\em val} & \-Data to trace; \\
+\hline
+\end{DoxyParams}
+\hypertarget{debug_8c_ad5062f1eb8420dbb61011ae649b9f509}{
+\index{debug.\-c@{debug.\-c}!uc3\-\_\-round\-\_\-trace\-\_\-init@{uc3\-\_\-round\-\_\-trace\-\_\-init}}
+\index{uc3\-\_\-round\-\_\-trace\-\_\-init@{uc3\-\_\-round\-\_\-trace\-\_\-init}!debug.c@{debug.\-c}}
+\subsubsection[{uc3\-\_\-round\-\_\-trace\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void uc3\-\_\-round\-\_\-trace\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{buf, }
+\item[{\-U32}]{size}
+\end{DoxyParamCaption}
+)}}
+\label{debug_8c_ad5062f1eb8420dbb61011ae649b9f509}
+
+
+\-Initialize the trace using a round buffer. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em buf} & \-Base address of the buffer used for the trace. \\
+\hline
+{\em size} & \-Size of the round buffer. \-Must be a power of 2. \\
+\hline
+\end{DoxyParams}

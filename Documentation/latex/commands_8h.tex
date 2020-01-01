@@ -1,0 +1,52 @@
+\hypertarget{commands_8h}{
+\section{commands.h \-File \-Reference}
+\label{commands_8h}\index{commands.\-h@{commands.\-h}}
+}
+
+
+\-Definitions of commands and declarations of command response functions.  
+
+
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcommand__structure}{command\-\_\-structure}
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__tables_ga0c546b02615dc75cdf2385651cc823ce}{retransmit\-\_\-header} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__tables_ga63c90fa711213e6746dc061226580e1a}{retransmit\-\_\-command\-\_\-info} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__tables_ga154e99940eadddeab0a978ebaaf4af29}{output\-\_\-state} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__tables_gaf49fcc59b85d00300cceac3381af50ac}{turn\-\_\-off\-\_\-output} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__tables_ga144f167d203bfaa934388244862c2e66}{get\-\_\-mcu\-\_\-serial} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__tables_ga18b9c076238f0421e0c613aba24c1e96}{toggle\-\_\-inertial\-\_\-output} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__tables_gade63f6b7485456459a562107079a76a8}{position\-\_\-plus\-\_\-zupt} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__tables_ga73d5a4fdd7dbdf0707007e03b69dd7aa}{output\-\_\-navigational\-\_\-states} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__tables_ga2f8eeda3ee360ccf29e05fbfda016f47}{processing\-\_\-onoff} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__tables_gae59981ff1a5486c063329824f812d6ef}{reset\-\_\-zupt\-\_\-aided\-\_\-ins} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__tables_ga208e711393802848a2f84f913ef3cb84}{gyro\-\_\-self\-\_\-calibration} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__tables_ga29fdeaec38ab911e7c4a5ffd19dc178d}{acc\-\_\-calibration} (uint8\-\_\-t $\ast$$\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Definitions of commands and declarations of command response functions. \-This header file contains 1) \-Declarations of the command response functions. 2) \-Definitions of commands \-The command response functions are defined in external\-\_\-interfaces.\-c. \-This file contians multiple static variables so it should only be included where necessary.
+
+\begin{DoxyAuthor}{\-Authors}
+\-John-\/\-Olof \-Nilsson, \-Isaac \-Skog 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{\-Copyright}
+\-Copyright (c) 2011 \-Open\-Shoe, \-I\-S\-C \-License (open source) 
+\end{DoxyCopyright}

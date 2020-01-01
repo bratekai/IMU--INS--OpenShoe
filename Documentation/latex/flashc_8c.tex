@@ -1,0 +1,1734 @@
+\hypertarget{flashc_8c}{
+\section{flashc.c \-File \-Reference}
+\label{flashc_8c}\index{flashc.\-c@{flashc.\-c}}
+}
+
+
+\-F\-L\-A\-S\-H\-C driver for \-A\-V\-R32 \-U\-C3.  
+
+
+{\ttfamily \#include $<$avr32/io.\-h$>$}\*
+{\ttfamily \#include $<$stddef.\-h$>$}\*
+{\ttfamily \#include \char`\"{}compiler.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}flashc.\-h\char`\"{}}\*
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+union \hyperlink{unionu__avr32__flashc__fcr__t}{u\-\_\-avr32\-\_\-flashc\-\_\-fcr\-\_\-t}
+\item 
+union \hyperlink{unionu__avr32__flashc__fcmd__t}{u\-\_\-avr32\-\_\-flashc\-\_\-fcmd\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{Indent}\paragraph*{\-Flash \-Properties}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{flashc_8c_a8071c315b02d038c49fa0bf89a40ba1b}{flashc\-\_\-get\-\_\-flash\-\_\-size} (void)
+\begin{DoxyCompactList}\small\item\em \-Gets the size of the whole flash array. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{flashc_8c_aafad0dcf645cc65acb5bc879558dac23}{flashc\-\_\-get\-\_\-page\-\_\-count} (void)
+\begin{DoxyCompactList}\small\item\em \-Gets the total number of pages in the flash array. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{flashc_8c_a8910bcde3235e2af0770fbd2412b05bc}{flashc\-\_\-get\-\_\-page\-\_\-count\-\_\-per\-\_\-region} (void)
+\begin{DoxyCompactList}\small\item\em \-Gets the number of pages in each flash region. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{flashc_8c_ac5871dc98c8812b0413efd6456508999}{flashc\-\_\-get\-\_\-page\-\_\-region} (int page\-\_\-number)
+\begin{DoxyCompactList}\small\item\em \-Gets the region number of a page. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{flashc_8c_a43b14107d406ea9025f8947490c9ddcd}{flashc\-\_\-get\-\_\-region\-\_\-first\-\_\-page\-\_\-number} (unsigned int region)
+\begin{DoxyCompactList}\small\item\em \-Gets the number of the first page of a region. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-F\-L\-A\-S\-H\-C \-Control}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{flashc_8c_a52784dbdd246c6c320e5041026d4da08}{flashc\-\_\-get\-\_\-wait\-\_\-state} (void)
+\begin{DoxyCompactList}\small\item\em \-Gets the number of wait states of flash read accesses. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_a2835c7ef58f410290ad530d34d7e8133}{flashc\-\_\-set\-\_\-wait\-\_\-state} (unsigned int wait\-\_\-state)
+\begin{DoxyCompactList}\small\item\em \-Sets the number of wait states of flash read accesses. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_a5dda977da7d7381b125b2fa25ef9ae90}{flashc\-\_\-set\-\_\-bus\-\_\-freq} (unsigned int cpu\-\_\-f\-\_\-hz)
+\begin{DoxyCompactList}\small\item\em \-Depending on the \-C\-P\-U frequency, set the wait states of flash read accesses. \end{DoxyCompactList}\item 
+bool \hyperlink{flashc_8c_ac3b57583a1683e980be72aec960bc42f}{flashc\-\_\-is\-\_\-ready\-\_\-int\-\_\-enabled} (void)
+\begin{DoxyCompactList}\small\item\em \-Tells whether the \-Flash \-Ready interrupt is enabled. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_acb787828c6062e483c190500cad25193}{flashc\-\_\-enable\-\_\-ready\-\_\-int} (bool enable)
+\begin{DoxyCompactList}\small\item\em \-Enables or disables the \-Flash \-Ready interrupt. \end{DoxyCompactList}\item 
+bool \hyperlink{flashc_8c_aa55186e65b46eb60aa32901a410f3fc2}{flashc\-\_\-is\-\_\-lock\-\_\-error\-\_\-int\-\_\-enabled} (void)
+\begin{DoxyCompactList}\small\item\em \-Tells whether the \-Lock \-Error interrupt is enabled. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_a112d456e3ea093f9699aeb8fa7e818c1}{flashc\-\_\-enable\-\_\-lock\-\_\-error\-\_\-int} (bool enable)
+\begin{DoxyCompactList}\small\item\em \-Enables or disables the \-Lock \-Error interrupt. \end{DoxyCompactList}\item 
+bool \hyperlink{flashc_8c_a5050d8497779a0e24ac74689597834c2}{flashc\-\_\-is\-\_\-prog\-\_\-error\-\_\-int\-\_\-enabled} (void)
+\begin{DoxyCompactList}\small\item\em \-Tells whether the \-Programming \-Error interrupt is enabled. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_a432b5d4f0d90ca9facba780d99f08ae9}{flashc\-\_\-enable\-\_\-prog\-\_\-error\-\_\-int} (bool enable)
+\begin{DoxyCompactList}\small\item\em \-Enables or disables the \-Programming \-Error interrupt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-F\-L\-A\-S\-H\-C \-Command \-Control}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{flashc_8c_a36519235197ff4d6ab7f5adcb3fce6c1}{flashc\-\_\-get\-\_\-command} (void)
+\begin{DoxyCompactList}\small\item\em \-Gets the last issued \-F\-L\-A\-S\-H\-C command. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{flashc_8c_adb51a37e3153c24e5dd6cf06daac0e21}{flashc\-\_\-get\-\_\-page\-\_\-number} (void)
+\begin{DoxyCompactList}\small\item\em \-Gets the current \-F\-L\-A\-S\-H\-C page number. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_a8045c427c32cf3617e861067d76c9c11}{flashc\-\_\-issue\-\_\-command} (unsigned int command, int page\-\_\-number)
+\begin{DoxyCompactList}\small\item\em \-Issues a \-F\-L\-A\-S\-H\-C command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-F\-L\-A\-S\-H\-C \-Global \-Commands}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{flashc_8c_aac955da1ba0b0833d17d3068c34222ec}{flashc\-\_\-no\-\_\-operation} (void)
+\begin{DoxyCompactList}\small\item\em \-Issues a \-No \-Operation command to the \-F\-L\-A\-S\-H\-C. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_a56f654a36c20b651412bbb689b8a4b2c}{flashc\-\_\-erase\-\_\-all} (void)
+\begin{DoxyCompactList}\small\item\em \-Issues an \-Erase \-All command to the \-F\-L\-A\-S\-H\-C. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-F\-L\-A\-S\-H\-C \-Protection \-Mechanisms}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{flashc_8c_ab07cd7525d8cdfad6c4c563310cddee2}{flashc\-\_\-is\-\_\-security\-\_\-bit\-\_\-active} (void)
+\begin{DoxyCompactList}\small\item\em \-Tells whether the \-Security bit is active. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_a245cc33e09bc45b78d4fdc189ba6fd85}{flashc\-\_\-activate\-\_\-security\-\_\-bit} (void)
+\begin{DoxyCompactList}\small\item\em \-Activates the \-Security bit. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{flashc_8c_a83ed88a41076163bd29ca80d30cb094f}{flashc\-\_\-get\-\_\-bootloader\-\_\-protected\-\_\-size} (void)
+\begin{DoxyCompactList}\small\item\em \-Gets the bootloader protected size. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{flashc_8c_a076a1b22c9f3e6dad1739f0398f89b37}{flashc\-\_\-set\-\_\-bootloader\-\_\-protected\-\_\-size} (unsigned int bootprot\-\_\-size)
+\begin{DoxyCompactList}\small\item\em \-Sets the bootloader protected size. \end{DoxyCompactList}\item 
+bool \hyperlink{flashc_8c_ae5d2a26e4f0666cc2ed260feb528a560}{flashc\-\_\-is\-\_\-external\-\_\-privileged\-\_\-fetch\-\_\-locked} (void)
+\begin{DoxyCompactList}\small\item\em \-Tells whether external privileged fetch is locked. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_a97c8b9ed8f952803a3911af33ba8d553}{flashc\-\_\-lock\-\_\-external\-\_\-privileged\-\_\-fetch} (bool lock)
+\begin{DoxyCompactList}\small\item\em \-Locks or unlocks external privileged fetch. \end{DoxyCompactList}\item 
+bool \hyperlink{flashc_8c_a50d3b06a3a82ba1e7c56193c3c24f7ef}{flashc\-\_\-is\-\_\-page\-\_\-region\-\_\-locked} (int page\-\_\-number)
+\begin{DoxyCompactList}\small\item\em \-Tells whether the region of a page is locked. \end{DoxyCompactList}\item 
+bool \hyperlink{flashc_8c_a152b45f38eafcf708e52df5a814d048e}{flashc\-\_\-is\-\_\-region\-\_\-locked} (unsigned int region)
+\begin{DoxyCompactList}\small\item\em \-Tells whether a region is locked. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_a4bc67adcf6690cc7e83fd42560a5e526}{flashc\-\_\-lock\-\_\-page\-\_\-region} (int page\-\_\-number, bool lock)
+\begin{DoxyCompactList}\small\item\em \-Locks or unlocks the region of a page. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_aefc77ff29ddc03fa5e605acd7f9eeb7c}{flashc\-\_\-lock\-\_\-region} (unsigned int region, bool lock)
+\begin{DoxyCompactList}\small\item\em \-Locks or unlocks a region. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_a8ec3c05f8b1a620a5014e2c066b7f0bf}{flashc\-\_\-lock\-\_\-all\-\_\-regions} (bool lock)
+\begin{DoxyCompactList}\small\item\em \-Locks or unlocks all regions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Access to \-General-\/\-Purpose \-Fuses}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{flashc_8c_a41488c15448086169266af4936ea7926}{flashc\-\_\-read\-\_\-gp\-\_\-fuse\-\_\-bit} (unsigned int gp\-\_\-fuse\-\_\-bit)
+\begin{DoxyCompactList}\small\item\em \-Reads a general-\/purpose fuse bit. \end{DoxyCompactList}\item 
+uint64\-\_\-t \hyperlink{flashc_8c_a48db4e70ec0449ea94c9c92643c26d8e}{flashc\-\_\-read\-\_\-gp\-\_\-fuse\-\_\-bitfield} (unsigned int pos, unsigned int width)
+\begin{DoxyCompactList}\small\item\em \-Reads a general-\/purpose fuse bit-\/field. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{flashc_8c_a86b9023e1160178df2f46aff4dfddda3}{flashc\-\_\-read\-\_\-gp\-\_\-fuse\-\_\-byte} (unsigned int gp\-\_\-fuse\-\_\-byte)
+\begin{DoxyCompactList}\small\item\em \-Reads a general-\/purpose fuse byte. \end{DoxyCompactList}\item 
+uint64\-\_\-t \hyperlink{flashc_8c_abdba94fb9eb09177ced3df0ad80b1554}{flashc\-\_\-read\-\_\-all\-\_\-gp\-\_\-fuses} (void)
+\begin{DoxyCompactList}\small\item\em \-Reads all general-\/purpose fuses. \end{DoxyCompactList}\item 
+bool \hyperlink{flashc_8c_ac5454efcadb99899bfe075b463a2e6dd}{flashc\-\_\-erase\-\_\-gp\-\_\-fuse\-\_\-bit} (unsigned int gp\-\_\-fuse\-\_\-bit, bool check)
+\begin{DoxyCompactList}\small\item\em \-Erases a general-\/purpose fuse bit. \end{DoxyCompactList}\item 
+bool \hyperlink{flashc_8c_a840a6f529e33adbd3759f276a0255aee}{flashc\-\_\-erase\-\_\-gp\-\_\-fuse\-\_\-bitfield} (unsigned int pos, unsigned int width, bool check)
+\begin{DoxyCompactList}\small\item\em \-Erases a general-\/purpose fuse bit-\/field. \end{DoxyCompactList}\item 
+bool \hyperlink{flashc_8c_acb14ac40b939a0804e8e72a8d58f5f68}{flashc\-\_\-erase\-\_\-gp\-\_\-fuse\-\_\-byte} (unsigned int gp\-\_\-fuse\-\_\-byte, bool check)
+\begin{DoxyCompactList}\small\item\em \-Erases a general-\/purpose fuse byte. \end{DoxyCompactList}\item 
+bool \hyperlink{flashc_8c_a59b9644a7f13bc4e510bdac498b27fb5}{flashc\-\_\-erase\-\_\-all\-\_\-gp\-\_\-fuses} (bool check)
+\begin{DoxyCompactList}\small\item\em \-Erases all general-\/purpose fuses. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_a70af318e71334255931a6638d2fa693c}{flashc\-\_\-write\-\_\-gp\-\_\-fuse\-\_\-bit} (unsigned int gp\-\_\-fuse\-\_\-bit, bool value)
+\begin{DoxyCompactList}\small\item\em \-Writes a general-\/purpose fuse bit. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_a7bc0b63b79ad5809f7d68b2da7e5e866}{flashc\-\_\-write\-\_\-gp\-\_\-fuse\-\_\-bitfield} (unsigned int pos, unsigned int width, uint64\-\_\-t value)
+\begin{DoxyCompactList}\small\item\em \-Writes a general-\/purpose fuse bit-\/field. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_acd1a7d62446687fe6db36f4ff35e7cbc}{flashc\-\_\-write\-\_\-gp\-\_\-fuse\-\_\-byte} (unsigned int gp\-\_\-fuse\-\_\-byte, uint8\-\_\-t value)
+\begin{DoxyCompactList}\small\item\em \-Writes a general-\/purpose fuse byte. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_a39415e6bf815ab6bc734bf1e1cfe3bed}{flashc\-\_\-write\-\_\-all\-\_\-gp\-\_\-fuses} (uint64\-\_\-t value)
+\begin{DoxyCompactList}\small\item\em \-Writes all general-\/purpose fuses. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_a63c172f89cfe0f3e3cf1c6eadc62f5f5}{flashc\-\_\-set\-\_\-gp\-\_\-fuse\-\_\-bit} (unsigned int gp\-\_\-fuse\-\_\-bit, bool value)
+\begin{DoxyCompactList}\small\item\em \-Sets a general-\/purpose fuse bit with the appropriate erase and write operations. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_aeef87beafc415e3a116072f74845d7ab}{flashc\-\_\-set\-\_\-gp\-\_\-fuse\-\_\-bitfield} (unsigned int pos, unsigned int width, uint64\-\_\-t value)
+\begin{DoxyCompactList}\small\item\em \-Sets a general-\/purpose fuse bit-\/field with the appropriate erase and write operations. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_afb6970fabde5991a634954229fb4e5ca}{flashc\-\_\-set\-\_\-gp\-\_\-fuse\-\_\-byte} (unsigned int gp\-\_\-fuse\-\_\-byte, uint8\-\_\-t value)
+\begin{DoxyCompactList}\small\item\em \-Sets a general-\/purpose fuse byte with the appropriate erase and write operations. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_a65d5726797f7216ce80969b7349c7902}{flashc\-\_\-set\-\_\-all\-\_\-gp\-\_\-fuses} (uint64\-\_\-t value)
+\begin{DoxyCompactList}\small\item\em \-Sets all general-\/purpose fuses with the appropriate erase and write operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Access to \-Flash \-Pages}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{flashc_8c_affafe9cb74731d817b721d2a52093412}{flashc\-\_\-clear\-\_\-page\-\_\-buffer} (void)
+\begin{DoxyCompactList}\small\item\em \-Clears the page buffer. \end{DoxyCompactList}\item 
+bool \hyperlink{flashc_8c_a05a9c2063e643943bae09f0786bcc063}{flashc\-\_\-is\-\_\-page\-\_\-erased} (void)
+\begin{DoxyCompactList}\small\item\em \-Tells whether the page to which the last \-Quick \-Page \-Read or \-Quick \-Page \-Read \-User \-Page command was applied was erased. \end{DoxyCompactList}\item 
+bool \hyperlink{flashc_8c_a078a084303b02d665fe3779bc096a150}{flashc\-\_\-quick\-\_\-page\-\_\-read} (int page\-\_\-number)
+\begin{DoxyCompactList}\small\item\em \-Applies the \-Quick \-Page \-Read command to a page. \end{DoxyCompactList}\item 
+bool \hyperlink{flashc_8c_a8bd196144d3485a9b50b7c5fffc9fab2}{flashc\-\_\-erase\-\_\-page} (int page\-\_\-number, bool check)
+\begin{DoxyCompactList}\small\item\em \-Erases a page. \end{DoxyCompactList}\item 
+bool \hyperlink{flashc_8c_abff832a6e31c349197439da831d71b7d}{flashc\-\_\-erase\-\_\-all\-\_\-pages} (bool check)
+\begin{DoxyCompactList}\small\item\em \-Erases all pages within the flash array. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_aa10438433246139bee71da6db2bb5bd5}{flashc\-\_\-write\-\_\-page} (int page\-\_\-number)
+\begin{DoxyCompactList}\small\item\em \-Writes a page from the page buffer. \end{DoxyCompactList}\item 
+bool \hyperlink{flashc_8c_a1921803f9ba1d21a7926d9dafc400f36}{flashc\-\_\-quick\-\_\-user\-\_\-page\-\_\-read} (void)
+\begin{DoxyCompactList}\small\item\em \-Issues a \-Quick \-Page \-Read \-User \-Page command to the \-F\-L\-A\-S\-H\-C. \end{DoxyCompactList}\item 
+bool \hyperlink{flashc_8c_a7160c001cada0a9a0162cac2305a9038}{flashc\-\_\-erase\-\_\-user\-\_\-page} (bool check)
+\begin{DoxyCompactList}\small\item\em \-Erases the \-User page. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_ad04374b721dca9c534d7cd041ae24712}{flashc\-\_\-write\-\_\-user\-\_\-page} (void)
+\begin{DoxyCompactList}\small\item\em \-Writes the \-User page from the page buffer. \end{DoxyCompactList}\item 
+volatile void $\ast$ \hyperlink{flashc_8c_a9157e8cdcd527943f8284c0de37cd91a}{flashc\-\_\-memset8} (volatile void $\ast$dst, uint8\-\_\-t src, size\-\_\-t nbytes, bool erase)
+\begin{DoxyCompactList}\small\item\em \-Copies {\itshape nbytes\/} bytes to the flash destination pointed to by {\itshape dst\/} from the repeated {\itshape src\/} source byte. \end{DoxyCompactList}\item 
+volatile void $\ast$ \hyperlink{flashc_8c_ad9b00f6e409b0b38924dba961bd52145}{flashc\-\_\-memset16} (volatile void $\ast$dst, uint16\-\_\-t src, size\-\_\-t nbytes, bool erase)
+\begin{DoxyCompactList}\small\item\em \-Copies {\itshape nbytes\/} bytes to the flash destination pointed to by {\itshape dst\/} from the repeated {\itshape src\/} big-\/endian source half-\/word. \end{DoxyCompactList}\item 
+volatile void $\ast$ \hyperlink{flashc_8c_a44e771a3f7ed3728ef366cf2a8b67592}{flashc\-\_\-memset32} (volatile void $\ast$dst, uint32\-\_\-t src, size\-\_\-t nbytes, bool erase)
+\begin{DoxyCompactList}\small\item\em \-Copies {\itshape nbytes\/} bytes to the flash destination pointed to by {\itshape dst\/} from the repeated {\itshape src\/} big-\/endian source word. \end{DoxyCompactList}\item 
+volatile void $\ast$ \hyperlink{flashc_8c_a9ab40621c7f4c7372cb3147c014d7d27}{flashc\-\_\-memset64} (volatile void $\ast$dst, uint64\-\_\-t src, size\-\_\-t nbytes, bool erase)
+\begin{DoxyCompactList}\small\item\em \-Copies {\itshape nbytes\/} bytes to the flash destination pointed to by {\itshape dst\/} from the repeated {\itshape src\/} big-\/endian source double-\/word. \end{DoxyCompactList}\item 
+volatile void $\ast$ \hyperlink{flashc_8c_a342404f6e3f2757138c8dc58916ffef1}{flashc\-\_\-memcpy} (volatile void $\ast$dst, const void $\ast$src, size\-\_\-t nbytes, bool erase)
+\begin{DoxyCompactList}\small\item\em \-Copies {\itshape nbytes\/} bytes to the flash destination pointed to by {\itshape dst\/} from the source pointed to by {\itshape src\/}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-F\-L\-A\-S\-H\-C \-Status}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$volatile \hyperlink{flashc_8c_a180c9966f5242650e00e4a231956acec}{flashc\-\_\-wait\-\_\-until\-\_\-ready} )(void) = flashc\-\_\-default\-\_\-wait\-\_\-until\-\_\-ready
+\item 
+bool \hyperlink{flashc_8c_adda694b46dcd563dab0c4be794dd2060}{flashc\-\_\-is\-\_\-ready} (void)
+\begin{DoxyCompactList}\small\item\em \-Tells whether the \-F\-L\-A\-S\-H\-C is ready to run a new command. \end{DoxyCompactList}\item 
+void \hyperlink{flashc_8c_aca88002d64a494ca5b796b592834369d}{flashc\-\_\-default\-\_\-wait\-\_\-until\-\_\-ready} (void)
+\begin{DoxyCompactList}\small\item\em \-Waits actively until the \-F\-L\-A\-S\-H\-C is ready to run a new command. \end{DoxyCompactList}\item 
+bool \hyperlink{flashc_8c_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} (void)
+\begin{DoxyCompactList}\small\item\em \-Tells whether a \-Lock \-Error has occurred during the last function called that issued one or more \-F\-L\-A\-S\-H\-C commands. \end{DoxyCompactList}\item 
+bool \hyperlink{flashc_8c_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} (void)
+\begin{DoxyCompactList}\small\item\em \-Tells whether a \-Programming \-Error has occurred during the last function called that issued one or more \-F\-L\-A\-S\-H\-C commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-F\-L\-A\-S\-H\-C driver for \-A\-V\-R32 \-U\-C3. \-Copyright (\-C) 2009 -\/ 2011 \-Atmel \-Corporation. \-All rights reserved. 
+
+\subsection{\-Function \-Documentation}
+\hypertarget{flashc_8c_a245cc33e09bc45b78d4fdc189ba6fd85}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-activate\-\_\-security\-\_\-bit@{flashc\-\_\-activate\-\_\-security\-\_\-bit}}
+\index{flashc\-\_\-activate\-\_\-security\-\_\-bit@{flashc\-\_\-activate\-\_\-security\-\_\-bit}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-activate\-\_\-security\-\_\-bit}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-activate\-\_\-security\-\_\-bit (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a245cc33e09bc45b78d4fdc189ba6fd85}
+
+
+\-Activates the \-Security bit. 
+
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_affafe9cb74731d817b721d2a52093412}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-clear\-\_\-page\-\_\-buffer@{flashc\-\_\-clear\-\_\-page\-\_\-buffer}}
+\index{flashc\-\_\-clear\-\_\-page\-\_\-buffer@{flashc\-\_\-clear\-\_\-page\-\_\-buffer}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-clear\-\_\-page\-\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-clear\-\_\-page\-\_\-buffer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_affafe9cb74731d817b721d2a52093412}
+
+
+\-Clears the page buffer. 
+
+\-This command resets all bits in the page buffer to one. \-Write accesses to the page buffer can only change page buffer bits from one to zero.
+
+\begin{DoxyWarning}{\-Warning}
+\-The page buffer is not automatically reset after a page write.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_aca88002d64a494ca5b796b592834369d}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-default\-\_\-wait\-\_\-until\-\_\-ready@{flashc\-\_\-default\-\_\-wait\-\_\-until\-\_\-ready}}
+\index{flashc\-\_\-default\-\_\-wait\-\_\-until\-\_\-ready@{flashc\-\_\-default\-\_\-wait\-\_\-until\-\_\-ready}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-default\-\_\-wait\-\_\-until\-\_\-ready}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-default\-\_\-wait\-\_\-until\-\_\-ready (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_aca88002d64a494ca5b796b592834369d}
+
+
+\-Waits actively until the \-F\-L\-A\-S\-H\-C is ready to run a new command. 
+
+\-This is the default function assigned to \hyperlink{flashc_8h_a180c9966f5242650e00e4a231956acec}{flashc\-\_\-wait\-\_\-until\-\_\-ready}. \hypertarget{flashc_8c_a112d456e3ea093f9699aeb8fa7e818c1}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-enable\-\_\-lock\-\_\-error\-\_\-int@{flashc\-\_\-enable\-\_\-lock\-\_\-error\-\_\-int}}
+\index{flashc\-\_\-enable\-\_\-lock\-\_\-error\-\_\-int@{flashc\-\_\-enable\-\_\-lock\-\_\-error\-\_\-int}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-enable\-\_\-lock\-\_\-error\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-enable\-\_\-lock\-\_\-error\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{bool}]{enable}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a112d456e3ea093f9699aeb8fa7e818c1}
+
+
+\-Enables or disables the \-Lock \-Error interrupt. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em enable} & \-Whether to enable the \-Lock \-Error interrupt\-: {\ttfamily true} or {\ttfamily false}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{flashc_8c_a432b5d4f0d90ca9facba780d99f08ae9}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-enable\-\_\-prog\-\_\-error\-\_\-int@{flashc\-\_\-enable\-\_\-prog\-\_\-error\-\_\-int}}
+\index{flashc\-\_\-enable\-\_\-prog\-\_\-error\-\_\-int@{flashc\-\_\-enable\-\_\-prog\-\_\-error\-\_\-int}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-enable\-\_\-prog\-\_\-error\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-enable\-\_\-prog\-\_\-error\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{bool}]{enable}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a432b5d4f0d90ca9facba780d99f08ae9}
+
+
+\-Enables or disables the \-Programming \-Error interrupt. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em enable} & \-Whether to enable the \-Programming \-Error interrupt\-: {\ttfamily true} or {\ttfamily false}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{flashc_8c_acb787828c6062e483c190500cad25193}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-enable\-\_\-ready\-\_\-int@{flashc\-\_\-enable\-\_\-ready\-\_\-int}}
+\index{flashc\-\_\-enable\-\_\-ready\-\_\-int@{flashc\-\_\-enable\-\_\-ready\-\_\-int}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-enable\-\_\-ready\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-enable\-\_\-ready\-\_\-int (
+\begin{DoxyParamCaption}
+\item[{bool}]{enable}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_acb787828c6062e483c190500cad25193}
+
+
+\-Enables or disables the \-Flash \-Ready interrupt. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em enable} & \-Whether to enable the \-Flash \-Ready interrupt\-: {\ttfamily true} or {\ttfamily false}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{flashc_8c_a56f654a36c20b651412bbb689b8a4b2c}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-erase\-\_\-all@{flashc\-\_\-erase\-\_\-all}}
+\index{flashc\-\_\-erase\-\_\-all@{flashc\-\_\-erase\-\_\-all}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-erase\-\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-erase\-\_\-all (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a56f654a36c20b651412bbb689b8a4b2c}
+
+
+\-Issues an \-Erase \-All command to the \-F\-L\-A\-S\-H\-C. 
+
+\-This command erases all bits in the flash array, the general-\/purpose fuse bits and the \-Security bit. \-The \-User page is not erased.
+
+\-This command also ensures that all volatile memories, such as register file and \-R\-A\-Ms, are erased before the \-Security bit is erased, i.\-e. deactivated.
+
+\begin{DoxyWarning}{\-Warning}
+\-A \-Lock \-Error is issued if at least one region is locked or the bootloader protection is active.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated.
+
+\-An erase operation can only set bits. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a59b9644a7f13bc4e510bdac498b27fb5}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-erase\-\_\-all\-\_\-gp\-\_\-fuses@{flashc\-\_\-erase\-\_\-all\-\_\-gp\-\_\-fuses}}
+\index{flashc\-\_\-erase\-\_\-all\-\_\-gp\-\_\-fuses@{flashc\-\_\-erase\-\_\-all\-\_\-gp\-\_\-fuses}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-erase\-\_\-all\-\_\-gp\-\_\-fuses}]{\setlength{\rightskip}{0pt plus 5cm}bool flashc\-\_\-erase\-\_\-all\-\_\-gp\-\_\-fuses (
+\begin{DoxyParamCaption}
+\item[{bool}]{check}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a59b9644a7f13bc4e510bdac498b27fb5}
+
+
+\-Erases all general-\/purpose fuses. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em check} & \-Whether to check erase\-: {\ttfamily true} or {\ttfamily false}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Whether the erase succeeded or always {\ttfamily true} if erase check was not requested.
+\end{DoxyReturn}
+\begin{DoxyWarning}{\-Warning}
+\-A \-Lock \-Error is issued if the \-Security bit is active.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated.
+
+\-An erase operation can only set bits.
+
+\-The actual number of general-\/purpose fuse bits implemented by hardware is given by {\ttfamily \-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-G\-P\-F\-\_\-\-N\-U\-M}. \-The other bits among the 64 are fixed at 1 by hardware. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_abff832a6e31c349197439da831d71b7d}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-erase\-\_\-all\-\_\-pages@{flashc\-\_\-erase\-\_\-all\-\_\-pages}}
+\index{flashc\-\_\-erase\-\_\-all\-\_\-pages@{flashc\-\_\-erase\-\_\-all\-\_\-pages}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-erase\-\_\-all\-\_\-pages}]{\setlength{\rightskip}{0pt plus 5cm}bool flashc\-\_\-erase\-\_\-all\-\_\-pages (
+\begin{DoxyParamCaption}
+\item[{bool}]{check}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_abff832a6e31c349197439da831d71b7d}
+
+
+\-Erases all pages within the flash array. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em check} & \-Whether to check erase\-: {\ttfamily true} or {\ttfamily false}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Whether the erase succeeded or always {\ttfamily true} if erase check was not requested.
+\end{DoxyReturn}
+\begin{DoxyWarning}{\-Warning}
+\-A \-Lock \-Error is issued if at least one region is locked or the bootloader protection is active.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated.
+
+\-An erase operation can only set bits. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_ac5454efcadb99899bfe075b463a2e6dd}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-erase\-\_\-gp\-\_\-fuse\-\_\-bit@{flashc\-\_\-erase\-\_\-gp\-\_\-fuse\-\_\-bit}}
+\index{flashc\-\_\-erase\-\_\-gp\-\_\-fuse\-\_\-bit@{flashc\-\_\-erase\-\_\-gp\-\_\-fuse\-\_\-bit}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-erase\-\_\-gp\-\_\-fuse\-\_\-bit}]{\setlength{\rightskip}{0pt plus 5cm}bool flashc\-\_\-erase\-\_\-gp\-\_\-fuse\-\_\-bit (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{gp\-\_\-fuse\-\_\-bit, }
+\item[{bool}]{check}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_ac5454efcadb99899bfe075b463a2e6dd}
+
+
+\-Erases a general-\/purpose fuse bit. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em gp\-\_\-fuse\-\_\-bit} & \-The general-\/purpose fuse bit\-: {\ttfamily 0} to {\ttfamily 63}. \\
+\hline
+{\em check} & \-Whether to check erase\-: {\ttfamily true} or {\ttfamily false}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Whether the erase succeeded or always {\ttfamily true} if erase check was not requested.
+\end{DoxyReturn}
+\begin{DoxyWarning}{\-Warning}
+\-A \-Lock \-Error is issued if the \-Security bit is active and the command is applied to \-B\-O\-O\-T\-P\-R\-O\-T or \-E\-P\-F\-L fuses.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated.
+
+\-An erase operation can only set bits.
+
+\-The actual number of general-\/purpose fuse bits implemented by hardware is given by {\ttfamily \-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-G\-P\-F\-\_\-\-N\-U\-M}. \-The other bits among the 64 are fixed at 1 by hardware. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a840a6f529e33adbd3759f276a0255aee}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-erase\-\_\-gp\-\_\-fuse\-\_\-bitfield@{flashc\-\_\-erase\-\_\-gp\-\_\-fuse\-\_\-bitfield}}
+\index{flashc\-\_\-erase\-\_\-gp\-\_\-fuse\-\_\-bitfield@{flashc\-\_\-erase\-\_\-gp\-\_\-fuse\-\_\-bitfield}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-erase\-\_\-gp\-\_\-fuse\-\_\-bitfield}]{\setlength{\rightskip}{0pt plus 5cm}bool flashc\-\_\-erase\-\_\-gp\-\_\-fuse\-\_\-bitfield (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{pos, }
+\item[{unsigned int}]{width, }
+\item[{bool}]{check}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a840a6f529e33adbd3759f276a0255aee}
+
+
+\-Erases a general-\/purpose fuse bit-\/field. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pos} & \-The bit-\/position of the general-\/purpose fuse bit-\/field\-: {\ttfamily 0} to {\ttfamily 63}. \\
+\hline
+{\em width} & \-The bit-\/width of the general-\/purpose fuse bit-\/field\-: {\ttfamily 0} to {\ttfamily 64}. \\
+\hline
+{\em check} & \-Whether to check erase\-: {\ttfamily true} or {\ttfamily false}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Whether the erase succeeded or always {\ttfamily true} if erase check was not requested.
+\end{DoxyReturn}
+\begin{DoxyWarning}{\-Warning}
+\-A \-Lock \-Error is issued if the \-Security bit is active and the command is applied to \-B\-O\-O\-T\-P\-R\-O\-T or \-E\-P\-F\-L fuses.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated.
+
+\-An erase operation can only set bits.
+
+\-The actual number of general-\/purpose fuse bits implemented by hardware is given by {\ttfamily \-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-G\-P\-F\-\_\-\-N\-U\-M}. \-The other bits among the 64 are fixed at 1 by hardware. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_acb14ac40b939a0804e8e72a8d58f5f68}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-erase\-\_\-gp\-\_\-fuse\-\_\-byte@{flashc\-\_\-erase\-\_\-gp\-\_\-fuse\-\_\-byte}}
+\index{flashc\-\_\-erase\-\_\-gp\-\_\-fuse\-\_\-byte@{flashc\-\_\-erase\-\_\-gp\-\_\-fuse\-\_\-byte}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-erase\-\_\-gp\-\_\-fuse\-\_\-byte}]{\setlength{\rightskip}{0pt plus 5cm}bool flashc\-\_\-erase\-\_\-gp\-\_\-fuse\-\_\-byte (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{gp\-\_\-fuse\-\_\-byte, }
+\item[{bool}]{check}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_acb14ac40b939a0804e8e72a8d58f5f68}
+
+
+\-Erases a general-\/purpose fuse byte. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em gp\-\_\-fuse\-\_\-byte} & \-The general-\/purpose fuse byte\-: {\ttfamily 0} to {\ttfamily 7}. \\
+\hline
+{\em check} & \-Whether to check erase\-: {\ttfamily true} or {\ttfamily false}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Whether the erase succeeded or always {\ttfamily true} if erase check was not requested.
+\end{DoxyReturn}
+\begin{DoxyWarning}{\-Warning}
+\-A \-Lock \-Error is issued if the \-Security bit is active.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated.
+
+\-An erase operation can only set bits.
+
+\-The actual number of general-\/purpose fuse bits implemented by hardware is given by {\ttfamily \-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-G\-P\-F\-\_\-\-N\-U\-M}. \-The other bits among the 64 are fixed at 1 by hardware. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a8bd196144d3485a9b50b7c5fffc9fab2}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-erase\-\_\-page@{flashc\-\_\-erase\-\_\-page}}
+\index{flashc\-\_\-erase\-\_\-page@{flashc\-\_\-erase\-\_\-page}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-erase\-\_\-page}]{\setlength{\rightskip}{0pt plus 5cm}bool flashc\-\_\-erase\-\_\-page (
+\begin{DoxyParamCaption}
+\item[{int}]{page\-\_\-number, }
+\item[{bool}]{check}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a8bd196144d3485a9b50b7c5fffc9fab2}
+
+
+\-Erases a page. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em page\-\_\-number} & \-The page number\-: \begin{DoxyItemize}
+\item {\ttfamily 0} to {\ttfamily (\hyperlink{flashc_8c_aafad0dcf645cc65acb5bc879558dac23}{flashc\-\_\-get\-\_\-page\-\_\-count()} -\/ 1)}\-: a page number within the flash array; \item {\ttfamily $<$ 0}\-: the current page number. \end{DoxyItemize}
+\\
+\hline
+{\em check} & \-Whether to check erase\-: {\ttfamily true} or {\ttfamily false}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Whether the erase succeeded or always {\ttfamily true} if erase check was not requested.
+\end{DoxyReturn}
+\begin{DoxyWarning}{\-Warning}
+\-A \-Lock \-Error is issued if the command is applied to a page belonging to a locked region or to the bootloader protected area.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated.
+
+\-An erase operation can only set bits. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a7160c001cada0a9a0162cac2305a9038}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-erase\-\_\-user\-\_\-page@{flashc\-\_\-erase\-\_\-user\-\_\-page}}
+\index{flashc\-\_\-erase\-\_\-user\-\_\-page@{flashc\-\_\-erase\-\_\-user\-\_\-page}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-erase\-\_\-user\-\_\-page}]{\setlength{\rightskip}{0pt plus 5cm}bool flashc\-\_\-erase\-\_\-user\-\_\-page (
+\begin{DoxyParamCaption}
+\item[{bool}]{check}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a7160c001cada0a9a0162cac2305a9038}
+
+
+\-Erases the \-User page. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em check} & \-Whether to check erase\-: {\ttfamily true} or {\ttfamily false}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Whether the erase succeeded or always {\ttfamily true} if erase check was not requested.
+\end{DoxyReturn}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated.
+
+\-An erase operation can only set bits. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a83ed88a41076163bd29ca80d30cb094f}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-get\-\_\-bootloader\-\_\-protected\-\_\-size@{flashc\-\_\-get\-\_\-bootloader\-\_\-protected\-\_\-size}}
+\index{flashc\-\_\-get\-\_\-bootloader\-\_\-protected\-\_\-size@{flashc\-\_\-get\-\_\-bootloader\-\_\-protected\-\_\-size}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-get\-\_\-bootloader\-\_\-protected\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int flashc\-\_\-get\-\_\-bootloader\-\_\-protected\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a83ed88a41076163bd29ca80d30cb094f}
+
+
+\-Gets the bootloader protected size. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The bootloader protected size in bytes. 
+\end{DoxyReturn}
+\hypertarget{flashc_8c_a36519235197ff4d6ab7f5adcb3fce6c1}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-get\-\_\-command@{flashc\-\_\-get\-\_\-command}}
+\index{flashc\-\_\-get\-\_\-command@{flashc\-\_\-get\-\_\-command}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-get\-\_\-command}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int flashc\-\_\-get\-\_\-command (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a36519235197ff4d6ab7f5adcb3fce6c1}
+
+
+\-Gets the last issued \-F\-L\-A\-S\-H\-C command. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The last issued \-F\-L\-A\-S\-H\-C command. 
+\end{DoxyReturn}
+\hypertarget{flashc_8c_a8071c315b02d038c49fa0bf89a40ba1b}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-get\-\_\-flash\-\_\-size@{flashc\-\_\-get\-\_\-flash\-\_\-size}}
+\index{flashc\-\_\-get\-\_\-flash\-\_\-size@{flashc\-\_\-get\-\_\-flash\-\_\-size}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-get\-\_\-flash\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int flashc\-\_\-get\-\_\-flash\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a8071c315b02d038c49fa0bf89a40ba1b}
+
+
+\-Gets the size of the whole flash array. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The size of the whole flash array in bytes. 
+\end{DoxyReturn}
+\hypertarget{flashc_8c_aafad0dcf645cc65acb5bc879558dac23}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-get\-\_\-page\-\_\-count@{flashc\-\_\-get\-\_\-page\-\_\-count}}
+\index{flashc\-\_\-get\-\_\-page\-\_\-count@{flashc\-\_\-get\-\_\-page\-\_\-count}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-get\-\_\-page\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int flashc\-\_\-get\-\_\-page\-\_\-count (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_aafad0dcf645cc65acb5bc879558dac23}
+
+
+\-Gets the total number of pages in the flash array. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The total number of pages in the flash array. 
+\end{DoxyReturn}
+\hypertarget{flashc_8c_a8910bcde3235e2af0770fbd2412b05bc}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-get\-\_\-page\-\_\-count\-\_\-per\-\_\-region@{flashc\-\_\-get\-\_\-page\-\_\-count\-\_\-per\-\_\-region}}
+\index{flashc\-\_\-get\-\_\-page\-\_\-count\-\_\-per\-\_\-region@{flashc\-\_\-get\-\_\-page\-\_\-count\-\_\-per\-\_\-region}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-get\-\_\-page\-\_\-count\-\_\-per\-\_\-region}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int flashc\-\_\-get\-\_\-page\-\_\-count\-\_\-per\-\_\-region (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a8910bcde3235e2af0770fbd2412b05bc}
+
+
+\-Gets the number of pages in each flash region. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The number of pages in each flash region. 
+\end{DoxyReturn}
+\hypertarget{flashc_8c_adb51a37e3153c24e5dd6cf06daac0e21}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-get\-\_\-page\-\_\-number@{flashc\-\_\-get\-\_\-page\-\_\-number}}
+\index{flashc\-\_\-get\-\_\-page\-\_\-number@{flashc\-\_\-get\-\_\-page\-\_\-number}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-get\-\_\-page\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int flashc\-\_\-get\-\_\-page\-\_\-number (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_adb51a37e3153c24e5dd6cf06daac0e21}
+
+
+\-Gets the current \-F\-L\-A\-S\-H\-C page number. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The current \-F\-L\-A\-S\-H\-C page number. 
+\end{DoxyReturn}
+\hypertarget{flashc_8c_ac5871dc98c8812b0413efd6456508999}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-get\-\_\-page\-\_\-region@{flashc\-\_\-get\-\_\-page\-\_\-region}}
+\index{flashc\-\_\-get\-\_\-page\-\_\-region@{flashc\-\_\-get\-\_\-page\-\_\-region}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-get\-\_\-page\-\_\-region}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int flashc\-\_\-get\-\_\-page\-\_\-region (
+\begin{DoxyParamCaption}
+\item[{int}]{page\-\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_ac5871dc98c8812b0413efd6456508999}
+
+
+\-Gets the region number of a page. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em page\-\_\-number} & \-The page number\-: \begin{DoxyItemize}
+\item {\ttfamily 0} to {\ttfamily (\hyperlink{flashc_8c_aafad0dcf645cc65acb5bc879558dac23}{flashc\-\_\-get\-\_\-page\-\_\-count()} -\/ 1)}\-: a page number within the flash array; \item {\ttfamily $<$ 0}\-: the current page number.\end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The region number of the specified page. 
+\end{DoxyReturn}
+\hypertarget{flashc_8c_a43b14107d406ea9025f8947490c9ddcd}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-get\-\_\-region\-\_\-first\-\_\-page\-\_\-number@{flashc\-\_\-get\-\_\-region\-\_\-first\-\_\-page\-\_\-number}}
+\index{flashc\-\_\-get\-\_\-region\-\_\-first\-\_\-page\-\_\-number@{flashc\-\_\-get\-\_\-region\-\_\-first\-\_\-page\-\_\-number}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-get\-\_\-region\-\_\-first\-\_\-page\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int flashc\-\_\-get\-\_\-region\-\_\-first\-\_\-page\-\_\-number (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{region}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a43b14107d406ea9025f8947490c9ddcd}
+
+
+\-Gets the number of the first page of a region. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em region} & \-The region number\-: {\ttfamily 0} to {\ttfamily (\-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-R\-E\-G\-I\-O\-N\-S -\/ 1)}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The number of the first page of the specified region. 
+\end{DoxyReturn}
+\hypertarget{flashc_8c_a52784dbdd246c6c320e5041026d4da08}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-get\-\_\-wait\-\_\-state@{flashc\-\_\-get\-\_\-wait\-\_\-state}}
+\index{flashc\-\_\-get\-\_\-wait\-\_\-state@{flashc\-\_\-get\-\_\-wait\-\_\-state}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-get\-\_\-wait\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int flashc\-\_\-get\-\_\-wait\-\_\-state (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a52784dbdd246c6c320e5041026d4da08}
+
+
+\-Gets the number of wait states of flash read accesses. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The number of wait states of flash read accesses. 
+\end{DoxyReturn}
+\hypertarget{flashc_8c_ae5d2a26e4f0666cc2ed260feb528a560}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-is\-\_\-external\-\_\-privileged\-\_\-fetch\-\_\-locked@{flashc\-\_\-is\-\_\-external\-\_\-privileged\-\_\-fetch\-\_\-locked}}
+\index{flashc\-\_\-is\-\_\-external\-\_\-privileged\-\_\-fetch\-\_\-locked@{flashc\-\_\-is\-\_\-external\-\_\-privileged\-\_\-fetch\-\_\-locked}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-is\-\_\-external\-\_\-privileged\-\_\-fetch\-\_\-locked}]{\setlength{\rightskip}{0pt plus 5cm}bool flashc\-\_\-is\-\_\-external\-\_\-privileged\-\_\-fetch\-\_\-locked (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_ae5d2a26e4f0666cc2ed260feb528a560}
+
+
+\-Tells whether external privileged fetch is locked. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Whether external privileged fetch is locked. 
+\end{DoxyReturn}
+\hypertarget{flashc_8c_abc9239c2bde687eb3324d2d839493b4e}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-is\-\_\-lock\-\_\-error@{flashc\-\_\-is\-\_\-lock\-\_\-error}}
+\index{flashc\-\_\-is\-\_\-lock\-\_\-error@{flashc\-\_\-is\-\_\-lock\-\_\-error}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-is\-\_\-lock\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}bool flashc\-\_\-is\-\_\-lock\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_abc9239c2bde687eb3324d2d839493b4e}
+
+
+\-Tells whether a \-Lock \-Error has occurred during the last function called that issued one or more \-F\-L\-A\-S\-H\-C commands. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Whether a \-Lock \-Error has occurred during the last function called that issued one or more \-F\-L\-A\-S\-H\-C commands. 
+\end{DoxyReturn}
+\hypertarget{flashc_8c_aa55186e65b46eb60aa32901a410f3fc2}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-is\-\_\-lock\-\_\-error\-\_\-int\-\_\-enabled@{flashc\-\_\-is\-\_\-lock\-\_\-error\-\_\-int\-\_\-enabled}}
+\index{flashc\-\_\-is\-\_\-lock\-\_\-error\-\_\-int\-\_\-enabled@{flashc\-\_\-is\-\_\-lock\-\_\-error\-\_\-int\-\_\-enabled}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-is\-\_\-lock\-\_\-error\-\_\-int\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool flashc\-\_\-is\-\_\-lock\-\_\-error\-\_\-int\-\_\-enabled (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_aa55186e65b46eb60aa32901a410f3fc2}
+
+
+\-Tells whether the \-Lock \-Error interrupt is enabled. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Whether the \-Lock \-Error interrupt is enabled. 
+\end{DoxyReturn}
+\hypertarget{flashc_8c_a05a9c2063e643943bae09f0786bcc063}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-is\-\_\-page\-\_\-erased@{flashc\-\_\-is\-\_\-page\-\_\-erased}}
+\index{flashc\-\_\-is\-\_\-page\-\_\-erased@{flashc\-\_\-is\-\_\-page\-\_\-erased}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-is\-\_\-page\-\_\-erased}]{\setlength{\rightskip}{0pt plus 5cm}bool flashc\-\_\-is\-\_\-page\-\_\-erased (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a05a9c2063e643943bae09f0786bcc063}
+
+
+\-Tells whether the page to which the last \-Quick \-Page \-Read or \-Quick \-Page \-Read \-User \-Page command was applied was erased. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Whether the page to which the last \-Quick \-Page \-Read or \-Quick \-Page \-Read \-User \-Page command was applied was erased. 
+\end{DoxyReturn}
+\hypertarget{flashc_8c_a50d3b06a3a82ba1e7c56193c3c24f7ef}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-is\-\_\-page\-\_\-region\-\_\-locked@{flashc\-\_\-is\-\_\-page\-\_\-region\-\_\-locked}}
+\index{flashc\-\_\-is\-\_\-page\-\_\-region\-\_\-locked@{flashc\-\_\-is\-\_\-page\-\_\-region\-\_\-locked}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-is\-\_\-page\-\_\-region\-\_\-locked}]{\setlength{\rightskip}{0pt plus 5cm}bool flashc\-\_\-is\-\_\-page\-\_\-region\-\_\-locked (
+\begin{DoxyParamCaption}
+\item[{int}]{page\-\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a50d3b06a3a82ba1e7c56193c3c24f7ef}
+
+
+\-Tells whether the region of a page is locked. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em page\-\_\-number} & \-The page number\-: \begin{DoxyItemize}
+\item {\ttfamily 0} to {\ttfamily (\hyperlink{flashc_8c_aafad0dcf645cc65acb5bc879558dac23}{flashc\-\_\-get\-\_\-page\-\_\-count()} -\/ 1)}\-: a page number within the flash array; \item {\ttfamily $<$ 0}\-: the current page number.\end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Whether the region of the specified page is locked. 
+\end{DoxyReturn}
+\hypertarget{flashc_8c_a5050d8497779a0e24ac74689597834c2}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-is\-\_\-prog\-\_\-error\-\_\-int\-\_\-enabled@{flashc\-\_\-is\-\_\-prog\-\_\-error\-\_\-int\-\_\-enabled}}
+\index{flashc\-\_\-is\-\_\-prog\-\_\-error\-\_\-int\-\_\-enabled@{flashc\-\_\-is\-\_\-prog\-\_\-error\-\_\-int\-\_\-enabled}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-is\-\_\-prog\-\_\-error\-\_\-int\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool flashc\-\_\-is\-\_\-prog\-\_\-error\-\_\-int\-\_\-enabled (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a5050d8497779a0e24ac74689597834c2}
+
+
+\-Tells whether the \-Programming \-Error interrupt is enabled. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Whether the \-Programming \-Error interrupt is enabled. 
+\end{DoxyReturn}
+\hypertarget{flashc_8c_a96f2a8ec38721359b09bb9214c025b7f}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-is\-\_\-programming\-\_\-error@{flashc\-\_\-is\-\_\-programming\-\_\-error}}
+\index{flashc\-\_\-is\-\_\-programming\-\_\-error@{flashc\-\_\-is\-\_\-programming\-\_\-error}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-is\-\_\-programming\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}bool flashc\-\_\-is\-\_\-programming\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a96f2a8ec38721359b09bb9214c025b7f}
+
+
+\-Tells whether a \-Programming \-Error has occurred during the last function called that issued one or more \-F\-L\-A\-S\-H\-C commands. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Whether a \-Programming \-Error has occurred during the last function called that issued one or more \-F\-L\-A\-S\-H\-C commands. 
+\end{DoxyReturn}
+\hypertarget{flashc_8c_adda694b46dcd563dab0c4be794dd2060}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-is\-\_\-ready@{flashc\-\_\-is\-\_\-ready}}
+\index{flashc\-\_\-is\-\_\-ready@{flashc\-\_\-is\-\_\-ready}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-is\-\_\-ready}]{\setlength{\rightskip}{0pt plus 5cm}bool flashc\-\_\-is\-\_\-ready (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_adda694b46dcd563dab0c4be794dd2060}
+
+
+\-Tells whether the \-F\-L\-A\-S\-H\-C is ready to run a new command. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Whether the \-F\-L\-A\-S\-H\-C is ready to run a new command. 
+\end{DoxyReturn}
+\hypertarget{flashc_8c_ac3b57583a1683e980be72aec960bc42f}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-is\-\_\-ready\-\_\-int\-\_\-enabled@{flashc\-\_\-is\-\_\-ready\-\_\-int\-\_\-enabled}}
+\index{flashc\-\_\-is\-\_\-ready\-\_\-int\-\_\-enabled@{flashc\-\_\-is\-\_\-ready\-\_\-int\-\_\-enabled}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-is\-\_\-ready\-\_\-int\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool flashc\-\_\-is\-\_\-ready\-\_\-int\-\_\-enabled (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_ac3b57583a1683e980be72aec960bc42f}
+
+
+\-Tells whether the \-Flash \-Ready interrupt is enabled. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Whether the \-Flash \-Ready interrupt is enabled. 
+\end{DoxyReturn}
+\hypertarget{flashc_8c_a152b45f38eafcf708e52df5a814d048e}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-is\-\_\-region\-\_\-locked@{flashc\-\_\-is\-\_\-region\-\_\-locked}}
+\index{flashc\-\_\-is\-\_\-region\-\_\-locked@{flashc\-\_\-is\-\_\-region\-\_\-locked}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-is\-\_\-region\-\_\-locked}]{\setlength{\rightskip}{0pt plus 5cm}bool flashc\-\_\-is\-\_\-region\-\_\-locked (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{region}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a152b45f38eafcf708e52df5a814d048e}
+
+
+\-Tells whether a region is locked. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em region} & \-The region number\-: {\ttfamily 0} to {\ttfamily (\-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-R\-E\-G\-I\-O\-N\-S -\/ 1)}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Whether the specified region is locked. 
+\end{DoxyReturn}
+\hypertarget{flashc_8c_ab07cd7525d8cdfad6c4c563310cddee2}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-is\-\_\-security\-\_\-bit\-\_\-active@{flashc\-\_\-is\-\_\-security\-\_\-bit\-\_\-active}}
+\index{flashc\-\_\-is\-\_\-security\-\_\-bit\-\_\-active@{flashc\-\_\-is\-\_\-security\-\_\-bit\-\_\-active}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-is\-\_\-security\-\_\-bit\-\_\-active}]{\setlength{\rightskip}{0pt plus 5cm}bool flashc\-\_\-is\-\_\-security\-\_\-bit\-\_\-active (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_ab07cd7525d8cdfad6c4c563310cddee2}
+
+
+\-Tells whether the \-Security bit is active. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Whether the \-Security bit is active. 
+\end{DoxyReturn}
+\hypertarget{flashc_8c_a8045c427c32cf3617e861067d76c9c11}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-issue\-\_\-command@{flashc\-\_\-issue\-\_\-command}}
+\index{flashc\-\_\-issue\-\_\-command@{flashc\-\_\-issue\-\_\-command}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-issue\-\_\-command}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-issue\-\_\-command (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{command, }
+\item[{int}]{page\-\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a8045c427c32cf3617e861067d76c9c11}
+
+
+\-Issues a \-F\-L\-A\-S\-H\-C command. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em command} & \-The command\-: {\ttfamily \-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-F\-C\-M\-D\-\_\-\-C\-M\-D\-\_\-x}. \\
+\hline
+{\em page\-\_\-number} & \-The page number to apply the command to\-: \begin{DoxyItemize}
+\item {\ttfamily 0} to {\ttfamily (\hyperlink{flashc_8c_aafad0dcf645cc65acb5bc879558dac23}{flashc\-\_\-get\-\_\-page\-\_\-count()} -\/ 1)}\-: a page number within the flash array; \item {\ttfamily $<$ 0}\-: use this to apply the command to the current page number or if the command does not apply to any page number; \item this argument may have other meanings according to the command. \-See the \-F\-L\-A\-S\-H\-C chapter of the \-M\-C\-U datasheet.\end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{\-Warning}
+\-A \-Lock \-Error is issued if the command violates the protection mechanism.
+
+\-A \-Programming \-Error is issued if the command is invalid.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a8ec3c05f8b1a620a5014e2c066b7f0bf}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-lock\-\_\-all\-\_\-regions@{flashc\-\_\-lock\-\_\-all\-\_\-regions}}
+\index{flashc\-\_\-lock\-\_\-all\-\_\-regions@{flashc\-\_\-lock\-\_\-all\-\_\-regions}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-lock\-\_\-all\-\_\-regions}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-lock\-\_\-all\-\_\-regions (
+\begin{DoxyParamCaption}
+\item[{bool}]{lock}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a8ec3c05f8b1a620a5014e2c066b7f0bf}
+
+
+\-Locks or unlocks all regions. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em lock} & \-Whether to lock the regions\-: {\ttfamily true} or {\ttfamily false}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a97c8b9ed8f952803a3911af33ba8d553}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-lock\-\_\-external\-\_\-privileged\-\_\-fetch@{flashc\-\_\-lock\-\_\-external\-\_\-privileged\-\_\-fetch}}
+\index{flashc\-\_\-lock\-\_\-external\-\_\-privileged\-\_\-fetch@{flashc\-\_\-lock\-\_\-external\-\_\-privileged\-\_\-fetch}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-lock\-\_\-external\-\_\-privileged\-\_\-fetch}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-lock\-\_\-external\-\_\-privileged\-\_\-fetch (
+\begin{DoxyParamCaption}
+\item[{bool}]{lock}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a97c8b9ed8f952803a3911af33ba8d553}
+
+
+\-Locks or unlocks external privileged fetch. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em lock} & \-Whether to lock external privileged fetch\-: {\ttfamily true} or {\ttfamily false}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{\-Warning}
+\-A \-Lock \-Error is issued if the \-Security bit is active.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a4bc67adcf6690cc7e83fd42560a5e526}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-lock\-\_\-page\-\_\-region@{flashc\-\_\-lock\-\_\-page\-\_\-region}}
+\index{flashc\-\_\-lock\-\_\-page\-\_\-region@{flashc\-\_\-lock\-\_\-page\-\_\-region}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-lock\-\_\-page\-\_\-region}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-lock\-\_\-page\-\_\-region (
+\begin{DoxyParamCaption}
+\item[{int}]{page\-\_\-number, }
+\item[{bool}]{lock}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a4bc67adcf6690cc7e83fd42560a5e526}
+
+
+\-Locks or unlocks the region of a page. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em page\-\_\-number} & \-The page number\-: \begin{DoxyItemize}
+\item {\ttfamily 0} to {\ttfamily (\hyperlink{flashc_8c_aafad0dcf645cc65acb5bc879558dac23}{flashc\-\_\-get\-\_\-page\-\_\-count()} -\/ 1)}\-: a page number within the flash array; \item {\ttfamily $<$ 0}\-: the current page number. \end{DoxyItemize}
+\\
+\hline
+{\em lock} & \-Whether to lock the region of the specified page\-: {\ttfamily true} or {\ttfamily false}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_aefc77ff29ddc03fa5e605acd7f9eeb7c}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-lock\-\_\-region@{flashc\-\_\-lock\-\_\-region}}
+\index{flashc\-\_\-lock\-\_\-region@{flashc\-\_\-lock\-\_\-region}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-lock\-\_\-region}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-lock\-\_\-region (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{region, }
+\item[{bool}]{lock}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_aefc77ff29ddc03fa5e605acd7f9eeb7c}
+
+
+\-Locks or unlocks a region. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em region} & \-The region number\-: {\ttfamily 0} to {\ttfamily (\-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-R\-E\-G\-I\-O\-N\-S -\/ 1)}. \\
+\hline
+{\em lock} & \-Whether to lock the specified region\-: {\ttfamily true} or {\ttfamily false}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a342404f6e3f2757138c8dc58916ffef1}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-memcpy@{flashc\-\_\-memcpy}}
+\index{flashc\-\_\-memcpy@{flashc\-\_\-memcpy}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-memcpy}]{\setlength{\rightskip}{0pt plus 5cm}volatile void$\ast$ flashc\-\_\-memcpy (
+\begin{DoxyParamCaption}
+\item[{volatile void $\ast$}]{dst, }
+\item[{const void $\ast$}]{src, }
+\item[{size\-\_\-t}]{nbytes, }
+\item[{bool}]{erase}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a342404f6e3f2757138c8dc58916ffef1}
+
+
+\-Copies {\itshape nbytes\/} bytes to the flash destination pointed to by {\itshape dst\/} from the source pointed to by {\itshape src\/}. 
+
+\-The destination areas that are not within the flash array or the \-User page are caught by an assert() operation.
+
+\-All pointer and size alignments are supported.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em dst} & \-Pointer to flash destination. \\
+\hline
+{\em src} & \-Pointer to source data. \\
+\hline
+{\em nbytes} & \-Number of bytes to copy. \\
+\hline
+{\em erase} & \-Whether to erase before writing\-: {\ttfamily true} or {\ttfamily false}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The value of {\itshape dst\/}.
+\end{DoxyReturn}
+\begin{DoxyWarning}{\-Warning}
+\-If copying takes place between areas that overlap, the behavior is undefined.
+
+\-This function may be called with {\itshape erase\/} set to {\ttfamily false} only if the destination consists only of erased words, i.\-e. this function can not be used to write only one bit of a previously written word. \-E.\-g., if {\ttfamily 0x00000001} then {\ttfamily 0x\-F\-F\-F\-F\-F\-F\-F\-E} are written to a word, the resulting value in flash may be different from {\ttfamily 0x00000000}.
+
+\-A \-Lock \-Error is issued if the command is applied to pages belonging to a locked region or to the bootloader protected area.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_ad9b00f6e409b0b38924dba961bd52145}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-memset16@{flashc\-\_\-memset16}}
+\index{flashc\-\_\-memset16@{flashc\-\_\-memset16}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-memset16}]{\setlength{\rightskip}{0pt plus 5cm}volatile void$\ast$ flashc\-\_\-memset16 (
+\begin{DoxyParamCaption}
+\item[{volatile void $\ast$}]{dst, }
+\item[{uint16\-\_\-t}]{src, }
+\item[{size\-\_\-t}]{nbytes, }
+\item[{bool}]{erase}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_ad9b00f6e409b0b38924dba961bd52145}
+
+
+\-Copies {\itshape nbytes\/} bytes to the flash destination pointed to by {\itshape dst\/} from the repeated {\itshape src\/} big-\/endian source half-\/word. 
+
+\-All pointer and size alignments are supported.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em dst} & \-Pointer to flash destination. \\
+\hline
+{\em src} & \-Source half-\/word. \\
+\hline
+{\em nbytes} & \-Number of bytes to set. \\
+\hline
+{\em erase} & \-Whether to erase before writing\-: {\ttfamily true} or {\ttfamily false}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The value of {\itshape dst\/}.
+\end{DoxyReturn}
+\begin{DoxyWarning}{\-Warning}
+\-This function may be called with {\itshape erase\/} set to {\ttfamily false} only if the destination consists only of erased words, i.\-e. this function can not be used to write only one bit of a previously written word. \-E.\-g., if {\ttfamily 0x00000001} then {\ttfamily 0x\-F\-F\-F\-F\-F\-F\-F\-E} are written to a word, the resulting value in flash may be different from {\ttfamily 0x00000000}.
+
+\-A \-Lock \-Error is issued if the command is applied to pages belonging to a locked region or to the bootloader protected area.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a44e771a3f7ed3728ef366cf2a8b67592}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-memset32@{flashc\-\_\-memset32}}
+\index{flashc\-\_\-memset32@{flashc\-\_\-memset32}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-memset32}]{\setlength{\rightskip}{0pt plus 5cm}volatile void$\ast$ flashc\-\_\-memset32 (
+\begin{DoxyParamCaption}
+\item[{volatile void $\ast$}]{dst, }
+\item[{uint32\-\_\-t}]{src, }
+\item[{size\-\_\-t}]{nbytes, }
+\item[{bool}]{erase}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a44e771a3f7ed3728ef366cf2a8b67592}
+
+
+\-Copies {\itshape nbytes\/} bytes to the flash destination pointed to by {\itshape dst\/} from the repeated {\itshape src\/} big-\/endian source word. 
+
+\-All pointer and size alignments are supported.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em dst} & \-Pointer to flash destination. \\
+\hline
+{\em src} & \-Source word. \\
+\hline
+{\em nbytes} & \-Number of bytes to set. \\
+\hline
+{\em erase} & \-Whether to erase before writing\-: {\ttfamily true} or {\ttfamily false}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The value of {\itshape dst\/}.
+\end{DoxyReturn}
+\begin{DoxyWarning}{\-Warning}
+\-This function may be called with {\itshape erase\/} set to {\ttfamily false} only if the destination consists only of erased words, i.\-e. this function can not be used to write only one bit of a previously written word. \-E.\-g., if {\ttfamily 0x00000001} then {\ttfamily 0x\-F\-F\-F\-F\-F\-F\-F\-E} are written to a word, the resulting value in flash may be different from {\ttfamily 0x00000000}.
+
+\-A \-Lock \-Error is issued if the command is applied to pages belonging to a locked region or to the bootloader protected area.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a9ab40621c7f4c7372cb3147c014d7d27}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-memset64@{flashc\-\_\-memset64}}
+\index{flashc\-\_\-memset64@{flashc\-\_\-memset64}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-memset64}]{\setlength{\rightskip}{0pt plus 5cm}volatile void$\ast$ flashc\-\_\-memset64 (
+\begin{DoxyParamCaption}
+\item[{volatile void $\ast$}]{dst, }
+\item[{uint64\-\_\-t}]{src, }
+\item[{size\-\_\-t}]{nbytes, }
+\item[{bool}]{erase}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a9ab40621c7f4c7372cb3147c014d7d27}
+
+
+\-Copies {\itshape nbytes\/} bytes to the flash destination pointed to by {\itshape dst\/} from the repeated {\itshape src\/} big-\/endian source double-\/word. 
+
+\-All pointer and size alignments are supported.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em dst} & \-Pointer to flash destination. \\
+\hline
+{\em src} & \-Source double-\/word. \\
+\hline
+{\em nbytes} & \-Number of bytes to set. \\
+\hline
+{\em erase} & \-Whether to erase before writing\-: {\ttfamily true} or {\ttfamily false}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The value of {\itshape dst\/}.
+\end{DoxyReturn}
+\begin{DoxyWarning}{\-Warning}
+\-This function may be called with {\itshape erase\/} set to {\ttfamily false} only if the destination consists only of erased words, i.\-e. this function can not be used to write only one bit of a previously written word. \-E.\-g., if {\ttfamily 0x00000001} then {\ttfamily 0x\-F\-F\-F\-F\-F\-F\-F\-E} are written to a word, the resulting value in flash may be different from {\ttfamily 0x00000000}.
+
+\-A \-Lock \-Error is issued if the command is applied to pages belonging to a locked region or to the bootloader protected area.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a9157e8cdcd527943f8284c0de37cd91a}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-memset8@{flashc\-\_\-memset8}}
+\index{flashc\-\_\-memset8@{flashc\-\_\-memset8}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-memset8}]{\setlength{\rightskip}{0pt plus 5cm}volatile void$\ast$ flashc\-\_\-memset8 (
+\begin{DoxyParamCaption}
+\item[{volatile void $\ast$}]{dst, }
+\item[{uint8\-\_\-t}]{src, }
+\item[{size\-\_\-t}]{nbytes, }
+\item[{bool}]{erase}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a9157e8cdcd527943f8284c0de37cd91a}
+
+
+\-Copies {\itshape nbytes\/} bytes to the flash destination pointed to by {\itshape dst\/} from the repeated {\itshape src\/} source byte. 
+
+\-All pointer and size alignments are supported.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em dst} & \-Pointer to flash destination. \\
+\hline
+{\em src} & \-Source byte. \\
+\hline
+{\em nbytes} & \-Number of bytes to set. \\
+\hline
+{\em erase} & \-Whether to erase before writing\-: {\ttfamily true} or {\ttfamily false}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The value of {\itshape dst\/}.
+\end{DoxyReturn}
+\begin{DoxyWarning}{\-Warning}
+\-This function may be called with {\itshape erase\/} set to {\ttfamily false} only if the destination consists only of erased words, i.\-e. this function can not be used to write only one bit of a previously written word. \-E.\-g., if {\ttfamily 0x00000001} then {\ttfamily 0x\-F\-F\-F\-F\-F\-F\-F\-E} are written to a word, the resulting value in flash may be different from {\ttfamily 0x00000000}.
+
+\-A \-Lock \-Error is issued if the command is applied to pages belonging to a locked region or to the bootloader protected area.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_aac955da1ba0b0833d17d3068c34222ec}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-no\-\_\-operation@{flashc\-\_\-no\-\_\-operation}}
+\index{flashc\-\_\-no\-\_\-operation@{flashc\-\_\-no\-\_\-operation}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-no\-\_\-operation}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-no\-\_\-operation (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_aac955da1ba0b0833d17d3068c34222ec}
+
+
+\-Issues a \-No \-Operation command to the \-F\-L\-A\-S\-H\-C. 
+
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a078a084303b02d665fe3779bc096a150}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-quick\-\_\-page\-\_\-read@{flashc\-\_\-quick\-\_\-page\-\_\-read}}
+\index{flashc\-\_\-quick\-\_\-page\-\_\-read@{flashc\-\_\-quick\-\_\-page\-\_\-read}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-quick\-\_\-page\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}bool flashc\-\_\-quick\-\_\-page\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{int}]{page\-\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a078a084303b02d665fe3779bc096a150}
+
+
+\-Applies the \-Quick \-Page \-Read command to a page. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em page\-\_\-number} & \-The page number\-: \begin{DoxyItemize}
+\item {\ttfamily 0} to {\ttfamily (\hyperlink{flashc_8c_aafad0dcf645cc65acb5bc879558dac23}{flashc\-\_\-get\-\_\-page\-\_\-count()} -\/ 1)}\-: a page number within the flash array; \item {\ttfamily $<$ 0}\-: the current page number.\end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Whether the specified page is erased.
+\end{DoxyReturn}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a1921803f9ba1d21a7926d9dafc400f36}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-quick\-\_\-user\-\_\-page\-\_\-read@{flashc\-\_\-quick\-\_\-user\-\_\-page\-\_\-read}}
+\index{flashc\-\_\-quick\-\_\-user\-\_\-page\-\_\-read@{flashc\-\_\-quick\-\_\-user\-\_\-page\-\_\-read}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-quick\-\_\-user\-\_\-page\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}bool flashc\-\_\-quick\-\_\-user\-\_\-page\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a1921803f9ba1d21a7926d9dafc400f36}
+
+
+\-Issues a \-Quick \-Page \-Read \-User \-Page command to the \-F\-L\-A\-S\-H\-C. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Whether the \-User page is erased.
+\end{DoxyReturn}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_abdba94fb9eb09177ced3df0ad80b1554}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-read\-\_\-all\-\_\-gp\-\_\-fuses@{flashc\-\_\-read\-\_\-all\-\_\-gp\-\_\-fuses}}
+\index{flashc\-\_\-read\-\_\-all\-\_\-gp\-\_\-fuses@{flashc\-\_\-read\-\_\-all\-\_\-gp\-\_\-fuses}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-read\-\_\-all\-\_\-gp\-\_\-fuses}]{\setlength{\rightskip}{0pt plus 5cm}uint64\-\_\-t flashc\-\_\-read\-\_\-all\-\_\-gp\-\_\-fuses (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_abdba94fb9eb09177ced3df0ad80b1554}
+
+
+\-Reads all general-\/purpose fuses. 
+
+\begin{DoxyReturn}{\-Returns}
+\-The value of all general-\/purpose fuses as a word.
+\end{DoxyReturn}
+\begin{DoxyNote}{\-Note}
+\-The actual number of general-\/purpose fuse bits implemented by hardware is given by {\ttfamily \-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-G\-P\-F\-\_\-\-N\-U\-M}. \-The other bits among the 64 are fixed at 1 by hardware. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a41488c15448086169266af4936ea7926}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-read\-\_\-gp\-\_\-fuse\-\_\-bit@{flashc\-\_\-read\-\_\-gp\-\_\-fuse\-\_\-bit}}
+\index{flashc\-\_\-read\-\_\-gp\-\_\-fuse\-\_\-bit@{flashc\-\_\-read\-\_\-gp\-\_\-fuse\-\_\-bit}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-read\-\_\-gp\-\_\-fuse\-\_\-bit}]{\setlength{\rightskip}{0pt plus 5cm}bool flashc\-\_\-read\-\_\-gp\-\_\-fuse\-\_\-bit (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{gp\-\_\-fuse\-\_\-bit}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a41488c15448086169266af4936ea7926}
+
+
+\-Reads a general-\/purpose fuse bit. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em gp\-\_\-fuse\-\_\-bit} & \-The general-\/purpose fuse bit\-: {\ttfamily 0} to {\ttfamily 63}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The value of the specified general-\/purpose fuse bit.
+\end{DoxyReturn}
+\begin{DoxyNote}{\-Note}
+\-The actual number of general-\/purpose fuse bits implemented by hardware is given by {\ttfamily \-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-G\-P\-F\-\_\-\-N\-U\-M}. \-The other bits among the 64 are fixed at 1 by hardware. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a48db4e70ec0449ea94c9c92643c26d8e}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-read\-\_\-gp\-\_\-fuse\-\_\-bitfield@{flashc\-\_\-read\-\_\-gp\-\_\-fuse\-\_\-bitfield}}
+\index{flashc\-\_\-read\-\_\-gp\-\_\-fuse\-\_\-bitfield@{flashc\-\_\-read\-\_\-gp\-\_\-fuse\-\_\-bitfield}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-read\-\_\-gp\-\_\-fuse\-\_\-bitfield}]{\setlength{\rightskip}{0pt plus 5cm}uint64\-\_\-t flashc\-\_\-read\-\_\-gp\-\_\-fuse\-\_\-bitfield (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{pos, }
+\item[{unsigned int}]{width}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a48db4e70ec0449ea94c9c92643c26d8e}
+
+
+\-Reads a general-\/purpose fuse bit-\/field. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pos} & \-The bit-\/position of the general-\/purpose fuse bit-\/field\-: {\ttfamily 0} to {\ttfamily 63}. \\
+\hline
+{\em width} & \-The bit-\/width of the general-\/purpose fuse bit-\/field\-: {\ttfamily 0} to {\ttfamily 64}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The value of the specified general-\/purpose fuse bit-\/field.
+\end{DoxyReturn}
+\begin{DoxyNote}{\-Note}
+\-The actual number of general-\/purpose fuse bits implemented by hardware is given by {\ttfamily \-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-G\-P\-F\-\_\-\-N\-U\-M}. \-The other bits among the 64 are fixed at 1 by hardware. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a86b9023e1160178df2f46aff4dfddda3}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-read\-\_\-gp\-\_\-fuse\-\_\-byte@{flashc\-\_\-read\-\_\-gp\-\_\-fuse\-\_\-byte}}
+\index{flashc\-\_\-read\-\_\-gp\-\_\-fuse\-\_\-byte@{flashc\-\_\-read\-\_\-gp\-\_\-fuse\-\_\-byte}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-read\-\_\-gp\-\_\-fuse\-\_\-byte}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t flashc\-\_\-read\-\_\-gp\-\_\-fuse\-\_\-byte (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{gp\-\_\-fuse\-\_\-byte}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a86b9023e1160178df2f46aff4dfddda3}
+
+
+\-Reads a general-\/purpose fuse byte. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em gp\-\_\-fuse\-\_\-byte} & \-The general-\/purpose fuse byte\-: {\ttfamily 0} to {\ttfamily 7}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The value of the specified general-\/purpose fuse byte.
+\end{DoxyReturn}
+\begin{DoxyNote}{\-Note}
+\-The actual number of general-\/purpose fuse bits implemented by hardware is given by {\ttfamily \-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-G\-P\-F\-\_\-\-N\-U\-M}. \-The other bits among the 64 are fixed at 1 by hardware. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a65d5726797f7216ce80969b7349c7902}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-set\-\_\-all\-\_\-gp\-\_\-fuses@{flashc\-\_\-set\-\_\-all\-\_\-gp\-\_\-fuses}}
+\index{flashc\-\_\-set\-\_\-all\-\_\-gp\-\_\-fuses@{flashc\-\_\-set\-\_\-all\-\_\-gp\-\_\-fuses}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-set\-\_\-all\-\_\-gp\-\_\-fuses}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-set\-\_\-all\-\_\-gp\-\_\-fuses (
+\begin{DoxyParamCaption}
+\item[{uint64\-\_\-t}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a65d5726797f7216ce80969b7349c7902}
+
+
+\-Sets all general-\/purpose fuses with the appropriate erase and write operations. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em value} & \-The value of all general-\/purpose fuses as a word.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{\-Warning}
+\-A \-Lock \-Error is issued if the \-Security bit is active.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated.
+
+\-The actual number of general-\/purpose fuse bits implemented by hardware is given by {\ttfamily \-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-G\-P\-F\-\_\-\-N\-U\-M}. \-The other bits among the 64 are fixed at 1 by hardware. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a076a1b22c9f3e6dad1739f0398f89b37}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-set\-\_\-bootloader\-\_\-protected\-\_\-size@{flashc\-\_\-set\-\_\-bootloader\-\_\-protected\-\_\-size}}
+\index{flashc\-\_\-set\-\_\-bootloader\-\_\-protected\-\_\-size@{flashc\-\_\-set\-\_\-bootloader\-\_\-protected\-\_\-size}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-set\-\_\-bootloader\-\_\-protected\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int flashc\-\_\-set\-\_\-bootloader\-\_\-protected\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{bootprot\-\_\-size}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a076a1b22c9f3e6dad1739f0398f89b37}
+
+
+\-Sets the bootloader protected size. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em bootprot\-\_\-size} & \-The wanted bootloader protected size in bytes. \-If this size is not supported, the actual size will be the nearest greater available size or the maximal possible size if the requested size is too large.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The actual bootloader protected size in bytes.
+\end{DoxyReturn}
+\begin{DoxyWarning}{\-Warning}
+\-A \-Lock \-Error is issued if the \-Security bit is active.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a5dda977da7d7381b125b2fa25ef9ae90}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-set\-\_\-bus\-\_\-freq@{flashc\-\_\-set\-\_\-bus\-\_\-freq}}
+\index{flashc\-\_\-set\-\_\-bus\-\_\-freq@{flashc\-\_\-set\-\_\-bus\-\_\-freq}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-set\-\_\-bus\-\_\-freq}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-set\-\_\-bus\-\_\-freq (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{cpu\-\_\-f\-\_\-hz}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a5dda977da7d7381b125b2fa25ef9ae90}
+
+
+\-Depending on the \-C\-P\-U frequency, set the wait states of flash read accesses. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em cpu\-\_\-f\-\_\-hz} & \-The \-C\-P\-U frequency \\
+\hline
+\end{DoxyParams}
+\hypertarget{flashc_8c_a63c172f89cfe0f3e3cf1c6eadc62f5f5}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-set\-\_\-gp\-\_\-fuse\-\_\-bit@{flashc\-\_\-set\-\_\-gp\-\_\-fuse\-\_\-bit}}
+\index{flashc\-\_\-set\-\_\-gp\-\_\-fuse\-\_\-bit@{flashc\-\_\-set\-\_\-gp\-\_\-fuse\-\_\-bit}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-set\-\_\-gp\-\_\-fuse\-\_\-bit}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-set\-\_\-gp\-\_\-fuse\-\_\-bit (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{gp\-\_\-fuse\-\_\-bit, }
+\item[{bool}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a63c172f89cfe0f3e3cf1c6eadc62f5f5}
+
+
+\-Sets a general-\/purpose fuse bit with the appropriate erase and write operations. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em gp\-\_\-fuse\-\_\-bit} & \-The general-\/purpose fuse bit\-: {\ttfamily 0} to {\ttfamily 63}. \\
+\hline
+{\em value} & \-The value of the specified general-\/purpose fuse bit.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{\-Warning}
+\-A \-Lock \-Error is issued if the \-Security bit is active and the command is applied to \-B\-O\-O\-T\-P\-R\-O\-T or \-E\-P\-F\-L fuses.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated.
+
+\-The actual number of general-\/purpose fuse bits implemented by hardware is given by {\ttfamily \-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-G\-P\-F\-\_\-\-N\-U\-M}. \-The other bits among the 64 are fixed at 1 by hardware. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_aeef87beafc415e3a116072f74845d7ab}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-set\-\_\-gp\-\_\-fuse\-\_\-bitfield@{flashc\-\_\-set\-\_\-gp\-\_\-fuse\-\_\-bitfield}}
+\index{flashc\-\_\-set\-\_\-gp\-\_\-fuse\-\_\-bitfield@{flashc\-\_\-set\-\_\-gp\-\_\-fuse\-\_\-bitfield}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-set\-\_\-gp\-\_\-fuse\-\_\-bitfield}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-set\-\_\-gp\-\_\-fuse\-\_\-bitfield (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{pos, }
+\item[{unsigned int}]{width, }
+\item[{uint64\-\_\-t}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_aeef87beafc415e3a116072f74845d7ab}
+
+
+\-Sets a general-\/purpose fuse bit-\/field with the appropriate erase and write operations. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pos} & \-The bit-\/position of the general-\/purpose fuse bit-\/field\-: {\ttfamily 0} to {\ttfamily 63}. \\
+\hline
+{\em width} & \-The bit-\/width of the general-\/purpose fuse bit-\/field\-: {\ttfamily 0} to {\ttfamily 64}. \\
+\hline
+{\em value} & \-The value of the specified general-\/purpose fuse bit-\/field.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{\-Warning}
+\-A \-Lock \-Error is issued if the \-Security bit is active and the command is applied to \-B\-O\-O\-T\-P\-R\-O\-T or \-E\-P\-F\-L fuses.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated.
+
+\-The actual number of general-\/purpose fuse bits implemented by hardware is given by {\ttfamily \-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-G\-P\-F\-\_\-\-N\-U\-M}. \-The other bits among the 64 are fixed at 1 by hardware. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_afb6970fabde5991a634954229fb4e5ca}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-set\-\_\-gp\-\_\-fuse\-\_\-byte@{flashc\-\_\-set\-\_\-gp\-\_\-fuse\-\_\-byte}}
+\index{flashc\-\_\-set\-\_\-gp\-\_\-fuse\-\_\-byte@{flashc\-\_\-set\-\_\-gp\-\_\-fuse\-\_\-byte}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-set\-\_\-gp\-\_\-fuse\-\_\-byte}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-set\-\_\-gp\-\_\-fuse\-\_\-byte (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{gp\-\_\-fuse\-\_\-byte, }
+\item[{uint8\-\_\-t}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_afb6970fabde5991a634954229fb4e5ca}
+
+
+\-Sets a general-\/purpose fuse byte with the appropriate erase and write operations. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em gp\-\_\-fuse\-\_\-byte} & \-The general-\/purpose fuse byte\-: {\ttfamily 0} to {\ttfamily 7}. \\
+\hline
+{\em value} & \-The value of the specified general-\/purpose fuse byte.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{\-Warning}
+\-A \-Lock \-Error is issued if the \-Security bit is active.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated.
+
+\-The actual number of general-\/purpose fuse bits implemented by hardware is given by {\ttfamily \-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-G\-P\-F\-\_\-\-N\-U\-M}. \-The other bits among the 64 are fixed at 1 by hardware. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a2835c7ef58f410290ad530d34d7e8133}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-set\-\_\-wait\-\_\-state@{flashc\-\_\-set\-\_\-wait\-\_\-state}}
+\index{flashc\-\_\-set\-\_\-wait\-\_\-state@{flashc\-\_\-set\-\_\-wait\-\_\-state}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-set\-\_\-wait\-\_\-state}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-set\-\_\-wait\-\_\-state (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{wait\-\_\-state}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a2835c7ef58f410290ad530d34d7e8133}
+
+
+\-Sets the number of wait states of flash read accesses. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em wait\-\_\-state} & \-The number of wait states of flash read accesses\-: {\ttfamily 0} to {\ttfamily 1}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{flashc_8c_a39415e6bf815ab6bc734bf1e1cfe3bed}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-write\-\_\-all\-\_\-gp\-\_\-fuses@{flashc\-\_\-write\-\_\-all\-\_\-gp\-\_\-fuses}}
+\index{flashc\-\_\-write\-\_\-all\-\_\-gp\-\_\-fuses@{flashc\-\_\-write\-\_\-all\-\_\-gp\-\_\-fuses}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-write\-\_\-all\-\_\-gp\-\_\-fuses}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-write\-\_\-all\-\_\-gp\-\_\-fuses (
+\begin{DoxyParamCaption}
+\item[{uint64\-\_\-t}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a39415e6bf815ab6bc734bf1e1cfe3bed}
+
+
+\-Writes all general-\/purpose fuses. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em value} & \-The value of all general-\/purpose fuses as a word.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{\-Warning}
+\-A \-Lock \-Error is issued if the \-Security bit is active.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated.
+
+\-A write operation can only clear bits; in other words, an erase operation must first be done if some bits need to be set to 1.
+
+\-The actual number of general-\/purpose fuse bits implemented by hardware is given by {\ttfamily \-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-G\-P\-F\-\_\-\-N\-U\-M}. \-The other bits among the 64 are fixed at 1 by hardware. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a70af318e71334255931a6638d2fa693c}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-write\-\_\-gp\-\_\-fuse\-\_\-bit@{flashc\-\_\-write\-\_\-gp\-\_\-fuse\-\_\-bit}}
+\index{flashc\-\_\-write\-\_\-gp\-\_\-fuse\-\_\-bit@{flashc\-\_\-write\-\_\-gp\-\_\-fuse\-\_\-bit}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-write\-\_\-gp\-\_\-fuse\-\_\-bit}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-write\-\_\-gp\-\_\-fuse\-\_\-bit (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{gp\-\_\-fuse\-\_\-bit, }
+\item[{bool}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a70af318e71334255931a6638d2fa693c}
+
+
+\-Writes a general-\/purpose fuse bit. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em gp\-\_\-fuse\-\_\-bit} & \-The general-\/purpose fuse bit\-: {\ttfamily 0} to {\ttfamily 63}. \\
+\hline
+{\em value} & \-The value of the specified general-\/purpose fuse bit.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{\-Warning}
+\-A \-Lock \-Error is issued if the \-Security bit is active and the command is applied to \-B\-O\-O\-T\-P\-R\-O\-T or \-E\-P\-F\-L fuses.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated.
+
+\-A write operation can only clear bits; in other words, an erase operation must first be done if some bits need to be set to 1.
+
+\-The actual number of general-\/purpose fuse bits implemented by hardware is given by {\ttfamily \-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-G\-P\-F\-\_\-\-N\-U\-M}. \-The other bits among the 64 are fixed at 1 by hardware. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_a7bc0b63b79ad5809f7d68b2da7e5e866}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-write\-\_\-gp\-\_\-fuse\-\_\-bitfield@{flashc\-\_\-write\-\_\-gp\-\_\-fuse\-\_\-bitfield}}
+\index{flashc\-\_\-write\-\_\-gp\-\_\-fuse\-\_\-bitfield@{flashc\-\_\-write\-\_\-gp\-\_\-fuse\-\_\-bitfield}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-write\-\_\-gp\-\_\-fuse\-\_\-bitfield}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-write\-\_\-gp\-\_\-fuse\-\_\-bitfield (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{pos, }
+\item[{unsigned int}]{width, }
+\item[{uint64\-\_\-t}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_a7bc0b63b79ad5809f7d68b2da7e5e866}
+
+
+\-Writes a general-\/purpose fuse bit-\/field. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pos} & \-The bit-\/position of the general-\/purpose fuse bit-\/field\-: {\ttfamily 0} to {\ttfamily 63}. \\
+\hline
+{\em width} & \-The bit-\/width of the general-\/purpose fuse bit-\/field\-: {\ttfamily 0} to {\ttfamily 64}. \\
+\hline
+{\em value} & \-The value of the specified general-\/purpose fuse bit-\/field.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{\-Warning}
+\-A \-Lock \-Error is issued if the \-Security bit is active and the command is applied to \-B\-O\-O\-T\-P\-R\-O\-T or \-E\-P\-F\-L fuses.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated.
+
+\-A write operation can only clear bits; in other words, an erase operation must first be done if some bits need to be set to 1.
+
+\-The actual number of general-\/purpose fuse bits implemented by hardware is given by {\ttfamily \-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-G\-P\-F\-\_\-\-N\-U\-M}. \-The other bits among the 64 are fixed at 1 by hardware. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_acd1a7d62446687fe6db36f4ff35e7cbc}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-write\-\_\-gp\-\_\-fuse\-\_\-byte@{flashc\-\_\-write\-\_\-gp\-\_\-fuse\-\_\-byte}}
+\index{flashc\-\_\-write\-\_\-gp\-\_\-fuse\-\_\-byte@{flashc\-\_\-write\-\_\-gp\-\_\-fuse\-\_\-byte}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-write\-\_\-gp\-\_\-fuse\-\_\-byte}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-write\-\_\-gp\-\_\-fuse\-\_\-byte (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{gp\-\_\-fuse\-\_\-byte, }
+\item[{uint8\-\_\-t}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_acd1a7d62446687fe6db36f4ff35e7cbc}
+
+
+\-Writes a general-\/purpose fuse byte. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em gp\-\_\-fuse\-\_\-byte} & \-The general-\/purpose fuse byte\-: {\ttfamily 0} to {\ttfamily 7}. \\
+\hline
+{\em value} & \-The value of the specified general-\/purpose fuse byte.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{\-Warning}
+\-A \-Lock \-Error is issued if the \-Security bit is active.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated.
+
+\-A write operation can only clear bits; in other words, an erase operation must first be done if some bits need to be set to 1.
+
+\-The actual number of general-\/purpose fuse bits implemented by hardware is given by {\ttfamily \-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-G\-P\-F\-\_\-\-N\-U\-M}. \-The other bits among the 64 are fixed at 1 by hardware. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_aa10438433246139bee71da6db2bb5bd5}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-write\-\_\-page@{flashc\-\_\-write\-\_\-page}}
+\index{flashc\-\_\-write\-\_\-page@{flashc\-\_\-write\-\_\-page}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-write\-\_\-page}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-write\-\_\-page (
+\begin{DoxyParamCaption}
+\item[{int}]{page\-\_\-number}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_aa10438433246139bee71da6db2bb5bd5}
+
+
+\-Writes a page from the page buffer. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em page\-\_\-number} & \-The page number\-: \begin{DoxyItemize}
+\item {\ttfamily 0} to {\ttfamily (\hyperlink{flashc_8c_aafad0dcf645cc65acb5bc879558dac23}{flashc\-\_\-get\-\_\-page\-\_\-count()} -\/ 1)}\-: a page number within the flash array; \item {\ttfamily $<$ 0}\-: the current page number.\end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{\-Warning}
+\-A \-Lock \-Error is issued if the command is applied to a page belonging to a locked region or to the bootloader protected area.
+
+\-The page buffer is not automatically reset after a page write.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated.
+
+\-A write operation can only clear bits; in other words, an erase operation must first be done if some bits need to be set to 1. 
+\end{DoxyNote}
+\hypertarget{flashc_8c_ad04374b721dca9c534d7cd041ae24712}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-write\-\_\-user\-\_\-page@{flashc\-\_\-write\-\_\-user\-\_\-page}}
+\index{flashc\-\_\-write\-\_\-user\-\_\-page@{flashc\-\_\-write\-\_\-user\-\_\-page}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-write\-\_\-user\-\_\-page}]{\setlength{\rightskip}{0pt plus 5cm}void flashc\-\_\-write\-\_\-user\-\_\-page (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{flashc_8c_ad04374b721dca9c534d7cd041ae24712}
+
+
+\-Writes the \-User page from the page buffer. 
+
+\begin{DoxyWarning}{\-Warning}
+\-The page buffer is not automatically reset after a page write.
+\end{DoxyWarning}
+\begin{DoxyNote}{\-Note}
+\-The \-F\-L\-A\-S\-H\-C error status returned by \hyperlink{flashc_8h_abc9239c2bde687eb3324d2d839493b4e}{flashc\-\_\-is\-\_\-lock\-\_\-error} and \hyperlink{flashc_8h_a96f2a8ec38721359b09bb9214c025b7f}{flashc\-\_\-is\-\_\-programming\-\_\-error} is updated.
+
+\-A write operation can only clear bits; in other words, an erase operation must first be done if some bits need to be set to 1. 
+\end{DoxyNote}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{flashc_8c_a180c9966f5242650e00e4a231956acec}{
+\index{flashc.\-c@{flashc.\-c}!flashc\-\_\-wait\-\_\-until\-\_\-ready@{flashc\-\_\-wait\-\_\-until\-\_\-ready}}
+\index{flashc\-\_\-wait\-\_\-until\-\_\-ready@{flashc\-\_\-wait\-\_\-until\-\_\-ready}!flashc.c@{flashc.\-c}}
+\subsubsection[{flashc\-\_\-wait\-\_\-until\-\_\-ready}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$volatile {\bf flashc\-\_\-wait\-\_\-until\-\_\-ready})(void) = flashc\-\_\-default\-\_\-wait\-\_\-until\-\_\-ready}}
+\label{flashc_8c_a180c9966f5242650e00e4a231956acec}
+\-Pointer to the function used by the driver when it needs to wait until the \-F\-L\-A\-S\-H\-C is ready to run a new command. \-The default function is \hyperlink{flashc_8h_aca88002d64a494ca5b796b592834369d}{flashc\-\_\-default\-\_\-wait\-\_\-until\-\_\-ready}. \-The user may change this pointer to use another implementation. 

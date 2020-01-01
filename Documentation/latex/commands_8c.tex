@@ -1,0 +1,75 @@
+\hypertarget{commands_8c}{
+\section{commands.c \-File \-Reference}
+\label{commands_8c}\index{commands.\-c@{commands.\-c}}
+}
+
+
+\-Definition of user commands and command response functions.  
+
+
+{\ttfamily \#include \char`\"{}control\-\_\-tables.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}external\-\_\-interface.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}process\-\_\-sequence.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}imu\-\_\-interface.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}udi\-\_\-cdc.\-h\char`\"{}}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__control__tables_ga3e9ed14716fd984977306110fbf28de0}{commands\-\_\-init} (void)
+\item 
+void \hyperlink{group__control__tables_ga8c4a627db87a50d5f3de3755eef48222}{stop\-\_\-initial\-\_\-alignement} (void)
+\item 
+void \hyperlink{group__control__tables_gad49f6a65369961b5d34c5353f3afdf4d}{new\-\_\-calibration\-\_\-orientation} (void)
+\end{DoxyCompactItemize}
+\begin{Indent}\paragraph*{\-Command response functions}
+{\em \-Functions which are executed in response to commands. }\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__control__tables_ga154e99940eadddeab0a978ebaaf4af29}{output\-\_\-state} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_gaf49fcc59b85d00300cceac3381af50ac}{turn\-\_\-off\-\_\-output} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_ga144f167d203bfaa934388244862c2e66}{get\-\_\-mcu\-\_\-serial} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_ga18b9c076238f0421e0c613aba24c1e96}{toggle\-\_\-inertial\-\_\-output} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_gade63f6b7485456459a562107079a76a8}{position\-\_\-plus\-\_\-zupt} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_ga73d5a4fdd7dbdf0707007e03b69dd7aa}{output\-\_\-navigational\-\_\-states} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_ga2f8eeda3ee360ccf29e05fbfda016f47}{processing\-\_\-onoff} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_gae59981ff1a5486c063329824f812d6ef}{reset\-\_\-zupt\-\_\-aided\-\_\-ins} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_ga208e711393802848a2f84f913ef3cb84}{gyro\-\_\-self\-\_\-calibration} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_ga29fdeaec38ab911e7c4a5ffd19dc178d}{acc\-\_\-calibration} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_ga84aa612912a72fcafffbcccebb850768}{set\-\_\-low\-\_\-pass\-\_\-imu} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_ga346604881a8eab56c9d83fbc21479aff}{add\-\_\-sync\-\_\-output} (uint8\-\_\-t $\ast$$\ast$)
+\item 
+void \hyperlink{group__control__tables_gad63b1df6af95332351b359c4765e67fa}{sync\-\_\-output} (uint8\-\_\-t $\ast$$\ast$)
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t \hyperlink{group__control__tables_gad95e17426b114a04135420ae71fad638}{command\-\_\-header\-\_\-table} \mbox{[}32\mbox{]} = \{0\}
+\item 
+\hyperlink{structcommand__structure}{command\-\_\-structure} $\ast$ \hyperlink{group__control__tables_ga787ed232eeca1469a58bea3d268f1ba4}{command\-\_\-info\-\_\-array} \mbox{[}256\mbox{]} = \{\-N\-U\-L\-L\}
+\end{DoxyCompactItemize}
+\begin{Indent}\paragraph*{\-Command definitions}
+{\em \-Structs containing the information/definitions of the commands. }\end{Indent}
+
+
+\subsection{\-Detailed \-Description}
+\-Definition of user commands and command response functions. \-This file contains definition of user commands used to control the \-Open\-Shoe system. \-Each command is defined in a command info struct containing an \-I\-D, a pointer to a response function, and information about the arguemetns of the command.
+
+\-The command response functions are the functions which will be exectued as a response to the command being called. \-These functions are also declared and defined in this file.
+
+\begin{DoxyAuthor}{\-Authors}
+\-John-\/\-Olof \-Nilsson, \-Isaac \-Skog 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{\-Copyright}
+\-Copyright (c) 2011 \-Open\-Shoe, \-I\-S\-C \-License (open source) 
+\end{DoxyCopyright}

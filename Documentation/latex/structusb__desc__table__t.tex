@@ -1,0 +1,91 @@
+\hypertarget{structusb__desc__table__t}{
+\section{usb\-\_\-desc\-\_\-table\-\_\-t \-Struct \-Reference}
+\label{structusb__desc__table__t}\index{usb\-\_\-desc\-\_\-table\-\_\-t@{usb\-\_\-desc\-\_\-table\-\_\-t}}
+}
+
+
+{\ttfamily \#include $<$usbc\-\_\-device.\-h$>$}
+
+\subsection*{\-Data \-Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t $\ast$ \hyperlink{structusb__desc__table__t_adf984d475f5ef6e64d92d73e06dd0505}{endpoint\-\_\-pipe\-\_\-address}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>unsigned long \hyperlink{structusb__desc__table__t_ab8b9283572e5ec57f77e303040f50a5b}{sizes}\\
+\>struct \hyperlink{structavr32__usbc__udesc__sizes__t}{avr32\_usbc\_udesc\_sizes\_t} \hyperlink{structusb__desc__table__t_a398c066ef26d68b2e4e7c699713d3aa3}{SIZES}\\
+\}; \\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>unsigned long \hyperlink{structusb__desc__table__t_a923739f1e7b42d66f71ac7a45e082245}{bk\_ctrl\_stat}\\
+\>struct \\
+\hyperlink{structavr32__usbc__udesc__bk__ctrl__stat__t}{avr32\_usbc\_udesc\_bk\_ctrl\_stat\_t} \hyperlink{structusb__desc__table__t_a6dad4df05ca7e1703d69b9a47a77122d}{BK\_CTRL\_STAT}\\
+\}; \\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>unsigned long \hyperlink{structusb__desc__table__t_a268ebfaba41abcb12540d375f78931c4}{ep\_ctrl\_stat}\\
+\>struct \\
+\hyperlink{structavr32__usbc__udesc__ep__ctrl__stat__t}{avr32\_usbc\_udesc\_ep\_ctrl\_stat\_t} \hyperlink{structusb__desc__table__t_a7d436bbfb39d6031f2a8a10030b81529}{EP\_CTRL\_STAT}\\
+\}; \\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{\-Field \-Documentation}
+\hypertarget{structusb__desc__table__t_ad29dd31a1ca6a0f04890f85c4156a603}{
+\subsubsection[{"@2}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \} }}
+\label{structusb__desc__table__t_ad29dd31a1ca6a0f04890f85c4156a603}
+\hypertarget{structusb__desc__table__t_aaab77e01c3cf927e81fca8744444d5ea}{
+\subsubsection[{"@4}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \} }}
+\label{structusb__desc__table__t_aaab77e01c3cf927e81fca8744444d5ea}
+\hypertarget{structusb__desc__table__t_ae9b4e5343629ce78a9d25fdc2d2d9853}{
+\subsubsection[{"@6}]{\setlength{\rightskip}{0pt plus 5cm}union \{ ... \} }}
+\label{structusb__desc__table__t_ae9b4e5343629ce78a9d25fdc2d2d9853}
+\hypertarget{structusb__desc__table__t_a923739f1e7b42d66f71ac7a45e082245}{
+\index{usb\-\_\-desc\-\_\-table\-\_\-t@{usb\-\_\-desc\-\_\-table\-\_\-t}!bk\-\_\-ctrl\-\_\-stat@{bk\-\_\-ctrl\-\_\-stat}}
+\index{bk\-\_\-ctrl\-\_\-stat@{bk\-\_\-ctrl\-\_\-stat}!usb_desc_table_t@{usb\-\_\-desc\-\_\-table\-\_\-t}}
+\subsubsection[{bk\-\_\-ctrl\-\_\-stat}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long {\bf usb\-\_\-desc\-\_\-table\-\_\-t\-::bk\-\_\-ctrl\-\_\-stat}}}
+\label{structusb__desc__table__t_a923739f1e7b42d66f71ac7a45e082245}
+\hypertarget{structusb__desc__table__t_a6dad4df05ca7e1703d69b9a47a77122d}{
+\index{usb\-\_\-desc\-\_\-table\-\_\-t@{usb\-\_\-desc\-\_\-table\-\_\-t}!\-B\-K\-\_\-\-C\-T\-R\-L\-\_\-\-S\-T\-A\-T@{\-B\-K\-\_\-\-C\-T\-R\-L\-\_\-\-S\-T\-A\-T}}
+\index{\-B\-K\-\_\-\-C\-T\-R\-L\-\_\-\-S\-T\-A\-T@{\-B\-K\-\_\-\-C\-T\-R\-L\-\_\-\-S\-T\-A\-T}!usb_desc_table_t@{usb\-\_\-desc\-\_\-table\-\_\-t}}
+\subsubsection[{\-B\-K\-\_\-\-C\-T\-R\-L\-\_\-\-S\-T\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf avr32\-\_\-usbc\-\_\-udesc\-\_\-bk\-\_\-ctrl\-\_\-stat\-\_\-t} {\bf usb\-\_\-desc\-\_\-table\-\_\-t\-::\-B\-K\-\_\-\-C\-T\-R\-L\-\_\-\-S\-T\-A\-T}}}
+\label{structusb__desc__table__t_a6dad4df05ca7e1703d69b9a47a77122d}
+\hypertarget{structusb__desc__table__t_adf984d475f5ef6e64d92d73e06dd0505}{
+\index{usb\-\_\-desc\-\_\-table\-\_\-t@{usb\-\_\-desc\-\_\-table\-\_\-t}!endpoint\-\_\-pipe\-\_\-address@{endpoint\-\_\-pipe\-\_\-address}}
+\index{endpoint\-\_\-pipe\-\_\-address@{endpoint\-\_\-pipe\-\_\-address}!usb_desc_table_t@{usb\-\_\-desc\-\_\-table\-\_\-t}}
+\subsubsection[{endpoint\-\_\-pipe\-\_\-address}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t$\ast$ {\bf usb\-\_\-desc\-\_\-table\-\_\-t\-::endpoint\-\_\-pipe\-\_\-address}}}
+\label{structusb__desc__table__t_adf984d475f5ef6e64d92d73e06dd0505}
+\hypertarget{structusb__desc__table__t_a268ebfaba41abcb12540d375f78931c4}{
+\index{usb\-\_\-desc\-\_\-table\-\_\-t@{usb\-\_\-desc\-\_\-table\-\_\-t}!ep\-\_\-ctrl\-\_\-stat@{ep\-\_\-ctrl\-\_\-stat}}
+\index{ep\-\_\-ctrl\-\_\-stat@{ep\-\_\-ctrl\-\_\-stat}!usb_desc_table_t@{usb\-\_\-desc\-\_\-table\-\_\-t}}
+\subsubsection[{ep\-\_\-ctrl\-\_\-stat}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long {\bf usb\-\_\-desc\-\_\-table\-\_\-t\-::ep\-\_\-ctrl\-\_\-stat}}}
+\label{structusb__desc__table__t_a268ebfaba41abcb12540d375f78931c4}
+\hypertarget{structusb__desc__table__t_a7d436bbfb39d6031f2a8a10030b81529}{
+\index{usb\-\_\-desc\-\_\-table\-\_\-t@{usb\-\_\-desc\-\_\-table\-\_\-t}!\-E\-P\-\_\-\-C\-T\-R\-L\-\_\-\-S\-T\-A\-T@{\-E\-P\-\_\-\-C\-T\-R\-L\-\_\-\-S\-T\-A\-T}}
+\index{\-E\-P\-\_\-\-C\-T\-R\-L\-\_\-\-S\-T\-A\-T@{\-E\-P\-\_\-\-C\-T\-R\-L\-\_\-\-S\-T\-A\-T}!usb_desc_table_t@{usb\-\_\-desc\-\_\-table\-\_\-t}}
+\subsubsection[{\-E\-P\-\_\-\-C\-T\-R\-L\-\_\-\-S\-T\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf avr32\-\_\-usbc\-\_\-udesc\-\_\-ep\-\_\-ctrl\-\_\-stat\-\_\-t} {\bf usb\-\_\-desc\-\_\-table\-\_\-t\-::\-E\-P\-\_\-\-C\-T\-R\-L\-\_\-\-S\-T\-A\-T}}}
+\label{structusb__desc__table__t_a7d436bbfb39d6031f2a8a10030b81529}
+\hypertarget{structusb__desc__table__t_ab8b9283572e5ec57f77e303040f50a5b}{
+\index{usb\-\_\-desc\-\_\-table\-\_\-t@{usb\-\_\-desc\-\_\-table\-\_\-t}!sizes@{sizes}}
+\index{sizes@{sizes}!usb_desc_table_t@{usb\-\_\-desc\-\_\-table\-\_\-t}}
+\subsubsection[{sizes}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long {\bf usb\-\_\-desc\-\_\-table\-\_\-t\-::sizes}}}
+\label{structusb__desc__table__t_ab8b9283572e5ec57f77e303040f50a5b}
+\hypertarget{structusb__desc__table__t_a398c066ef26d68b2e4e7c699713d3aa3}{
+\index{usb\-\_\-desc\-\_\-table\-\_\-t@{usb\-\_\-desc\-\_\-table\-\_\-t}!\-S\-I\-Z\-E\-S@{\-S\-I\-Z\-E\-S}}
+\index{\-S\-I\-Z\-E\-S@{\-S\-I\-Z\-E\-S}!usb_desc_table_t@{usb\-\_\-desc\-\_\-table\-\_\-t}}
+\subsubsection[{\-S\-I\-Z\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf avr32\-\_\-usbc\-\_\-udesc\-\_\-sizes\-\_\-t} {\bf usb\-\_\-desc\-\_\-table\-\_\-t\-::\-S\-I\-Z\-E\-S}}}
+\label{structusb__desc__table__t_a398c066ef26d68b2e4e7c699713d3aa3}
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{usbc__device_8h}{usbc\-\_\-device.\-h}\end{DoxyCompactItemize}

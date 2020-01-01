@@ -1,0 +1,97 @@
+\hypertarget{group__sleepmgr__group}{
+\section{\-Sleep manager}
+\label{group__sleepmgr__group}\index{\-Sleep manager@{\-Sleep manager}}
+}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__sleepmgr__group_gad8e649a9d53092c580960f2f9886ee98}{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-E\-N\-A\-B\-L\-E}
+\begin{DoxyCompactList}\small\item\em \-Configuration symbol for enabling the sleep manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group__sleepmgr__group_gaa990bc3ea16fcad09009cdc70dbc38c6}{sleepmgr\-\_\-mode} \{ \*
+\hyperlink{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6a04a2ceb6fc138cae84e9334cfa90d89f}{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-A\-C\-T\-I\-V\-E}, 
+\hyperlink{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6ae4f3742b3532d5ebabef6f26fabf4487}{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-I\-D\-L\-E}, 
+\hyperlink{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6a07fe232646cccb4c2b9e0ba301866cb9}{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-F\-R\-O\-Z\-E\-N}, 
+\hyperlink{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6affb1e224bd127ccf5c7b54a54c3ba665}{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-D\-B\-Y}, 
+\*
+\hyperlink{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6a84505afbeafb45b0c9e9b5fc1a1e3e5e}{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-O\-P}, 
+\hyperlink{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6a6ee894e3a9dc55e678d10a9cebff5dd1}{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-D\-E\-E\-P\-S\-T\-O\-P}, 
+\hyperlink{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6adbc00d523bb40feb59822bfbec8106c4}{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-A\-T\-I\-C}, 
+\hyperlink{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6a02fd0aaf6162fa103be2aa0b2593a984}{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-N\-R\-\_\-\-O\-F\-\_\-\-M\-O\-D\-E\-S}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Sleep mode locks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-The sleep manager is a service for ensuring that the device is not put to sleep in deeper sleep modes than the system (e.\-g., peripheral drivers, services or the application) allows at any given time.
+
+\-It is based on the use of lock counting for the individual sleep modes, and will put the device to sleep in the shallowest sleep mode that has a non-\/zero lock count. \-The drivers/services/application can change these counts by use of sleepmgr\-\_\-lock\-\_\-mode and sleepmgr\-\_\-unlock\-\_\-mode. \-Refer to \hyperlink{group__sleepmgr__group_gaa990bc3ea16fcad09009cdc70dbc38c6}{sleepmgr\-\_\-mode} for a list of the sleep modes available for locking, and the device datasheet for information on their effect.
+
+\-The application must supply the file \hyperlink{conf__sleepmgr_8h}{conf\-\_\-sleepmgr.\-h}.
+
+\-For the sleep manager to be enabled, the symbol \hyperlink{group__sleepmgr__group_gad8e649a9d53092c580960f2f9886ee98}{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-E\-N\-A\-B\-L\-E} must be defined, e.\-g., in \hyperlink{conf__sleepmgr_8h}{conf\-\_\-sleepmgr.\-h}. \-If this symbol is not defined, the functions are replaced with dummy functions and no \-R\-A\-M is used. 
+
+\subsection{\-Define \-Documentation}
+\hypertarget{group__sleepmgr__group_gad8e649a9d53092c580960f2f9886ee98}{
+\index{\-Sleep manager@{\-Sleep manager}!\-C\-O\-N\-F\-I\-G\-\_\-\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-E\-N\-A\-B\-L\-E@{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-E\-N\-A\-B\-L\-E}}
+\index{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-E\-N\-A\-B\-L\-E@{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-E\-N\-A\-B\-L\-E}!Sleep manager@{\-Sleep manager}}
+\subsubsection[{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-E\-N\-A\-B\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-O\-N\-F\-I\-G\-\_\-\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-E\-N\-A\-B\-L\-E}}
+\label{group__sleepmgr__group_gad8e649a9d53092c580960f2f9886ee98}
+
+
+\-Configuration symbol for enabling the sleep manager. 
+
+\-If this symbol is not defined, the functions of this service are replaced with dummy functions. \-This is useful for reducing code size and execution time if the sleep manager is not needed in the application.
+
+\-This symbol may be defined in \hyperlink{conf__sleepmgr_8h}{conf\-\_\-sleepmgr.\-h}. 
+
+\subsection{\-Enumeration \-Type \-Documentation}
+\hypertarget{group__sleepmgr__group_gaa990bc3ea16fcad09009cdc70dbc38c6}{
+\index{\-Sleep manager@{\-Sleep manager}!sleepmgr\-\_\-mode@{sleepmgr\-\_\-mode}}
+\index{sleepmgr\-\_\-mode@{sleepmgr\-\_\-mode}!Sleep manager@{\-Sleep manager}}
+\subsubsection[{sleepmgr\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf sleepmgr\-\_\-mode}}}
+\label{group__sleepmgr__group_gaa990bc3ea16fcad09009cdc70dbc38c6}
+
+
+\-Sleep mode locks. 
+
+\-Identifiers for the different sleep mode locks. \begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-A\-C\-T\-I\-V\-E@{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-A\-C\-T\-I\-V\-E}!\-Sleep manager@{\-Sleep manager}}\index{\-Sleep manager@{\-Sleep manager}!\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-A\-C\-T\-I\-V\-E@{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-A\-C\-T\-I\-V\-E}}\item[{\em 
+\hypertarget{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6a04a2ceb6fc138cae84e9334cfa90d89f}{
+\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-A\-C\-T\-I\-V\-E}
+\label{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6a04a2ceb6fc138cae84e9334cfa90d89f}
+}]\-Active mode. \index{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-I\-D\-L\-E@{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-I\-D\-L\-E}!\-Sleep manager@{\-Sleep manager}}\index{\-Sleep manager@{\-Sleep manager}!\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-I\-D\-L\-E@{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-I\-D\-L\-E}}\item[{\em 
+\hypertarget{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6ae4f3742b3532d5ebabef6f26fabf4487}{
+\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-I\-D\-L\-E}
+\label{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6ae4f3742b3532d5ebabef6f26fabf4487}
+}]\-Idle mode. \index{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-F\-R\-O\-Z\-E\-N@{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-F\-R\-O\-Z\-E\-N}!\-Sleep manager@{\-Sleep manager}}\index{\-Sleep manager@{\-Sleep manager}!\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-F\-R\-O\-Z\-E\-N@{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-F\-R\-O\-Z\-E\-N}}\item[{\em 
+\hypertarget{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6a07fe232646cccb4c2b9e0ba301866cb9}{
+\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-F\-R\-O\-Z\-E\-N}
+\label{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6a07fe232646cccb4c2b9e0ba301866cb9}
+}]\-Frozen mode. \index{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-D\-B\-Y@{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-D\-B\-Y}!\-Sleep manager@{\-Sleep manager}}\index{\-Sleep manager@{\-Sleep manager}!\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-D\-B\-Y@{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-D\-B\-Y}}\item[{\em 
+\hypertarget{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6affb1e224bd127ccf5c7b54a54c3ba665}{
+\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-D\-B\-Y}
+\label{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6affb1e224bd127ccf5c7b54a54c3ba665}
+}]\-Standby mode. \index{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-O\-P@{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-O\-P}!\-Sleep manager@{\-Sleep manager}}\index{\-Sleep manager@{\-Sleep manager}!\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-O\-P@{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-O\-P}}\item[{\em 
+\hypertarget{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6a84505afbeafb45b0c9e9b5fc1a1e3e5e}{
+\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-O\-P}
+\label{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6a84505afbeafb45b0c9e9b5fc1a1e3e5e}
+}]\-Stop mode. \index{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-D\-E\-E\-P\-S\-T\-O\-P@{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-D\-E\-E\-P\-S\-T\-O\-P}!\-Sleep manager@{\-Sleep manager}}\index{\-Sleep manager@{\-Sleep manager}!\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-D\-E\-E\-P\-S\-T\-O\-P@{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-D\-E\-E\-P\-S\-T\-O\-P}}\item[{\em 
+\hypertarget{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6a6ee894e3a9dc55e678d10a9cebff5dd1}{
+\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-D\-E\-E\-P\-S\-T\-O\-P}
+\label{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6a6ee894e3a9dc55e678d10a9cebff5dd1}
+}]\-Deep \-Stop mode. \index{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-A\-T\-I\-C@{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-A\-T\-I\-C}!\-Sleep manager@{\-Sleep manager}}\index{\-Sleep manager@{\-Sleep manager}!\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-A\-T\-I\-C@{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-A\-T\-I\-C}}\item[{\em 
+\hypertarget{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6adbc00d523bb40feb59822bfbec8106c4}{
+\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-A\-T\-I\-C}
+\label{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6adbc00d523bb40feb59822bfbec8106c4}
+}]\-Static mode. \index{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-N\-R\-\_\-\-O\-F\-\_\-\-M\-O\-D\-E\-S@{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-N\-R\-\_\-\-O\-F\-\_\-\-M\-O\-D\-E\-S}!\-Sleep manager@{\-Sleep manager}}\index{\-Sleep manager@{\-Sleep manager}!\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-N\-R\-\_\-\-O\-F\-\_\-\-M\-O\-D\-E\-S@{\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-N\-R\-\_\-\-O\-F\-\_\-\-M\-O\-D\-E\-S}}\item[{\em 
+\hypertarget{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6a02fd0aaf6162fa103be2aa0b2593a984}{
+\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-N\-R\-\_\-\-O\-F\-\_\-\-M\-O\-D\-E\-S}
+\label{group__sleepmgr__group_ggaa990bc3ea16fcad09009cdc70dbc38c6a02fd0aaf6162fa103be2aa0b2593a984}
+}]\end{description}
+\end{Desc}
+

@@ -1,0 +1,170 @@
+\hypertarget{nlao__interrupts_8h}{
+\section{nlao\-\_\-interrupts.h \-File \-Reference}
+\label{nlao__interrupts_8h}\index{nlao\-\_\-interrupts.\-h@{nlao\-\_\-interrupts.\-h}}
+}
+
+
+\-N\-E\-W\-L\-I\-B\-\_\-\-A\-D\-D\-O\-N\-S interrupts include file for \-A\-V\-R32.  
+
+
+{\ttfamily \#include $<$\-\_\-ansi.\-h$>$}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{nlao__interrupts_8h_acdf3c58d5213c669b055eeeac3adf9ac}{\-I\-N\-T\-\_\-\-G\-R\-P\-S}~64
+\item 
+\#define \hyperlink{nlao__interrupts_8h_ac5451f40a2e62103455dc6c86ca6af68}{\-I\-N\-T\-\_\-\-L\-I\-N\-E\-S}~32
+\item 
+\#define \hyperlink{nlao__interrupts_8h_a0f31b3b3979d4e9f4062dc496c97e8f8}{\-I\-N\-T\-P\-R\-\_\-\-B\-A\-S\-E}~(\-\_\-\-\_\-intc\-\_\-base\-\_\-\-\_\- + 0x0000)
+\item 
+\#define \hyperlink{nlao__interrupts_8h_a1984dbce1d2b249084ee350ffada3d0f}{\-I\-N\-T\-R\-E\-Q\-\_\-\-B\-A\-S\-E}~(\-\_\-\-\_\-intc\-\_\-base\-\_\-\-\_\- + 64$\ast$4)
+\item 
+\#define \hyperlink{nlao__interrupts_8h_a4702c8c6590123dacebaf8403b02b234}{\-I\-N\-T\-C\-A\-U\-S\-E\-\_\-\-B\-A\-S\-E}~(\-\_\-\-\_\-intc\-\_\-base\-\_\-\-\_\- + 2$\ast$64$\ast$4)
+\item 
+\#define \hyperlink{nlao__interrupts_8h_a44cf25d713df4e47aa2e2129a80d2d81}{\-I\-N\-T\-L\-E\-V\-E\-L}~30
+\item 
+\#define \hyperlink{nlao__interrupts_8h_afc22e13b064beb0435a1e2903b15bc3f}{\-A\-U\-T\-O\-V\-E\-C\-T\-O\-R}~0
+\item 
+\#define \hyperlink{nlao__interrupts_8h_ad8123429086e0fa77ccad5939342823c}{\-A\-U\-T\-O\-V\-E\-C\-T\-O\-R\-\_\-\-B\-I\-T\-S}~14
+\item 
+\#define \hyperlink{nlao__interrupts_8h_a7521122e23c8d5c83b2a033b2505c86c}{\-I\-N\-T0}~0
+\item 
+\#define \hyperlink{nlao__interrupts_8h_ae4728496f2ab826d5fc6a63da6cb600b}{\-I\-N\-T1}~1
+\item 
+\#define \hyperlink{nlao__interrupts_8h_ab254a5a335276357f63779cda0b8e44f}{\-I\-N\-T2}~2
+\item 
+\#define \hyperlink{nlao__interrupts_8h_a66978634c920dcfa52c504b926f68eef}{\-I\-N\-T3}~3
+\end{DoxyCompactItemize}
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \hyperlink{nlao__interrupts_8h_ace6f4d91bdc510a19de65683b7169a23}{\-\_\-\-\_\-newlib\-\_\-int\-\_\-handler} )(int, void $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{nlao__interrupts_8h_ace6f4d91bdc510a19de65683b7169a23}{\-\_\-\-\_\-newlib\-\_\-int\-\_\-handler} \hyperlink{nlao__interrupts_8h_a7460b2ada5dbc387512d2ed98ced51ed}{register\-\_\-interrupt} (\hyperlink{nlao__interrupts_8h_ace6f4d91bdc510a19de65683b7169a23}{\-\_\-\-\_\-newlib\-\_\-int\-\_\-handler} handler, int int\-\_\-grp, int line, int priority,...)
+\item 
+void \hyperlink{nlao__interrupts_8h_a88ada49c1954d38252049786595d9a5f}{init\-\_\-interrupts} ()
+\item 
+void \hyperlink{nlao__interrupts_8h_a325ee726afb4c32deeec1f5eca8354ed}{set\-\_\-interrupts\-\_\-base} (void $\ast$base)
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-N\-E\-W\-L\-I\-B\-\_\-\-A\-D\-D\-O\-N\-S interrupts include file for \-A\-V\-R32. 
+\begin{DoxyItemize}
+\item \-Compiler\-: \-G\-N\-U \-G\-C\-C for \-A\-V\-R32
+\item \-Supported devices\-: \-All \-A\-V\-R32 devices can be used.
+\item \-App\-Note\-:
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{\-Author}
+\-Atmel \-Corporation\-: \href{http://www.atmel.com}{\tt http\-://www.\-atmel.\-com} \par
+ \-Support and \-F\-A\-Q\-: \href{http://support.atmel.no/}{\tt http\-://support.\-atmel.\-no/} 
+\end{DoxyAuthor}
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{nlao__interrupts_8h_afc22e13b064beb0435a1e2903b15bc3f}{
+\index{nlao\-\_\-interrupts.\-h@{nlao\-\_\-interrupts.\-h}!\-A\-U\-T\-O\-V\-E\-C\-T\-O\-R@{\-A\-U\-T\-O\-V\-E\-C\-T\-O\-R}}
+\index{\-A\-U\-T\-O\-V\-E\-C\-T\-O\-R@{\-A\-U\-T\-O\-V\-E\-C\-T\-O\-R}!nlao_interrupts.h@{nlao\-\_\-interrupts.\-h}}
+\subsubsection[{\-A\-U\-T\-O\-V\-E\-C\-T\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-U\-T\-O\-V\-E\-C\-T\-O\-R~0}}
+\label{nlao__interrupts_8h_afc22e13b064beb0435a1e2903b15bc3f}
+\hypertarget{nlao__interrupts_8h_ad8123429086e0fa77ccad5939342823c}{
+\index{nlao\-\_\-interrupts.\-h@{nlao\-\_\-interrupts.\-h}!\-A\-U\-T\-O\-V\-E\-C\-T\-O\-R\-\_\-\-B\-I\-T\-S@{\-A\-U\-T\-O\-V\-E\-C\-T\-O\-R\-\_\-\-B\-I\-T\-S}}
+\index{\-A\-U\-T\-O\-V\-E\-C\-T\-O\-R\-\_\-\-B\-I\-T\-S@{\-A\-U\-T\-O\-V\-E\-C\-T\-O\-R\-\_\-\-B\-I\-T\-S}!nlao_interrupts.h@{nlao\-\_\-interrupts.\-h}}
+\subsubsection[{\-A\-U\-T\-O\-V\-E\-C\-T\-O\-R\-\_\-\-B\-I\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-U\-T\-O\-V\-E\-C\-T\-O\-R\-\_\-\-B\-I\-T\-S~14}}
+\label{nlao__interrupts_8h_ad8123429086e0fa77ccad5939342823c}
+\hypertarget{nlao__interrupts_8h_a7521122e23c8d5c83b2a033b2505c86c}{
+\index{nlao\-\_\-interrupts.\-h@{nlao\-\_\-interrupts.\-h}!\-I\-N\-T0@{\-I\-N\-T0}}
+\index{\-I\-N\-T0@{\-I\-N\-T0}!nlao_interrupts.h@{nlao\-\_\-interrupts.\-h}}
+\subsubsection[{\-I\-N\-T0}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-I\-N\-T0~0}}
+\label{nlao__interrupts_8h_a7521122e23c8d5c83b2a033b2505c86c}
+\hypertarget{nlao__interrupts_8h_ae4728496f2ab826d5fc6a63da6cb600b}{
+\index{nlao\-\_\-interrupts.\-h@{nlao\-\_\-interrupts.\-h}!\-I\-N\-T1@{\-I\-N\-T1}}
+\index{\-I\-N\-T1@{\-I\-N\-T1}!nlao_interrupts.h@{nlao\-\_\-interrupts.\-h}}
+\subsubsection[{\-I\-N\-T1}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-I\-N\-T1~1}}
+\label{nlao__interrupts_8h_ae4728496f2ab826d5fc6a63da6cb600b}
+\hypertarget{nlao__interrupts_8h_ab254a5a335276357f63779cda0b8e44f}{
+\index{nlao\-\_\-interrupts.\-h@{nlao\-\_\-interrupts.\-h}!\-I\-N\-T2@{\-I\-N\-T2}}
+\index{\-I\-N\-T2@{\-I\-N\-T2}!nlao_interrupts.h@{nlao\-\_\-interrupts.\-h}}
+\subsubsection[{\-I\-N\-T2}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-I\-N\-T2~2}}
+\label{nlao__interrupts_8h_ab254a5a335276357f63779cda0b8e44f}
+\hypertarget{nlao__interrupts_8h_a66978634c920dcfa52c504b926f68eef}{
+\index{nlao\-\_\-interrupts.\-h@{nlao\-\_\-interrupts.\-h}!\-I\-N\-T3@{\-I\-N\-T3}}
+\index{\-I\-N\-T3@{\-I\-N\-T3}!nlao_interrupts.h@{nlao\-\_\-interrupts.\-h}}
+\subsubsection[{\-I\-N\-T3}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-I\-N\-T3~3}}
+\label{nlao__interrupts_8h_a66978634c920dcfa52c504b926f68eef}
+\hypertarget{nlao__interrupts_8h_acdf3c58d5213c669b055eeeac3adf9ac}{
+\index{nlao\-\_\-interrupts.\-h@{nlao\-\_\-interrupts.\-h}!\-I\-N\-T\-\_\-\-G\-R\-P\-S@{\-I\-N\-T\-\_\-\-G\-R\-P\-S}}
+\index{\-I\-N\-T\-\_\-\-G\-R\-P\-S@{\-I\-N\-T\-\_\-\-G\-R\-P\-S}!nlao_interrupts.h@{nlao\-\_\-interrupts.\-h}}
+\subsubsection[{\-I\-N\-T\-\_\-\-G\-R\-P\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-I\-N\-T\-\_\-\-G\-R\-P\-S~64}}
+\label{nlao__interrupts_8h_acdf3c58d5213c669b055eeeac3adf9ac}
+\hypertarget{nlao__interrupts_8h_ac5451f40a2e62103455dc6c86ca6af68}{
+\index{nlao\-\_\-interrupts.\-h@{nlao\-\_\-interrupts.\-h}!\-I\-N\-T\-\_\-\-L\-I\-N\-E\-S@{\-I\-N\-T\-\_\-\-L\-I\-N\-E\-S}}
+\index{\-I\-N\-T\-\_\-\-L\-I\-N\-E\-S@{\-I\-N\-T\-\_\-\-L\-I\-N\-E\-S}!nlao_interrupts.h@{nlao\-\_\-interrupts.\-h}}
+\subsubsection[{\-I\-N\-T\-\_\-\-L\-I\-N\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-I\-N\-T\-\_\-\-L\-I\-N\-E\-S~32}}
+\label{nlao__interrupts_8h_ac5451f40a2e62103455dc6c86ca6af68}
+\hypertarget{nlao__interrupts_8h_a4702c8c6590123dacebaf8403b02b234}{
+\index{nlao\-\_\-interrupts.\-h@{nlao\-\_\-interrupts.\-h}!\-I\-N\-T\-C\-A\-U\-S\-E\-\_\-\-B\-A\-S\-E@{\-I\-N\-T\-C\-A\-U\-S\-E\-\_\-\-B\-A\-S\-E}}
+\index{\-I\-N\-T\-C\-A\-U\-S\-E\-\_\-\-B\-A\-S\-E@{\-I\-N\-T\-C\-A\-U\-S\-E\-\_\-\-B\-A\-S\-E}!nlao_interrupts.h@{nlao\-\_\-interrupts.\-h}}
+\subsubsection[{\-I\-N\-T\-C\-A\-U\-S\-E\-\_\-\-B\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-I\-N\-T\-C\-A\-U\-S\-E\-\_\-\-B\-A\-S\-E~(\-\_\-\-\_\-intc\-\_\-base\-\_\-\-\_\- + 2$\ast$64$\ast$4)}}
+\label{nlao__interrupts_8h_a4702c8c6590123dacebaf8403b02b234}
+\hypertarget{nlao__interrupts_8h_a44cf25d713df4e47aa2e2129a80d2d81}{
+\index{nlao\-\_\-interrupts.\-h@{nlao\-\_\-interrupts.\-h}!\-I\-N\-T\-L\-E\-V\-E\-L@{\-I\-N\-T\-L\-E\-V\-E\-L}}
+\index{\-I\-N\-T\-L\-E\-V\-E\-L@{\-I\-N\-T\-L\-E\-V\-E\-L}!nlao_interrupts.h@{nlao\-\_\-interrupts.\-h}}
+\subsubsection[{\-I\-N\-T\-L\-E\-V\-E\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-I\-N\-T\-L\-E\-V\-E\-L~30}}
+\label{nlao__interrupts_8h_a44cf25d713df4e47aa2e2129a80d2d81}
+\hypertarget{nlao__interrupts_8h_a0f31b3b3979d4e9f4062dc496c97e8f8}{
+\index{nlao\-\_\-interrupts.\-h@{nlao\-\_\-interrupts.\-h}!\-I\-N\-T\-P\-R\-\_\-\-B\-A\-S\-E@{\-I\-N\-T\-P\-R\-\_\-\-B\-A\-S\-E}}
+\index{\-I\-N\-T\-P\-R\-\_\-\-B\-A\-S\-E@{\-I\-N\-T\-P\-R\-\_\-\-B\-A\-S\-E}!nlao_interrupts.h@{nlao\-\_\-interrupts.\-h}}
+\subsubsection[{\-I\-N\-T\-P\-R\-\_\-\-B\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-I\-N\-T\-P\-R\-\_\-\-B\-A\-S\-E~(\-\_\-\-\_\-intc\-\_\-base\-\_\-\-\_\- + 0x0000)}}
+\label{nlao__interrupts_8h_a0f31b3b3979d4e9f4062dc496c97e8f8}
+\hypertarget{nlao__interrupts_8h_a1984dbce1d2b249084ee350ffada3d0f}{
+\index{nlao\-\_\-interrupts.\-h@{nlao\-\_\-interrupts.\-h}!\-I\-N\-T\-R\-E\-Q\-\_\-\-B\-A\-S\-E@{\-I\-N\-T\-R\-E\-Q\-\_\-\-B\-A\-S\-E}}
+\index{\-I\-N\-T\-R\-E\-Q\-\_\-\-B\-A\-S\-E@{\-I\-N\-T\-R\-E\-Q\-\_\-\-B\-A\-S\-E}!nlao_interrupts.h@{nlao\-\_\-interrupts.\-h}}
+\subsubsection[{\-I\-N\-T\-R\-E\-Q\-\_\-\-B\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-I\-N\-T\-R\-E\-Q\-\_\-\-B\-A\-S\-E~(\-\_\-\-\_\-intc\-\_\-base\-\_\-\-\_\- + 64$\ast$4)}}
+\label{nlao__interrupts_8h_a1984dbce1d2b249084ee350ffada3d0f}
+
+
+\subsection{\-Typedef \-Documentation}
+\hypertarget{nlao__interrupts_8h_ace6f4d91bdc510a19de65683b7169a23}{
+\index{nlao\-\_\-interrupts.\-h@{nlao\-\_\-interrupts.\-h}!\-\_\-\-\_\-newlib\-\_\-int\-\_\-handler@{\-\_\-\-\_\-newlib\-\_\-int\-\_\-handler}}
+\index{\-\_\-\-\_\-newlib\-\_\-int\-\_\-handler@{\-\_\-\-\_\-newlib\-\_\-int\-\_\-handler}!nlao_interrupts.h@{nlao\-\_\-interrupts.\-h}}
+\subsubsection[{\-\_\-\-\_\-newlib\-\_\-int\-\_\-handler}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ {\bf \-\_\-\-\_\-newlib\-\_\-int\-\_\-handler})(int, void $\ast$)}}
+\label{nlao__interrupts_8h_ace6f4d91bdc510a19de65683b7169a23}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{nlao__interrupts_8h_a88ada49c1954d38252049786595d9a5f}{
+\index{nlao\-\_\-interrupts.\-h@{nlao\-\_\-interrupts.\-h}!init\-\_\-interrupts@{init\-\_\-interrupts}}
+\index{init\-\_\-interrupts@{init\-\_\-interrupts}!nlao_interrupts.h@{nlao\-\_\-interrupts.\-h}}
+\subsubsection[{init\-\_\-interrupts}]{\setlength{\rightskip}{0pt plus 5cm}void init\-\_\-interrupts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{nlao__interrupts_8h_a88ada49c1954d38252049786595d9a5f}
+\hypertarget{nlao__interrupts_8h_a7460b2ada5dbc387512d2ed98ced51ed}{
+\index{nlao\-\_\-interrupts.\-h@{nlao\-\_\-interrupts.\-h}!register\-\_\-interrupt@{register\-\_\-interrupt}}
+\index{register\-\_\-interrupt@{register\-\_\-interrupt}!nlao_interrupts.h@{nlao\-\_\-interrupts.\-h}}
+\subsubsection[{register\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf \-\_\-\-\_\-newlib\-\_\-int\-\_\-handler} register\-\_\-interrupt (
+\begin{DoxyParamCaption}
+\item[{{\bf \-\_\-\-\_\-newlib\-\_\-int\-\_\-handler}}]{handler, }
+\item[{int}]{int\-\_\-grp, }
+\item[{int}]{line, }
+\item[{int}]{priority, }
+\item[{}]{...}
+\end{DoxyParamCaption}
+)}}
+\label{nlao__interrupts_8h_a7460b2ada5dbc387512d2ed98ced51ed}
+\hypertarget{nlao__interrupts_8h_a325ee726afb4c32deeec1f5eca8354ed}{
+\index{nlao\-\_\-interrupts.\-h@{nlao\-\_\-interrupts.\-h}!set\-\_\-interrupts\-\_\-base@{set\-\_\-interrupts\-\_\-base}}
+\index{set\-\_\-interrupts\-\_\-base@{set\-\_\-interrupts\-\_\-base}!nlao_interrupts.h@{nlao\-\_\-interrupts.\-h}}
+\subsubsection[{set\-\_\-interrupts\-\_\-base}]{\setlength{\rightskip}{0pt plus 5cm}void set\-\_\-interrupts\-\_\-base (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{base}
+\end{DoxyParamCaption}
+)}}
+\label{nlao__interrupts_8h_a325ee726afb4c32deeec1f5eca8354ed}

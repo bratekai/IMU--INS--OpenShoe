@@ -1,0 +1,227 @@
+\hypertarget{conf__usb_8h}{
+\section{conf\-\_\-usb.h \-File \-Reference}
+\label{conf__usb_8h}\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}}
+}
+
+
+\-U\-S\-B configuration file for \-C\-D\-C application.  
+
+
+{\ttfamily \#include \char`\"{}compiler.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}udi\-\_\-cdc\-\_\-conf.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}external\-\_\-interface.\-h\char`\"{}}\*
+\subsection*{\-Defines}
+\paragraph*{}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{conf__usb_8h_a4426e943fe29660402150df6d3f3dcaa}{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-V\-E\-N\-D\-O\-R\-\_\-\-I\-D}~\-U\-S\-B\-\_\-\-V\-I\-D\-\_\-\-A\-T\-M\-E\-L
+\begin{DoxyCompactList}\small\item\em \-Device definition (mandatory) \end{DoxyCompactList}\item 
+\#define \hyperlink{conf__usb_8h_a0620721915ade1b6ed089bbb378955ef}{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-I\-D}~\-U\-S\-B\-\_\-\-P\-I\-D\-\_\-\-A\-T\-M\-E\-L\-\_\-\-A\-V\-R\-\_\-\-C\-D\-C
+\item 
+\#define \hyperlink{conf__usb_8h_a2c00be642606ee4c88e461fd19f4c1e9}{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}~1
+\item 
+\#define \hyperlink{conf__usb_8h_aac0ad26d2d16c7d14473bbb216d51b19}{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}~0
+\item 
+\#define \hyperlink{conf__usb_8h_a5577f621042d0407f0f02b5f14777066}{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-O\-W\-E\-R}~100
+\item 
+\#define \hyperlink{conf__usb_8h_a16bacf1d87fbf3dde93dd34497566774}{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-A\-T\-T\-R}~(\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-S\-E\-L\-F\-\_\-\-P\-O\-W\-E\-R\-E\-D)
+\item 
+\#define \hyperlink{conf__usb_8h_a5afc06430df429868d2727671fd84668}{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-N\-U\-F\-A\-C\-T\-U\-R\-E\-\_\-\-N\-A\-M\-E}~\char`\"{}\-A\-T\-M\-E\-L \-A\-V\-R\char`\"{}
+\begin{DoxyCompactList}\small\item\em \-U\-S\-B \-Device string definitions (\-Optional) \end{DoxyCompactList}\item 
+\#define \hyperlink{conf__usb_8h_a7478c9352b34d14cd97503ab498a5d2c}{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-N\-A\-M\-E}~\char`\"{}\-C\-D\-C \-Virtual \-Com\char`\"{}
+\item 
+\#define \hyperlink{conf__usb_8h_a6173ff7dcc4e8e590311c774d7214e9b}{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-H\-S\-\_\-\-S\-U\-P\-P\-O\-R\-T}
+\begin{DoxyCompactList}\small\item\em \-To authorize the \-High speed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+\paragraph*{}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{conf__usb_8h_a009dfd7822890bfe9a8975f14d952508}{\-U\-D\-C\-\_\-\-V\-B\-U\-S\-\_\-\-E\-V\-E\-N\-T}(b\-\_\-vbus\-\_\-high)~vbus\-\_\-event\-\_\-callback(b\-\_\-vbus\-\_\-high)
+\end{DoxyCompactItemize}
+
+\paragraph*{}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{conf__usb_8h_adfc10044d7adab40e43753941e9278e6}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-E\-X\-T}()~true
+\begin{DoxyCompactList}\small\item\em \-Mandatory when \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-A\-T\-T\-R authorizes remote wakeup feature. \end{DoxyCompactList}\item 
+\#define \hyperlink{conf__usb_8h_abf8630ff4c73496f3ca5221b0f3bbf93}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-I\-S\-A\-B\-L\-E\-\_\-\-E\-X\-T}()
+\item 
+\#define \hyperlink{conf__usb_8h_aabc69432a6e3071a75e3a01c85083100}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-R\-X\-\_\-\-N\-O\-T\-I\-F\-Y}()
+\item 
+\#define \hyperlink{conf__usb_8h_a46c1d972ed364165f59392ed245c6332}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-D\-I\-N\-G\-\_\-\-E\-X\-T}(cfg)
+\item 
+\#define \hyperlink{conf__usb_8h_ab1abdc0b0397e0929e0c9b80f2589d48}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-D\-T\-R\-\_\-\-E\-X\-T}(set)
+\item 
+\#define \hyperlink{conf__usb_8h_afac4fa401b773fe2969a4bd590dd834f}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-R\-T\-S\-\_\-\-E\-X\-T}(set)
+\item 
+\#define \hyperlink{conf__usb_8h_aed27ef57225339a55e3ef872c674679f}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-L\-O\-W\-\_\-\-R\-A\-T\-E}
+\item 
+\#define \hyperlink{conf__usb_8h_abba7f3b0abf3c4a669eec106be2a2124}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-R\-A\-T\-E}~115200
+\begin{DoxyCompactList}\small\item\em \-Default configuration of communication port. \end{DoxyCompactList}\item 
+\#define \hyperlink{conf__usb_8h_a830021ba5c95aba7c1326c5ac8794a10}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-S\-T\-O\-P\-B\-I\-T\-S}~\-C\-D\-C\-\_\-\-S\-T\-O\-P\-\_\-\-B\-I\-T\-S\-\_\-1
+\item 
+\#define \hyperlink{conf__usb_8h_a46f4ef2af37e7dd674ba093feb96ca53}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-P\-A\-R\-I\-T\-Y}~\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-N\-O\-N\-E
+\item 
+\#define \hyperlink{conf__usb_8h_a70354163ae3f6c586ee8c8919e6ec332}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-B\-I\-T\-S}~8
+\end{DoxyCompactItemize}
+
+
+
+\subsection{\-Detailed \-Description}
+\-U\-S\-B configuration file for \-C\-D\-C application. \-Copyright (\-C) 2009 \-Atmel \-Corporation. \-All rights reserved. 
+
+\subsection{\-Define \-Documentation}
+\hypertarget{conf__usb_8h_a009dfd7822890bfe9a8975f14d952508}{
+\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}!\-U\-D\-C\-\_\-\-V\-B\-U\-S\-\_\-\-E\-V\-E\-N\-T@{\-U\-D\-C\-\_\-\-V\-B\-U\-S\-\_\-\-E\-V\-E\-N\-T}}
+\index{\-U\-D\-C\-\_\-\-V\-B\-U\-S\-\_\-\-E\-V\-E\-N\-T@{\-U\-D\-C\-\_\-\-V\-B\-U\-S\-\_\-\-E\-V\-E\-N\-T}!conf_usb.h@{conf\-\_\-usb.\-h}}
+\subsubsection[{\-U\-D\-C\-\_\-\-V\-B\-U\-S\-\_\-\-E\-V\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-C\-\_\-\-V\-B\-U\-S\-\_\-\-E\-V\-E\-N\-T(
+\begin{DoxyParamCaption}
+\item[{}]{b\-\_\-vbus\-\_\-high}
+\end{DoxyParamCaption}
+)~vbus\-\_\-event\-\_\-callback(b\-\_\-vbus\-\_\-high)}}
+\label{conf__usb_8h_a009dfd7822890bfe9a8975f14d952508}
+\-U\-S\-B \-Device \-Callbacks definitions (\-Optional) \hypertarget{conf__usb_8h_a70354163ae3f6c586ee8c8919e6ec332}{
+\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-B\-I\-T\-S@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-B\-I\-T\-S}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-B\-I\-T\-S@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-B\-I\-T\-S}!conf_usb.h@{conf\-\_\-usb.\-h}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-B\-I\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-A\-B\-I\-T\-S~8}}
+\label{conf__usb_8h_a70354163ae3f6c586ee8c8919e6ec332}
+\hypertarget{conf__usb_8h_a46f4ef2af37e7dd674ba093feb96ca53}{
+\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-P\-A\-R\-I\-T\-Y@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-P\-A\-R\-I\-T\-Y}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-P\-A\-R\-I\-T\-Y@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-P\-A\-R\-I\-T\-Y}!conf_usb.h@{conf\-\_\-usb.\-h}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-P\-A\-R\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-P\-A\-R\-I\-T\-Y~\-C\-D\-C\-\_\-\-P\-A\-R\-\_\-\-N\-O\-N\-E}}
+\label{conf__usb_8h_a46f4ef2af37e7dd674ba093feb96ca53}
+\hypertarget{conf__usb_8h_abba7f3b0abf3c4a669eec106be2a2124}{
+\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-R\-A\-T\-E@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-R\-A\-T\-E}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-R\-A\-T\-E@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-R\-A\-T\-E}!conf_usb.h@{conf\-\_\-usb.\-h}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-R\-A\-T\-E~115200}}
+\label{conf__usb_8h_abba7f3b0abf3c4a669eec106be2a2124}
+
+
+\-Default configuration of communication port. 
+
+\hypertarget{conf__usb_8h_a830021ba5c95aba7c1326c5ac8794a10}{
+\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-S\-T\-O\-P\-B\-I\-T\-S@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-S\-T\-O\-P\-B\-I\-T\-S}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-S\-T\-O\-P\-B\-I\-T\-S@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-S\-T\-O\-P\-B\-I\-T\-S}!conf_usb.h@{conf\-\_\-usb.\-h}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-S\-T\-O\-P\-B\-I\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-S\-T\-O\-P\-B\-I\-T\-S~\-C\-D\-C\-\_\-\-S\-T\-O\-P\-\_\-\-B\-I\-T\-S\-\_\-1}}
+\label{conf__usb_8h_a830021ba5c95aba7c1326c5ac8794a10}
+\hypertarget{conf__usb_8h_abf8630ff4c73496f3ca5221b0f3bbf93}{
+\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-I\-S\-A\-B\-L\-E\-\_\-\-E\-X\-T@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-I\-S\-A\-B\-L\-E\-\_\-\-E\-X\-T}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-I\-S\-A\-B\-L\-E\-\_\-\-E\-X\-T@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-I\-S\-A\-B\-L\-E\-\_\-\-E\-X\-T}!conf_usb.h@{conf\-\_\-usb.\-h}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-I\-S\-A\-B\-L\-E\-\_\-\-E\-X\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-I\-S\-A\-B\-L\-E\-\_\-\-E\-X\-T(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{conf__usb_8h_abf8630ff4c73496f3ca5221b0f3bbf93}
+\hypertarget{conf__usb_8h_adfc10044d7adab40e43753941e9278e6}{
+\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-E\-X\-T@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-E\-X\-T}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-E\-X\-T@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-E\-X\-T}!conf_usb.h@{conf\-\_\-usb.\-h}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-E\-X\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-E\-N\-A\-B\-L\-E\-\_\-\-E\-X\-T(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~true}}
+\label{conf__usb_8h_adfc10044d7adab40e43753941e9278e6}
+
+
+\-Mandatory when \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-A\-T\-T\-R authorizes remote wakeup feature. 
+
+\-When a extra string descriptor must be supported other than manufacturer, product and serial string \-U\-S\-B \-Interface \-Configuration \-Configuration of \-C\-D\-C interface \-Interface callback definition \hypertarget{conf__usb_8h_aed27ef57225339a55e3ef872c674679f}{
+\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-L\-O\-W\-\_\-\-R\-A\-T\-E@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-L\-O\-W\-\_\-\-R\-A\-T\-E}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-L\-O\-W\-\_\-\-R\-A\-T\-E@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-L\-O\-W\-\_\-\-R\-A\-T\-E}!conf_usb.h@{conf\-\_\-usb.\-h}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-L\-O\-W\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-L\-O\-W\-\_\-\-R\-A\-T\-E}}
+\label{conf__usb_8h_aed27ef57225339a55e3ef872c674679f}
+\-Define it when the transfer \-C\-D\-C \-Device to \-Host is a low rate ($<$512000 bauds) to reduce \-C\-D\-C buffers size \hypertarget{conf__usb_8h_aabc69432a6e3071a75e3a01c85083100}{
+\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-R\-X\-\_\-\-N\-O\-T\-I\-F\-Y@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-R\-X\-\_\-\-N\-O\-T\-I\-F\-Y}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-R\-X\-\_\-\-N\-O\-T\-I\-F\-Y@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-R\-X\-\_\-\-N\-O\-T\-I\-F\-Y}!conf_usb.h@{conf\-\_\-usb.\-h}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-R\-X\-\_\-\-N\-O\-T\-I\-F\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-R\-X\-\_\-\-N\-O\-T\-I\-F\-Y(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{conf__usb_8h_aabc69432a6e3071a75e3a01c85083100}
+\hypertarget{conf__usb_8h_a46c1d972ed364165f59392ed245c6332}{
+\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-D\-I\-N\-G\-\_\-\-E\-X\-T@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-D\-I\-N\-G\-\_\-\-E\-X\-T}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-D\-I\-N\-G\-\_\-\-E\-X\-T@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-D\-I\-N\-G\-\_\-\-E\-X\-T}!conf_usb.h@{conf\-\_\-usb.\-h}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-D\-I\-N\-G\-\_\-\-E\-X\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-D\-I\-N\-G\-\_\-\-E\-X\-T(
+\begin{DoxyParamCaption}
+\item[{}]{cfg}
+\end{DoxyParamCaption}
+)}}
+\label{conf__usb_8h_a46c1d972ed364165f59392ed245c6332}
+\hypertarget{conf__usb_8h_ab1abdc0b0397e0929e0c9b80f2589d48}{
+\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-D\-T\-R\-\_\-\-E\-X\-T@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-D\-T\-R\-\_\-\-E\-X\-T}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-D\-T\-R\-\_\-\-E\-X\-T@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-D\-T\-R\-\_\-\-E\-X\-T}!conf_usb.h@{conf\-\_\-usb.\-h}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-D\-T\-R\-\_\-\-E\-X\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-D\-T\-R\-\_\-\-E\-X\-T(
+\begin{DoxyParamCaption}
+\item[{}]{set}
+\end{DoxyParamCaption}
+)}}
+\label{conf__usb_8h_ab1abdc0b0397e0929e0c9b80f2589d48}
+\hypertarget{conf__usb_8h_afac4fa401b773fe2969a4bd590dd834f}{
+\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-R\-T\-S\-\_\-\-E\-X\-T@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-R\-T\-S\-\_\-\-E\-X\-T}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-R\-T\-S\-\_\-\-E\-X\-T@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-R\-T\-S\-\_\-\-E\-X\-T}!conf_usb.h@{conf\-\_\-usb.\-h}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-R\-T\-S\-\_\-\-E\-X\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-R\-T\-S\-\_\-\-E\-X\-T(
+\begin{DoxyParamCaption}
+\item[{}]{set}
+\end{DoxyParamCaption}
+)}}
+\label{conf__usb_8h_afac4fa401b773fe2969a4bd590dd834f}
+\hypertarget{conf__usb_8h_a16bacf1d87fbf3dde93dd34497566774}{
+\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}!\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-A\-T\-T\-R@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-A\-T\-T\-R}}
+\index{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-A\-T\-T\-R@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-A\-T\-T\-R}!conf_usb.h@{conf\-\_\-usb.\-h}}
+\subsubsection[{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-A\-T\-T\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-A\-T\-T\-R~(\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-S\-E\-L\-F\-\_\-\-P\-O\-W\-E\-R\-E\-D)}}
+\label{conf__usb_8h_a16bacf1d87fbf3dde93dd34497566774}
+\hypertarget{conf__usb_8h_a6173ff7dcc4e8e590311c774d7214e9b}{
+\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}!\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-H\-S\-\_\-\-S\-U\-P\-P\-O\-R\-T@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-H\-S\-\_\-\-S\-U\-P\-P\-O\-R\-T}}
+\index{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-H\-S\-\_\-\-S\-U\-P\-P\-O\-R\-T@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-H\-S\-\_\-\-S\-U\-P\-P\-O\-R\-T}!conf_usb.h@{conf\-\_\-usb.\-h}}
+\subsubsection[{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-H\-S\-\_\-\-S\-U\-P\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-H\-S\-\_\-\-S\-U\-P\-P\-O\-R\-T}}
+\label{conf__usb_8h_a6173ff7dcc4e8e590311c774d7214e9b}
+
+
+\-To authorize the \-High speed. 
+
+\-Device speeds support \-Low speed not supported by \-C\-D\-C \hypertarget{conf__usb_8h_a2c00be642606ee4c88e461fd19f4c1e9}{
+\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}!\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}}
+\index{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}!conf_usb.h@{conf\-\_\-usb.\-h}}
+\subsubsection[{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N~1}}
+\label{conf__usb_8h_a2c00be642606ee4c88e461fd19f4c1e9}
+\hypertarget{conf__usb_8h_a5afc06430df429868d2727671fd84668}{
+\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}!\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-N\-U\-F\-A\-C\-T\-U\-R\-E\-\_\-\-N\-A\-M\-E@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-N\-U\-F\-A\-C\-T\-U\-R\-E\-\_\-\-N\-A\-M\-E}}
+\index{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-N\-U\-F\-A\-C\-T\-U\-R\-E\-\_\-\-N\-A\-M\-E@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-N\-U\-F\-A\-C\-T\-U\-R\-E\-\_\-\-N\-A\-M\-E}!conf_usb.h@{conf\-\_\-usb.\-h}}
+\subsubsection[{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-N\-U\-F\-A\-C\-T\-U\-R\-E\-\_\-\-N\-A\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-N\-U\-F\-A\-C\-T\-U\-R\-E\-\_\-\-N\-A\-M\-E~\char`\"{}\-A\-T\-M\-E\-L \-A\-V\-R\char`\"{}}}
+\label{conf__usb_8h_a5afc06430df429868d2727671fd84668}
+
+
+\-U\-S\-B \-Device string definitions (\-Optional) 
+
+\hypertarget{conf__usb_8h_aac0ad26d2d16c7d14473bbb216d51b19}{
+\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}!\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}}
+\index{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}!conf_usb.h@{conf\-\_\-usb.\-h}}
+\subsubsection[{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N~0}}
+\label{conf__usb_8h_aac0ad26d2d16c7d14473bbb216d51b19}
+\hypertarget{conf__usb_8h_a5577f621042d0407f0f02b5f14777066}{
+\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}!\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-O\-W\-E\-R@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-O\-W\-E\-R}}
+\index{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-O\-W\-E\-R@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-O\-W\-E\-R}!conf_usb.h@{conf\-\_\-usb.\-h}}
+\subsubsection[{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-O\-W\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-O\-W\-E\-R~100}}
+\label{conf__usb_8h_a5577f621042d0407f0f02b5f14777066}
+\hypertarget{conf__usb_8h_a0620721915ade1b6ed089bbb378955ef}{
+\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}!\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-I\-D@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-I\-D}}
+\index{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-I\-D@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-I\-D}!conf_usb.h@{conf\-\_\-usb.\-h}}
+\subsubsection[{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-I\-D~\-U\-S\-B\-\_\-\-P\-I\-D\-\_\-\-A\-T\-M\-E\-L\-\_\-\-A\-V\-R\-\_\-\-C\-D\-C}}
+\label{conf__usb_8h_a0620721915ade1b6ed089bbb378955ef}
+\hypertarget{conf__usb_8h_a7478c9352b34d14cd97503ab498a5d2c}{
+\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}!\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-N\-A\-M\-E@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-N\-A\-M\-E}}
+\index{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-N\-A\-M\-E@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-N\-A\-M\-E}!conf_usb.h@{conf\-\_\-usb.\-h}}
+\subsubsection[{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-N\-A\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-N\-A\-M\-E~\char`\"{}\-C\-D\-C \-Virtual \-Com\char`\"{}}}
+\label{conf__usb_8h_a7478c9352b34d14cd97503ab498a5d2c}
+\hypertarget{conf__usb_8h_a4426e943fe29660402150df6d3f3dcaa}{
+\index{conf\-\_\-usb.\-h@{conf\-\_\-usb.\-h}!\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-V\-E\-N\-D\-O\-R\-\_\-\-I\-D@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-V\-E\-N\-D\-O\-R\-\_\-\-I\-D}}
+\index{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-V\-E\-N\-D\-O\-R\-\_\-\-I\-D@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-V\-E\-N\-D\-O\-R\-\_\-\-I\-D}!conf_usb.h@{conf\-\_\-usb.\-h}}
+\subsubsection[{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-V\-E\-N\-D\-O\-R\-\_\-\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-V\-E\-N\-D\-O\-R\-\_\-\-I\-D~\-U\-S\-B\-\_\-\-V\-I\-D\-\_\-\-A\-T\-M\-E\-L}}
+\label{conf__usb_8h_a4426e943fe29660402150df6d3f3dcaa}
+
+
+\-Device definition (mandatory) 
+
+\-U\-S\-B \-Device \-Configuration 

@@ -1,0 +1,128 @@
+\hypertarget{spi__master_8c}{
+\section{spi\-\_\-master.c \-File \-Reference}
+\label{spi__master_8c}\index{spi\-\_\-master.\-c@{spi\-\_\-master.\-c}}
+}
+
+
+\-S\-P\-I \-Master driver for \-A\-V\-R \-U\-C3.  
+
+
+{\ttfamily \#include \char`\"{}spi\-\_\-master.\-h\char`\"{}}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{spi__master_8c_adb8e173ada01040ae56a5f5868b50449}{spi\-\_\-master\-\_\-setup\-\_\-device} (volatile avr32\-\_\-spi\-\_\-t $\ast$spi, struct \hyperlink{structspi__device}{spi\-\_\-device} $\ast$device, \hyperlink{uc3__spi_2spi__master_8h_a781db101a4c4490735eb12d3cb92fde7}{spi\-\_\-flags\-\_\-t} flags, uint32\-\_\-t baud\-\_\-rate, \hyperlink{uc3__spi_2spi__master_8h_a0216987e3f93d6bd7392bb7f28c3db2c}{board\-\_\-spi\-\_\-select\-\_\-id\-\_\-t} sel\-\_\-id)
+\begin{DoxyCompactList}\small\item\em \-Setup a \-S\-P\-I device. \end{DoxyCompactList}\item 
+\hyperlink{status__codes_8h_a1f12e07903f974729de22ebe2f52273e}{status\-\_\-code\-\_\-t} \hyperlink{spi__master_8c_aafdacdffa212b9880873c82b0fb6d8e7}{spi\-\_\-read\-\_\-packet} (volatile avr32\-\_\-spi\-\_\-t $\ast$spi, uint8\-\_\-t $\ast$data, size\-\_\-t len)
+\begin{DoxyCompactList}\small\item\em \-Receive a sequence of bytes from a \-S\-P\-I device. \end{DoxyCompactList}\item 
+\hyperlink{status__codes_8h_a1f12e07903f974729de22ebe2f52273e}{status\-\_\-code\-\_\-t} \hyperlink{spi__master_8c_a5eea18b25801b83f702f8ff49cfebc54}{spi\-\_\-write\-\_\-packet} (volatile avr32\-\_\-spi\-\_\-t $\ast$spi, const uint8\-\_\-t $\ast$data, size\-\_\-t len)
+\begin{DoxyCompactList}\small\item\em \-Send a sequence of bytes to a \-S\-P\-I device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-S\-P\-I \-Master driver for \-A\-V\-R \-U\-C3. \-This file defines a useful set of functions for the \-S\-P\-I interface on \-A\-V\-R \-U\-C3 devices.
+
+
+\begin{DoxyItemize}
+\item \-Compiler\-: \-I\-A\-R \-E\-W\-A\-V\-R32 and \-G\-N\-U \-G\-C\-C for \-A\-V\-R \-U\-C3
+\item \-Supported devices\-: \-All \-A\-V\-R \-U\-C3 devices with an \-S\-P\-I module can be used.
+\item \-App\-Note\-:
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{\-Author}
+\-Atmel \-Corporation\-: \href{http://www.atmel.com}{\tt http\-://www.\-atmel.\-com} \par
+ \-Support and \-F\-A\-Q\-: \href{http://support.atmel.no/}{\tt http\-://support.\-atmel.\-no/} 
+\end{DoxyAuthor}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{spi__master_8c_adb8e173ada01040ae56a5f5868b50449}{
+\index{spi\-\_\-master.\-c@{spi\-\_\-master.\-c}!spi\-\_\-master\-\_\-setup\-\_\-device@{spi\-\_\-master\-\_\-setup\-\_\-device}}
+\index{spi\-\_\-master\-\_\-setup\-\_\-device@{spi\-\_\-master\-\_\-setup\-\_\-device}!spi_master.c@{spi\-\_\-master.\-c}}
+\subsubsection[{spi\-\_\-master\-\_\-setup\-\_\-device}]{\setlength{\rightskip}{0pt plus 5cm}void spi\-\_\-master\-\_\-setup\-\_\-device (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-spi\-\_\-t $\ast$}]{spi, }
+\item[{struct {\bf spi\-\_\-device} $\ast$}]{device, }
+\item[{{\bf spi\-\_\-flags\-\_\-t}}]{flags, }
+\item[{uint32\-\_\-t}]{baud\-\_\-rate, }
+\item[{{\bf board\-\_\-spi\-\_\-select\-\_\-id\-\_\-t}}]{sel\-\_\-id}
+\end{DoxyParamCaption}
+)}}
+\label{spi__master_8c_adb8e173ada01040ae56a5f5868b50449}
+
+
+\-Setup a \-S\-P\-I device. 
+
+\-The returned device descriptor structure must be passed to the driver whenever that device should be used as current slave device.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em spi} & \-Base address of the \-S\-P\-I instance. \\
+\hline
+{\em device} & \-Pointer to \-S\-P\-I device struct that should be initialized. \\
+\hline
+{\em flags} & \-S\-P\-I configuration flags. \-Common flags for all implementations are the \-S\-P\-I modes \-S\-P\-I\-\_\-\-M\-O\-D\-E\-\_\-0 ... \-S\-P\-I\-\_\-\-M\-O\-D\-E\-\_\-3. \\
+\hline
+{\em baud\-\_\-rate} & \-Baud rate for communication with slave device in \-Hz. \\
+\hline
+{\em sel\-\_\-id} & \-Board specific seclet id \\
+\hline
+\end{DoxyParams}
+\hypertarget{spi__master_8c_aafdacdffa212b9880873c82b0fb6d8e7}{
+\index{spi\-\_\-master.\-c@{spi\-\_\-master.\-c}!spi\-\_\-read\-\_\-packet@{spi\-\_\-read\-\_\-packet}}
+\index{spi\-\_\-read\-\_\-packet@{spi\-\_\-read\-\_\-packet}!spi_master.c@{spi\-\_\-master.\-c}}
+\subsubsection[{spi\-\_\-read\-\_\-packet}]{\setlength{\rightskip}{0pt plus 5cm}{\bf status\-\_\-code\-\_\-t} spi\-\_\-read\-\_\-packet (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-spi\-\_\-t $\ast$}]{spi, }
+\item[{uint8\-\_\-t $\ast$}]{data, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)}}
+\label{spi__master_8c_aafdacdffa212b9880873c82b0fb6d8e7}
+
+
+\-Receive a sequence of bytes from a \-S\-P\-I device. 
+
+\-All bytes sent out on \-S\-P\-I bus are sent as value 0.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em spi} & \-Base address of the \-S\-P\-I instance. \\
+\hline
+{\em data} & \-Data buffer to read \\
+\hline
+{\em len} & \-Length of data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{\-Precondition}
+\-S\-P\-I device must be selected with spi\-\_\-select\-\_\-device() first 
+\end{DoxyPrecond}
+\hypertarget{spi__master_8c_a5eea18b25801b83f702f8ff49cfebc54}{
+\index{spi\-\_\-master.\-c@{spi\-\_\-master.\-c}!spi\-\_\-write\-\_\-packet@{spi\-\_\-write\-\_\-packet}}
+\index{spi\-\_\-write\-\_\-packet@{spi\-\_\-write\-\_\-packet}!spi_master.c@{spi\-\_\-master.\-c}}
+\subsubsection[{spi\-\_\-write\-\_\-packet}]{\setlength{\rightskip}{0pt plus 5cm}{\bf status\-\_\-code\-\_\-t} spi\-\_\-write\-\_\-packet (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-spi\-\_\-t $\ast$}]{spi, }
+\item[{const uint8\-\_\-t $\ast$}]{data, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)}}
+\label{spi__master_8c_a5eea18b25801b83f702f8ff49cfebc54}
+
+
+\-Send a sequence of bytes to a \-S\-P\-I device. 
+
+\-Received bytes on the \-S\-P\-I bus are discarded.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em spi} & \-Base address of the \-S\-P\-I instance. \\
+\hline
+{\em data} & \-Data buffer to write \\
+\hline
+{\em len} & \-Length of data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{\-Precondition}
+\-S\-P\-I device must be selected with spi\-\_\-select\-\_\-device() first 
+\end{DoxyPrecond}

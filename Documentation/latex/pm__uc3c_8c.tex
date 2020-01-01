@@ -1,0 +1,239 @@
+\hypertarget{pm__uc3c_8c}{
+\section{pm\-\_\-uc3c.c \-File \-Reference}
+\label{pm__uc3c_8c}\index{pm\-\_\-uc3c.\-c@{pm\-\_\-uc3c.\-c}}
+}
+
+
+\-Power \-Manager(\-P\-M) driver interface.  
+
+
+{\ttfamily \#include \char`\"{}pm\-\_\-uc3c.\-h\char`\"{}}\*
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+union \hyperlink{unionu__avr32__pm__cfdctrl__t}{u\-\_\-avr32\-\_\-pm\-\_\-cfdctrl\-\_\-t}
+\item 
+union \hyperlink{unionu__avr32__pm__cpusel__t}{u\-\_\-avr32\-\_\-pm\-\_\-cpusel\-\_\-t}
+\item 
+union \hyperlink{unionu__avr32__pm__pbasel__t}{u\-\_\-avr32\-\_\-pm\-\_\-pbasel\-\_\-t}
+\item 
+union \hyperlink{unionu__avr32__pm__pbbsel__t}{u\-\_\-avr32\-\_\-pm\-\_\-pbbsel\-\_\-t}
+\item 
+union \hyperlink{unionu__avr32__pm__pbcsel__t}{u\-\_\-avr32\-\_\-pm\-\_\-pbcsel\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+long \hyperlink{pm__uc3c_8c_ae8ae9d9b5af1bbd592f7dce6e11677b0}{pm\-\_\-set\-\_\-mclk\-\_\-source} (\hyperlink{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310}{pm\-\_\-clk\-\_\-src\-\_\-t} src)
+\begin{DoxyCompactList}\small\item\em \-Set the main clock. \end{DoxyCompactList}\item 
+long \hyperlink{pm__uc3c_8c_aceb9e54e518efca8516f4af990489cc5}{pm\-\_\-config\-\_\-mainclk\-\_\-safety} (bool cfd, bool final)
+\begin{DoxyCompactList}\small\item\em \-Configure the main clock safety mechanisms. \end{DoxyCompactList}\item 
+long \hyperlink{pm__uc3c_8c_ad473d037e202983e552d891dac92ade1}{pm\-\_\-set\-\_\-clk\-\_\-domain\-\_\-div} (\hyperlink{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535c}{pm\-\_\-clk\-\_\-domain\-\_\-t} clock\-\_\-domain, \hyperlink{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979c}{pm\-\_\-divratio\-\_\-t} divratio)
+\begin{DoxyCompactList}\small\item\em \-Set the division ratio for a clock domain. \end{DoxyCompactList}\item 
+long \hyperlink{pm__uc3c_8c_ac77be1957392fe87dad5adff282c5255}{pm\-\_\-disable\-\_\-clk\-\_\-domain\-\_\-div} (\hyperlink{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535c}{pm\-\_\-clk\-\_\-domain\-\_\-t} clock\-\_\-domain)
+\begin{DoxyCompactList}\small\item\em \-Disable the division ratio for a clock domain. \end{DoxyCompactList}\item 
+long \hyperlink{pm__uc3c_8c_ab99d1b12a729c6e6f765e951089be571}{pm\-\_\-wait\-\_\-for\-\_\-clk\-\_\-ready} (void)
+\begin{DoxyCompactList}\small\item\em \-Wait actively for the clock settings to be effective. \end{DoxyCompactList}\item 
+long \hyperlink{pm__uc3c_8c_a07ec689d5d7bbb41b9bacd7589209f8d}{pm\-\_\-enable\-\_\-module} (unsigned long module)
+\begin{DoxyCompactList}\small\item\em \-Enable the clock of a module. \end{DoxyCompactList}\item 
+long \hyperlink{pm__uc3c_8c_a03d78b08e8181f62ae8fbc8095bc54b8}{pm\-\_\-disable\-\_\-module} (unsigned long module)
+\begin{DoxyCompactList}\small\item\em \-Disable the clock of a module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Power \-Manager(\-P\-M) driver interface. 
+\begin{DoxyItemize}
+\item \-Compiler\-: \-I\-A\-R \-E\-W\-A\-V\-R32 and \-G\-N\-U \-G\-C\-C for \-A\-V\-R32
+\item \-Supported devices\-: \-All \-A\-V\-R32 \-U\-C3\-C devices.
+\item \-App\-Note\-:
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{\-Author}
+\-Atmel \-Corporation\-: \href{http://www.atmel.com}{\tt http\-://www.\-atmel.\-com} \par
+ \-Support and \-F\-A\-Q\-: \href{http://support.atmel.no/}{\tt http\-://support.\-atmel.\-no/} 
+\end{DoxyAuthor}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{pm__uc3c_8c_aceb9e54e518efca8516f4af990489cc5}{
+\index{pm\-\_\-uc3c.\-c@{pm\-\_\-uc3c.\-c}!pm\-\_\-config\-\_\-mainclk\-\_\-safety@{pm\-\_\-config\-\_\-mainclk\-\_\-safety}}
+\index{pm\-\_\-config\-\_\-mainclk\-\_\-safety@{pm\-\_\-config\-\_\-mainclk\-\_\-safety}!pm_uc3c.c@{pm\-\_\-uc3c.\-c}}
+\subsubsection[{pm\-\_\-config\-\_\-mainclk\-\_\-safety}]{\setlength{\rightskip}{0pt plus 5cm}long pm\-\_\-config\-\_\-mainclk\-\_\-safety (
+\begin{DoxyParamCaption}
+\item[{bool}]{cfd, }
+\item[{bool}]{final}
+\end{DoxyParamCaption}
+)}}
+\label{pm__uc3c_8c_aceb9e54e518efca8516f4af990489cc5}
+
+
+\-Configure the main clock safety mechanisms. 
+
+\begin{DoxyNote}{\-Note}
+\-Refer to the section \-Clock \-Failure \-Detector of the \-P\-M chapter in the datasheet
+\end{DoxyNote}
+\begin{DoxyWarning}{\-Warning}
+\-The \-Critical \-Path \-Oscillator (\-C\-R\-I\-P\-O\-S\-C) must be enabled before enabling the \-Over \-Clock \-Protection mechanism.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{\-Parameters}
+{\em cfd} & \-Enable/disable the \-Clock \-Failure \-Detection mechanism \\
+\hline
+{\em final} & \-If true, make this configuration definitive\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em =0} & \-Success. \\
+\hline
+{\em $<$0} & \-An error occured. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{pm__uc3c_8c_ac77be1957392fe87dad5adff282c5255}{
+\index{pm\-\_\-uc3c.\-c@{pm\-\_\-uc3c.\-c}!pm\-\_\-disable\-\_\-clk\-\_\-domain\-\_\-div@{pm\-\_\-disable\-\_\-clk\-\_\-domain\-\_\-div}}
+\index{pm\-\_\-disable\-\_\-clk\-\_\-domain\-\_\-div@{pm\-\_\-disable\-\_\-clk\-\_\-domain\-\_\-div}!pm_uc3c.c@{pm\-\_\-uc3c.\-c}}
+\subsubsection[{pm\-\_\-disable\-\_\-clk\-\_\-domain\-\_\-div}]{\setlength{\rightskip}{0pt plus 5cm}long pm\-\_\-disable\-\_\-clk\-\_\-domain\-\_\-div (
+\begin{DoxyParamCaption}
+\item[{{\bf pm\-\_\-clk\-\_\-domain\-\_\-t}}]{clock\-\_\-domain}
+\end{DoxyParamCaption}
+)}}
+\label{pm__uc3c_8c_ac77be1957392fe87dad5adff282c5255}
+
+
+\-Disable the division ratio for a clock domain. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em clock\-\_\-domain} & \-The clock domain to alter.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{\-Warning}
+\-Care should be taken that each new frequency of the synchronous clocks does not exceed the maximum frequency for each clock domain.
+\end{DoxyWarning}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em =0} & \-Success. \\
+\hline
+{\em $<$0} & \-An error occured. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{pm__uc3c_8c_a03d78b08e8181f62ae8fbc8095bc54b8}{
+\index{pm\-\_\-uc3c.\-c@{pm\-\_\-uc3c.\-c}!pm\-\_\-disable\-\_\-module@{pm\-\_\-disable\-\_\-module}}
+\index{pm\-\_\-disable\-\_\-module@{pm\-\_\-disable\-\_\-module}!pm_uc3c.c@{pm\-\_\-uc3c.\-c}}
+\subsubsection[{pm\-\_\-disable\-\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}long pm\-\_\-disable\-\_\-module (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{module}
+\end{DoxyParamCaption}
+)}}
+\label{pm__uc3c_8c_a03d78b08e8181f62ae8fbc8095bc54b8}
+
+
+\-Disable the clock of a module. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em module} & \-The module to shut down (use one of the defines in the part-\/specific header file under \char`\"{}toolchain folder\char`\"{}/avr32/inc(lude)/avr32/; depending on the clock domain, look for the sections \char`\"{}\-C\-P\-U clocks\char`\"{}, \char`\"{}\-H\-S\-B clocks\char`\"{}, \char`\"{}\-P\-Bx clocks\char`\"{})\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Success. \\
+\hline
+{\em $<$0} & \-An error occured. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{pm__uc3c_8c_a07ec689d5d7bbb41b9bacd7589209f8d}{
+\index{pm\-\_\-uc3c.\-c@{pm\-\_\-uc3c.\-c}!pm\-\_\-enable\-\_\-module@{pm\-\_\-enable\-\_\-module}}
+\index{pm\-\_\-enable\-\_\-module@{pm\-\_\-enable\-\_\-module}!pm_uc3c.c@{pm\-\_\-uc3c.\-c}}
+\subsubsection[{pm\-\_\-enable\-\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}long pm\-\_\-enable\-\_\-module (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{module}
+\end{DoxyParamCaption}
+)}}
+\label{pm__uc3c_8c_a07ec689d5d7bbb41b9bacd7589209f8d}
+
+
+\-Enable the clock of a module. 
+
+\-Module \-Functions \hypertarget{pm__uc3c_8c_ad473d037e202983e552d891dac92ade1}{
+\index{pm\-\_\-uc3c.\-c@{pm\-\_\-uc3c.\-c}!pm\-\_\-set\-\_\-clk\-\_\-domain\-\_\-div@{pm\-\_\-set\-\_\-clk\-\_\-domain\-\_\-div}}
+\index{pm\-\_\-set\-\_\-clk\-\_\-domain\-\_\-div@{pm\-\_\-set\-\_\-clk\-\_\-domain\-\_\-div}!pm_uc3c.c@{pm\-\_\-uc3c.\-c}}
+\subsubsection[{pm\-\_\-set\-\_\-clk\-\_\-domain\-\_\-div}]{\setlength{\rightskip}{0pt plus 5cm}long pm\-\_\-set\-\_\-clk\-\_\-domain\-\_\-div (
+\begin{DoxyParamCaption}
+\item[{{\bf pm\-\_\-clk\-\_\-domain\-\_\-t}}]{clock\-\_\-domain, }
+\item[{{\bf pm\-\_\-divratio\-\_\-t}}]{divratio}
+\end{DoxyParamCaption}
+)}}
+\label{pm__uc3c_8c_ad473d037e202983e552d891dac92ade1}
+
+
+\-Set the division ratio for a clock domain. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em clock\-\_\-domain} & \-The clock domain to alter. \\
+\hline
+{\em divratio} & \-The division ratio to set.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{\-Warning}
+\-Care should be taken that each new frequency of the synchronous clocks does not exceed the maximum frequency for each clock domain.
+\end{DoxyWarning}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em =0} & \-Success. \\
+\hline
+{\em $<$0} & \-An error occured. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{pm__uc3c_8c_ae8ae9d9b5af1bbd592f7dce6e11677b0}{
+\index{pm\-\_\-uc3c.\-c@{pm\-\_\-uc3c.\-c}!pm\-\_\-set\-\_\-mclk\-\_\-source@{pm\-\_\-set\-\_\-mclk\-\_\-source}}
+\index{pm\-\_\-set\-\_\-mclk\-\_\-source@{pm\-\_\-set\-\_\-mclk\-\_\-source}!pm_uc3c.c@{pm\-\_\-uc3c.\-c}}
+\subsubsection[{pm\-\_\-set\-\_\-mclk\-\_\-source}]{\setlength{\rightskip}{0pt plus 5cm}long pm\-\_\-set\-\_\-mclk\-\_\-source (
+\begin{DoxyParamCaption}
+\item[{{\bf pm\-\_\-clk\-\_\-src\-\_\-t}}]{src}
+\end{DoxyParamCaption}
+)}}
+\label{pm__uc3c_8c_ae8ae9d9b5af1bbd592f7dce6e11677b0}
+
+
+\-Set the main clock. 
+
+\-Clock \-Functions \hypertarget{pm__uc3c_8c_ab99d1b12a729c6e6f765e951089be571}{
+\index{pm\-\_\-uc3c.\-c@{pm\-\_\-uc3c.\-c}!pm\-\_\-wait\-\_\-for\-\_\-clk\-\_\-ready@{pm\-\_\-wait\-\_\-for\-\_\-clk\-\_\-ready}}
+\index{pm\-\_\-wait\-\_\-for\-\_\-clk\-\_\-ready@{pm\-\_\-wait\-\_\-for\-\_\-clk\-\_\-ready}!pm_uc3c.c@{pm\-\_\-uc3c.\-c}}
+\subsubsection[{pm\-\_\-wait\-\_\-for\-\_\-clk\-\_\-ready}]{\setlength{\rightskip}{0pt plus 5cm}long pm\-\_\-wait\-\_\-for\-\_\-clk\-\_\-ready (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{pm__uc3c_8c_ab99d1b12a729c6e6f765e951089be571}
+
+
+\-Wait actively for the clock settings to be effective. 
+
+\begin{DoxyNote}{\-Note}
+\-To avoid an infinite loop, this function checks the clock ready flag \-P\-M\-\_\-\-P\-O\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T times.
+\end{DoxyNote}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Success. \\
+\hline
+{\em $<$0} & \-Unable to reach a clock ready status within the polling limit. \\
+\hline
+\end{DoxyRetVals}

@@ -1,0 +1,134 @@
+\hypertarget{control__tables_8h}{
+\section{control\-\_\-tables.h \-File \-Reference}
+\label{control__tables_8h}\index{control\-\_\-tables.\-h@{control\-\_\-tables.\-h}}
+}
+
+
+\-Header file for all tabulated information for the control and communication.  
+
+
+{\ttfamily \#include \char`\"{}compiler.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}nav\-\_\-types.\-h\char`\"{}}\*
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcommand__structure}{command\-\_\-structure}
+\begin{DoxyCompactList}\small\item\em \-Definition structure of commands. \end{DoxyCompactList}\item 
+struct \hyperlink{structproc__func__info}{proc\-\_\-func\-\_\-info}
+\begin{DoxyCompactList}\small\item\em \-Information struct for processing functions. \end{DoxyCompactList}\item 
+struct \hyperlink{structstate__t__info}{state\-\_\-t\-\_\-info}
+\begin{DoxyCompactList}\small\item\em \-State data type information struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{Indent}\paragraph*{\-Processing functions \-I\-Ds}
+{\em \-Macros for processing functions \-I\-Ds }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__control__tables_gac644d2e05254dadd0b19a93c12c0afd9}{\-U\-P\-D\-A\-T\-E\-\_\-\-B\-U\-F\-F\-E\-R}~0x04
+\item 
+\#define \hyperlink{group__control__tables_ga88f8e60882c5d69d913d1b616687465d}{\-I\-N\-I\-T\-I\-A\-L\-\_\-\-A\-L\-I\-G\-N\-M\-E\-N\-T}~0x05
+\item 
+\#define \hyperlink{group__control__tables_gaec182aad2e49484d086d38c7ed1f9fe4}{\-M\-E\-C\-H\-A\-N\-I\-Z\-A\-T\-I\-O\-N}~0x06
+\item 
+\#define \hyperlink{group__control__tables_ga72e2455cf02251f80606a36183764cd1}{\-T\-I\-M\-E\-\_\-\-U\-P\-D\-A\-T\-E}~0x07
+\item 
+\#define \hyperlink{group__control__tables_ga2ea883c0ff4e6a5d37f32290ab3524b7}{\-Z\-U\-P\-T\-\_\-\-D\-E\-T\-E\-C\-T\-O\-R}~0x08
+\item 
+\#define \hyperlink{group__control__tables_ga7d004ff741f1e7caad510eaa0a548fc1}{\-Z\-U\-P\-T\-\_\-\-U\-P\-D\-A\-T\-E}~0x09
+\item 
+\#define \hyperlink{group__control__tables_ga5f00f42fc2574820abde7c7dd797a036}{\-G\-Y\-R\-O\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N}~0x10
+\item 
+\#define \hyperlink{group__control__tables_ga8b4361d794c38610770d0078d5a581f3}{\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N}~0x11
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-External state \-I\-Ds}
+{\em \-Macros for external state \-I\-Ds }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__control__tables_gaeadb9947c80d097da4413c55179afe6f}{\-S\-I\-D\-\_\-\-L\-I\-M\-I\-T}~0x\-F\-F
+\item 
+\#define \hyperlink{group__control__tables_gae04e393e8b250dad55fddb546ef61111}{\-S\-P\-E\-C\-I\-F\-I\-C\-\_\-\-F\-O\-R\-C\-E\-\_\-\-S\-I\-D}~0x01
+\item 
+\#define \hyperlink{group__control__tables_ga4bae6e7de487043575d61cb52dff4cf3}{\-A\-N\-G\-U\-L\-A\-R\-\_\-\-R\-A\-T\-E\-\_\-\-S\-I\-D}~0x02
+\item 
+\#define \hyperlink{group__control__tables_gad5186a188194306bbc87ddddc7644ddd}{\-I\-M\-U\-\_\-\-T\-E\-M\-P\-E\-R\-A\-T\-U\-R\-S\-\_\-\-S\-I\-D}~0x03
+\item 
+\#define \hyperlink{group__control__tables_gad0a37f572243f76ea1f2b79fc14b2a30}{\-I\-M\-U\-\_\-\-S\-U\-P\-P\-L\-Y\-\_\-\-V\-O\-L\-T\-A\-G\-E\-\_\-\-S\-I\-D}~0x04
+\item 
+\#define \hyperlink{group__control__tables_gaafd3e23709eecfd5bfdc358f8a07b991}{\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-S\-I\-D}~0x11
+\item 
+\#define \hyperlink{group__control__tables_ga6b3256a3e116aaefe13352f9b493c279}{\-V\-E\-L\-O\-C\-I\-T\-Y\-\_\-\-S\-I\-D}~0x12
+\item 
+\#define \hyperlink{group__control__tables_gae1fc29b0358f36a68b7ba9bde85e16fd}{\-Q\-U\-A\-T\-E\-R\-N\-I\-O\-N\-\_\-\-S\-I\-D}~0x13
+\item 
+\#define \hyperlink{group__control__tables_ga1c2e91b10f17814f52bf09f647909d83}{\-Z\-U\-P\-T\-\_\-\-S\-I\-D}~0x14
+\item 
+\#define \hyperlink{group__control__tables_gab3382d5f9c6e647fc9b795596dd14646}{\-I\-N\-T\-E\-R\-R\-U\-P\-T\-\_\-\-C\-O\-U\-N\-T\-E\-R\-\_\-\-S\-I\-D}~0x21
+\item 
+\#define \hyperlink{group__control__tables_gaf0c693bf22229a5eba03b2bad37b07bf}{\-A\-C\-C\-E\-L\-E\-R\-O\-M\-E\-T\-E\-R\-\_\-\-B\-I\-A\-S\-E\-S\-\_\-\-S\-I\-D}~0x35
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Command \-I\-Ds}
+{\em \-Macros for command \-I\-Ds }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__control__tables_gac08e4ee0ee7d39737aad3c8f0345125f}{\-O\-N\-L\-Y\-\_\-\-A\-C\-K}~0x01
+\item 
+\#define \hyperlink{group__control__tables_ga6b19b2455c7df9d39618ea3a8b76862f}{\-M\-C\-U\-\_\-\-I\-D}~0x02
+\item 
+\#define \hyperlink{group__control__tables_gac99194fc1af41c8aa6d9efd08ede1f22}{\-O\-U\-T\-P\-U\-T\-\_\-\-S\-T\-A\-T\-E}~0x20
+\item 
+\#define \hyperlink{group__control__tables_gae0b2c5c10091e2d401594f7b1ca994bd}{\-O\-U\-T\-P\-U\-T\-\_\-\-A\-L\-L\-\_\-\-O\-F\-F}~0x21
+\item 
+\#define \hyperlink{group__control__tables_ga237ed802e40a56c4819fae1c02bb0ef2}{\-O\-U\-T\-P\-U\-T\-\_\-\-O\-N\-O\-F\-F\-\_\-\-I\-N\-E\-R\-T}~0x22
+\item 
+\#define \hyperlink{group__control__tables_gaa36cf28d2178f23468bb7d841ef2751c}{\-O\-U\-T\-P\-U\-T\-\_\-\-P\-O\-S\-I\-T\-I\-O\-N\-\_\-\-P\-L\-U\-S\-\_\-\-Z\-U\-P\-T}~0x23
+\item 
+\#define \hyperlink{group__control__tables_ga0c9de18d6dd10a57ecac1e77ea348070}{\-O\-U\-T\-P\-U\-T\-\_\-\-N\-A\-V\-I\-G\-A\-T\-I\-O\-N\-A\-L\-\_\-\-S\-T\-A\-T\-E\-S}~0x24
+\item 
+\#define \hyperlink{group__control__tables_ga4a949ef22a9067dfeab6d8a1f5dcdcb2}{\-P\-R\-O\-C\-E\-S\-S\-I\-N\-G\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N\-\_\-\-O\-N\-O\-F\-F}~0x30
+\item 
+\#define \hyperlink{group__control__tables_gafcdf5f9fe1453405ee1fa33d809a0e33}{\-R\-E\-S\-E\-T\-\_\-\-Z\-U\-P\-T\-\_\-\-A\-I\-D\-E\-D\-\_\-\-I\-N\-S}~0x10
+\item 
+\#define \hyperlink{group__control__tables_gaf9005cd230f9c8b3987cad4597a80d3f}{\-G\-Y\-R\-O\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-N\-I\-T}~0x11
+\item 
+\#define \hyperlink{group__control__tables_ga4fa18373c8638280f359f99358fcc685}{\-A\-C\-C\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-N\-I\-T}~0x12
+\item 
+\#define \hyperlink{group__control__tables_ga8bcc9a14d954ffead9edfa80f68dc99c}{\-S\-E\-T\-\_\-\-L\-O\-W\-P\-A\-S\-S\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-I\-M\-U}~0x13
+\item 
+\#define \hyperlink{group__control__tables_gadd0f9ff2a48d64e6b6fde44116089531}{\-A\-D\-D\-\_\-\-S\-Y\-N\-C\-\_\-\-O\-U\-T\-P\-U\-T}~0x25
+\item 
+\#define \hyperlink{group__control__tables_ga6a4fabc408d6210436da0220b2e92ae0}{\-S\-Y\-N\-C\-\_\-\-O\-U\-T\-P\-U\-T}~0x26
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__control__tables_ga3e9ed14716fd984977306110fbf28de0}{commands\-\_\-init} (void)
+\item 
+bool \hyperlink{group__control__tables_ga93c567d32019e258ebc253b37fabde6c}{is\-\_\-valid\-\_\-header} (uint8\-\_\-t header)
+\item 
+\hyperlink{structcommand__structure}{command\-\_\-structure} $\ast$ \hyperlink{group__control__tables_ga95d9006725f04b028d795b3a3d9b4572}{get\-\_\-command\-\_\-info} (uint8\-\_\-t header)
+\item 
+void \hyperlink{group__control__tables_gab9fa06115589056892bdb7bb02b138c8}{processing\-\_\-functions\-\_\-init} (void)
+\item 
+void \hyperlink{group__control__tables_gae8c28d3d1938044d7d44c2e587542ff0}{system\-\_\-states\-\_\-init} (void)
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t \hyperlink{group__control__tables_gad95e17426b114a04135420ae71fad638}{command\-\_\-header\-\_\-table} \mbox{[}32\mbox{]}
+\item 
+\hyperlink{structcommand__structure}{command\-\_\-structure} $\ast$ \hyperlink{group__control__tables_ga787ed232eeca1469a58bea3d268f1ba4}{command\-\_\-info\-\_\-array} \mbox{[}256\mbox{]}
+\item 
+\hyperlink{structproc__func__info}{proc\-\_\-func\-\_\-info} $\ast$ \hyperlink{group__control__tables_ga71b229d28824a0096f4f05aed00960a0}{processing\-\_\-functions\-\_\-by\-\_\-id} \mbox{[}256\mbox{]}
+\item 
+\hyperlink{structstate__t__info}{state\-\_\-t\-\_\-info} $\ast$ \hyperlink{group__control__tables_gac88bd7197a23c03d99042566d75f3884}{state\-\_\-info\-\_\-access\-\_\-by\-\_\-id} \mbox{[}\-S\-I\-D\-\_\-\-L\-I\-M\-I\-T\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Header file for all tabulated information for the control and communication. \-This file contains declarations of arrays containing tabulated information about external system states, processing functions, and commands. \-It also contains struct typedefs of structs containing such information for individual states, functions, and commands, together with \-I\-D macros for the same. \-Delcarations of initialization functions for the arrays are also found.
+
+\begin{DoxyAuthor}{\-Authors}
+\-John-\/\-Olof \-Nilsson, \-Isaac \-Skog 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{\-Copyright}
+\-Copyright (c) 2011 \-Open\-Shoe, \-I\-S\-C \-License (open source) 
+\end{DoxyCopyright}

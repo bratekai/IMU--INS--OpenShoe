@@ -1,0 +1,527 @@
+\hypertarget{pm__uc3c_8h}{
+\section{pm\-\_\-uc3c.h \-File \-Reference}
+\label{pm__uc3c_8h}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}
+}
+
+
+\-Power \-Manager(\-P\-M) driver interface.  
+
+
+{\ttfamily \#include $<$avr32/io.\-h$>$}\*
+{\ttfamily \#include \char`\"{}compiler.\-h\char`\"{}}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{pm__uc3c_8h_aa1626f662e07d1aa23645de70383a8be}{\-\_\-\-P\-M\-\_\-\-U\-C3\-C\-\_\-\-H\-\_\-}
+\item 
+\#define \hyperlink{pm__uc3c_8h_ad011b4312da9dd961e90e9884e621f74}{\-P\-M\-\_\-\-P\-O\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T}~100000
+\begin{DoxyCompactList}\small\item\em \-The timeguard used for polling (expressed in ticks). \end{DoxyCompactList}\item 
+\#define \hyperlink{pm__uc3c_8h_aaa19f9329d0a760de066a859915daa11}{\-P\-M\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D}~(-\/10000)
+\begin{DoxyCompactList}\small\item\em \-Define \char`\"{}not supported\char`\"{} for the power manager features. \end{DoxyCompactList}\item 
+\#define \hyperlink{pm__uc3c_8h_a83e474a409f4821a1ffb7a538882ce5f}{\-P\-M\-\_\-\-U\-N\-L\-O\-C\-K}(reg)~(\-A\-V\-R32\-\_\-\-P\-M.\-unlock = (unsigned long)(\-A\-V\-R32\-\_\-\-P\-M\-\_\-\-U\-N\-L\-O\-C\-K\-\_\-\-K\-E\-Y\-\_\-\-V\-A\-L\-U\-E $<$$<$ \-A\-V\-R32\-\_\-\-P\-M\-\_\-\-U\-N\-L\-O\-C\-K\-\_\-\-K\-E\-Y\-\_\-\-O\-F\-F\-S\-E\-T)$|$(reg))
+\begin{DoxyCompactList}\small\item\em \-Unlock \-P\-M register macro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310}{pm\-\_\-clk\-\_\-src\-\_\-t} \{ \*
+\hyperlink{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310a885e82bb9f21b5bf240661947d42072e}{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-S\-L\-O\-W} =  \-A\-V\-R32\-\_\-\-P\-M\-\_\-\-M\-C\-S\-E\-L\-\_\-\-S\-L\-O\-W, 
+\hyperlink{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310a49f43b46cf68d1dc4640584cd8ea9544}{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0} =  \-A\-V\-R32\-\_\-\-P\-M\-\_\-\-M\-C\-S\-E\-L\-\_\-\-O\-S\-C0, 
+\hyperlink{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310ae6d449f47385521546867f9dc9dbe154}{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1} =  \-A\-V\-R32\-\_\-\-P\-M\-\_\-\-M\-C\-S\-E\-L\-\_\-\-O\-S\-C1, 
+\hyperlink{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310a53a1f3a48c75772aa26f29cfb332bbdb}{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0} =  \-A\-V\-R32\-\_\-\-P\-M\-\_\-\-M\-C\-S\-E\-L\-\_\-\-P\-L\-L0, 
+\*
+\hyperlink{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310a1e251e0f3de3c6858219f063c70b92ba}{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1} =  \-A\-V\-R32\-\_\-\-P\-M\-\_\-\-M\-C\-S\-E\-L\-\_\-\-P\-L\-L1, 
+\hyperlink{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310a22d4905250f67bb1306bd9049eb61e3c}{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M} =  \-A\-V\-R32\-\_\-\-P\-M\-\_\-\-M\-C\-S\-E\-L\-\_\-\-R\-C\-O\-S\-C8, 
+\hyperlink{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310a7590022a64df93ebd0bde5cc38cde8a5}{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-R\-I\-P\-O\-S\-C} =  \-A\-V\-R32\-\_\-\-P\-M\-\_\-\-M\-C\-S\-E\-L\-\_\-\-C\-R\-I\-P\-O\-S\-C, 
+\hyperlink{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310ad0ad6e68968757591d619c6024cd4e73}{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C120\-M} =  \-A\-V\-R32\-\_\-\-P\-M\-\_\-\-M\-C\-S\-E\-L\-\_\-\-R\-C120\-M, 
+\*
+\hyperlink{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310a51c2eff117a35b4d9013b77740f552ad}{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-I\-N\-V\-A\-L\-I\-D}
+ \}
+\begin{DoxyCompactList}\small\item\em \-Device-\/specific data. \end{DoxyCompactList}\item 
+enum \hyperlink{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535c}{pm\-\_\-clk\-\_\-domain\-\_\-t} \{ \*
+\hyperlink{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535ca8f30cb60acdab990ecbe9dadd74f3d67}{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-0} =  \-A\-V\-R32\-\_\-\-P\-M\-\_\-\-C\-L\-K\-\_\-\-G\-R\-P\-\_\-\-C\-P\-U, 
+\hyperlink{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535caa36a86f57a2a32507ce7a84537751ef3}{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-1} =  \-A\-V\-R32\-\_\-\-P\-M\-\_\-\-C\-L\-K\-\_\-\-G\-R\-P\-\_\-\-H\-S\-B, 
+\hyperlink{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535ca75bf7740192d422d49cc143026403d0e}{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-2} =  \-A\-V\-R32\-\_\-\-P\-M\-\_\-\-C\-L\-K\-\_\-\-G\-R\-P\-\_\-\-P\-B\-A, 
+\hyperlink{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535ca159fdb5cbf3d14bfee214a9b6e10c91c}{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-3} =  \-A\-V\-R32\-\_\-\-P\-M\-\_\-\-C\-L\-K\-\_\-\-G\-R\-P\-\_\-\-P\-B\-B, 
+\*
+\hyperlink{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535ca208df795621e2e61888aff5fe95bf70c}{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-4} =  \-A\-V\-R32\-\_\-\-P\-M\-\_\-\-C\-L\-K\-\_\-\-G\-R\-P\-\_\-\-P\-B\-C, 
+\hyperlink{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535ca751484b79b7f306e82e4d1a631cb9b59}{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D}
+ \}
+\begin{DoxyCompactList}\small\item\em \-The clock domains of the power manager. \end{DoxyCompactList}\item 
+enum \hyperlink{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979c}{pm\-\_\-divratio\-\_\-t} \{ \*
+\hyperlink{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979ca30c7faba7d6d0532ac28e39bf02ff061}{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-2} =  0, 
+\hyperlink{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979ca7f998cb06cadeca4c20a62174309750e}{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-4}, 
+\hyperlink{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979cae395ebfc33ac30b46edfec9d43d11229}{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-8}, 
+\hyperlink{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979cacbb398f7cc39e5aa7754699a9687643d}{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-16}, 
+\*
+\hyperlink{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979caea40191275793e135fb3b3c792b77ab3}{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-32}, 
+\hyperlink{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979ca90109336eb88c021bc7846f258cb2c53}{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-64}, 
+\hyperlink{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979caea080e0910a2096b31df599973e49fc8}{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-128}, 
+\hyperlink{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979ca962015a41d3c318f04eb07f041cb4153}{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-256}
+ \}
+\begin{DoxyCompactList}\small\item\em \-The possible synchronous clock division ratio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{Indent}\paragraph*{\-Clock \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+long \hyperlink{pm__uc3c_8h_ae8ae9d9b5af1bbd592f7dce6e11677b0}{pm\-\_\-set\-\_\-mclk\-\_\-source} (\hyperlink{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310}{pm\-\_\-clk\-\_\-src\-\_\-t} src)
+\begin{DoxyCompactList}\small\item\em \-Set the main clock. \end{DoxyCompactList}\item 
+long \hyperlink{pm__uc3c_8h_aceb9e54e518efca8516f4af990489cc5}{pm\-\_\-config\-\_\-mainclk\-\_\-safety} (bool cfd, bool final)
+\begin{DoxyCompactList}\small\item\em \-Configure the main clock safety mechanisms. \end{DoxyCompactList}\item 
+long \hyperlink{pm__uc3c_8h_ad473d037e202983e552d891dac92ade1}{pm\-\_\-set\-\_\-clk\-\_\-domain\-\_\-div} (\hyperlink{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535c}{pm\-\_\-clk\-\_\-domain\-\_\-t} clock\-\_\-domain, \hyperlink{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979c}{pm\-\_\-divratio\-\_\-t} divratio)
+\begin{DoxyCompactList}\small\item\em \-Set the division ratio for a clock domain. \end{DoxyCompactList}\item 
+long \hyperlink{pm__uc3c_8h_ac77be1957392fe87dad5adff282c5255}{pm\-\_\-disable\-\_\-clk\-\_\-domain\-\_\-div} (\hyperlink{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535c}{pm\-\_\-clk\-\_\-domain\-\_\-t} clock\-\_\-domain)
+\begin{DoxyCompactList}\small\item\em \-Disable the division ratio for a clock domain. \end{DoxyCompactList}\item 
+long \hyperlink{pm__uc3c_8h_ab99d1b12a729c6e6f765e951089be571}{pm\-\_\-wait\-\_\-for\-\_\-clk\-\_\-ready} (void)
+\begin{DoxyCompactList}\small\item\em \-Wait actively for the clock settings to be effective. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Module \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+long \hyperlink{pm__uc3c_8h_a07ec689d5d7bbb41b9bacd7589209f8d}{pm\-\_\-enable\-\_\-module} (unsigned long module)
+\begin{DoxyCompactList}\small\item\em \-Enable the clock of a module. \end{DoxyCompactList}\item 
+long \hyperlink{pm__uc3c_8h_a03d78b08e8181f62ae8fbc8095bc54b8}{pm\-\_\-disable\-\_\-module} (unsigned long module)
+\begin{DoxyCompactList}\small\item\em \-Disable the clock of a module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Reset \-Functions}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Interrupt \-Functions}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Misc \-Functions}
+\end{Indent}
+\subsection*{\-Sleep \-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{pm__uc3c_8h_ac11cc59a43dd9ec6b7fb43580453eff7}{\-S\-L\-E\-E\-P}(sleep\-\_\-mode)~\{\-\_\-\-\_\-asm\-\_\-\-\_\- \-\_\-\-\_\-volatile\-\_\-\-\_\- (\char`\"{}sleep \char`\"{}\-S\-T\-R\-I\-N\-G\-Z(sleep\-\_\-mode));\}
+\begin{DoxyCompactList}\small\item\em \-Sets the \-M\-C\-U in the specified sleep mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Power \-Manager(\-P\-M) driver interface. 
+\begin{DoxyItemize}
+\item \-Compiler\-: \-I\-A\-R \-E\-W\-A\-V\-R32 and \-G\-N\-U \-G\-C\-C for \-A\-V\-R32
+\item \-Supported devices\-: \-All \-A\-V\-R32 \-U\-C3\-C devices.
+\item \-App\-Note\-:
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{\-Author}
+\-Atmel \-Corporation\-: \href{http://www.atmel.com}{\tt http\-://www.\-atmel.\-com} \par
+ \-Support and \-F\-A\-Q\-: \href{http://support.atmel.no/}{\tt http\-://support.\-atmel.\-no/} 
+\end{DoxyAuthor}
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{pm__uc3c_8h_aa1626f662e07d1aa23645de70383a8be}{
+\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-\_\-\-P\-M\-\_\-\-U\-C3\-C\-\_\-\-H\-\_\-@{\-\_\-\-P\-M\-\_\-\-U\-C3\-C\-\_\-\-H\-\_\-}}
+\index{\-\_\-\-P\-M\-\_\-\-U\-C3\-C\-\_\-\-H\-\_\-@{\-\_\-\-P\-M\-\_\-\-U\-C3\-C\-\_\-\-H\-\_\-}!pm_uc3c.h@{pm\-\_\-uc3c.\-h}}
+\subsubsection[{\-\_\-\-P\-M\-\_\-\-U\-C3\-C\-\_\-\-H\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-P\-M\-\_\-\-U\-C3\-C\-\_\-\-H\-\_\-}}
+\label{pm__uc3c_8h_aa1626f662e07d1aa23645de70383a8be}
+\hypertarget{pm__uc3c_8h_aaa19f9329d0a760de066a859915daa11}{
+\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D@{\-P\-M\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D}}
+\index{\-P\-M\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D@{\-P\-M\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D}!pm_uc3c.h@{pm\-\_\-uc3c.\-h}}
+\subsubsection[{\-P\-M\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-M\-\_\-\-N\-O\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D~(-\/10000)}}
+\label{pm__uc3c_8h_aaa19f9329d0a760de066a859915daa11}
+
+
+\-Define \char`\"{}not supported\char`\"{} for the power manager features. 
+
+\hypertarget{pm__uc3c_8h_ad011b4312da9dd961e90e9884e621f74}{
+\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-P\-O\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T@{\-P\-M\-\_\-\-P\-O\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T}}
+\index{\-P\-M\-\_\-\-P\-O\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T@{\-P\-M\-\_\-\-P\-O\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T}!pm_uc3c.h@{pm\-\_\-uc3c.\-h}}
+\subsubsection[{\-P\-M\-\_\-\-P\-O\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-M\-\_\-\-P\-O\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T~100000}}
+\label{pm__uc3c_8h_ad011b4312da9dd961e90e9884e621f74}
+
+
+\-The timeguard used for polling (expressed in ticks). 
+
+\hypertarget{pm__uc3c_8h_a83e474a409f4821a1ffb7a538882ce5f}{
+\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-U\-N\-L\-O\-C\-K@{\-P\-M\-\_\-\-U\-N\-L\-O\-C\-K}}
+\index{\-P\-M\-\_\-\-U\-N\-L\-O\-C\-K@{\-P\-M\-\_\-\-U\-N\-L\-O\-C\-K}!pm_uc3c.h@{pm\-\_\-uc3c.\-h}}
+\subsubsection[{\-P\-M\-\_\-\-U\-N\-L\-O\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-M\-\_\-\-U\-N\-L\-O\-C\-K(
+\begin{DoxyParamCaption}
+\item[{}]{reg}
+\end{DoxyParamCaption}
+)~(\-A\-V\-R32\-\_\-\-P\-M.\-unlock = (unsigned long)(\-A\-V\-R32\-\_\-\-P\-M\-\_\-\-U\-N\-L\-O\-C\-K\-\_\-\-K\-E\-Y\-\_\-\-V\-A\-L\-U\-E $<$$<$ \-A\-V\-R32\-\_\-\-P\-M\-\_\-\-U\-N\-L\-O\-C\-K\-\_\-\-K\-E\-Y\-\_\-\-O\-F\-F\-S\-E\-T)$|$(reg))}}
+\label{pm__uc3c_8h_a83e474a409f4821a1ffb7a538882ce5f}
+
+
+\-Unlock \-P\-M register macro. 
+
+\hypertarget{pm__uc3c_8h_ac11cc59a43dd9ec6b7fb43580453eff7}{
+\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-S\-L\-E\-E\-P@{\-S\-L\-E\-E\-P}}
+\index{\-S\-L\-E\-E\-P@{\-S\-L\-E\-E\-P}!pm_uc3c.h@{pm\-\_\-uc3c.\-h}}
+\subsubsection[{\-S\-L\-E\-E\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-L\-E\-E\-P(
+\begin{DoxyParamCaption}
+\item[{}]{sleep\-\_\-mode}
+\end{DoxyParamCaption}
+)~\{\-\_\-\-\_\-asm\-\_\-\-\_\- \-\_\-\-\_\-volatile\-\_\-\-\_\- (\char`\"{}sleep \char`\"{}\-S\-T\-R\-I\-N\-G\-Z(sleep\-\_\-mode));\}}}
+\label{pm__uc3c_8h_ac11cc59a43dd9ec6b7fb43580453eff7}
+
+
+\-Sets the \-M\-C\-U in the specified sleep mode. 
+
+\begin{DoxyNote}{\-Note}
+\-Precautions should be taken before entering sleep mode. \-Refer to the datasheet chapter '\-Power \-Manager'.
+\end{DoxyNote}
+
+\begin{DoxyParams}{\-Parameters}
+{\em sleep\-\_\-mode} & \-The sleep mode index \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{\-Enumeration \-Type \-Documentation}
+\hypertarget{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535c}{
+\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!pm\-\_\-clk\-\_\-domain\-\_\-t@{pm\-\_\-clk\-\_\-domain\-\_\-t}}
+\index{pm\-\_\-clk\-\_\-domain\-\_\-t@{pm\-\_\-clk\-\_\-domain\-\_\-t}!pm_uc3c.h@{pm\-\_\-uc3c.\-h}}
+\subsubsection[{pm\-\_\-clk\-\_\-domain\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf pm\-\_\-clk\-\_\-domain\-\_\-t}}}
+\label{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535c}
+
+
+\-The clock domains of the power manager. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-0@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-0}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-0@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-0}}\item[{\em 
+\hypertarget{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535ca8f30cb60acdab990ecbe9dadd74f3d67}{
+\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-0}
+\label{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535ca8f30cb60acdab990ecbe9dadd74f3d67}
+}]\index{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-1@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-1}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-1@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-1}}\item[{\em 
+\hypertarget{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535caa36a86f57a2a32507ce7a84537751ef3}{
+\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-1}
+\label{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535caa36a86f57a2a32507ce7a84537751ef3}
+}]\index{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-2@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-2}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-2@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-2}}\item[{\em 
+\hypertarget{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535ca75bf7740192d422d49cc143026403d0e}{
+\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-2}
+\label{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535ca75bf7740192d422d49cc143026403d0e}
+}]\index{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-3@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-3}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-3@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-3}}\item[{\em 
+\hypertarget{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535ca159fdb5cbf3d14bfee214a9b6e10c91c}{
+\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-3}
+\label{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535ca159fdb5cbf3d14bfee214a9b6e10c91c}
+}]\index{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-4@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-4}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-4@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-4}}\item[{\em 
+\hypertarget{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535ca208df795621e2e61888aff5fe95bf70c}{
+\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-4}
+\label{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535ca208df795621e2e61888aff5fe95bf70c}
+}]\index{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D}}\item[{\em 
+\hypertarget{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535ca751484b79b7f306e82e4d1a631cb9b59}{
+\-P\-M\-\_\-\-C\-L\-K\-\_\-\-D\-O\-M\-A\-I\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D}
+\label{pm__uc3c_8h_aea4a6cecabd6ace50e11b1588576535ca751484b79b7f306e82e4d1a631cb9b59}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310}{
+\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!pm\-\_\-clk\-\_\-src\-\_\-t@{pm\-\_\-clk\-\_\-src\-\_\-t}}
+\index{pm\-\_\-clk\-\_\-src\-\_\-t@{pm\-\_\-clk\-\_\-src\-\_\-t}!pm_uc3c.h@{pm\-\_\-uc3c.\-h}}
+\subsubsection[{pm\-\_\-clk\-\_\-src\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf pm\-\_\-clk\-\_\-src\-\_\-t}}}
+\label{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310}
+
+
+\-Device-\/specific data. 
+
+\-The clock sources of the power manager. \begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-S\-L\-O\-W@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-S\-L\-O\-W}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-S\-L\-O\-W@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-S\-L\-O\-W}}\item[{\em 
+\hypertarget{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310a885e82bb9f21b5bf240661947d42072e}{
+\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-S\-L\-O\-W}
+\label{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310a885e82bb9f21b5bf240661947d42072e}
+}]\index{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0}}\item[{\em 
+\hypertarget{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310a49f43b46cf68d1dc4640584cd8ea9544}{
+\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0}
+\label{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310a49f43b46cf68d1dc4640584cd8ea9544}
+}]\index{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1}}\item[{\em 
+\hypertarget{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310ae6d449f47385521546867f9dc9dbe154}{
+\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1}
+\label{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310ae6d449f47385521546867f9dc9dbe154}
+}]\index{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0}}\item[{\em 
+\hypertarget{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310a53a1f3a48c75772aa26f29cfb332bbdb}{
+\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0}
+\label{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310a53a1f3a48c75772aa26f29cfb332bbdb}
+}]\index{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1}}\item[{\em 
+\hypertarget{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310a1e251e0f3de3c6858219f063c70b92ba}{
+\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1}
+\label{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310a1e251e0f3de3c6858219f063c70b92ba}
+}]\index{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M}}\item[{\em 
+\hypertarget{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310a22d4905250f67bb1306bd9049eb61e3c}{
+\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M}
+\label{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310a22d4905250f67bb1306bd9049eb61e3c}
+}]\index{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-R\-I\-P\-O\-S\-C@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-R\-I\-P\-O\-S\-C}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-R\-I\-P\-O\-S\-C@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-R\-I\-P\-O\-S\-C}}\item[{\em 
+\hypertarget{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310a7590022a64df93ebd0bde5cc38cde8a5}{
+\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-R\-I\-P\-O\-S\-C}
+\label{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310a7590022a64df93ebd0bde5cc38cde8a5}
+}]\index{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C120\-M@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C120\-M}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C120\-M@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C120\-M}}\item[{\em 
+\hypertarget{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310ad0ad6e68968757591d619c6024cd4e73}{
+\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C120\-M}
+\label{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310ad0ad6e68968757591d619c6024cd4e73}
+}]\index{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-I\-N\-V\-A\-L\-I\-D@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-I\-N\-V\-A\-L\-I\-D}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-I\-N\-V\-A\-L\-I\-D@{\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-I\-N\-V\-A\-L\-I\-D}}\item[{\em 
+\hypertarget{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310a51c2eff117a35b4d9013b77740f552ad}{
+\-P\-M\-\_\-\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-I\-N\-V\-A\-L\-I\-D}
+\label{pm__uc3c_8h_a6d0083840f5a3cef12557a5b93b7d310a51c2eff117a35b4d9013b77740f552ad}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979c}{
+\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!pm\-\_\-divratio\-\_\-t@{pm\-\_\-divratio\-\_\-t}}
+\index{pm\-\_\-divratio\-\_\-t@{pm\-\_\-divratio\-\_\-t}!pm_uc3c.h@{pm\-\_\-uc3c.\-h}}
+\subsubsection[{pm\-\_\-divratio\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf pm\-\_\-divratio\-\_\-t}}}
+\label{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979c}
+
+
+\-The possible synchronous clock division ratio. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-2@{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-2}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-2@{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-2}}\item[{\em 
+\hypertarget{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979ca30c7faba7d6d0532ac28e39bf02ff061}{
+\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-2}
+\label{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979ca30c7faba7d6d0532ac28e39bf02ff061}
+}]\index{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-4@{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-4}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-4@{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-4}}\item[{\em 
+\hypertarget{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979ca7f998cb06cadeca4c20a62174309750e}{
+\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-4}
+\label{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979ca7f998cb06cadeca4c20a62174309750e}
+}]\index{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-8@{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-8}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-8@{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-8}}\item[{\em 
+\hypertarget{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979cae395ebfc33ac30b46edfec9d43d11229}{
+\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-8}
+\label{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979cae395ebfc33ac30b46edfec9d43d11229}
+}]\index{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-16@{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-16}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-16@{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-16}}\item[{\em 
+\hypertarget{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979cacbb398f7cc39e5aa7754699a9687643d}{
+\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-16}
+\label{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979cacbb398f7cc39e5aa7754699a9687643d}
+}]\index{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-32@{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-32}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-32@{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-32}}\item[{\em 
+\hypertarget{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979caea40191275793e135fb3b3c792b77ab3}{
+\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-32}
+\label{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979caea40191275793e135fb3b3c792b77ab3}
+}]\index{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-64@{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-64}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-64@{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-64}}\item[{\em 
+\hypertarget{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979ca90109336eb88c021bc7846f258cb2c53}{
+\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-64}
+\label{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979ca90109336eb88c021bc7846f258cb2c53}
+}]\index{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-128@{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-128}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-128@{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-128}}\item[{\em 
+\hypertarget{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979caea080e0910a2096b31df599973e49fc8}{
+\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-128}
+\label{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979caea080e0910a2096b31df599973e49fc8}
+}]\index{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-256@{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-256}!pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}}\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-256@{\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-256}}\item[{\em 
+\hypertarget{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979ca962015a41d3c318f04eb07f041cb4153}{
+\-P\-M\-\_\-\-C\-K\-S\-E\-L\-\_\-\-D\-I\-V\-R\-A\-T\-I\-O\-\_\-256}
+\label{pm__uc3c_8h_a2dec77bcf0a6e6ddb97e22052dc1979ca962015a41d3c318f04eb07f041cb4153}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{pm__uc3c_8h_aceb9e54e518efca8516f4af990489cc5}{
+\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!pm\-\_\-config\-\_\-mainclk\-\_\-safety@{pm\-\_\-config\-\_\-mainclk\-\_\-safety}}
+\index{pm\-\_\-config\-\_\-mainclk\-\_\-safety@{pm\-\_\-config\-\_\-mainclk\-\_\-safety}!pm_uc3c.h@{pm\-\_\-uc3c.\-h}}
+\subsubsection[{pm\-\_\-config\-\_\-mainclk\-\_\-safety}]{\setlength{\rightskip}{0pt plus 5cm}long pm\-\_\-config\-\_\-mainclk\-\_\-safety (
+\begin{DoxyParamCaption}
+\item[{bool}]{cfd, }
+\item[{bool}]{final}
+\end{DoxyParamCaption}
+)}}
+\label{pm__uc3c_8h_aceb9e54e518efca8516f4af990489cc5}
+
+
+\-Configure the main clock safety mechanisms. 
+
+\begin{DoxyNote}{\-Note}
+\-Refer to the section \-Clock \-Failure \-Detector of the \-P\-M chapter in the datasheet
+\end{DoxyNote}
+\begin{DoxyWarning}{\-Warning}
+\-The \-Critical \-Path \-Oscillator (\-C\-R\-I\-P\-O\-S\-C) must be enabled before enabling the \-Over \-Clock \-Protection mechanism.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{\-Parameters}
+{\em cfd} & \-Enable/disable the \-Clock \-Failure \-Detection mechanism \\
+\hline
+{\em final} & \-If true, make this configuration definitive\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em =0} & \-Success. \\
+\hline
+{\em $<$0} & \-An error occured. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{pm__uc3c_8h_ac77be1957392fe87dad5adff282c5255}{
+\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!pm\-\_\-disable\-\_\-clk\-\_\-domain\-\_\-div@{pm\-\_\-disable\-\_\-clk\-\_\-domain\-\_\-div}}
+\index{pm\-\_\-disable\-\_\-clk\-\_\-domain\-\_\-div@{pm\-\_\-disable\-\_\-clk\-\_\-domain\-\_\-div}!pm_uc3c.h@{pm\-\_\-uc3c.\-h}}
+\subsubsection[{pm\-\_\-disable\-\_\-clk\-\_\-domain\-\_\-div}]{\setlength{\rightskip}{0pt plus 5cm}long pm\-\_\-disable\-\_\-clk\-\_\-domain\-\_\-div (
+\begin{DoxyParamCaption}
+\item[{{\bf pm\-\_\-clk\-\_\-domain\-\_\-t}}]{clock\-\_\-domain}
+\end{DoxyParamCaption}
+)}}
+\label{pm__uc3c_8h_ac77be1957392fe87dad5adff282c5255}
+
+
+\-Disable the division ratio for a clock domain. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em clock\-\_\-domain} & \-The clock domain to alter.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{\-Warning}
+\-Care should be taken that each new frequency of the synchronous clocks does not exceed the maximum frequency for each clock domain.
+\end{DoxyWarning}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em =0} & \-Success. \\
+\hline
+{\em $<$0} & \-An error occured. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{pm__uc3c_8h_a03d78b08e8181f62ae8fbc8095bc54b8}{
+\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!pm\-\_\-disable\-\_\-module@{pm\-\_\-disable\-\_\-module}}
+\index{pm\-\_\-disable\-\_\-module@{pm\-\_\-disable\-\_\-module}!pm_uc3c.h@{pm\-\_\-uc3c.\-h}}
+\subsubsection[{pm\-\_\-disable\-\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}long pm\-\_\-disable\-\_\-module (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{module}
+\end{DoxyParamCaption}
+)}}
+\label{pm__uc3c_8h_a03d78b08e8181f62ae8fbc8095bc54b8}
+
+
+\-Disable the clock of a module. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em module} & \-The module to shut down (use one of the defines in the part-\/specific header file under \char`\"{}toolchain folder\char`\"{}/avr32/inc(lude)/avr32/; depending on the clock domain, look for the sections \char`\"{}\-C\-P\-U clocks\char`\"{}, \char`\"{}\-H\-S\-B clocks\char`\"{}, \char`\"{}\-P\-Bx clocks\char`\"{})\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Success. \\
+\hline
+{\em $<$0} & \-An error occured. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{pm__uc3c_8h_a07ec689d5d7bbb41b9bacd7589209f8d}{
+\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!pm\-\_\-enable\-\_\-module@{pm\-\_\-enable\-\_\-module}}
+\index{pm\-\_\-enable\-\_\-module@{pm\-\_\-enable\-\_\-module}!pm_uc3c.h@{pm\-\_\-uc3c.\-h}}
+\subsubsection[{pm\-\_\-enable\-\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}long pm\-\_\-enable\-\_\-module (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{module}
+\end{DoxyParamCaption}
+)}}
+\label{pm__uc3c_8h_a07ec689d5d7bbb41b9bacd7589209f8d}
+
+
+\-Enable the clock of a module. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em module} & \-The module to clock (use one of the defines in the part-\/specific header file under \char`\"{}toolchain folder\char`\"{}/avr32/inc(lude)/avr32/; depending on the clock domain, look for the sections \char`\"{}\-C\-P\-U clocks\char`\"{}, \char`\"{}\-H\-S\-B clocks\char`\"{}, \char`\"{}\-P\-Bx clocks\char`\"{})\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Success. \\
+\hline
+{\em $<$0} & \-An error occured.\\
+\hline
+\end{DoxyRetVals}
+\-Module \-Functions \hypertarget{pm__uc3c_8h_ad473d037e202983e552d891dac92ade1}{
+\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!pm\-\_\-set\-\_\-clk\-\_\-domain\-\_\-div@{pm\-\_\-set\-\_\-clk\-\_\-domain\-\_\-div}}
+\index{pm\-\_\-set\-\_\-clk\-\_\-domain\-\_\-div@{pm\-\_\-set\-\_\-clk\-\_\-domain\-\_\-div}!pm_uc3c.h@{pm\-\_\-uc3c.\-h}}
+\subsubsection[{pm\-\_\-set\-\_\-clk\-\_\-domain\-\_\-div}]{\setlength{\rightskip}{0pt plus 5cm}long pm\-\_\-set\-\_\-clk\-\_\-domain\-\_\-div (
+\begin{DoxyParamCaption}
+\item[{{\bf pm\-\_\-clk\-\_\-domain\-\_\-t}}]{clock\-\_\-domain, }
+\item[{{\bf pm\-\_\-divratio\-\_\-t}}]{divratio}
+\end{DoxyParamCaption}
+)}}
+\label{pm__uc3c_8h_ad473d037e202983e552d891dac92ade1}
+
+
+\-Set the division ratio for a clock domain. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em clock\-\_\-domain} & \-The clock domain to alter. \\
+\hline
+{\em divratio} & \-The division ratio to set.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{\-Warning}
+\-Care should be taken that each new frequency of the synchronous clocks does not exceed the maximum frequency for each clock domain.
+\end{DoxyWarning}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em =0} & \-Success. \\
+\hline
+{\em $<$0} & \-An error occured. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{pm__uc3c_8h_ae8ae9d9b5af1bbd592f7dce6e11677b0}{
+\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!pm\-\_\-set\-\_\-mclk\-\_\-source@{pm\-\_\-set\-\_\-mclk\-\_\-source}}
+\index{pm\-\_\-set\-\_\-mclk\-\_\-source@{pm\-\_\-set\-\_\-mclk\-\_\-source}!pm_uc3c.h@{pm\-\_\-uc3c.\-h}}
+\subsubsection[{pm\-\_\-set\-\_\-mclk\-\_\-source}]{\setlength{\rightskip}{0pt plus 5cm}long pm\-\_\-set\-\_\-mclk\-\_\-source (
+\begin{DoxyParamCaption}
+\item[{{\bf pm\-\_\-clk\-\_\-src\-\_\-t}}]{src}
+\end{DoxyParamCaption}
+)}}
+\label{pm__uc3c_8h_ae8ae9d9b5af1bbd592f7dce6e11677b0}
+
+
+\-Set the main clock. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em src} & \-The clock to use as the main clock.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{\-Warning}
+\-The input clock to use as the main clock must be enabled before calling this function, otherwise a deadlock will occur.
+\end{DoxyWarning}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Success. \\
+\hline
+{\em $<$0} & \-An error occured when trying to set the main clock.\\
+\hline
+\end{DoxyRetVals}
+\-Clock \-Functions \hypertarget{pm__uc3c_8h_ab99d1b12a729c6e6f765e951089be571}{
+\index{pm\-\_\-uc3c.\-h@{pm\-\_\-uc3c.\-h}!pm\-\_\-wait\-\_\-for\-\_\-clk\-\_\-ready@{pm\-\_\-wait\-\_\-for\-\_\-clk\-\_\-ready}}
+\index{pm\-\_\-wait\-\_\-for\-\_\-clk\-\_\-ready@{pm\-\_\-wait\-\_\-for\-\_\-clk\-\_\-ready}!pm_uc3c.h@{pm\-\_\-uc3c.\-h}}
+\subsubsection[{pm\-\_\-wait\-\_\-for\-\_\-clk\-\_\-ready}]{\setlength{\rightskip}{0pt plus 5cm}long pm\-\_\-wait\-\_\-for\-\_\-clk\-\_\-ready (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{pm__uc3c_8h_ab99d1b12a729c6e6f765e951089be571}
+
+
+\-Wait actively for the clock settings to be effective. 
+
+\begin{DoxyNote}{\-Note}
+\-To avoid an infinite loop, this function checks the clock ready flag \-P\-M\-\_\-\-P\-O\-L\-L\-\_\-\-T\-I\-M\-E\-O\-U\-T times.
+\end{DoxyNote}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Success. \\
+\hline
+{\em $<$0} & \-Unable to reach a clock ready status within the polling limit. \\
+\hline
+\end{DoxyRetVals}

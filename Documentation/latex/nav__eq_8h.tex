@@ -1,0 +1,68 @@
+\hypertarget{nav__eq_8h}{
+\section{nav\-\_\-eq.h \-File \-Reference}
+\label{nav__eq_8h}\index{nav\-\_\-eq.\-h@{nav\-\_\-eq.\-h}}
+}
+
+
+\-Header file for the \-Open\-Shoe navigation algorithm.  
+
+
+{\ttfamily \#include \char`\"{}nav\-\_\-types.\-h\char`\"{}}\*
+{\ttfamily \#include $<$math.\-h$>$}\*
+{\ttfamily \#include $<$stdint.\-h$>$}\*
+{\ttfamily \#include \char`\"{}compiler.\-h\char`\"{}}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__nav__eq_gac33a980808c64969262d91fa090eae7d}{\-M\-A\-X\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S}~12
+\begin{DoxyCompactList}\small\item\em \-Maximum numbers of orientations that can be used in the accelerometer calibration. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__nav__eq_ga4a21daf1ec76403dafe6b89d46fedbce}{\-M\-I\-N\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S}~3
+\begin{DoxyCompactList}\small\item\em \-Minimum numbers of orientations that can be used in the accelerometer calibration. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__nav__eq_ga2543e63d374d215bd7e64b4afb54287f}{\-M\-A\-T\-R\-I\-X\-\_\-\-I\-N\-V\-E\-R\-S\-I\-O\-N\-\_\-\-E\-R\-R\-O\-R}~1
+\begin{DoxyCompactList}\small\item\em \-Value returned in the error message if an error occurred in the matrix inversion. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__nav__eq_gad356bf235d99e4983077623c35c068c0}{\-A\-C\-C\-\_\-\-S\-T\-A\-T\-I\-O\-N\-A\-R\-I\-T\-Y\-\_\-\-E\-R\-R\-O\-R}~2
+\begin{DoxyCompactList}\small\item\em \-Value returned in the error message if the \-I\-M\-U was not stationary during the accelerometer calibration. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__nav__eq_ga831d1c30dc8456f94b32e61f65409f4d}{\-A\-C\-C\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N\-\_\-\-I\-L\-L\-C\-O\-N\-D\-I\-T\-I\-O\-N\-E\-D}~3
+\begin{DoxyCompactList}\small\item\em \-Value returned in the error message if the orientations used in the accelerometer calibration were poorly chosen. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__nav__eq_gae34482207df685c69af65539f47656fa}{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S\-\_\-\-T\-O\-\_\-\-L\-A\-R\-G\-E}~4
+\begin{DoxyCompactList}\small\item\em \-Value returned in the error message if the number of orientations specified for the accelerometer calibration is to large. \-It has been changed to 12. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__nav__eq_gad656aa8d45ef9064bf607734a3af16a1}{\-N\-U\-M\-B\-E\-R\-\_\-\-O\-F\-\_\-\-O\-R\-I\-E\-N\-T\-A\-T\-I\-O\-N\-S\-\_\-\-T\-O\-\_\-\-S\-M\-A\-L\-L}~5
+\begin{DoxyCompactList}\small\item\em \-Value returned in the error message if the number of orientations specified for the accelerometer calibration is to few. \-It has been changed to 3. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__nav__eq_ga8add91659e5cb9c98d3a32c44269f034}{absf}(a)~(a$>$0 ? a\-:-\/a)
+\begin{DoxyCompactList}\small\item\em \-Absolute value of a floating point variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__nav__eq_gabb3f28a44a35898c77d789734914c4c2}{calibrate\-\_\-accelerometers} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for calibrating the accelerometer biases. \end{DoxyCompactList}\item 
+void \hyperlink{group__nav__eq_ga272f4012a72ac416888be28bff0236e6}{estimate\-\_\-accelerometer\-\_\-biases} (void)
+\begin{DoxyCompactList}\small\item\em \-Function that estimates the accelerometer biases given a matrix of the mean of the measured acceleration at different orientations. \end{DoxyCompactList}\item 
+void \hyperlink{group__nav__eq_ga8812381ada5c2786a10e378e4ca34377}{correct\-\_\-navigation\-\_\-states} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for correcting the navigation states given a zero-\/velocity detection. \end{DoxyCompactList}\item 
+void \hyperlink{group__nav__eq_ga75c4a936b2db01f930ba89babb822f69}{gain\-\_\-matrix} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for calculating the \-Kalman filter gain matrix. \end{DoxyCompactList}\item 
+void \hyperlink{group__nav__eq_ga8b0f8dc8c2ae1ff3f5e4f27284cf8e77}{initialize\-\_\-navigation\-\_\-algorithm} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for initializing the navigation algorithm. \end{DoxyCompactList}\item 
+void \hyperlink{group__nav__eq_gaa1673f6cf928e97c6372c56eddb4cc72}{measurement\-\_\-update} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for doing a measurement update of the \-Kalman filter covariance. \end{DoxyCompactList}\item 
+void \hyperlink{group__nav__eq_ga9169808fbcb9f517deb908960a69ca7a}{strapdown\-\_\-mechanisation\-\_\-equations} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for doing a time update of the mechanized navigation equations. \end{DoxyCompactList}\item 
+void \hyperlink{group__nav__eq_gac80ad2aa648edb47edb8f62883cb2a7d}{time\-\_\-up\-\_\-data} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for doing a time update of the \-Kalman filter state covariance. \end{DoxyCompactList}\item 
+void \hyperlink{group__nav__eq_gaae1bbd924940610e1709300d40ca5a0f}{update\-\_\-imu\-\_\-data\-\_\-buffers} (void)
+\begin{DoxyCompactList}\small\item\em \-Function that updates the \-I\-M\-U data buffers with the latest values read from the \-I\-M\-U, and writes the \-I\-M\-U data to that should be process at the current iteration to the processing variables. \end{DoxyCompactList}\item 
+void \hyperlink{group__nav__eq_gaf0b7424f50d37755b6b0736808082299}{\-Z\-U\-P\-T\-\_\-detector} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for detecting when the system has zero-\/velocity. \end{DoxyCompactList}\item 
+void \hyperlink{group__nav__eq_ga0b4ee34435eebb426eb367120ee79d72}{zupt\-\_\-update} (void)
+\begin{DoxyCompactList}\small\item\em \-Wrapper function that checks if a zero-\/velocity update should be done, and then calls all navigation algorithm functions that should be executed during a zero-\/velocity update. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Header file for the \-Open\-Shoe navigation algorithm. \-This is the header file for the \-Open\-Shoe navigation algorithm. \-It includes the function declarations for all the signal processing functions needed to implement a zero-\/velocity aided inertial navigation system using a nine state \-Kalman filter working in a complimentary feedback configuration. \-It also includes function declarations for the functions needed to implement a accelerometer bias calibration framework.
+
+\begin{DoxyAuthor}{\-Authors}
+\-John-\/\-Olof \-Nilsson, \-Isaac \-Skog 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{\-Copyright}
+\-Copyright (c) 2011 \-Open\-Shoe, \-I\-S\-C \-License (open source) 
+\end{DoxyCopyright}

@@ -1,0 +1,478 @@
+\hypertarget{nlao__io_8h}{
+\section{nlao\-\_\-io.h \-File \-Reference}
+\label{nlao__io_8h}\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}}
+}
+
+
+\-N\-E\-W\-L\-I\-B\-\_\-\-A\-D\-D\-O\-N\-S miscellaneous macros include file for \-A\-V\-R32.  
+
+
+{\ttfamily \#include $<$\-\_\-ansi.\-h$>$}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{nlao__io_8h_adc967c0e15701d35a4061ac06b04cc2e}{\-\_\-\-\_\-raw\-\_\-writeb}(v, a)~($\ast$(volatile unsigned char  $\ast$)(a) = (v))
+\item 
+\#define \hyperlink{nlao__io_8h_a2707260c04a53f266118cb63a082079c}{\-\_\-\-\_\-raw\-\_\-writew}(v, a)~($\ast$(volatile unsigned short $\ast$)(a) = (v))
+\item 
+\#define \hyperlink{nlao__io_8h_ae867328196d2695c17ef4361fc93c6ff}{\-\_\-\-\_\-raw\-\_\-writel}(v, a)~($\ast$(volatile unsigned int   $\ast$)(a) = (v))
+\item 
+\#define \hyperlink{nlao__io_8h_a8b000a945006b01b3cdab3018f8163a9}{\-\_\-\-\_\-raw\-\_\-readb}(a)~($\ast$(volatile unsigned char  $\ast$)(a))
+\item 
+\#define \hyperlink{nlao__io_8h_aa06a03d33e16333092f1652ad9490438}{\-\_\-\-\_\-raw\-\_\-readw}(a)~($\ast$(volatile unsigned short $\ast$)(a))
+\item 
+\#define \hyperlink{nlao__io_8h_ab9188d2d24f0831ee8a9f26958948aeb}{\-\_\-\-\_\-raw\-\_\-readl}(a)~($\ast$(volatile unsigned int   $\ast$)(a))
+\item 
+\#define \hyperlink{nlao__io_8h_a69970f17175df1558915aa767c365f43}{writeb}(v, a)~\-\_\-\-\_\-raw\-\_\-writeb(v,a)
+\item 
+\#define \hyperlink{nlao__io_8h_a1c71bd040b085ee005e326b26347f80e}{writew}(v, a)~\-\_\-\-\_\-raw\-\_\-writew(v,a)
+\item 
+\#define \hyperlink{nlao__io_8h_adc82f7a85285195730164c2c831c02e9}{writel}(v, a)~\-\_\-\-\_\-raw\-\_\-writel(v,a)
+\item 
+\#define \hyperlink{nlao__io_8h_a05d700c5a21987da0846aa8b66348d7a}{readb}(a)~\-\_\-\-\_\-raw\-\_\-readb(a)
+\item 
+\#define \hyperlink{nlao__io_8h_abb02fdd85e3cac3a66372278eaed7192}{readw}(a)~\-\_\-\-\_\-raw\-\_\-readw(a)
+\item 
+\#define \hyperlink{nlao__io_8h_a816976055b4ee371cb99dd49904b1d1b}{readl}(a)~\-\_\-\-\_\-raw\-\_\-readl(a)
+\item 
+\#define \hyperlink{nlao__io_8h_aaab2ede6b8a0966c9bd22d5bf0ab5a60}{\-P0\-S\-E\-G}~0x00000000
+\item 
+\#define \hyperlink{nlao__io_8h_a4b69f544553a68364c972fd7fbd98587}{\-P1\-S\-E\-G}~0x80000000
+\item 
+\#define \hyperlink{nlao__io_8h_a827e9224644fd122c1a883532927098e}{\-P2\-S\-E\-G}~0xa0000000
+\item 
+\#define \hyperlink{nlao__io_8h_a5cbd176f287fb398f44dd317dc3cc8da}{\-P3\-S\-E\-G}~0xc0000000
+\item 
+\#define \hyperlink{nlao__io_8h_a8169dfd35cc722a7b20aaf4203454828}{\-P4\-S\-E\-G}~0xe0000000
+\item 
+\#define \hyperlink{nlao__io_8h_aba9281a168675ee48dbe07a5bb5eb888}{\-P\-X\-S\-E\-G}(a)~(((unsigned long)(a)) \& 0xe0000000)
+\item 
+\#define \hyperlink{nlao__io_8h_af2a917b68cf6e4f351f09adec7b73d9b}{\-P\-H\-Y\-S\-A\-D\-D\-R}(a)~(((unsigned long)(a)) \& 0x1fffffff)
+\item 
+\#define \hyperlink{nlao__io_8h_a1571353154c7d8f5195c4a948f97a672}{\-P1\-S\-E\-G\-A\-D\-D\-R}(a)~((\-\_\-\-\_\-typeof\-\_\-\-\_\-(a))(((unsigned long)(a) \& 0x1fffffff) $|$ P1\-S\-E\-G))
+\item 
+\#define \hyperlink{nlao__io_8h_a3d5a404b1aa9caf0476af2417b123317}{\-P2\-S\-E\-G\-A\-D\-D\-R}(a)~((\-\_\-\-\_\-typeof\-\_\-\-\_\-(a))(((unsigned long)(a) \& 0x1fffffff) $|$ P2\-S\-E\-G))
+\item 
+\#define \hyperlink{nlao__io_8h_adf684866e9c83339fb89fb4f8523a9b2}{\-P3\-S\-E\-G\-A\-D\-D\-R}(a)~((\-\_\-\-\_\-typeof\-\_\-\-\_\-(a))(((unsigned long)(a) \& 0x1fffffff) $|$ P3\-S\-E\-G))
+\item 
+\#define \hyperlink{nlao__io_8h_a1287134edca62e12982de09ebaef88dd}{\-P4\-S\-E\-G\-A\-D\-D\-R}(a)~((\-\_\-\-\_\-typeof\-\_\-\-\_\-(a))(((unsigned long)(a) \& 0x1fffffff) $|$ P4\-S\-E\-G))
+\item 
+\#define \hyperlink{nlao__io_8h_aaa01a308438ed293a7a8a809725ed7fa}{cached}(addr)~\-P1\-S\-E\-G\-A\-D\-D\-R(addr)
+\item 
+\#define \hyperlink{nlao__io_8h_aabbd109036dd9144ff134b0e8423bdf4}{uncached}(addr)~\-P2\-S\-E\-G\-A\-D\-D\-R(addr)
+\item 
+\#define \hyperlink{nlao__io_8h_aff12217b568884c5e4e31f5aee17653d}{physaddr}(addr)~\-P\-H\-Y\-S\-A\-D\-D\-R(addr)
+\item 
+\#define \hyperlink{nlao__io_8h_a77faf67fcb3bd21bb374a0cf8f39f952}{\-B\-F}(field, value)
+\item 
+\#define \hyperlink{nlao__io_8h_afa1f44f26d7e72cab0b73ed3da261737}{\-B\-F\-\_\-\-D}(field, value)
+\item 
+\#define \hyperlink{nlao__io_8h_a03e0b8e6f3485cfbb52c7f8dce104918}{\-B\-F\-I\-N\-S}(var, field, value)
+\item 
+\#define \hyperlink{nlao__io_8h_af2be4289ac57e6cf7c77e8e12c4cf1ac}{\-B\-F\-E\-X\-T}(var, field)
+\item 
+\#define \hyperlink{nlao__io_8h_a588143fb82b0045b0e2c23945bd0019d}{\-B\-F\-I\-N\-S\-\_\-\-D}(var, field, value)
+\item 
+\#define \hyperlink{nlao__io_8h_ac4a181e7a8b476988338393993fe75fb}{\-B\-F\-E\-X\-T\-\_\-\-D}(var, field)
+\end{DoxyCompactItemize}
+\subsection*{\-Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned int \hyperlink{nlao__io_8h_a10e94b422ef0c20dcdec20d31a1f5049}{u32}
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\-\_\-\-B\-E\-G\-I\-N\-\_\-\-S\-T\-D\-\_\-\-C typedef char \hyperlink{nlao__io_8h_a72301533cb67d5bcac097074175ec5a7}{u8}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-N\-E\-W\-L\-I\-B\-\_\-\-A\-D\-D\-O\-N\-S miscellaneous macros include file for \-A\-V\-R32. 
+\begin{DoxyItemize}
+\item \-Compiler\-: \-G\-N\-U \-G\-C\-C for \-A\-V\-R32
+\item \-Supported devices\-: \-All \-A\-V\-R32 devices can be used.
+\item \-App\-Note\-:
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{\-Author}
+\-Atmel \-Corporation\-: \href{http://www.atmel.com}{\tt http\-://www.\-atmel.\-com} \par
+ \-Support and \-F\-A\-Q\-: \href{http://support.atmel.no/}{\tt http\-://support.\-atmel.\-no/} 
+\end{DoxyAuthor}
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{nlao__io_8h_a8b000a945006b01b3cdab3018f8163a9}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-\_\-\-\_\-raw\-\_\-readb@{\-\_\-\-\_\-raw\-\_\-readb}}
+\index{\-\_\-\-\_\-raw\-\_\-readb@{\-\_\-\-\_\-raw\-\_\-readb}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-\_\-\-\_\-raw\-\_\-readb}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-\_\-raw\-\_\-readb(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~($\ast$(volatile unsigned char  $\ast$)(a))}}
+\label{nlao__io_8h_a8b000a945006b01b3cdab3018f8163a9}
+\hypertarget{nlao__io_8h_ab9188d2d24f0831ee8a9f26958948aeb}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-\_\-\-\_\-raw\-\_\-readl@{\-\_\-\-\_\-raw\-\_\-readl}}
+\index{\-\_\-\-\_\-raw\-\_\-readl@{\-\_\-\-\_\-raw\-\_\-readl}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-\_\-\-\_\-raw\-\_\-readl}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-\_\-raw\-\_\-readl(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~($\ast$(volatile unsigned int   $\ast$)(a))}}
+\label{nlao__io_8h_ab9188d2d24f0831ee8a9f26958948aeb}
+\hypertarget{nlao__io_8h_aa06a03d33e16333092f1652ad9490438}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-\_\-\-\_\-raw\-\_\-readw@{\-\_\-\-\_\-raw\-\_\-readw}}
+\index{\-\_\-\-\_\-raw\-\_\-readw@{\-\_\-\-\_\-raw\-\_\-readw}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-\_\-\-\_\-raw\-\_\-readw}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-\_\-raw\-\_\-readw(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~($\ast$(volatile unsigned short $\ast$)(a))}}
+\label{nlao__io_8h_aa06a03d33e16333092f1652ad9490438}
+\hypertarget{nlao__io_8h_adc967c0e15701d35a4061ac06b04cc2e}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-\_\-\-\_\-raw\-\_\-writeb@{\-\_\-\-\_\-raw\-\_\-writeb}}
+\index{\-\_\-\-\_\-raw\-\_\-writeb@{\-\_\-\-\_\-raw\-\_\-writeb}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-\_\-\-\_\-raw\-\_\-writeb}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-\_\-raw\-\_\-writeb(
+\begin{DoxyParamCaption}
+\item[{}]{v, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~($\ast$(volatile unsigned char  $\ast$)(a) = (v))}}
+\label{nlao__io_8h_adc967c0e15701d35a4061ac06b04cc2e}
+\hypertarget{nlao__io_8h_ae867328196d2695c17ef4361fc93c6ff}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-\_\-\-\_\-raw\-\_\-writel@{\-\_\-\-\_\-raw\-\_\-writel}}
+\index{\-\_\-\-\_\-raw\-\_\-writel@{\-\_\-\-\_\-raw\-\_\-writel}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-\_\-\-\_\-raw\-\_\-writel}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-\_\-raw\-\_\-writel(
+\begin{DoxyParamCaption}
+\item[{}]{v, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~($\ast$(volatile unsigned int   $\ast$)(a) = (v))}}
+\label{nlao__io_8h_ae867328196d2695c17ef4361fc93c6ff}
+\hypertarget{nlao__io_8h_a2707260c04a53f266118cb63a082079c}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-\_\-\-\_\-raw\-\_\-writew@{\-\_\-\-\_\-raw\-\_\-writew}}
+\index{\-\_\-\-\_\-raw\-\_\-writew@{\-\_\-\-\_\-raw\-\_\-writew}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-\_\-\-\_\-raw\-\_\-writew}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-\_\-\-\_\-raw\-\_\-writew(
+\begin{DoxyParamCaption}
+\item[{}]{v, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~($\ast$(volatile unsigned short $\ast$)(a) = (v))}}
+\label{nlao__io_8h_a2707260c04a53f266118cb63a082079c}
+\hypertarget{nlao__io_8h_a77faf67fcb3bd21bb374a0cf8f39f952}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-B\-F@{\-B\-F}}
+\index{\-B\-F@{\-B\-F}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-B\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-B\-F(
+\begin{DoxyParamCaption}
+\item[{}]{field, }
+\item[{}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{nlao__io_8h_a77faf67fcb3bd21bb374a0cf8f39f952}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+({ union { \
+      struct { \
+       unsigned           : 32 - field ##  _OFFSET -  field ##  _SIZE ; \
+       unsigned long __val: field ##  _SIZE ; \
+      }; \
+      unsigned long __ul; \
+     } __tmp; \
+     __tmp.__ul = 0; \
+     __tmp.__val = value; \
+     __tmp.__ul;})
+\end{DoxyCode}
+\hypertarget{nlao__io_8h_afa1f44f26d7e72cab0b73ed3da261737}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-B\-F\-\_\-\-D@{\-B\-F\-\_\-\-D}}
+\index{\-B\-F\-\_\-\-D@{\-B\-F\-\_\-\-D}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-B\-F\-\_\-\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-B\-F\-\_\-\-D(
+\begin{DoxyParamCaption}
+\item[{}]{field, }
+\item[{}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{nlao__io_8h_afa1f44f26d7e72cab0b73ed3da261737}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+({ union { \
+      struct { \
+       unsigned long long : 64 - field ##  _OFFSET -  field ##  _SIZE ; \
+       unsigned long long __val: field ##  _SIZE ; \
+      }; \
+      unsigned long long __ul; \
+     } __tmp; \
+     __tmp.__ul = 0; \
+     __tmp.__val = value; \
+     __tmp.__ul;})
+\end{DoxyCode}
+\hypertarget{nlao__io_8h_af2be4289ac57e6cf7c77e8e12c4cf1ac}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-B\-F\-E\-X\-T@{\-B\-F\-E\-X\-T}}
+\index{\-B\-F\-E\-X\-T@{\-B\-F\-E\-X\-T}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-B\-F\-E\-X\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-B\-F\-E\-X\-T(
+\begin{DoxyParamCaption}
+\item[{}]{var, }
+\item[{}]{field}
+\end{DoxyParamCaption}
+)}}
+\label{nlao__io_8h_af2be4289ac57e6cf7c77e8e12c4cf1ac}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+({ union {\
+      struct { \
+       unsigned           : 32 - field ##  _OFFSET -  field ##  _SIZE ; \
+       unsigned long __val: field ##  _SIZE ; \
+      }; \
+      unsigned long __ul; \
+     } __tmp; \
+     __tmp.__ul = var; \
+     __tmp.__val; })
+\end{DoxyCode}
+\hypertarget{nlao__io_8h_ac4a181e7a8b476988338393993fe75fb}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-B\-F\-E\-X\-T\-\_\-\-D@{\-B\-F\-E\-X\-T\-\_\-\-D}}
+\index{\-B\-F\-E\-X\-T\-\_\-\-D@{\-B\-F\-E\-X\-T\-\_\-\-D}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-B\-F\-E\-X\-T\-\_\-\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-B\-F\-E\-X\-T\-\_\-\-D(
+\begin{DoxyParamCaption}
+\item[{}]{var, }
+\item[{}]{field}
+\end{DoxyParamCaption}
+)}}
+\label{nlao__io_8h_ac4a181e7a8b476988338393993fe75fb}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+({ union {\
+      struct { \
+       unsigned long long : 64 - field ##  _OFFSET -  field ##  _SIZE ; \
+       unsigned long long __val: field ##  _SIZE ; \
+      }; \
+      unsigned long long __ul; \
+     } __tmp; \
+     __tmp.__ul = var; \
+     __tmp.__val; })
+\end{DoxyCode}
+\hypertarget{nlao__io_8h_a03e0b8e6f3485cfbb52c7f8dce104918}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-B\-F\-I\-N\-S@{\-B\-F\-I\-N\-S}}
+\index{\-B\-F\-I\-N\-S@{\-B\-F\-I\-N\-S}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-B\-F\-I\-N\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-B\-F\-I\-N\-S(
+\begin{DoxyParamCaption}
+\item[{}]{var, }
+\item[{}]{field, }
+\item[{}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{nlao__io_8h_a03e0b8e6f3485cfbb52c7f8dce104918}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+{ union {\
+      struct { \
+       unsigned           : 32 - field ##  _OFFSET -  field ##  _SIZE ; \
+       unsigned long __val: field ##  _SIZE ; \
+      }; \
+      unsigned long __ul; \
+     } __tmp; \
+     __tmp.__ul = var; \
+     __tmp.__val = value; \
+     var = __tmp.__ul;}
+\end{DoxyCode}
+\hypertarget{nlao__io_8h_a588143fb82b0045b0e2c23945bd0019d}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-B\-F\-I\-N\-S\-\_\-\-D@{\-B\-F\-I\-N\-S\-\_\-\-D}}
+\index{\-B\-F\-I\-N\-S\-\_\-\-D@{\-B\-F\-I\-N\-S\-\_\-\-D}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-B\-F\-I\-N\-S\-\_\-\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-B\-F\-I\-N\-S\-\_\-\-D(
+\begin{DoxyParamCaption}
+\item[{}]{var, }
+\item[{}]{field, }
+\item[{}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{nlao__io_8h_a588143fb82b0045b0e2c23945bd0019d}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+{ union {\
+      struct { \
+       unsigned long long : 64 - field ##  _OFFSET -  field ##  _SIZE ; \
+       unsigned long long __val: field ##  _SIZE ; \
+      }; \
+      unsigned long long __ul; \
+     } __tmp; \
+     __tmp.__ul = var; \
+     __tmp.__val = value; \
+     var = __tmp.__ul;}
+\end{DoxyCode}
+\hypertarget{nlao__io_8h_aaa01a308438ed293a7a8a809725ed7fa}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!cached@{cached}}
+\index{cached@{cached}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{cached}]{\setlength{\rightskip}{0pt plus 5cm}\#define cached(
+\begin{DoxyParamCaption}
+\item[{}]{addr}
+\end{DoxyParamCaption}
+)~\-P1\-S\-E\-G\-A\-D\-D\-R(addr)}}
+\label{nlao__io_8h_aaa01a308438ed293a7a8a809725ed7fa}
+\hypertarget{nlao__io_8h_aaab2ede6b8a0966c9bd22d5bf0ab5a60}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-P0\-S\-E\-G@{\-P0\-S\-E\-G}}
+\index{\-P0\-S\-E\-G@{\-P0\-S\-E\-G}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-P0\-S\-E\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P0\-S\-E\-G~0x00000000}}
+\label{nlao__io_8h_aaab2ede6b8a0966c9bd22d5bf0ab5a60}
+\hypertarget{nlao__io_8h_a4b69f544553a68364c972fd7fbd98587}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-P1\-S\-E\-G@{\-P1\-S\-E\-G}}
+\index{\-P1\-S\-E\-G@{\-P1\-S\-E\-G}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-P1\-S\-E\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P1\-S\-E\-G~0x80000000}}
+\label{nlao__io_8h_a4b69f544553a68364c972fd7fbd98587}
+\hypertarget{nlao__io_8h_a1571353154c7d8f5195c4a948f97a672}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-P1\-S\-E\-G\-A\-D\-D\-R@{\-P1\-S\-E\-G\-A\-D\-D\-R}}
+\index{\-P1\-S\-E\-G\-A\-D\-D\-R@{\-P1\-S\-E\-G\-A\-D\-D\-R}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-P1\-S\-E\-G\-A\-D\-D\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P1\-S\-E\-G\-A\-D\-D\-R(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~((\-\_\-\-\_\-typeof\-\_\-\-\_\-(a))(((unsigned long)(a) \& 0x1fffffff) $|$ P1\-S\-E\-G))}}
+\label{nlao__io_8h_a1571353154c7d8f5195c4a948f97a672}
+\hypertarget{nlao__io_8h_a827e9224644fd122c1a883532927098e}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-P2\-S\-E\-G@{\-P2\-S\-E\-G}}
+\index{\-P2\-S\-E\-G@{\-P2\-S\-E\-G}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-P2\-S\-E\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P2\-S\-E\-G~0xa0000000}}
+\label{nlao__io_8h_a827e9224644fd122c1a883532927098e}
+\hypertarget{nlao__io_8h_a3d5a404b1aa9caf0476af2417b123317}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-P2\-S\-E\-G\-A\-D\-D\-R@{\-P2\-S\-E\-G\-A\-D\-D\-R}}
+\index{\-P2\-S\-E\-G\-A\-D\-D\-R@{\-P2\-S\-E\-G\-A\-D\-D\-R}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-P2\-S\-E\-G\-A\-D\-D\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P2\-S\-E\-G\-A\-D\-D\-R(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~((\-\_\-\-\_\-typeof\-\_\-\-\_\-(a))(((unsigned long)(a) \& 0x1fffffff) $|$ P2\-S\-E\-G))}}
+\label{nlao__io_8h_a3d5a404b1aa9caf0476af2417b123317}
+\hypertarget{nlao__io_8h_a5cbd176f287fb398f44dd317dc3cc8da}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-P3\-S\-E\-G@{\-P3\-S\-E\-G}}
+\index{\-P3\-S\-E\-G@{\-P3\-S\-E\-G}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-P3\-S\-E\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P3\-S\-E\-G~0xc0000000}}
+\label{nlao__io_8h_a5cbd176f287fb398f44dd317dc3cc8da}
+\hypertarget{nlao__io_8h_adf684866e9c83339fb89fb4f8523a9b2}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-P3\-S\-E\-G\-A\-D\-D\-R@{\-P3\-S\-E\-G\-A\-D\-D\-R}}
+\index{\-P3\-S\-E\-G\-A\-D\-D\-R@{\-P3\-S\-E\-G\-A\-D\-D\-R}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-P3\-S\-E\-G\-A\-D\-D\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P3\-S\-E\-G\-A\-D\-D\-R(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~((\-\_\-\-\_\-typeof\-\_\-\-\_\-(a))(((unsigned long)(a) \& 0x1fffffff) $|$ P3\-S\-E\-G))}}
+\label{nlao__io_8h_adf684866e9c83339fb89fb4f8523a9b2}
+\hypertarget{nlao__io_8h_a8169dfd35cc722a7b20aaf4203454828}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-P4\-S\-E\-G@{\-P4\-S\-E\-G}}
+\index{\-P4\-S\-E\-G@{\-P4\-S\-E\-G}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-P4\-S\-E\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P4\-S\-E\-G~0xe0000000}}
+\label{nlao__io_8h_a8169dfd35cc722a7b20aaf4203454828}
+\hypertarget{nlao__io_8h_a1287134edca62e12982de09ebaef88dd}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-P4\-S\-E\-G\-A\-D\-D\-R@{\-P4\-S\-E\-G\-A\-D\-D\-R}}
+\index{\-P4\-S\-E\-G\-A\-D\-D\-R@{\-P4\-S\-E\-G\-A\-D\-D\-R}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-P4\-S\-E\-G\-A\-D\-D\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P4\-S\-E\-G\-A\-D\-D\-R(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~((\-\_\-\-\_\-typeof\-\_\-\-\_\-(a))(((unsigned long)(a) \& 0x1fffffff) $|$ P4\-S\-E\-G))}}
+\label{nlao__io_8h_a1287134edca62e12982de09ebaef88dd}
+\hypertarget{nlao__io_8h_af2a917b68cf6e4f351f09adec7b73d9b}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-P\-H\-Y\-S\-A\-D\-D\-R@{\-P\-H\-Y\-S\-A\-D\-D\-R}}
+\index{\-P\-H\-Y\-S\-A\-D\-D\-R@{\-P\-H\-Y\-S\-A\-D\-D\-R}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-P\-H\-Y\-S\-A\-D\-D\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-H\-Y\-S\-A\-D\-D\-R(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~(((unsigned long)(a)) \& 0x1fffffff)}}
+\label{nlao__io_8h_af2a917b68cf6e4f351f09adec7b73d9b}
+\hypertarget{nlao__io_8h_aff12217b568884c5e4e31f5aee17653d}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!physaddr@{physaddr}}
+\index{physaddr@{physaddr}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{physaddr}]{\setlength{\rightskip}{0pt plus 5cm}\#define physaddr(
+\begin{DoxyParamCaption}
+\item[{}]{addr}
+\end{DoxyParamCaption}
+)~\-P\-H\-Y\-S\-A\-D\-D\-R(addr)}}
+\label{nlao__io_8h_aff12217b568884c5e4e31f5aee17653d}
+\hypertarget{nlao__io_8h_aba9281a168675ee48dbe07a5bb5eb888}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!\-P\-X\-S\-E\-G@{\-P\-X\-S\-E\-G}}
+\index{\-P\-X\-S\-E\-G@{\-P\-X\-S\-E\-G}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{\-P\-X\-S\-E\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-X\-S\-E\-G(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~(((unsigned long)(a)) \& 0xe0000000)}}
+\label{nlao__io_8h_aba9281a168675ee48dbe07a5bb5eb888}
+\hypertarget{nlao__io_8h_a05d700c5a21987da0846aa8b66348d7a}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!readb@{readb}}
+\index{readb@{readb}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{readb}]{\setlength{\rightskip}{0pt plus 5cm}\#define readb(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~\-\_\-\-\_\-raw\-\_\-readb(a)}}
+\label{nlao__io_8h_a05d700c5a21987da0846aa8b66348d7a}
+\hypertarget{nlao__io_8h_a816976055b4ee371cb99dd49904b1d1b}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!readl@{readl}}
+\index{readl@{readl}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{readl}]{\setlength{\rightskip}{0pt plus 5cm}\#define readl(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~\-\_\-\-\_\-raw\-\_\-readl(a)}}
+\label{nlao__io_8h_a816976055b4ee371cb99dd49904b1d1b}
+\hypertarget{nlao__io_8h_abb02fdd85e3cac3a66372278eaed7192}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!readw@{readw}}
+\index{readw@{readw}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{readw}]{\setlength{\rightskip}{0pt plus 5cm}\#define readw(
+\begin{DoxyParamCaption}
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~\-\_\-\-\_\-raw\-\_\-readw(a)}}
+\label{nlao__io_8h_abb02fdd85e3cac3a66372278eaed7192}
+\hypertarget{nlao__io_8h_aabbd109036dd9144ff134b0e8423bdf4}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!uncached@{uncached}}
+\index{uncached@{uncached}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{uncached}]{\setlength{\rightskip}{0pt plus 5cm}\#define uncached(
+\begin{DoxyParamCaption}
+\item[{}]{addr}
+\end{DoxyParamCaption}
+)~\-P2\-S\-E\-G\-A\-D\-D\-R(addr)}}
+\label{nlao__io_8h_aabbd109036dd9144ff134b0e8423bdf4}
+\hypertarget{nlao__io_8h_a69970f17175df1558915aa767c365f43}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!writeb@{writeb}}
+\index{writeb@{writeb}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{writeb}]{\setlength{\rightskip}{0pt plus 5cm}\#define writeb(
+\begin{DoxyParamCaption}
+\item[{}]{v, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~\-\_\-\-\_\-raw\-\_\-writeb(v,a)}}
+\label{nlao__io_8h_a69970f17175df1558915aa767c365f43}
+\hypertarget{nlao__io_8h_adc82f7a85285195730164c2c831c02e9}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!writel@{writel}}
+\index{writel@{writel}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{writel}]{\setlength{\rightskip}{0pt plus 5cm}\#define writel(
+\begin{DoxyParamCaption}
+\item[{}]{v, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~\-\_\-\-\_\-raw\-\_\-writel(v,a)}}
+\label{nlao__io_8h_adc82f7a85285195730164c2c831c02e9}
+\hypertarget{nlao__io_8h_a1c71bd040b085ee005e326b26347f80e}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!writew@{writew}}
+\index{writew@{writew}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{writew}]{\setlength{\rightskip}{0pt plus 5cm}\#define writew(
+\begin{DoxyParamCaption}
+\item[{}]{v, }
+\item[{}]{a}
+\end{DoxyParamCaption}
+)~\-\_\-\-\_\-raw\-\_\-writew(v,a)}}
+\label{nlao__io_8h_a1c71bd040b085ee005e326b26347f80e}
+
+
+\subsection{\-Typedef \-Documentation}
+\hypertarget{nlao__io_8h_a10e94b422ef0c20dcdec20d31a1f5049}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!u32@{u32}}
+\index{u32@{u32}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{u32}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned int {\bf u32}}}
+\label{nlao__io_8h_a10e94b422ef0c20dcdec20d31a1f5049}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{nlao__io_8h_a72301533cb67d5bcac097074175ec5a7}{
+\index{nlao\-\_\-io.\-h@{nlao\-\_\-io.\-h}!u8@{u8}}
+\index{u8@{u8}!nlao_io.h@{nlao\-\_\-io.\-h}}
+\subsubsection[{u8}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-B\-E\-G\-I\-N\-\_\-\-S\-T\-D\-\_\-\-C typedef char {\bf u8}}}
+\label{nlao__io_8h_a72301533cb67d5bcac097074175ec5a7}

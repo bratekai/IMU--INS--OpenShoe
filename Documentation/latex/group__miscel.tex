@@ -1,0 +1,58 @@
+\hypertarget{group__miscel}{
+\section{\-Miscellaneous}
+\label{group__miscel}\index{\-Miscellaneous@{\-Miscellaneous}}
+}
+
+
+\-Miscellaneous routines.  
+
+
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__miscel_ga6ee64d0b9a2c5e539a5dff1e04ff91c2}{gravity} (void)
+\begin{DoxyCompactList}\small\item\em \-Function that calculates the magnitude of the local gravity vector based upon the \-W\-G\-S84 gravity model. \end{DoxyCompactList}\item 
+void \hyperlink{group__miscel_ga0b4ee34435eebb426eb367120ee79d72}{zupt\-\_\-update} (void)
+\begin{DoxyCompactList}\small\item\em \-Routine collecting the functions which need to be run to make a \-Z\-U\-P\-T update. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Miscellaneous routines. 
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__miscel_ga6ee64d0b9a2c5e539a5dff1e04ff91c2}{
+\index{\-Miscellaneous@{\-Miscellaneous}!gravity@{gravity}}
+\index{gravity@{gravity}!Miscellaneous@{\-Miscellaneous}}
+\subsubsection[{gravity}]{\setlength{\rightskip}{0pt plus 5cm}void gravity (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{group__miscel_ga6ee64d0b9a2c5e539a5dff1e04ff91c2}
+
+
+\-Function that calculates the magnitude of the local gravity vector based upon the \-W\-G\-S84 gravity model. 
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em g} & \-The magnitude of the local gravity vector. \\
+\hline
+\mbox{\tt in}  & {\em latitude} & \-The latitude of the navigation system. \\
+\hline
+\mbox{\tt in}  & {\em altitude} & \-The altitude of the navigation system. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__miscel_ga0b4ee34435eebb426eb367120ee79d72}{
+\index{\-Miscellaneous@{\-Miscellaneous}!zupt\-\_\-update@{zupt\-\_\-update}}
+\index{zupt\-\_\-update@{zupt\-\_\-update}!Miscellaneous@{\-Miscellaneous}}
+\subsubsection[{zupt\-\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}void zupt\-\_\-update (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__miscel_ga0b4ee34435eebb426eb367120ee79d72}
+
+
+\-Routine collecting the functions which need to be run to make a \-Z\-U\-P\-T update. 
+
+\-Wrapper function that checks if a zero-\/velocity update should be done, and then calls all navigation algorithm functions that should be executed during a zero-\/velocity update. 

@@ -1,0 +1,115 @@
+\hypertarget{structusb__association__desc__t}{
+\section{usb\-\_\-association\-\_\-desc\-\_\-t \-Struct \-Reference}
+\label{structusb__association__desc__t}\index{usb\-\_\-association\-\_\-desc\-\_\-t@{usb\-\_\-association\-\_\-desc\-\_\-t}}
+}
+
+
+\-Standard \-U\-S\-B \-Interface \-Association \-Descriptor structure.  
+
+
+
+
+{\ttfamily \#include $<$usb\-\_\-protocol.\-h$>$}
+
+\subsection*{\-Data \-Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t \hyperlink{structusb__association__desc__t_a774827521c274300369abe56757a12be}{b\-Length}
+\begin{DoxyCompactList}\small\item\em size of this descriptor in bytes \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{structusb__association__desc__t_a5ffca50476ae4206a7ce2e4e896f5efe}{b\-Descriptor\-Type}
+\begin{DoxyCompactList}\small\item\em \-I\-N\-T\-E\-R\-F\-A\-C\-E descriptor type. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{structusb__association__desc__t_ac40074d8093e2be0f98b7513fb3e42f8}{b\-First\-Interface}
+\begin{DoxyCompactList}\small\item\em \-Number of interface. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{structusb__association__desc__t_a3fa0288c02ae9c72411f564ecf427c5b}{b\-Interface\-Count}
+\begin{DoxyCompactList}\small\item\em value to select alternate setting \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{structusb__association__desc__t_af2f295c5ccf362d8db46b712549e467a}{b\-Function\-Class}
+\begin{DoxyCompactList}\small\item\em \-Class code assigned by the \-U\-S\-B. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{structusb__association__desc__t_a4ab4cadd0f156f30edea9d4724501a06}{b\-Function\-Sub\-Class}
+\begin{DoxyCompactList}\small\item\em \-Sub-\/class code assigned by the \-U\-S\-B. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{structusb__association__desc__t_a7e136eb3457b18de956967735b236783}{b\-Function\-Protocol}
+\begin{DoxyCompactList}\small\item\em \-Protocol code assigned by the \-U\-S\-B. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{structusb__association__desc__t_aeedbc36cd31e652127b78004b0c66031}{i\-Function}
+\begin{DoxyCompactList}\small\item\em \-Index of string descriptor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Standard \-U\-S\-B \-Interface \-Association \-Descriptor structure. 
+
+\subsection{\-Field \-Documentation}
+\hypertarget{structusb__association__desc__t_a5ffca50476ae4206a7ce2e4e896f5efe}{
+\index{usb\-\_\-association\-\_\-desc\-\_\-t@{usb\-\_\-association\-\_\-desc\-\_\-t}!b\-Descriptor\-Type@{b\-Descriptor\-Type}}
+\index{b\-Descriptor\-Type@{b\-Descriptor\-Type}!usb_association_desc_t@{usb\-\_\-association\-\_\-desc\-\_\-t}}
+\subsubsection[{b\-Descriptor\-Type}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf usb\-\_\-association\-\_\-desc\-\_\-t\-::b\-Descriptor\-Type}}}
+\label{structusb__association__desc__t_a5ffca50476ae4206a7ce2e4e896f5efe}
+
+
+\-I\-N\-T\-E\-R\-F\-A\-C\-E descriptor type. 
+
+\hypertarget{structusb__association__desc__t_ac40074d8093e2be0f98b7513fb3e42f8}{
+\index{usb\-\_\-association\-\_\-desc\-\_\-t@{usb\-\_\-association\-\_\-desc\-\_\-t}!b\-First\-Interface@{b\-First\-Interface}}
+\index{b\-First\-Interface@{b\-First\-Interface}!usb_association_desc_t@{usb\-\_\-association\-\_\-desc\-\_\-t}}
+\subsubsection[{b\-First\-Interface}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf usb\-\_\-association\-\_\-desc\-\_\-t\-::b\-First\-Interface}}}
+\label{structusb__association__desc__t_ac40074d8093e2be0f98b7513fb3e42f8}
+
+
+\-Number of interface. 
+
+\hypertarget{structusb__association__desc__t_af2f295c5ccf362d8db46b712549e467a}{
+\index{usb\-\_\-association\-\_\-desc\-\_\-t@{usb\-\_\-association\-\_\-desc\-\_\-t}!b\-Function\-Class@{b\-Function\-Class}}
+\index{b\-Function\-Class@{b\-Function\-Class}!usb_association_desc_t@{usb\-\_\-association\-\_\-desc\-\_\-t}}
+\subsubsection[{b\-Function\-Class}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf usb\-\_\-association\-\_\-desc\-\_\-t\-::b\-Function\-Class}}}
+\label{structusb__association__desc__t_af2f295c5ccf362d8db46b712549e467a}
+
+
+\-Class code assigned by the \-U\-S\-B. 
+
+\hypertarget{structusb__association__desc__t_a7e136eb3457b18de956967735b236783}{
+\index{usb\-\_\-association\-\_\-desc\-\_\-t@{usb\-\_\-association\-\_\-desc\-\_\-t}!b\-Function\-Protocol@{b\-Function\-Protocol}}
+\index{b\-Function\-Protocol@{b\-Function\-Protocol}!usb_association_desc_t@{usb\-\_\-association\-\_\-desc\-\_\-t}}
+\subsubsection[{b\-Function\-Protocol}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf usb\-\_\-association\-\_\-desc\-\_\-t\-::b\-Function\-Protocol}}}
+\label{structusb__association__desc__t_a7e136eb3457b18de956967735b236783}
+
+
+\-Protocol code assigned by the \-U\-S\-B. 
+
+\hypertarget{structusb__association__desc__t_a4ab4cadd0f156f30edea9d4724501a06}{
+\index{usb\-\_\-association\-\_\-desc\-\_\-t@{usb\-\_\-association\-\_\-desc\-\_\-t}!b\-Function\-Sub\-Class@{b\-Function\-Sub\-Class}}
+\index{b\-Function\-Sub\-Class@{b\-Function\-Sub\-Class}!usb_association_desc_t@{usb\-\_\-association\-\_\-desc\-\_\-t}}
+\subsubsection[{b\-Function\-Sub\-Class}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf usb\-\_\-association\-\_\-desc\-\_\-t\-::b\-Function\-Sub\-Class}}}
+\label{structusb__association__desc__t_a4ab4cadd0f156f30edea9d4724501a06}
+
+
+\-Sub-\/class code assigned by the \-U\-S\-B. 
+
+\hypertarget{structusb__association__desc__t_a3fa0288c02ae9c72411f564ecf427c5b}{
+\index{usb\-\_\-association\-\_\-desc\-\_\-t@{usb\-\_\-association\-\_\-desc\-\_\-t}!b\-Interface\-Count@{b\-Interface\-Count}}
+\index{b\-Interface\-Count@{b\-Interface\-Count}!usb_association_desc_t@{usb\-\_\-association\-\_\-desc\-\_\-t}}
+\subsubsection[{b\-Interface\-Count}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf usb\-\_\-association\-\_\-desc\-\_\-t\-::b\-Interface\-Count}}}
+\label{structusb__association__desc__t_a3fa0288c02ae9c72411f564ecf427c5b}
+
+
+value to select alternate setting 
+
+\hypertarget{structusb__association__desc__t_a774827521c274300369abe56757a12be}{
+\index{usb\-\_\-association\-\_\-desc\-\_\-t@{usb\-\_\-association\-\_\-desc\-\_\-t}!b\-Length@{b\-Length}}
+\index{b\-Length@{b\-Length}!usb_association_desc_t@{usb\-\_\-association\-\_\-desc\-\_\-t}}
+\subsubsection[{b\-Length}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf usb\-\_\-association\-\_\-desc\-\_\-t\-::b\-Length}}}
+\label{structusb__association__desc__t_a774827521c274300369abe56757a12be}
+
+
+size of this descriptor in bytes 
+
+\hypertarget{structusb__association__desc__t_aeedbc36cd31e652127b78004b0c66031}{
+\index{usb\-\_\-association\-\_\-desc\-\_\-t@{usb\-\_\-association\-\_\-desc\-\_\-t}!i\-Function@{i\-Function}}
+\index{i\-Function@{i\-Function}!usb_association_desc_t@{usb\-\_\-association\-\_\-desc\-\_\-t}}
+\subsubsection[{i\-Function}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf usb\-\_\-association\-\_\-desc\-\_\-t\-::i\-Function}}}
+\label{structusb__association__desc__t_aeedbc36cd31e652127b78004b0c66031}
+
+
+\-Index of string descriptor. 
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{usb__protocol_8h}{usb\-\_\-protocol.\-h}\end{DoxyCompactItemize}

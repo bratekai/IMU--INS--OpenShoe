@@ -1,0 +1,31 @@
+\hypertarget{pll_8c}{
+\section{pll.c \-File \-Reference}
+\label{pll_8c}\index{pll.\-c@{pll.\-c}}
+}
+
+
+\-Chip-\/specific \-P\-L\-L implementation.  
+
+
+{\ttfamily \#include $<$avr32/io.\-h$>$}\*
+{\ttfamily \#include $<$compiler.\-h$>$}\*
+{\ttfamily \#include $<$pll.\-h$>$}\*
+\subsection*{\-Functions}
+\begin{Indent}\paragraph*{\-P\-L\-L configuration}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__pll__group_gaeee0be729bfa596c973cf6f725a89d45}{pll\-\_\-config\-\_\-write} (const struct \hyperlink{structpll__config}{pll\-\_\-config} $\ast$cfg, unsigned int pll\-\_\-id)
+\begin{DoxyCompactList}\small\item\em \-Activate the configuration {\itshape cfg\/} on {\itshape pll\-\_\-id\/}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Interaction with the \-P\-L\-L hardware}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__pll__group_gaede6e280289cb0759af0f5a34f5a627f}{pll\-\_\-enable} (const struct \hyperlink{structpll__config}{pll\-\_\-config} $\ast$cfg, unsigned int pll\-\_\-id)
+\begin{DoxyCompactList}\small\item\em \-Activate the configuration {\itshape cfg\/} and enable \-P\-L\-L {\itshape pll\-\_\-id\/}. \end{DoxyCompactList}\item 
+void \hyperlink{group__pll__group_ga9b369b5f673b10a6adf14cd3c9fea5ad}{pll\-\_\-disable} (unsigned int pll\-\_\-id)
+\begin{DoxyCompactList}\small\item\em \-Disable the \-P\-L\-L identified by {\itshape pll\-\_\-id\/}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{\-Detailed \-Description}
+\-Chip-\/specific \-P\-L\-L implementation. \-Copyright (\-C) 2010 \-Atmel \-Corporation. \-All rights reserved. 

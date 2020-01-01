@@ -1,0 +1,65 @@
+\hypertarget{group__init}{
+\section{\-Initialization routines}
+\label{group__init}\index{\-Initialization routines@{\-Initialization routines}}
+}
+
+
+\-Routines for initializing the system. \-Only coarse initial alignment is implemented.  
+
+
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__init_ga8b0f8dc8c2ae1ff3f5e4f27284cf8e77}{initialize\-\_\-navigation\-\_\-algorithm} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for initializing the navigation algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Routines for initializing the system. \-Only coarse initial alignment is implemented. 
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__init_ga8b0f8dc8c2ae1ff3f5e4f27284cf8e77}{
+\index{\-Initialization routines@{\-Initialization routines}!initialize\-\_\-navigation\-\_\-algorithm@{initialize\-\_\-navigation\-\_\-algorithm}}
+\index{initialize\-\_\-navigation\-\_\-algorithm@{initialize\-\_\-navigation\-\_\-algorithm}!Initialization routines@{\-Initialization routines}}
+\subsubsection[{initialize\-\_\-navigation\-\_\-algorithm}]{\setlength{\rightskip}{0pt plus 5cm}void initialize\-\_\-navigation\-\_\-algorithm (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__init_ga8b0f8dc8c2ae1ff3f5e4f27284cf8e77}
+
+
+\-Function for initializing the navigation algorithm. 
+
+\-This function initializes the navigation algorithm and should during the initialization of the navigation system be called every time new \-I\-M\-U-\/data have been read from the \-I\-M\-U. \-Before the initialization is started the flag {\itshape initialize\-\_\-flag\/} should be set to true, and the counter {\itshape initialize\-\_\-sample\-\_\-ctr\/} to zero. \-The initialization is finished when the flag {\itshape initialize\-\_\-flag\/} becomes false.
+
+\-The initialization function first runs an initial alignment of the navigation system, where the roll and pitch are estimated from the average of the accelerometer readings. \-Then, the function sets the initial navigation states (position, velocity, and quaternions) and the initial \-Kalman filter covariance.
+
+\begin{DoxyNote}{\-Note}
+\-The navigation system most be stationary during the initialization, and the number of samples used in the initial alignment most be larger than the length of the zero-\/velocity detector window.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em position} & \-The position estimate of the navigation system. \\
+\hline
+\mbox{\tt out}  & {\em velocity} & \-The velocity estimate of the navigation system. \\
+\hline
+\mbox{\tt out}  & {\em quaternions} & \-The orientation estimate of the navigation system. \\
+\hline
+\mbox{\tt out}  & {\em cov\-\_\-vector} & \-The vector representation of the \-Kalman filter covariance matrix. \\
+\hline
+\mbox{\tt in,out}  & {\em initialize\-\_\-flag} & \-A flag that should be set to true when initialization is started and that becomes false when the initialization is finished. \\
+\hline
+\mbox{\tt in}  & {\em nr\-\_\-of\-\_\-inital\-\_\-alignment\-\_\-samples} & \-The number of samples used in the initial alignment. \\
+\hline
+\mbox{\tt in}  & {\em initial\-\_\-heading} & \-The initial heading of the navigation system. \\
+\hline
+\mbox{\tt in}  & {\em initial\-\_\-pos} & \-The initial position of the navigation system. \\
+\hline
+\mbox{\tt in}  & {\em sigma\-\_\-initial\-\_\-position} & \-The standard deviations of the uncertainties in the initial position. \\
+\hline
+\mbox{\tt in}  & {\em sigma\-\_\-initial\-\_\-velocity} & \-The standard deviations of the uncertainties in the initial velocity. \\
+\hline
+\mbox{\tt in}  & {\em sigma\-\_\-initial\-\_\-attitude} & \-The standard deviations of the uncertainties in the initial attitude. \\
+\hline
+\end{DoxyParams}

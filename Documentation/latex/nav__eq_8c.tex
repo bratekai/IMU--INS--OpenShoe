@@ -1,0 +1,174 @@
+\hypertarget{nav__eq_8c}{
+\section{nav\-\_\-eq.c \-File \-Reference}
+\label{nav__eq_8c}\index{nav\-\_\-eq.\-c@{nav\-\_\-eq.\-c}}
+}
+
+
+\-The c-\/file for the \-Open\-Shoe navigation algorithm.  
+
+
+{\ttfamily \#include \char`\"{}nav\-\_\-eq.\-h\char`\"{}}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__aux__func_gabf788491b9a7053e88a954b41f74b8f7}{sqrt\-\_\-hf} (\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} arg)
+\begin{DoxyCompactList}\small\item\em \-Function for calculating the square root. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__aux__func_ga54eaa66071c6606e7dbad9673e8418a1}{vecnorm2} (\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} $\ast$arg\-\_\-vec, uint8\-\_\-t len)
+\begin{DoxyCompactList}\small\item\em \-Function that calculates the squared \-Euclidean norm of a vector. \end{DoxyCompactList}\item 
+void \hyperlink{group__aux__func_ga59b1148a3b2039b267dc5b740aa2196a}{euler2rotation} (\hyperlink{nav__types_8h_ab7675278cb555aa98b43c97694753329}{mat3} rotmat, const \hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} euler)
+\begin{DoxyCompactList}\small\item\em \-Function that converts \-Euler angles (\mbox{[}roll,pitch,yaw\mbox{]}) into a rotation matrix $R_b^t$. \end{DoxyCompactList}\item 
+void \hyperlink{group__aux__func_gaa74b4197980d69d90ff0bb2299df74e1}{rotation2quat} (\hyperlink{nav__types_8h_ad9a64f455fa02affaba6740746aae7b2}{quat\-\_\-vec} q, const \hyperlink{nav__types_8h_ab7675278cb555aa98b43c97694753329}{mat3} rotmat)
+\begin{DoxyCompactList}\small\item\em \-Function for converting a rotation matrix $R_b^t$ to quaternions. \end{DoxyCompactList}\item 
+void \hyperlink{group__aux__func_ga9ac9f67ebac20a4953265127e3621f6c}{quat2rotation} (\hyperlink{nav__types_8h_ab7675278cb555aa98b43c97694753329}{mat3} rotmat, const \hyperlink{nav__types_8h_ad9a64f455fa02affaba6740746aae7b2}{quat\-\_\-vec} q)
+\begin{DoxyCompactList}\small\item\em \-Function for converting quaternions to a rotation matrix $R_b^t$. \end{DoxyCompactList}\item 
+void \hyperlink{group__aux__func_ga269e411a81080270d202618aece4f079}{rotation2euler} (\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} euler, const \hyperlink{nav__types_8h_ab7675278cb555aa98b43c97694753329}{mat3} rotmat)
+\begin{DoxyCompactList}\small\item\em \-Function for converting a rotation matrix $R_b^t$ to \-Euler angles (\mbox{[}roll,pitch,yaw\mbox{]}). \end{DoxyCompactList}\item 
+void \hyperlink{group__aux__func_ga5f9cb26cc3e73e922fac295a84401462}{innovation\-\_\-cov} (\hyperlink{nav__types_8h_a0407e05d4f0216c13cca22570399e44d}{mat3sym} re, \hyperlink{nav__types_8h_a0f4089eb3ad75e0675d7f7d3914fddeb}{mat9sym} pvec)
+\begin{DoxyCompactList}\small\item\em \-Function for calculating the \-Kalman filter innovation covariance. \end{DoxyCompactList}\item 
+void \hyperlink{group__aux__func_ga06b4d19c89f6b3af0ca6c25d541d350a}{invmat3sys} (\hyperlink{nav__types_8h_a0407e05d4f0216c13cca22570399e44d}{mat3sym} ainv, \hyperlink{nav__types_8h_a0407e05d4f0216c13cca22570399e44d}{mat3sym} a)
+\begin{DoxyCompactList}\small\item\em \-Function for inverting a 3 by 3 matrix hermitian matrix. \end{DoxyCompactList}\item 
+void \hyperlink{group__aux__func_gaa026397785026ed32818cf8008abffb3}{max\-\_\-value} (\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} $\ast$max\-\_\-v, uint8\-\_\-t $\ast$index, \hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} $\ast$arg\-\_\-vec)
+\begin{DoxyCompactList}\small\item\em \-Function that calculates the maximum value of a vector and returns the max value and the index of the vector element holding the maximum value. \end{DoxyCompactList}\item 
+void \hyperlink{group__miscel_ga6ee64d0b9a2c5e539a5dff1e04ff91c2}{gravity} (void)
+\begin{DoxyCompactList}\small\item\em \-Function that calculates the magnitude of the local gravity vector based upon the \-W\-G\-S84 gravity model. \end{DoxyCompactList}\item 
+void \hyperlink{group__main__func_gaae1bbd924940610e1709300d40ca5a0f}{update\-\_\-imu\-\_\-data\-\_\-buffers} (void)
+\begin{DoxyCompactList}\small\item\em \-Function that updates the \-I\-M\-U data buffers with the latest values read from the \-I\-M\-U, and writes the \-I\-M\-U data to that should be process at the current iteration to the processing variables. \end{DoxyCompactList}\item 
+void \hyperlink{group__main__func_ga9169808fbcb9f517deb908960a69ca7a}{strapdown\-\_\-mechanisation\-\_\-equations} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for doing a time update of the mechanized navigation equations. \end{DoxyCompactList}\item 
+void \hyperlink{group__main__func_gac80ad2aa648edb47edb8f62883cb2a7d}{time\-\_\-up\-\_\-data} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for doing a time update of the \-Kalman filter state covariance. \end{DoxyCompactList}\item 
+void \hyperlink{group__main__func_ga75c4a936b2db01f930ba89babb822f69}{gain\-\_\-matrix} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for calculating the \-Kalman filter gain matrix. \end{DoxyCompactList}\item 
+void \hyperlink{group__main__func_gaa1673f6cf928e97c6372c56eddb4cc72}{measurement\-\_\-update} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for doing a measurement update of the \-Kalman filter covariance. \end{DoxyCompactList}\item 
+void \hyperlink{group__main__func_ga8812381ada5c2786a10e378e4ca34377}{correct\-\_\-navigation\-\_\-states} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for correcting the navigation states given a zero-\/velocity detection. \end{DoxyCompactList}\item 
+void \hyperlink{group__main__func_gaf0b7424f50d37755b6b0736808082299}{\-Z\-U\-P\-T\-\_\-detector} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for detecting when the system has zero-\/velocity. \end{DoxyCompactList}\item 
+void \hyperlink{group__init_ga8b0f8dc8c2ae1ff3f5e4f27284cf8e77}{initialize\-\_\-navigation\-\_\-algorithm} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for initializing the navigation algorithm. \end{DoxyCompactList}\item 
+void \hyperlink{group__calib_ga272f4012a72ac416888be28bff0236e6}{estimate\-\_\-accelerometer\-\_\-biases} (void)
+\begin{DoxyCompactList}\small\item\em \-Function that estimates the accelerometer biases given a matrix of the mean of the measured acceleration at different orientations. \end{DoxyCompactList}\item 
+void \hyperlink{group__calib_gabb3f28a44a35898c77d789734914c4c2}{calibrate\-\_\-accelerometers} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for calibrating the accelerometer biases. \end{DoxyCompactList}\item 
+void \hyperlink{group__miscel_ga0b4ee34435eebb426eb367120ee79d72}{zupt\-\_\-update} (void)
+\begin{DoxyCompactList}\small\item\em \-Routine collecting the functions which need to be run to make a \-Z\-U\-P\-T update. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{Indent}\paragraph*{\-Accelerometer calibration parameters.}
+{\em \-Parameters controlling accelerometer calibration, and vectors and matrices used store the biases. }\begin{DoxyCompactItemize}
+\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_ga1089eea940f41eff26a6cba1172089e9}{accelerometer\-\_\-biases}
+\begin{DoxyCompactList}\small\item\em \-Accelerometer biases (x,y,z-\/axis) \mbox{[} $m/s^2$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_gad5049be4d6ed3b9f92063c6ca6413b46}{acceleration\-\_\-variance\-\_\-threshold} = 0.\-002
+\begin{DoxyCompactList}\small\item\em \-Threshold used to check that accelerometers were stationary during the calibration \mbox{[} $(m/s^2)^2$\mbox{]}. \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{group__nav__eq_gab9d05ce5927a225127eff6993856da19}{nr\-\_\-of\-\_\-calibration\-\_\-samples} = 800
+\begin{DoxyCompactList}\small\item\em \-Number of samples used at each orientation in the calibration procedure. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__nav__eq_ga642a3ad33a0242f4e12fe46a13b0303f}{nr\-\_\-of\-\_\-calibration\-\_\-orientations} = 6
+\begin{DoxyCompactList}\small\item\em \-Number of orientations used in the accelerometer calibration procedure. \-O\-B\-S! \-Most be at least 3 and less than 13. \end{DoxyCompactList}\item 
+\-Bool \hyperlink{group__nav__eq_ga9340627920ea2445fe1469547bc64eae}{new\-\_\-orientation\-\_\-flag} = false
+\begin{DoxyCompactList}\small\item\em \-Flag that is set to true when the \-I\-M\-U should be place in a new orientation. \-Should be set to false when the calibration procedure is started, and when the \-I\-M\-U has been placed in a new orientation by the user. \end{DoxyCompactList}\item 
+\-Bool \hyperlink{group__nav__eq_gaa3b35b0b909a9a4b40d82658fab54349}{acc\-\_\-calibration\-\_\-finished\-\_\-flag} = false
+\begin{DoxyCompactList}\small\item\em \-Flag that is set to true when the calibration is finished. \-Must be set to false before the calibration is started. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-General control parameters.}
+{\em \-Parameters controlling general settings of the navigation algorithm }\begin{DoxyCompactItemize}
+\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_ga98eaf96c6c207db4b40273a599149ebe}{latitude} = 13
+\begin{DoxyCompactList}\small\item\em \-Rough latitude of the system \mbox{[} $degrees$\mbox{]}. (\-Used to calculate the magnitude of the gravity vector) \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_ga0387cded24d9bdfa34c78dc27bef01e8}{altitude} = 920
+\begin{DoxyCompactList}\small\item\em \-Rough altitude of the system \mbox{[} $m$\mbox{]}. (\-Used to calculate the magnitude of the gravity vector) \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_gac7d75e5db7af21a75e50ad6437827947}{g} = 9.\-782940329221166
+\begin{DoxyCompactList}\small\item\em \-Magnitude of the local gravity acceleration \mbox{[} $m/s^2$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_gae7e97f885bb0d70931c5c70ad200880d}{dt} = 0.\-001220703125000
+\begin{DoxyCompactList}\small\item\em \-Sampling period \mbox{[} $s$\mbox{]}. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__nav__eq_ga3f996476795917a4b1ace8c6c5e4b28a}{error\-\_\-signal}
+\begin{DoxyCompactList}\small\item\em \-Error signaling vector. \-If zero no error has occurred. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-I\-M\-U data buffer variables.}
+{\em \-Vectors and variables related to the \-I\-M\-U data buffer. }\begin{DoxyCompactItemize}
+\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_gaf92cab44915b7d9faaf5aeadb328bae6}{accelerations\-\_\-in}
+\begin{DoxyCompactList}\small\item\em \-Accelerations read from the \-I\-M\-U \mbox{[} $m/s^2$\mbox{]}. \-These are written into the \-I\-M\-U data buffer. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_ga8cac4b2812dcb492989d7122c5eb0bfb}{angular\-\_\-rates\-\_\-in}
+\begin{DoxyCompactList}\small\item\em \-Angular rates read from the \-I\-M\-U \mbox{[} $rad/s$\mbox{]}. \-These are written into the \-I\-M\-U data buffer. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_ga0e1577a397995052e34d61ddbf578956}{accelerations\-\_\-out}
+\begin{DoxyCompactList}\small\item\em \-Accelerations outputted from the \-I\-M\-U data buffer \mbox{[} $m/s^2$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_gabdb2113f7c6caefe1b25826c1f7c8324}{angular\-\_\-rates\-\_\-out}
+\begin{DoxyCompactList}\small\item\em \-Angular rates outputted from the \-I\-M\-U data buffer \mbox{[} $rad/s$\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Initialization control parameters}
+{\em \-Parameters controlling the initialization of the navigation algorithm, i.\-e., the initial states of the inertial navigation system equations and the initial \-Kalman filter covariance matrix. }\begin{DoxyCompactItemize}
+\item 
+\-Bool \hyperlink{group__nav__eq_gac64a954fe1bf13df62e1e96920a36035}{initialize\-\_\-flag} = true
+\begin{DoxyCompactList}\small\item\em \-A flag that should be set to true when initialization is started and that becomes false when the initialization is finished. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__nav__eq_gaf3c89a8b1365434986dc0314c1c541cf}{nr\-\_\-of\-\_\-inital\-\_\-alignment\-\_\-samples} = 16
+\begin{DoxyCompactList}\small\item\em \-Number of samples used in the initial alignment. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_gaf18deb1376fcc761f2ec2d947cf004e7}{initial\-\_\-heading} = 0
+\begin{DoxyCompactList}\small\item\em \-Initial heading \mbox{[} $rad$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_ga7cd4f9c9472377e6ef5935727ada7109}{initial\-\_\-pos} = \{0, 0, 0\}
+\begin{DoxyCompactList}\small\item\em \-Initial position (\-North, \-East, \-Down) \mbox{[} $m$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_ga0ace968269836475a5c59c16280d1bf1}{sigma\-\_\-initial\-\_\-position} = \{0.\-00001,0.\-00001,0.\-00001\}
+\begin{DoxyCompactList}\small\item\em \-Standard deviations in the initial position uncertainties \mbox{[} $m$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_ga5abe69320e5702cb7f4b79abb9bcf297}{sigma\-\_\-initial\-\_\-velocity} = \{0.\-01,0.\-01,0.\-01\}
+\begin{DoxyCompactList}\small\item\em \-Standard deviations in the initial velocity uncertainties \mbox{[} $m/s$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_gaad9757cf97cfd938818e7785a3beafe1}{sigma\-\_\-initial\-\_\-attitude} = \{0.\-00174,0.\-00174,0.\-00174\}
+\begin{DoxyCompactList}\small\item\em \-Standard deviations in the initial attitude uncertainties \mbox{[} $rad$\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Kalman filter control parameters}
+{\em \-Parameters controlling the behavior of the \-Kalman filter. \-The parameters can be changed while the filter is running to adapt the filter to the current motion dynamics.
+
+\begin{DoxyNote}{\-Note}
+\-The default noise standard deviation figures are not set to reflect the true noise figures of the \-I\-M\-U sensors, but rather to model the sum of all the errors (biases, scale factors, nonlinearities, etc.) in the system and the measurement model. 
+\end{DoxyNote}
+}\begin{DoxyCompactItemize}
+\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_ga5add0877d1169e9e1d4dd227c1bcc83d}{sigma\-\_\-acceleration} = 0.\-7
+\begin{DoxyCompactList}\small\item\em \-Accelerometer process noise standard deviation \mbox{[} $m/s^2$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_gab6e7cd8a13de230fbcef8ad4e8001eb6}{sigma\-\_\-gyroscope} = 0.\-005235987755983
+\begin{DoxyCompactList}\small\item\em \-Gyroscope process noise standard deviation \mbox{[} $rad/s$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_gae79b582d3d0132b84117242e1f6103f3}{sigma\-\_\-velocity} = \{0.\-1,0.\-1,0.\-1\}
+\begin{DoxyCompactList}\small\item\em \-Pseudo zero-\/velocity measurement noise standard deviations (north, east, down) \mbox{[} $m/s$\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Navigation and filter state variables.}
+{\em \-Vectors that holds the current navigation state estimate and the covariance and gain of the \-Kalman filter. }\begin{DoxyCompactItemize}
+\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_ga2807b9fb4b79e01dfde022b613d2575f}{position}
+\begin{DoxyCompactList}\small\item\em \-Position estimate (\-North,\-East,\-Down) \mbox{[} $m$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__nav__eq_ga589efe00d8bd4e8a69613f98390a04c7}{velocity}
+\begin{DoxyCompactList}\small\item\em \-Velocity estimate (\-North,\-East,\-Down) \mbox{[} $m/s$\mbox{]}. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_ad9a64f455fa02affaba6740746aae7b2}{quat\-\_\-vec} \hyperlink{group__nav__eq_ga059b83d370e7e6a5e9728a8f91943051}{quaternions}
+\begin{DoxyCompactList}\small\item\em \-Attitude (quaternions) estimate. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_ab7675278cb555aa98b43c97694753329}{mat3} \hyperlink{group__nav__eq_ga42753cbc9ae76483da3cbc331a011586}{\-Rb2t}
+\begin{DoxyCompactList}\small\item\em \-Rotation matrix used as an \char`\"{}aiding\char`\"{} variable in the filter algorithm. \-Holds the same information as the quaternions. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a0f4089eb3ad75e0675d7f7d3914fddeb}{mat9sym} \hyperlink{group__nav__eq_ga74c09cdfc5b901e7f842dbe42ed8f4f4}{cov\-\_\-vector}
+\begin{DoxyCompactList}\small\item\em \-Vector representation of the \-Kalman filter covariance matrix. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_af1d09a15760e21f5de26f0839f1b6c62}{mat9by3} \hyperlink{group__nav__eq_gac1df051c6f380aa8d1598b15ee9e6eca}{kalman\-\_\-gain}
+\begin{DoxyCompactList}\small\item\em \-Vector representation of the \-Kalman filter gain matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Zero-\/velocity detector control parameters}
+{\em \-Parameters controlling the behavior of the zero-\/velocity detector. \-All the detector control parameters, except the {\itshape detector\-\_\-\-Window\-\_\-size\/} may be changed will the navigation algorithm is running in order to adapt the behavior of the detector to the current motion dynamics. }\begin{DoxyCompactItemize}
+\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_ga519e1c68258a371960249e09c24e9943}{sigma\-\_\-acc\-\_\-det} = 0.\-035
+\begin{DoxyCompactList}\small\item\em \-Accelerometer noise standard deviation figure \mbox{[} $m/s^2$\mbox{]}, which is used to control how much the detector should trusts the accelerometer data. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_ga779a972b079accc690d64bcd7bef3c91}{sigma\-\_\-gyro\-\_\-det} = 0.\-006
+\begin{DoxyCompactList}\small\item\em \-Gyroscope noise standard deviation figure \mbox{[} $rad/s$\mbox{]}, which is used to control how much the detector should trusts the gyroscope data. \end{DoxyCompactList}\item 
+volatile uint8\-\_\-t \hyperlink{group__nav__eq_ga9e9b826ff87a8e0e4400661c27988682}{detector\-\_\-\-Window\-\_\-size} = 3
+\begin{DoxyCompactList}\small\item\em \-The data window size used in the detector (\-O\-B\-S! \-Must be an odd number.). \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_ga34d28cf12521d9706da4ddfca54106bf}{detector\-\_\-threshold} = 50000
+\begin{DoxyCompactList}\small\item\em \-Threshold used in the detector. \end{DoxyCompactList}\item 
+bool \hyperlink{group__nav__eq_gabd51dc1d49060099533807a22acc61d4}{zupt} = false
+\begin{DoxyCompactList}\small\item\em \-Flag that is set to true if a zero-\/velocity update should be done. \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__nav__eq_gae420c23e5d1fdf5b157535212ddeba9e}{\-Test\-\_\-statistics} = 0
+\begin{DoxyCompactList}\small\item\em \-Variable holding the test statistics for the generalized likelihood ratio test, i.\-e., the zero-\/velocity detector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{\-Detailed \-Description}
+\-The c-\/file for the \-Open\-Shoe navigation algorithm. \-This is the c-\/file for the \-Open\-Shoe navigation algorithm. \-It includes the signal processing functions needed to implement a zero-\/velocity aided inertial navigation system using a nine state \-Kalman filter working in a complimentary feedback configuration. \-It also includes the functions needed for implementing a accelerometer bias calibration framework.
+
+\begin{DoxyAuthor}{\-Authors}
+\-John-\/\-Olof \-Nilsson, \-Isaac \-Skog 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{\-Copyright}
+\-Copyright (c) 2011 \-Open\-Shoe, \-I\-S\-C \-License (open source) 
+\end{DoxyCopyright}

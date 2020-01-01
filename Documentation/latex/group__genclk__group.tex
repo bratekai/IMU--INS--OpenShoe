@@ -1,0 +1,117 @@
+\hypertarget{group__genclk__group}{
+\section{\-Generic \-Clock \-Management}
+\label{group__genclk__group}\index{\-Generic Clock Management@{\-Generic Clock Management}}
+}
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structgenclk__config}{genclk\-\_\-config}
+\begin{DoxyCompactList}\small\item\em \-Hardware representation of a set of generic clock parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group__genclk__group_gaca55f4f4f96549b8111139d144bce01c}{genclk\-\_\-source} \{ \*
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca953707a1c76a0268413b7232d99d0065}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-S\-Y\-S} =  0, 
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca3d1fd9213fb1acca868f9aed0580080f}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C32\-K} =  1, 
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01caeb9bb887118c6aaf7a1c193f80205909}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M} =  2, 
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca885a673e1f2c68e84f6461cb38d2e50f}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0} =  3, 
+\*
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca2c0a57ce35b0fa7efac9930357278930}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1} =  4, 
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca4db9dbbdde9e4efb5b26e8ddfe817812}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0} =  5, 
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca229fcad1bdb8ec267a05a8f1d1b0491e}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1} =  6, 
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01cac903dd8fc4bf4fbdfa810ab774035a1b}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-C\-P\-U} =  7, 
+\*
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca5bb1dbdcf7db89069ddcc2a59d36a6b6}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B} =  8, 
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca0647cd0e7fc56115d0003306568c29ff}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A} =  9, 
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca956d2618a06550aba0d3c2c1cd784be9}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B} =  10, 
+\hyperlink{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca73e71d3958e85af71ec37d4e2ca76c54}{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C} =  11
+ \}
+\begin{DoxyCompactList}\small\item\em \-Generic clock source \-I\-D. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Chip-\/specific generic clock definitions}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__genclk__group_gada51baf0de37e57d7052f6f6ea324b53}{\-G\-E\-N\-C\-L\-K\-\_\-\-D\-I\-V\-\_\-\-M\-A\-X}~256
+\begin{DoxyCompactList}\small\item\em \-Maximum divider supported by the generic clock implementation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Generic clocks are configurable clocks which run outside the system clock domain. \-They are often connected to peripherals which have an asynchronous component running independently of the bus clock, e.\-g. \-U\-S\-B controllers, low-\/power timers and \-R\-T\-Cs, etc.
+
+\-Note that not all platforms have support for generic clocks; on such platforms, this \-A\-P\-I will not be available. 
+
+\subsection{\-Define \-Documentation}
+\hypertarget{group__genclk__group_gada51baf0de37e57d7052f6f6ea324b53}{
+\index{\-Generic Clock Management@{\-Generic Clock Management}!\-G\-E\-N\-C\-L\-K\-\_\-\-D\-I\-V\-\_\-\-M\-A\-X@{\-G\-E\-N\-C\-L\-K\-\_\-\-D\-I\-V\-\_\-\-M\-A\-X}}
+\index{\-G\-E\-N\-C\-L\-K\-\_\-\-D\-I\-V\-\_\-\-M\-A\-X@{\-G\-E\-N\-C\-L\-K\-\_\-\-D\-I\-V\-\_\-\-M\-A\-X}!Generic Clock Management@{\-Generic Clock Management}}
+\subsubsection[{\-G\-E\-N\-C\-L\-K\-\_\-\-D\-I\-V\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-E\-N\-C\-L\-K\-\_\-\-D\-I\-V\-\_\-\-M\-A\-X~256}}
+\label{group__genclk__group_gada51baf0de37e57d7052f6f6ea324b53}
+
+
+\-Maximum divider supported by the generic clock implementation. 
+
+
+
+\subsection{\-Enumeration \-Type \-Documentation}
+\hypertarget{group__genclk__group_gaca55f4f4f96549b8111139d144bce01c}{
+\index{\-Generic Clock Management@{\-Generic Clock Management}!genclk\-\_\-source@{genclk\-\_\-source}}
+\index{genclk\-\_\-source@{genclk\-\_\-source}!Generic Clock Management@{\-Generic Clock Management}}
+\subsubsection[{genclk\-\_\-source}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf genclk\-\_\-source}}}
+\label{group__genclk__group_gaca55f4f4f96549b8111139d144bce01c}
+
+
+\-Generic clock source \-I\-D. 
+
+\-Each generic clock may be generated from a different clock source. \-These are the available alternatives provided by the chip. \begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-S\-Y\-S@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-S\-Y\-S}!\-Generic Clock Management@{\-Generic Clock Management}}\index{\-Generic Clock Management@{\-Generic Clock Management}!\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-S\-Y\-S@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-S\-Y\-S}}\item[{\em 
+\hypertarget{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca953707a1c76a0268413b7232d99d0065}{
+\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-S\-Y\-S}
+\label{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca953707a1c76a0268413b7232d99d0065}
+}]\-System \-R\-C oscillator. \index{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C32\-K@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C32\-K}!\-Generic Clock Management@{\-Generic Clock Management}}\index{\-Generic Clock Management@{\-Generic Clock Management}!\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C32\-K@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C32\-K}}\item[{\em 
+\hypertarget{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca3d1fd9213fb1acca868f9aed0580080f}{
+\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C32\-K}
+\label{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca3d1fd9213fb1acca868f9aed0580080f}
+}]32 k\-Hz oscillator \index{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M}!\-Generic Clock Management@{\-Generic Clock Management}}\index{\-Generic Clock Management@{\-Generic Clock Management}!\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M}}\item[{\em 
+\hypertarget{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01caeb9bb887118c6aaf7a1c193f80205909}{
+\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M}
+\label{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01caeb9bb887118c6aaf7a1c193f80205909}
+}]8 \-M\-Hz \-R\-C oscillator \index{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0}!\-Generic Clock Management@{\-Generic Clock Management}}\index{\-Generic Clock Management@{\-Generic Clock Management}!\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0}}\item[{\em 
+\hypertarget{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca885a673e1f2c68e84f6461cb38d2e50f}{
+\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0}
+\label{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca885a673e1f2c68e84f6461cb38d2e50f}
+}]\-Oscillator 0. \index{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1}!\-Generic Clock Management@{\-Generic Clock Management}}\index{\-Generic Clock Management@{\-Generic Clock Management}!\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1}}\item[{\em 
+\hypertarget{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca2c0a57ce35b0fa7efac9930357278930}{
+\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1}
+\label{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca2c0a57ce35b0fa7efac9930357278930}
+}]\-Oscillator 1. \index{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0}!\-Generic Clock Management@{\-Generic Clock Management}}\index{\-Generic Clock Management@{\-Generic Clock Management}!\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0}}\item[{\em 
+\hypertarget{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca4db9dbbdde9e4efb5b26e8ddfe817812}{
+\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0}
+\label{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca4db9dbbdde9e4efb5b26e8ddfe817812}
+}]\-P\-L\-L 0. \index{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1}!\-Generic Clock Management@{\-Generic Clock Management}}\index{\-Generic Clock Management@{\-Generic Clock Management}!\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1}}\item[{\em 
+\hypertarget{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca229fcad1bdb8ec267a05a8f1d1b0491e}{
+\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1}
+\label{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca229fcad1bdb8ec267a05a8f1d1b0491e}
+}]\-P\-L\-L 1. \index{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-C\-P\-U@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-C\-P\-U}!\-Generic Clock Management@{\-Generic Clock Management}}\index{\-Generic Clock Management@{\-Generic Clock Management}!\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-C\-P\-U@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-C\-P\-U}}\item[{\em 
+\hypertarget{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01cac903dd8fc4bf4fbdfa810ab774035a1b}{
+\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-C\-P\-U}
+\label{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01cac903dd8fc4bf4fbdfa810ab774035a1b}
+}]\-C\-P\-U clock. \index{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B}!\-Generic Clock Management@{\-Generic Clock Management}}\index{\-Generic Clock Management@{\-Generic Clock Management}!\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B}}\item[{\em 
+\hypertarget{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca5bb1dbdcf7db89069ddcc2a59d36a6b6}{
+\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B}
+\label{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca5bb1dbdcf7db89069ddcc2a59d36a6b6}
+}]\-High \-Speed \-Bus clock. \index{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A}!\-Generic Clock Management@{\-Generic Clock Management}}\index{\-Generic Clock Management@{\-Generic Clock Management}!\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A}}\item[{\em 
+\hypertarget{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca0647cd0e7fc56115d0003306568c29ff}{
+\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A}
+\label{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca0647cd0e7fc56115d0003306568c29ff}
+}]\-Peripheral \-Bus \-A clock. \index{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B}!\-Generic Clock Management@{\-Generic Clock Management}}\index{\-Generic Clock Management@{\-Generic Clock Management}!\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B}}\item[{\em 
+\hypertarget{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca956d2618a06550aba0d3c2c1cd784be9}{
+\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B}
+\label{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca956d2618a06550aba0d3c2c1cd784be9}
+}]\-Peripheral \-Bus \-B clock. \index{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}!\-Generic Clock Management@{\-Generic Clock Management}}\index{\-Generic Clock Management@{\-Generic Clock Management}!\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C@{\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}}\item[{\em 
+\hypertarget{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca73e71d3958e85af71ec37d4e2ca76c54}{
+\-G\-E\-N\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C}
+\label{group__genclk__group_ggaca55f4f4f96549b8111139d144bce01ca73e71d3958e85af71ec37d4e2ca76c54}
+}]\-Peripheral \-Bus \-C clock. \end{description}
+\end{Desc}
+

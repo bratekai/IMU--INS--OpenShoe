@@ -1,0 +1,101 @@
+\hypertarget{usbc__device_8c}{
+\section{usbc\-\_\-device.c \-File \-Reference}
+\label{usbc__device_8c}\index{usbc\-\_\-device.\-c@{usbc\-\_\-device.\-c}}
+}
+
+
+\-U\-S\-B \-Device driver \-Compliance with common driver \-U\-D\-D.  
+
+
+{\ttfamily \#include \char`\"{}conf\-\_\-usb.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}sysclk.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}udd.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}usbc\-\_\-otg.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}usbc\-\_\-device.\-h\char`\"{}}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+{\ttfamily \#include \char`\"{}sleepmgr.\-h\char`\"{}}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{usbc__device_8c_a5326d0dfa348635327c3562b130be6b3}{\-U\-D\-D\-\_\-\-U\-S\-B\-\_\-\-I\-N\-T\-\_\-\-L\-E\-V\-E\-L}~0
+\item 
+\#define \hyperlink{usbc__device_8c_ab9a7dacc289d5123cea5f0f25198d14c}{\-A\-V\-R32\-\_\-\-P\-M\-\_\-\-A\-W\-E\-N\-\_\-\-U\-S\-B\-C\-W\-E\-N\-\_\-\-M\-A\-S\-K}~0x01
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{Indent}\paragraph*{\-Management of bulk/interrupt/isochronous endpoints}
+{\em \-Buffer to store the data received on control endpoint (\-S\-E\-T\-U\-P/\-O\-U\-T endpoint 0)
+
+\-Used to avoid a \-R\-A\-M buffer overflow in case of the payload buffer is smaller than control endpoint size
+
+\-The \-U\-D\-D manages the data transfer on endpoints\-:
+\begin{DoxyItemize}
+\item \-Start data tranfer on endpoint with \-U\-S\-B \-Device \-D\-M\-A
+\item \-Send a \-Z\-L\-P packet if requested
+\item \-Call callback registered to signal end of transfer \-The transfer abort and stall feature are supported. 
+\end{DoxyItemize}}\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{group__udd__group_gaa4cac8c35ae056e26cf4ab5b426bbe09}{udd\-\_\-include\-\_\-vbus\-\_\-monitoring} (void)
+\begin{DoxyCompactList}\small\item\em \-Authorizes the \-V\-B\-U\-S event. \end{DoxyCompactList}\item 
+void \hyperlink{group__udd__group_ga9792d1899ae058e3984d6a622fe2ad42}{udd\-\_\-enable} (void)
+\begin{DoxyCompactList}\small\item\em \-Enables the \-U\-S\-B \-Device mode. \end{DoxyCompactList}\item 
+void \hyperlink{group__udd__group_gab283432057b934e9d73ac9282d9b0f11}{udd\-\_\-disable} (void)
+\begin{DoxyCompactList}\small\item\em \-Disables the \-U\-S\-B \-Device mode. \end{DoxyCompactList}\item 
+void \hyperlink{group__udd__group_ga7a7c0d9236c922c2af33c6702565a99f}{udd\-\_\-attach} (void)
+\begin{DoxyCompactList}\small\item\em \-Attach device to the bus when possible. \end{DoxyCompactList}\item 
+void \hyperlink{group__udd__group_ga03e59eaa264f1dbe5a52559311d0520e}{udd\-\_\-detach} (void)
+\begin{DoxyCompactList}\small\item\em \-Detaches the device from the bus. \end{DoxyCompactList}\item 
+bool \hyperlink{group__udd__group_ga85f403ddb78776b1ba014dafd3ffec2c}{udd\-\_\-is\-\_\-high\-\_\-speed} (void)
+\begin{DoxyCompactList}\small\item\em \-Test whether the \-U\-S\-B \-Device \-Controller is running at high speed or not. \end{DoxyCompactList}\item 
+void \hyperlink{group__udd__group_ga05da762e0faf9d478e532de40afa71f6}{udd\-\_\-set\-\_\-address} (uint8\-\_\-t address)
+\begin{DoxyCompactList}\small\item\em \-Changes the \-U\-S\-B address of device. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{group__udd__group_gaebd36638d482f6df00a8aff006ef2246}{udd\-\_\-getaddress} (void)
+\begin{DoxyCompactList}\small\item\em \-Returns the \-U\-S\-B address of device. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{group__udd__group_ga96dc248cc05e07ffe2cf21e4d7465320}{udd\-\_\-get\-\_\-frame\-\_\-number} (void)
+\begin{DoxyCompactList}\small\item\em \-Returns the current start of frame number. \end{DoxyCompactList}\item 
+uint16\-\_\-t \hyperlink{group__udd__group_ga63047eec59b8e8798ca1d3366472d82b}{udd\-\_\-get\-\_\-micro\-\_\-frame\-\_\-number} (void)
+\begin{DoxyCompactList}\small\item\em \-Returns the current micro start of frame number. \end{DoxyCompactList}\item 
+void \hyperlink{group__udd__group_ga14ae6068206556d6ae8766b1baa2f686}{udd\-\_\-send\-\_\-wake\-\_\-up} (void)
+\begin{DoxyCompactList}\small\item\em \-The \-U\-S\-B driver sends a resume signal called \-Upstream \-Resume. \end{DoxyCompactList}\item 
+void \hyperlink{group__udd__group_ga017ef5ea7626be258c24d345218976f9}{udd\-\_\-set\-\_\-setup\-\_\-payload} (uint8\-\_\-t $\ast$payload, uint16\-\_\-t payload\-\_\-size)
+\begin{DoxyCompactList}\small\item\em \-Load setup payload. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-Power management routine.}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__udd__group_gaf5ca2932775dabb853197df18706c469}{\-U\-S\-B\-C\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E\-\_\-\-U\-S\-B\-\_\-\-S\-U\-S\-P\-E\-N\-D}~\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-S\-T\-A\-T\-I\-C
+\begin{DoxyCompactList}\small\item\em \-Definition of sleep levels. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__udd__group_ga90aeabbf00db4be8f0a1feef5cf0bbb3}{\-U\-S\-B\-C\-\_\-\-S\-L\-E\-E\-P\-\_\-\-M\-O\-D\-E\-\_\-\-U\-S\-B\-\_\-\-I\-D\-L\-E}~\-S\-L\-E\-E\-P\-M\-G\-R\-\_\-\-I\-D\-L\-E
+\end{DoxyCompactItemize}
+\subsection*{\-Control endpoint low level management routine.}
+\label{_amgrpc60f904f933dd5c177261b92bc2abc62}%
+ \-This function performs control endpoint mangement. \-It handle the \-S\-E\-T\-U\-P/\-D\-A\-T\-A/\-H\-A\-N\-D\-S\-H\-A\-K\-E phases of a control transaction. \begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group__udd__group_gabc925782d47feeb37f6f943579038b84}{udd\-\_\-ctrl\-\_\-ep\-\_\-state\-\_\-t} \{ \*
+\hyperlink{group__udd__group_ggabc925782d47feeb37f6f943579038b84a2357a1ac77f59da70848f4121a016e77}{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-S\-E\-T\-U\-P} =  0, 
+\hyperlink{group__udd__group_ggabc925782d47feeb37f6f943579038b84acf3cc280a0061ecf321e0191d37dc53c}{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-D\-A\-T\-A\-\_\-\-O\-U\-T} =  1, 
+\hyperlink{group__udd__group_ggabc925782d47feeb37f6f943579038b84a57e63cb5de1f85c276dbfa8c3c00deed}{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-D\-A\-T\-A\-\_\-\-I\-N} =  2, 
+\hyperlink{group__udd__group_ggabc925782d47feeb37f6f943579038b84aadbf4f42e07b8589262e727b3cf8b900}{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-H\-A\-N\-D\-S\-H\-A\-K\-E\-\_\-\-W\-A\-I\-T\-\_\-\-I\-N\-\_\-\-Z\-L\-P} =  3, 
+\*
+\hyperlink{group__udd__group_ggabc925782d47feeb37f6f943579038b84ae5dd6cabf3ebb1aab6a80d7a92a89513}{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-H\-A\-N\-D\-S\-H\-A\-K\-E\-\_\-\-W\-A\-I\-T\-\_\-\-O\-U\-T\-\_\-\-Z\-L\-P} =  4, 
+\hyperlink{group__udd__group_ggabc925782d47feeb37f6f943579038b84a8d44562cd9ac18661adcf35015f8972e}{\-U\-D\-D\-\_\-\-E\-P\-C\-T\-R\-L\-\_\-\-S\-T\-A\-L\-L\-\_\-\-R\-E\-Q} =  5
+ \}
+\begin{DoxyCompactList}\small\item\em \-Bit definitions about endpoint control state machine for udd\-\_\-ep\-\_\-control\-\_\-state. \end{DoxyCompactList}\item 
+\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-W\-O\-R\-D\-\_\-\-A\-L\-I\-G\-N\-E\-D \*
+\hyperlink{structudd__ctrl__request__t}{udd\-\_\-ctrl\-\_\-request\-\_\-t} \hyperlink{group__udd__group_ga2a41c2b14c5be825bdce7fde8c365a30}{udd\-\_\-g\-\_\-ctrlreq}
+\begin{DoxyCompactList}\small\item\em \-Global variable to give and record information about setup request management. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-U\-S\-B \-Device driver \-Compliance with common driver \-U\-D\-D. \-Copyright (\-C) 2009 -\/ 2011 \-Atmel \-Corporation. \-All rights reserved. 
+
+\subsection{\-Define \-Documentation}
+\hypertarget{usbc__device_8c_ab9a7dacc289d5123cea5f0f25198d14c}{
+\index{usbc\-\_\-device.\-c@{usbc\-\_\-device.\-c}!\-A\-V\-R32\-\_\-\-P\-M\-\_\-\-A\-W\-E\-N\-\_\-\-U\-S\-B\-C\-W\-E\-N\-\_\-\-M\-A\-S\-K@{\-A\-V\-R32\-\_\-\-P\-M\-\_\-\-A\-W\-E\-N\-\_\-\-U\-S\-B\-C\-W\-E\-N\-\_\-\-M\-A\-S\-K}}
+\index{\-A\-V\-R32\-\_\-\-P\-M\-\_\-\-A\-W\-E\-N\-\_\-\-U\-S\-B\-C\-W\-E\-N\-\_\-\-M\-A\-S\-K@{\-A\-V\-R32\-\_\-\-P\-M\-\_\-\-A\-W\-E\-N\-\_\-\-U\-S\-B\-C\-W\-E\-N\-\_\-\-M\-A\-S\-K}!usbc_device.c@{usbc\-\_\-device.\-c}}
+\subsubsection[{\-A\-V\-R32\-\_\-\-P\-M\-\_\-\-A\-W\-E\-N\-\_\-\-U\-S\-B\-C\-W\-E\-N\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-V\-R32\-\_\-\-P\-M\-\_\-\-A\-W\-E\-N\-\_\-\-U\-S\-B\-C\-W\-E\-N\-\_\-\-M\-A\-S\-K~0x01}}
+\label{usbc__device_8c_ab9a7dacc289d5123cea5f0f25198d14c}
+\hypertarget{usbc__device_8c_a5326d0dfa348635327c3562b130be6b3}{
+\index{usbc\-\_\-device.\-c@{usbc\-\_\-device.\-c}!\-U\-D\-D\-\_\-\-U\-S\-B\-\_\-\-I\-N\-T\-\_\-\-L\-E\-V\-E\-L@{\-U\-D\-D\-\_\-\-U\-S\-B\-\_\-\-I\-N\-T\-\_\-\-L\-E\-V\-E\-L}}
+\index{\-U\-D\-D\-\_\-\-U\-S\-B\-\_\-\-I\-N\-T\-\_\-\-L\-E\-V\-E\-L@{\-U\-D\-D\-\_\-\-U\-S\-B\-\_\-\-I\-N\-T\-\_\-\-L\-E\-V\-E\-L}!usbc_device.c@{usbc\-\_\-device.\-c}}
+\subsubsection[{\-U\-D\-D\-\_\-\-U\-S\-B\-\_\-\-I\-N\-T\-\_\-\-L\-E\-V\-E\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-D\-\_\-\-U\-S\-B\-\_\-\-I\-N\-T\-\_\-\-L\-E\-V\-E\-L~0}}
+\label{usbc__device_8c_a5326d0dfa348635327c3562b130be6b3}

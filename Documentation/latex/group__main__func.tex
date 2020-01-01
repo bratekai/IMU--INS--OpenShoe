@@ -1,0 +1,234 @@
+\hypertarget{group__main__func}{
+\section{\-Z\-U\-P\-T aided \-I\-N\-S functions}
+\label{group__main__func}\index{\-Z\-U\-P\-T aided I\-N\-S functions@{\-Z\-U\-P\-T aided I\-N\-S functions}}
+}
+
+
+the main functions for running the \-Z\-U\-P\-T aided \-I\-N\-S.  
+
+
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__main__func_gaae1bbd924940610e1709300d40ca5a0f}{update\-\_\-imu\-\_\-data\-\_\-buffers} (void)
+\begin{DoxyCompactList}\small\item\em \-Function that updates the \-I\-M\-U data buffers with the latest values read from the \-I\-M\-U, and writes the \-I\-M\-U data to that should be process at the current iteration to the processing variables. \end{DoxyCompactList}\item 
+void \hyperlink{group__main__func_ga9169808fbcb9f517deb908960a69ca7a}{strapdown\-\_\-mechanisation\-\_\-equations} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for doing a time update of the mechanized navigation equations. \end{DoxyCompactList}\item 
+void \hyperlink{group__main__func_gac80ad2aa648edb47edb8f62883cb2a7d}{time\-\_\-up\-\_\-data} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for doing a time update of the \-Kalman filter state covariance. \end{DoxyCompactList}\item 
+void \hyperlink{group__main__func_ga75c4a936b2db01f930ba89babb822f69}{gain\-\_\-matrix} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for calculating the \-Kalman filter gain matrix. \end{DoxyCompactList}\item 
+void \hyperlink{group__main__func_gaa1673f6cf928e97c6372c56eddb4cc72}{measurement\-\_\-update} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for doing a measurement update of the \-Kalman filter covariance. \end{DoxyCompactList}\item 
+void \hyperlink{group__main__func_ga8812381ada5c2786a10e378e4ca34377}{correct\-\_\-navigation\-\_\-states} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for correcting the navigation states given a zero-\/velocity detection. \end{DoxyCompactList}\item 
+void \hyperlink{group__main__func_gaf0b7424f50d37755b6b0736808082299}{\-Z\-U\-P\-T\-\_\-detector} (void)
+\begin{DoxyCompactList}\small\item\em \-Function for detecting when the system has zero-\/velocity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+the main functions for running the \-Z\-U\-P\-T aided \-I\-N\-S. 
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__main__func_ga8812381ada5c2786a10e378e4ca34377}{
+\index{\-Z\-U\-P\-T aided I\-N\-S functions@{\-Z\-U\-P\-T aided I\-N\-S functions}!correct\-\_\-navigation\-\_\-states@{correct\-\_\-navigation\-\_\-states}}
+\index{correct\-\_\-navigation\-\_\-states@{correct\-\_\-navigation\-\_\-states}!ZUPT aided INS functions@{\-Z\-U\-P\-T aided I\-N\-S functions}}
+\subsubsection[{correct\-\_\-navigation\-\_\-states}]{\setlength{\rightskip}{0pt plus 5cm}void correct\-\_\-navigation\-\_\-states (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__main__func_ga8812381ada5c2786a10e378e4ca34377}
+
+
+\-Function for correcting the navigation states given a zero-\/velocity detection. 
+
+\-When called this function takes the velocity estimate of the navigation system and treat it as an observation of the current velocity error of the system. \-The errors in all navigation states (position, velocity, and attitude) are then estimated by multiplying the \char`\"{}velocity error\char`\"{} with the \-Kalman gain. \-The estimated errors in the navigation states are then used to correct the navigation states.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in,out}  & {\em position} & \-The position estimate of the navigation system. \\
+\hline
+\mbox{\tt in,out}  & {\em velocity} & \-The velocity estimate of the navigation system. \\
+\hline
+\mbox{\tt out}  & {\em quaternions} & \-The orientation estimate of the navigation system. \\
+\hline
+\mbox{\tt in}  & {\em \-Rb2t} & \-The vector representation of the body to navigation coordinate system rotation matrix estimate. \\
+\hline
+\mbox{\tt in}  & {\em kalman\-\_\-gain} & \-The vector representation of the \-Kalman filter gain matrix. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__main__func_ga75c4a936b2db01f930ba89babb822f69}{
+\index{\-Z\-U\-P\-T aided I\-N\-S functions@{\-Z\-U\-P\-T aided I\-N\-S functions}!gain\-\_\-matrix@{gain\-\_\-matrix}}
+\index{gain\-\_\-matrix@{gain\-\_\-matrix}!ZUPT aided INS functions@{\-Z\-U\-P\-T aided I\-N\-S functions}}
+\subsubsection[{gain\-\_\-matrix}]{\setlength{\rightskip}{0pt plus 5cm}void gain\-\_\-matrix (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__main__func_ga75c4a936b2db01f930ba89babb822f69}
+
+
+\-Function for calculating the \-Kalman filter gain matrix. 
+
+\-When called the function calculates the \-Kalman filter gain and store it in the vector {\itshape kalman\-\_\-gain\/}. \-To calculate the gain the function uses the \-Kalman filter covariance and the pseudo velocity measurement noise standard deviation.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em kalman\-\_\-gain} & \-The vector representation of the \-Kalman filter gain matrix. \\
+\hline
+\mbox{\tt in}  & {\em cov\-\_\-vector} & \-The vector representation of the \-Kalman filter covariance matrix. \\
+\hline
+\mbox{\tt in}  & {\em sigma\-\_\-velocity} & \-The standard deviation of the pseudo velocity measurement error (\-Note\-: \-This parameters enters the function through a sub-\/function.). \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__main__func_gaa1673f6cf928e97c6372c56eddb4cc72}{
+\index{\-Z\-U\-P\-T aided I\-N\-S functions@{\-Z\-U\-P\-T aided I\-N\-S functions}!measurement\-\_\-update@{measurement\-\_\-update}}
+\index{measurement\-\_\-update@{measurement\-\_\-update}!ZUPT aided INS functions@{\-Z\-U\-P\-T aided I\-N\-S functions}}
+\subsubsection[{measurement\-\_\-update}]{\setlength{\rightskip}{0pt plus 5cm}void measurement\-\_\-update (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__main__func_gaa1673f6cf928e97c6372c56eddb4cc72}
+
+
+\-Function for doing a measurement update of the \-Kalman filter covariance. 
+
+\-When called the function does a measurement update of the \-Kalman filter state covariance matrix stored in the vector {\itshape cov\-\_\-vector\/}.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in,out}  & {\em cov\-\_\-vector} & \-The vector representation of the \-Kalman filter covariance matrix. \\
+\hline
+\mbox{\tt in}  & {\em kalman\-\_\-gain} & \-The vector representation of the \-Kalman filter gain matrix. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__main__func_ga9169808fbcb9f517deb908960a69ca7a}{
+\index{\-Z\-U\-P\-T aided I\-N\-S functions@{\-Z\-U\-P\-T aided I\-N\-S functions}!strapdown\-\_\-mechanisation\-\_\-equations@{strapdown\-\_\-mechanisation\-\_\-equations}}
+\index{strapdown\-\_\-mechanisation\-\_\-equations@{strapdown\-\_\-mechanisation\-\_\-equations}!ZUPT aided INS functions@{\-Z\-U\-P\-T aided I\-N\-S functions}}
+\subsubsection[{strapdown\-\_\-mechanisation\-\_\-equations}]{\setlength{\rightskip}{0pt plus 5cm}void strapdown\-\_\-mechanisation\-\_\-equations (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__main__func_ga9169808fbcb9f517deb908960a69ca7a}
+
+
+\-Function for doing a time update of the mechanized navigation equations. 
+
+\-When called the function does a time update of the mechanized inertial navigation system equations. \-That is, first the quaternions stored in {\itshape quaternions\/} is updated using the angular rate measurements in {\itshape angular\-\_\-rates\-\_\-out\/}. \-Then the position and velocity state vectors {\itshape position\/} and {\itshape velocity\/} are updated using the acceleration measurements in {\itshape accelerations\-\_\-out\/}. \-The function also updates the ''aiding'' vector {\itshape \-Rb2t\/} (body to navigation coordinate system rotation matrix) which is used in the \-Kalman filter.
+
+\begin{DoxyNote}{\-Note}
+\-This is a rudimentary mechanization of the inertial navigation equations which only is suitable for use with systems that uses low-\/cost/low-\/performance inertial sensors and where only short periods of free inertial navigation is expected.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in,out}  & {\em position} & \-The position estimate of the navigation system. \\
+\hline
+\mbox{\tt in,out}  & {\em velocity} & \-The velocity estimate of the navigation system. \\
+\hline
+\mbox{\tt in,out}  & {\em quaternions} & \-The orientation estimate of the navigation system. \\
+\hline
+\mbox{\tt out}  & {\em \-Rb2t} & \-The body to navigation coordinate system rotation matrix estimate. \\
+\hline
+\mbox{\tt in}  & {\em accelerations\-\_\-out} & \-The acceleration measurements used in the update of the inertial navigation system equations. \\
+\hline
+\mbox{\tt in}  & {\em angular\-\_\-rates\-\_\-out} & \-The angular rate measurements used in the update of the inertial navigation system equations. \\
+\hline
+\mbox{\tt in}  & {\em dt} & \-The sampling period of the system. \\
+\hline
+\mbox{\tt in}  & {\em g} & \-The magnitude of the local gravity vector. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__main__func_gac80ad2aa648edb47edb8f62883cb2a7d}{
+\index{\-Z\-U\-P\-T aided I\-N\-S functions@{\-Z\-U\-P\-T aided I\-N\-S functions}!time\-\_\-up\-\_\-data@{time\-\_\-up\-\_\-data}}
+\index{time\-\_\-up\-\_\-data@{time\-\_\-up\-\_\-data}!ZUPT aided INS functions@{\-Z\-U\-P\-T aided I\-N\-S functions}}
+\subsubsection[{time\-\_\-up\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void time\-\_\-up\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__main__func_gac80ad2aa648edb47edb8f62883cb2a7d}
+
+
+\-Function for doing a time update of the \-Kalman filter state covariance. 
+
+\-When called the function does a time update of the \-Kalman filter state covariance matrix stored in the vector {\itshape cov\-\_\-vector\/}.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt in,out}  & {\em cov\-\_\-vector} & \-The vector representation of the \-Kalman filter covariance matrix. \\
+\hline
+\mbox{\tt in}  & {\em dt} & \-The sampling period of the system. \\
+\hline
+\mbox{\tt in}  & {\em sigma\-\_\-acceleration} & \-The standard deviation of the accelerometer process noise. \\
+\hline
+\mbox{\tt in}  & {\em sigma\-\_\-gyroscope} & \-The standard deviation of the gyroscope process noise. \\
+\hline
+\mbox{\tt in}  & {\em accelerations\-\_\-out} & \-The acceleration measurements used in the update of the inertial navigation system equations. \\
+\hline
+\mbox{\tt in}  & {\em \-Rb2t} & \-The vector current body to navigation coordinate system rotation matrix estimate. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__main__func_gaae1bbd924940610e1709300d40ca5a0f}{
+\index{\-Z\-U\-P\-T aided I\-N\-S functions@{\-Z\-U\-P\-T aided I\-N\-S functions}!update\-\_\-imu\-\_\-data\-\_\-buffers@{update\-\_\-imu\-\_\-data\-\_\-buffers}}
+\index{update\-\_\-imu\-\_\-data\-\_\-buffers@{update\-\_\-imu\-\_\-data\-\_\-buffers}!ZUPT aided INS functions@{\-Z\-U\-P\-T aided I\-N\-S functions}}
+\subsubsection[{update\-\_\-imu\-\_\-data\-\_\-buffers}]{\setlength{\rightskip}{0pt plus 5cm}void update\-\_\-imu\-\_\-data\-\_\-buffers (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__main__func_gaae1bbd924940610e1709300d40ca5a0f}
+
+
+\-Function that updates the \-I\-M\-U data buffers with the latest values read from the \-I\-M\-U, and writes the \-I\-M\-U data to that should be process at the current iteration to the processing variables. 
+
+\-The function updates the \-I\-M\-U data buffers {\itshape acc\-\_\-buffer\-\_\-x\-\_\-axis\/}, {\itshape acc\-\_\-buffer\-\_\-y\-\_\-axis\/}, {\itshape acc\-\_\-buffer\-\_\-z\-\_\-axis\/}, {\itshape gyro\-\_\-buffer\-\_\-x\-\_\-axis\/}, {\itshape gyro\-\_\-buffer\-\_\-y\-\_\-axis\/}, {\itshape gyro\-\_\-buffer\-\_\-z\-\_\-axis\/} with the values stored in the vectors {\itshape accelerations\-\_\-in\/} and {\itshape angular\-\_\-rates\-\_\-in\/}. \-The function also updates the vectors {\itshape accelerations\-\_\-out\/} and {\itshape angular\-\_\-rates\-\_\-out\/}. \-The data stored in these vectors is the data processed in the next iteration of the navigation algorithm.
+
+\begin{DoxyNote}{\-Note}
+\-This function should be called after data have been read from the \-I\-M\-U through the \-S\-P\-I interface and before the navigation algorithm is processed.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em accelerations\-\_\-out} & \-The acceleration data that is to be used in the next iteration of the navigation algorithm. \\
+\hline
+\mbox{\tt out}  & {\em angular\-\_\-rates\-\_\-out} & \-The angular rate data that is to be used in the next iteration of the navigation algorithm. \\
+\hline
+\mbox{\tt in}  & {\em accelerations\-\_\-in} & \-The from the \-I\-M\-U latest read acceleration data. \\
+\hline
+\mbox{\tt in}  & {\em angular\-\_\-rates\-\_\-in} & \-The from the \-I\-M\-U latest read angular rate data. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__main__func_gaf0b7424f50d37755b6b0736808082299}{
+\index{\-Z\-U\-P\-T aided I\-N\-S functions@{\-Z\-U\-P\-T aided I\-N\-S functions}!\-Z\-U\-P\-T\-\_\-detector@{\-Z\-U\-P\-T\-\_\-detector}}
+\index{\-Z\-U\-P\-T\-\_\-detector@{\-Z\-U\-P\-T\-\_\-detector}!ZUPT aided INS functions@{\-Z\-U\-P\-T aided I\-N\-S functions}}
+\subsubsection[{\-Z\-U\-P\-T\-\_\-detector}]{\setlength{\rightskip}{0pt plus 5cm}void \-Z\-U\-P\-T\-\_\-detector (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__main__func_gaf0b7424f50d37755b6b0736808082299}
+
+
+\-Function for detecting when the system has zero-\/velocity. 
+
+\-When called this function takes the acceleration and angular rate measurements stored in the \-I\-M\-U data buffers and runs a generalized likelihood ratio test to determine if the navigation system is stationary or moving. \-More information about the detector and it characteristics can be found in following papers\-:
+
+\begin{DoxyItemize}
+\item \href{https://eeweb01.ee.kth.se/upload/publications/reports/2010/IR-EE-SB_2010_038.pdf}{\tt \-Zero-\/\-Velocity \-Detection -\/-\/ \-An \-Algorithm \-Evaluation} \item \href{https://eeweb01.ee.kth.se/upload/publications/reports/2010/IR-EE-SB_2010_043.pdf}{\tt \-Evaluation of \-Zero-\/\-Velocity \-Detectors for \-Foot-\/\-Mounted \-Inertial \-Navigation \-Systems}\end{DoxyItemize}
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em zupt} & \-The zero-\/velocity detection flag \\
+\hline
+\mbox{\tt in}  & {\em detector\-\_\-\-Window\-\_\-size} & \-The window size of the zero-\/velocity detector. \\
+\hline
+\mbox{\tt in}  & {\em detector\-\_\-threshold} & \-The threshold used in the detector. \\
+\hline
+\mbox{\tt in}  & {\em sigma\-\_\-acc\-\_\-det} & \-The standard deviation figure used to control the importance of the accelerometer measurements in the detection algorithm. \\
+\hline
+\mbox{\tt in}  & {\em sigma\-\_\-gyro\-\_\-det} & \-The standard deviation figure used to control the importance of the gyroscope measurements in the detection algorithm. \\
+\hline
+\mbox{\tt in}  & {\em g} & \-The magnitude of the local gravity vector. \\
+\hline
+\end{DoxyParams}

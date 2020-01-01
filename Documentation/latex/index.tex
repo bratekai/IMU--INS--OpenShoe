@@ -1,0 +1,36 @@
+\hypertarget{index_sec_intro}{}\section{\-Introduction}\label{index_sec_intro}
+\-Open\-Shoe is an academic project for creating an open source embedded foot-\/mounted \-I\-N\-S implementation. \-The project contain both hardware and software components all of which are documented and released under open source licenses. \-Our motivation for the project has been to 
+\begin{DoxyEnumerate}
+\item \-Create a working prototype for ourself. 
+\item \-Give other researchers a short-\/cut to a working implementation. 
+\end{DoxyEnumerate}\-The former is a necessity for our future research activities within indoor positioning. \-The planned use span from being a subcomponent in larger positioning system to being used as a stand alone component for research within the foot-\/mounted \-I\-N\-S field.
+
+\-The latter comes from our observations of many poor implementations and measurement setups and our own experience of all small details that can go wrong. \-The value of an embedded implementation is the modularity and the small weight, bulk, and price in comparison with the typical sensor-\/plus-\/laptop research systems. \-This alleviates the work of integration in larger real-\/time navigation systems and makes it possibility to equip a large number of users with sensors for field performance tests and cooperative navigation studies. \-Our hope is that this implementation will save time, sweat, and tears for navigation researchers and facilitate the use of foot-\/mounted inertial navigation by researchers not specialized in inertial navigation, e.\-g. in fields such as biomedical engineering, behavioral science, and ubiquitous computing.
+
+~
+
+\-The initial part of the project is carried out during the fall and winter of 2011-\/2012 by \-K\-T\-H (\-K\-T\-H \-Royal \-Institute of \-Technology, \-Stockholm, \-Sweden) researchers working at \-I\-I\-Sc (\-Indian \-Institutet of \-Science, \-Bangalore, \-India). \-The project is a part of a joint \-Indo-\/\-Swedish project between \-Signal \-Processing \-Lab \-K\-T\-H, \-Statistical \-Signal \-Processing \-Lab \-I\-I\-Sc, and \-V\-L\-S\-I \-Circuits and \-Systems \-Lab \-I\-I\-Sc.\hypertarget{index_doc}{}\section{\-This documentation}\label{index_doc}
+\-This is automatically generated documentation for the \-Open\-Shoe software from the \-Open\-Shoe source code. \-All information in this documenation can be found in the source code. \-However, comments in the source code is not limited to this information. \-For detailed documentation you should consult the source code.\hypertarget{index_openshoe}{}\section{\-The Open\-Shoe implementation}\label{index_openshoe}
+\-Open\-Shoe is an open source embedded foot-\/mounted \-I\-N\-S implementation including both hardware and software design.
+
+\-General features\-: 
+\begin{DoxyEnumerate}
+\item \-Embedded \-Z\-U\-P\-T aided \-I\-N\-S 
+\item \-Open source and fully documented 
+\item \-Reproduction cost below \$900 
+\end{DoxyEnumerate}\-Hardware features\-: 
+\begin{DoxyEnumerate}
+\item \-Designed for an \-Analog \-Devices \-A\-D\-I\-S16367 \-I\-M\-U but with interface compitability with all \-I\-M\-Us in the i\-Sensor serie 
+\item 820\mbox{[}\-Hz\mbox{]} sampling rate, 18\mbox{[}g\mbox{]} and 1200°/s dynamic range, 330\mbox{[}\-Hz\mbox{]} sensor bandwidth 
+\item \-Processing run on an \-Atmel \-A\-V\-R32\-U\-C3\-C microcontroller with hardware floating point core 
+\item \-Footprint 28.\-5x40.\-5x32\mbox{[}mm\mbox{]} 
+\item \-U\-S\-B interface 
+\end{DoxyEnumerate}\-Software features\-: 
+\begin{DoxyEnumerate}
+\item \-Source code written in \-C 
+\item \-Easily configured to run any user implemented algorithms 
+\item \-Matlab code available for communication 
+\item \-Reprogrammable through the \-U\-S\-B interface. 
+\item \-Appear as a virtual com-\/port 
+\item \-Configurable to work as an \-I\-M\-U with up to 820\mbox{[}\-Hz\mbox{]} output rate 
+\end{DoxyEnumerate}

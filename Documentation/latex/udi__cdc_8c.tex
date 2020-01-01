@@ -1,0 +1,109 @@
+\hypertarget{udi__cdc_8c}{
+\section{udi\-\_\-cdc.c \-File \-Reference}
+\label{udi__cdc_8c}\index{udi\-\_\-cdc.\-c@{udi\-\_\-cdc.\-c}}
+}
+
+
+\-U\-S\-B \-Device \-Communication \-Device \-Class (\-C\-D\-C) interface.  
+
+
+{\ttfamily \#include \char`\"{}conf\-\_\-usb.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}usb\-\_\-protocol.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}usb\-\_\-protocol\-\_\-cdc.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}udd.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}udc.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}udi\-\_\-cdc.\-h\char`\"{}}\*
+{\ttfamily \#include $<$string.\-h$>$}\*
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{udi__cdc_8c_a6f3d34eb0f2fa47047521c97b1c0b110}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-S}~(5$\ast$\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-E\-P\-S\-\_\-\-S\-I\-Z\-E)
+\item 
+\#define \hyperlink{udi__cdc_8c_a5ca1c336726b1cea7a4603cef001341e}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-S}~(5$\ast$\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-E\-P\-S\-\_\-\-S\-I\-Z\-E)
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__udi__cdc__group_ga5507164c7c4ff2c9b94af48229dc0c3c}{udi\-\_\-cdc\-\_\-ctrl\-\_\-signal\-\_\-dcd} (bool b\-\_\-set)
+\begin{DoxyCompactList}\small\item\em \-Notify a state change of \-D\-C\-D signal. \end{DoxyCompactList}\item 
+void \hyperlink{group__udi__cdc__group_ga6b34b223f6c03cd35fc16d29cb9cfb78}{udi\-\_\-cdc\-\_\-ctrl\-\_\-signal\-\_\-dsr} (bool b\-\_\-set)
+\begin{DoxyCompactList}\small\item\em \-Notify a state change of \-D\-S\-R signal. \end{DoxyCompactList}\item 
+void \hyperlink{group__udi__cdc__group_gaf62c55c329d7e7ff3913274b124e54aa}{udi\-\_\-cdc\-\_\-signal\-\_\-framing\-\_\-error} (void)
+\begin{DoxyCompactList}\small\item\em \-Notify a framing error. \end{DoxyCompactList}\item 
+void \hyperlink{group__udi__cdc__group_gab6dd1be8afa57a1bece870338bdc5f74}{udi\-\_\-cdc\-\_\-signal\-\_\-parity\-\_\-error} (void)
+\begin{DoxyCompactList}\small\item\em \-Notify a parity error. \end{DoxyCompactList}\item 
+void \hyperlink{group__udi__cdc__group_ga7730a564c9cb117af611958500a4fa7f}{udi\-\_\-cdc\-\_\-signal\-\_\-overrun} (void)
+\begin{DoxyCompactList}\small\item\em \-Notify a overrun. \end{DoxyCompactList}\item 
+bool \hyperlink{group__udi__cdc__group_gab5beb4e918e089e0eacf20dba1df73ea}{udi\-\_\-cdc\-\_\-is\-\_\-rx\-\_\-ready} (void)
+\begin{DoxyCompactList}\small\item\em \-This function checks if a character has been received on the \-C\-D\-C line. \end{DoxyCompactList}\item 
+int \hyperlink{group__udi__cdc__group_ga202f3fd7b153f6e1a41601735e0febb6}{udi\-\_\-cdc\-\_\-getc} (void)
+\begin{DoxyCompactList}\small\item\em \-Waits and gets a value on \-C\-D\-C line. \end{DoxyCompactList}\item 
+iram\-\_\-size\-\_\-t \hyperlink{group__udi__cdc__group_gaa7374616de8bc3a83de3f1884b56fa39}{udi\-\_\-cdc\-\_\-read\-\_\-buf} (int $\ast$buf, iram\-\_\-size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em \-Reads a \-R\-A\-M buffer on \-C\-D\-C line. \end{DoxyCompactList}\item 
+bool \hyperlink{group__udi__cdc__group_ga7d0d458a5731da95dd05f30714c42dde}{udi\-\_\-cdc\-\_\-is\-\_\-tx\-\_\-ready} (void)
+\begin{DoxyCompactList}\small\item\em \-This function checks if a new character sent is possible \-The type int is used to support scanf redirection from compiler \-L\-I\-B. \end{DoxyCompactList}\item 
+int \hyperlink{group__udi__cdc__group_ga8faae3fcf4911017c0fcf0aa127179f6}{udi\-\_\-cdc\-\_\-putc} (int value)
+\begin{DoxyCompactList}\small\item\em \-Puts a byte on \-C\-D\-C line \-The type int is used to support printf redirection from compiler \-L\-I\-B. \end{DoxyCompactList}\item 
+iram\-\_\-size\-\_\-t \hyperlink{group__udi__cdc__group_ga88f09b3f954620d37bf882e6d1874c42}{udi\-\_\-cdc\-\_\-write\-\_\-buf} (const int $\ast$buf, iram\-\_\-size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em \-Writes a \-R\-A\-M buffer on \-C\-D\-C line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{Indent}\paragraph*{\-Routines to control serial line}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__udi__cdc__group_gab674a6567bc8b0da4afa5add7c361c00}{udi\-\_\-cdc\-\_\-line\-\_\-coding\-\_\-received} (void)
+\begin{DoxyCompactList}\small\item\em \-Sends lien coding to application. \end{DoxyCompactList}\item 
+void \hyperlink{group__udi__cdc__group_gaec142bc6fba06ca35a45d33f31840db7}{udi\-\_\-cdc\-\_\-serial\-\_\-state\-\_\-msg\-\_\-sent} (\hyperlink{group__udd__group_gac0f77f5a0e085af1242b48fd1054959a}{udd\-\_\-ep\-\_\-status\-\_\-t} status, iram\-\_\-size\-\_\-t n)
+\begin{DoxyCompactList}\small\item\em \-Ack sent of serial state message \-Callback called after serial state message sent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Routines to process data transfer}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__udi__cdc__group_gaa720107e691aac776090aabc23884eb6}{udi\-\_\-cdc\-\_\-data\-\_\-recevied} (\hyperlink{group__udd__group_gac0f77f5a0e085af1242b48fd1054959a}{udd\-\_\-ep\-\_\-status\-\_\-t} status, iram\-\_\-size\-\_\-t n)
+\begin{DoxyCompactList}\small\item\em \-Update \-R\-X buffer management with a new data \-Callback called after data reception on \-U\-S\-B line. \end{DoxyCompactList}\item 
+void \hyperlink{group__udi__cdc__group_gac8eef4d87000686e33f73efda71c6e10}{udi\-\_\-cdc\-\_\-data\-\_\-sent} (\hyperlink{group__udd__group_gac0f77f5a0e085af1242b48fd1054959a}{udd\-\_\-ep\-\_\-status\-\_\-t} status, iram\-\_\-size\-\_\-t n)
+\begin{DoxyCompactList}\small\item\em \-Valid \-T\-X buffer sent \-Callback called after data transfer on \-U\-S\-B line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-Interface for \-U\-D\-C}
+\begin{DoxyCompactItemize}
+\item 
+\-U\-D\-C\-\_\-\-D\-E\-S\-C\-\_\-\-S\-T\-O\-R\-A\-G\-E \hyperlink{structudi__api__t}{udi\-\_\-api\-\_\-t} \hyperlink{group__udi__cdc__group_gad7b0a90350a1f1a7c62fab1a749bf687}{udi\-\_\-api\-\_\-cdc\-\_\-comm}
+\begin{DoxyCompactList}\small\item\em \-Global structure which contains standard \-U\-D\-I \-A\-P\-I for \-U\-D\-C. \end{DoxyCompactList}\item 
+\-U\-D\-C\-\_\-\-D\-E\-S\-C\-\_\-\-S\-T\-O\-R\-A\-G\-E \hyperlink{structudi__api__t}{udi\-\_\-api\-\_\-t} \hyperlink{group__udi__cdc__group_ga3f85c229cc3218b75cb4844b8e9ad2d7}{udi\-\_\-api\-\_\-cdc\-\_\-data}
+\item 
+bool \hyperlink{group__udi__cdc__group_ga48b8cd17138f1e31d2f705e47bd798fc}{udi\-\_\-cdc\-\_\-comm\-\_\-enable} (void)
+\item 
+void \hyperlink{group__udi__cdc__group_ga1d9234e7ec38cb7fbc306b1d4624ac7d}{udi\-\_\-cdc\-\_\-comm\-\_\-disable} (void)
+\item 
+bool \hyperlink{group__udi__cdc__group_ga9f1ce6a914bf00a929285d4b9876ff6c}{udi\-\_\-cdc\-\_\-comm\-\_\-setup} (void)
+\item 
+bool \hyperlink{group__udi__cdc__group_gacff97f0d95101ef8beebe3a7d5cf1541}{udi\-\_\-cdc\-\_\-data\-\_\-enable} (void)
+\item 
+void \hyperlink{group__udi__cdc__group_gad6183b6bb4f836b69c2a176b8a1631da}{udi\-\_\-cdc\-\_\-data\-\_\-disable} (void)
+\item 
+bool \hyperlink{group__udi__cdc__group_ga9a66dccf928f55850d243abd1ca51eb3}{udi\-\_\-cdc\-\_\-data\-\_\-setup} (void)
+\item 
+uint8\-\_\-t \hyperlink{group__udi__cdc__group_ga89512d97844e09864336d3df2f73af59}{udi\-\_\-cdc\-\_\-getsetting} (void)
+\item 
+void \hyperlink{group__udi__cdc__group_ga304bed0ef46f8046e41de6e161db0864}{udi\-\_\-cdc\-\_\-data\-\_\-sof\-\_\-notify} (void)
+\end{DoxyCompactItemize}
+\subsection*{\-Variables to manage \-R\-X/\-T\-X transfer requests}
+\label{_amgrp212b06c4e5cdd346092967876fa4335a}%
+ \-Two buffers for each sense are used to optimize the speed. \begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__udi__cdc__group_ga91892013c1c5dcb7fa2127ac2e2090f7}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-T\-R\-A\-N\-S\-\_\-\-H\-A\-L\-T\-E\-D}~2
+\begin{DoxyCompactList}\small\item\em \-Define a transfer halted. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-U\-S\-B \-Device \-Communication \-Device \-Class (\-C\-D\-C) interface. \-Copyright (\-C) 2009-\/2011 \-Atmel \-Corporation. \-All rights reserved. 
+
+\subsection{\-Define \-Documentation}
+\hypertarget{udi__cdc_8c_a5ca1c336726b1cea7a4603cef001341e}{
+\index{udi\-\_\-cdc.\-c@{udi\-\_\-cdc.\-c}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-S@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-S}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-S@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-S}!udi_cdc.c@{udi\-\_\-cdc.\-c}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-S~(5$\ast$\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-E\-P\-S\-\_\-\-S\-I\-Z\-E)}}
+\label{udi__cdc_8c_a5ca1c336726b1cea7a4603cef001341e}
+\hypertarget{udi__cdc_8c_a6f3d34eb0f2fa47047521c97b1c0b110}{
+\index{udi\-\_\-cdc.\-c@{udi\-\_\-cdc.\-c}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-S@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-S}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-S@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-S}!udi_cdc.c@{udi\-\_\-cdc.\-c}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-T\-X\-\_\-\-B\-U\-F\-F\-E\-R\-S~(5$\ast$\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-E\-P\-S\-\_\-\-S\-I\-Z\-E)}}
+\label{udi__cdc_8c_a6f3d34eb0f2fa47047521c97b1c0b110}

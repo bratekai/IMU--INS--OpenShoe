@@ -1,0 +1,122 @@
+\hypertarget{group__openshoe__software}{
+\section{\-Open\-Shoe runtime framework}
+\label{group__openshoe__software}\index{\-Open\-Shoe runtime framework@{\-Open\-Shoe runtime framework}}
+}
+\subsection*{\-Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__user__interface}{\-User (\-U\-S\-B) interface}
+\begin{DoxyCompactList}\small\item\em \-This group contains high level functions for communication between user and system. \end{DoxyCompactList}\item 
+\hyperlink{group__imu__interface}{\-I\-M\-U interface}
+\begin{DoxyCompactList}\small\item\em \-This group contains the \-I\-M\-U interface functionalities. \end{DoxyCompactList}\item 
+\hyperlink{group__proc__sequence}{\-Processing sequence}
+\begin{DoxyCompactList}\small\item\em \-This groupe contains the processing sequence declarations and definitions. \end{DoxyCompactList}\item 
+\hyperlink{group__control__tables}{\-Tabulated information}
+\begin{DoxyCompactList}\small\item\em \-This group contains tabulated information for the control and communication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__openshoe__software_gab157d45366997e63d5799b3f93a8ad40}{imu\-\_\-interupt\-\_\-init} (void)
+\item 
+void \hyperlink{group__openshoe__software_ga704ef9a891717a7ad0e0248601e6d8e4}{eic\-\_\-nmi\-\_\-handler} (void)
+\item 
+void \hyperlink{group__openshoe__software_ga43f5e0d6db0fb41a437cc9096b32e9b5}{system\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em \-Initialize hardware and communication interfaces. \end{DoxyCompactList}\item 
+void \hyperlink{group__openshoe__software_gaa860f79f0ccbec4ade4b9b5f2173f05a}{wait\-\_\-for\-\_\-interrupt} (void)
+\begin{DoxyCompactList}\small\item\em \-Wait for the interrupt flag to be set. \end{DoxyCompactList}\item 
+void \hyperlink{group__openshoe__software_gab84fcc7107ace73c7c806351d3dd27f7}{within\-\_\-time\-\_\-limit} (void)
+\begin{DoxyCompactList}\small\item\em \-Checks that the main loop has finished before next interrupt. \end{DoxyCompactList}\item 
+int \hyperlink{group__openshoe__software_ga840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{group__openshoe__software_gae1dde88f49a15ac8b44d187ed1a2c2f4}{interrupt\-\_\-counter} = 0
+\item 
+uint32\-\_\-t \hyperlink{group__openshoe__software_gabab0bf40697a144a8e46dfe6c4290656}{imu\-\_\-interrupt\-\_\-ts}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-This module collect all software written for \-Open\-Shoe. 
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__openshoe__software_ga704ef9a891717a7ad0e0248601e6d8e4}{
+\index{\-Open\-Shoe runtime framework@{\-Open\-Shoe runtime framework}!eic\-\_\-nmi\-\_\-handler@{eic\-\_\-nmi\-\_\-handler}}
+\index{eic\-\_\-nmi\-\_\-handler@{eic\-\_\-nmi\-\_\-handler}!OpenShoe runtime framework@{\-Open\-Shoe runtime framework}}
+\subsubsection[{eic\-\_\-nmi\-\_\-handler}]{\setlength{\rightskip}{0pt plus 5cm}void eic\-\_\-nmi\-\_\-handler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__openshoe__software_ga704ef9a891717a7ad0e0248601e6d8e4}
+\hypertarget{group__openshoe__software_gab157d45366997e63d5799b3f93a8ad40}{
+\index{\-Open\-Shoe runtime framework@{\-Open\-Shoe runtime framework}!imu\-\_\-interupt\-\_\-init@{imu\-\_\-interupt\-\_\-init}}
+\index{imu\-\_\-interupt\-\_\-init@{imu\-\_\-interupt\-\_\-init}!OpenShoe runtime framework@{\-Open\-Shoe runtime framework}}
+\subsubsection[{imu\-\_\-interupt\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void imu\-\_\-interupt\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__openshoe__software_gab157d45366997e63d5799b3f93a8ad40}
+\hypertarget{group__openshoe__software_ga840291bc02cba5474a4cb46a9b9566fe}{
+\index{\-Open\-Shoe runtime framework@{\-Open\-Shoe runtime framework}!main@{main}}
+\index{main@{main}!OpenShoe runtime framework@{\-Open\-Shoe runtime framework}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__openshoe__software_ga840291bc02cba5474a4cb46a9b9566fe}
+\hypertarget{group__openshoe__software_ga43f5e0d6db0fb41a437cc9096b32e9b5}{
+\index{\-Open\-Shoe runtime framework@{\-Open\-Shoe runtime framework}!system\-\_\-init@{system\-\_\-init}}
+\index{system\-\_\-init@{system\-\_\-init}!OpenShoe runtime framework@{\-Open\-Shoe runtime framework}}
+\subsubsection[{system\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void system\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__openshoe__software_ga43f5e0d6db0fb41a437cc9096b32e9b5}
+
+
+\-Initialize hardware and communication interfaces. 
+
+\hypertarget{group__openshoe__software_gaa860f79f0ccbec4ade4b9b5f2173f05a}{
+\index{\-Open\-Shoe runtime framework@{\-Open\-Shoe runtime framework}!wait\-\_\-for\-\_\-interrupt@{wait\-\_\-for\-\_\-interrupt}}
+\index{wait\-\_\-for\-\_\-interrupt@{wait\-\_\-for\-\_\-interrupt}!OpenShoe runtime framework@{\-Open\-Shoe runtime framework}}
+\subsubsection[{wait\-\_\-for\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}void wait\-\_\-for\-\_\-interrupt (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__openshoe__software_gaa860f79f0ccbec4ade4b9b5f2173f05a}
+
+
+\-Wait for the interrupt flag to be set. 
+
+\hypertarget{group__openshoe__software_gab84fcc7107ace73c7c806351d3dd27f7}{
+\index{\-Open\-Shoe runtime framework@{\-Open\-Shoe runtime framework}!within\-\_\-time\-\_\-limit@{within\-\_\-time\-\_\-limit}}
+\index{within\-\_\-time\-\_\-limit@{within\-\_\-time\-\_\-limit}!OpenShoe runtime framework@{\-Open\-Shoe runtime framework}}
+\subsubsection[{within\-\_\-time\-\_\-limit}]{\setlength{\rightskip}{0pt plus 5cm}void within\-\_\-time\-\_\-limit (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__openshoe__software_gab84fcc7107ace73c7c806351d3dd27f7}
+
+
+\-Checks that the main loop has finished before next interrupt. 
+
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{group__openshoe__software_gabab0bf40697a144a8e46dfe6c4290656}{
+\index{\-Open\-Shoe runtime framework@{\-Open\-Shoe runtime framework}!imu\-\_\-interrupt\-\_\-ts@{imu\-\_\-interrupt\-\_\-ts}}
+\index{imu\-\_\-interrupt\-\_\-ts@{imu\-\_\-interrupt\-\_\-ts}!OpenShoe runtime framework@{\-Open\-Shoe runtime framework}}
+\subsubsection[{imu\-\_\-interrupt\-\_\-ts}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf imu\-\_\-interrupt\-\_\-ts}}}
+\label{group__openshoe__software_gabab0bf40697a144a8e46dfe6c4290656}
+\hypertarget{group__openshoe__software_gae1dde88f49a15ac8b44d187ed1a2c2f4}{
+\index{\-Open\-Shoe runtime framework@{\-Open\-Shoe runtime framework}!interrupt\-\_\-counter@{interrupt\-\_\-counter}}
+\index{interrupt\-\_\-counter@{interrupt\-\_\-counter}!OpenShoe runtime framework@{\-Open\-Shoe runtime framework}}
+\subsubsection[{interrupt\-\_\-counter}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf interrupt\-\_\-counter} = 0}}
+\label{group__openshoe__software_gae1dde88f49a15ac8b44d187ed1a2c2f4}

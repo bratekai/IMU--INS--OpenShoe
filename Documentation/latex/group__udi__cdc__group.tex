@@ -1,0 +1,649 @@
+\hypertarget{group__udi__cdc__group}{
+\section{\-U\-D\-I for \-Communication \-Device \-Class}
+\label{group__udi__cdc__group}\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+}
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structudi__cdc__comm__desc__t}{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Communication \-Class interface descriptor. \end{DoxyCompactList}\item 
+struct \hyperlink{structudi__cdc__data__desc__t}{udi\-\_\-cdc\-\_\-data\-\_\-desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Data \-Class interface descriptor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__udi__cdc__group__conf}{\-Default C\-D\-C configuration for a U\-S\-B Device}
+\item 
+\hyperlink{group__udi__cdc__group__desc}{\-Default descriptors for a U\-S\-B Device}
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\-U\-D\-C\-\_\-\-D\-E\-S\-C\-\_\-\-S\-T\-O\-R\-A\-G\-E \hyperlink{structudi__api__t}{udi\-\_\-api\-\_\-t} \hyperlink{group__udi__cdc__group_gad7b0a90350a1f1a7c62fab1a749bf687}{udi\-\_\-api\-\_\-cdc\-\_\-comm}
+\begin{DoxyCompactList}\small\item\em \-Global struture which contains standard \-U\-D\-I \-A\-P\-I for \-U\-D\-C. \end{DoxyCompactList}\item 
+\-U\-D\-C\-\_\-\-D\-E\-S\-C\-\_\-\-S\-T\-O\-R\-A\-G\-E \hyperlink{structudi__api__t}{udi\-\_\-api\-\_\-t} \hyperlink{group__udi__cdc__group_ga3f85c229cc3218b75cb4844b8e9ad2d7}{udi\-\_\-api\-\_\-cdc\-\_\-data}
+\end{DoxyCompactItemize}
+\subsection*{\-Interface for \-U\-D\-C}
+\begin{DoxyCompactItemize}
+\item 
+\-U\-D\-C\-\_\-\-D\-E\-S\-C\-\_\-\-S\-T\-O\-R\-A\-G\-E \hyperlink{structudi__api__t}{udi\-\_\-api\-\_\-t} \hyperlink{group__udi__cdc__group_gad7b0a90350a1f1a7c62fab1a749bf687}{udi\-\_\-api\-\_\-cdc\-\_\-comm}
+\begin{DoxyCompactList}\small\item\em \-Global structure which contains standard \-U\-D\-I \-A\-P\-I for \-U\-D\-C. \end{DoxyCompactList}\item 
+\-U\-D\-C\-\_\-\-D\-E\-S\-C\-\_\-\-S\-T\-O\-R\-A\-G\-E \hyperlink{structudi__api__t}{udi\-\_\-api\-\_\-t} \hyperlink{group__udi__cdc__group_ga3f85c229cc3218b75cb4844b8e9ad2d7}{udi\-\_\-api\-\_\-cdc\-\_\-data}
+\item 
+bool \hyperlink{group__udi__cdc__group_ga48b8cd17138f1e31d2f705e47bd798fc}{udi\-\_\-cdc\-\_\-comm\-\_\-enable} (void)
+\item 
+void \hyperlink{group__udi__cdc__group_ga1d9234e7ec38cb7fbc306b1d4624ac7d}{udi\-\_\-cdc\-\_\-comm\-\_\-disable} (void)
+\item 
+bool \hyperlink{group__udi__cdc__group_ga9f1ce6a914bf00a929285d4b9876ff6c}{udi\-\_\-cdc\-\_\-comm\-\_\-setup} (void)
+\item 
+bool \hyperlink{group__udi__cdc__group_gacff97f0d95101ef8beebe3a7d5cf1541}{udi\-\_\-cdc\-\_\-data\-\_\-enable} (void)
+\item 
+void \hyperlink{group__udi__cdc__group_gad6183b6bb4f836b69c2a176b8a1631da}{udi\-\_\-cdc\-\_\-data\-\_\-disable} (void)
+\item 
+bool \hyperlink{group__udi__cdc__group_ga9a66dccf928f55850d243abd1ca51eb3}{udi\-\_\-cdc\-\_\-data\-\_\-setup} (void)
+\item 
+uint8\-\_\-t \hyperlink{group__udi__cdc__group_ga89512d97844e09864336d3df2f73af59}{udi\-\_\-cdc\-\_\-getsetting} (void)
+\item 
+void \hyperlink{group__udi__cdc__group_ga304bed0ef46f8046e41de6e161db0864}{udi\-\_\-cdc\-\_\-data\-\_\-sof\-\_\-notify} (void)
+\end{DoxyCompactItemize}
+\subsection*{\-Variables to manage \-R\-X/\-T\-X transfer requests}
+\label{_amgrp212b06c4e5cdd346092967876fa4335a}%
+ \-Two buffers for each sense are used to optimize the speed. \begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__udi__cdc__group_ga91892013c1c5dcb7fa2127ac2e2090f7}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-T\-R\-A\-N\-S\-\_\-\-H\-A\-L\-T\-E\-D}~2
+\begin{DoxyCompactList}\small\item\em \-Define a transfer halted. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Routines to control serial line}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__udi__cdc__group_gab674a6567bc8b0da4afa5add7c361c00}{udi\-\_\-cdc\-\_\-line\-\_\-coding\-\_\-received} (void)
+\begin{DoxyCompactList}\small\item\em \-Sends lien coding to application. \end{DoxyCompactList}\item 
+void \hyperlink{group__udi__cdc__group_gaec142bc6fba06ca35a45d33f31840db7}{udi\-\_\-cdc\-\_\-serial\-\_\-state\-\_\-msg\-\_\-sent} (\hyperlink{group__udd__group_gac0f77f5a0e085af1242b48fd1054959a}{udd\-\_\-ep\-\_\-status\-\_\-t} status, iram\-\_\-size\-\_\-t n)
+\begin{DoxyCompactList}\small\item\em \-Ack sent of serial state message \-Callback called after serial state message sent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Routines to process data transfer}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__udi__cdc__group_gaa720107e691aac776090aabc23884eb6}{udi\-\_\-cdc\-\_\-data\-\_\-recevied} (\hyperlink{group__udd__group_gac0f77f5a0e085af1242b48fd1054959a}{udd\-\_\-ep\-\_\-status\-\_\-t} status, iram\-\_\-size\-\_\-t n)
+\begin{DoxyCompactList}\small\item\em \-Update \-R\-X buffer management with a new data \-Callback called after data reception on \-U\-S\-B line. \end{DoxyCompactList}\item 
+void \hyperlink{group__udi__cdc__group_gac8eef4d87000686e33f73efda71c6e10}{udi\-\_\-cdc\-\_\-data\-\_\-sent} (\hyperlink{group__udd__group_gac0f77f5a0e085af1242b48fd1054959a}{udd\-\_\-ep\-\_\-status\-\_\-t} status, iram\-\_\-size\-\_\-t n)
+\begin{DoxyCompactList}\small\item\em \-Valid \-T\-X buffer sent \-Callback called after data transfer on \-U\-S\-B line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Interface \-Descriptor}
+\label{_amgrp550f151b99c19ed40d4ef91c78de1c3b}%
+ \-The following structures provide the interface descriptor. \-It must be implemented in \-U\-S\-B configuration descriptor. \begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__udi__cdc__group_gab60b7a7764b991aff0c527e8fa0ac8c8}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-I\-A\-D\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D}~0
+\begin{DoxyCompactList}\small\item\em \-By default no string associated to these interfaces. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__udi__cdc__group_ga4fef11b2181a17d8faac207f30c8a088}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D}~0
+\item 
+\#define \hyperlink{group__udi__cdc__group_ga7f130213f9c935f192ad0e7a79654533}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D}~0
+\item 
+\#define \hyperlink{group__udi__cdc__group_ga186a4ed83a0c245ad4fb377ed96ccd9c}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-E\-P\-\_\-\-S\-I\-Z\-E}~64
+\begin{DoxyCompactList}\small\item\em \-C\-D\-C communication enpoints size for all speed. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__udi__cdc__group_gac62f6054c333924c2bef7eddaa9e57ab}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-E\-P\-S\-\_\-\-S\-I\-Z\-E}~64
+\begin{DoxyCompactList}\small\item\em \-C\-D\-C data enpoints size for all speed (no need to use 512\-B for \-H\-S) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__udi__cdc__group_gad564430bd926e661c9de9c0b12b372f8}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-D\-E\-S\-C\-\_\-\-I\-F\-A\-C\-E}
+\begin{DoxyCompactList}\small\item\em \-Fill field including interface numbers. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__udi__cdc__group_gaccf2e8998f50f5d955bf54266c28c484}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-D\-E\-S\-C\-\_\-\-I\-F\-A\-C\-E}~.iface.\-b\-Interface\-Number       = \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-I\-F\-A\-C\-E\-\_\-\-N\-U\-M\-B\-E\-R,
+\item 
+\#define \hyperlink{group__udi__cdc__group_ga1e55408092fbf059c01ab7e81b7fd910}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-I\-A\-D\-\_\-\-D\-E\-S\-C}
+\item 
+\#define \hyperlink{group__udi__cdc__group_ga7970530df36eefc5119aadd584f82de8}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-D\-E\-S\-C}
+\begin{DoxyCompactList}\small\item\em \-Content of \-C\-D\-C \-C\-O\-M\-M interface descriptor for all speed. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__udi__cdc__group_gade744816217f972675f9e7e5c2204d93}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-D\-E\-S\-C}
+\begin{DoxyCompactList}\small\item\em \-Content of \-C\-D\-C \-D\-A\-T\-A interface descriptor for all speed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Interface for application}
+\label{_amgrp57a789adfa102d7a8d7505a6e50374a2}%
+ \-These routines are used by memory to transfer its data to/from \-U\-S\-B \-C\-D\-C endpoint. \begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__udi__cdc__group_ga5507164c7c4ff2c9b94af48229dc0c3c}{udi\-\_\-cdc\-\_\-ctrl\-\_\-signal\-\_\-dcd} (bool b\-\_\-set)
+\begin{DoxyCompactList}\small\item\em \-Notify a state change of \-D\-C\-D signal. \end{DoxyCompactList}\item 
+void \hyperlink{group__udi__cdc__group_ga6b34b223f6c03cd35fc16d29cb9cfb78}{udi\-\_\-cdc\-\_\-ctrl\-\_\-signal\-\_\-dsr} (bool b\-\_\-set)
+\begin{DoxyCompactList}\small\item\em \-Notify a state change of \-D\-S\-R signal. \end{DoxyCompactList}\item 
+void \hyperlink{group__udi__cdc__group_gaf62c55c329d7e7ff3913274b124e54aa}{udi\-\_\-cdc\-\_\-signal\-\_\-framing\-\_\-error} (void)
+\begin{DoxyCompactList}\small\item\em \-Notify a framing error. \end{DoxyCompactList}\item 
+void \hyperlink{group__udi__cdc__group_gab6dd1be8afa57a1bece870338bdc5f74}{udi\-\_\-cdc\-\_\-signal\-\_\-parity\-\_\-error} (void)
+\begin{DoxyCompactList}\small\item\em \-Notify a parity error. \end{DoxyCompactList}\item 
+void \hyperlink{group__udi__cdc__group_ga7730a564c9cb117af611958500a4fa7f}{udi\-\_\-cdc\-\_\-signal\-\_\-overrun} (void)
+\begin{DoxyCompactList}\small\item\em \-Notify a overrun. \end{DoxyCompactList}\item 
+bool \hyperlink{group__udi__cdc__group_gab5beb4e918e089e0eacf20dba1df73ea}{udi\-\_\-cdc\-\_\-is\-\_\-rx\-\_\-ready} (void)
+\begin{DoxyCompactList}\small\item\em \-This function checks if a character has been received on the \-C\-D\-C line. \end{DoxyCompactList}\item 
+int \hyperlink{group__udi__cdc__group_ga202f3fd7b153f6e1a41601735e0febb6}{udi\-\_\-cdc\-\_\-getc} (void)
+\begin{DoxyCompactList}\small\item\em \-Waits and gets a value on \-C\-D\-C line. \end{DoxyCompactList}\item 
+iram\-\_\-size\-\_\-t \hyperlink{group__udi__cdc__group_gaa7374616de8bc3a83de3f1884b56fa39}{udi\-\_\-cdc\-\_\-read\-\_\-buf} (int $\ast$buf, iram\-\_\-size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em \-Reads a \-R\-A\-M buffer on \-C\-D\-C line. \end{DoxyCompactList}\item 
+bool \hyperlink{group__udi__cdc__group_ga7d0d458a5731da95dd05f30714c42dde}{udi\-\_\-cdc\-\_\-is\-\_\-tx\-\_\-ready} (void)
+\begin{DoxyCompactList}\small\item\em \-This function checks if a new character sent is possible \-The type int is used to support scanf redirection from compiler \-L\-I\-B. \end{DoxyCompactList}\item 
+int \hyperlink{group__udi__cdc__group_ga8faae3fcf4911017c0fcf0aa127179f6}{udi\-\_\-cdc\-\_\-putc} (int value)
+\begin{DoxyCompactList}\small\item\em \-Puts a byte on \-C\-D\-C line \-The type int is used to support printf redirection from compiler \-L\-I\-B. \end{DoxyCompactList}\item 
+iram\-\_\-size\-\_\-t \hyperlink{group__udi__cdc__group_ga88f09b3f954620d37bf882e6d1874c42}{udi\-\_\-cdc\-\_\-write\-\_\-buf} (const int $\ast$buf, iram\-\_\-size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em \-Writes a \-R\-A\-M buffer on \-C\-D\-C line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{group__udi__cdc__group_ga7970530df36eefc5119aadd584f82de8}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-D\-E\-S\-C@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-D\-E\-S\-C}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-D\-E\-S\-C@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-D\-E\-S\-C}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-D\-E\-S\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-D\-E\-S\-C}}
+\label{group__udi__cdc__group_ga7970530df36eefc5119aadd584f82de8}
+
+
+\-Content of \-C\-D\-C \-C\-O\-M\-M interface descriptor for all speed. 
+
+\hypertarget{group__udi__cdc__group_gad564430bd926e661c9de9c0b12b372f8}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-D\-E\-S\-C\-\_\-\-I\-F\-A\-C\-E@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-D\-E\-S\-C\-\_\-\-I\-F\-A\-C\-E}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-D\-E\-S\-C\-\_\-\-I\-F\-A\-C\-E@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-D\-E\-S\-C\-\_\-\-I\-F\-A\-C\-E}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-D\-E\-S\-C\-\_\-\-I\-F\-A\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-D\-E\-S\-C\-\_\-\-I\-F\-A\-C\-E}}
+\label{group__udi__cdc__group_gad564430bd926e661c9de9c0b12b372f8}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+.iface.bInterfaceNumber       = UDI_CDC_COMM_IFACE_NUMBER,\
+   .call_mgmt.bDataInterface     = UDI_CDC_DATA_IFACE_NUMBER,\
+   .union_desc.bMasterInterface  = UDI_CDC_COMM_IFACE_NUMBER,\
+   .union_desc.bSlaveInterface0  = UDI_CDC_DATA_IFACE_NUMBER,
+\end{DoxyCode}
+
+
+\-Fill field including interface numbers. 
+
+\hypertarget{group__udi__cdc__group_ga186a4ed83a0c245ad4fb377ed96ccd9c}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-E\-P\-\_\-\-S\-I\-Z\-E@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-E\-P\-\_\-\-S\-I\-Z\-E}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-E\-P\-\_\-\-S\-I\-Z\-E@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-E\-P\-\_\-\-S\-I\-Z\-E}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-E\-P\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-E\-P\-\_\-\-S\-I\-Z\-E~64}}
+\label{group__udi__cdc__group_ga186a4ed83a0c245ad4fb377ed96ccd9c}
+
+
+\-C\-D\-C communication enpoints size for all speed. 
+
+\hypertarget{group__udi__cdc__group_ga4fef11b2181a17d8faac207f30c8a088}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D~0}}
+\label{group__udi__cdc__group_ga4fef11b2181a17d8faac207f30c8a088}
+\hypertarget{group__udi__cdc__group_gade744816217f972675f9e7e5c2204d93}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-D\-E\-S\-C@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-D\-E\-S\-C}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-D\-E\-S\-C@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-D\-E\-S\-C}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-D\-E\-S\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-D\-E\-S\-C}}
+\label{group__udi__cdc__group_gade744816217f972675f9e7e5c2204d93}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+{\
+   UDI_CDC_DATA_DESC_IFACE \
+   .iface.bLength                = sizeof(usb_iface_desc_t),\
+   .iface.bDescriptorType        = USB_DT_INTERFACE,\
+   .iface.bAlternateSetting      = 0,\
+   .iface.bNumEndpoints          = 2,\
+   .iface.bInterfaceClass        = CDC_CLASS_DATA,\
+   .iface.bInterfaceSubClass     = 0,\
+   .iface.bInterfaceProtocol     = 0,\
+   .iface.iInterface             = UDI_CDC_DATA_STRING_ID,\
+   .ep_in.bLength                = sizeof(usb_ep_desc_t),\
+   .ep_in.bDescriptorType        = USB_DT_ENDPOINT,\
+   .ep_in.bEndpointAddress       = UDI_CDC_DATA_EP_IN,\
+   .ep_in.wMaxPacketSize         = LE16(UDI_CDC_DATA_EPS_SIZE),\
+   .ep_in.bmAttributes           = USB_EP_TYPE_BULK,\
+   .ep_in.bInterval              = 0,\
+   .ep_out.bLength               = sizeof(usb_ep_desc_t),\
+   .ep_out.bDescriptorType       = USB_DT_ENDPOINT,\
+   .ep_out.bEndpointAddress      = UDI_CDC_DATA_EP_OUT,\
+   .ep_out.wMaxPacketSize        = LE16(UDI_CDC_DATA_EPS_SIZE),\
+   .ep_out.bmAttributes          = USB_EP_TYPE_BULK,\
+   .ep_out.bInterval             = 0,\
+   }
+\end{DoxyCode}
+
+
+\-Content of \-C\-D\-C \-D\-A\-T\-A interface descriptor for all speed. 
+
+\hypertarget{group__udi__cdc__group_gaccf2e8998f50f5d955bf54266c28c484}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-D\-E\-S\-C\-\_\-\-I\-F\-A\-C\-E@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-D\-E\-S\-C\-\_\-\-I\-F\-A\-C\-E}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-D\-E\-S\-C\-\_\-\-I\-F\-A\-C\-E@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-D\-E\-S\-C\-\_\-\-I\-F\-A\-C\-E}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-D\-E\-S\-C\-\_\-\-I\-F\-A\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-D\-E\-S\-C\-\_\-\-I\-F\-A\-C\-E~.iface.\-b\-Interface\-Number       = \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-I\-F\-A\-C\-E\-\_\-\-N\-U\-M\-B\-E\-R,}}
+\label{group__udi__cdc__group_gaccf2e8998f50f5d955bf54266c28c484}
+\hypertarget{group__udi__cdc__group_gac62f6054c333924c2bef7eddaa9e57ab}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-E\-P\-S\-\_\-\-S\-I\-Z\-E@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-E\-P\-S\-\_\-\-S\-I\-Z\-E}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-E\-P\-S\-\_\-\-S\-I\-Z\-E@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-E\-P\-S\-\_\-\-S\-I\-Z\-E}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-E\-P\-S\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-E\-P\-S\-\_\-\-S\-I\-Z\-E~64}}
+\label{group__udi__cdc__group_gac62f6054c333924c2bef7eddaa9e57ab}
+
+
+\-C\-D\-C data enpoints size for all speed (no need to use 512\-B for \-H\-S) 
+
+\hypertarget{group__udi__cdc__group_ga7f130213f9c935f192ad0e7a79654533}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D~0}}
+\label{group__udi__cdc__group_ga7f130213f9c935f192ad0e7a79654533}
+\hypertarget{group__udi__cdc__group_ga1e55408092fbf059c01ab7e81b7fd910}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-I\-A\-D\-\_\-\-D\-E\-S\-C@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-I\-A\-D\-\_\-\-D\-E\-S\-C}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-I\-A\-D\-\_\-\-D\-E\-S\-C@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-I\-A\-D\-\_\-\-D\-E\-S\-C}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-I\-A\-D\-\_\-\-D\-E\-S\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-I\-A\-D\-\_\-\-D\-E\-S\-C}}
+\label{group__udi__cdc__group_ga1e55408092fbf059c01ab7e81b7fd910}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+{\
+   .bLength                      = sizeof(usb_iad_desc_t),\
+   .bDescriptorType              = USB_DT_IAD,\
+   .bFirstInterface              = UDI_CDC_COMM_IFACE_NUMBER,\
+   .bInterfaceCount              = 2,\
+   .bFunctionClass               = CDC_CLASS_COMM,\
+   .bFunctionSubClass            = CDC_SUBCLASS_ACM,\
+   .bFunctionProtocol            = CDC_PROTOCOL_V25TER,\
+   .iFunction                    = UDI_CDC_IAD_STRING_ID,\
+   }
+\end{DoxyCode}
+\hypertarget{group__udi__cdc__group_gab60b7a7764b991aff0c527e8fa0ac8c8}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-I\-A\-D\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-I\-A\-D\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-I\-A\-D\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-I\-A\-D\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-I\-A\-D\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-I\-A\-D\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D~0}}
+\label{group__udi__cdc__group_gab60b7a7764b991aff0c527e8fa0ac8c8}
+
+
+\-By default no string associated to these interfaces. 
+
+\hypertarget{group__udi__cdc__group_ga91892013c1c5dcb7fa2127ac2e2090f7}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-T\-R\-A\-N\-S\-\_\-\-H\-A\-L\-T\-E\-D@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-T\-R\-A\-N\-S\-\_\-\-H\-A\-L\-T\-E\-D}}
+\index{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-T\-R\-A\-N\-S\-\_\-\-H\-A\-L\-T\-E\-D@{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-T\-R\-A\-N\-S\-\_\-\-H\-A\-L\-T\-E\-D}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-T\-R\-A\-N\-S\-\_\-\-H\-A\-L\-T\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-T\-R\-A\-N\-S\-\_\-\-H\-A\-L\-T\-E\-D~2}}
+\label{group__udi__cdc__group_ga91892013c1c5dcb7fa2127ac2e2090f7}
+
+
+\-Define a transfer halted. 
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__udi__cdc__group_ga1d9234e7ec38cb7fbc306b1d4624ac7d}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-comm\-\_\-disable@{udi\-\_\-cdc\-\_\-comm\-\_\-disable}}
+\index{udi\-\_\-cdc\-\_\-comm\-\_\-disable@{udi\-\_\-cdc\-\_\-comm\-\_\-disable}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-comm\-\_\-disable}]{\setlength{\rightskip}{0pt plus 5cm}void udi\-\_\-cdc\-\_\-comm\-\_\-disable (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_ga1d9234e7ec38cb7fbc306b1d4624ac7d}
+\hypertarget{group__udi__cdc__group_ga48b8cd17138f1e31d2f705e47bd798fc}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-comm\-\_\-enable@{udi\-\_\-cdc\-\_\-comm\-\_\-enable}}
+\index{udi\-\_\-cdc\-\_\-comm\-\_\-enable@{udi\-\_\-cdc\-\_\-comm\-\_\-enable}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-comm\-\_\-enable}]{\setlength{\rightskip}{0pt plus 5cm}bool udi\-\_\-cdc\-\_\-comm\-\_\-enable (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_ga48b8cd17138f1e31d2f705e47bd798fc}
+\hypertarget{group__udi__cdc__group_ga9f1ce6a914bf00a929285d4b9876ff6c}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-comm\-\_\-setup@{udi\-\_\-cdc\-\_\-comm\-\_\-setup}}
+\index{udi\-\_\-cdc\-\_\-comm\-\_\-setup@{udi\-\_\-cdc\-\_\-comm\-\_\-setup}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-comm\-\_\-setup}]{\setlength{\rightskip}{0pt plus 5cm}bool udi\-\_\-cdc\-\_\-comm\-\_\-setup (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_ga9f1ce6a914bf00a929285d4b9876ff6c}
+\hypertarget{group__udi__cdc__group_ga5507164c7c4ff2c9b94af48229dc0c3c}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-ctrl\-\_\-signal\-\_\-dcd@{udi\-\_\-cdc\-\_\-ctrl\-\_\-signal\-\_\-dcd}}
+\index{udi\-\_\-cdc\-\_\-ctrl\-\_\-signal\-\_\-dcd@{udi\-\_\-cdc\-\_\-ctrl\-\_\-signal\-\_\-dcd}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-ctrl\-\_\-signal\-\_\-dcd}]{\setlength{\rightskip}{0pt plus 5cm}void udi\-\_\-cdc\-\_\-ctrl\-\_\-signal\-\_\-dcd (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-\_\-set}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_ga5507164c7c4ff2c9b94af48229dc0c3c}
+
+
+\-Notify a state change of \-D\-C\-D signal. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em b\-\_\-set} & \-D\-C\-D is enabled if true, else disabled \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__udi__cdc__group_ga6b34b223f6c03cd35fc16d29cb9cfb78}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-ctrl\-\_\-signal\-\_\-dsr@{udi\-\_\-cdc\-\_\-ctrl\-\_\-signal\-\_\-dsr}}
+\index{udi\-\_\-cdc\-\_\-ctrl\-\_\-signal\-\_\-dsr@{udi\-\_\-cdc\-\_\-ctrl\-\_\-signal\-\_\-dsr}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-ctrl\-\_\-signal\-\_\-dsr}]{\setlength{\rightskip}{0pt plus 5cm}void udi\-\_\-cdc\-\_\-ctrl\-\_\-signal\-\_\-dsr (
+\begin{DoxyParamCaption}
+\item[{bool}]{b\-\_\-set}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_ga6b34b223f6c03cd35fc16d29cb9cfb78}
+
+
+\-Notify a state change of \-D\-S\-R signal. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em b\-\_\-set} & \-D\-S\-R is enabled if true, else disabled \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__udi__cdc__group_gad6183b6bb4f836b69c2a176b8a1631da}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-data\-\_\-disable@{udi\-\_\-cdc\-\_\-data\-\_\-disable}}
+\index{udi\-\_\-cdc\-\_\-data\-\_\-disable@{udi\-\_\-cdc\-\_\-data\-\_\-disable}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-data\-\_\-disable}]{\setlength{\rightskip}{0pt plus 5cm}void udi\-\_\-cdc\-\_\-data\-\_\-disable (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_gad6183b6bb4f836b69c2a176b8a1631da}
+\hypertarget{group__udi__cdc__group_gacff97f0d95101ef8beebe3a7d5cf1541}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-data\-\_\-enable@{udi\-\_\-cdc\-\_\-data\-\_\-enable}}
+\index{udi\-\_\-cdc\-\_\-data\-\_\-enable@{udi\-\_\-cdc\-\_\-data\-\_\-enable}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-data\-\_\-enable}]{\setlength{\rightskip}{0pt plus 5cm}bool udi\-\_\-cdc\-\_\-data\-\_\-enable (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_gacff97f0d95101ef8beebe3a7d5cf1541}
+\hypertarget{group__udi__cdc__group_gaa720107e691aac776090aabc23884eb6}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-data\-\_\-recevied@{udi\-\_\-cdc\-\_\-data\-\_\-recevied}}
+\index{udi\-\_\-cdc\-\_\-data\-\_\-recevied@{udi\-\_\-cdc\-\_\-data\-\_\-recevied}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-data\-\_\-recevied}]{\setlength{\rightskip}{0pt plus 5cm}void udi\-\_\-cdc\-\_\-data\-\_\-recevied (
+\begin{DoxyParamCaption}
+\item[{{\bf udd\-\_\-ep\-\_\-status\-\_\-t}}]{status, }
+\item[{iram\-\_\-size\-\_\-t}]{n}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_gaa720107e691aac776090aabc23884eb6}
+
+
+\-Update \-R\-X buffer management with a new data \-Callback called after data reception on \-U\-S\-B line. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em status} & \-U\-D\-D\-\_\-\-E\-P\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-\_\-\-O\-K, if transfer finish \\
+\hline
+{\em status} & \-U\-D\-D\-\_\-\-E\-P\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-\_\-\-A\-B\-O\-R\-T, if transfer aborted \\
+\hline
+{\em n} & number of data received \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__udi__cdc__group_gac8eef4d87000686e33f73efda71c6e10}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-data\-\_\-sent@{udi\-\_\-cdc\-\_\-data\-\_\-sent}}
+\index{udi\-\_\-cdc\-\_\-data\-\_\-sent@{udi\-\_\-cdc\-\_\-data\-\_\-sent}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-data\-\_\-sent}]{\setlength{\rightskip}{0pt plus 5cm}void udi\-\_\-cdc\-\_\-data\-\_\-sent (
+\begin{DoxyParamCaption}
+\item[{{\bf udd\-\_\-ep\-\_\-status\-\_\-t}}]{status, }
+\item[{iram\-\_\-size\-\_\-t}]{n}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_gac8eef4d87000686e33f73efda71c6e10}
+
+
+\-Valid \-T\-X buffer sent \-Callback called after data transfer on \-U\-S\-B line. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em status} & \-U\-D\-D\-\_\-\-E\-P\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-\_\-\-O\-K, if transfer finished \\
+\hline
+{\em status} & \-U\-D\-D\-\_\-\-E\-P\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-\_\-\-A\-B\-O\-R\-T, if transfer aborted \\
+\hline
+{\em n} & number of data transfered \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__udi__cdc__group_ga9a66dccf928f55850d243abd1ca51eb3}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-data\-\_\-setup@{udi\-\_\-cdc\-\_\-data\-\_\-setup}}
+\index{udi\-\_\-cdc\-\_\-data\-\_\-setup@{udi\-\_\-cdc\-\_\-data\-\_\-setup}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-data\-\_\-setup}]{\setlength{\rightskip}{0pt plus 5cm}bool udi\-\_\-cdc\-\_\-data\-\_\-setup (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_ga9a66dccf928f55850d243abd1ca51eb3}
+\hypertarget{group__udi__cdc__group_ga304bed0ef46f8046e41de6e161db0864}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-data\-\_\-sof\-\_\-notify@{udi\-\_\-cdc\-\_\-data\-\_\-sof\-\_\-notify}}
+\index{udi\-\_\-cdc\-\_\-data\-\_\-sof\-\_\-notify@{udi\-\_\-cdc\-\_\-data\-\_\-sof\-\_\-notify}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-data\-\_\-sof\-\_\-notify}]{\setlength{\rightskip}{0pt plus 5cm}void udi\-\_\-cdc\-\_\-data\-\_\-sof\-\_\-notify (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_ga304bed0ef46f8046e41de6e161db0864}
+\hypertarget{group__udi__cdc__group_ga202f3fd7b153f6e1a41601735e0febb6}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-getc@{udi\-\_\-cdc\-\_\-getc}}
+\index{udi\-\_\-cdc\-\_\-getc@{udi\-\_\-cdc\-\_\-getc}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-getc}]{\setlength{\rightskip}{0pt plus 5cm}int udi\-\_\-cdc\-\_\-getc (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_ga202f3fd7b153f6e1a41601735e0febb6}
+
+
+\-Waits and gets a value on \-C\-D\-C line. 
+
+\begin{DoxyReturn}{\-Returns}
+value read on \-C\-D\-C line 
+\end{DoxyReturn}
+\hypertarget{group__udi__cdc__group_ga89512d97844e09864336d3df2f73af59}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-getsetting@{udi\-\_\-cdc\-\_\-getsetting}}
+\index{udi\-\_\-cdc\-\_\-getsetting@{udi\-\_\-cdc\-\_\-getsetting}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-getsetting}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t udi\-\_\-cdc\-\_\-getsetting (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_ga89512d97844e09864336d3df2f73af59}
+\hypertarget{group__udi__cdc__group_gab5beb4e918e089e0eacf20dba1df73ea}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-is\-\_\-rx\-\_\-ready@{udi\-\_\-cdc\-\_\-is\-\_\-rx\-\_\-ready}}
+\index{udi\-\_\-cdc\-\_\-is\-\_\-rx\-\_\-ready@{udi\-\_\-cdc\-\_\-is\-\_\-rx\-\_\-ready}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-is\-\_\-rx\-\_\-ready}]{\setlength{\rightskip}{0pt plus 5cm}bool udi\-\_\-cdc\-\_\-is\-\_\-rx\-\_\-ready (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_gab5beb4e918e089e0eacf20dba1df73ea}
+
+
+\-This function checks if a character has been received on the \-C\-D\-C line. 
+
+\begin{DoxyReturn}{\-Returns}
+{\ttfamily 1} if a byte is ready to be read. 
+\end{DoxyReturn}
+\hypertarget{group__udi__cdc__group_ga7d0d458a5731da95dd05f30714c42dde}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-is\-\_\-tx\-\_\-ready@{udi\-\_\-cdc\-\_\-is\-\_\-tx\-\_\-ready}}
+\index{udi\-\_\-cdc\-\_\-is\-\_\-tx\-\_\-ready@{udi\-\_\-cdc\-\_\-is\-\_\-tx\-\_\-ready}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-is\-\_\-tx\-\_\-ready}]{\setlength{\rightskip}{0pt plus 5cm}bool udi\-\_\-cdc\-\_\-is\-\_\-tx\-\_\-ready (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_ga7d0d458a5731da95dd05f30714c42dde}
+
+
+\-This function checks if a new character sent is possible \-The type int is used to support scanf redirection from compiler \-L\-I\-B. 
+
+\begin{DoxyReturn}{\-Returns}
+{\ttfamily 1} if a new chracter can be sent 
+\end{DoxyReturn}
+\hypertarget{group__udi__cdc__group_gab674a6567bc8b0da4afa5add7c361c00}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-line\-\_\-coding\-\_\-received@{udi\-\_\-cdc\-\_\-line\-\_\-coding\-\_\-received}}
+\index{udi\-\_\-cdc\-\_\-line\-\_\-coding\-\_\-received@{udi\-\_\-cdc\-\_\-line\-\_\-coding\-\_\-received}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-line\-\_\-coding\-\_\-received}]{\setlength{\rightskip}{0pt plus 5cm}void udi\-\_\-cdc\-\_\-line\-\_\-coding\-\_\-received (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_gab674a6567bc8b0da4afa5add7c361c00}
+
+
+\-Sends lien coding to application. 
+
+\-Called after \-S\-E\-T\-U\-P request when line coding data is received. \hypertarget{group__udi__cdc__group_ga8faae3fcf4911017c0fcf0aa127179f6}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-putc@{udi\-\_\-cdc\-\_\-putc}}
+\index{udi\-\_\-cdc\-\_\-putc@{udi\-\_\-cdc\-\_\-putc}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-putc}]{\setlength{\rightskip}{0pt plus 5cm}int udi\-\_\-cdc\-\_\-putc (
+\begin{DoxyParamCaption}
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_ga8faae3fcf4911017c0fcf0aa127179f6}
+
+
+\-Puts a byte on \-C\-D\-C line \-The type int is used to support printf redirection from compiler \-L\-I\-B. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em value} & \-Value to put\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\ttfamily 1} if function was successfully done, otherwise {\ttfamily 0}. 
+\end{DoxyReturn}
+\hypertarget{group__udi__cdc__group_gaa7374616de8bc3a83de3f1884b56fa39}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-read\-\_\-buf@{udi\-\_\-cdc\-\_\-read\-\_\-buf}}
+\index{udi\-\_\-cdc\-\_\-read\-\_\-buf@{udi\-\_\-cdc\-\_\-read\-\_\-buf}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-read\-\_\-buf}]{\setlength{\rightskip}{0pt plus 5cm}iram\-\_\-size\-\_\-t udi\-\_\-cdc\-\_\-read\-\_\-buf (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{buf, }
+\item[{iram\-\_\-size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_gaa7374616de8bc3a83de3f1884b56fa39}
+
+
+\-Reads a \-R\-A\-M buffer on \-C\-D\-C line. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em buf} & \-Values readed \\
+\hline
+{\em size} & \-Number of value readed\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+the number of data remaining 
+\end{DoxyReturn}
+\hypertarget{group__udi__cdc__group_gaec142bc6fba06ca35a45d33f31840db7}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-serial\-\_\-state\-\_\-msg\-\_\-sent@{udi\-\_\-cdc\-\_\-serial\-\_\-state\-\_\-msg\-\_\-sent}}
+\index{udi\-\_\-cdc\-\_\-serial\-\_\-state\-\_\-msg\-\_\-sent@{udi\-\_\-cdc\-\_\-serial\-\_\-state\-\_\-msg\-\_\-sent}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-serial\-\_\-state\-\_\-msg\-\_\-sent}]{\setlength{\rightskip}{0pt plus 5cm}void udi\-\_\-cdc\-\_\-serial\-\_\-state\-\_\-msg\-\_\-sent (
+\begin{DoxyParamCaption}
+\item[{{\bf udd\-\_\-ep\-\_\-status\-\_\-t}}]{status, }
+\item[{iram\-\_\-size\-\_\-t}]{n}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_gaec142bc6fba06ca35a45d33f31840db7}
+
+
+\-Ack sent of serial state message \-Callback called after serial state message sent. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em status} & \-U\-D\-D\-\_\-\-E\-P\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-\_\-\-O\-K, if transfer finished \\
+\hline
+{\em status} & \-U\-D\-D\-\_\-\-E\-P\-\_\-\-T\-R\-A\-N\-S\-F\-E\-R\-\_\-\-A\-B\-O\-R\-T, if transfer aborted \\
+\hline
+{\em n} & number of data transfered \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__udi__cdc__group_gaf62c55c329d7e7ff3913274b124e54aa}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-signal\-\_\-framing\-\_\-error@{udi\-\_\-cdc\-\_\-signal\-\_\-framing\-\_\-error}}
+\index{udi\-\_\-cdc\-\_\-signal\-\_\-framing\-\_\-error@{udi\-\_\-cdc\-\_\-signal\-\_\-framing\-\_\-error}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-signal\-\_\-framing\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}void udi\-\_\-cdc\-\_\-signal\-\_\-framing\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_gaf62c55c329d7e7ff3913274b124e54aa}
+
+
+\-Notify a framing error. 
+
+\hypertarget{group__udi__cdc__group_ga7730a564c9cb117af611958500a4fa7f}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-signal\-\_\-overrun@{udi\-\_\-cdc\-\_\-signal\-\_\-overrun}}
+\index{udi\-\_\-cdc\-\_\-signal\-\_\-overrun@{udi\-\_\-cdc\-\_\-signal\-\_\-overrun}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-signal\-\_\-overrun}]{\setlength{\rightskip}{0pt plus 5cm}void udi\-\_\-cdc\-\_\-signal\-\_\-overrun (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_ga7730a564c9cb117af611958500a4fa7f}
+
+
+\-Notify a overrun. 
+
+\hypertarget{group__udi__cdc__group_gab6dd1be8afa57a1bece870338bdc5f74}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-signal\-\_\-parity\-\_\-error@{udi\-\_\-cdc\-\_\-signal\-\_\-parity\-\_\-error}}
+\index{udi\-\_\-cdc\-\_\-signal\-\_\-parity\-\_\-error@{udi\-\_\-cdc\-\_\-signal\-\_\-parity\-\_\-error}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-signal\-\_\-parity\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}void udi\-\_\-cdc\-\_\-signal\-\_\-parity\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_gab6dd1be8afa57a1bece870338bdc5f74}
+
+
+\-Notify a parity error. 
+
+\hypertarget{group__udi__cdc__group_ga88f09b3f954620d37bf882e6d1874c42}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-cdc\-\_\-write\-\_\-buf@{udi\-\_\-cdc\-\_\-write\-\_\-buf}}
+\index{udi\-\_\-cdc\-\_\-write\-\_\-buf@{udi\-\_\-cdc\-\_\-write\-\_\-buf}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-cdc\-\_\-write\-\_\-buf}]{\setlength{\rightskip}{0pt plus 5cm}iram\-\_\-size\-\_\-t udi\-\_\-cdc\-\_\-write\-\_\-buf (
+\begin{DoxyParamCaption}
+\item[{const int $\ast$}]{buf, }
+\item[{iram\-\_\-size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}}
+\label{group__udi__cdc__group_ga88f09b3f954620d37bf882e6d1874c42}
+
+
+\-Writes a \-R\-A\-M buffer on \-C\-D\-C line. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em buf} & \-Values to write \\
+\hline
+{\em size} & \-Number of value to write\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+the number of data remaining 
+\end{DoxyReturn}
+
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{group__udi__cdc__group_gad7b0a90350a1f1a7c62fab1a749bf687}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-api\-\_\-cdc\-\_\-comm@{udi\-\_\-api\-\_\-cdc\-\_\-comm}}
+\index{udi\-\_\-api\-\_\-cdc\-\_\-comm@{udi\-\_\-api\-\_\-cdc\-\_\-comm}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-api\-\_\-cdc\-\_\-comm}]{\setlength{\rightskip}{0pt plus 5cm}\-U\-D\-C\-\_\-\-D\-E\-S\-C\-\_\-\-S\-T\-O\-R\-A\-G\-E {\bf udi\-\_\-api\-\_\-t} {\bf udi\-\_\-api\-\_\-cdc\-\_\-comm}}}
+\label{group__udi__cdc__group_gad7b0a90350a1f1a7c62fab1a749bf687}
+{\bfseries \-Initial value\-:}
+\begin{DoxyCode}
+ {
+        .enable = udi_cdc_comm_enable,
+        .disable = udi_cdc_comm_disable,
+        .setup = udi_cdc_comm_setup,
+        .getsetting = udi_cdc_getsetting,
+}
+\end{DoxyCode}
+
+
+\-Global structure which contains standard \-U\-D\-I \-A\-P\-I for \-U\-D\-C. 
+
+\-Global struture which contains standard \-U\-D\-I \-A\-P\-I for \-U\-D\-C. \hypertarget{group__udi__cdc__group_gad7b0a90350a1f1a7c62fab1a749bf687}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-api\-\_\-cdc\-\_\-comm@{udi\-\_\-api\-\_\-cdc\-\_\-comm}}
+\index{udi\-\_\-api\-\_\-cdc\-\_\-comm@{udi\-\_\-api\-\_\-cdc\-\_\-comm}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-api\-\_\-cdc\-\_\-comm}]{\setlength{\rightskip}{0pt plus 5cm}\-U\-D\-C\-\_\-\-D\-E\-S\-C\-\_\-\-S\-T\-O\-R\-A\-G\-E {\bf udi\-\_\-api\-\_\-t} {\bf udi\-\_\-api\-\_\-cdc\-\_\-comm}}}
+\label{group__udi__cdc__group_gad7b0a90350a1f1a7c62fab1a749bf687}
+
+
+\-Global struture which contains standard \-U\-D\-I \-A\-P\-I for \-U\-D\-C. 
+
+\hypertarget{group__udi__cdc__group_ga3f85c229cc3218b75cb4844b8e9ad2d7}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-api\-\_\-cdc\-\_\-data@{udi\-\_\-api\-\_\-cdc\-\_\-data}}
+\index{udi\-\_\-api\-\_\-cdc\-\_\-data@{udi\-\_\-api\-\_\-cdc\-\_\-data}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-api\-\_\-cdc\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}\-U\-D\-C\-\_\-\-D\-E\-S\-C\-\_\-\-S\-T\-O\-R\-A\-G\-E {\bf udi\-\_\-api\-\_\-t} {\bf udi\-\_\-api\-\_\-cdc\-\_\-data}}}
+\label{group__udi__cdc__group_ga3f85c229cc3218b75cb4844b8e9ad2d7}
+{\bfseries \-Initial value\-:}
+\begin{DoxyCode}
+ {
+        .enable = udi_cdc_data_enable,
+        .disable = udi_cdc_data_disable,
+        .setup = udi_cdc_data_setup,
+        .getsetting = udi_cdc_getsetting,
+        .sof_notify =   udi_cdc_data_sof_notify,
+}
+\end{DoxyCode}
+\hypertarget{group__udi__cdc__group_ga3f85c229cc3218b75cb4844b8e9ad2d7}{
+\index{\-U\-D\-I for Communication Device Class@{\-U\-D\-I for Communication Device Class}!udi\-\_\-api\-\_\-cdc\-\_\-data@{udi\-\_\-api\-\_\-cdc\-\_\-data}}
+\index{udi\-\_\-api\-\_\-cdc\-\_\-data@{udi\-\_\-api\-\_\-cdc\-\_\-data}!UDI for Communication Device Class@{\-U\-D\-I for Communication Device Class}}
+\subsubsection[{udi\-\_\-api\-\_\-cdc\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}\-U\-D\-C\-\_\-\-D\-E\-S\-C\-\_\-\-S\-T\-O\-R\-A\-G\-E {\bf udi\-\_\-api\-\_\-t} {\bf udi\-\_\-api\-\_\-cdc\-\_\-data}}}
+\label{group__udi__cdc__group_ga3f85c229cc3218b75cb4844b8e9ad2d7}

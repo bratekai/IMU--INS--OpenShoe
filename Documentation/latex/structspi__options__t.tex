@@ -1,0 +1,111 @@
+\hypertarget{structspi__options__t}{
+\section{spi\-\_\-options\-\_\-t \-Struct \-Reference}
+\label{structspi__options__t}\index{spi\-\_\-options\-\_\-t@{spi\-\_\-options\-\_\-t}}
+}
+
+
+\-Option structure for \-S\-P\-I channels.  
+
+
+
+
+{\ttfamily \#include $<$spi.\-h$>$}
+
+\subsection*{\-Data \-Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t \hyperlink{structspi__options__t_a9f89caeb223b8e82f29628a47eb66f9a}{reg}
+\begin{DoxyCompactList}\small\item\em \-The \-S\-P\-I channel to set up. \end{DoxyCompactList}\item 
+uint32\-\_\-t \hyperlink{structspi__options__t_a397070a4a1f42ac5c8e45538b0cd0163}{baudrate}
+\begin{DoxyCompactList}\small\item\em \-Preferred baudrate for the \-S\-P\-I. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{structspi__options__t_a99da3363b981ddff67b8463f760ac22d}{bits}
+\begin{DoxyCompactList}\small\item\em \-Number of bits in each character (8 to 16). \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{structspi__options__t_a86f15a4bd903dc7f46001b017d6396c8}{spck\-\_\-delay}
+\begin{DoxyCompactList}\small\item\em \-Delay before first clock pulse after selecting slave (in \-P\-B\-A clock periods). \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{structspi__options__t_aedb727a3304efbedc75f61c3312c6dae}{trans\-\_\-delay}
+\begin{DoxyCompactList}\small\item\em \-Delay between each transfer/character (in \-P\-B\-A clock periods). \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{structspi__options__t_a9bbd0582cc9fb1f01aaba5761f139119}{stay\-\_\-act}
+\begin{DoxyCompactList}\small\item\em \-Sets this chip to stay active after last transfer to it. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{structspi__options__t_aeb3e5bbe92bd45feadb8fc3abe2ea402}{spi\-\_\-mode}
+\begin{DoxyCompactList}\small\item\em \-Which \-S\-P\-I mode to use when transmitting. \end{DoxyCompactList}\item 
+uint8\-\_\-t \hyperlink{structspi__options__t_a734ad2abb63f00b69a38ef1eb7c68812}{modfdis}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Option structure for \-S\-P\-I channels. 
+
+\subsection{\-Field \-Documentation}
+\hypertarget{structspi__options__t_a397070a4a1f42ac5c8e45538b0cd0163}{
+\index{spi\-\_\-options\-\_\-t@{spi\-\_\-options\-\_\-t}!baudrate@{baudrate}}
+\index{baudrate@{baudrate}!spi_options_t@{spi\-\_\-options\-\_\-t}}
+\subsubsection[{baudrate}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t {\bf spi\-\_\-options\-\_\-t\-::baudrate}}}
+\label{structspi__options__t_a397070a4a1f42ac5c8e45538b0cd0163}
+
+
+\-Preferred baudrate for the \-S\-P\-I. 
+
+\hypertarget{structspi__options__t_a99da3363b981ddff67b8463f760ac22d}{
+\index{spi\-\_\-options\-\_\-t@{spi\-\_\-options\-\_\-t}!bits@{bits}}
+\index{bits@{bits}!spi_options_t@{spi\-\_\-options\-\_\-t}}
+\subsubsection[{bits}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf spi\-\_\-options\-\_\-t\-::bits}}}
+\label{structspi__options__t_a99da3363b981ddff67b8463f760ac22d}
+
+
+\-Number of bits in each character (8 to 16). 
+
+\hypertarget{structspi__options__t_a734ad2abb63f00b69a38ef1eb7c68812}{
+\index{spi\-\_\-options\-\_\-t@{spi\-\_\-options\-\_\-t}!modfdis@{modfdis}}
+\index{modfdis@{modfdis}!spi_options_t@{spi\-\_\-options\-\_\-t}}
+\subsubsection[{modfdis}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf spi\-\_\-options\-\_\-t\-::modfdis}}}
+\label{structspi__options__t_a734ad2abb63f00b69a38ef1eb7c68812}
+\-Disables the mode fault detection. \-With this bit cleared, the \-S\-P\-I master mode will disable itself if another master tries to address it. \hypertarget{structspi__options__t_a9f89caeb223b8e82f29628a47eb66f9a}{
+\index{spi\-\_\-options\-\_\-t@{spi\-\_\-options\-\_\-t}!reg@{reg}}
+\index{reg@{reg}!spi_options_t@{spi\-\_\-options\-\_\-t}}
+\subsubsection[{reg}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf spi\-\_\-options\-\_\-t\-::reg}}}
+\label{structspi__options__t_a9f89caeb223b8e82f29628a47eb66f9a}
+
+
+\-The \-S\-P\-I channel to set up. 
+
+\hypertarget{structspi__options__t_a86f15a4bd903dc7f46001b017d6396c8}{
+\index{spi\-\_\-options\-\_\-t@{spi\-\_\-options\-\_\-t}!spck\-\_\-delay@{spck\-\_\-delay}}
+\index{spck\-\_\-delay@{spck\-\_\-delay}!spi_options_t@{spi\-\_\-options\-\_\-t}}
+\subsubsection[{spck\-\_\-delay}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf spi\-\_\-options\-\_\-t\-::spck\-\_\-delay}}}
+\label{structspi__options__t_a86f15a4bd903dc7f46001b017d6396c8}
+
+
+\-Delay before first clock pulse after selecting slave (in \-P\-B\-A clock periods). 
+
+\hypertarget{structspi__options__t_aeb3e5bbe92bd45feadb8fc3abe2ea402}{
+\index{spi\-\_\-options\-\_\-t@{spi\-\_\-options\-\_\-t}!spi\-\_\-mode@{spi\-\_\-mode}}
+\index{spi\-\_\-mode@{spi\-\_\-mode}!spi_options_t@{spi\-\_\-options\-\_\-t}}
+\subsubsection[{spi\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf spi\-\_\-options\-\_\-t\-::spi\-\_\-mode}}}
+\label{structspi__options__t_aeb3e5bbe92bd45feadb8fc3abe2ea402}
+
+
+\-Which \-S\-P\-I mode to use when transmitting. 
+
+\hypertarget{structspi__options__t_a9bbd0582cc9fb1f01aaba5761f139119}{
+\index{spi\-\_\-options\-\_\-t@{spi\-\_\-options\-\_\-t}!stay\-\_\-act@{stay\-\_\-act}}
+\index{stay\-\_\-act@{stay\-\_\-act}!spi_options_t@{spi\-\_\-options\-\_\-t}}
+\subsubsection[{stay\-\_\-act}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf spi\-\_\-options\-\_\-t\-::stay\-\_\-act}}}
+\label{structspi__options__t_a9bbd0582cc9fb1f01aaba5761f139119}
+
+
+\-Sets this chip to stay active after last transfer to it. 
+
+\hypertarget{structspi__options__t_aedb727a3304efbedc75f61c3312c6dae}{
+\index{spi\-\_\-options\-\_\-t@{spi\-\_\-options\-\_\-t}!trans\-\_\-delay@{trans\-\_\-delay}}
+\index{trans\-\_\-delay@{trans\-\_\-delay}!spi_options_t@{spi\-\_\-options\-\_\-t}}
+\subsubsection[{trans\-\_\-delay}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t {\bf spi\-\_\-options\-\_\-t\-::trans\-\_\-delay}}}
+\label{structspi__options__t_aedb727a3304efbedc75f61c3312c6dae}
+
+
+\-Delay between each transfer/character (in \-P\-B\-A clock periods). 
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{spi_8h}{spi.\-h}\end{DoxyCompactItemize}

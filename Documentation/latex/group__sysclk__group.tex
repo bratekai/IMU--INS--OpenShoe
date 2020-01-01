@@ -1,0 +1,1025 @@
+\hypertarget{group__sysclk__group}{
+\section{\-System \-Clock \-Management}
+\label{group__sysclk__group}\index{\-System Clock Management@{\-System Clock Management}}
+}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__sysclk__group_gabd8c9eaed83f9b71734a80f4b66742b3}{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-C\-P\-U\-M\-A\-S\-K}
+\item 
+\#define \hyperlink{group__sysclk__group_ga7bd0214b8ad00652adb81da9b5c1b165}{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-H\-S\-B\-M\-A\-S\-K}
+\item 
+\#define \hyperlink{group__sysclk__group_ga25425ac0f90eb3e96a7c303e6707b282}{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-A\-M\-A\-S\-K}
+\item 
+\#define \hyperlink{group__sysclk__group_ga02a23ab95f0213faeb009f4411d0a3aa}{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-B\-M\-A\-S\-K}~0
+\item 
+\#define \hyperlink{group__sysclk__group_ga5088dc19411a34aad978c46e7ab44525}{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-C\-M\-A\-S\-K}~0
+\item 
+\#define \hyperlink{group__sysclk__group_ga2ea7011abd3d43ef751313c6fc8c2068}{\-C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-B\-C\-L\-K\-\_\-\-S\-O\-U\-R\-C\-E}~\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0
+\begin{DoxyCompactList}\small\item\em \-Configuration symbol for the \-U\-S\-B generic clock source. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gac73a11432c1931f5f2daa030eda13923}{\-C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-B\-C\-L\-K\-\_\-\-D\-I\-V}~1
+\begin{DoxyCompactList}\small\item\em \-Configuration symbol for the \-U\-S\-B generic clock divider setting. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__sysclk__group_ga74da4af4f93582fe3dd33dd75596cdf4}{sysclk\-\_\-priv\-\_\-enable\-\_\-module} (unsigned int bus\-\_\-id, unsigned int module\-\_\-index)
+\item 
+void \hyperlink{group__sysclk__group_ga9d3035baba081035de71adb2dd059ce7}{sysclk\-\_\-priv\-\_\-disable\-\_\-module} (unsigned int bus\-\_\-id, unsigned int module\-\_\-index)
+\item 
+void \hyperlink{group__sysclk__group_ga242399e48a97739c88b4d0c00f6101de}{sysclk\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em \-Initialize the synchronous clock system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Configuration \-Symbols}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__sysclk__group_ga7bb6bbe88b7fb398ef8f0befe936e0e7}{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-O\-U\-R\-C\-E}~\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-S\-Y\-S
+\begin{DoxyCompactList}\small\item\em \-Initial/static main system clock source. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaf8bcf7e1ee2ebd2829ebc31be507c6da}{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-P\-U\-\_\-\-D\-I\-V}~0
+\begin{DoxyCompactList}\small\item\em \-Initial/static \-C\-P\-U/\-H\-S\-B/\-P\-B\-B clock divider (log2) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaa952d8094a06be420e244e68286c2dbf}{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-A\-\_\-\-D\-I\-V}~0
+\begin{DoxyCompactList}\small\item\em \-Initial/static \-P\-B\-A clock divider (log2) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga50962c914daa31fbc279cd4bccf66f98}{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-B\-\_\-\-D\-I\-V}~0
+\begin{DoxyCompactList}\small\item\em \-Initial/static \-P\-B\-B clock divider (log2) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaa31e8248ac7b461b19f7ec827674d16c}{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-C\-\_\-\-D\-I\-V}~0
+\begin{DoxyCompactList}\small\item\em \-Initial/static \-P\-B\-C clock divider (log2) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-System clock source}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__sysclk__group_ga95a749ec308ac07efb9521f2f56ad351}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-S\-Y\-S}~0
+\begin{DoxyCompactList}\small\item\em \-System \-R\-C oscillator. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga40595c85aa33898ff3a6cfbd4f8ef7b9}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0}~1
+\begin{DoxyCompactList}\small\item\em \-Oscillator 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga9d44be291573208b5b1152f2b6ab1d3a}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1}~2
+\begin{DoxyCompactList}\small\item\em \-Oscillator 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gacce44c311c87522d71fe51bf4cd37f58}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0}~3
+\begin{DoxyCompactList}\small\item\em \-Phase \-Locked \-Loop 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaa46c965047bb81e94066d8df57cb719f}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1}~4
+\begin{DoxyCompactList}\small\item\em \-Phase \-Locked \-Loop 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaa3b782df811d75bf3cf9f4ba8c2266b0}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M}~5
+\begin{DoxyCompactList}\small\item\em 8 \-M\-Hz \-R\-C oscillator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-U\-S\-B \-Clock \-Sources}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__sysclk__group_ga2ba06598e685f870cb3f410f27d75703}{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0}~1
+\begin{DoxyCompactList}\small\item\em \-Use \-O\-S\-C0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga5fee2b76449663f9d6c8f7bb34782e77}{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1}~2
+\begin{DoxyCompactList}\small\item\em \-Use \-O\-S\-C1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga969e47c6c1f1d38fd2afaf96f6187296}{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0}~3
+\begin{DoxyCompactList}\small\item\em \-Use \-P\-L\-L0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gae76666294ec5d1ca2bcfa28061cfae3f}{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1}~4
+\begin{DoxyCompactList}\small\item\em \-Use \-P\-L\-L1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Clocks derived from the \-C\-P\-U clock}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__sysclk__group_ga9cbdb318d23dda372bf52dd9b4eb14f5}{\-S\-Y\-S\-C\-L\-K\-\_\-\-O\-C\-D}~\-A\-V\-R32\-\_\-\-O\-C\-D\-\_\-\-C\-L\-K\-\_\-\-C\-P\-U
+\begin{DoxyCompactList}\small\item\em \-On-\/\-Chip \-Debug system. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga619d74a2528721833b011475c6ea1b63}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-Y\-S\-T\-I\-M\-E\-R}~\-A\-V\-R32\-\_\-\-C\-O\-R\-E\-\_\-\-C\-L\-K\-\_\-\-C\-P\-U\-\_\-\-C\-O\-U\-N\-T
+\begin{DoxyCompactList}\small\item\em \-C\-O\-U\-N\-T/\-C\-O\-M\-P\-A\-R\-E system registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Clocks derived from the \-H\-S\-B clock}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__sysclk__group_ga86f02a49fa416cb9618274517c7b6a1b}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-A\-U\-\_\-\-H\-S\-B}~(\-A\-V\-R32\-\_\-\-S\-A\-U\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-Secure \-Access \-Unit \-H\-S\-B interface. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga31a0491a42ddf97870b3218d66921f55}{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-D\-C\-A\-\_\-\-H\-S\-B}~(\-A\-V\-R32\-\_\-\-P\-D\-C\-A\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-P\-D\-C\-A memory interface. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaeb124548e5e161dfa5f3675721da8a82}{\-S\-Y\-S\-C\-L\-K\-\_\-\-M\-D\-M\-A\-\_\-\-H\-S\-B}~(\-A\-V\-R32\-\_\-\-M\-D\-M\-A\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-M\-D\-M\-A memory interface. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga8853a36d0721737ccf4f7dfa2287c729}{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-B\-C\-\_\-\-D\-A\-T\-A}~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-U\-S\-B\-C \-D\-M\-A and \-F\-I\-F\-O interface. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga72bf629f809d2df6ef9877b25712ba76}{\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-A\-N\-I\-F\-\_\-\-D\-A\-T\-A}~(\-A\-V\-R32\-\_\-\-C\-A\-N\-I\-F\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-C\-A\-N\-I\-F \-D\-M\-A interface. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaa4659bfb4205b768f6846cbfcc2ec7dd}{\-S\-Y\-S\-C\-L\-K\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-D\-A\-T\-A}~(\-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-Flash data interface. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga9e400e99e4e4b8f66b3a6d4c7b70611e}{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-A\-\_\-\-B\-R\-I\-D\-G\-E}~(\-A\-V\-R32\-\_\-\-H\-M\-A\-T\-R\-I\-X\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B\-\_\-\-P\-B\-A\-\_\-\-B\-R\-I\-D\-G\-E \% 32)
+\begin{DoxyCompactList}\small\item\em \-H\-S\-B$<$-\/$>$\-P\-B\-A bridge. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaafe37377751bd916833b911fb54de660}{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-B\-\_\-\-B\-R\-I\-D\-G\-E}~(\-A\-V\-R32\-\_\-\-H\-M\-A\-T\-R\-I\-X\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B\-\_\-\-P\-B\-B\-\_\-\-B\-R\-I\-D\-G\-E \% 32)
+\begin{DoxyCompactList}\small\item\em \-H\-S\-B$<$-\/$>$\-P\-B\-B bridge. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga94aa5b488b09dc743ddca6c884660873}{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-C\-\_\-\-B\-R\-I\-D\-G\-E}~(\-A\-V\-R32\-\_\-\-H\-M\-A\-T\-R\-I\-X\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B\-\_\-\-P\-B\-C\-\_\-\-B\-R\-I\-D\-G\-E \% 32)
+\begin{DoxyCompactList}\small\item\em \-H\-S\-B$<$-\/$>$\-P\-B\-C bridge. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaff6d7baf5d4926d22f50ca1bfb738424}{\-S\-Y\-S\-C\-L\-K\-\_\-\-H\-S\-B\-\_\-\-R\-A\-M}~(\-A\-V\-R32\-\_\-\-R\-A\-M\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-H\-S\-B \-R\-A\-M. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga30be147da40e89c8ea7fa6fd0ed30129}{\-S\-Y\-S\-C\-L\-K\-\_\-\-E\-B\-I}~(\-A\-V\-R32\-\_\-\-E\-B\-I\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-External \-Bus \-Interface. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga15c11d0c318f04ca3169fda32aea1bee}{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-E\-V\-C\-\_\-\-H\-S\-B}~(\-A\-V\-R32\-\_\-\-P\-E\-V\-C\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-Peripheral \-Event \-Controller. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Clocks derived from the \-P\-B\-A clock}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__sysclk__group_ga14d03e228f6f595a55e1a76040b8f169}{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-T\-C}~(\-A\-V\-R32\-\_\-\-I\-N\-T\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Internal interrupt controller. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga0f033dbcbfbd2fa9aadc748fb5c18165}{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-M}~(\-A\-V\-R32\-\_\-\-P\-M\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-P\-M/\-R\-T\-C/\-E\-I\-M configuration. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga49fca3345f07667c997b5ad46db6245b}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-C\-I\-F}~(\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-System \-Control \-Interface. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga6ad9b260e783734ef0e28bb7ac4284a7}{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-S\-T}~(\-A\-V\-R32\-\_\-\-A\-S\-T\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Asynchronous \-Timer. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gae1d87ae47bff0e2e4cab4b417cea4ab1}{\-S\-Y\-S\-C\-L\-K\-\_\-\-W\-D\-T}~(\-A\-V\-R32\-\_\-\-W\-D\-T\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Watchdog \-Timer. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaee7a1048c289fa9dd6abf99eaf64fc46}{\-S\-Y\-S\-C\-L\-K\-\_\-\-E\-I\-C}~(\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-External \-Interrupt \-Controller. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga0bd4c7581ed295f5202efa0631dfe1aa}{\-S\-Y\-S\-C\-L\-K\-\_\-\-F\-R\-E\-Q\-M}~(\-A\-V\-R32\-\_\-\-F\-R\-E\-Q\-M\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Frequency \-Meter. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaafd65ced01805e6f5dfbd3b08e9aa02c}{\-S\-Y\-S\-C\-L\-K\-\_\-\-G\-P\-I\-O}~(\-A\-V\-R32\-\_\-\-G\-P\-I\-O\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-General-\/\-Purpose \-I/\-O. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaeeea970aa1d68f0726f6ac7b19882491}{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T0}~(\-A\-V\-R32\-\_\-\-U\-S\-A\-R\-T0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-U\-S\-A\-R\-T 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gae2bb545878e7dc4040c1b1e9bab34cdd}{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T2}~(\-A\-V\-R32\-\_\-\-U\-S\-A\-R\-T2\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-U\-S\-A\-R\-T 2. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga749a1c474f6bcdfb0c71e76d88371572}{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T3}~(\-A\-V\-R32\-\_\-\-U\-S\-A\-R\-T3\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-U\-S\-A\-R\-T 3. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga2981d1f5ff381253d3ca94c260bbba01}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-P\-I1}~(\-A\-V\-R32\-\_\-\-S\-P\-I1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-S\-P\-I \-Controller 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga8c2db97d4e5879b8e79271ad4317965c}{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-M0}~(\-A\-V\-R32\-\_\-\-T\-W\-I\-M0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-T\-W\-I \-Master 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaa6b40c9fda3fc4cf86201bf5d35c60e4}{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-M1}~(\-A\-V\-R32\-\_\-\-T\-W\-I\-M1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-T\-W\-I \-Master 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaacb0f0e01d42f813394a6dc51171d0f1}{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-S0}~(\-A\-V\-R32\-\_\-\-T\-W\-I\-S0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-T\-W\-I \-Slave 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga8949d9bb62e29e020979d3d428d8fb53}{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-S1}~(\-A\-V\-R32\-\_\-\-T\-W\-I\-S1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-T\-W\-I \-Slave 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaba7d5c176ee1112b9f590ac775615e36}{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-W\-M}~(\-A\-V\-R32\-\_\-\-P\-W\-M\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Pulse \-Width \-Modulator. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gab8b5a16f6564fc83a5627c61468a635a}{\-S\-Y\-S\-C\-L\-K\-\_\-\-Q\-D\-E\-C0}~(\-A\-V\-R32\-\_\-\-Q\-D\-E\-C0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Quadrature \-Decoder 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga82dd53b7213f5e14889c11d00e9172e8}{\-S\-Y\-S\-C\-L\-K\-\_\-\-Q\-D\-E\-C1}~(\-A\-V\-R32\-\_\-\-Q\-D\-E\-C1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Quadrature \-Decoder 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga03be785696a3e76b1b3c6ea6104ac630}{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-C1}~(\-A\-V\-R32\-\_\-\-T\-C1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Timer/\-Counter 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga399953bbca8665cff37fd74a54196281}{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-E\-V\-C\-\_\-\-R\-E\-G\-S}~(\-A\-V\-R32\-\_\-\-P\-E\-V\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Peripheral \-Event \-Controller. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga3d96f4df476b374cae0653bb97b6afa9}{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-C\-I\-F\-A0}~(\-A\-V\-R32\-\_\-\-A\-C\-I\-F\-A0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Analog \-Comparator 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gae446ad78f0e97d6284514f1f37b77b8e}{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-C\-I\-F\-A1}~(\-A\-V\-R32\-\_\-\-A\-C\-I\-F\-A1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-Analog \-Comparator 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gaca3098d4d705c823acb5a2787a658b2f}{\-S\-Y\-S\-C\-L\-K\-\_\-\-D\-A\-C\-I\-F\-B0}~(\-A\-V\-R32\-\_\-\-D\-A\-C\-I\-F\-B0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-D/\-A \-Converter 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gabafc3d95b374fd0543a080132c6a123f}{\-S\-Y\-S\-C\-L\-K\-\_\-\-D\-A\-C\-I\-F\-B1}~(\-A\-V\-R32\-\_\-\-D\-A\-C\-I\-F\-B1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em \-D/\-A \-Converter 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga70d3d2ecde2ee79e6cdf0ddf62c5ce14}{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-W}~(\-A\-V\-R32\-\_\-\-A\-W\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)
+\begin{DoxyCompactList}\small\item\em a\-Wire \-U\-A\-R\-T \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Clocks derived from the \-P\-B\-B clock}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__sysclk__group_ga47b081ba5de90a8ea89b8a844e82c14a}{\-S\-Y\-S\-C\-L\-K\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-R\-E\-G\-S}~(\-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-Flash \-Controller registers. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga1f50b29ea7a96a6595b6256118ec6a34}{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-B\-C\-\_\-\-R\-E\-G\-S}~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-U\-S\-B\-B registers. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga766dce154a1fb38bb35e6e98cd51a9b1}{\-S\-Y\-S\-C\-L\-K\-\_\-\-H\-M\-A\-T\-R\-I\-X}~(\-A\-V\-R32\-\_\-\-H\-M\-A\-T\-R\-I\-X\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-H\-S\-B \-Matrix configuration. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gafe8483e2e78077a95841ccf52b2da1a5}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-A\-U\-\_\-\-R\-E\-G\-S}~(\-A\-V\-R32\-\_\-\-S\-A\-U\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-Secure \-Access \-Unit register. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga8425ce428af87e00693efc695ac3b73e}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-M\-C\-\_\-\-R\-E\-G\-S}~(\-A\-V\-R32\-\_\-\-S\-M\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-Static \-Memory \-Controller registers. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga386f643ce38c1c6721d07c559a70f365}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-D\-R\-A\-M\-C\-\_\-\-R\-E\-G\-S}~(\-A\-V\-R32\-\_\-\-S\-D\-R\-A\-M\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B \% 32)
+\begin{DoxyCompactList}\small\item\em \-S\-D\-R\-A\-M \-Controller registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Clocks derived from the \-P\-B\-C clock}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__sysclk__group_gac83d44e5be54c7b52b86deb4fc338516}{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-D\-C\-A\-\_\-\-P\-B}~(\-A\-V\-R32\-\_\-\-P\-D\-C\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C \% 32)
+\begin{DoxyCompactList}\small\item\em \-P\-D\-C\-A peripheral bus interface. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gabe01b7586526964dd55bc275e9d40f39}{\-S\-Y\-S\-C\-L\-K\-\_\-\-M\-D\-M\-A\-\_\-\-R\-E\-G\-S}~(\-A\-V\-R32\-\_\-\-M\-D\-M\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C \% 32)
+\begin{DoxyCompactList}\small\item\em \-M\-D\-M\-A registers. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga1acb0cc02d975a6d9d4e92e56a2438a0}{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T1}~(\-A\-V\-R32\-\_\-\-U\-S\-A\-R\-T1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C \% 32)
+\begin{DoxyCompactList}\small\item\em \-U\-S\-A\-R\-T 1. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga77679d8f496ed32ec8c2476fc28ecf45}{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-P\-I0}~(\-A\-V\-R32\-\_\-\-S\-P\-I0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C \% 32)
+\begin{DoxyCompactList}\small\item\em \-S\-P\-I \-Controller 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gadf592c60fdfb5213d813f9b5c753f0f7}{\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-A\-N\-I\-F\-\_\-\-R\-E\-G\-S}~(\-A\-V\-R32\-\_\-\-C\-A\-N\-I\-F\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C \% 32)
+\begin{DoxyCompactList}\small\item\em \-C\-A\-N\-I\-F registers. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_gabe7aa477c7c5b3887df1d762a750b04a}{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-C0}~(\-A\-V\-R32\-\_\-\-T\-C0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C \% 32)
+\begin{DoxyCompactList}\small\item\em \-Timer/\-Counter 0. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__sysclk__group_ga6e40fd22e30fe8f7553443d88ee817aa}{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-D\-C\-I\-F\-A}~(\-A\-V\-R32\-\_\-\-A\-D\-C\-I\-F\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C \% 32)
+\begin{DoxyCompactList}\small\item\em \-A/\-D \-Converter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-System \-Clock \-Source and \-Prescaler configuration}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__sysclk__group_ga9e93d93c137135fee8a1a7102367042e}{sysclk\-\_\-set\-\_\-prescalers} (unsigned int cpu\-\_\-shift, unsigned int pba\-\_\-shift, unsigned int pbb\-\_\-shift, unsigned int pbc\-\_\-shift)
+\begin{DoxyCompactList}\small\item\em \-Set system clock prescaler configuration. \end{DoxyCompactList}\item 
+void \hyperlink{group__sysclk__group_ga222a121dfaac21b0c0af9d4dcb39496c}{sysclk\-\_\-set\-\_\-source} (uint\-\_\-fast8\-\_\-t src)
+\begin{DoxyCompactList}\small\item\em \-Change the source of the main system clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-The {\itshape sysclk\/} \-A\-P\-I covers the {\itshape system clock\/} and all clocks derived from it. \-The system clock is a chip-\/internal clock on which all {\itshape synchronous clocks\/}, i.\-e. \-C\-P\-U and bus/peripheral clocks, are based. \-The system clock is typically generated from one of a variety of sources, which may include crystal and \-R\-C oscillators as well as \-P\-L\-Ls. \-The clocks derived from the system clock are sometimes also known as {\itshape synchronous clocks\/}, since they always run synchronously with respect to each other, as opposed to {\itshape generic clocks\/} which may run from different oscillators or \-P\-L\-Ls.
+
+\-Most applications should simply call \hyperlink{group__sysclk__group_ga242399e48a97739c88b4d0c00f6101de}{sysclk\-\_\-init()} to initialize everything related to the system clock and its source (oscillator, \-P\-L\-L or \-D\-F\-L\-L), and leave it at that. \-More advanced applications, and platform-\/specific drivers, may require additional services from the clock system, some of which may be platform-\/specific.\hypertarget{group__sysclk__group_sysclk_group_platform}{}\subsection{\-Platform Dependencies}\label{group__sysclk__group_sysclk_group_platform}
+\-The sysclk \-A\-P\-I is partially chip-\/ or platform-\/specific. \-While all platforms provide mostly the same functionality, there are some variations around how different bus types and clock tree structures are handled.
+
+\-The following functions are available on all platforms with the same parameters and functionality. \-These functions may be called freely by portable applications, drivers and services\-:
+\begin{DoxyItemize}
+\item \hyperlink{group__sysclk__group_ga242399e48a97739c88b4d0c00f6101de}{sysclk\-\_\-init()}
+\item \hyperlink{group__sysclk__group_ga222a121dfaac21b0c0af9d4dcb39496c}{sysclk\-\_\-set\-\_\-source()}
+\item sysclk\-\_\-get\-\_\-main\-\_\-hz()
+\item sysclk\-\_\-get\-\_\-cpu\-\_\-hz()
+\item sysclk\-\_\-get\-\_\-peripheral\-\_\-bus\-\_\-hz()
+\end{DoxyItemize}
+
+\-The following functions are available on all platforms, but there may be variations in the function signature (i.\-e. parameters) and behaviour. \-These functions are typically called by platform-\/specific parts of drivers, and applications that aren't intended to be portable\-:
+\begin{DoxyItemize}
+\item sysclk\-\_\-enable\-\_\-peripheral\-\_\-clock()
+\item sysclk\-\_\-disable\-\_\-peripheral\-\_\-clock()
+\item sysclk\-\_\-enable\-\_\-module()
+\item sysclk\-\_\-disable\-\_\-module()
+\item sysclk\-\_\-module\-\_\-is\-\_\-enabled()
+\item \hyperlink{group__sysclk__group_ga9e93d93c137135fee8a1a7102367042e}{sysclk\-\_\-set\-\_\-prescalers()}
+\end{DoxyItemize}
+
+\-All other functions should be considered platform-\/specific. \-Enabling/disabling clocks to specific peripherals as well as determining the speed of these clocks should be done by calling functions provided by the driver for that peripheral. 
+
+\subsection{\-Define \-Documentation}
+\hypertarget{group__sysclk__group_gaf8bcf7e1ee2ebd2829ebc31be507c6da}{
+\index{\-System Clock Management@{\-System Clock Management}!\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-P\-U\-\_\-\-D\-I\-V@{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-P\-U\-\_\-\-D\-I\-V}}
+\index{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-P\-U\-\_\-\-D\-I\-V@{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-P\-U\-\_\-\-D\-I\-V}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-P\-U\-\_\-\-D\-I\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-P\-U\-\_\-\-D\-I\-V~0}}
+\label{group__sysclk__group_gaf8bcf7e1ee2ebd2829ebc31be507c6da}
+
+
+\-Initial/static \-C\-P\-U/\-H\-S\-B/\-P\-B\-B clock divider (log2) 
+
+\-Configuration symbol for dividing the \-C\-P\-U clock frequency by $2^{CONFIG\_SYSCLK\_CPU\_DIV}$.
+
+\-The \-C\-P\-U, \-H\-S\-B and \-P\-B\-A clocks will run at \[ f_{cpu} = \frac{f_{sys}}{2^\mathrm{CONFIG\_SYSCLK\_CPU\_DIV}}\,\mbox{Hz} \] after initialization.
+
+\-If this symbol is not defined, the \-C\-P\-U clock frequency is not divided.
+
+\-This symbol may be defined in \hyperlink{conf__clock_8h}{conf\-\_\-clock.\-h}. \hypertarget{group__sysclk__group_gaa952d8094a06be420e244e68286c2dbf}{
+\index{\-System Clock Management@{\-System Clock Management}!\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-A\-\_\-\-D\-I\-V@{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-A\-\_\-\-D\-I\-V}}
+\index{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-A\-\_\-\-D\-I\-V@{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-A\-\_\-\-D\-I\-V}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-A\-\_\-\-D\-I\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-A\-\_\-\-D\-I\-V~0}}
+\label{group__sysclk__group_gaa952d8094a06be420e244e68286c2dbf}
+
+
+\-Initial/static \-P\-B\-A clock divider (log2) 
+
+\-Configuration symbol for dividing the \-P\-B\-A clock frequency by $2^{CONFIG\_SYSCLK\_PBA\_DIV}$.
+
+\-The \-P\-B\-A clock will run at \[ f_{PBA} = \frac{f_{sys}}{2^\mathrm{CONFIG\_SYSCLK\_PBA\_DIV}}\,\mbox{Hz} \] after initialization.
+
+\-If this symbol is not defined, the \-P\-B\-A clock frequency is not divided.
+
+\-This symbol may be defined in \hyperlink{conf__clock_8h}{conf\-\_\-clock.\-h}. \hypertarget{group__sysclk__group_ga50962c914daa31fbc279cd4bccf66f98}{
+\index{\-System Clock Management@{\-System Clock Management}!\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-B\-\_\-\-D\-I\-V@{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-B\-\_\-\-D\-I\-V}}
+\index{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-B\-\_\-\-D\-I\-V@{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-B\-\_\-\-D\-I\-V}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-B\-\_\-\-D\-I\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-B\-\_\-\-D\-I\-V~0}}
+\label{group__sysclk__group_ga50962c914daa31fbc279cd4bccf66f98}
+
+
+\-Initial/static \-P\-B\-B clock divider (log2) 
+
+\-Configuration symbol for dividing the \-P\-B\-B clock frequency by $2^{CONFIG\_SYSCLK\_PBB\_DIV}$.
+
+\-The \-P\-B\-B clock will run at \[ f_{PBB} = \frac{f_{sys}}{2^\mathrm{CONFIG\_SYSCLK\_PBB\_DIV}}\,\mbox{Hz} \] after initialization.
+
+\-If this symbol is not defined, the \-P\-B\-B clock frequency is not divided.
+
+\-This symbol may be defined in \hyperlink{conf__clock_8h}{conf\-\_\-clock.\-h}. \hypertarget{group__sysclk__group_gaa31e8248ac7b461b19f7ec827674d16c}{
+\index{\-System Clock Management@{\-System Clock Management}!\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-C\-\_\-\-D\-I\-V@{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-C\-\_\-\-D\-I\-V}}
+\index{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-C\-\_\-\-D\-I\-V@{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-C\-\_\-\-D\-I\-V}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-C\-\_\-\-D\-I\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-C\-\_\-\-D\-I\-V~0}}
+\label{group__sysclk__group_gaa31e8248ac7b461b19f7ec827674d16c}
+
+
+\-Initial/static \-P\-B\-C clock divider (log2) 
+
+\-Configuration symbol for dividing the \-P\-B\-C clock frequency by $2^{CONFIG\_SYSCLK\_PBC\_DIV}$.
+
+\-The \-P\-B\-C clock will run at \[ f_{PBC} = \frac{f_{sys}}{2^\mathrm{CONFIG\_SYSCLK\_PBC\_DIV}}\,\mbox{Hz} \] after initialization.
+
+\-If this symbol is not defined, the \-P\-B\-C clock frequency is not divided.
+
+\-This symbol may be defined in \hyperlink{conf__clock_8h}{conf\-\_\-clock.\-h}. \hypertarget{group__sysclk__group_ga7bb6bbe88b7fb398ef8f0befe936e0e7}{
+\index{\-System Clock Management@{\-System Clock Management}!\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-O\-U\-R\-C\-E@{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-O\-U\-R\-C\-E}}
+\index{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-O\-U\-R\-C\-E@{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-O\-U\-R\-C\-E}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-O\-U\-R\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-O\-N\-F\-I\-G\-\_\-\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-O\-U\-R\-C\-E~\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-S\-Y\-S}}
+\label{group__sysclk__group_ga7bb6bbe88b7fb398ef8f0befe936e0e7}
+
+
+\-Initial/static main system clock source. 
+
+\-The main system clock will be configured to use this clock during initialization. \hypertarget{group__sysclk__group_gac73a11432c1931f5f2daa030eda13923}{
+\index{\-System Clock Management@{\-System Clock Management}!\-C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-B\-C\-L\-K\-\_\-\-D\-I\-V@{\-C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-B\-C\-L\-K\-\_\-\-D\-I\-V}}
+\index{\-C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-B\-C\-L\-K\-\_\-\-D\-I\-V@{\-C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-B\-C\-L\-K\-\_\-\-D\-I\-V}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-B\-C\-L\-K\-\_\-\-D\-I\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-B\-C\-L\-K\-\_\-\-D\-I\-V~1}}
+\label{group__sysclk__group_gac73a11432c1931f5f2daa030eda13923}
+
+
+\-Configuration symbol for the \-U\-S\-B generic clock divider setting. 
+
+\-Sets the clock division for the \-U\-S\-B generic clock. \-If a \-U\-S\-B clock source is selected with \-C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-B\-C\-L\-K\-\_\-\-S\-O\-U\-R\-C\-E, this configuration symbol must also be defined.
+
+\-Define this as any value that does not exceed {\ttfamily \-G\-E\-N\-C\-L\-K\-\_\-\-D\-I\-V\-\_\-\-M\-A\-X}, and which will give a 48 \-M\-Hz clock frequency from the selected source. \hypertarget{group__sysclk__group_ga2ea7011abd3d43ef751313c6fc8c2068}{
+\index{\-System Clock Management@{\-System Clock Management}!\-C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-B\-C\-L\-K\-\_\-\-S\-O\-U\-R\-C\-E@{\-C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-B\-C\-L\-K\-\_\-\-S\-O\-U\-R\-C\-E}}
+\index{\-C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-B\-C\-L\-K\-\_\-\-S\-O\-U\-R\-C\-E@{\-C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-B\-C\-L\-K\-\_\-\-S\-O\-U\-R\-C\-E}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-B\-C\-L\-K\-\_\-\-S\-O\-U\-R\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-B\-C\-L\-K\-\_\-\-S\-O\-U\-R\-C\-E~\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0}}
+\label{group__sysclk__group_ga2ea7011abd3d43ef751313c6fc8c2068}
+
+
+\-Configuration symbol for the \-U\-S\-B generic clock source. 
+
+\-Sets the clock source to use for the \-U\-S\-B. \-The source must also be properly configured.
+
+\-Define this to one of the {\ttfamily \-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-xxx} settings. \-Leave it undefined if \-U\-S\-B is not required. \hypertarget{group__sysclk__group_ga3d96f4df476b374cae0653bb97b6afa9}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-C\-I\-F\-A0@{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-C\-I\-F\-A0}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-C\-I\-F\-A0@{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-C\-I\-F\-A0}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-C\-I\-F\-A0}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-A\-C\-I\-F\-A0~(\-A\-V\-R32\-\_\-\-A\-C\-I\-F\-A0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_ga3d96f4df476b374cae0653bb97b6afa9}
+
+
+\-Analog \-Comparator 0. 
+
+\hypertarget{group__sysclk__group_gae446ad78f0e97d6284514f1f37b77b8e}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-C\-I\-F\-A1@{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-C\-I\-F\-A1}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-C\-I\-F\-A1@{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-C\-I\-F\-A1}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-C\-I\-F\-A1}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-A\-C\-I\-F\-A1~(\-A\-V\-R32\-\_\-\-A\-C\-I\-F\-A1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_gae446ad78f0e97d6284514f1f37b77b8e}
+
+
+\-Analog \-Comparator 1. 
+
+\hypertarget{group__sysclk__group_ga6e40fd22e30fe8f7553443d88ee817aa}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-D\-C\-I\-F\-A@{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-D\-C\-I\-F\-A}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-D\-C\-I\-F\-A@{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-D\-C\-I\-F\-A}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-D\-C\-I\-F\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-A\-D\-C\-I\-F\-A~(\-A\-V\-R32\-\_\-\-A\-D\-C\-I\-F\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C \% 32)}}
+\label{group__sysclk__group_ga6e40fd22e30fe8f7553443d88ee817aa}
+
+
+\-A/\-D \-Converter. 
+
+\hypertarget{group__sysclk__group_ga6ad9b260e783734ef0e28bb7ac4284a7}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-S\-T@{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-S\-T}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-S\-T@{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-S\-T}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-A\-S\-T~(\-A\-V\-R32\-\_\-\-A\-S\-T\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_ga6ad9b260e783734ef0e28bb7ac4284a7}
+
+
+\-Asynchronous \-Timer. 
+
+\hypertarget{group__sysclk__group_ga70d3d2ecde2ee79e6cdf0ddf62c5ce14}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-W@{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-W}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-W@{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-W}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-A\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-A\-W~(\-A\-V\-R32\-\_\-\-A\-W\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_ga70d3d2ecde2ee79e6cdf0ddf62c5ce14}
+
+
+a\-Wire \-U\-A\-R\-T 
+
+\hypertarget{group__sysclk__group_ga72bf629f809d2df6ef9877b25712ba76}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-A\-N\-I\-F\-\_\-\-D\-A\-T\-A@{\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-A\-N\-I\-F\-\_\-\-D\-A\-T\-A}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-A\-N\-I\-F\-\_\-\-D\-A\-T\-A@{\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-A\-N\-I\-F\-\_\-\-D\-A\-T\-A}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-A\-N\-I\-F\-\_\-\-D\-A\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-C\-A\-N\-I\-F\-\_\-\-D\-A\-T\-A~(\-A\-V\-R32\-\_\-\-C\-A\-N\-I\-F\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)}}
+\label{group__sysclk__group_ga72bf629f809d2df6ef9877b25712ba76}
+
+
+\-C\-A\-N\-I\-F \-D\-M\-A interface. 
+
+\hypertarget{group__sysclk__group_gadf592c60fdfb5213d813f9b5c753f0f7}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-A\-N\-I\-F\-\_\-\-R\-E\-G\-S@{\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-A\-N\-I\-F\-\_\-\-R\-E\-G\-S}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-A\-N\-I\-F\-\_\-\-R\-E\-G\-S@{\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-A\-N\-I\-F\-\_\-\-R\-E\-G\-S}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-C\-A\-N\-I\-F\-\_\-\-R\-E\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-C\-A\-N\-I\-F\-\_\-\-R\-E\-G\-S~(\-A\-V\-R32\-\_\-\-C\-A\-N\-I\-F\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C \% 32)}}
+\label{group__sysclk__group_gadf592c60fdfb5213d813f9b5c753f0f7}
+
+
+\-C\-A\-N\-I\-F registers. 
+
+\hypertarget{group__sysclk__group_gaca3098d4d705c823acb5a2787a658b2f}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-D\-A\-C\-I\-F\-B0@{\-S\-Y\-S\-C\-L\-K\-\_\-\-D\-A\-C\-I\-F\-B0}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-D\-A\-C\-I\-F\-B0@{\-S\-Y\-S\-C\-L\-K\-\_\-\-D\-A\-C\-I\-F\-B0}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-D\-A\-C\-I\-F\-B0}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-D\-A\-C\-I\-F\-B0~(\-A\-V\-R32\-\_\-\-D\-A\-C\-I\-F\-B0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_gaca3098d4d705c823acb5a2787a658b2f}
+
+
+\-D/\-A \-Converter 0. 
+
+\hypertarget{group__sysclk__group_gabafc3d95b374fd0543a080132c6a123f}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-D\-A\-C\-I\-F\-B1@{\-S\-Y\-S\-C\-L\-K\-\_\-\-D\-A\-C\-I\-F\-B1}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-D\-A\-C\-I\-F\-B1@{\-S\-Y\-S\-C\-L\-K\-\_\-\-D\-A\-C\-I\-F\-B1}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-D\-A\-C\-I\-F\-B1}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-D\-A\-C\-I\-F\-B1~(\-A\-V\-R32\-\_\-\-D\-A\-C\-I\-F\-B1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_gabafc3d95b374fd0543a080132c6a123f}
+
+
+\-D/\-A \-Converter 1. 
+
+\hypertarget{group__sysclk__group_ga30be147da40e89c8ea7fa6fd0ed30129}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-E\-B\-I@{\-S\-Y\-S\-C\-L\-K\-\_\-\-E\-B\-I}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-E\-B\-I@{\-S\-Y\-S\-C\-L\-K\-\_\-\-E\-B\-I}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-E\-B\-I}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-E\-B\-I~(\-A\-V\-R32\-\_\-\-E\-B\-I\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)}}
+\label{group__sysclk__group_ga30be147da40e89c8ea7fa6fd0ed30129}
+
+
+\-External \-Bus \-Interface. 
+
+\hypertarget{group__sysclk__group_gaee7a1048c289fa9dd6abf99eaf64fc46}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-E\-I\-C@{\-S\-Y\-S\-C\-L\-K\-\_\-\-E\-I\-C}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-E\-I\-C@{\-S\-Y\-S\-C\-L\-K\-\_\-\-E\-I\-C}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-E\-I\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-E\-I\-C~(\-A\-V\-R32\-\_\-\-E\-I\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_gaee7a1048c289fa9dd6abf99eaf64fc46}
+
+
+\-External \-Interrupt \-Controller. 
+
+\hypertarget{group__sysclk__group_gaa4659bfb4205b768f6846cbfcc2ec7dd}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-D\-A\-T\-A@{\-S\-Y\-S\-C\-L\-K\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-D\-A\-T\-A}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-D\-A\-T\-A@{\-S\-Y\-S\-C\-L\-K\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-D\-A\-T\-A}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-D\-A\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-D\-A\-T\-A~(\-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)}}
+\label{group__sysclk__group_gaa4659bfb4205b768f6846cbfcc2ec7dd}
+
+
+\-Flash data interface. 
+
+\hypertarget{group__sysclk__group_ga47b081ba5de90a8ea89b8a844e82c14a}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-R\-E\-G\-S@{\-S\-Y\-S\-C\-L\-K\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-R\-E\-G\-S}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-R\-E\-G\-S@{\-S\-Y\-S\-C\-L\-K\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-R\-E\-G\-S}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-R\-E\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-R\-E\-G\-S~(\-A\-V\-R32\-\_\-\-F\-L\-A\-S\-H\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B \% 32)}}
+\label{group__sysclk__group_ga47b081ba5de90a8ea89b8a844e82c14a}
+
+
+\-Flash \-Controller registers. 
+
+\hypertarget{group__sysclk__group_ga0bd4c7581ed295f5202efa0631dfe1aa}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-F\-R\-E\-Q\-M@{\-S\-Y\-S\-C\-L\-K\-\_\-\-F\-R\-E\-Q\-M}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-F\-R\-E\-Q\-M@{\-S\-Y\-S\-C\-L\-K\-\_\-\-F\-R\-E\-Q\-M}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-F\-R\-E\-Q\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-F\-R\-E\-Q\-M~(\-A\-V\-R32\-\_\-\-F\-R\-E\-Q\-M\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_ga0bd4c7581ed295f5202efa0631dfe1aa}
+
+
+\-Frequency \-Meter. 
+
+\hypertarget{group__sysclk__group_gaafd65ced01805e6f5dfbd3b08e9aa02c}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-G\-P\-I\-O@{\-S\-Y\-S\-C\-L\-K\-\_\-\-G\-P\-I\-O}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-G\-P\-I\-O@{\-S\-Y\-S\-C\-L\-K\-\_\-\-G\-P\-I\-O}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-G\-P\-I\-O}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-G\-P\-I\-O~(\-A\-V\-R32\-\_\-\-G\-P\-I\-O\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_gaafd65ced01805e6f5dfbd3b08e9aa02c}
+
+
+\-General-\/\-Purpose \-I/\-O. 
+
+\hypertarget{group__sysclk__group_ga766dce154a1fb38bb35e6e98cd51a9b1}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-H\-M\-A\-T\-R\-I\-X@{\-S\-Y\-S\-C\-L\-K\-\_\-\-H\-M\-A\-T\-R\-I\-X}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-H\-M\-A\-T\-R\-I\-X@{\-S\-Y\-S\-C\-L\-K\-\_\-\-H\-M\-A\-T\-R\-I\-X}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-H\-M\-A\-T\-R\-I\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-H\-M\-A\-T\-R\-I\-X~(\-A\-V\-R32\-\_\-\-H\-M\-A\-T\-R\-I\-X\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B \% 32)}}
+\label{group__sysclk__group_ga766dce154a1fb38bb35e6e98cd51a9b1}
+
+
+\-H\-S\-B \-Matrix configuration. 
+
+\hypertarget{group__sysclk__group_gaff6d7baf5d4926d22f50ca1bfb738424}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-H\-S\-B\-\_\-\-R\-A\-M@{\-S\-Y\-S\-C\-L\-K\-\_\-\-H\-S\-B\-\_\-\-R\-A\-M}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-H\-S\-B\-\_\-\-R\-A\-M@{\-S\-Y\-S\-C\-L\-K\-\_\-\-H\-S\-B\-\_\-\-R\-A\-M}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-H\-S\-B\-\_\-\-R\-A\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-H\-S\-B\-\_\-\-R\-A\-M~(\-A\-V\-R32\-\_\-\-R\-A\-M\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)}}
+\label{group__sysclk__group_gaff6d7baf5d4926d22f50ca1bfb738424}
+
+
+\-H\-S\-B \-R\-A\-M. 
+
+\hypertarget{group__sysclk__group_gabd8c9eaed83f9b71734a80f4b66742b3}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-C\-P\-U\-M\-A\-S\-K@{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-C\-P\-U\-M\-A\-S\-K}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-C\-P\-U\-M\-A\-S\-K@{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-C\-P\-U\-M\-A\-S\-K}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-C\-P\-U\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-C\-P\-U\-M\-A\-S\-K}}
+\label{group__sysclk__group_gabd8c9eaed83f9b71734a80f4b66742b3}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+((1 << SYSCLK_OCD)                                                 \
+                | (1 << SYSCLK_SYSTIMER))
+\end{DoxyCode}
+\hypertarget{group__sysclk__group_ga7bd0214b8ad00652adb81da9b5c1b165}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-H\-S\-B\-M\-A\-S\-K@{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-H\-S\-B\-M\-A\-S\-K}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-H\-S\-B\-M\-A\-S\-K@{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-H\-S\-B\-M\-A\-S\-K}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-H\-S\-B\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-H\-S\-B\-M\-A\-S\-K}}
+\label{group__sysclk__group_ga7bd0214b8ad00652adb81da9b5c1b165}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+((1 << SYSCLK_FLASHC_DATA)                                         \
+                | (1 << SYSCLK_PBA_BRIDGE)                                     
+      \
+                | (1 << SYSCLK_HSB_RAM))
+\end{DoxyCode}
+\hypertarget{group__sysclk__group_ga25425ac0f90eb3e96a7c303e6707b282}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-A\-M\-A\-S\-K@{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-A\-M\-A\-S\-K}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-A\-M\-A\-S\-K@{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-A\-M\-A\-S\-K}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-A\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-A\-M\-A\-S\-K}}
+\label{group__sysclk__group_ga25425ac0f90eb3e96a7c303e6707b282}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+((1 << SYSCLK_INTC)                                                \
+                | (1 << SYSCLK_GPIO)                                           
+      \
+                | (1 << SYSCLK_SCIF)                                           
+      \
+                | (1 << SYSCLK_PM))
+\end{DoxyCode}
+\hypertarget{group__sysclk__group_ga02a23ab95f0213faeb009f4411d0a3aa}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-B\-M\-A\-S\-K@{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-B\-M\-A\-S\-K}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-B\-M\-A\-S\-K@{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-B\-M\-A\-S\-K}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-B\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-B\-M\-A\-S\-K~0}}
+\label{group__sysclk__group_ga02a23ab95f0213faeb009f4411d0a3aa}
+\hypertarget{group__sysclk__group_ga5088dc19411a34aad978c46e7ab44525}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-C\-M\-A\-S\-K@{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-C\-M\-A\-S\-K}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-C\-M\-A\-S\-K@{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-C\-M\-A\-S\-K}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-C\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-I\-T\-\_\-\-M\-I\-N\-I\-M\-A\-L\-\_\-\-P\-B\-C\-M\-A\-S\-K~0}}
+\label{group__sysclk__group_ga5088dc19411a34aad978c46e7ab44525}
+\hypertarget{group__sysclk__group_ga14d03e228f6f595a55e1a76040b8f169}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-T\-C@{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-T\-C}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-T\-C@{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-T\-C}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-T\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-I\-N\-T\-C~(\-A\-V\-R32\-\_\-\-I\-N\-T\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_ga14d03e228f6f595a55e1a76040b8f169}
+
+
+\-Internal interrupt controller. 
+
+\hypertarget{group__sysclk__group_gaeb124548e5e161dfa5f3675721da8a82}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-M\-D\-M\-A\-\_\-\-H\-S\-B@{\-S\-Y\-S\-C\-L\-K\-\_\-\-M\-D\-M\-A\-\_\-\-H\-S\-B}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-M\-D\-M\-A\-\_\-\-H\-S\-B@{\-S\-Y\-S\-C\-L\-K\-\_\-\-M\-D\-M\-A\-\_\-\-H\-S\-B}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-M\-D\-M\-A\-\_\-\-H\-S\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-M\-D\-M\-A\-\_\-\-H\-S\-B~(\-A\-V\-R32\-\_\-\-M\-D\-M\-A\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)}}
+\label{group__sysclk__group_gaeb124548e5e161dfa5f3675721da8a82}
+
+
+\-M\-D\-M\-A memory interface. 
+
+\hypertarget{group__sysclk__group_gabe01b7586526964dd55bc275e9d40f39}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-M\-D\-M\-A\-\_\-\-R\-E\-G\-S@{\-S\-Y\-S\-C\-L\-K\-\_\-\-M\-D\-M\-A\-\_\-\-R\-E\-G\-S}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-M\-D\-M\-A\-\_\-\-R\-E\-G\-S@{\-S\-Y\-S\-C\-L\-K\-\_\-\-M\-D\-M\-A\-\_\-\-R\-E\-G\-S}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-M\-D\-M\-A\-\_\-\-R\-E\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-M\-D\-M\-A\-\_\-\-R\-E\-G\-S~(\-A\-V\-R32\-\_\-\-M\-D\-M\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C \% 32)}}
+\label{group__sysclk__group_gabe01b7586526964dd55bc275e9d40f39}
+
+
+\-M\-D\-M\-A registers. 
+
+\hypertarget{group__sysclk__group_ga9cbdb318d23dda372bf52dd9b4eb14f5}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-O\-C\-D@{\-S\-Y\-S\-C\-L\-K\-\_\-\-O\-C\-D}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-O\-C\-D@{\-S\-Y\-S\-C\-L\-K\-\_\-\-O\-C\-D}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-O\-C\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-O\-C\-D~\-A\-V\-R32\-\_\-\-O\-C\-D\-\_\-\-C\-L\-K\-\_\-\-C\-P\-U}}
+\label{group__sysclk__group_ga9cbdb318d23dda372bf52dd9b4eb14f5}
+
+
+\-On-\/\-Chip \-Debug system. 
+
+\hypertarget{group__sysclk__group_ga9e400e99e4e4b8f66b3a6d4c7b70611e}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-A\-\_\-\-B\-R\-I\-D\-G\-E@{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-A\-\_\-\-B\-R\-I\-D\-G\-E}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-A\-\_\-\-B\-R\-I\-D\-G\-E@{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-A\-\_\-\-B\-R\-I\-D\-G\-E}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-A\-\_\-\-B\-R\-I\-D\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-A\-\_\-\-B\-R\-I\-D\-G\-E~(\-A\-V\-R32\-\_\-\-H\-M\-A\-T\-R\-I\-X\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B\-\_\-\-P\-B\-A\-\_\-\-B\-R\-I\-D\-G\-E \% 32)}}
+\label{group__sysclk__group_ga9e400e99e4e4b8f66b3a6d4c7b70611e}
+
+
+\-H\-S\-B$<$-\/$>$\-P\-B\-A bridge. 
+
+\hypertarget{group__sysclk__group_gaafe37377751bd916833b911fb54de660}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-B\-\_\-\-B\-R\-I\-D\-G\-E@{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-B\-\_\-\-B\-R\-I\-D\-G\-E}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-B\-\_\-\-B\-R\-I\-D\-G\-E@{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-B\-\_\-\-B\-R\-I\-D\-G\-E}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-B\-\_\-\-B\-R\-I\-D\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-B\-\_\-\-B\-R\-I\-D\-G\-E~(\-A\-V\-R32\-\_\-\-H\-M\-A\-T\-R\-I\-X\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B\-\_\-\-P\-B\-B\-\_\-\-B\-R\-I\-D\-G\-E \% 32)}}
+\label{group__sysclk__group_gaafe37377751bd916833b911fb54de660}
+
+
+\-H\-S\-B$<$-\/$>$\-P\-B\-B bridge. 
+
+\hypertarget{group__sysclk__group_ga94aa5b488b09dc743ddca6c884660873}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-C\-\_\-\-B\-R\-I\-D\-G\-E@{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-C\-\_\-\-B\-R\-I\-D\-G\-E}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-C\-\_\-\-B\-R\-I\-D\-G\-E@{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-C\-\_\-\-B\-R\-I\-D\-G\-E}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-C\-\_\-\-B\-R\-I\-D\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-P\-B\-C\-\_\-\-B\-R\-I\-D\-G\-E~(\-A\-V\-R32\-\_\-\-H\-M\-A\-T\-R\-I\-X\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B\-\_\-\-P\-B\-C\-\_\-\-B\-R\-I\-D\-G\-E \% 32)}}
+\label{group__sysclk__group_ga94aa5b488b09dc743ddca6c884660873}
+
+
+\-H\-S\-B$<$-\/$>$\-P\-B\-C bridge. 
+
+\hypertarget{group__sysclk__group_ga31a0491a42ddf97870b3218d66921f55}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-D\-C\-A\-\_\-\-H\-S\-B@{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-D\-C\-A\-\_\-\-H\-S\-B}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-D\-C\-A\-\_\-\-H\-S\-B@{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-D\-C\-A\-\_\-\-H\-S\-B}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-D\-C\-A\-\_\-\-H\-S\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-P\-D\-C\-A\-\_\-\-H\-S\-B~(\-A\-V\-R32\-\_\-\-P\-D\-C\-A\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)}}
+\label{group__sysclk__group_ga31a0491a42ddf97870b3218d66921f55}
+
+
+\-P\-D\-C\-A memory interface. 
+
+\hypertarget{group__sysclk__group_gac83d44e5be54c7b52b86deb4fc338516}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-D\-C\-A\-\_\-\-P\-B@{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-D\-C\-A\-\_\-\-P\-B}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-D\-C\-A\-\_\-\-P\-B@{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-D\-C\-A\-\_\-\-P\-B}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-D\-C\-A\-\_\-\-P\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-P\-D\-C\-A\-\_\-\-P\-B~(\-A\-V\-R32\-\_\-\-P\-D\-C\-A\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C \% 32)}}
+\label{group__sysclk__group_gac83d44e5be54c7b52b86deb4fc338516}
+
+
+\-P\-D\-C\-A peripheral bus interface. 
+
+\hypertarget{group__sysclk__group_ga15c11d0c318f04ca3169fda32aea1bee}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-E\-V\-C\-\_\-\-H\-S\-B@{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-E\-V\-C\-\_\-\-H\-S\-B}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-E\-V\-C\-\_\-\-H\-S\-B@{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-E\-V\-C\-\_\-\-H\-S\-B}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-E\-V\-C\-\_\-\-H\-S\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-P\-E\-V\-C\-\_\-\-H\-S\-B~(\-A\-V\-R32\-\_\-\-P\-E\-V\-C\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)}}
+\label{group__sysclk__group_ga15c11d0c318f04ca3169fda32aea1bee}
+
+
+\-Peripheral \-Event \-Controller. 
+
+\hypertarget{group__sysclk__group_ga399953bbca8665cff37fd74a54196281}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-E\-V\-C\-\_\-\-R\-E\-G\-S@{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-E\-V\-C\-\_\-\-R\-E\-G\-S}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-E\-V\-C\-\_\-\-R\-E\-G\-S@{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-E\-V\-C\-\_\-\-R\-E\-G\-S}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-E\-V\-C\-\_\-\-R\-E\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-P\-E\-V\-C\-\_\-\-R\-E\-G\-S~(\-A\-V\-R32\-\_\-\-P\-E\-V\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_ga399953bbca8665cff37fd74a54196281}
+
+
+\-Peripheral \-Event \-Controller. 
+
+\hypertarget{group__sysclk__group_ga0f033dbcbfbd2fa9aadc748fb5c18165}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-M@{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-M}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-M@{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-M}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-P\-M~(\-A\-V\-R32\-\_\-\-P\-M\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_ga0f033dbcbfbd2fa9aadc748fb5c18165}
+
+
+\-P\-M/\-R\-T\-C/\-E\-I\-M configuration. 
+
+\hypertarget{group__sysclk__group_gaba7d5c176ee1112b9f590ac775615e36}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-W\-M@{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-W\-M}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-W\-M@{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-W\-M}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-P\-W\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-P\-W\-M~(\-A\-V\-R32\-\_\-\-P\-W\-M\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_gaba7d5c176ee1112b9f590ac775615e36}
+
+
+\-Pulse \-Width \-Modulator. 
+
+\hypertarget{group__sysclk__group_gab8b5a16f6564fc83a5627c61468a635a}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-Q\-D\-E\-C0@{\-S\-Y\-S\-C\-L\-K\-\_\-\-Q\-D\-E\-C0}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-Q\-D\-E\-C0@{\-S\-Y\-S\-C\-L\-K\-\_\-\-Q\-D\-E\-C0}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-Q\-D\-E\-C0}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-Q\-D\-E\-C0~(\-A\-V\-R32\-\_\-\-Q\-D\-E\-C0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_gab8b5a16f6564fc83a5627c61468a635a}
+
+
+\-Quadrature \-Decoder 0. 
+
+\hypertarget{group__sysclk__group_ga82dd53b7213f5e14889c11d00e9172e8}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-Q\-D\-E\-C1@{\-S\-Y\-S\-C\-L\-K\-\_\-\-Q\-D\-E\-C1}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-Q\-D\-E\-C1@{\-S\-Y\-S\-C\-L\-K\-\_\-\-Q\-D\-E\-C1}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-Q\-D\-E\-C1}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-Q\-D\-E\-C1~(\-A\-V\-R32\-\_\-\-Q\-D\-E\-C1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_ga82dd53b7213f5e14889c11d00e9172e8}
+
+
+\-Quadrature \-Decoder 1. 
+
+\hypertarget{group__sysclk__group_ga86f02a49fa416cb9618274517c7b6a1b}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-A\-U\-\_\-\-H\-S\-B@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-A\-U\-\_\-\-H\-S\-B}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-A\-U\-\_\-\-H\-S\-B@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-A\-U\-\_\-\-H\-S\-B}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-A\-U\-\_\-\-H\-S\-B}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-S\-A\-U\-\_\-\-H\-S\-B~(\-A\-V\-R32\-\_\-\-S\-A\-U\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)}}
+\label{group__sysclk__group_ga86f02a49fa416cb9618274517c7b6a1b}
+
+
+\-Secure \-Access \-Unit \-H\-S\-B interface. 
+
+\hypertarget{group__sysclk__group_gafe8483e2e78077a95841ccf52b2da1a5}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-A\-U\-\_\-\-R\-E\-G\-S@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-A\-U\-\_\-\-R\-E\-G\-S}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-A\-U\-\_\-\-R\-E\-G\-S@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-A\-U\-\_\-\-R\-E\-G\-S}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-A\-U\-\_\-\-R\-E\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-S\-A\-U\-\_\-\-R\-E\-G\-S~(\-A\-V\-R32\-\_\-\-S\-A\-U\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B \% 32)}}
+\label{group__sysclk__group_gafe8483e2e78077a95841ccf52b2da1a5}
+
+
+\-Secure \-Access \-Unit register. 
+
+\hypertarget{group__sysclk__group_ga49fca3345f07667c997b5ad46db6245b}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-C\-I\-F@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-C\-I\-F}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-C\-I\-F@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-C\-I\-F}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-C\-I\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-S\-C\-I\-F~(\-A\-V\-R32\-\_\-\-S\-C\-I\-F\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_ga49fca3345f07667c997b5ad46db6245b}
+
+
+\-System \-Control \-Interface. 
+
+\hypertarget{group__sysclk__group_ga386f643ce38c1c6721d07c559a70f365}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-D\-R\-A\-M\-C\-\_\-\-R\-E\-G\-S@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-D\-R\-A\-M\-C\-\_\-\-R\-E\-G\-S}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-D\-R\-A\-M\-C\-\_\-\-R\-E\-G\-S@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-D\-R\-A\-M\-C\-\_\-\-R\-E\-G\-S}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-D\-R\-A\-M\-C\-\_\-\-R\-E\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-S\-D\-R\-A\-M\-C\-\_\-\-R\-E\-G\-S~(\-A\-V\-R32\-\_\-\-S\-D\-R\-A\-M\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B \% 32)}}
+\label{group__sysclk__group_ga386f643ce38c1c6721d07c559a70f365}
+
+
+\-S\-D\-R\-A\-M \-Controller registers. 
+
+\hypertarget{group__sysclk__group_ga8425ce428af87e00693efc695ac3b73e}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-M\-C\-\_\-\-R\-E\-G\-S@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-M\-C\-\_\-\-R\-E\-G\-S}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-M\-C\-\_\-\-R\-E\-G\-S@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-M\-C\-\_\-\-R\-E\-G\-S}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-M\-C\-\_\-\-R\-E\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-S\-M\-C\-\_\-\-R\-E\-G\-S~(\-A\-V\-R32\-\_\-\-S\-M\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B \% 32)}}
+\label{group__sysclk__group_ga8425ce428af87e00693efc695ac3b73e}
+
+
+\-Static \-Memory \-Controller registers. 
+
+\hypertarget{group__sysclk__group_ga77679d8f496ed32ec8c2476fc28ecf45}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-P\-I0@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-P\-I0}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-P\-I0@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-P\-I0}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-P\-I0}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-S\-P\-I0~(\-A\-V\-R32\-\_\-\-S\-P\-I0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C \% 32)}}
+\label{group__sysclk__group_ga77679d8f496ed32ec8c2476fc28ecf45}
+
+
+\-S\-P\-I \-Controller 0. 
+
+\hypertarget{group__sysclk__group_ga2981d1f5ff381253d3ca94c260bbba01}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-P\-I1@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-P\-I1}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-P\-I1@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-P\-I1}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-P\-I1}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-S\-P\-I1~(\-A\-V\-R32\-\_\-\-S\-P\-I1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_ga2981d1f5ff381253d3ca94c260bbba01}
+
+
+\-S\-P\-I \-Controller 1. 
+
+\hypertarget{group__sysclk__group_ga40595c85aa33898ff3a6cfbd4f8ef7b9}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0~1}}
+\label{group__sysclk__group_ga40595c85aa33898ff3a6cfbd4f8ef7b9}
+
+
+\-Oscillator 0. 
+
+\hypertarget{group__sysclk__group_ga9d44be291573208b5b1152f2b6ab1d3a}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1~2}}
+\label{group__sysclk__group_ga9d44be291573208b5b1152f2b6ab1d3a}
+
+
+\-Oscillator 1. 
+
+\hypertarget{group__sysclk__group_gacce44c311c87522d71fe51bf4cd37f58}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0~3}}
+\label{group__sysclk__group_gacce44c311c87522d71fe51bf4cd37f58}
+
+
+\-Phase \-Locked \-Loop 0. 
+
+\hypertarget{group__sysclk__group_gaa46c965047bb81e94066d8df57cb719f}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1~4}}
+\label{group__sysclk__group_gaa46c965047bb81e94066d8df57cb719f}
+
+
+\-Phase \-Locked \-Loop 1. 
+
+\hypertarget{group__sysclk__group_gaa3b782df811d75bf3cf9f4ba8c2266b0}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C8\-M~5}}
+\label{group__sysclk__group_gaa3b782df811d75bf3cf9f4ba8c2266b0}
+
+
+8 \-M\-Hz \-R\-C oscillator 
+
+\hypertarget{group__sysclk__group_ga95a749ec308ac07efb9521f2f56ad351}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-S\-Y\-S@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-S\-Y\-S}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-S\-Y\-S@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-S\-Y\-S}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-S\-Y\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-R\-C\-S\-Y\-S~0}}
+\label{group__sysclk__group_ga95a749ec308ac07efb9521f2f56ad351}
+
+
+\-System \-R\-C oscillator. 
+
+\hypertarget{group__sysclk__group_ga619d74a2528721833b011475c6ea1b63}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-Y\-S\-T\-I\-M\-E\-R@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-Y\-S\-T\-I\-M\-E\-R}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-Y\-S\-T\-I\-M\-E\-R@{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-Y\-S\-T\-I\-M\-E\-R}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-S\-Y\-S\-T\-I\-M\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-S\-Y\-S\-T\-I\-M\-E\-R~\-A\-V\-R32\-\_\-\-C\-O\-R\-E\-\_\-\-C\-L\-K\-\_\-\-C\-P\-U\-\_\-\-C\-O\-U\-N\-T}}
+\label{group__sysclk__group_ga619d74a2528721833b011475c6ea1b63}
+
+
+\-C\-O\-U\-N\-T/\-C\-O\-M\-P\-A\-R\-E system registers. 
+
+\hypertarget{group__sysclk__group_gabe7aa477c7c5b3887df1d762a750b04a}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-C0@{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-C0}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-C0@{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-C0}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-C0}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-T\-C0~(\-A\-V\-R32\-\_\-\-T\-C0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C \% 32)}}
+\label{group__sysclk__group_gabe7aa477c7c5b3887df1d762a750b04a}
+
+
+\-Timer/\-Counter 0. 
+
+\hypertarget{group__sysclk__group_ga03be785696a3e76b1b3c6ea6104ac630}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-C1@{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-C1}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-C1@{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-C1}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-C1}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-T\-C1~(\-A\-V\-R32\-\_\-\-T\-C1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_ga03be785696a3e76b1b3c6ea6104ac630}
+
+
+\-Timer/\-Counter 1. 
+
+\hypertarget{group__sysclk__group_ga8c2db97d4e5879b8e79271ad4317965c}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-M0@{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-M0}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-M0@{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-M0}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-M0}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-M0~(\-A\-V\-R32\-\_\-\-T\-W\-I\-M0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_ga8c2db97d4e5879b8e79271ad4317965c}
+
+
+\-T\-W\-I \-Master 0. 
+
+\hypertarget{group__sysclk__group_gaa6b40c9fda3fc4cf86201bf5d35c60e4}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-M1@{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-M1}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-M1@{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-M1}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-M1}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-M1~(\-A\-V\-R32\-\_\-\-T\-W\-I\-M1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_gaa6b40c9fda3fc4cf86201bf5d35c60e4}
+
+
+\-T\-W\-I \-Master 1. 
+
+\hypertarget{group__sysclk__group_gaacb0f0e01d42f813394a6dc51171d0f1}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-S0@{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-S0}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-S0@{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-S0}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-S0}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-S0~(\-A\-V\-R32\-\_\-\-T\-W\-I\-S0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_gaacb0f0e01d42f813394a6dc51171d0f1}
+
+
+\-T\-W\-I \-Slave 0. 
+
+\hypertarget{group__sysclk__group_ga8949d9bb62e29e020979d3d428d8fb53}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-S1@{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-S1}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-S1@{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-S1}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-S1}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-T\-W\-I\-S1~(\-A\-V\-R32\-\_\-\-T\-W\-I\-S1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_ga8949d9bb62e29e020979d3d428d8fb53}
+
+
+\-T\-W\-I \-Slave 1. 
+
+\hypertarget{group__sysclk__group_gaeeea970aa1d68f0726f6ac7b19882491}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T0@{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T0}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T0@{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T0}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T0}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T0~(\-A\-V\-R32\-\_\-\-U\-S\-A\-R\-T0\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_gaeeea970aa1d68f0726f6ac7b19882491}
+
+
+\-U\-S\-A\-R\-T 0. 
+
+\hypertarget{group__sysclk__group_ga1acb0cc02d975a6d9d4e92e56a2438a0}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T1@{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T1}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T1@{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T1}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T1}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T1~(\-A\-V\-R32\-\_\-\-U\-S\-A\-R\-T1\-\_\-\-C\-L\-K\-\_\-\-P\-B\-C \% 32)}}
+\label{group__sysclk__group_ga1acb0cc02d975a6d9d4e92e56a2438a0}
+
+
+\-U\-S\-A\-R\-T 1. 
+
+\hypertarget{group__sysclk__group_gae2bb545878e7dc4040c1b1e9bab34cdd}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T2@{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T2}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T2@{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T2}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T2}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T2~(\-A\-V\-R32\-\_\-\-U\-S\-A\-R\-T2\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_gae2bb545878e7dc4040c1b1e9bab34cdd}
+
+
+\-U\-S\-A\-R\-T 2. 
+
+\hypertarget{group__sysclk__group_ga749a1c474f6bcdfb0c71e76d88371572}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T3@{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T3}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T3@{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T3}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T3}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-A\-R\-T3~(\-A\-V\-R32\-\_\-\-U\-S\-A\-R\-T3\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_ga749a1c474f6bcdfb0c71e76d88371572}
+
+
+\-U\-S\-A\-R\-T 3. 
+
+\hypertarget{group__sysclk__group_ga8853a36d0721737ccf4f7dfa2287c729}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-B\-C\-\_\-\-D\-A\-T\-A@{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-B\-C\-\_\-\-D\-A\-T\-A}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-B\-C\-\_\-\-D\-A\-T\-A@{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-B\-C\-\_\-\-D\-A\-T\-A}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-B\-C\-\_\-\-D\-A\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-B\-C\-\_\-\-D\-A\-T\-A~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-C\-L\-K\-\_\-\-H\-S\-B \% 32)}}
+\label{group__sysclk__group_ga8853a36d0721737ccf4f7dfa2287c729}
+
+
+\-U\-S\-B\-C \-D\-M\-A and \-F\-I\-F\-O interface. 
+
+\hypertarget{group__sysclk__group_ga1f50b29ea7a96a6595b6256118ec6a34}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-B\-C\-\_\-\-R\-E\-G\-S@{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-B\-C\-\_\-\-R\-E\-G\-S}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-B\-C\-\_\-\-R\-E\-G\-S@{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-B\-C\-\_\-\-R\-E\-G\-S}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-B\-C\-\_\-\-R\-E\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-U\-S\-B\-C\-\_\-\-R\-E\-G\-S~(\-A\-V\-R32\-\_\-\-U\-S\-B\-C\-\_\-\-C\-L\-K\-\_\-\-P\-B\-B \% 32)}}
+\label{group__sysclk__group_ga1f50b29ea7a96a6595b6256118ec6a34}
+
+
+\-U\-S\-B\-B registers. 
+
+\hypertarget{group__sysclk__group_gae1d87ae47bff0e2e4cab4b417cea4ab1}{
+\index{\-System Clock Management@{\-System Clock Management}!\-S\-Y\-S\-C\-L\-K\-\_\-\-W\-D\-T@{\-S\-Y\-S\-C\-L\-K\-\_\-\-W\-D\-T}}
+\index{\-S\-Y\-S\-C\-L\-K\-\_\-\-W\-D\-T@{\-S\-Y\-S\-C\-L\-K\-\_\-\-W\-D\-T}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-S\-Y\-S\-C\-L\-K\-\_\-\-W\-D\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-Y\-S\-C\-L\-K\-\_\-\-W\-D\-T~(\-A\-V\-R32\-\_\-\-W\-D\-T\-\_\-\-C\-L\-K\-\_\-\-P\-B\-A \% 32)}}
+\label{group__sysclk__group_gae1d87ae47bff0e2e4cab4b417cea4ab1}
+
+
+\-Watchdog \-Timer. 
+
+\hypertarget{group__sysclk__group_ga2ba06598e685f870cb3f410f27d75703}{
+\index{\-System Clock Management@{\-System Clock Management}!\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0@{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0}}
+\index{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0@{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C0~1}}
+\label{group__sysclk__group_ga2ba06598e685f870cb3f410f27d75703}
+
+
+\-Use \-O\-S\-C0. 
+
+\hypertarget{group__sysclk__group_ga5fee2b76449663f9d6c8f7bb34782e77}{
+\index{\-System Clock Management@{\-System Clock Management}!\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1@{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1}}
+\index{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1@{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-O\-S\-C1~2}}
+\label{group__sysclk__group_ga5fee2b76449663f9d6c8f7bb34782e77}
+
+
+\-Use \-O\-S\-C1. 
+
+\hypertarget{group__sysclk__group_ga969e47c6c1f1d38fd2afaf96f6187296}{
+\index{\-System Clock Management@{\-System Clock Management}!\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0@{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0}}
+\index{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0@{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L0~3}}
+\label{group__sysclk__group_ga969e47c6c1f1d38fd2afaf96f6187296}
+
+
+\-Use \-P\-L\-L0. 
+
+\hypertarget{group__sysclk__group_gae76666294ec5d1ca2bcfa28061cfae3f}{
+\index{\-System Clock Management@{\-System Clock Management}!\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1@{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1}}
+\index{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1@{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{\-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-C\-L\-K\-\_\-\-S\-R\-C\-\_\-\-P\-L\-L1~4}}
+\label{group__sysclk__group_gae76666294ec5d1ca2bcfa28061cfae3f}
+
+
+\-Use \-P\-L\-L1. 
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__sysclk__group_ga242399e48a97739c88b4d0c00f6101de}{
+\index{\-System Clock Management@{\-System Clock Management}!sysclk\-\_\-init@{sysclk\-\_\-init}}
+\index{sysclk\-\_\-init@{sysclk\-\_\-init}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{sysclk\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void sysclk\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__sysclk__group_ga242399e48a97739c88b4d0c00f6101de}
+
+
+\-Initialize the synchronous clock system. 
+
+\-This function will initialize the system clock and its source. \-This includes\-:
+\begin{DoxyItemize}
+\item \-Mask all synchronous clocks except for any clocks which are essential for normal operation (for example internal memory clocks).
+\item \-Set up the system clock prescalers as specified by the application's configuration file.
+\item \-Enable the clock source specified by the application's configuration file (oscillator or \-P\-L\-L) and wait for it to become stable.
+\item \-Set the main system clock source to the clock specified by the application's configuration file.
+\end{DoxyItemize}
+
+\-Since all non-\/essential peripheral clocks are initially disabled, it is the responsibility of the peripheral driver to re-\/enable any clocks that are needed for normal operation. \hypertarget{group__sysclk__group_ga9d3035baba081035de71adb2dd059ce7}{
+\index{\-System Clock Management@{\-System Clock Management}!sysclk\-\_\-priv\-\_\-disable\-\_\-module@{sysclk\-\_\-priv\-\_\-disable\-\_\-module}}
+\index{sysclk\-\_\-priv\-\_\-disable\-\_\-module@{sysclk\-\_\-priv\-\_\-disable\-\_\-module}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{sysclk\-\_\-priv\-\_\-disable\-\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}void sysclk\-\_\-priv\-\_\-disable\-\_\-module (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{bus\-\_\-id, }
+\item[{unsigned int}]{module\-\_\-index}
+\end{DoxyParamCaption}
+)}}
+\label{group__sysclk__group_ga9d3035baba081035de71adb2dd059ce7}
+\hypertarget{group__sysclk__group_ga74da4af4f93582fe3dd33dd75596cdf4}{
+\index{\-System Clock Management@{\-System Clock Management}!sysclk\-\_\-priv\-\_\-enable\-\_\-module@{sysclk\-\_\-priv\-\_\-enable\-\_\-module}}
+\index{sysclk\-\_\-priv\-\_\-enable\-\_\-module@{sysclk\-\_\-priv\-\_\-enable\-\_\-module}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{sysclk\-\_\-priv\-\_\-enable\-\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}void sysclk\-\_\-priv\-\_\-enable\-\_\-module (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{bus\-\_\-id, }
+\item[{unsigned int}]{module\-\_\-index}
+\end{DoxyParamCaption}
+)}}
+\label{group__sysclk__group_ga74da4af4f93582fe3dd33dd75596cdf4}
+\hypertarget{group__sysclk__group_ga9e93d93c137135fee8a1a7102367042e}{
+\index{\-System Clock Management@{\-System Clock Management}!sysclk\-\_\-set\-\_\-prescalers@{sysclk\-\_\-set\-\_\-prescalers}}
+\index{sysclk\-\_\-set\-\_\-prescalers@{sysclk\-\_\-set\-\_\-prescalers}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{sysclk\-\_\-set\-\_\-prescalers}]{\setlength{\rightskip}{0pt plus 5cm}void sysclk\-\_\-set\-\_\-prescalers (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{cpu\-\_\-shift, }
+\item[{unsigned int}]{pba\-\_\-shift, }
+\item[{unsigned int}]{pbb\-\_\-shift, }
+\item[{unsigned int}]{pbc\-\_\-shift}
+\end{DoxyParamCaption}
+)}}
+\label{group__sysclk__group_ga9e93d93c137135fee8a1a7102367042e}
+
+
+\-Set system clock prescaler configuration. 
+
+\-This function will change the system clock prescaler configuration to match the parameters.
+
+\begin{DoxyNote}{\-Note}
+\-The parameters to this function are device-\/specific.
+\end{DoxyNote}
+
+\begin{DoxyParams}{\-Parameters}
+{\em cpu\-\_\-shift} & \-The \-C\-P\-U clock will be divided by $2^{cpu\_shift}$ \\
+\hline
+{\em pba\-\_\-shift} & \-The \-P\-B\-A clock will be divided by $2^{pba\_shift}$ \\
+\hline
+{\em pbb\-\_\-shift} & \-The \-P\-B\-B clock will be divided by $2^{pbb\_shift}$ \\
+\hline
+{\em pbc\-\_\-shift} & \-The \-P\-B\-C clock will be divided by $2^{pbc\_shift}$ \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__sysclk__group_ga222a121dfaac21b0c0af9d4dcb39496c}{
+\index{\-System Clock Management@{\-System Clock Management}!sysclk\-\_\-set\-\_\-source@{sysclk\-\_\-set\-\_\-source}}
+\index{sysclk\-\_\-set\-\_\-source@{sysclk\-\_\-set\-\_\-source}!System Clock Management@{\-System Clock Management}}
+\subsubsection[{sysclk\-\_\-set\-\_\-source}]{\setlength{\rightskip}{0pt plus 5cm}void sysclk\-\_\-set\-\_\-source (
+\begin{DoxyParamCaption}
+\item[{uint\-\_\-fast8\-\_\-t}]{src}
+\end{DoxyParamCaption}
+)}}
+\label{group__sysclk__group_ga222a121dfaac21b0c0af9d4dcb39496c}
+
+
+\-Change the source of the main system clock. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em src} & \-The new system clock source. \-Must be one of the constants from the {\itshape \-System \-Clock \-Sources\/} section. \\
+\hline
+\end{DoxyParams}

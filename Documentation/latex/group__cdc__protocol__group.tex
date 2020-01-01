@@ -1,0 +1,712 @@
+\hypertarget{group__cdc__protocol__group}{
+\section{\-Communication \-Device \-Class \-Definitions}
+\label{group__cdc__protocol__group}\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+}
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structusb__cdc__hdr__desc__t}{usb\-\_\-cdc\-\_\-hdr\-\_\-desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-C\-D\-C \-Header \-Functional \-Descriptor. \end{DoxyCompactList}\item 
+struct \hyperlink{structusb__cdc__call__mgmt__desc__t}{usb\-\_\-cdc\-\_\-call\-\_\-mgmt\-\_\-desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-C\-D\-C \-Call \-Management \-Functional \-Descriptor. \end{DoxyCompactList}\item 
+struct \hyperlink{structusb__cdc__acm__desc__t}{usb\-\_\-cdc\-\_\-acm\-\_\-desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-C\-D\-C \-A\-C\-M \-Functional \-Descriptor. \end{DoxyCompactList}\item 
+struct \hyperlink{structusb__cdc__union__desc__t}{usb\-\_\-cdc\-\_\-union\-\_\-desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-C\-D\-C \-Union \-Functional \-Descriptor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__cdc__protocol__group_ga14096700b3ed8c5168615c5c5ee1c68d}{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T} (1)
+\end{DoxyCompactItemize}
+\subsection*{\-Possible values of class}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga4c62892f7e7d3aeba3909c2687ce8a44}{\-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-D\-E\-V\-I\-C\-E}~0x02
+\begin{DoxyCompactList}\small\item\em \-U\-S\-B \-Communication \-Device \-Class. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gaf3d488254ba4df34163f9938fe515746}{\-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-C\-O\-M\-M}~0x02
+\begin{DoxyCompactList}\small\item\em \-C\-D\-C \-Communication \-Class \-Interface. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga799bb47bad1d048e420886c575835eb4}{\-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-D\-A\-T\-A}~0x0\-A
+\begin{DoxyCompactList}\small\item\em \-C\-D\-C \-Data \-Class \-Interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-U\-S\-B \-C\-D\-C \-Subclass \-I\-Ds}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga9d555a2c20cdda9166df1f1a0deb2fe6}{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-D\-L\-C\-M}~0x01
+\begin{DoxyCompactList}\small\item\em \-Direct \-Line \-Control \-Model. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gacce3aedc4473cc5526efc16448b89221}{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-A\-C\-M}~0x02
+\begin{DoxyCompactList}\small\item\em \-Abstract \-Control \-Model. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga8e66107828e9b10a8b37823cb4436209}{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-T\-C\-M}~0x03
+\begin{DoxyCompactList}\small\item\em \-Telephone \-Control \-Model. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga279c0e93e9cf1c328e9551e62ebdc342}{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-M\-C\-C\-M}~0x04
+\begin{DoxyCompactList}\small\item\em \-Multi-\/\-Channel \-Control \-Model. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gac03be4247341651b8a14fa4c57955bca}{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-C\-C\-M}~0x05
+\begin{DoxyCompactList}\small\item\em \-C\-A\-P\-I \-Control \-Model. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gaa5ab06b184069e6a8692c6e82b2595b3}{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-E\-T\-H}~0x06
+\begin{DoxyCompactList}\small\item\em \-Ethernet \-Networking \-Control \-Model. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gaf1a7d3d1e1dd78003500d6fccd205461}{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-A\-T\-M}~0x07
+\begin{DoxyCompactList}\small\item\em \-A\-T\-M \-Networking \-Control \-Model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-U\-S\-B \-C\-D\-C \-Communication \-Interface \-Protocol \-I\-Ds}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga987e4a1ebce34edcea106094d6241032}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V25\-T\-E\-R}~0x01
+\begin{DoxyCompactList}\small\item\em \-Common \-A\-T commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-U\-S\-B \-C\-D\-C \-Data \-Interface \-Protocol \-I\-Ds}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga34f6a52b0c21cc0df8558a89ab6244aa}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-I430}~0x30
+\begin{DoxyCompactList}\small\item\em \-I\-S\-D\-N \-B\-R\-I. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gaf4adc6afe3a8d15272d6063942fe1b1d}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-D\-L\-C}~0x31
+\begin{DoxyCompactList}\small\item\em \-H\-D\-L\-C. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga23a4cfd8c12e8d75a57bda51845abc0a}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-T\-R\-A\-N\-S}~0x32
+\begin{DoxyCompactList}\small\item\em \-Transparent. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga304da80f158210479728ae1158f48498}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921\-M}~0x50
+\begin{DoxyCompactList}\small\item\em \-Q.\-921 management protocol. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gab4efd3c7d98b5d12bf01238259a50707}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921}~0x51
+\begin{DoxyCompactList}\small\item\em \-Q.\-931 \mbox{[}sic\mbox{]} \-Data link protocol. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga4a1fc0e0435a322372f24b797bdccbc6}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921\-T\-M}~0x52
+\begin{DoxyCompactList}\small\item\em \-Q.\-921 \-T\-E\-I-\/multiplexor. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga230095dec563e53ab1231c981ee9d05f}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V42\-B\-I\-S}~0x90
+\begin{DoxyCompactList}\small\item\em \-Data compression procedures. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga0083ef9581e965b89b52d55bf315e419}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q931}~0x91
+\begin{DoxyCompactList}\small\item\em \-Euro-\/\-I\-S\-D\-N protocol control. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga208090ddb75268f1f49e8e815400b6e3}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V120}~0x92
+\begin{DoxyCompactList}\small\item\em \-V.\-24 rate adaption to \-I\-S\-D\-N. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga4ae176ca7b4078cfc2506faff308d049}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-C\-A\-P\-I20}~0x93
+\begin{DoxyCompactList}\small\item\em \-C\-A\-P\-I \-Commands. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gae3fb87c639e467c9e9a1cab674a53463}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-O\-S\-T}~0x\-F\-D
+\begin{DoxyCompactList}\small\item\em \-Host based driver. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gaa4704c0876c47f0fc9b4e1e2812a746c}{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-P\-U\-F\-D}~0x\-F\-E
+\begin{DoxyCompactList}\small\item\em \-Describes the \-Protocol \-Unit \-Functional \-Descriptors \mbox{[}sic\mbox{]} on \-Communication \-Class \-Interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-U\-S\-B \-C\-D\-C \-Functional \-Descriptor \-Types}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gafe0ca40b5aacc5c750f952af952583d2}{\-C\-D\-C\-\_\-\-C\-S\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E}~0x24
+\begin{DoxyCompactList}\small\item\em \-Interface \-Functional \-Descriptor. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gae07e10978a48ff63df33c3aeedf84c3a}{\-C\-D\-C\-\_\-\-C\-S\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T}~0x25
+\begin{DoxyCompactList}\small\item\em \-Endpoint \-Functional \-Descriptor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-U\-S\-B \-C\-D\-C \-Functional \-Descriptor \-Subtypes}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gafb7ba01e68938e255cfb6727c5a02f23}{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-H\-E\-A\-D\-E\-R}~0x00
+\begin{DoxyCompactList}\small\item\em \-Header \-Functional \-Descriptor. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gaeda25d7337f810f2bd205b579510ebd4}{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T}~0x01
+\begin{DoxyCompactList}\small\item\em \-Call \-Management. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gac06eb7a8f7ac43f6be353cc8cc5f8ce8}{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-A\-C\-M}~0x02
+\begin{DoxyCompactList}\small\item\em \-Abstract \-Control \-Management. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga27581d98e9052d843b2f4767f7d39110}{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-U\-N\-I\-O\-N}~0x06
+\begin{DoxyCompactList}\small\item\em \-Union \-Functional \-Descriptor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-U\-S\-B \-C\-D\-C \-Request \-I\-Ds}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gac9488d02fd62ae9c3cbaea21a92ab06c}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-E\-N\-C\-A\-P\-S\-U\-L\-A\-T\-E\-D\-\_\-\-C\-O\-M\-M\-A\-N\-D}~0x00
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gaea0db4450686edfe7f5ecbd7772db08c}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-N\-C\-A\-P\-S\-U\-L\-A\-T\-E\-D\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}~0x01
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga84c2ea5b5542b229be667ba6ad81d97f}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E}~0x02
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gaf04ea09f95ab7fb012462f7679c126d4}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E}~0x03
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga85bffa3729c58e2ac4cbec0c3bc0873c}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-C\-L\-E\-A\-R\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E}~0x04
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga283df094c43680698900ac8fdefb7687}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-U\-X\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E}~0x10
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga193e50f401d74557e36be10f8be0ddbd}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-H\-O\-O\-K\-\_\-\-S\-T\-A\-T\-E}~0x11
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga2c303c4a845634355a8f96ac1c965c15}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-P\-U\-L\-S\-E\-\_\-\-S\-E\-T\-U\-P}~0x12
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gace1ba968487e94d8accfa1817b56899a}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-P\-U\-L\-S\-E}~0x13
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gaa95ef54582b5f30d9b343cd1be5b9051}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-I\-M\-E}~0x14
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga2373fab42c699e4ed789b88a3755255a}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-R\-I\-N\-G\-\_\-\-A\-U\-X\-\_\-\-J\-A\-C\-K}~0x15
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga4e36b0b1795b8fb8d47f0864fbc50120}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-C\-O\-D\-I\-N\-G}~0x20
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga4225199eaffc265eb87f5fd50729428b}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-C\-O\-D\-I\-N\-G}~0x21
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga5095b668106c8843dda529f539e0eed1}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-N\-T\-R\-O\-L\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E}~0x22
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga7cba4467d40cd6532019864a7d068c8d}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-B\-R\-E\-A\-K}~0x23
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gaacab4e30847dde3f01d792290ebea666}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-R\-I\-N\-G\-E\-R\-\_\-\-P\-A\-R\-M\-S}~0x30
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gafb80f6a095d4508e211ed5e775b2c500}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-R\-I\-N\-G\-E\-R\-\_\-\-P\-A\-R\-M\-S}~0x31
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gad3375aed1f7a5e7df4685126d66f09b6}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N\-\_\-\-P\-A\-R\-M\-S}~0x32
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga69f047ea3ec9e3a356ff005a81a6dbad}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N\-\_\-\-P\-A\-R\-M\-S}~0x33
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga3683e27c05ec1d65d1a22a014b665792}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-P\-A\-R\-M\-S}~0x34
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gafe2f2f77e0f6fa768d3fae25131ef7fb}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-P\-A\-R\-M\-S}~0x35
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga68985a9191870bd17d55657d413a17da}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-D\-I\-A\-L\-\_\-\-D\-I\-G\-I\-T\-S}~0x36
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gaa9d1d583e759b94bec18d8ae2c5b830c}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R}~0x37
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gaa1dbd05f95ee9fa9b0a18c3baaf70510}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R}~0x38
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga27d474737f5224baecff3f702aea647c}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-C\-L\-E\-A\-R\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R}~0x39
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga4f0045336cd0d38e988a424bbcb8fce3}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-P\-R\-O\-F\-I\-L\-E}~0x3\-A
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga68617aa6e12d072222b232ab71f9e226}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-M\-U\-L\-T\-I\-C\-A\-S\-T\-\_\-\-F\-I\-L\-T\-E\-R\-S}~0x40
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga43abcd76b528dfc9cf1efbf3ba37bab0}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-O\-W\-E\-R\-\_\-\-M\-A\-N\-A\-G\-E\-M\-E\-N\-T\-\_\-\-P\-A\-T\-T\-E\-R\-N\-F\-I\-L\-T\-E\-R}~0x41
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga4bcd264cbcf653c18532ed313b818ee5}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-O\-W\-E\-R\-\_\-\-M\-A\-N\-A\-G\-E\-M\-E\-N\-T\-\_\-\-P\-A\-T\-T\-E\-R\-N\-F\-I\-L\-T\-E\-R}~0x42
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga7d4e4730f093e5af9870351470093562}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-F\-I\-L\-T\-E\-R}~0x43
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gaa035e847093134f53d71bd46d346a7fc}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C}~0x44
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga95ef1719d5a884fec7ee4c2d7db80d82}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-A\-T\-A\-\_\-\-F\-O\-R\-M\-A\-T}~0x50
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga51a6c3496ca4f926d0401126e3e9aee6}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C\-S}~0x51
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gabb6d36ab906dfa74e80b42e7d87660ee}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-V\-C}~0x52
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga84ff24c8cbc01c595db2ba129640befb}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-A\-T\-M\-\_\-\-V\-C\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C\-S}~0x53
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gab920e7b71fb8698431c35cef60126777}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-R\-I\-N\-G\-\_\-\-D\-E\-T\-E\-C\-T}~0x09
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga55b0f0c908d50cb9aa8553a17f118e12}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E}~0x20
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gafa88febd1fa012a2546955f369dda31a}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-C\-A\-L\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-H\-A\-N\-G\-E}~0x28
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga56a8138659ffd7322ba8be458deacb85}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-H\-A\-N\-G\-E}~0x29
+\end{DoxyCompactItemize}
+\subsection*{\-U\-S\-B \-C\-D\-C \-Call \-Management \-Capabilities}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gadba5c50400705310683bce4604525634}{\-C\-D\-C\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D}~(1 $<$$<$ 0)
+\begin{DoxyCompactList}\small\item\em \-Device handles call management itself. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_ga84beb2dffd6b294aed339d1dcf4dadf2}{\-C\-D\-C\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T\-\_\-\-O\-V\-E\-R\-\_\-\-D\-C\-I}~(1 $<$$<$ 1)
+\begin{DoxyCompactList}\small\item\em \-Device can send/receive call management info over a \-Data \-Class interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-U\-S\-B \-C\-D\-C \-A\-C\-M \-Capabilities}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gab1dab8b998f3a80f796edaf74567d4a7}{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S}~(1 $<$$<$ 0)
+\item 
+\#define \hyperlink{group__cdc__protocol__group_gacba280f60d9dacf049a41a6711b1e9b2}{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-L\-I\-N\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S}~(1 $<$$<$ 1)
+\item 
+\#define \hyperlink{group__cdc__protocol__group_ga5e20369c655ed417fb699944b064ebdc}{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-S\-E\-N\-D\-B\-R\-E\-A\-K\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S}~(1 $<$$<$ 2)
+\begin{DoxyCompactList}\small\item\em \-Device supports the request \-Send\-\_\-\-Break. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__cdc__protocol__group_gac7cc3782b884395213a99ffae74b159f}{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S}~(1 $<$$<$ 3)
+\begin{DoxyCompactList}\small\item\em \-Device supports the notification \-Network\-\_\-\-Connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{group__cdc__protocol__group_gab1dab8b998f3a80f796edaf74567d4a7}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S@{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S}}
+\index{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S@{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S~(1 $<$$<$ 0)}}
+\label{group__cdc__protocol__group_gab1dab8b998f3a80f796edaf74567d4a7}
+\-Device supports the request combination of \-Set\-\_\-\-Comm\-\_\-\-Feature, \-Clear\-\_\-\-Comm\-\_\-\-Feature, and \-Get\-\_\-\-Comm\-\_\-\-Feature. \hypertarget{group__cdc__protocol__group_gacba280f60d9dacf049a41a6711b1e9b2}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-L\-I\-N\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S@{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-L\-I\-N\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S}}
+\index{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-L\-I\-N\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S@{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-L\-I\-N\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-L\-I\-N\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-L\-I\-N\-E\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S~(1 $<$$<$ 1)}}
+\label{group__cdc__protocol__group_gacba280f60d9dacf049a41a6711b1e9b2}
+\-Device supports the request combination of \-Set\-\_\-\-Line\-\_\-\-Coding, \-Set\-\_\-\-Control\-\_\-\-Line\-\_\-\-State, \-Get\-\_\-\-Line\-\_\-\-Coding, and the notification \-Serial\-\_\-\-State. \hypertarget{group__cdc__protocol__group_gac7cc3782b884395213a99ffae74b159f}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S@{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S}}
+\index{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S@{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S~(1 $<$$<$ 3)}}
+\label{group__cdc__protocol__group_gac7cc3782b884395213a99ffae74b159f}
+
+
+\-Device supports the notification \-Network\-\_\-\-Connection. 
+
+\hypertarget{group__cdc__protocol__group_ga5e20369c655ed417fb699944b064ebdc}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-S\-E\-N\-D\-B\-R\-E\-A\-K\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S@{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-S\-E\-N\-D\-B\-R\-E\-A\-K\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S}}
+\index{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-S\-E\-N\-D\-B\-R\-E\-A\-K\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S@{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-S\-E\-N\-D\-B\-R\-E\-A\-K\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-S\-E\-N\-D\-B\-R\-E\-A\-K\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-A\-C\-M\-\_\-\-S\-U\-P\-P\-O\-R\-T\-\_\-\-S\-E\-N\-D\-B\-R\-E\-A\-K\-\_\-\-R\-E\-Q\-U\-E\-S\-T\-S~(1 $<$$<$ 2)}}
+\label{group__cdc__protocol__group_ga5e20369c655ed417fb699944b064ebdc}
+
+
+\-Device supports the request \-Send\-\_\-\-Break. 
+
+\hypertarget{group__cdc__protocol__group_ga84beb2dffd6b294aed339d1dcf4dadf2}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T\-\_\-\-O\-V\-E\-R\-\_\-\-D\-C\-I@{\-C\-D\-C\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T\-\_\-\-O\-V\-E\-R\-\_\-\-D\-C\-I}}
+\index{\-C\-D\-C\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T\-\_\-\-O\-V\-E\-R\-\_\-\-D\-C\-I@{\-C\-D\-C\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T\-\_\-\-O\-V\-E\-R\-\_\-\-D\-C\-I}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T\-\_\-\-O\-V\-E\-R\-\_\-\-D\-C\-I}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T\-\_\-\-O\-V\-E\-R\-\_\-\-D\-C\-I~(1 $<$$<$ 1)}}
+\label{group__cdc__protocol__group_ga84beb2dffd6b294aed339d1dcf4dadf2}
+
+
+\-Device can send/receive call management info over a \-Data \-Class interface. 
+
+\hypertarget{group__cdc__protocol__group_gadba5c50400705310683bce4604525634}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D@{\-C\-D\-C\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D}}
+\index{\-C\-D\-C\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D@{\-C\-D\-C\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T\-\_\-\-S\-U\-P\-P\-O\-R\-T\-E\-D~(1 $<$$<$ 0)}}
+\label{group__cdc__protocol__group_gadba5c50400705310683bce4604525634}
+
+
+\-Device handles call management itself. 
+
+\hypertarget{group__cdc__protocol__group_gaf3d488254ba4df34163f9938fe515746}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-C\-O\-M\-M@{\-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-C\-O\-M\-M}}
+\index{\-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-C\-O\-M\-M@{\-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-C\-O\-M\-M}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-C\-O\-M\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-C\-O\-M\-M~0x02}}
+\label{group__cdc__protocol__group_gaf3d488254ba4df34163f9938fe515746}
+
+
+\-C\-D\-C \-Communication \-Class \-Interface. 
+
+\hypertarget{group__cdc__protocol__group_ga799bb47bad1d048e420886c575835eb4}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-D\-A\-T\-A@{\-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-D\-A\-T\-A}}
+\index{\-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-D\-A\-T\-A@{\-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-D\-A\-T\-A}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-D\-A\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-D\-A\-T\-A~0x0\-A}}
+\label{group__cdc__protocol__group_ga799bb47bad1d048e420886c575835eb4}
+
+
+\-C\-D\-C \-Data \-Class \-Interface. 
+
+\hypertarget{group__cdc__protocol__group_ga4c62892f7e7d3aeba3909c2687ce8a44}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-D\-E\-V\-I\-C\-E@{\-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-D\-E\-V\-I\-C\-E}}
+\index{\-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-D\-E\-V\-I\-C\-E@{\-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-D\-E\-V\-I\-C\-E}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-D\-E\-V\-I\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-C\-L\-A\-S\-S\-\_\-\-D\-E\-V\-I\-C\-E~0x02}}
+\label{group__cdc__protocol__group_ga4c62892f7e7d3aeba3909c2687ce8a44}
+
+
+\-U\-S\-B \-Communication \-Device \-Class. 
+
+\hypertarget{group__cdc__protocol__group_gae07e10978a48ff63df33c3aeedf84c3a}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-C\-S\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T@{\-C\-D\-C\-\_\-\-C\-S\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T}}
+\index{\-C\-D\-C\-\_\-\-C\-S\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T@{\-C\-D\-C\-\_\-\-C\-S\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-C\-S\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-C\-S\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T~0x25}}
+\label{group__cdc__protocol__group_gae07e10978a48ff63df33c3aeedf84c3a}
+
+
+\-Endpoint \-Functional \-Descriptor. 
+
+\hypertarget{group__cdc__protocol__group_gafe0ca40b5aacc5c750f952af952583d2}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-C\-S\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E@{\-C\-D\-C\-\_\-\-C\-S\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E}}
+\index{\-C\-D\-C\-\_\-\-C\-S\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E@{\-C\-D\-C\-\_\-\-C\-S\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-C\-S\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-C\-S\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E~0x24}}
+\label{group__cdc__protocol__group_gafe0ca40b5aacc5c750f952af952583d2}
+
+
+\-Interface \-Functional \-Descriptor. 
+
+\hypertarget{group__cdc__protocol__group_ga4ae176ca7b4078cfc2506faff308d049}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-C\-A\-P\-I20@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-C\-A\-P\-I20}}
+\index{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-C\-A\-P\-I20@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-C\-A\-P\-I20}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-C\-A\-P\-I20}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-C\-A\-P\-I20~0x93}}
+\label{group__cdc__protocol__group_ga4ae176ca7b4078cfc2506faff308d049}
+
+
+\-C\-A\-P\-I \-Commands. 
+
+\hypertarget{group__cdc__protocol__group_gaf4adc6afe3a8d15272d6063942fe1b1d}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-D\-L\-C@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-D\-L\-C}}
+\index{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-D\-L\-C@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-D\-L\-C}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-D\-L\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-D\-L\-C~0x31}}
+\label{group__cdc__protocol__group_gaf4adc6afe3a8d15272d6063942fe1b1d}
+
+
+\-H\-D\-L\-C. 
+
+\hypertarget{group__cdc__protocol__group_gae3fb87c639e467c9e9a1cab674a53463}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-O\-S\-T@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-O\-S\-T}}
+\index{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-O\-S\-T@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-O\-S\-T}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-O\-S\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-H\-O\-S\-T~0x\-F\-D}}
+\label{group__cdc__protocol__group_gae3fb87c639e467c9e9a1cab674a53463}
+
+
+\-Host based driver. 
+
+\hypertarget{group__cdc__protocol__group_ga34f6a52b0c21cc0df8558a89ab6244aa}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-I430@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-I430}}
+\index{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-I430@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-I430}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-I430}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-I430~0x30}}
+\label{group__cdc__protocol__group_ga34f6a52b0c21cc0df8558a89ab6244aa}
+
+
+\-I\-S\-D\-N \-B\-R\-I. 
+
+\hypertarget{group__cdc__protocol__group_gaa4704c0876c47f0fc9b4e1e2812a746c}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-P\-U\-F\-D@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-P\-U\-F\-D}}
+\index{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-P\-U\-F\-D@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-P\-U\-F\-D}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-P\-U\-F\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-P\-U\-F\-D~0x\-F\-E}}
+\label{group__cdc__protocol__group_gaa4704c0876c47f0fc9b4e1e2812a746c}
+
+
+\-Describes the \-Protocol \-Unit \-Functional \-Descriptors \mbox{[}sic\mbox{]} on \-Communication \-Class \-Interface. 
+
+\hypertarget{group__cdc__protocol__group_gab4efd3c7d98b5d12bf01238259a50707}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921}}
+\index{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921~0x51}}
+\label{group__cdc__protocol__group_gab4efd3c7d98b5d12bf01238259a50707}
+
+
+\-Q.\-931 \mbox{[}sic\mbox{]} \-Data link protocol. 
+
+\hypertarget{group__cdc__protocol__group_ga304da80f158210479728ae1158f48498}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921\-M@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921\-M}}
+\index{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921\-M@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921\-M}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921\-M~0x50}}
+\label{group__cdc__protocol__group_ga304da80f158210479728ae1158f48498}
+
+
+\-Q.\-921 management protocol. 
+
+\hypertarget{group__cdc__protocol__group_ga4a1fc0e0435a322372f24b797bdccbc6}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921\-T\-M@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921\-T\-M}}
+\index{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921\-T\-M@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921\-T\-M}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921\-T\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q921\-T\-M~0x52}}
+\label{group__cdc__protocol__group_ga4a1fc0e0435a322372f24b797bdccbc6}
+
+
+\-Q.\-921 \-T\-E\-I-\/multiplexor. 
+
+\hypertarget{group__cdc__protocol__group_ga0083ef9581e965b89b52d55bf315e419}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q931@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q931}}
+\index{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q931@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q931}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q931}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-Q931~0x91}}
+\label{group__cdc__protocol__group_ga0083ef9581e965b89b52d55bf315e419}
+
+
+\-Euro-\/\-I\-S\-D\-N protocol control. 
+
+\hypertarget{group__cdc__protocol__group_ga23a4cfd8c12e8d75a57bda51845abc0a}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-T\-R\-A\-N\-S@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-T\-R\-A\-N\-S}}
+\index{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-T\-R\-A\-N\-S@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-T\-R\-A\-N\-S}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-T\-R\-A\-N\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-T\-R\-A\-N\-S~0x32}}
+\label{group__cdc__protocol__group_ga23a4cfd8c12e8d75a57bda51845abc0a}
+
+
+\-Transparent. 
+
+\hypertarget{group__cdc__protocol__group_ga208090ddb75268f1f49e8e815400b6e3}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V120@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V120}}
+\index{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V120@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V120}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V120}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V120~0x92}}
+\label{group__cdc__protocol__group_ga208090ddb75268f1f49e8e815400b6e3}
+
+
+\-V.\-24 rate adaption to \-I\-S\-D\-N. 
+
+\hypertarget{group__cdc__protocol__group_ga987e4a1ebce34edcea106094d6241032}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V25\-T\-E\-R@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V25\-T\-E\-R}}
+\index{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V25\-T\-E\-R@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V25\-T\-E\-R}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V25\-T\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V25\-T\-E\-R~0x01}}
+\label{group__cdc__protocol__group_ga987e4a1ebce34edcea106094d6241032}
+
+
+\-Common \-A\-T commands. 
+
+\hypertarget{group__cdc__protocol__group_ga230095dec563e53ab1231c981ee9d05f}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V42\-B\-I\-S@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V42\-B\-I\-S}}
+\index{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V42\-B\-I\-S@{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V42\-B\-I\-S}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V42\-B\-I\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-V42\-B\-I\-S~0x90}}
+\label{group__cdc__protocol__group_ga230095dec563e53ab1231c981ee9d05f}
+
+
+\-Data compression procedures. 
+
+\hypertarget{group__cdc__protocol__group_gac06eb7a8f7ac43f6be353cc8cc5f8ce8}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-A\-C\-M@{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-A\-C\-M}}
+\index{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-A\-C\-M@{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-A\-C\-M}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-A\-C\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-A\-C\-M~0x02}}
+\label{group__cdc__protocol__group_gac06eb7a8f7ac43f6be353cc8cc5f8ce8}
+
+
+\-Abstract \-Control \-Management. 
+
+\hypertarget{group__cdc__protocol__group_gaeda25d7337f810f2bd205b579510ebd4}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T@{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T}}
+\index{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T@{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-C\-A\-L\-L\-\_\-\-M\-G\-M\-T~0x01}}
+\label{group__cdc__protocol__group_gaeda25d7337f810f2bd205b579510ebd4}
+
+
+\-Call \-Management. 
+
+\hypertarget{group__cdc__protocol__group_gafb7ba01e68938e255cfb6727c5a02f23}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-H\-E\-A\-D\-E\-R@{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-H\-E\-A\-D\-E\-R}}
+\index{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-H\-E\-A\-D\-E\-R@{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-H\-E\-A\-D\-E\-R}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-H\-E\-A\-D\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-H\-E\-A\-D\-E\-R~0x00}}
+\label{group__cdc__protocol__group_gafb7ba01e68938e255cfb6727c5a02f23}
+
+
+\-Header \-Functional \-Descriptor. 
+
+\hypertarget{group__cdc__protocol__group_ga27581d98e9052d843b2f4767f7d39110}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-U\-N\-I\-O\-N@{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-U\-N\-I\-O\-N}}
+\index{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-U\-N\-I\-O\-N@{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-U\-N\-I\-O\-N}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-U\-N\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-S\-C\-S\-\_\-\-U\-N\-I\-O\-N~0x06}}
+\label{group__cdc__protocol__group_ga27581d98e9052d843b2f4767f7d39110}
+
+
+\-Union \-Functional \-Descriptor. 
+
+\hypertarget{group__cdc__protocol__group_gacce3aedc4473cc5526efc16448b89221}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-A\-C\-M@{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-A\-C\-M}}
+\index{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-A\-C\-M@{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-A\-C\-M}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-A\-C\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-A\-C\-M~0x02}}
+\label{group__cdc__protocol__group_gacce3aedc4473cc5526efc16448b89221}
+
+
+\-Abstract \-Control \-Model. 
+
+\hypertarget{group__cdc__protocol__group_gaf1a7d3d1e1dd78003500d6fccd205461}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-A\-T\-M@{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-A\-T\-M}}
+\index{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-A\-T\-M@{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-A\-T\-M}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-A\-T\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-A\-T\-M~0x07}}
+\label{group__cdc__protocol__group_gaf1a7d3d1e1dd78003500d6fccd205461}
+
+
+\-A\-T\-M \-Networking \-Control \-Model. 
+
+\hypertarget{group__cdc__protocol__group_gac03be4247341651b8a14fa4c57955bca}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-C\-C\-M@{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-C\-C\-M}}
+\index{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-C\-C\-M@{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-C\-C\-M}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-C\-C\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-C\-C\-M~0x05}}
+\label{group__cdc__protocol__group_gac03be4247341651b8a14fa4c57955bca}
+
+
+\-C\-A\-P\-I \-Control \-Model. 
+
+\hypertarget{group__cdc__protocol__group_ga9d555a2c20cdda9166df1f1a0deb2fe6}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-D\-L\-C\-M@{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-D\-L\-C\-M}}
+\index{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-D\-L\-C\-M@{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-D\-L\-C\-M}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-D\-L\-C\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-D\-L\-C\-M~0x01}}
+\label{group__cdc__protocol__group_ga9d555a2c20cdda9166df1f1a0deb2fe6}
+
+
+\-Direct \-Line \-Control \-Model. 
+
+\hypertarget{group__cdc__protocol__group_gaa5ab06b184069e6a8692c6e82b2595b3}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-E\-T\-H@{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-E\-T\-H}}
+\index{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-E\-T\-H@{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-E\-T\-H}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-E\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-E\-T\-H~0x06}}
+\label{group__cdc__protocol__group_gaa5ab06b184069e6a8692c6e82b2595b3}
+
+
+\-Ethernet \-Networking \-Control \-Model. 
+
+\hypertarget{group__cdc__protocol__group_ga279c0e93e9cf1c328e9551e62ebdc342}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-M\-C\-C\-M@{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-M\-C\-C\-M}}
+\index{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-M\-C\-C\-M@{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-M\-C\-C\-M}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-M\-C\-C\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-M\-C\-C\-M~0x04}}
+\label{group__cdc__protocol__group_ga279c0e93e9cf1c328e9551e62ebdc342}
+
+
+\-Multi-\/\-Channel \-Control \-Model. 
+
+\hypertarget{group__cdc__protocol__group_ga8e66107828e9b10a8b37823cb4436209}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-T\-C\-M@{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-T\-C\-M}}
+\index{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-T\-C\-M@{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-T\-C\-M}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-T\-C\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-D\-C\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S\-\_\-\-T\-C\-M~0x03}}
+\label{group__cdc__protocol__group_ga8e66107828e9b10a8b37823cb4436209}
+
+
+\-Telephone \-Control \-Model. 
+
+\hypertarget{group__cdc__protocol__group_ga85bffa3729c58e2ac4cbec0c3bc0873c}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-C\-L\-E\-A\-R\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-C\-L\-E\-A\-R\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-C\-L\-E\-A\-R\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-C\-L\-E\-A\-R\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-C\-L\-E\-A\-R\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-C\-L\-E\-A\-R\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E~0x04}}
+\label{group__cdc__protocol__group_ga85bffa3729c58e2ac4cbec0c3bc0873c}
+\hypertarget{group__cdc__protocol__group_ga27d474737f5224baecff3f702aea647c}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-C\-L\-E\-A\-R\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-C\-L\-E\-A\-R\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-C\-L\-E\-A\-R\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-C\-L\-E\-A\-R\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-C\-L\-E\-A\-R\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-C\-L\-E\-A\-R\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R~0x39}}
+\label{group__cdc__protocol__group_ga27d474737f5224baecff3f702aea647c}
+\hypertarget{group__cdc__protocol__group_ga68985a9191870bd17d55657d413a17da}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-D\-I\-A\-L\-\_\-\-D\-I\-G\-I\-T\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-D\-I\-A\-L\-\_\-\-D\-I\-G\-I\-T\-S}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-D\-I\-A\-L\-\_\-\-D\-I\-G\-I\-T\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-D\-I\-A\-L\-\_\-\-D\-I\-G\-I\-T\-S}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-D\-I\-A\-L\-\_\-\-D\-I\-G\-I\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-D\-I\-A\-L\-\_\-\-D\-I\-G\-I\-T\-S~0x36}}
+\label{group__cdc__protocol__group_ga68985a9191870bd17d55657d413a17da}
+\hypertarget{group__cdc__protocol__group_ga51a6c3496ca4f926d0401126e3e9aee6}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C\-S}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C\-S}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C\-S~0x51}}
+\label{group__cdc__protocol__group_ga51a6c3496ca4f926d0401126e3e9aee6}
+\hypertarget{group__cdc__protocol__group_ga84ff24c8cbc01c595db2ba129640befb}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-A\-T\-M\-\_\-\-V\-C\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-A\-T\-M\-\_\-\-V\-C\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C\-S}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-A\-T\-M\-\_\-\-V\-C\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-A\-T\-M\-\_\-\-V\-C\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C\-S}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-A\-T\-M\-\_\-\-V\-C\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-A\-T\-M\-\_\-\-V\-C\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C\-S~0x53}}
+\label{group__cdc__protocol__group_ga84ff24c8cbc01c595db2ba129640befb}
+\hypertarget{group__cdc__protocol__group_gaf04ea09f95ab7fb012462f7679c126d4}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E~0x03}}
+\label{group__cdc__protocol__group_gaf04ea09f95ab7fb012462f7679c126d4}
+\hypertarget{group__cdc__protocol__group_gaea0db4450686edfe7f5ecbd7772db08c}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-N\-C\-A\-P\-S\-U\-L\-A\-T\-E\-D\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-N\-C\-A\-P\-S\-U\-L\-A\-T\-E\-D\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-N\-C\-A\-P\-S\-U\-L\-A\-T\-E\-D\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-N\-C\-A\-P\-S\-U\-L\-A\-T\-E\-D\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-N\-C\-A\-P\-S\-U\-L\-A\-T\-E\-D\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-N\-C\-A\-P\-S\-U\-L\-A\-T\-E\-D\-\_\-\-R\-E\-S\-P\-O\-N\-S\-E~0x01}}
+\label{group__cdc__protocol__group_gaea0db4450686edfe7f5ecbd7772db08c}
+\hypertarget{group__cdc__protocol__group_ga4bcd264cbcf653c18532ed313b818ee5}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-O\-W\-E\-R\-\_\-\-M\-A\-N\-A\-G\-E\-M\-E\-N\-T\-\_\-\-P\-A\-T\-T\-E\-R\-N\-F\-I\-L\-T\-E\-R@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-O\-W\-E\-R\-\_\-\-M\-A\-N\-A\-G\-E\-M\-E\-N\-T\-\_\-\-P\-A\-T\-T\-E\-R\-N\-F\-I\-L\-T\-E\-R}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-O\-W\-E\-R\-\_\-\-M\-A\-N\-A\-G\-E\-M\-E\-N\-T\-\_\-\-P\-A\-T\-T\-E\-R\-N\-F\-I\-L\-T\-E\-R@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-O\-W\-E\-R\-\_\-\-M\-A\-N\-A\-G\-E\-M\-E\-N\-T\-\_\-\-P\-A\-T\-T\-E\-R\-N\-F\-I\-L\-T\-E\-R}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-O\-W\-E\-R\-\_\-\-M\-A\-N\-A\-G\-E\-M\-E\-N\-T\-\_\-\-P\-A\-T\-T\-E\-R\-N\-F\-I\-L\-T\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-O\-W\-E\-R\-\_\-\-M\-A\-N\-A\-G\-E\-M\-E\-N\-T\-\_\-\-P\-A\-T\-T\-E\-R\-N\-F\-I\-L\-T\-E\-R~0x42}}
+\label{group__cdc__protocol__group_ga4bcd264cbcf653c18532ed313b818ee5}
+\hypertarget{group__cdc__protocol__group_gaa035e847093134f53d71bd46d346a7fc}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-S\-T\-A\-T\-I\-S\-T\-I\-C~0x44}}
+\label{group__cdc__protocol__group_gaa035e847093134f53d71bd46d346a7fc}
+\hypertarget{group__cdc__protocol__group_ga4225199eaffc265eb87f5fd50729428b}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-C\-O\-D\-I\-N\-G@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-C\-O\-D\-I\-N\-G}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-C\-O\-D\-I\-N\-G@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-C\-O\-D\-I\-N\-G}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-C\-O\-D\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-C\-O\-D\-I\-N\-G~0x21}}
+\label{group__cdc__protocol__group_ga4225199eaffc265eb87f5fd50729428b}
+\hypertarget{group__cdc__protocol__group_gafe2f2f77e0f6fa768d3fae25131ef7fb}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-P\-A\-R\-M\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-P\-A\-R\-M\-S}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-P\-A\-R\-M\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-P\-A\-R\-M\-S}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-P\-A\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-P\-A\-R\-M\-S~0x35}}
+\label{group__cdc__protocol__group_gafe2f2f77e0f6fa768d3fae25131ef7fb}
+\hypertarget{group__cdc__protocol__group_ga69f047ea3ec9e3a356ff005a81a6dbad}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N\-\_\-\-P\-A\-R\-M\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N\-\_\-\-P\-A\-R\-M\-S}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N\-\_\-\-P\-A\-R\-M\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N\-\_\-\-P\-A\-R\-M\-S}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N\-\_\-\-P\-A\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N\-\_\-\-P\-A\-R\-M\-S~0x33}}
+\label{group__cdc__protocol__group_ga69f047ea3ec9e3a356ff005a81a6dbad}
+\hypertarget{group__cdc__protocol__group_ga4f0045336cd0d38e988a424bbcb8fce3}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-P\-R\-O\-F\-I\-L\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-P\-R\-O\-F\-I\-L\-E}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-P\-R\-O\-F\-I\-L\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-P\-R\-O\-F\-I\-L\-E}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-P\-R\-O\-F\-I\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-P\-R\-O\-F\-I\-L\-E~0x3\-A}}
+\label{group__cdc__protocol__group_ga4f0045336cd0d38e988a424bbcb8fce3}
+\hypertarget{group__cdc__protocol__group_gafb80f6a095d4508e211ed5e775b2c500}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-R\-I\-N\-G\-E\-R\-\_\-\-P\-A\-R\-M\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-R\-I\-N\-G\-E\-R\-\_\-\-P\-A\-R\-M\-S}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-R\-I\-N\-G\-E\-R\-\_\-\-P\-A\-R\-M\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-R\-I\-N\-G\-E\-R\-\_\-\-P\-A\-R\-M\-S}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-R\-I\-N\-G\-E\-R\-\_\-\-P\-A\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-R\-I\-N\-G\-E\-R\-\_\-\-P\-A\-R\-M\-S~0x31}}
+\label{group__cdc__protocol__group_gafb80f6a095d4508e211ed5e775b2c500}
+\hypertarget{group__cdc__protocol__group_gaa1dbd05f95ee9fa9b0a18c3baaf70510}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-G\-E\-T\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R~0x38}}
+\label{group__cdc__protocol__group_gaa1dbd05f95ee9fa9b0a18c3baaf70510}
+\hypertarget{group__cdc__protocol__group_gafa88febd1fa012a2546955f369dda31a}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-C\-A\-L\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-H\-A\-N\-G\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-C\-A\-L\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-H\-A\-N\-G\-E}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-C\-A\-L\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-H\-A\-N\-G\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-C\-A\-L\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-H\-A\-N\-G\-E}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-C\-A\-L\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-H\-A\-N\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-C\-A\-L\-L\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-H\-A\-N\-G\-E~0x28}}
+\label{group__cdc__protocol__group_gafa88febd1fa012a2546955f369dda31a}
+\hypertarget{group__cdc__protocol__group_ga56a8138659ffd7322ba8be458deacb85}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-H\-A\-N\-G\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-H\-A\-N\-G\-E}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-H\-A\-N\-G\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-H\-A\-N\-G\-E}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-H\-A\-N\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E\-\_\-\-C\-H\-A\-N\-G\-E~0x29}}
+\label{group__cdc__protocol__group_ga56a8138659ffd7322ba8be458deacb85}
+\hypertarget{group__cdc__protocol__group_gab920e7b71fb8698431c35cef60126777}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-R\-I\-N\-G\-\_\-\-D\-E\-T\-E\-C\-T@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-R\-I\-N\-G\-\_\-\-D\-E\-T\-E\-C\-T}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-R\-I\-N\-G\-\_\-\-D\-E\-T\-E\-C\-T@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-R\-I\-N\-G\-\_\-\-D\-E\-T\-E\-C\-T}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-R\-I\-N\-G\-\_\-\-D\-E\-T\-E\-C\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-R\-I\-N\-G\-\_\-\-D\-E\-T\-E\-C\-T~0x09}}
+\label{group__cdc__protocol__group_gab920e7b71fb8698431c35cef60126777}
+\hypertarget{group__cdc__protocol__group_ga55b0f0c908d50cb9aa8553a17f118e12}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-N\-O\-T\-I\-F\-Y\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-S\-T\-A\-T\-E~0x20}}
+\label{group__cdc__protocol__group_ga55b0f0c908d50cb9aa8553a17f118e12}
+\hypertarget{group__cdc__protocol__group_ga2c303c4a845634355a8f96ac1c965c15}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-P\-U\-L\-S\-E\-\_\-\-S\-E\-T\-U\-P@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-P\-U\-L\-S\-E\-\_\-\-S\-E\-T\-U\-P}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-P\-U\-L\-S\-E\-\_\-\-S\-E\-T\-U\-P@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-P\-U\-L\-S\-E\-\_\-\-S\-E\-T\-U\-P}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-P\-U\-L\-S\-E\-\_\-\-S\-E\-T\-U\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-P\-U\-L\-S\-E\-\_\-\-S\-E\-T\-U\-P~0x12}}
+\label{group__cdc__protocol__group_ga2c303c4a845634355a8f96ac1c965c15}
+\hypertarget{group__cdc__protocol__group_ga2373fab42c699e4ed789b88a3755255a}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-R\-I\-N\-G\-\_\-\-A\-U\-X\-\_\-\-J\-A\-C\-K@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-R\-I\-N\-G\-\_\-\-A\-U\-X\-\_\-\-J\-A\-C\-K}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-R\-I\-N\-G\-\_\-\-A\-U\-X\-\_\-\-J\-A\-C\-K@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-R\-I\-N\-G\-\_\-\-A\-U\-X\-\_\-\-J\-A\-C\-K}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-R\-I\-N\-G\-\_\-\-A\-U\-X\-\_\-\-J\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-R\-I\-N\-G\-\_\-\-A\-U\-X\-\_\-\-J\-A\-C\-K~0x15}}
+\label{group__cdc__protocol__group_ga2373fab42c699e4ed789b88a3755255a}
+\hypertarget{group__cdc__protocol__group_ga7cba4467d40cd6532019864a7d068c8d}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-B\-R\-E\-A\-K@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-B\-R\-E\-A\-K}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-B\-R\-E\-A\-K@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-B\-R\-E\-A\-K}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-B\-R\-E\-A\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-B\-R\-E\-A\-K~0x23}}
+\label{group__cdc__protocol__group_ga7cba4467d40cd6532019864a7d068c8d}
+\hypertarget{group__cdc__protocol__group_gac9488d02fd62ae9c3cbaea21a92ab06c}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-E\-N\-C\-A\-P\-S\-U\-L\-A\-T\-E\-D\-\_\-\-C\-O\-M\-M\-A\-N\-D@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-E\-N\-C\-A\-P\-S\-U\-L\-A\-T\-E\-D\-\_\-\-C\-O\-M\-M\-A\-N\-D}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-E\-N\-C\-A\-P\-S\-U\-L\-A\-T\-E\-D\-\_\-\-C\-O\-M\-M\-A\-N\-D@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-E\-N\-C\-A\-P\-S\-U\-L\-A\-T\-E\-D\-\_\-\-C\-O\-M\-M\-A\-N\-D}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-E\-N\-C\-A\-P\-S\-U\-L\-A\-T\-E\-D\-\_\-\-C\-O\-M\-M\-A\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-E\-N\-C\-A\-P\-S\-U\-L\-A\-T\-E\-D\-\_\-\-C\-O\-M\-M\-A\-N\-D~0x00}}
+\label{group__cdc__protocol__group_gac9488d02fd62ae9c3cbaea21a92ab06c}
+\hypertarget{group__cdc__protocol__group_gace1ba968487e94d8accfa1817b56899a}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-P\-U\-L\-S\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-P\-U\-L\-S\-E}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-P\-U\-L\-S\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-P\-U\-L\-S\-E}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-P\-U\-L\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-N\-D\-\_\-\-P\-U\-L\-S\-E~0x13}}
+\label{group__cdc__protocol__group_gace1ba968487e94d8accfa1817b56899a}
+\hypertarget{group__cdc__protocol__group_ga95ef1719d5a884fec7ee4c2d7db80d82}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-A\-T\-A\-\_\-\-F\-O\-R\-M\-A\-T@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-A\-T\-A\-\_\-\-F\-O\-R\-M\-A\-T}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-A\-T\-A\-\_\-\-F\-O\-R\-M\-A\-T@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-A\-T\-A\-\_\-\-F\-O\-R\-M\-A\-T}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-A\-T\-A\-\_\-\-F\-O\-R\-M\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-A\-T\-A\-\_\-\-F\-O\-R\-M\-A\-T~0x50}}
+\label{group__cdc__protocol__group_ga95ef1719d5a884fec7ee4c2d7db80d82}
+\hypertarget{group__cdc__protocol__group_gabb6d36ab906dfa74e80b42e7d87660ee}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-V\-C@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-V\-C}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-V\-C@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-V\-C}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-V\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-T\-M\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-V\-C~0x52}}
+\label{group__cdc__protocol__group_gabb6d36ab906dfa74e80b42e7d87660ee}
+\hypertarget{group__cdc__protocol__group_ga283df094c43680698900ac8fdefb7687}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-U\-X\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-U\-X\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-U\-X\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-U\-X\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-U\-X\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-A\-U\-X\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E~0x10}}
+\label{group__cdc__protocol__group_ga283df094c43680698900ac8fdefb7687}
+\hypertarget{group__cdc__protocol__group_ga84c2ea5b5542b229be667ba6ad81d97f}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-M\-M\-\_\-\-F\-E\-A\-T\-U\-R\-E~0x02}}
+\label{group__cdc__protocol__group_ga84c2ea5b5542b229be667ba6ad81d97f}
+\hypertarget{group__cdc__protocol__group_ga5095b668106c8843dda529f539e0eed1}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-N\-T\-R\-O\-L\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-N\-T\-R\-O\-L\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-N\-T\-R\-O\-L\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-N\-T\-R\-O\-L\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-N\-T\-R\-O\-L\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-C\-O\-N\-T\-R\-O\-L\-\_\-\-L\-I\-N\-E\-\_\-\-S\-T\-A\-T\-E~0x22}}
+\label{group__cdc__protocol__group_ga5095b668106c8843dda529f539e0eed1}
+\hypertarget{group__cdc__protocol__group_ga68617aa6e12d072222b232ab71f9e226}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-M\-U\-L\-T\-I\-C\-A\-S\-T\-\_\-\-F\-I\-L\-T\-E\-R\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-M\-U\-L\-T\-I\-C\-A\-S\-T\-\_\-\-F\-I\-L\-T\-E\-R\-S}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-M\-U\-L\-T\-I\-C\-A\-S\-T\-\_\-\-F\-I\-L\-T\-E\-R\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-M\-U\-L\-T\-I\-C\-A\-S\-T\-\_\-\-F\-I\-L\-T\-E\-R\-S}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-M\-U\-L\-T\-I\-C\-A\-S\-T\-\_\-\-F\-I\-L\-T\-E\-R\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-M\-U\-L\-T\-I\-C\-A\-S\-T\-\_\-\-F\-I\-L\-T\-E\-R\-S~0x40}}
+\label{group__cdc__protocol__group_ga68617aa6e12d072222b232ab71f9e226}
+\hypertarget{group__cdc__protocol__group_ga7d4e4730f093e5af9870351470093562}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-F\-I\-L\-T\-E\-R@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-F\-I\-L\-T\-E\-R}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-F\-I\-L\-T\-E\-R@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-F\-I\-L\-T\-E\-R}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-F\-I\-L\-T\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-A\-C\-K\-E\-T\-\_\-\-F\-I\-L\-T\-E\-R~0x43}}
+\label{group__cdc__protocol__group_ga7d4e4730f093e5af9870351470093562}
+\hypertarget{group__cdc__protocol__group_ga43abcd76b528dfc9cf1efbf3ba37bab0}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-O\-W\-E\-R\-\_\-\-M\-A\-N\-A\-G\-E\-M\-E\-N\-T\-\_\-\-P\-A\-T\-T\-E\-R\-N\-F\-I\-L\-T\-E\-R@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-O\-W\-E\-R\-\_\-\-M\-A\-N\-A\-G\-E\-M\-E\-N\-T\-\_\-\-P\-A\-T\-T\-E\-R\-N\-F\-I\-L\-T\-E\-R}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-O\-W\-E\-R\-\_\-\-M\-A\-N\-A\-G\-E\-M\-E\-N\-T\-\_\-\-P\-A\-T\-T\-E\-R\-N\-F\-I\-L\-T\-E\-R@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-O\-W\-E\-R\-\_\-\-M\-A\-N\-A\-G\-E\-M\-E\-N\-T\-\_\-\-P\-A\-T\-T\-E\-R\-N\-F\-I\-L\-T\-E\-R}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-O\-W\-E\-R\-\_\-\-M\-A\-N\-A\-G\-E\-M\-E\-N\-T\-\_\-\-P\-A\-T\-T\-E\-R\-N\-F\-I\-L\-T\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-E\-T\-H\-E\-R\-N\-E\-T\-\_\-\-P\-O\-W\-E\-R\-\_\-\-M\-A\-N\-A\-G\-E\-M\-E\-N\-T\-\_\-\-P\-A\-T\-T\-E\-R\-N\-F\-I\-L\-T\-E\-R~0x41}}
+\label{group__cdc__protocol__group_ga43abcd76b528dfc9cf1efbf3ba37bab0}
+\hypertarget{group__cdc__protocol__group_ga193e50f401d74557e36be10f8be0ddbd}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-H\-O\-O\-K\-\_\-\-S\-T\-A\-T\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-H\-O\-O\-K\-\_\-\-S\-T\-A\-T\-E}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-H\-O\-O\-K\-\_\-\-S\-T\-A\-T\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-H\-O\-O\-K\-\_\-\-S\-T\-A\-T\-E}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-H\-O\-O\-K\-\_\-\-S\-T\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-H\-O\-O\-K\-\_\-\-S\-T\-A\-T\-E~0x11}}
+\label{group__cdc__protocol__group_ga193e50f401d74557e36be10f8be0ddbd}
+\hypertarget{group__cdc__protocol__group_ga4e36b0b1795b8fb8d47f0864fbc50120}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-C\-O\-D\-I\-N\-G@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-C\-O\-D\-I\-N\-G}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-C\-O\-D\-I\-N\-G@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-C\-O\-D\-I\-N\-G}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-C\-O\-D\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-C\-O\-D\-I\-N\-G~0x20}}
+\label{group__cdc__protocol__group_ga4e36b0b1795b8fb8d47f0864fbc50120}
+\hypertarget{group__cdc__protocol__group_ga3683e27c05ec1d65d1a22a014b665792}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-P\-A\-R\-M\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-P\-A\-R\-M\-S}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-P\-A\-R\-M\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-P\-A\-R\-M\-S}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-P\-A\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-L\-I\-N\-E\-\_\-\-P\-A\-R\-M\-S~0x34}}
+\label{group__cdc__protocol__group_ga3683e27c05ec1d65d1a22a014b665792}
+\hypertarget{group__cdc__protocol__group_gad3375aed1f7a5e7df4685126d66f09b6}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N\-\_\-\-P\-A\-R\-M\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N\-\_\-\-P\-A\-R\-M\-S}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N\-\_\-\-P\-A\-R\-M\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N\-\_\-\-P\-A\-R\-M\-S}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N\-\_\-\-P\-A\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-O\-P\-E\-R\-A\-T\-I\-O\-N\-\_\-\-P\-A\-R\-M\-S~0x32}}
+\label{group__cdc__protocol__group_gad3375aed1f7a5e7df4685126d66f09b6}
+\hypertarget{group__cdc__protocol__group_gaa95ef54582b5f30d9b343cd1be5b9051}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-I\-M\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-I\-M\-E}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-I\-M\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-I\-M\-E}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-I\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-P\-U\-L\-S\-E\-\_\-\-T\-I\-M\-E~0x14}}
+\label{group__cdc__protocol__group_gaa95ef54582b5f30d9b343cd1be5b9051}
+\hypertarget{group__cdc__protocol__group_gaacab4e30847dde3f01d792290ebea666}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-R\-I\-N\-G\-E\-R\-\_\-\-P\-A\-R\-M\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-R\-I\-N\-G\-E\-R\-\_\-\-P\-A\-R\-M\-S}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-R\-I\-N\-G\-E\-R\-\_\-\-P\-A\-R\-M\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-R\-I\-N\-G\-E\-R\-\_\-\-P\-A\-R\-M\-S}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-R\-I\-N\-G\-E\-R\-\_\-\-P\-A\-R\-M\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-R\-I\-N\-G\-E\-R\-\_\-\-P\-A\-R\-M\-S~0x30}}
+\label{group__cdc__protocol__group_gaacab4e30847dde3f01d792290ebea666}
+\hypertarget{group__cdc__protocol__group_gaa9d1d583e759b94bec18d8ae2c5b830c}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-D\-C\-\_\-\-S\-E\-T\-\_\-\-U\-N\-I\-T\-\_\-\-P\-A\-R\-A\-M\-E\-T\-E\-R~0x37}}
+\label{group__cdc__protocol__group_gaa9d1d583e759b94bec18d8ae2c5b830c}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__cdc__protocol__group_ga14096700b3ed8c5168615c5c5ee1c68d}{
+\index{\-Communication Device Class Definitions@{\-Communication Device Class Definitions}!\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T@{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T}}
+\index{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T@{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T}!Communication Device Class Definitions@{\-Communication Device Class Definitions}}
+\subsubsection[{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T (
+\begin{DoxyParamCaption}
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__cdc__protocol__group_ga14096700b3ed8c5168615c5c5ee1c68d}

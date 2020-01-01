@@ -1,0 +1,128 @@
+\hypertarget{group__interrupt__deprecated__group}{
+\section{\-Deprecated interrupt definitions}
+\label{group__interrupt__deprecated__group}\index{\-Deprecated interrupt definitions@{\-Deprecated interrupt definitions}}
+}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__interrupt__deprecated__group_gaebdc47e7800e11d79b9e5e2da1fecaa6}{\-Enable\-\_\-global\-\_\-interrupt}()~cpu\-\_\-irq\-\_\-enable()
+\item 
+\#define \hyperlink{group__interrupt__deprecated__group_ga4834270e1b8984fe025bce15e7ae1564}{\-Disable\-\_\-global\-\_\-interrupt}()~cpu\-\_\-irq\-\_\-disable()
+\item 
+\#define \hyperlink{group__interrupt__deprecated__group_gab7b13c60d26b190e73e540586f1868f8}{\-Is\-\_\-global\-\_\-interrupt\-\_\-enabled}()~cpu\-\_\-irq\-\_\-is\-\_\-enabled()
+\item 
+\#define \hyperlink{group__interrupt__deprecated__group_gaf356f020be969d92c1761afcb98cbc5b}{\-Enable\-\_\-interrupt\-\_\-level}(level)~cpu\-\_\-irq\-\_\-enable\-\_\-level(level)
+\item 
+\#define \hyperlink{group__interrupt__deprecated__group_ga8bd9b64c87e586fccd12bc168117ec7e}{\-Disable\-\_\-interrupt\-\_\-level}(level)~cpu\-\_\-irq\-\_\-disable\-\_\-level(level)
+\item 
+\#define \hyperlink{group__interrupt__deprecated__group_ga2da97a4e1ac3493674ecf983dcecaa38}{\-Is\-\_\-interrupt\-\_\-level\-\_\-enabled}(level)~cpu\-\_\-irq\-\_\-level\-\_\-is\-\_\-enabled(level)
+\end{DoxyCompactItemize}
+\subsection*{\-Interrupt protection of code sections}
+\label{_amgrp2736af3a8b5af6f595758658c5e341ae}%
+ \begin{DoxyNote}{\-Note}
+\-Use cpu\-\_\-irq\-\_\-save and cpu\-\_\-irq\-\_\-restore instead of these macros. 
+\end{DoxyNote}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__interrupt__deprecated__group_ga6614d1866189f3f0c9a66e5c18e6a261}{\-A\-V\-R32\-\_\-\-E\-N\-T\-E\-R\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L\-\_\-\-R\-E\-G\-I\-O\-N}()
+\begin{DoxyCompactList}\small\item\em \-Start section with code protected against interrupts. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__interrupt__deprecated__group_ga85b7f1705a7949f2e8dfacb071e00c6a}{\-A\-V\-R32\-\_\-\-L\-E\-A\-V\-E\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L\-\_\-\-R\-E\-G\-I\-O\-N}()
+\begin{DoxyCompactList}\small\item\em \-End section with code protected against interrupts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{group__interrupt__deprecated__group_ga6614d1866189f3f0c9a66e5c18e6a261}{
+\index{\-Deprecated interrupt definitions@{\-Deprecated interrupt definitions}!\-A\-V\-R32\-\_\-\-E\-N\-T\-E\-R\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L\-\_\-\-R\-E\-G\-I\-O\-N@{\-A\-V\-R32\-\_\-\-E\-N\-T\-E\-R\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L\-\_\-\-R\-E\-G\-I\-O\-N}}
+\index{\-A\-V\-R32\-\_\-\-E\-N\-T\-E\-R\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L\-\_\-\-R\-E\-G\-I\-O\-N@{\-A\-V\-R32\-\_\-\-E\-N\-T\-E\-R\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L\-\_\-\-R\-E\-G\-I\-O\-N}!Deprecated interrupt definitions@{\-Deprecated interrupt definitions}}
+\subsubsection[{\-A\-V\-R32\-\_\-\-E\-N\-T\-E\-R\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L\-\_\-\-R\-E\-G\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-V\-R32\-\_\-\-E\-N\-T\-E\-R\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L\-\_\-\-R\-E\-G\-I\-O\-N(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__interrupt__deprecated__group_ga6614d1866189f3f0c9a66e5c18e6a261}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+{                                                                      \
+                bool global_interrupt_enabled = Is_global_interrupt_enabled(); 
+      \
+                Disable_global_interrupt();
+\end{DoxyCode}
+
+
+\-Start section with code protected against interrupts. 
+
+\hypertarget{group__interrupt__deprecated__group_ga85b7f1705a7949f2e8dfacb071e00c6a}{
+\index{\-Deprecated interrupt definitions@{\-Deprecated interrupt definitions}!\-A\-V\-R32\-\_\-\-L\-E\-A\-V\-E\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L\-\_\-\-R\-E\-G\-I\-O\-N@{\-A\-V\-R32\-\_\-\-L\-E\-A\-V\-E\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L\-\_\-\-R\-E\-G\-I\-O\-N}}
+\index{\-A\-V\-R32\-\_\-\-L\-E\-A\-V\-E\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L\-\_\-\-R\-E\-G\-I\-O\-N@{\-A\-V\-R32\-\_\-\-L\-E\-A\-V\-E\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L\-\_\-\-R\-E\-G\-I\-O\-N}!Deprecated interrupt definitions@{\-Deprecated interrupt definitions}}
+\subsubsection[{\-A\-V\-R32\-\_\-\-L\-E\-A\-V\-E\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L\-\_\-\-R\-E\-G\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-V\-R32\-\_\-\-L\-E\-A\-V\-E\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L\-\_\-\-R\-E\-G\-I\-O\-N(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__interrupt__deprecated__group_ga85b7f1705a7949f2e8dfacb071e00c6a}
+{\bfseries \-Value\-:}
+\begin{DoxyCode}
+if (global_interrupt_enabled) Enable_global_interrupt();       \
+        }
+\end{DoxyCode}
+
+
+\-End section with code protected against interrupts. 
+
+\begin{DoxyNote}{\-Note}
+\-This macro must always be used in conjunction with \hyperlink{group__interrupt__deprecated__group_ga6614d1866189f3f0c9a66e5c18e6a261}{\-A\-V\-R32\-\_\-\-E\-N\-T\-E\-R\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L\-\_\-\-R\-E\-G\-I\-O\-N} so that interrupts are enabled again. 
+\end{DoxyNote}
+\hypertarget{group__interrupt__deprecated__group_ga4834270e1b8984fe025bce15e7ae1564}{
+\index{\-Deprecated interrupt definitions@{\-Deprecated interrupt definitions}!\-Disable\-\_\-global\-\_\-interrupt@{\-Disable\-\_\-global\-\_\-interrupt}}
+\index{\-Disable\-\_\-global\-\_\-interrupt@{\-Disable\-\_\-global\-\_\-interrupt}!Deprecated interrupt definitions@{\-Deprecated interrupt definitions}}
+\subsubsection[{\-Disable\-\_\-global\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Disable\-\_\-global\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~cpu\-\_\-irq\-\_\-disable()}}
+\label{group__interrupt__deprecated__group_ga4834270e1b8984fe025bce15e7ae1564}
+\hypertarget{group__interrupt__deprecated__group_ga8bd9b64c87e586fccd12bc168117ec7e}{
+\index{\-Deprecated interrupt definitions@{\-Deprecated interrupt definitions}!\-Disable\-\_\-interrupt\-\_\-level@{\-Disable\-\_\-interrupt\-\_\-level}}
+\index{\-Disable\-\_\-interrupt\-\_\-level@{\-Disable\-\_\-interrupt\-\_\-level}!Deprecated interrupt definitions@{\-Deprecated interrupt definitions}}
+\subsubsection[{\-Disable\-\_\-interrupt\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Disable\-\_\-interrupt\-\_\-level(
+\begin{DoxyParamCaption}
+\item[{}]{level}
+\end{DoxyParamCaption}
+)~cpu\-\_\-irq\-\_\-disable\-\_\-level(level)}}
+\label{group__interrupt__deprecated__group_ga8bd9b64c87e586fccd12bc168117ec7e}
+\hypertarget{group__interrupt__deprecated__group_gaebdc47e7800e11d79b9e5e2da1fecaa6}{
+\index{\-Deprecated interrupt definitions@{\-Deprecated interrupt definitions}!\-Enable\-\_\-global\-\_\-interrupt@{\-Enable\-\_\-global\-\_\-interrupt}}
+\index{\-Enable\-\_\-global\-\_\-interrupt@{\-Enable\-\_\-global\-\_\-interrupt}!Deprecated interrupt definitions@{\-Deprecated interrupt definitions}}
+\subsubsection[{\-Enable\-\_\-global\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Enable\-\_\-global\-\_\-interrupt(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~cpu\-\_\-irq\-\_\-enable()}}
+\label{group__interrupt__deprecated__group_gaebdc47e7800e11d79b9e5e2da1fecaa6}
+\hypertarget{group__interrupt__deprecated__group_gaf356f020be969d92c1761afcb98cbc5b}{
+\index{\-Deprecated interrupt definitions@{\-Deprecated interrupt definitions}!\-Enable\-\_\-interrupt\-\_\-level@{\-Enable\-\_\-interrupt\-\_\-level}}
+\index{\-Enable\-\_\-interrupt\-\_\-level@{\-Enable\-\_\-interrupt\-\_\-level}!Deprecated interrupt definitions@{\-Deprecated interrupt definitions}}
+\subsubsection[{\-Enable\-\_\-interrupt\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Enable\-\_\-interrupt\-\_\-level(
+\begin{DoxyParamCaption}
+\item[{}]{level}
+\end{DoxyParamCaption}
+)~cpu\-\_\-irq\-\_\-enable\-\_\-level(level)}}
+\label{group__interrupt__deprecated__group_gaf356f020be969d92c1761afcb98cbc5b}
+\hypertarget{group__interrupt__deprecated__group_gab7b13c60d26b190e73e540586f1868f8}{
+\index{\-Deprecated interrupt definitions@{\-Deprecated interrupt definitions}!\-Is\-\_\-global\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-global\-\_\-interrupt\-\_\-enabled}}
+\index{\-Is\-\_\-global\-\_\-interrupt\-\_\-enabled@{\-Is\-\_\-global\-\_\-interrupt\-\_\-enabled}!Deprecated interrupt definitions@{\-Deprecated interrupt definitions}}
+\subsubsection[{\-Is\-\_\-global\-\_\-interrupt\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-global\-\_\-interrupt\-\_\-enabled(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~cpu\-\_\-irq\-\_\-is\-\_\-enabled()}}
+\label{group__interrupt__deprecated__group_gab7b13c60d26b190e73e540586f1868f8}
+\hypertarget{group__interrupt__deprecated__group_ga2da97a4e1ac3493674ecf983dcecaa38}{
+\index{\-Deprecated interrupt definitions@{\-Deprecated interrupt definitions}!\-Is\-\_\-interrupt\-\_\-level\-\_\-enabled@{\-Is\-\_\-interrupt\-\_\-level\-\_\-enabled}}
+\index{\-Is\-\_\-interrupt\-\_\-level\-\_\-enabled@{\-Is\-\_\-interrupt\-\_\-level\-\_\-enabled}!Deprecated interrupt definitions@{\-Deprecated interrupt definitions}}
+\subsubsection[{\-Is\-\_\-interrupt\-\_\-level\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-Is\-\_\-interrupt\-\_\-level\-\_\-enabled(
+\begin{DoxyParamCaption}
+\item[{}]{level}
+\end{DoxyParamCaption}
+)~cpu\-\_\-irq\-\_\-level\-\_\-is\-\_\-enabled(level)}}
+\label{group__interrupt__deprecated__group_ga2da97a4e1ac3493674ecf983dcecaa38}

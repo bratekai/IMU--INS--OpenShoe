@@ -1,0 +1,46 @@
+\hypertarget{main_8c}{
+\section{main.c \-File \-Reference}
+\label{main_8c}\index{main.\-c@{main.\-c}}
+}
+
+
+\-Main function and interrupt control.  
+
+
+{\ttfamily \#include $<$asf.\-h$>$}\*
+{\ttfamily \#include \char`\"{}process\-\_\-sequence.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}external\-\_\-interface.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}imu\-\_\-interface.\-h\char`\"{}}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__openshoe__runtime__framework_gab157d45366997e63d5799b3f93a8ad40}{imu\-\_\-interupt\-\_\-init} (void)
+\item 
+void \hyperlink{group__openshoe__runtime__framework_ga704ef9a891717a7ad0e0248601e6d8e4}{eic\-\_\-nmi\-\_\-handler} (void)
+\item 
+void \hyperlink{group__openshoe__runtime__framework_ga43f5e0d6db0fb41a437cc9096b32e9b5}{system\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em \-Initialize hardware and communication interfaces. \end{DoxyCompactList}\item 
+void \hyperlink{group__openshoe__runtime__framework_gaa860f79f0ccbec4ade4b9b5f2173f05a}{wait\-\_\-for\-\_\-interrupt} (void)
+\begin{DoxyCompactList}\small\item\em \-Wait for the interrupt flag to be set, toggle it, increase interrupt counter, and return. \end{DoxyCompactList}\item 
+void \hyperlink{group__openshoe__runtime__framework_gab84fcc7107ace73c7c806351d3dd27f7}{within\-\_\-time\-\_\-limit} (void)
+\begin{DoxyCompactList}\small\item\em \-Checks that the main loop has finished before next interrupt. \end{DoxyCompactList}\item 
+int \hyperlink{group__openshoe__runtime__framework_ga840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{group__openshoe__runtime__framework_gae1dde88f49a15ac8b44d187ed1a2c2f4}{interrupt\-\_\-counter} = 0
+\item 
+uint32\-\_\-t \hyperlink{group__openshoe__runtime__framework_gabab0bf40697a144a8e46dfe6c4290656}{imu\-\_\-interrupt\-\_\-ts}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Main function and interrupt control. \-This file contains the main function and interrupt control. \-The main function control the execution of the program. \-The single interrupt routine only toggles a flag which the main function is polling. \-Each time the flag is toggled, the following will be executed in the main loop\-: 1) data is read from the \-I\-M\-U 2) functions in the process sequence are executed 3) commands are received from the user 4) data are transmitted back 5) and it is checked that a new interrupt did not arrived while the program was executing the main loop.
+
+\begin{DoxyAuthor}{\-Authors}
+\-John-\/\-Olof \-Nilsson, \-Isaac \-Skog 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{\-Copyright}
+\-Copyright (c) 2011 \-Open\-Shoe, \-I\-S\-C \-License (open source) 
+\end{DoxyCopyright}

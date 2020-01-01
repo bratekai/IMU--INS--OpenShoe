@@ -1,0 +1,53 @@
+
+/**
+  \mainpage The OpenShoe project
+ 
+ \section sec_intro Introduction
+
+OpenShoe is an academic project for creating an open source embedded foot-mounted INS implementation. The project contain both hardware and software components all of which are documented and released under open source licenses. Our motivation for the project has been to
+<ol>
+	<li>Create a working prototype for ourself.</li>
+	<li>Give other researchers a short-cut to a working implementation.</li>
+</ol>
+The former is a necessity for our future research activities within indoor positioning. The planned use span from being a subcomponent in larger positioning system to being used as a stand alone component for research within the foot-mounted INS field.
+
+The latter comes from our observations of many poor implementations and measurement setups and our own experience of all small details that can go wrong. The value of an embedded implementation is the modularity and the small weight, bulk, and price in comparison with the typical sensor-plus-laptop research systems. This alleviates the work of integration in larger real-time navigation systems and makes it possibility to equip a large number of users with sensors for field performance tests and cooperative navigation studies. Our hope is that this implementation will save time, sweat, and tears for navigation researchers and facilitate the use of foot-mounted inertial navigation by researchers not specialized in inertial navigation, e.g. in fields such as  biomedical engineering, behavioral science, and ubiquitous computing.
+
+&nbsp;
+
+The initial part of the project is carried out during the fall and winter of 2011-2012 by KTH (KTH Royal Institute of Technology, Stockholm, Sweden) researchers working at IISc (Indian Institutet of Science, Bangalore, India). The project is a part of a joint Indo-Swedish project between Signal Processing Lab KTH, Statistical Signal Processing Lab IISc, and VLSI Circuits and Systems Lab IISc.
+
+
+  \section doc This documentation 
+  This is automatically generated documentation for the OpenShoe software from the OpenShoe source code. All information in this documenation can be found in the source code. However, comments in the source code is not limited to this information. For detailed documentation you should consult the source code.
+
+  \section openshoe The OpenShoe implementation
+
+OpenShoe is an open source embedded foot-mounted INS implementation including both hardware and software design.
+
+General features:
+<ol>
+	<li> Embedded ZUPT aided INS</li>
+	<li> Open source and fully documented</li>
+	<li> Reproduction cost below $900</li>
+</ol>
+Hardware features:
+<ol>
+	<li>Designed for an Analog Devices ADIS16367 IMU but with interface compitability with all IMUs in the iSensor serie</li>
+	<li>820[Hz] sampling rate, 18[g] and 1200°/s dynamic range, 330[Hz] sensor bandwidth</li>
+	<li>Processing run on an Atmel AVR32UC3C microcontroller with hardware floating point core</li>
+	<li>Footprint 28.5x40.5x32[mm]</li>
+	<li>USB interface</li>
+</ol>
+Software features:
+<ol>
+	<li>Source code written in C</li>
+	<li>Easily configured to run any user implemented algorithms</li>
+	<li>Matlab code available for communication</li>
+	<li> Reprogrammable through the USB interface.</li>
+	<li>Appear as a virtual com-port</li>
+	<li>Configurable to work as an IMU with up to 820[Hz] output rate</li>
+</ol>
+
+
+ */

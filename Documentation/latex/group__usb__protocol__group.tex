@@ -1,0 +1,816 @@
+\hypertarget{group__usb__protocol__group}{
+\section{\-U\-S\-B \-Protocol \-Definitions}
+\label{group__usb__protocol__group}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+}
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structusb__setup__req__t}{usb\-\_\-setup\-\_\-req\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-A \-U\-S\-B \-Device \-S\-E\-T\-U\-P request. \end{DoxyCompactList}\item 
+struct \hyperlink{structusb__dev__desc__t}{usb\-\_\-dev\-\_\-desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Standard \-U\-S\-B device descriptor stucture. \end{DoxyCompactList}\item 
+struct \hyperlink{structusb__dev__qual__desc__t}{usb\-\_\-dev\-\_\-qual\-\_\-desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Standard \-U\-S\-B device qualifier descriptor structure. \end{DoxyCompactList}\item 
+struct \hyperlink{structusb__association__desc__t}{usb\-\_\-association\-\_\-desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Standard \-U\-S\-B \-Interface \-Association \-Descriptor structure. \end{DoxyCompactList}\item 
+struct \hyperlink{structusb__conf__desc__t}{usb\-\_\-conf\-\_\-desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Standard \-U\-S\-B configuration descriptor structure. \end{DoxyCompactList}\item 
+struct \hyperlink{structusb__iad__desc__t}{usb\-\_\-iad\-\_\-desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Standard \-U\-S\-B association descriptor structure. \end{DoxyCompactList}\item 
+struct \hyperlink{structusb__iface__desc__t}{usb\-\_\-iface\-\_\-desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Standard \-U\-S\-B interface descriptor structure. \end{DoxyCompactList}\item 
+struct \hyperlink{structusb__ep__desc__t}{usb\-\_\-ep\-\_\-desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Standard \-U\-S\-B endpoint descriptor stcuture. \end{DoxyCompactList}\item 
+struct \hyperlink{structusb__str__desc__t}{usb\-\_\-str\-\_\-desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-A standard \-U\-S\-B string descriptor sructure. \end{DoxyCompactList}\item 
+struct \hyperlink{structusb__str__lgid__desc__t}{usb\-\_\-str\-\_\-lgid\-\_\-desc\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{\-Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__cdc__protocol__group}{\-Communication Device Class Definitions}
+\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__usb__protocol__group_ga9bccec980a4f41a481b389b4f0c9c690}{\-U\-S\-B\-\_\-\-V2\-\_\-0}~0x0200
+\begin{DoxyCompactList}\small\item\em \-Value for field bcd\-U\-S\-B. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__usb__protocol__group_ga3fae7189eea003bf79ac2949b0f50584}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T}~(0$<$$<$7)
+\begin{DoxyCompactList}\small\item\em \-U\-S\-B request data transfer direction (bm\-Request\-Type) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__usb__protocol__group_ga3d3c24265f68a720887ae4ff7158d605}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-I\-N}~(1$<$$<$7)
+\begin{DoxyCompactList}\small\item\em \-Device to host. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__usb__protocol__group_gac94f5ec9106e17f2e6d927eeac3d530f}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-M\-A\-S\-K}~(1$<$$<$7)
+\begin{DoxyCompactList}\small\item\em \-Mask. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__usb__protocol__group_ga3eb781776ab6dcbc6fa96e1b0ed18011}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-T\-A\-N\-D\-A\-R\-D}~(0$<$$<$5)
+\begin{DoxyCompactList}\small\item\em \-U\-S\-B request types (bm\-Request\-Type) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__usb__protocol__group_gaff9ee0044c6cb131b2908356adc37dff}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-L\-A\-S\-S}~(1$<$$<$5)
+\begin{DoxyCompactList}\small\item\em \-Class-\/specific request. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__usb__protocol__group_ga71855621792f72443ed5497b313a2517}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-V\-E\-N\-D\-O\-R}~(2$<$$<$5)
+\begin{DoxyCompactList}\small\item\em \-Vendor-\/specific request. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__usb__protocol__group_ga8be8332e2da1e54c74c5f2a2230b0a28}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K}~(3$<$$<$5)
+\begin{DoxyCompactList}\small\item\em \-Mask. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__usb__protocol__group_ga65c1569b970837dd4a2ad8e1b4097589}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-D\-E\-V\-I\-C\-E}~(0$<$$<$0)
+\begin{DoxyCompactList}\small\item\em \-U\-S\-B recipient codes (bm\-Request\-Type) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__usb__protocol__group_gad3d0e7d70c610967cc2ee12c5298ac69}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E}~(1$<$$<$0)
+\begin{DoxyCompactList}\small\item\em \-Recipient interface. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__usb__protocol__group_ga1be00350ff83d022d41b4eae81f1e2b2}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T}~(2$<$$<$0)
+\begin{DoxyCompactList}\small\item\em \-Recipient endpoint. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__usb__protocol__group_gabb5706061604f770d2ce1f3891ab0296}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-O\-T\-H\-E\-R}~(3$<$$<$0)
+\begin{DoxyCompactList}\small\item\em \-Recipient other. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__usb__protocol__group_gab1738c19d49fe1d4c7edccff90e9e9e4}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-M\-A\-S\-K}~(0x1\-F)
+\begin{DoxyCompactList}\small\item\em \-Mask. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__usb__protocol__group_ga0316d8f43a1648b76df257332b26aeb9}{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-A\-D\-D\-R\-\_\-\-M\-A\-S\-K}~0x0f
+\begin{DoxyCompactList}\small\item\em \-Mask selecting the index part of an endpoint address. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__usb__protocol__group_gaae8411e95f26738326bc25a0161dde99}{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-D\-I\-R\-\_\-\-I\-N}~0x80
+\begin{DoxyCompactList}\small\item\em \-Endpoint transfer direction is \-I\-N. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__usb__protocol__group_ga0510b0a04d9cef144e4d9793310abccf}{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T}~0x00
+\begin{DoxyCompactList}\small\item\em \-Endpoint transfer direction is \-O\-U\-T. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__usb__protocol__group_ga27dacd4e0b04d4ef7b8aadf6ea886f3c}{\-U\-S\-B\-\_\-\-M\-A\-X\-\_\-\-D\-E\-S\-C\-\_\-\-L\-E\-N}~255
+\begin{DoxyCompactList}\small\item\em \-Maximum length in bytes of a \-U\-S\-B descriptor. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__usb__protocol__group_gac7063e965def0eaeb4d45a6f9048dc53}{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-M\-U\-S\-T\-\_\-\-S\-E\-T}~(1 $<$$<$ 7)
+\begin{DoxyCompactList}\small\item\em \-Must always be set. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__usb__protocol__group_ga10945c8d92454009444979c38b9d2cca}{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-B\-U\-S\-\_\-\-P\-O\-W\-E\-R\-E\-D}~(0 $<$$<$ 6)
+\begin{DoxyCompactList}\small\item\em \-Bus-\/powered. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__usb__protocol__group_gaf1b445db8c331630bbedb383544ed80b}{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-S\-E\-L\-F\-\_\-\-P\-O\-W\-E\-R\-E\-D}~(1 $<$$<$ 6)
+\begin{DoxyCompactList}\small\item\em \-Self-\/powered. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__usb__protocol__group_gab8f513d1888f75d8e18960e1b1f3f747}{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-W\-A\-K\-E\-U\-P}~(1 $<$$<$ 5)
+\begin{DoxyCompactList}\small\item\em remote wakeup supported \end{DoxyCompactList}\item 
+\#define \hyperlink{group__usb__protocol__group_ga55d9db758a4f408eebf4b26c6001ac9b}{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-M\-A\-X\-\_\-\-P\-O\-W\-E\-R}(ma)~(((ma) + 1) / 2)
+\begin{DoxyCompactList}\small\item\em \-Max power in m\-A. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group__usb__protocol__group_gab43332ff8dbad3dd3c8c882b1bd68a89}{usb\-\_\-reqid} \{ \*
+\hyperlink{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89aa3f531db07d9720f1c27d383f17b41e7}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-S\-T\-A\-T\-U\-S} =  0, 
+\hyperlink{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a3e7df41451462e9647ea51127b1029cb}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-L\-E\-A\-R\-\_\-\-F\-E\-A\-T\-U\-R\-E} =  1, 
+\hyperlink{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89ac6f6f92b41b3626f3bee5585bc8ad259}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-F\-E\-A\-T\-U\-R\-E} =  3, 
+\hyperlink{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a83a1bafe1cb5a0722e661037a7409d38}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-A\-D\-D\-R\-E\-S\-S} =  5, 
+\*
+\hyperlink{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a1eefe8e6e18013141d267fc8aba28b10}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-D\-E\-S\-C\-R\-I\-P\-T\-O\-R} =  6, 
+\hyperlink{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a2297324ad7de09fcff189cb08b6e3357}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-D\-E\-S\-C\-R\-I\-P\-T\-O\-R} =  7, 
+\hyperlink{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a70ecb7290067da81c599637126d78c32}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N} =  8, 
+\hyperlink{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a8469bf7cfc2e560c005b564fe66db0ee}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N} =  9, 
+\*
+\hyperlink{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a68374dc6cca8653dcd52953ba9f80b1c}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E} =  10, 
+\hyperlink{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a1af0d8916fca29961f41fb7433126527}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E} =  11, 
+\hyperlink{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a0d759eec2d7eab896e61ff927e1752d1}{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-Y\-N\-C\-H\-\_\-\-F\-R\-A\-M\-E} =  12
+ \}
+\begin{DoxyCompactList}\small\item\em \-Standard \-U\-S\-B requests (b\-Request) \end{DoxyCompactList}\item 
+enum \hyperlink{group__usb__protocol__group_ga5c6f61a70ef0fda1a1d6f9a34f2f0f1c}{usb\-\_\-device\-\_\-status} \{ \hyperlink{group__usb__protocol__group_gga5c6f61a70ef0fda1a1d6f9a34f2f0f1cabba07ddaf5eb0b763086ab99ed82b59f}{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-B\-U\-S\-\_\-\-P\-O\-W\-E\-R\-E\-D} =  0, 
+\hyperlink{group__usb__protocol__group_gga5c6f61a70ef0fda1a1d6f9a34f2f0f1ca762e18607a236d99504f5838e96beb36}{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-S\-E\-L\-F\-\_\-\-P\-O\-W\-E\-R\-E\-D} =  1, 
+\hyperlink{group__usb__protocol__group_gga5c6f61a70ef0fda1a1d6f9a34f2f0f1ca9e2a686363488906b279116d3d66103c}{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-R\-E\-M\-O\-T\-E\-W\-A\-K\-E\-U\-P} =  2
+ \}
+\begin{DoxyCompactList}\small\item\em \-Standard \-U\-S\-B device status flags. \end{DoxyCompactList}\item 
+enum \hyperlink{group__usb__protocol__group_ga61c6d9f1bcc6112f394333fac658d627}{usb\-\_\-interface\-\_\-status} \{ \hyperlink{group__usb__protocol__group_gga61c6d9f1bcc6112f394333fac658d627a00df9dc714d093525b1f0163f6625329}{\-U\-S\-B\-\_\-\-I\-F\-A\-C\-E\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-R\-E\-S\-E\-R\-V\-E\-D} =  0
+ \}
+\begin{DoxyCompactList}\small\item\em \-Standard \-U\-S\-B \-Interface status flags. \end{DoxyCompactList}\item 
+enum \hyperlink{group__usb__protocol__group_gaf926ff975fcda57f214001b51f15092d}{usb\-\_\-endpoint\-\_\-status} \{ \hyperlink{group__usb__protocol__group_ggaf926ff975fcda57f214001b51f15092dae0ba5849fded7e7ea411f11bd627b040}{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-H\-A\-L\-T\-E\-D} =  1
+ \}
+\begin{DoxyCompactList}\small\item\em \-Standard \-U\-S\-B endpoint status flags. \end{DoxyCompactList}\item 
+enum \hyperlink{group__usb__protocol__group_gab9975b89ad7079085d0300eab037c3ac}{usb\-\_\-device\-\_\-feature} \{ \*
+\hyperlink{group__usb__protocol__group_ggab9975b89ad7079085d0300eab037c3aca9d1f5e6a07463ac38743db611c2c414a}{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-W\-A\-K\-E\-U\-P} =  1, 
+\hyperlink{group__usb__protocol__group_ggab9975b89ad7079085d0300eab037c3aca6724ffaefab5a3c54b199c4d1ea7b6ff}{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E} =  2, 
+\hyperlink{group__usb__protocol__group_ggab9975b89ad7079085d0300eab037c3aca57260a8f513dcdd3bd2285d53d09eee6}{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-O\-T\-G\-\_\-\-B\-\_\-\-H\-N\-P\-\_\-\-E\-N\-A\-B\-L\-E} =  3, 
+\hyperlink{group__usb__protocol__group_ggab9975b89ad7079085d0300eab037c3acaa1a5410f25b09a7351d8701574770e5a}{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-O\-T\-G\-\_\-\-A\-\_\-\-H\-N\-P\-\_\-\-S\-U\-P\-P\-O\-R\-T} =  4, 
+\*
+\hyperlink{group__usb__protocol__group_ggab9975b89ad7079085d0300eab037c3acac16fde59a39765321c5649b7f23145cb}{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-O\-T\-G\-\_\-\-A\-\_\-\-A\-L\-T\-\_\-\-H\-N\-P\-\_\-\-S\-U\-P\-P\-O\-R\-T} =  5
+ \}
+\begin{DoxyCompactList}\small\item\em \-Standard \-U\-S\-B device feature flags. \end{DoxyCompactList}\item 
+enum \hyperlink{group__usb__protocol__group_ga9027bb283d3666e351fe5c403292cf2e}{usb\-\_\-device\-\_\-hs\-\_\-test\-\_\-mode} \{ \*
+\hyperlink{group__usb__protocol__group_gga9027bb283d3666e351fe5c403292cf2ea713e4c1b7782e135f6e269d98fdd8ce5}{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-J} =  1, 
+\hyperlink{group__usb__protocol__group_gga9027bb283d3666e351fe5c403292cf2ea7ca60c446646b513db46c8d70f95246d}{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-K} =  2, 
+\hyperlink{group__usb__protocol__group_gga9027bb283d3666e351fe5c403292cf2eacf3a0aaed1aab82bfee139fd1b3f8126}{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-S\-E0\-\_\-\-N\-A\-K} =  3, 
+\hyperlink{group__usb__protocol__group_gga9027bb283d3666e351fe5c403292cf2eaae5d97af6d3f98cd6e4fc15d9a5eb5e9}{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-P\-A\-C\-K\-E\-T} =  4, 
+\*
+\hyperlink{group__usb__protocol__group_gga9027bb283d3666e351fe5c403292cf2ea018bc9685230b902d4432c5705161df3}{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-F\-O\-R\-C\-E\-\_\-\-E\-N\-A\-B\-L\-E} =  5
+ \}
+\begin{DoxyCompactList}\small\item\em \-Test \-Mode possible on \-H\-S \-U\-S\-B device. \end{DoxyCompactList}\item 
+enum \hyperlink{group__usb__protocol__group_gac46bc23132eb03cefa56ba47024ced5d}{usb\-\_\-endpoint\-\_\-feature} \{ \hyperlink{group__usb__protocol__group_ggac46bc23132eb03cefa56ba47024ced5daa346bf01bfcb9964e754b44c9b999d16}{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-H\-A\-L\-T} =  0
+ \}
+\begin{DoxyCompactList}\small\item\em \-Standard \-U\-S\-B endpoint feature/status flags. \end{DoxyCompactList}\item 
+enum \hyperlink{group__usb__protocol__group_gade3fc5b71e88ed167a8c8d67ee087db3}{usb\-\_\-test\-\_\-mode\-\_\-selector} \{ \*
+\hyperlink{group__usb__protocol__group_ggade3fc5b71e88ed167a8c8d67ee087db3ad8a1b477f0fa871dbde208745635eb09}{\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-J} =  0x01, 
+\hyperlink{group__usb__protocol__group_ggade3fc5b71e88ed167a8c8d67ee087db3adf91b3ec7a11997b124e2ecb2bcb3965}{\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-K} =  0x02, 
+\hyperlink{group__usb__protocol__group_ggade3fc5b71e88ed167a8c8d67ee087db3a14e0870eb309e2408717e26febf54c5f}{\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-S\-E0\-\_\-\-N\-A\-K} =  0x03, 
+\hyperlink{group__usb__protocol__group_ggade3fc5b71e88ed167a8c8d67ee087db3a11aadaaa6768ad9140a0ad6f8543d245}{\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-P\-A\-C\-K\-E\-T} =  0x04, 
+\*
+\hyperlink{group__usb__protocol__group_ggade3fc5b71e88ed167a8c8d67ee087db3ae6d07dd0dfbb61581ad6d548ab26904a}{\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-F\-O\-R\-C\-E\-\_\-\-E\-N\-A\-B\-L\-E} =  0x05
+ \}
+\begin{DoxyCompactList}\small\item\em \-Standard \-U\-S\-B \-Test \-Mode \-Selectors. \end{DoxyCompactList}\item 
+enum \hyperlink{group__usb__protocol__group_ga87d46dd117d939964c939f1518dec93f}{usb\-\_\-descriptor\-\_\-type} \{ \*
+\hyperlink{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93faf57d79677304d9cc81a1e08769259c56}{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-D\-E\-V\-I\-C\-E} =  1, 
+\hyperlink{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93fa30b73c8e214a98c686c6e97aabc3b3d7}{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N} =  2, 
+\hyperlink{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93faa745915a1e9b09eba35fdd2d455d5100}{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-S\-T\-R\-I\-N\-G} =  3, 
+\hyperlink{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93fa5d95804e21ff8a4aba8f9806c5f35edc}{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E} =  4, 
+\*
+\hyperlink{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93fa2b4e1c2a152ef2c70fd494de1806e325}{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T} =  5, 
+\hyperlink{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93fab135351d3cd9a92a46b80fbb28d0f1b3}{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-Q\-U\-A\-L\-I\-F\-I\-E\-R} =  6, 
+\hyperlink{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93fa629e5f41e4643166d544404799d323ea}{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-O\-T\-H\-E\-R\-\_\-\-S\-P\-E\-E\-D\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N} =  7, 
+\hyperlink{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93faae58238f1f4dd82be5f7797daa88f972}{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E\-\_\-\-P\-O\-W\-E\-R} =  8, 
+\*
+\hyperlink{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93fa7085a50a6df3338204b21aa106e68ab8}{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-O\-T\-G} =  9, 
+\hyperlink{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93fae32d49584455205c80a5675e933810f5}{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-I\-A\-D} =  0x0\-B
+ \}
+\begin{DoxyCompactList}\small\item\em \-Standard \-U\-S\-B descriptor types. \end{DoxyCompactList}\item 
+enum \hyperlink{group__usb__protocol__group_ga666def795a15032e5bf93a450f79113f}{usb\-\_\-ep\-\_\-type} \{ \*
+\hyperlink{group__usb__protocol__group_gga666def795a15032e5bf93a450f79113fa134795bdea12ea96534b37c9f606d497}{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-O\-N\-T\-R\-O\-L} =  0x00, 
+\hyperlink{group__usb__protocol__group_gga666def795a15032e5bf93a450f79113fa93bb5aaf88b4842a0bed6a6380790c1e}{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-S\-O\-C\-H\-R\-O\-N\-O\-U\-S} =  0x01, 
+\hyperlink{group__usb__protocol__group_gga666def795a15032e5bf93a450f79113fa173f6c972814d347875b71d85ddfc1b1}{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-U\-L\-K} =  0x02, 
+\hyperlink{group__usb__protocol__group_gga666def795a15032e5bf93a450f79113fa2b6d776cb0d3f3812620bda8fc51439b}{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-N\-T\-E\-R\-R\-U\-P\-T} =  0x03, 
+\*
+\hyperlink{group__usb__protocol__group_gga666def795a15032e5bf93a450f79113fa8169dcca1e5ea5ef9e0d11155b9728bb}{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K} =  0x03
+ \}
+\begin{DoxyCompactList}\small\item\em \-Standard \-U\-S\-B endpoint transfer types. \end{DoxyCompactList}\item 
+enum \hyperlink{group__usb__protocol__group_ga1f92deaf695c06566999f0c5343978c1}{usb\-\_\-langid} \{ \hyperlink{group__usb__protocol__group_gga1f92deaf695c06566999f0c5343978c1a8acad914e2d28c9bb1d2d3cc74c5b39e}{\-U\-S\-B\-\_\-\-L\-A\-N\-G\-I\-D\-\_\-\-E\-N\-\_\-\-U\-S} =  0x0409
+ \}
+\begin{DoxyCompactList}\small\item\em \-Standard \-U\-S\-B language \-I\-Ds for string descriptors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__usb__protocol__group_ga14096700b3ed8c5168615c5c5ee1c68d}{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T} (1)
+\item 
+\hyperlink{group__usb__protocol__group_gabe317a1520896eaf568afab27dc71540}{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-R\-E\-S\-E\-T} ()
+\end{DoxyCompactItemize}
+\subsection*{\-Generic definitions (\-Class, subclass and protocol)}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__usb__protocol__group_ga6ce548e51895ce0226ee145753a9c815}{\-N\-O\-\_\-\-C\-L\-A\-S\-S}~0x00
+\item 
+\#define \hyperlink{group__usb__protocol__group_gaac34c41004ffdf924a770974fd4152d7}{\-N\-O\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S}~0x00
+\item 
+\#define \hyperlink{group__usb__protocol__group_gaa5e6e8476d28aa6869786f87751144d0}{\-N\-O\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L}~0x00
+\end{DoxyCompactItemize}
+\subsection*{\-I\-A\-D (\-Interface \-Association \-Descriptor) constants}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__usb__protocol__group_gae8971589b19dfa71052d651617324566}{\-C\-L\-A\-S\-S\-\_\-\-I\-A\-D}~0x\-E\-F
+\item 
+\#define \hyperlink{group__usb__protocol__group_gaa4e56ac456064b641e2a3a58ea5a4ed3}{\-S\-U\-B\-\_\-\-C\-L\-A\-S\-S\-\_\-\-I\-A\-D}~0x02
+\item 
+\#define \hyperlink{group__usb__protocol__group_ga8e85bf6a9a6702c71c68dbc5c4164b9f}{\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-I\-A\-D}~0x01
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-This module defines constants and data structures provided by the \-U\-S\-B 2.\-0 specification. 
+
+\subsection{\-Define \-Documentation}
+\hypertarget{group__usb__protocol__group_gae8971589b19dfa71052d651617324566}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-C\-L\-A\-S\-S\-\_\-\-I\-A\-D@{\-C\-L\-A\-S\-S\-\_\-\-I\-A\-D}}
+\index{\-C\-L\-A\-S\-S\-\_\-\-I\-A\-D@{\-C\-L\-A\-S\-S\-\_\-\-I\-A\-D}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-C\-L\-A\-S\-S\-\_\-\-I\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-C\-L\-A\-S\-S\-\_\-\-I\-A\-D~0x\-E\-F}}
+\label{group__usb__protocol__group_gae8971589b19dfa71052d651617324566}
+\hypertarget{group__usb__protocol__group_ga6ce548e51895ce0226ee145753a9c815}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-N\-O\-\_\-\-C\-L\-A\-S\-S@{\-N\-O\-\_\-\-C\-L\-A\-S\-S}}
+\index{\-N\-O\-\_\-\-C\-L\-A\-S\-S@{\-N\-O\-\_\-\-C\-L\-A\-S\-S}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-N\-O\-\_\-\-C\-L\-A\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-N\-O\-\_\-\-C\-L\-A\-S\-S~0x00}}
+\label{group__usb__protocol__group_ga6ce548e51895ce0226ee145753a9c815}
+\hypertarget{group__usb__protocol__group_gaa5e6e8476d28aa6869786f87751144d0}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-N\-O\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L@{\-N\-O\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L}}
+\index{\-N\-O\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L@{\-N\-O\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-N\-O\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-N\-O\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L~0x00}}
+\label{group__usb__protocol__group_gaa5e6e8476d28aa6869786f87751144d0}
+\hypertarget{group__usb__protocol__group_gaac34c41004ffdf924a770974fd4152d7}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-N\-O\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S@{\-N\-O\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S}}
+\index{\-N\-O\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S@{\-N\-O\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-N\-O\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-N\-O\-\_\-\-S\-U\-B\-C\-L\-A\-S\-S~0x00}}
+\label{group__usb__protocol__group_gaac34c41004ffdf924a770974fd4152d7}
+\hypertarget{group__usb__protocol__group_ga8e85bf6a9a6702c71c68dbc5c4164b9f}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-I\-A\-D@{\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-I\-A\-D}}
+\index{\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-I\-A\-D@{\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-I\-A\-D}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-I\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-R\-O\-T\-O\-C\-O\-L\-\_\-\-I\-A\-D~0x01}}
+\label{group__usb__protocol__group_ga8e85bf6a9a6702c71c68dbc5c4164b9f}
+\hypertarget{group__usb__protocol__group_gaa4e56ac456064b641e2a3a58ea5a4ed3}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-S\-U\-B\-\_\-\-C\-L\-A\-S\-S\-\_\-\-I\-A\-D@{\-S\-U\-B\-\_\-\-C\-L\-A\-S\-S\-\_\-\-I\-A\-D}}
+\index{\-S\-U\-B\-\_\-\-C\-L\-A\-S\-S\-\_\-\-I\-A\-D@{\-S\-U\-B\-\_\-\-C\-L\-A\-S\-S\-\_\-\-I\-A\-D}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-S\-U\-B\-\_\-\-C\-L\-A\-S\-S\-\_\-\-I\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-U\-B\-\_\-\-C\-L\-A\-S\-S\-\_\-\-I\-A\-D~0x02}}
+\label{group__usb__protocol__group_gaa4e56ac456064b641e2a3a58ea5a4ed3}
+\hypertarget{group__usb__protocol__group_ga10945c8d92454009444979c38b9d2cca}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-B\-U\-S\-\_\-\-P\-O\-W\-E\-R\-E\-D@{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-B\-U\-S\-\_\-\-P\-O\-W\-E\-R\-E\-D}}
+\index{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-B\-U\-S\-\_\-\-P\-O\-W\-E\-R\-E\-D@{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-B\-U\-S\-\_\-\-P\-O\-W\-E\-R\-E\-D}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-B\-U\-S\-\_\-\-P\-O\-W\-E\-R\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-B\-U\-S\-\_\-\-P\-O\-W\-E\-R\-E\-D~(0 $<$$<$ 6)}}
+\label{group__usb__protocol__group_ga10945c8d92454009444979c38b9d2cca}
+
+
+\-Bus-\/powered. 
+
+\hypertarget{group__usb__protocol__group_gac7063e965def0eaeb4d45a6f9048dc53}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-M\-U\-S\-T\-\_\-\-S\-E\-T@{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-M\-U\-S\-T\-\_\-\-S\-E\-T}}
+\index{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-M\-U\-S\-T\-\_\-\-S\-E\-T@{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-M\-U\-S\-T\-\_\-\-S\-E\-T}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-M\-U\-S\-T\-\_\-\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-M\-U\-S\-T\-\_\-\-S\-E\-T~(1 $<$$<$ 7)}}
+\label{group__usb__protocol__group_gac7063e965def0eaeb4d45a6f9048dc53}
+
+
+\-Must always be set. 
+
+\hypertarget{group__usb__protocol__group_gab8f513d1888f75d8e18960e1b1f3f747}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-W\-A\-K\-E\-U\-P@{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-W\-A\-K\-E\-U\-P}}
+\index{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-W\-A\-K\-E\-U\-P@{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-W\-A\-K\-E\-U\-P}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-W\-A\-K\-E\-U\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-W\-A\-K\-E\-U\-P~(1 $<$$<$ 5)}}
+\label{group__usb__protocol__group_gab8f513d1888f75d8e18960e1b1f3f747}
+
+
+remote wakeup supported 
+
+\hypertarget{group__usb__protocol__group_gaf1b445db8c331630bbedb383544ed80b}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-S\-E\-L\-F\-\_\-\-P\-O\-W\-E\-R\-E\-D@{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-S\-E\-L\-F\-\_\-\-P\-O\-W\-E\-R\-E\-D}}
+\index{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-S\-E\-L\-F\-\_\-\-P\-O\-W\-E\-R\-E\-D@{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-S\-E\-L\-F\-\_\-\-P\-O\-W\-E\-R\-E\-D}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-S\-E\-L\-F\-\_\-\-P\-O\-W\-E\-R\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-S\-E\-L\-F\-\_\-\-P\-O\-W\-E\-R\-E\-D~(1 $<$$<$ 6)}}
+\label{group__usb__protocol__group_gaf1b445db8c331630bbedb383544ed80b}
+
+
+\-Self-\/powered. 
+
+\hypertarget{group__usb__protocol__group_ga55d9db758a4f408eebf4b26c6001ac9b}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-M\-A\-X\-\_\-\-P\-O\-W\-E\-R@{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-M\-A\-X\-\_\-\-P\-O\-W\-E\-R}}
+\index{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-M\-A\-X\-\_\-\-P\-O\-W\-E\-R@{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-M\-A\-X\-\_\-\-P\-O\-W\-E\-R}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-M\-A\-X\-\_\-\-P\-O\-W\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-M\-A\-X\-\_\-\-P\-O\-W\-E\-R(
+\begin{DoxyParamCaption}
+\item[{}]{ma}
+\end{DoxyParamCaption}
+)~(((ma) + 1) / 2)}}
+\label{group__usb__protocol__group_ga55d9db758a4f408eebf4b26c6001ac9b}
+
+
+\-Max power in m\-A. 
+
+\hypertarget{group__usb__protocol__group_ga0316d8f43a1648b76df257332b26aeb9}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-E\-P\-\_\-\-A\-D\-D\-R\-\_\-\-M\-A\-S\-K@{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-A\-D\-D\-R\-\_\-\-M\-A\-S\-K}}
+\index{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-A\-D\-D\-R\-\_\-\-M\-A\-S\-K@{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-A\-D\-D\-R\-\_\-\-M\-A\-S\-K}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-A\-D\-D\-R\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-E\-P\-\_\-\-A\-D\-D\-R\-\_\-\-M\-A\-S\-K~0x0f}}
+\label{group__usb__protocol__group_ga0316d8f43a1648b76df257332b26aeb9}
+
+
+\-Mask selecting the index part of an endpoint address. 
+
+\hypertarget{group__usb__protocol__group_gaae8411e95f26738326bc25a0161dde99}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-E\-P\-\_\-\-D\-I\-R\-\_\-\-I\-N@{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-D\-I\-R\-\_\-\-I\-N}}
+\index{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-D\-I\-R\-\_\-\-I\-N@{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-D\-I\-R\-\_\-\-I\-N}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-D\-I\-R\-\_\-\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-E\-P\-\_\-\-D\-I\-R\-\_\-\-I\-N~0x80}}
+\label{group__usb__protocol__group_gaae8411e95f26738326bc25a0161dde99}
+
+
+\-Endpoint transfer direction is \-I\-N. 
+
+\hypertarget{group__usb__protocol__group_ga0510b0a04d9cef144e4d9793310abccf}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-E\-P\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T@{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T}}
+\index{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T@{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-E\-P\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T~0x00}}
+\label{group__usb__protocol__group_ga0510b0a04d9cef144e4d9793310abccf}
+
+
+\-Endpoint transfer direction is \-O\-U\-T. 
+
+\hypertarget{group__usb__protocol__group_ga27dacd4e0b04d4ef7b8aadf6ea886f3c}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-M\-A\-X\-\_\-\-D\-E\-S\-C\-\_\-\-L\-E\-N@{\-U\-S\-B\-\_\-\-M\-A\-X\-\_\-\-D\-E\-S\-C\-\_\-\-L\-E\-N}}
+\index{\-U\-S\-B\-\_\-\-M\-A\-X\-\_\-\-D\-E\-S\-C\-\_\-\-L\-E\-N@{\-U\-S\-B\-\_\-\-M\-A\-X\-\_\-\-D\-E\-S\-C\-\_\-\-L\-E\-N}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-M\-A\-X\-\_\-\-D\-E\-S\-C\-\_\-\-L\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-M\-A\-X\-\_\-\-D\-E\-S\-C\-\_\-\-L\-E\-N~255}}
+\label{group__usb__protocol__group_ga27dacd4e0b04d4ef7b8aadf6ea886f3c}
+
+
+\-Maximum length in bytes of a \-U\-S\-B descriptor. 
+
+\-The maximum length of a \-U\-S\-B descriptor is limited by the 8-\/bit b\-Length field. \hypertarget{group__usb__protocol__group_ga3d3c24265f68a720887ae4ff7158d605}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-I\-N@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-I\-N}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-I\-N@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-I\-N}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-I\-N~(1$<$$<$7)}}
+\label{group__usb__protocol__group_ga3d3c24265f68a720887ae4ff7158d605}
+
+
+\-Device to host. 
+
+\hypertarget{group__usb__protocol__group_gac94f5ec9106e17f2e6d927eeac3d530f}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-M\-A\-S\-K@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-M\-A\-S\-K}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-M\-A\-S\-K@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-M\-A\-S\-K}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-M\-A\-S\-K~(1$<$$<$7)}}
+\label{group__usb__protocol__group_gac94f5ec9106e17f2e6d927eeac3d530f}
+
+
+\-Mask. 
+
+\hypertarget{group__usb__protocol__group_ga3fae7189eea003bf79ac2949b0f50584}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T~(0$<$$<$7)}}
+\label{group__usb__protocol__group_ga3fae7189eea003bf79ac2949b0f50584}
+
+
+\-U\-S\-B request data transfer direction (bm\-Request\-Type) 
+
+\-Host to device \hypertarget{group__usb__protocol__group_ga65c1569b970837dd4a2ad8e1b4097589}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-D\-E\-V\-I\-C\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-D\-E\-V\-I\-C\-E}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-D\-E\-V\-I\-C\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-D\-E\-V\-I\-C\-E}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-D\-E\-V\-I\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-D\-E\-V\-I\-C\-E~(0$<$$<$0)}}
+\label{group__usb__protocol__group_ga65c1569b970837dd4a2ad8e1b4097589}
+
+
+\-U\-S\-B recipient codes (bm\-Request\-Type) 
+
+\-Recipient device \hypertarget{group__usb__protocol__group_ga1be00350ff83d022d41b4eae81f1e2b2}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T~(2$<$$<$0)}}
+\label{group__usb__protocol__group_ga1be00350ff83d022d41b4eae81f1e2b2}
+
+
+\-Recipient endpoint. 
+
+\hypertarget{group__usb__protocol__group_gad3d0e7d70c610967cc2ee12c5298ac69}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E~(1$<$$<$0)}}
+\label{group__usb__protocol__group_gad3d0e7d70c610967cc2ee12c5298ac69}
+
+
+\-Recipient interface. 
+
+\hypertarget{group__usb__protocol__group_gab1738c19d49fe1d4c7edccff90e9e9e4}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-M\-A\-S\-K@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-M\-A\-S\-K}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-M\-A\-S\-K@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-M\-A\-S\-K}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-M\-A\-S\-K~(0x1\-F)}}
+\label{group__usb__protocol__group_gab1738c19d49fe1d4c7edccff90e9e9e4}
+
+
+\-Mask. 
+
+\hypertarget{group__usb__protocol__group_gabb5706061604f770d2ce1f3891ab0296}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-O\-T\-H\-E\-R@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-O\-T\-H\-E\-R}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-O\-T\-H\-E\-R@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-O\-T\-H\-E\-R}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-O\-T\-H\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-R\-E\-C\-I\-P\-\_\-\-O\-T\-H\-E\-R~(3$<$$<$0)}}
+\label{group__usb__protocol__group_gabb5706061604f770d2ce1f3891ab0296}
+
+
+\-Recipient other. 
+
+\hypertarget{group__usb__protocol__group_gaff9ee0044c6cb131b2908356adc37dff}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-L\-A\-S\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-L\-A\-S\-S}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-L\-A\-S\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-L\-A\-S\-S}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-L\-A\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-L\-A\-S\-S~(1$<$$<$5)}}
+\label{group__usb__protocol__group_gaff9ee0044c6cb131b2908356adc37dff}
+
+
+\-Class-\/specific request. 
+
+\hypertarget{group__usb__protocol__group_ga8be8332e2da1e54c74c5f2a2230b0a28}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K~(3$<$$<$5)}}
+\label{group__usb__protocol__group_ga8be8332e2da1e54c74c5f2a2230b0a28}
+
+
+\-Mask. 
+
+\hypertarget{group__usb__protocol__group_ga3eb781776ab6dcbc6fa96e1b0ed18011}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-T\-A\-N\-D\-A\-R\-D@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-T\-A\-N\-D\-A\-R\-D}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-T\-A\-N\-D\-A\-R\-D@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-T\-A\-N\-D\-A\-R\-D}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-T\-A\-N\-D\-A\-R\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-T\-A\-N\-D\-A\-R\-D~(0$<$$<$5)}}
+\label{group__usb__protocol__group_ga3eb781776ab6dcbc6fa96e1b0ed18011}
+
+
+\-U\-S\-B request types (bm\-Request\-Type) 
+
+\-Standard request \hypertarget{group__usb__protocol__group_ga71855621792f72443ed5497b313a2517}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-V\-E\-N\-D\-O\-R@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-V\-E\-N\-D\-O\-R}}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-V\-E\-N\-D\-O\-R@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-V\-E\-N\-D\-O\-R}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-V\-E\-N\-D\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-T\-Y\-P\-E\-\_\-\-V\-E\-N\-D\-O\-R~(2$<$$<$5)}}
+\label{group__usb__protocol__group_ga71855621792f72443ed5497b313a2517}
+
+
+\-Vendor-\/specific request. 
+
+\hypertarget{group__usb__protocol__group_ga9bccec980a4f41a481b389b4f0c9c690}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-V2\-\_\-0@{\-U\-S\-B\-\_\-\-V2\-\_\-0}}
+\index{\-U\-S\-B\-\_\-\-V2\-\_\-0@{\-U\-S\-B\-\_\-\-V2\-\_\-0}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-U\-S\-B\-\_\-\-V2\-\_\-0}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-V2\-\_\-0~0x0200}}
+\label{group__usb__protocol__group_ga9bccec980a4f41a481b389b4f0c9c690}
+
+
+\-Value for field bcd\-U\-S\-B. 
+
+\-U\-S\-B \-Specification version 2.\-00 
+
+\subsection{\-Enumeration \-Type \-Documentation}
+\hypertarget{group__usb__protocol__group_ga87d46dd117d939964c939f1518dec93f}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!usb\-\_\-descriptor\-\_\-type@{usb\-\_\-descriptor\-\_\-type}}
+\index{usb\-\_\-descriptor\-\_\-type@{usb\-\_\-descriptor\-\_\-type}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{usb\-\_\-descriptor\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf usb\-\_\-descriptor\-\_\-type}}}
+\label{group__usb__protocol__group_ga87d46dd117d939964c939f1518dec93f}
+
+
+\-Standard \-U\-S\-B descriptor types. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-D\-E\-V\-I\-C\-E@{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-D\-E\-V\-I\-C\-E}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-T\-\_\-\-D\-E\-V\-I\-C\-E@{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-D\-E\-V\-I\-C\-E}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93faf57d79677304d9cc81a1e08769259c56}{
+\-U\-S\-B\-\_\-\-D\-T\-\_\-\-D\-E\-V\-I\-C\-E}
+\label{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93faf57d79677304d9cc81a1e08769259c56}
+}]\index{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N@{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-T\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N@{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93fa30b73c8e214a98c686c6e97aabc3b3d7}{
+\-U\-S\-B\-\_\-\-D\-T\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N}
+\label{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93fa30b73c8e214a98c686c6e97aabc3b3d7}
+}]\index{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-S\-T\-R\-I\-N\-G@{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-S\-T\-R\-I\-N\-G}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-T\-\_\-\-S\-T\-R\-I\-N\-G@{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-S\-T\-R\-I\-N\-G}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93faa745915a1e9b09eba35fdd2d455d5100}{
+\-U\-S\-B\-\_\-\-D\-T\-\_\-\-S\-T\-R\-I\-N\-G}
+\label{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93faa745915a1e9b09eba35fdd2d455d5100}
+}]\index{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E@{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E@{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93fa5d95804e21ff8a4aba8f9806c5f35edc}{
+\-U\-S\-B\-\_\-\-D\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E}
+\label{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93fa5d95804e21ff8a4aba8f9806c5f35edc}
+}]\index{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T@{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-T\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T@{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93fa2b4e1c2a152ef2c70fd494de1806e325}{
+\-U\-S\-B\-\_\-\-D\-T\-\_\-\-E\-N\-D\-P\-O\-I\-N\-T}
+\label{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93fa2b4e1c2a152ef2c70fd494de1806e325}
+}]\index{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-Q\-U\-A\-L\-I\-F\-I\-E\-R@{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-Q\-U\-A\-L\-I\-F\-I\-E\-R}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-T\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-Q\-U\-A\-L\-I\-F\-I\-E\-R@{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-Q\-U\-A\-L\-I\-F\-I\-E\-R}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93fab135351d3cd9a92a46b80fbb28d0f1b3}{
+\-U\-S\-B\-\_\-\-D\-T\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-Q\-U\-A\-L\-I\-F\-I\-E\-R}
+\label{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93fab135351d3cd9a92a46b80fbb28d0f1b3}
+}]\index{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-O\-T\-H\-E\-R\-\_\-\-S\-P\-E\-E\-D\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N@{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-O\-T\-H\-E\-R\-\_\-\-S\-P\-E\-E\-D\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-T\-\_\-\-O\-T\-H\-E\-R\-\_\-\-S\-P\-E\-E\-D\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N@{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-O\-T\-H\-E\-R\-\_\-\-S\-P\-E\-E\-D\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93fa629e5f41e4643166d544404799d323ea}{
+\-U\-S\-B\-\_\-\-D\-T\-\_\-\-O\-T\-H\-E\-R\-\_\-\-S\-P\-E\-E\-D\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N}
+\label{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93fa629e5f41e4643166d544404799d323ea}
+}]\index{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E\-\_\-\-P\-O\-W\-E\-R@{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E\-\_\-\-P\-O\-W\-E\-R}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E\-\_\-\-P\-O\-W\-E\-R@{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E\-\_\-\-P\-O\-W\-E\-R}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93faae58238f1f4dd82be5f7797daa88f972}{
+\-U\-S\-B\-\_\-\-D\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E\-\_\-\-P\-O\-W\-E\-R}
+\label{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93faae58238f1f4dd82be5f7797daa88f972}
+}]\index{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-O\-T\-G@{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-O\-T\-G}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-T\-\_\-\-O\-T\-G@{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-O\-T\-G}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93fa7085a50a6df3338204b21aa106e68ab8}{
+\-U\-S\-B\-\_\-\-D\-T\-\_\-\-O\-T\-G}
+\label{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93fa7085a50a6df3338204b21aa106e68ab8}
+}]\index{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-I\-A\-D@{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-I\-A\-D}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-T\-\_\-\-I\-A\-D@{\-U\-S\-B\-\_\-\-D\-T\-\_\-\-I\-A\-D}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93fae32d49584455205c80a5675e933810f5}{
+\-U\-S\-B\-\_\-\-D\-T\-\_\-\-I\-A\-D}
+\label{group__usb__protocol__group_gga87d46dd117d939964c939f1518dec93fae32d49584455205c80a5675e933810f5}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{group__usb__protocol__group_gab9975b89ad7079085d0300eab037c3ac}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!usb\-\_\-device\-\_\-feature@{usb\-\_\-device\-\_\-feature}}
+\index{usb\-\_\-device\-\_\-feature@{usb\-\_\-device\-\_\-feature}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{usb\-\_\-device\-\_\-feature}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf usb\-\_\-device\-\_\-feature}}}
+\label{group__usb__protocol__group_gab9975b89ad7079085d0300eab037c3ac}
+
+
+\-Standard \-U\-S\-B device feature flags. 
+
+\begin{DoxyNote}{\-Note}
+valid for \-Set\-Feature request. 
+\end{DoxyNote}
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-W\-A\-K\-E\-U\-P@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-W\-A\-K\-E\-U\-P}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-W\-A\-K\-E\-U\-P@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-W\-A\-K\-E\-U\-P}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggab9975b89ad7079085d0300eab037c3aca9d1f5e6a07463ac38743db611c2c414a}{
+\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-W\-A\-K\-E\-U\-P}
+\label{group__usb__protocol__group_ggab9975b89ad7079085d0300eab037c3aca9d1f5e6a07463ac38743db611c2c414a}
+}]\-Remote wakeup enabled. \index{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggab9975b89ad7079085d0300eab037c3aca6724ffaefab5a3c54b199c4d1ea7b6ff}{
+\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E}
+\label{group__usb__protocol__group_ggab9975b89ad7079085d0300eab037c3aca6724ffaefab5a3c54b199c4d1ea7b6ff}
+}]\-U\-S\-B test mode. \index{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-O\-T\-G\-\_\-\-B\-\_\-\-H\-N\-P\-\_\-\-E\-N\-A\-B\-L\-E@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-O\-T\-G\-\_\-\-B\-\_\-\-H\-N\-P\-\_\-\-E\-N\-A\-B\-L\-E}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-O\-T\-G\-\_\-\-B\-\_\-\-H\-N\-P\-\_\-\-E\-N\-A\-B\-L\-E@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-O\-T\-G\-\_\-\-B\-\_\-\-H\-N\-P\-\_\-\-E\-N\-A\-B\-L\-E}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggab9975b89ad7079085d0300eab037c3aca57260a8f513dcdd3bd2285d53d09eee6}{
+\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-O\-T\-G\-\_\-\-B\-\_\-\-H\-N\-P\-\_\-\-E\-N\-A\-B\-L\-E}
+\label{group__usb__protocol__group_ggab9975b89ad7079085d0300eab037c3aca57260a8f513dcdd3bd2285d53d09eee6}
+}]\index{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-O\-T\-G\-\_\-\-A\-\_\-\-H\-N\-P\-\_\-\-S\-U\-P\-P\-O\-R\-T@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-O\-T\-G\-\_\-\-A\-\_\-\-H\-N\-P\-\_\-\-S\-U\-P\-P\-O\-R\-T}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-O\-T\-G\-\_\-\-A\-\_\-\-H\-N\-P\-\_\-\-S\-U\-P\-P\-O\-R\-T@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-O\-T\-G\-\_\-\-A\-\_\-\-H\-N\-P\-\_\-\-S\-U\-P\-P\-O\-R\-T}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggab9975b89ad7079085d0300eab037c3acaa1a5410f25b09a7351d8701574770e5a}{
+\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-O\-T\-G\-\_\-\-A\-\_\-\-H\-N\-P\-\_\-\-S\-U\-P\-P\-O\-R\-T}
+\label{group__usb__protocol__group_ggab9975b89ad7079085d0300eab037c3acaa1a5410f25b09a7351d8701574770e5a}
+}]\index{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-O\-T\-G\-\_\-\-A\-\_\-\-A\-L\-T\-\_\-\-H\-N\-P\-\_\-\-S\-U\-P\-P\-O\-R\-T@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-O\-T\-G\-\_\-\-A\-\_\-\-A\-L\-T\-\_\-\-H\-N\-P\-\_\-\-S\-U\-P\-P\-O\-R\-T}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-O\-T\-G\-\_\-\-A\-\_\-\-A\-L\-T\-\_\-\-H\-N\-P\-\_\-\-S\-U\-P\-P\-O\-R\-T@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-O\-T\-G\-\_\-\-A\-\_\-\-A\-L\-T\-\_\-\-H\-N\-P\-\_\-\-S\-U\-P\-P\-O\-R\-T}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggab9975b89ad7079085d0300eab037c3acac16fde59a39765321c5649b7f23145cb}{
+\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-O\-T\-G\-\_\-\-A\-\_\-\-A\-L\-T\-\_\-\-H\-N\-P\-\_\-\-S\-U\-P\-P\-O\-R\-T}
+\label{group__usb__protocol__group_ggab9975b89ad7079085d0300eab037c3acac16fde59a39765321c5649b7f23145cb}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{group__usb__protocol__group_ga9027bb283d3666e351fe5c403292cf2e}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!usb\-\_\-device\-\_\-hs\-\_\-test\-\_\-mode@{usb\-\_\-device\-\_\-hs\-\_\-test\-\_\-mode}}
+\index{usb\-\_\-device\-\_\-hs\-\_\-test\-\_\-mode@{usb\-\_\-device\-\_\-hs\-\_\-test\-\_\-mode}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{usb\-\_\-device\-\_\-hs\-\_\-test\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf usb\-\_\-device\-\_\-hs\-\_\-test\-\_\-mode}}}
+\label{group__usb__protocol__group_ga9027bb283d3666e351fe5c403292cf2e}
+
+
+\-Test \-Mode possible on \-H\-S \-U\-S\-B device. 
+
+\begin{DoxyNote}{\-Note}
+valid for \-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E request. 
+\end{DoxyNote}
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-J@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-J}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-J@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-J}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga9027bb283d3666e351fe5c403292cf2ea713e4c1b7782e135f6e269d98fdd8ce5}{
+\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-J}
+\label{group__usb__protocol__group_gga9027bb283d3666e351fe5c403292cf2ea713e4c1b7782e135f6e269d98fdd8ce5}
+}]\index{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-K@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-K}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-K@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-K}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga9027bb283d3666e351fe5c403292cf2ea7ca60c446646b513db46c8d70f95246d}{
+\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-K}
+\label{group__usb__protocol__group_gga9027bb283d3666e351fe5c403292cf2ea7ca60c446646b513db46c8d70f95246d}
+}]\index{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-S\-E0\-\_\-\-N\-A\-K@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-S\-E0\-\_\-\-N\-A\-K}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-S\-E0\-\_\-\-N\-A\-K@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-S\-E0\-\_\-\-N\-A\-K}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga9027bb283d3666e351fe5c403292cf2eacf3a0aaed1aab82bfee139fd1b3f8126}{
+\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-S\-E0\-\_\-\-N\-A\-K}
+\label{group__usb__protocol__group_gga9027bb283d3666e351fe5c403292cf2eacf3a0aaed1aab82bfee139fd1b3f8126}
+}]\index{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-P\-A\-C\-K\-E\-T@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-P\-A\-C\-K\-E\-T}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-P\-A\-C\-K\-E\-T@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-P\-A\-C\-K\-E\-T}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga9027bb283d3666e351fe5c403292cf2eaae5d97af6d3f98cd6e4fc15d9a5eb5e9}{
+\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-P\-A\-C\-K\-E\-T}
+\label{group__usb__protocol__group_gga9027bb283d3666e351fe5c403292cf2eaae5d97af6d3f98cd6e4fc15d9a5eb5e9}
+}]\index{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-F\-O\-R\-C\-E\-\_\-\-E\-N\-A\-B\-L\-E@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-F\-O\-R\-C\-E\-\_\-\-E\-N\-A\-B\-L\-E}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-F\-O\-R\-C\-E\-\_\-\-E\-N\-A\-B\-L\-E@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-F\-O\-R\-C\-E\-\_\-\-E\-N\-A\-B\-L\-E}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga9027bb283d3666e351fe5c403292cf2ea018bc9685230b902d4432c5705161df3}{
+\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-T\-E\-S\-T\-\_\-\-M\-O\-D\-E\-\_\-\-F\-O\-R\-C\-E\-\_\-\-E\-N\-A\-B\-L\-E}
+\label{group__usb__protocol__group_gga9027bb283d3666e351fe5c403292cf2ea018bc9685230b902d4432c5705161df3}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{group__usb__protocol__group_ga5c6f61a70ef0fda1a1d6f9a34f2f0f1c}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!usb\-\_\-device\-\_\-status@{usb\-\_\-device\-\_\-status}}
+\index{usb\-\_\-device\-\_\-status@{usb\-\_\-device\-\_\-status}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{usb\-\_\-device\-\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf usb\-\_\-device\-\_\-status}}}
+\label{group__usb__protocol__group_ga5c6f61a70ef0fda1a1d6f9a34f2f0f1c}
+
+
+\-Standard \-U\-S\-B device status flags. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-B\-U\-S\-\_\-\-P\-O\-W\-E\-R\-E\-D@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-B\-U\-S\-\_\-\-P\-O\-W\-E\-R\-E\-D}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-B\-U\-S\-\_\-\-P\-O\-W\-E\-R\-E\-D@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-B\-U\-S\-\_\-\-P\-O\-W\-E\-R\-E\-D}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga5c6f61a70ef0fda1a1d6f9a34f2f0f1cabba07ddaf5eb0b763086ab99ed82b59f}{
+\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-B\-U\-S\-\_\-\-P\-O\-W\-E\-R\-E\-D}
+\label{group__usb__protocol__group_gga5c6f61a70ef0fda1a1d6f9a34f2f0f1cabba07ddaf5eb0b763086ab99ed82b59f}
+}]\index{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-S\-E\-L\-F\-\_\-\-P\-O\-W\-E\-R\-E\-D@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-S\-E\-L\-F\-\_\-\-P\-O\-W\-E\-R\-E\-D}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-S\-E\-L\-F\-\_\-\-P\-O\-W\-E\-R\-E\-D@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-S\-E\-L\-F\-\_\-\-P\-O\-W\-E\-R\-E\-D}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga5c6f61a70ef0fda1a1d6f9a34f2f0f1ca762e18607a236d99504f5838e96beb36}{
+\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-S\-E\-L\-F\-\_\-\-P\-O\-W\-E\-R\-E\-D}
+\label{group__usb__protocol__group_gga5c6f61a70ef0fda1a1d6f9a34f2f0f1ca762e18607a236d99504f5838e96beb36}
+}]\index{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-R\-E\-M\-O\-T\-E\-W\-A\-K\-E\-U\-P@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-R\-E\-M\-O\-T\-E\-W\-A\-K\-E\-U\-P}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-R\-E\-M\-O\-T\-E\-W\-A\-K\-E\-U\-P@{\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-R\-E\-M\-O\-T\-E\-W\-A\-K\-E\-U\-P}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga5c6f61a70ef0fda1a1d6f9a34f2f0f1ca9e2a686363488906b279116d3d66103c}{
+\-U\-S\-B\-\_\-\-D\-E\-V\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-R\-E\-M\-O\-T\-E\-W\-A\-K\-E\-U\-P}
+\label{group__usb__protocol__group_gga5c6f61a70ef0fda1a1d6f9a34f2f0f1ca9e2a686363488906b279116d3d66103c}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{group__usb__protocol__group_gac46bc23132eb03cefa56ba47024ced5d}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!usb\-\_\-endpoint\-\_\-feature@{usb\-\_\-endpoint\-\_\-feature}}
+\index{usb\-\_\-endpoint\-\_\-feature@{usb\-\_\-endpoint\-\_\-feature}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{usb\-\_\-endpoint\-\_\-feature}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf usb\-\_\-endpoint\-\_\-feature}}}
+\label{group__usb__protocol__group_gac46bc23132eb03cefa56ba47024ced5d}
+
+
+\-Standard \-U\-S\-B endpoint feature/status flags. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-H\-A\-L\-T@{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-H\-A\-L\-T}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-E\-P\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-H\-A\-L\-T@{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-H\-A\-L\-T}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggac46bc23132eb03cefa56ba47024ced5daa346bf01bfcb9964e754b44c9b999d16}{
+\-U\-S\-B\-\_\-\-E\-P\-\_\-\-F\-E\-A\-T\-U\-R\-E\-\_\-\-H\-A\-L\-T}
+\label{group__usb__protocol__group_ggac46bc23132eb03cefa56ba47024ced5daa346bf01bfcb9964e754b44c9b999d16}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{group__usb__protocol__group_gaf926ff975fcda57f214001b51f15092d}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!usb\-\_\-endpoint\-\_\-status@{usb\-\_\-endpoint\-\_\-status}}
+\index{usb\-\_\-endpoint\-\_\-status@{usb\-\_\-endpoint\-\_\-status}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{usb\-\_\-endpoint\-\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf usb\-\_\-endpoint\-\_\-status}}}
+\label{group__usb__protocol__group_gaf926ff975fcda57f214001b51f15092d}
+
+
+\-Standard \-U\-S\-B endpoint status flags. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-H\-A\-L\-T\-E\-D@{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-H\-A\-L\-T\-E\-D}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-E\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-H\-A\-L\-T\-E\-D@{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-H\-A\-L\-T\-E\-D}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggaf926ff975fcda57f214001b51f15092dae0ba5849fded7e7ea411f11bd627b040}{
+\-U\-S\-B\-\_\-\-E\-P\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-H\-A\-L\-T\-E\-D}
+\label{group__usb__protocol__group_ggaf926ff975fcda57f214001b51f15092dae0ba5849fded7e7ea411f11bd627b040}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{group__usb__protocol__group_ga666def795a15032e5bf93a450f79113f}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!usb\-\_\-ep\-\_\-type@{usb\-\_\-ep\-\_\-type}}
+\index{usb\-\_\-ep\-\_\-type@{usb\-\_\-ep\-\_\-type}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{usb\-\_\-ep\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf usb\-\_\-ep\-\_\-type}}}
+\label{group__usb__protocol__group_ga666def795a15032e5bf93a450f79113f}
+
+
+\-Standard \-U\-S\-B endpoint transfer types. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-O\-N\-T\-R\-O\-L@{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-O\-N\-T\-R\-O\-L}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-O\-N\-T\-R\-O\-L@{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-O\-N\-T\-R\-O\-L}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga666def795a15032e5bf93a450f79113fa134795bdea12ea96534b37c9f606d497}{
+\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-O\-N\-T\-R\-O\-L}
+\label{group__usb__protocol__group_gga666def795a15032e5bf93a450f79113fa134795bdea12ea96534b37c9f606d497}
+}]\index{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-S\-O\-C\-H\-R\-O\-N\-O\-U\-S@{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-S\-O\-C\-H\-R\-O\-N\-O\-U\-S}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-S\-O\-C\-H\-R\-O\-N\-O\-U\-S@{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-S\-O\-C\-H\-R\-O\-N\-O\-U\-S}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga666def795a15032e5bf93a450f79113fa93bb5aaf88b4842a0bed6a6380790c1e}{
+\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-S\-O\-C\-H\-R\-O\-N\-O\-U\-S}
+\label{group__usb__protocol__group_gga666def795a15032e5bf93a450f79113fa93bb5aaf88b4842a0bed6a6380790c1e}
+}]\index{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-U\-L\-K@{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-U\-L\-K}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-U\-L\-K@{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-U\-L\-K}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga666def795a15032e5bf93a450f79113fa173f6c972814d347875b71d85ddfc1b1}{
+\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-B\-U\-L\-K}
+\label{group__usb__protocol__group_gga666def795a15032e5bf93a450f79113fa173f6c972814d347875b71d85ddfc1b1}
+}]\index{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-N\-T\-E\-R\-R\-U\-P\-T@{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-N\-T\-E\-R\-R\-U\-P\-T}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-N\-T\-E\-R\-R\-U\-P\-T@{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-N\-T\-E\-R\-R\-U\-P\-T}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga666def795a15032e5bf93a450f79113fa2b6d776cb0d3f3812620bda8fc51439b}{
+\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-I\-N\-T\-E\-R\-R\-U\-P\-T}
+\label{group__usb__protocol__group_gga666def795a15032e5bf93a450f79113fa2b6d776cb0d3f3812620bda8fc51439b}
+}]\index{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K@{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K@{\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga666def795a15032e5bf93a450f79113fa8169dcca1e5ea5ef9e0d11155b9728bb}{
+\-U\-S\-B\-\_\-\-E\-P\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K}
+\label{group__usb__protocol__group_gga666def795a15032e5bf93a450f79113fa8169dcca1e5ea5ef9e0d11155b9728bb}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{group__usb__protocol__group_ga61c6d9f1bcc6112f394333fac658d627}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!usb\-\_\-interface\-\_\-status@{usb\-\_\-interface\-\_\-status}}
+\index{usb\-\_\-interface\-\_\-status@{usb\-\_\-interface\-\_\-status}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{usb\-\_\-interface\-\_\-status}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf usb\-\_\-interface\-\_\-status}}}
+\label{group__usb__protocol__group_ga61c6d9f1bcc6112f394333fac658d627}
+
+
+\-Standard \-U\-S\-B \-Interface status flags. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-U\-S\-B\-\_\-\-I\-F\-A\-C\-E\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-R\-E\-S\-E\-R\-V\-E\-D@{\-U\-S\-B\-\_\-\-I\-F\-A\-C\-E\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-R\-E\-S\-E\-R\-V\-E\-D}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-I\-F\-A\-C\-E\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-R\-E\-S\-E\-R\-V\-E\-D@{\-U\-S\-B\-\_\-\-I\-F\-A\-C\-E\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-R\-E\-S\-E\-R\-V\-E\-D}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga61c6d9f1bcc6112f394333fac658d627a00df9dc714d093525b1f0163f6625329}{
+\-U\-S\-B\-\_\-\-I\-F\-A\-C\-E\-\_\-\-S\-T\-A\-T\-U\-S\-\_\-\-R\-E\-S\-E\-R\-V\-E\-D}
+\label{group__usb__protocol__group_gga61c6d9f1bcc6112f394333fac658d627a00df9dc714d093525b1f0163f6625329}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{group__usb__protocol__group_ga1f92deaf695c06566999f0c5343978c1}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!usb\-\_\-langid@{usb\-\_\-langid}}
+\index{usb\-\_\-langid@{usb\-\_\-langid}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{usb\-\_\-langid}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf usb\-\_\-langid}}}
+\label{group__usb__protocol__group_ga1f92deaf695c06566999f0c5343978c1}
+
+
+\-Standard \-U\-S\-B language \-I\-Ds for string descriptors. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-U\-S\-B\-\_\-\-L\-A\-N\-G\-I\-D\-\_\-\-E\-N\-\_\-\-U\-S@{\-U\-S\-B\-\_\-\-L\-A\-N\-G\-I\-D\-\_\-\-E\-N\-\_\-\-U\-S}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-L\-A\-N\-G\-I\-D\-\_\-\-E\-N\-\_\-\-U\-S@{\-U\-S\-B\-\_\-\-L\-A\-N\-G\-I\-D\-\_\-\-E\-N\-\_\-\-U\-S}}\item[{\em 
+\hypertarget{group__usb__protocol__group_gga1f92deaf695c06566999f0c5343978c1a8acad914e2d28c9bb1d2d3cc74c5b39e}{
+\-U\-S\-B\-\_\-\-L\-A\-N\-G\-I\-D\-\_\-\-E\-N\-\_\-\-U\-S}
+\label{group__usb__protocol__group_gga1f92deaf695c06566999f0c5343978c1a8acad914e2d28c9bb1d2d3cc74c5b39e}
+}]\-English (\-United \-States) \end{description}
+\end{Desc}
+
+\hypertarget{group__usb__protocol__group_gab43332ff8dbad3dd3c8c882b1bd68a89}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!usb\-\_\-reqid@{usb\-\_\-reqid}}
+\index{usb\-\_\-reqid@{usb\-\_\-reqid}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{usb\-\_\-reqid}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf usb\-\_\-reqid}}}
+\label{group__usb__protocol__group_gab43332ff8dbad3dd3c8c882b1bd68a89}
+
+
+\-Standard \-U\-S\-B requests (b\-Request) 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-S\-T\-A\-T\-U\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-S\-T\-A\-T\-U\-S}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-S\-T\-A\-T\-U\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-S\-T\-A\-T\-U\-S}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89aa3f531db07d9720f1c27d383f17b41e7}{
+\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-S\-T\-A\-T\-U\-S}
+\label{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89aa3f531db07d9720f1c27d383f17b41e7}
+}]\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-L\-E\-A\-R\-\_\-\-F\-E\-A\-T\-U\-R\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-L\-E\-A\-R\-\_\-\-F\-E\-A\-T\-U\-R\-E}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-L\-E\-A\-R\-\_\-\-F\-E\-A\-T\-U\-R\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-L\-E\-A\-R\-\_\-\-F\-E\-A\-T\-U\-R\-E}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a3e7df41451462e9647ea51127b1029cb}{
+\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-C\-L\-E\-A\-R\-\_\-\-F\-E\-A\-T\-U\-R\-E}
+\label{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a3e7df41451462e9647ea51127b1029cb}
+}]\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-F\-E\-A\-T\-U\-R\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-F\-E\-A\-T\-U\-R\-E}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-F\-E\-A\-T\-U\-R\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-F\-E\-A\-T\-U\-R\-E}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89ac6f6f92b41b3626f3bee5585bc8ad259}{
+\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-F\-E\-A\-T\-U\-R\-E}
+\label{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89ac6f6f92b41b3626f3bee5585bc8ad259}
+}]\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-A\-D\-D\-R\-E\-S\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-A\-D\-D\-R\-E\-S\-S}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-A\-D\-D\-R\-E\-S\-S@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-A\-D\-D\-R\-E\-S\-S}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a83a1bafe1cb5a0722e661037a7409d38}{
+\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-A\-D\-D\-R\-E\-S\-S}
+\label{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a83a1bafe1cb5a0722e661037a7409d38}
+}]\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-D\-E\-S\-C\-R\-I\-P\-T\-O\-R@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-D\-E\-S\-C\-R\-I\-P\-T\-O\-R}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-D\-E\-S\-C\-R\-I\-P\-T\-O\-R@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-D\-E\-S\-C\-R\-I\-P\-T\-O\-R}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a1eefe8e6e18013141d267fc8aba28b10}{
+\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-D\-E\-S\-C\-R\-I\-P\-T\-O\-R}
+\label{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a1eefe8e6e18013141d267fc8aba28b10}
+}]\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-D\-E\-S\-C\-R\-I\-P\-T\-O\-R@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-D\-E\-S\-C\-R\-I\-P\-T\-O\-R}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-D\-E\-S\-C\-R\-I\-P\-T\-O\-R@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-D\-E\-S\-C\-R\-I\-P\-T\-O\-R}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a2297324ad7de09fcff189cb08b6e3357}{
+\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-D\-E\-S\-C\-R\-I\-P\-T\-O\-R}
+\label{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a2297324ad7de09fcff189cb08b6e3357}
+}]\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a70ecb7290067da81c599637126d78c32}{
+\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N}
+\label{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a70ecb7290067da81c599637126d78c32}
+}]\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a8469bf7cfc2e560c005b564fe66db0ee}{
+\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-C\-O\-N\-F\-I\-G\-U\-R\-A\-T\-I\-O\-N}
+\label{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a8469bf7cfc2e560c005b564fe66db0ee}
+}]\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a68374dc6cca8653dcd52953ba9f80b1c}{
+\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-G\-E\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E}
+\label{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a68374dc6cca8653dcd52953ba9f80b1c}
+}]\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a1af0d8916fca29961f41fb7433126527}{
+\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-E\-T\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E}
+\label{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a1af0d8916fca29961f41fb7433126527}
+}]\index{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-Y\-N\-C\-H\-\_\-\-F\-R\-A\-M\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-Y\-N\-C\-H\-\_\-\-F\-R\-A\-M\-E}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-Y\-N\-C\-H\-\_\-\-F\-R\-A\-M\-E@{\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-Y\-N\-C\-H\-\_\-\-F\-R\-A\-M\-E}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a0d759eec2d7eab896e61ff927e1752d1}{
+\-U\-S\-B\-\_\-\-R\-E\-Q\-\_\-\-S\-Y\-N\-C\-H\-\_\-\-F\-R\-A\-M\-E}
+\label{group__usb__protocol__group_ggab43332ff8dbad3dd3c8c882b1bd68a89a0d759eec2d7eab896e61ff927e1752d1}
+}]\end{description}
+\end{Desc}
+
+\hypertarget{group__usb__protocol__group_gade3fc5b71e88ed167a8c8d67ee087db3}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!usb\-\_\-test\-\_\-mode\-\_\-selector@{usb\-\_\-test\-\_\-mode\-\_\-selector}}
+\index{usb\-\_\-test\-\_\-mode\-\_\-selector@{usb\-\_\-test\-\_\-mode\-\_\-selector}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{usb\-\_\-test\-\_\-mode\-\_\-selector}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf usb\-\_\-test\-\_\-mode\-\_\-selector}}}
+\label{group__usb__protocol__group_gade3fc5b71e88ed167a8c8d67ee087db3}
+
+
+\-Standard \-U\-S\-B \-Test \-Mode \-Selectors. 
+
+\begin{Desc}
+\item[\-Enumerator\-: ]\par
+\begin{description}
+\index{\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-J@{\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-J}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-J@{\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-J}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggade3fc5b71e88ed167a8c8d67ee087db3ad8a1b477f0fa871dbde208745635eb09}{
+\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-J}
+\label{group__usb__protocol__group_ggade3fc5b71e88ed167a8c8d67ee087db3ad8a1b477f0fa871dbde208745635eb09}
+}]\index{\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-K@{\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-K}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-K@{\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-K}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggade3fc5b71e88ed167a8c8d67ee087db3adf91b3ec7a11997b124e2ecb2bcb3965}{
+\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-K}
+\label{group__usb__protocol__group_ggade3fc5b71e88ed167a8c8d67ee087db3adf91b3ec7a11997b124e2ecb2bcb3965}
+}]\index{\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-S\-E0\-\_\-\-N\-A\-K@{\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-S\-E0\-\_\-\-N\-A\-K}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-S\-E0\-\_\-\-N\-A\-K@{\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-S\-E0\-\_\-\-N\-A\-K}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggade3fc5b71e88ed167a8c8d67ee087db3a14e0870eb309e2408717e26febf54c5f}{
+\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-S\-E0\-\_\-\-N\-A\-K}
+\label{group__usb__protocol__group_ggade3fc5b71e88ed167a8c8d67ee087db3a14e0870eb309e2408717e26febf54c5f}
+}]\index{\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-P\-A\-C\-K\-E\-T@{\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-P\-A\-C\-K\-E\-T}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-P\-A\-C\-K\-E\-T@{\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-P\-A\-C\-K\-E\-T}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggade3fc5b71e88ed167a8c8d67ee087db3a11aadaaa6768ad9140a0ad6f8543d245}{
+\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-P\-A\-C\-K\-E\-T}
+\label{group__usb__protocol__group_ggade3fc5b71e88ed167a8c8d67ee087db3a11aadaaa6768ad9140a0ad6f8543d245}
+}]\index{\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-F\-O\-R\-C\-E\-\_\-\-E\-N\-A\-B\-L\-E@{\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-F\-O\-R\-C\-E\-\_\-\-E\-N\-A\-B\-L\-E}!\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}}\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-F\-O\-R\-C\-E\-\_\-\-E\-N\-A\-B\-L\-E@{\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-F\-O\-R\-C\-E\-\_\-\-E\-N\-A\-B\-L\-E}}\item[{\em 
+\hypertarget{group__usb__protocol__group_ggade3fc5b71e88ed167a8c8d67ee087db3ae6d07dd0dfbb61581ad6d548ab26904a}{
+\-U\-S\-B\-\_\-\-T\-E\-S\-T\-\_\-\-F\-O\-R\-C\-E\-\_\-\-E\-N\-A\-B\-L\-E}
+\label{group__usb__protocol__group_ggade3fc5b71e88ed167a8c8d67ee087db3ae6d07dd0dfbb61581ad6d548ab26904a}
+}]\end{description}
+\end{Desc}
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__usb__protocol__group_gabe317a1520896eaf568afab27dc71540}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-R\-E\-S\-E\-T@{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-R\-E\-S\-E\-T}}
+\index{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-R\-E\-S\-E\-T@{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-R\-E\-S\-E\-T}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-R\-E\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-R\-E\-S\-E\-T (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__usb__protocol__group_gabe317a1520896eaf568afab27dc71540}
+\hypertarget{group__usb__protocol__group_ga14096700b3ed8c5168615c5c5ee1c68d}{
+\index{\-U\-S\-B Protocol Definitions@{\-U\-S\-B Protocol Definitions}!\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T@{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T}}
+\index{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T@{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T}!USB Protocol Definitions@{\-U\-S\-B Protocol Definitions}}
+\subsubsection[{\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\-C\-O\-M\-P\-I\-L\-E\-R\-\_\-\-P\-A\-C\-K\-\_\-\-S\-E\-T (
+\begin{DoxyParamCaption}
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__usb__protocol__group_ga14096700b3ed8c5168615c5c5ee1c68d}

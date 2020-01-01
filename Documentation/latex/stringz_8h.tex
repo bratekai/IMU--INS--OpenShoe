@@ -1,0 +1,67 @@
+\hypertarget{stringz_8h}{
+\section{stringz.h \-File \-Reference}
+\label{stringz_8h}\index{stringz.\-h@{stringz.\-h}}
+}
+
+
+\-Preprocessor stringizing utils.  
+
+
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{stringz_8h_ab3a4df2ccbd03c2809ee7ad542ab9793}{\-S\-T\-R\-I\-N\-G\-Z}(x)~\#x
+\begin{DoxyCompactList}\small\item\em \-Stringize. \end{DoxyCompactList}\item 
+\#define \hyperlink{stringz_8h_a612b641ada5f31dd0cb1c036b308d242}{\-A\-S\-T\-R\-I\-N\-G\-Z}(x)~\-S\-T\-R\-I\-N\-G\-Z(x)
+\begin{DoxyCompactList}\small\item\em \-Absolute stringize. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-Preprocessor stringizing utils. 
+\begin{DoxyItemize}
+\item \-Compiler\-: \-I\-A\-R \-E\-W\-A\-V\-R32 and \-G\-N\-U \-G\-C\-C for \-A\-V\-R32
+\item \-Supported devices\-: \-All \-A\-V\-R32 devices can be used.
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{\-Author}
+\-Atmel \-Corporation\-: \href{http://www.atmel.com}{\tt http\-://www.\-atmel.\-com} \par
+ \-Support and \-F\-A\-Q\-: \href{http://support.atmel.no/}{\tt http\-://support.\-atmel.\-no/} 
+\end{DoxyAuthor}
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{stringz_8h_a612b641ada5f31dd0cb1c036b308d242}{
+\index{stringz.\-h@{stringz.\-h}!\-A\-S\-T\-R\-I\-N\-G\-Z@{\-A\-S\-T\-R\-I\-N\-G\-Z}}
+\index{\-A\-S\-T\-R\-I\-N\-G\-Z@{\-A\-S\-T\-R\-I\-N\-G\-Z}!stringz.h@{stringz.\-h}}
+\subsubsection[{\-A\-S\-T\-R\-I\-N\-G\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-S\-T\-R\-I\-N\-G\-Z(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~\-S\-T\-R\-I\-N\-G\-Z(x)}}
+\label{stringz_8h_a612b641ada5f31dd0cb1c036b308d242}
+
+
+\-Absolute stringize. 
+
+\-Stringize a preprocessing token, this token being allowed to be \#defined.
+
+\-No restriction of use if the token is \#defined.
+
+\-For example, writing \hyperlink{stringz_8h_a612b641ada5f31dd0cb1c036b308d242}{\-A\-S\-T\-R\-I\-N\-G\-Z(\-P\-I\-N0)} anywhere with \-P\-I\-N0 \#defined as \-A0 is equivalent to writing \char`\"{}\-A0\char`\"{}. \hypertarget{stringz_8h_ab3a4df2ccbd03c2809ee7ad542ab9793}{
+\index{stringz.\-h@{stringz.\-h}!\-S\-T\-R\-I\-N\-G\-Z@{\-S\-T\-R\-I\-N\-G\-Z}}
+\index{\-S\-T\-R\-I\-N\-G\-Z@{\-S\-T\-R\-I\-N\-G\-Z}!stringz.h@{stringz.\-h}}
+\subsubsection[{\-S\-T\-R\-I\-N\-G\-Z}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-T\-R\-I\-N\-G\-Z(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~\#x}}
+\label{stringz_8h_ab3a4df2ccbd03c2809ee7ad542ab9793}
+
+
+\-Stringize. 
+
+\-Stringize a preprocessing token, this token being allowed to be \#defined.
+
+\-May be used only within macros with the token passed as an argument if the token is \#defined.
+
+\-For example, writing \hyperlink{stringz_8h_ab3a4df2ccbd03c2809ee7ad542ab9793}{\-S\-T\-R\-I\-N\-G\-Z(\-P\-I\-N)} within a macro \#defined by \-P\-I\-N\-\_\-\-N\-A\-M\-E(\-P\-I\-N) and invoked as \-P\-I\-N\-\_\-\-N\-A\-M\-E(\-P\-I\-N0) with \-P\-I\-N0 \#defined as \-A0 is equivalent to writing \char`\"{}\-A0\char`\"{}. 

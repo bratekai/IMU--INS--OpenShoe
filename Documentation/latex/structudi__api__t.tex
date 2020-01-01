@@ -1,0 +1,108 @@
+\hypertarget{structudi__api__t}{
+\section{udi\-\_\-api\-\_\-t \-Struct \-Reference}
+\label{structudi__api__t}\index{udi\-\_\-api\-\_\-t@{udi\-\_\-api\-\_\-t}}
+}
+
+
+\-U\-D\-I \-A\-P\-I.  
+
+
+
+
+{\ttfamily \#include $<$udi.\-h$>$}
+
+\subsection*{\-Data \-Fields}
+\begin{DoxyCompactItemize}
+\item 
+bool($\ast$ \hyperlink{structudi__api__t_a293117d7192553f153e0411b346dadc1}{enable} )(void)
+\begin{DoxyCompactList}\small\item\em \-Enable the interface. \end{DoxyCompactList}\item 
+void($\ast$ \hyperlink{structudi__api__t_ab0ceaf0d506a357091ec69d5868bff7d}{disable} )(void)
+\begin{DoxyCompactList}\small\item\em \-Disable the interface. \end{DoxyCompactList}\item 
+bool($\ast$ \hyperlink{structudi__api__t_a8161cf3c75c90f630f7d1ee931be821d}{setup} )(void)
+\begin{DoxyCompactList}\small\item\em \-Handle a control request directed at an interface. \end{DoxyCompactList}\item 
+uint8\-\_\-t($\ast$ \hyperlink{structudi__api__t_ad2b798a7cb160d55ed92162ecb845f97}{getsetting} )(void)
+\begin{DoxyCompactList}\small\item\em \-Returns the current setting of the selected interface. \end{DoxyCompactList}\item 
+void($\ast$ \hyperlink{structudi__api__t_ab1dc2a8393441c196b1f5a93e9535f8e}{sof\-\_\-notify} )(void)
+\begin{DoxyCompactList}\small\item\em \-To signal that a \-S\-O\-F is occured. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-U\-D\-I \-A\-P\-I. 
+
+\-The callbacks within this structure are called only by \-U\-S\-B \-Device \-Controller (\-U\-D\-C)
+
+\-The \hyperlink{group__udc__group_ga7da79665b18d9c63db481ec59987ce66}{udc\-\_\-get\-\_\-interface\-\_\-desc()} can be use by \-U\-D\-I to know the interface descriptor selected by \-U\-D\-C. 
+
+\subsection{\-Field \-Documentation}
+\hypertarget{structudi__api__t_ab0ceaf0d506a357091ec69d5868bff7d}{
+\index{udi\-\_\-api\-\_\-t@{udi\-\_\-api\-\_\-t}!disable@{disable}}
+\index{disable@{disable}!udi_api_t@{udi\-\_\-api\-\_\-t}}
+\subsubsection[{disable}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ {\bf udi\-\_\-api\-\_\-t\-::disable})(void)}}
+\label{structudi__api__t_ab0ceaf0d506a357091ec69d5868bff7d}
+
+
+\-Disable the interface. 
+
+\-This function is called when this interface is currently active, and
+\begin{DoxyItemize}
+\item the host selects any configuration through a \-Set \-Configuration request, or
+\item the host issues a \-U\-S\-B reset, or
+\item the device is detached from the host (i.\-e. \-Vbus is no longer present) 
+\end{DoxyItemize}\hypertarget{structudi__api__t_a293117d7192553f153e0411b346dadc1}{
+\index{udi\-\_\-api\-\_\-t@{udi\-\_\-api\-\_\-t}!enable@{enable}}
+\index{enable@{enable}!udi_api_t@{udi\-\_\-api\-\_\-t}}
+\subsubsection[{enable}]{\setlength{\rightskip}{0pt plus 5cm}bool($\ast$ {\bf udi\-\_\-api\-\_\-t\-::enable})(void)}}
+\label{structudi__api__t_a293117d7192553f153e0411b346dadc1}
+
+
+\-Enable the interface. 
+
+\-This function is called when the host selects a configuration to which this interface belongs through a \-Set \-Configuration request, and when the host selects an alternate setting of this interface through a \-Set \-Interface request.
+
+\begin{DoxyReturn}{\-Returns}
+{\ttfamily 1} if function was successfully done, otherwise {\ttfamily 0}. 
+\end{DoxyReturn}
+\hypertarget{structudi__api__t_ad2b798a7cb160d55ed92162ecb845f97}{
+\index{udi\-\_\-api\-\_\-t@{udi\-\_\-api\-\_\-t}!getsetting@{getsetting}}
+\index{getsetting@{getsetting}!udi_api_t@{udi\-\_\-api\-\_\-t}}
+\subsubsection[{getsetting}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t($\ast$ {\bf udi\-\_\-api\-\_\-t\-::getsetting})(void)}}
+\label{structudi__api__t_ad2b798a7cb160d55ed92162ecb845f97}
+
+
+\-Returns the current setting of the selected interface. 
+
+\-This function is called when \-U\-D\-C when know alternate setting of selected interface.
+
+\begin{DoxyReturn}{\-Returns}
+alternate setting of selected interface 
+\end{DoxyReturn}
+\hypertarget{structudi__api__t_a8161cf3c75c90f630f7d1ee931be821d}{
+\index{udi\-\_\-api\-\_\-t@{udi\-\_\-api\-\_\-t}!setup@{setup}}
+\index{setup@{setup}!udi_api_t@{udi\-\_\-api\-\_\-t}}
+\subsubsection[{setup}]{\setlength{\rightskip}{0pt plus 5cm}bool($\ast$ {\bf udi\-\_\-api\-\_\-t\-::setup})(void)}}
+\label{structudi__api__t_a8161cf3c75c90f630f7d1ee931be821d}
+
+
+\-Handle a control request directed at an interface. 
+
+\-This function is called when this interface is currently active and the host sends a \-S\-E\-T\-U\-P request with this interface as the recipient.
+
+\-Use udd\-\_\-g\-\_\-ctrlreq to decode and response to \-S\-E\-T\-U\-P request.
+
+\begin{DoxyReturn}{\-Returns}
+{\ttfamily 1} if this interface supports the \-S\-E\-T\-U\-P request, otherwise {\ttfamily 0}. 
+\end{DoxyReturn}
+\hypertarget{structudi__api__t_ab1dc2a8393441c196b1f5a93e9535f8e}{
+\index{udi\-\_\-api\-\_\-t@{udi\-\_\-api\-\_\-t}!sof\-\_\-notify@{sof\-\_\-notify}}
+\index{sof\-\_\-notify@{sof\-\_\-notify}!udi_api_t@{udi\-\_\-api\-\_\-t}}
+\subsubsection[{sof\-\_\-notify}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ {\bf udi\-\_\-api\-\_\-t\-::sof\-\_\-notify})(void)}}
+\label{structudi__api__t_ab1dc2a8393441c196b1f5a93e9535f8e}
+
+
+\-To signal that a \-S\-O\-F is occured. 
+
+
+
+\-The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{udi_8h}{udi.\-h}\end{DoxyCompactItemize}

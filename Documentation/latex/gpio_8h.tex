@@ -1,0 +1,976 @@
+\hypertarget{gpio_8h}{
+\section{gpio.h \-File \-Reference}
+\label{gpio_8h}\index{gpio.\-h@{gpio.\-h}}
+}
+
+
+\-G\-P\-I\-O software driver interface for \-A\-V\-R \-U\-C3.  
+
+
+{\ttfamily \#include $<$avr32/io.\-h$>$}\*
+{\ttfamily \#include \char`\"{}compiler.\-h\char`\"{}}\*
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structgpio__map__t}{gpio\-\_\-map\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-A type definition of pins and modules connectivity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{Indent}\paragraph*{\-Return \-Values of the \-G\-P\-I\-O \-A\-P\-I}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{gpio_8h_a27f04dbcec307382213c2179b50890c2}{\-G\-P\-I\-O\-\_\-\-S\-U\-C\-C\-E\-S\-S}~0
+\begin{DoxyCompactList}\small\item\em \-Function successfully completed. \end{DoxyCompactList}\item 
+\#define \hyperlink{gpio_8h_a13cb25f6da54f68dccb38c06eb872b3e}{\-G\-P\-I\-O\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-R\-G\-U\-M\-E\-N\-T}~1
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Interrupt \-Trigger \-Modes}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{gpio_8h_a37dccdf4c8d04cae2be9a8ac321cad84}{\-G\-P\-I\-O\-\_\-\-P\-I\-N\-\_\-\-C\-H\-A\-N\-G\-E}~0
+\begin{DoxyCompactList}\small\item\em \-Interrupt triggered upon pin change. \end{DoxyCompactList}\item 
+\#define \hyperlink{gpio_8h_ab7f1524655feb8ef492ffa61e8325ead}{\-G\-P\-I\-O\-\_\-\-R\-I\-S\-I\-N\-G\-\_\-\-E\-D\-G\-E}~1
+\begin{DoxyCompactList}\small\item\em \-Interrupt triggered upon rising edge. \end{DoxyCompactList}\item 
+\#define \hyperlink{gpio_8h_ae3f7c69a67f3780f8c6361df8418a36b}{\-G\-P\-I\-O\-\_\-\-F\-A\-L\-L\-I\-N\-G\-\_\-\-E\-D\-G\-E}~2
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\paragraph*{\-Common defines for \-G\-P\-I\-O\-\_\-\-F\-L\-A\-G\-S parameter}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{gpio_8h_a4956087e24b3fc0ccf1f667b74cb967f}{\-G\-P\-I\-O\-\_\-\-D\-I\-R\-\_\-\-I\-N\-P\-U\-T}~(0 $<$$<$ 0)
+\begin{DoxyCompactList}\small\item\em \-Pin is \-Input. \end{DoxyCompactList}\item 
+\#define \hyperlink{gpio_8h_ae9bb804807d0819629660c6e97934e37}{\-G\-P\-I\-O\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T\-P\-U\-T}~(1 $<$$<$ 0)
+\begin{DoxyCompactList}\small\item\em \-Pin is \-Output. \end{DoxyCompactList}\item 
+\#define \hyperlink{gpio_8h_a9cd8f65b90ba30e34601a72723783656}{\-G\-P\-I\-O\-\_\-\-I\-N\-I\-T\-\_\-\-L\-O\-W}~(0 $<$$<$ 1)
+\begin{DoxyCompactList}\small\item\em \-Initial \-Ouptput \-State is \-Low. \end{DoxyCompactList}\item 
+\#define \hyperlink{gpio_8h_a9e4e6646b825b19128db21e092c2e44a}{\-G\-P\-I\-O\-\_\-\-I\-N\-I\-T\-\_\-\-H\-I\-G\-H}~(1 $<$$<$ 1)
+\begin{DoxyCompactList}\small\item\em \-Initial \-Ouptput \-State is \-High. \end{DoxyCompactList}\item 
+\#define \hyperlink{gpio_8h_aaa7921da231fd2b96575fa522e2c1970}{\-G\-P\-I\-O\-\_\-\-P\-U\-L\-L\-\_\-\-U\-P}~(1 $<$$<$ 2)
+\begin{DoxyCompactList}\small\item\em \-Pull-\/\-Up (when input) \end{DoxyCompactList}\item 
+\#define \hyperlink{gpio_8h_adec1802e074f3021d464da09cd66c7cf}{\-G\-P\-I\-O\-\_\-\-P\-U\-L\-L\-\_\-\-D\-O\-W\-N}~(2 $<$$<$ 2)
+\begin{DoxyCompactList}\small\item\em \-Pull-\/\-Down (when input) \end{DoxyCompactList}\item 
+\#define \hyperlink{gpio_8h_a6f4f2b5c9310f505aaf5cc5a02d2600d}{\-G\-P\-I\-O\-\_\-\-B\-U\-S\-K\-E\-E\-P\-E\-R}~(3 $<$$<$ 2)
+\begin{DoxyCompactList}\small\item\em \-Bus \-Keeper. \end{DoxyCompactList}\item 
+\#define \hyperlink{gpio_8h_ab16a0393f2450ed9491a95ef0ea288c1}{\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-M\-I\-N}~(0 $<$$<$ 4)
+\begin{DoxyCompactList}\small\item\em \-Drive \-Min \-Configuration. \end{DoxyCompactList}\item 
+\#define \hyperlink{gpio_8h_a63e8b24d3ece9baf261cc35905738989}{\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-L\-O\-W}~(1 $<$$<$ 4)
+\begin{DoxyCompactList}\small\item\em \-Drive \-Low \-Configuration. \end{DoxyCompactList}\item 
+\#define \hyperlink{gpio_8h_a22f9106ce09eac77280ca35388ca2ebd}{\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-H\-I\-G\-H}~(2 $<$$<$ 4)
+\begin{DoxyCompactList}\small\item\em \-Drive \-High \-Configuration. \end{DoxyCompactList}\item 
+\#define \hyperlink{gpio_8h_a3afeaf0a455417d06fc6e82fa391fd7a}{\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-M\-A\-X}~(3 $<$$<$ 4)
+\begin{DoxyCompactList}\small\item\em \-Drive \-Max \-Configuration. \end{DoxyCompactList}\item 
+\#define \hyperlink{gpio_8h_a72b7ac5b3613d972b88268bee9068e35}{\-G\-P\-I\-O\-\_\-\-O\-P\-E\-N\-\_\-\-D\-R\-A\-I\-N}~(1 $<$$<$ 6)
+\begin{DoxyCompactList}\small\item\em \-Open-\/\-Drain (when output) \end{DoxyCompactList}\item 
+\#define \hyperlink{gpio_8h_aadf030a44a1d7ed6103eeb99b04e374d}{\-G\-P\-I\-O\-\_\-\-I\-N\-T\-E\-R\-R\-U\-P\-T}~(1 $<$$<$ 7)
+\begin{DoxyCompactList}\small\item\em \-Enable \-Pin/\-Group \-Interrupt. \end{DoxyCompactList}\item 
+\#define \hyperlink{gpio_8h_afcb80da73f8a198a40b80fef39105fe1}{\-G\-P\-I\-O\-\_\-\-B\-O\-T\-H\-E\-D\-G\-E\-S}~(3 $<$$<$ 7)
+\begin{DoxyCompactList}\small\item\em \-Sense \-Both \-Edges. \end{DoxyCompactList}\item 
+\#define \hyperlink{gpio_8h_a6bd47e75cff940f229e23c5f9bcfa7c7}{\-G\-P\-I\-O\-\_\-\-R\-I\-S\-I\-N\-G}~(5 $<$$<$ 7)
+\begin{DoxyCompactList}\small\item\em \-Sense \-Risign \-Edge. \end{DoxyCompactList}\item 
+\#define \hyperlink{gpio_8h_ac9e681425ffee6043e319886303bc556}{\-G\-P\-I\-O\-\_\-\-F\-A\-L\-L\-I\-N\-G}~(7 $<$$<$ 7)
+\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-Peripheral \-Bus \-Interface}
+\label{_amgrpbe4d70c0bbb0bb42ae5493a8057f514b}%
+ \-Low-\/speed interface with a non-\/deterministic number of clock cycles per access.
+
+\-This interface operates with lower clock frequencies (f\-P\-B $<$= f\-C\-P\-U), and its timing is not deterministic since it needs to access a shared bus which may be heavily loaded.
+
+\begin{DoxyNote}{\-Note}
+\-This interface is immediately available without initialization. 
+\end{DoxyNote}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{gpio_8h_a51dc36e43b63856c60359c5f9937df5d}{gpio\-\_\-pin\-\_\-is\-\_\-low}(pin)~(gpio\-\_\-get\-\_\-pin\-\_\-value(pin)?0\-:1)
+\begin{DoxyCompactList}\small\item\em \-Check if the pin is in low logical level. \end{DoxyCompactList}\item 
+\#define \hyperlink{gpio_8h_aca25f738722eeaa8430c14eed4e0c0d1}{gpio\-\_\-pin\-\_\-is\-\_\-high}(pin)~(gpio\-\_\-get\-\_\-pin\-\_\-value(pin)?1\-:0)
+\begin{DoxyCompactList}\small\item\em \-Check if the pin is in high logical level. \end{DoxyCompactList}\item 
+int \hyperlink{gpio_8h_af8e9d12ce235497e93a945d244ffcb1d}{gpio\-\_\-enable\-\_\-module} (const \hyperlink{structgpio__map__t}{gpio\-\_\-map\-\_\-t} gpiomap, uint32\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em \-Enables specific module modes for a set of pins. \end{DoxyCompactList}\item 
+int \hyperlink{gpio_8h_af9f1a0613d0095efbcd451aea19aad61}{gpio\-\_\-enable\-\_\-module\-\_\-pin} (uint32\-\_\-t pin, uint32\-\_\-t function)
+\begin{DoxyCompactList}\small\item\em \-Enables a specific module mode for a pin. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_aac347caefb997c7286ece5afea7635e6}{gpio\-\_\-enable\-\_\-gpio} (const \hyperlink{structgpio__map__t}{gpio\-\_\-map\-\_\-t} gpiomap, uint32\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em \-Enables the \-G\-P\-I\-O mode of a set of pins. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_a53c0551dec2802423245c507cdc93859}{gpio\-\_\-enable\-\_\-gpio\-\_\-pin} (uint32\-\_\-t pin)
+\begin{DoxyCompactList}\small\item\em \-Enables the \-G\-P\-I\-O mode of a pin. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_ac7473fbcb50b12ed1f89e4af0053d9e3}{gpio\-\_\-enable\-\_\-pin\-\_\-pull\-\_\-up} (uint32\-\_\-t pin)
+\begin{DoxyCompactList}\small\item\em \-Enables the pull-\/up resistor of a pin. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_a207ba37b5edca047bf822eb0d36bf5d1}{gpio\-\_\-disable\-\_\-pin\-\_\-pull\-\_\-up} (uint32\-\_\-t pin)
+\begin{DoxyCompactList}\small\item\em \-Disables the pull-\/up resistor of a pin. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_aa1efc8ea580cc2ac1dd4f2b7694753a1}{gpio\-\_\-configure\-\_\-pin} (uint32\-\_\-t pin, uint32\-\_\-t flags)
+\begin{DoxyCompactList}\small\item\em \-Configuration functionality on a pin. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_ad3316eb0275031a1bdb5cb984be8f447}{gpio\-\_\-configure\-\_\-group} (uint32\-\_\-t port, uint32\-\_\-t mask, uint32\-\_\-t flags)
+\begin{DoxyCompactList}\small\item\em \-Configuration functionality on a port. \end{DoxyCompactList}\item 
+int \hyperlink{gpio_8h_a595b3cc6efd0f39a7daf8adffdf8d722}{gpio\-\_\-get\-\_\-pin\-\_\-value} (uint32\-\_\-t pin)
+\begin{DoxyCompactList}\small\item\em \-Returns the value of a pin. \end{DoxyCompactList}\item 
+int \hyperlink{gpio_8h_ade998bc37c9a25de09e924d819196ba1}{gpio\-\_\-get\-\_\-gpio\-\_\-pin\-\_\-output\-\_\-value} (uint32\-\_\-t pin)
+\begin{DoxyCompactList}\small\item\em \-Returns the output value set for a \-G\-P\-I\-O pin. \end{DoxyCompactList}\item 
+int \hyperlink{gpio_8h_a1c5870c1d41fc5452633f5d2dba400a8}{gpio\-\_\-get\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin\-\_\-output\-\_\-value} (uint32\-\_\-t pin)
+\begin{DoxyCompactList}\small\item\em \-Returns the output value set for a \-G\-P\-I\-O pin using open drain. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_a4d51cd706a0f51f82298d2e532267ef5}{gpio\-\_\-set\-\_\-gpio\-\_\-pin} (uint32\-\_\-t pin)
+\begin{DoxyCompactList}\small\item\em \-Drives a \-G\-P\-I\-O pin to 1. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_a56f766236871cf0dbe917d9ead9b5fca}{gpio\-\_\-set\-\_\-pin\-\_\-high} (uint32\-\_\-t pin)
+\begin{DoxyCompactList}\small\item\em \-Drives a \-G\-P\-I\-O pin to 1. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_a80f54b96c3056680069c59114c13c11c}{gpio\-\_\-set\-\_\-group\-\_\-high} (uint32\-\_\-t port, uint32\-\_\-t mask)
+\begin{DoxyCompactList}\small\item\em \-Drives a \-G\-P\-I\-O port to 1. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_a556450a9b5877a6c3c02b9dac60595f9}{gpio\-\_\-clr\-\_\-gpio\-\_\-pin} (uint32\-\_\-t pin)
+\begin{DoxyCompactList}\small\item\em \-Drives a \-G\-P\-I\-O pin to 0. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_ac691d66dd34e00bc7e990458fbd63cd8}{gpio\-\_\-set\-\_\-pin\-\_\-low} (uint32\-\_\-t pin)
+\begin{DoxyCompactList}\small\item\em \-Drives a \-G\-P\-I\-O pin to 0. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_a88a6f215862430f83fac55a7f2843df6}{gpio\-\_\-set\-\_\-group\-\_\-low} (uint32\-\_\-t port, uint32\-\_\-t mask)
+\begin{DoxyCompactList}\small\item\em \-Drives a \-G\-P\-I\-O port to 0. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_a559c1966b17539fb6f2e6f88ceb52d0f}{gpio\-\_\-tgl\-\_\-gpio\-\_\-pin} (uint32\-\_\-t pin)
+\begin{DoxyCompactList}\small\item\em \-Toggles a \-G\-P\-I\-O pin. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_a821248aa6811112db9bf1ce9a67861bb}{gpio\-\_\-toggle\-\_\-pin} (uint32\-\_\-t pin)
+\begin{DoxyCompactList}\small\item\em \-Toggles a \-G\-P\-I\-O pin. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_a592c014bb5a6f725d69d52ced0a2dd50}{gpio\-\_\-toggle\-\_\-group} (uint32\-\_\-t port, uint32\-\_\-t mask)
+\begin{DoxyCompactList}\small\item\em \-Toggles a \-G\-P\-I\-O group. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_aefb66382a63eb80fe2dbbba81941ea27}{gpio\-\_\-set\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin} (uint32\-\_\-t pin)
+\begin{DoxyCompactList}\small\item\em \-Drives a \-G\-P\-I\-O pin to 1 using open drain. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_aa3ab2e7879fc80a4ac6a82de162a5b54}{gpio\-\_\-clr\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin} (uint32\-\_\-t pin)
+\begin{DoxyCompactList}\small\item\em \-Drives a \-G\-P\-I\-O pin to 0 using open drain. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_ae84d0b7369c3a00074129a0669eaa8c0}{gpio\-\_\-tgl\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin} (uint32\-\_\-t pin)
+\begin{DoxyCompactList}\small\item\em \-Toggles a \-G\-P\-I\-O pin using open drain. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_aaff54a64c4d4be449dacdf7489843d86}{gpio\-\_\-enable\-\_\-pin\-\_\-glitch\-\_\-filter} (uint32\-\_\-t pin)
+\begin{DoxyCompactList}\small\item\em \-Enables the glitch filter of a pin. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_a52838ded649c70319ba0ead507ebc1b0}{gpio\-\_\-disable\-\_\-pin\-\_\-glitch\-\_\-filter} (uint32\-\_\-t pin)
+\begin{DoxyCompactList}\small\item\em \-Disables the glitch filter of a pin. \end{DoxyCompactList}\item 
+int \hyperlink{gpio_8h_a55a728589909501835f05b2ca33d43c8}{gpio\-\_\-enable\-\_\-pin\-\_\-interrupt} (uint32\-\_\-t pin, uint32\-\_\-t mode)
+\begin{DoxyCompactList}\small\item\em \-Enables the interrupt of a pin with the specified settings. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_aba8e79a902d865538dcd88d5d3f9c964}{gpio\-\_\-disable\-\_\-pin\-\_\-interrupt} (uint32\-\_\-t pin)
+\begin{DoxyCompactList}\small\item\em \-Disables the interrupt of a pin. \end{DoxyCompactList}\item 
+int \hyperlink{gpio_8h_a45b567e9f64c3917c1584adb6f634d0a}{gpio\-\_\-get\-\_\-pin\-\_\-interrupt\-\_\-flag} (uint32\-\_\-t pin)
+\begin{DoxyCompactList}\small\item\em \-Gets the interrupt flag of a pin. \end{DoxyCompactList}\item 
+void \hyperlink{gpio_8h_aff3dba73ea60af0aea6149bba1414aff}{gpio\-\_\-clear\-\_\-pin\-\_\-interrupt\-\_\-flag} (uint32\-\_\-t pin)
+\begin{DoxyCompactList}\small\item\em \-Clears the interrupt flag of a pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-G\-P\-I\-O software driver interface for \-A\-V\-R \-U\-C3. 
+\begin{DoxyItemize}
+\item \-Compiler\-: \-G\-C\-C and \-I\-A\-R for \-A\-V\-R
+\item \-Supported devices\-: \-All \-A\-V\-R \-U\-C3 devices with a \-G\-P\-I\-O module can be used.
+\item \-App\-Note\-:
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{\-Author}
+\-Atmel \-Corporation\-: \href{http://www.atmel.com}{\tt http\-://www.\-atmel.\-com} \par
+ \-Support and \-F\-A\-Q\-: \href{http://support.atmel.no/}{\tt http\-://support.\-atmel.\-no/} 
+\end{DoxyAuthor}
+
+
+\subsection{\-Define \-Documentation}
+\hypertarget{gpio_8h_afcb80da73f8a198a40b80fef39105fe1}{
+\index{gpio.\-h@{gpio.\-h}!\-G\-P\-I\-O\-\_\-\-B\-O\-T\-H\-E\-D\-G\-E\-S@{\-G\-P\-I\-O\-\_\-\-B\-O\-T\-H\-E\-D\-G\-E\-S}}
+\index{\-G\-P\-I\-O\-\_\-\-B\-O\-T\-H\-E\-D\-G\-E\-S@{\-G\-P\-I\-O\-\_\-\-B\-O\-T\-H\-E\-D\-G\-E\-S}!gpio.h@{gpio.\-h}}
+\subsubsection[{\-G\-P\-I\-O\-\_\-\-B\-O\-T\-H\-E\-D\-G\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-P\-I\-O\-\_\-\-B\-O\-T\-H\-E\-D\-G\-E\-S~(3 $<$$<$ 7)}}
+\label{gpio_8h_afcb80da73f8a198a40b80fef39105fe1}
+
+
+\-Sense \-Both \-Edges. 
+
+\hypertarget{gpio_8h_a6f4f2b5c9310f505aaf5cc5a02d2600d}{
+\index{gpio.\-h@{gpio.\-h}!\-G\-P\-I\-O\-\_\-\-B\-U\-S\-K\-E\-E\-P\-E\-R@{\-G\-P\-I\-O\-\_\-\-B\-U\-S\-K\-E\-E\-P\-E\-R}}
+\index{\-G\-P\-I\-O\-\_\-\-B\-U\-S\-K\-E\-E\-P\-E\-R@{\-G\-P\-I\-O\-\_\-\-B\-U\-S\-K\-E\-E\-P\-E\-R}!gpio.h@{gpio.\-h}}
+\subsubsection[{\-G\-P\-I\-O\-\_\-\-B\-U\-S\-K\-E\-E\-P\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-P\-I\-O\-\_\-\-B\-U\-S\-K\-E\-E\-P\-E\-R~(3 $<$$<$ 2)}}
+\label{gpio_8h_a6f4f2b5c9310f505aaf5cc5a02d2600d}
+
+
+\-Bus \-Keeper. 
+
+\hypertarget{gpio_8h_a4956087e24b3fc0ccf1f667b74cb967f}{
+\index{gpio.\-h@{gpio.\-h}!\-G\-P\-I\-O\-\_\-\-D\-I\-R\-\_\-\-I\-N\-P\-U\-T@{\-G\-P\-I\-O\-\_\-\-D\-I\-R\-\_\-\-I\-N\-P\-U\-T}}
+\index{\-G\-P\-I\-O\-\_\-\-D\-I\-R\-\_\-\-I\-N\-P\-U\-T@{\-G\-P\-I\-O\-\_\-\-D\-I\-R\-\_\-\-I\-N\-P\-U\-T}!gpio.h@{gpio.\-h}}
+\subsubsection[{\-G\-P\-I\-O\-\_\-\-D\-I\-R\-\_\-\-I\-N\-P\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-P\-I\-O\-\_\-\-D\-I\-R\-\_\-\-I\-N\-P\-U\-T~(0 $<$$<$ 0)}}
+\label{gpio_8h_a4956087e24b3fc0ccf1f667b74cb967f}
+
+
+\-Pin is \-Input. 
+
+\hypertarget{gpio_8h_ae9bb804807d0819629660c6e97934e37}{
+\index{gpio.\-h@{gpio.\-h}!\-G\-P\-I\-O\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T\-P\-U\-T@{\-G\-P\-I\-O\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T\-P\-U\-T}}
+\index{\-G\-P\-I\-O\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T\-P\-U\-T@{\-G\-P\-I\-O\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T\-P\-U\-T}!gpio.h@{gpio.\-h}}
+\subsubsection[{\-G\-P\-I\-O\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T\-P\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-P\-I\-O\-\_\-\-D\-I\-R\-\_\-\-O\-U\-T\-P\-U\-T~(1 $<$$<$ 0)}}
+\label{gpio_8h_ae9bb804807d0819629660c6e97934e37}
+
+
+\-Pin is \-Output. 
+
+\hypertarget{gpio_8h_a22f9106ce09eac77280ca35388ca2ebd}{
+\index{gpio.\-h@{gpio.\-h}!\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-H\-I\-G\-H@{\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-H\-I\-G\-H}}
+\index{\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-H\-I\-G\-H@{\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-H\-I\-G\-H}!gpio.h@{gpio.\-h}}
+\subsubsection[{\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-H\-I\-G\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-H\-I\-G\-H~(2 $<$$<$ 4)}}
+\label{gpio_8h_a22f9106ce09eac77280ca35388ca2ebd}
+
+
+\-Drive \-High \-Configuration. 
+
+\hypertarget{gpio_8h_a63e8b24d3ece9baf261cc35905738989}{
+\index{gpio.\-h@{gpio.\-h}!\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-L\-O\-W@{\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-L\-O\-W}}
+\index{\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-L\-O\-W@{\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-L\-O\-W}!gpio.h@{gpio.\-h}}
+\subsubsection[{\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-L\-O\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-L\-O\-W~(1 $<$$<$ 4)}}
+\label{gpio_8h_a63e8b24d3ece9baf261cc35905738989}
+
+
+\-Drive \-Low \-Configuration. 
+
+\hypertarget{gpio_8h_a3afeaf0a455417d06fc6e82fa391fd7a}{
+\index{gpio.\-h@{gpio.\-h}!\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-M\-A\-X@{\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-M\-A\-X}}
+\index{\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-M\-A\-X@{\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-M\-A\-X}!gpio.h@{gpio.\-h}}
+\subsubsection[{\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-M\-A\-X}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-M\-A\-X~(3 $<$$<$ 4)}}
+\label{gpio_8h_a3afeaf0a455417d06fc6e82fa391fd7a}
+
+
+\-Drive \-Max \-Configuration. 
+
+\hypertarget{gpio_8h_ab16a0393f2450ed9491a95ef0ea288c1}{
+\index{gpio.\-h@{gpio.\-h}!\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-M\-I\-N@{\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-M\-I\-N}}
+\index{\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-M\-I\-N@{\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-M\-I\-N}!gpio.h@{gpio.\-h}}
+\subsubsection[{\-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-P\-I\-O\-\_\-\-D\-R\-I\-V\-E\-\_\-\-M\-I\-N~(0 $<$$<$ 4)}}
+\label{gpio_8h_ab16a0393f2450ed9491a95ef0ea288c1}
+
+
+\-Drive \-Min \-Configuration. 
+
+\hypertarget{gpio_8h_ac9e681425ffee6043e319886303bc556}{
+\index{gpio.\-h@{gpio.\-h}!\-G\-P\-I\-O\-\_\-\-F\-A\-L\-L\-I\-N\-G@{\-G\-P\-I\-O\-\_\-\-F\-A\-L\-L\-I\-N\-G}}
+\index{\-G\-P\-I\-O\-\_\-\-F\-A\-L\-L\-I\-N\-G@{\-G\-P\-I\-O\-\_\-\-F\-A\-L\-L\-I\-N\-G}!gpio.h@{gpio.\-h}}
+\subsubsection[{\-G\-P\-I\-O\-\_\-\-F\-A\-L\-L\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-P\-I\-O\-\_\-\-F\-A\-L\-L\-I\-N\-G~(7 $<$$<$ 7)}}
+\label{gpio_8h_ac9e681425ffee6043e319886303bc556}
+\-Sense \-Falling \-Edge \hypertarget{gpio_8h_ae3f7c69a67f3780f8c6361df8418a36b}{
+\index{gpio.\-h@{gpio.\-h}!\-G\-P\-I\-O\-\_\-\-F\-A\-L\-L\-I\-N\-G\-\_\-\-E\-D\-G\-E@{\-G\-P\-I\-O\-\_\-\-F\-A\-L\-L\-I\-N\-G\-\_\-\-E\-D\-G\-E}}
+\index{\-G\-P\-I\-O\-\_\-\-F\-A\-L\-L\-I\-N\-G\-\_\-\-E\-D\-G\-E@{\-G\-P\-I\-O\-\_\-\-F\-A\-L\-L\-I\-N\-G\-\_\-\-E\-D\-G\-E}!gpio.h@{gpio.\-h}}
+\subsubsection[{\-G\-P\-I\-O\-\_\-\-F\-A\-L\-L\-I\-N\-G\-\_\-\-E\-D\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-P\-I\-O\-\_\-\-F\-A\-L\-L\-I\-N\-G\-\_\-\-E\-D\-G\-E~2}}
+\label{gpio_8h_ae3f7c69a67f3780f8c6361df8418a36b}
+\-Interrupt triggered upon falling edge. \hypertarget{gpio_8h_a9e4e6646b825b19128db21e092c2e44a}{
+\index{gpio.\-h@{gpio.\-h}!\-G\-P\-I\-O\-\_\-\-I\-N\-I\-T\-\_\-\-H\-I\-G\-H@{\-G\-P\-I\-O\-\_\-\-I\-N\-I\-T\-\_\-\-H\-I\-G\-H}}
+\index{\-G\-P\-I\-O\-\_\-\-I\-N\-I\-T\-\_\-\-H\-I\-G\-H@{\-G\-P\-I\-O\-\_\-\-I\-N\-I\-T\-\_\-\-H\-I\-G\-H}!gpio.h@{gpio.\-h}}
+\subsubsection[{\-G\-P\-I\-O\-\_\-\-I\-N\-I\-T\-\_\-\-H\-I\-G\-H}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-P\-I\-O\-\_\-\-I\-N\-I\-T\-\_\-\-H\-I\-G\-H~(1 $<$$<$ 1)}}
+\label{gpio_8h_a9e4e6646b825b19128db21e092c2e44a}
+
+
+\-Initial \-Ouptput \-State is \-High. 
+
+\hypertarget{gpio_8h_a9cd8f65b90ba30e34601a72723783656}{
+\index{gpio.\-h@{gpio.\-h}!\-G\-P\-I\-O\-\_\-\-I\-N\-I\-T\-\_\-\-L\-O\-W@{\-G\-P\-I\-O\-\_\-\-I\-N\-I\-T\-\_\-\-L\-O\-W}}
+\index{\-G\-P\-I\-O\-\_\-\-I\-N\-I\-T\-\_\-\-L\-O\-W@{\-G\-P\-I\-O\-\_\-\-I\-N\-I\-T\-\_\-\-L\-O\-W}!gpio.h@{gpio.\-h}}
+\subsubsection[{\-G\-P\-I\-O\-\_\-\-I\-N\-I\-T\-\_\-\-L\-O\-W}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-P\-I\-O\-\_\-\-I\-N\-I\-T\-\_\-\-L\-O\-W~(0 $<$$<$ 1)}}
+\label{gpio_8h_a9cd8f65b90ba30e34601a72723783656}
+
+
+\-Initial \-Ouptput \-State is \-Low. 
+
+\hypertarget{gpio_8h_aadf030a44a1d7ed6103eeb99b04e374d}{
+\index{gpio.\-h@{gpio.\-h}!\-G\-P\-I\-O\-\_\-\-I\-N\-T\-E\-R\-R\-U\-P\-T@{\-G\-P\-I\-O\-\_\-\-I\-N\-T\-E\-R\-R\-U\-P\-T}}
+\index{\-G\-P\-I\-O\-\_\-\-I\-N\-T\-E\-R\-R\-U\-P\-T@{\-G\-P\-I\-O\-\_\-\-I\-N\-T\-E\-R\-R\-U\-P\-T}!gpio.h@{gpio.\-h}}
+\subsubsection[{\-G\-P\-I\-O\-\_\-\-I\-N\-T\-E\-R\-R\-U\-P\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-P\-I\-O\-\_\-\-I\-N\-T\-E\-R\-R\-U\-P\-T~(1 $<$$<$ 7)}}
+\label{gpio_8h_aadf030a44a1d7ed6103eeb99b04e374d}
+
+
+\-Enable \-Pin/\-Group \-Interrupt. 
+
+\hypertarget{gpio_8h_a13cb25f6da54f68dccb38c06eb872b3e}{
+\index{gpio.\-h@{gpio.\-h}!\-G\-P\-I\-O\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-R\-G\-U\-M\-E\-N\-T@{\-G\-P\-I\-O\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-R\-G\-U\-M\-E\-N\-T}}
+\index{\-G\-P\-I\-O\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-R\-G\-U\-M\-E\-N\-T@{\-G\-P\-I\-O\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-R\-G\-U\-M\-E\-N\-T}!gpio.h@{gpio.\-h}}
+\subsubsection[{\-G\-P\-I\-O\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-R\-G\-U\-M\-E\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-P\-I\-O\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-R\-G\-U\-M\-E\-N\-T~1}}
+\label{gpio_8h_a13cb25f6da54f68dccb38c06eb872b3e}
+\-Input parameters are out of range. \hypertarget{gpio_8h_a72b7ac5b3613d972b88268bee9068e35}{
+\index{gpio.\-h@{gpio.\-h}!\-G\-P\-I\-O\-\_\-\-O\-P\-E\-N\-\_\-\-D\-R\-A\-I\-N@{\-G\-P\-I\-O\-\_\-\-O\-P\-E\-N\-\_\-\-D\-R\-A\-I\-N}}
+\index{\-G\-P\-I\-O\-\_\-\-O\-P\-E\-N\-\_\-\-D\-R\-A\-I\-N@{\-G\-P\-I\-O\-\_\-\-O\-P\-E\-N\-\_\-\-D\-R\-A\-I\-N}!gpio.h@{gpio.\-h}}
+\subsubsection[{\-G\-P\-I\-O\-\_\-\-O\-P\-E\-N\-\_\-\-D\-R\-A\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-P\-I\-O\-\_\-\-O\-P\-E\-N\-\_\-\-D\-R\-A\-I\-N~(1 $<$$<$ 6)}}
+\label{gpio_8h_a72b7ac5b3613d972b88268bee9068e35}
+
+
+\-Open-\/\-Drain (when output) 
+
+\hypertarget{gpio_8h_a37dccdf4c8d04cae2be9a8ac321cad84}{
+\index{gpio.\-h@{gpio.\-h}!\-G\-P\-I\-O\-\_\-\-P\-I\-N\-\_\-\-C\-H\-A\-N\-G\-E@{\-G\-P\-I\-O\-\_\-\-P\-I\-N\-\_\-\-C\-H\-A\-N\-G\-E}}
+\index{\-G\-P\-I\-O\-\_\-\-P\-I\-N\-\_\-\-C\-H\-A\-N\-G\-E@{\-G\-P\-I\-O\-\_\-\-P\-I\-N\-\_\-\-C\-H\-A\-N\-G\-E}!gpio.h@{gpio.\-h}}
+\subsubsection[{\-G\-P\-I\-O\-\_\-\-P\-I\-N\-\_\-\-C\-H\-A\-N\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-P\-I\-O\-\_\-\-P\-I\-N\-\_\-\-C\-H\-A\-N\-G\-E~0}}
+\label{gpio_8h_a37dccdf4c8d04cae2be9a8ac321cad84}
+
+
+\-Interrupt triggered upon pin change. 
+
+\hypertarget{gpio_8h_aca25f738722eeaa8430c14eed4e0c0d1}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-pin\-\_\-is\-\_\-high@{gpio\-\_\-pin\-\_\-is\-\_\-high}}
+\index{gpio\-\_\-pin\-\_\-is\-\_\-high@{gpio\-\_\-pin\-\_\-is\-\_\-high}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-pin\-\_\-is\-\_\-high}]{\setlength{\rightskip}{0pt plus 5cm}\#define gpio\-\_\-pin\-\_\-is\-\_\-high(
+\begin{DoxyParamCaption}
+\item[{}]{pin}
+\end{DoxyParamCaption}
+)~(gpio\-\_\-get\-\_\-pin\-\_\-value(pin)?1\-:0)}}
+\label{gpio_8h_aca25f738722eeaa8430c14eed4e0c0d1}
+
+
+\-Check if the pin is in high logical level. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+bool 1 if the pin is in high logical level 0 if the pin is not in high logical level 
+\end{DoxyReturn}
+\hypertarget{gpio_8h_a51dc36e43b63856c60359c5f9937df5d}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-pin\-\_\-is\-\_\-low@{gpio\-\_\-pin\-\_\-is\-\_\-low}}
+\index{gpio\-\_\-pin\-\_\-is\-\_\-low@{gpio\-\_\-pin\-\_\-is\-\_\-low}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-pin\-\_\-is\-\_\-low}]{\setlength{\rightskip}{0pt plus 5cm}\#define gpio\-\_\-pin\-\_\-is\-\_\-low(
+\begin{DoxyParamCaption}
+\item[{}]{pin}
+\end{DoxyParamCaption}
+)~(gpio\-\_\-get\-\_\-pin\-\_\-value(pin)?0\-:1)}}
+\label{gpio_8h_a51dc36e43b63856c60359c5f9937df5d}
+
+
+\-Check if the pin is in low logical level. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+bool 1 if the pin is in low logical level 0 if the pin is not in low logical level 
+\end{DoxyReturn}
+\hypertarget{gpio_8h_adec1802e074f3021d464da09cd66c7cf}{
+\index{gpio.\-h@{gpio.\-h}!\-G\-P\-I\-O\-\_\-\-P\-U\-L\-L\-\_\-\-D\-O\-W\-N@{\-G\-P\-I\-O\-\_\-\-P\-U\-L\-L\-\_\-\-D\-O\-W\-N}}
+\index{\-G\-P\-I\-O\-\_\-\-P\-U\-L\-L\-\_\-\-D\-O\-W\-N@{\-G\-P\-I\-O\-\_\-\-P\-U\-L\-L\-\_\-\-D\-O\-W\-N}!gpio.h@{gpio.\-h}}
+\subsubsection[{\-G\-P\-I\-O\-\_\-\-P\-U\-L\-L\-\_\-\-D\-O\-W\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-P\-I\-O\-\_\-\-P\-U\-L\-L\-\_\-\-D\-O\-W\-N~(2 $<$$<$ 2)}}
+\label{gpio_8h_adec1802e074f3021d464da09cd66c7cf}
+
+
+\-Pull-\/\-Down (when input) 
+
+\hypertarget{gpio_8h_aaa7921da231fd2b96575fa522e2c1970}{
+\index{gpio.\-h@{gpio.\-h}!\-G\-P\-I\-O\-\_\-\-P\-U\-L\-L\-\_\-\-U\-P@{\-G\-P\-I\-O\-\_\-\-P\-U\-L\-L\-\_\-\-U\-P}}
+\index{\-G\-P\-I\-O\-\_\-\-P\-U\-L\-L\-\_\-\-U\-P@{\-G\-P\-I\-O\-\_\-\-P\-U\-L\-L\-\_\-\-U\-P}!gpio.h@{gpio.\-h}}
+\subsubsection[{\-G\-P\-I\-O\-\_\-\-P\-U\-L\-L\-\_\-\-U\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-P\-I\-O\-\_\-\-P\-U\-L\-L\-\_\-\-U\-P~(1 $<$$<$ 2)}}
+\label{gpio_8h_aaa7921da231fd2b96575fa522e2c1970}
+
+
+\-Pull-\/\-Up (when input) 
+
+\hypertarget{gpio_8h_a6bd47e75cff940f229e23c5f9bcfa7c7}{
+\index{gpio.\-h@{gpio.\-h}!\-G\-P\-I\-O\-\_\-\-R\-I\-S\-I\-N\-G@{\-G\-P\-I\-O\-\_\-\-R\-I\-S\-I\-N\-G}}
+\index{\-G\-P\-I\-O\-\_\-\-R\-I\-S\-I\-N\-G@{\-G\-P\-I\-O\-\_\-\-R\-I\-S\-I\-N\-G}!gpio.h@{gpio.\-h}}
+\subsubsection[{\-G\-P\-I\-O\-\_\-\-R\-I\-S\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-P\-I\-O\-\_\-\-R\-I\-S\-I\-N\-G~(5 $<$$<$ 7)}}
+\label{gpio_8h_a6bd47e75cff940f229e23c5f9bcfa7c7}
+
+
+\-Sense \-Risign \-Edge. 
+
+\hypertarget{gpio_8h_ab7f1524655feb8ef492ffa61e8325ead}{
+\index{gpio.\-h@{gpio.\-h}!\-G\-P\-I\-O\-\_\-\-R\-I\-S\-I\-N\-G\-\_\-\-E\-D\-G\-E@{\-G\-P\-I\-O\-\_\-\-R\-I\-S\-I\-N\-G\-\_\-\-E\-D\-G\-E}}
+\index{\-G\-P\-I\-O\-\_\-\-R\-I\-S\-I\-N\-G\-\_\-\-E\-D\-G\-E@{\-G\-P\-I\-O\-\_\-\-R\-I\-S\-I\-N\-G\-\_\-\-E\-D\-G\-E}!gpio.h@{gpio.\-h}}
+\subsubsection[{\-G\-P\-I\-O\-\_\-\-R\-I\-S\-I\-N\-G\-\_\-\-E\-D\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-P\-I\-O\-\_\-\-R\-I\-S\-I\-N\-G\-\_\-\-E\-D\-G\-E~1}}
+\label{gpio_8h_ab7f1524655feb8ef492ffa61e8325ead}
+
+
+\-Interrupt triggered upon rising edge. 
+
+\hypertarget{gpio_8h_a27f04dbcec307382213c2179b50890c2}{
+\index{gpio.\-h@{gpio.\-h}!\-G\-P\-I\-O\-\_\-\-S\-U\-C\-C\-E\-S\-S@{\-G\-P\-I\-O\-\_\-\-S\-U\-C\-C\-E\-S\-S}}
+\index{\-G\-P\-I\-O\-\_\-\-S\-U\-C\-C\-E\-S\-S@{\-G\-P\-I\-O\-\_\-\-S\-U\-C\-C\-E\-S\-S}!gpio.h@{gpio.\-h}}
+\subsubsection[{\-G\-P\-I\-O\-\_\-\-S\-U\-C\-C\-E\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-P\-I\-O\-\_\-\-S\-U\-C\-C\-E\-S\-S~0}}
+\label{gpio_8h_a27f04dbcec307382213c2179b50890c2}
+
+
+\-Function successfully completed. 
+
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{gpio_8h_aff3dba73ea60af0aea6149bba1414aff}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-clear\-\_\-pin\-\_\-interrupt\-\_\-flag@{gpio\-\_\-clear\-\_\-pin\-\_\-interrupt\-\_\-flag}}
+\index{gpio\-\_\-clear\-\_\-pin\-\_\-interrupt\-\_\-flag@{gpio\-\_\-clear\-\_\-pin\-\_\-interrupt\-\_\-flag}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-clear\-\_\-pin\-\_\-interrupt\-\_\-flag}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-clear\-\_\-pin\-\_\-interrupt\-\_\-flag (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_aff3dba73ea60af0aea6149bba1414aff}
+
+
+\-Clears the interrupt flag of a pin. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gpio_8h_aa3ab2e7879fc80a4ac6a82de162a5b54}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-clr\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin@{gpio\-\_\-clr\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin}}
+\index{gpio\-\_\-clr\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin@{gpio\-\_\-clr\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-clr\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-clr\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_aa3ab2e7879fc80a4ac6a82de162a5b54}
+
+
+\-Drives a \-G\-P\-I\-O pin to 0 using open drain. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gpio_8h_a556450a9b5877a6c3c02b9dac60595f9}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-clr\-\_\-gpio\-\_\-pin@{gpio\-\_\-clr\-\_\-gpio\-\_\-pin}}
+\index{gpio\-\_\-clr\-\_\-gpio\-\_\-pin@{gpio\-\_\-clr\-\_\-gpio\-\_\-pin}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-clr\-\_\-gpio\-\_\-pin}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-clr\-\_\-gpio\-\_\-pin (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_a556450a9b5877a6c3c02b9dac60595f9}
+
+
+\-Drives a \-G\-P\-I\-O pin to 0. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gpio_8h_ad3316eb0275031a1bdb5cb984be8f447}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-configure\-\_\-group@{gpio\-\_\-configure\-\_\-group}}
+\index{gpio\-\_\-configure\-\_\-group@{gpio\-\_\-configure\-\_\-group}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-configure\-\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-configure\-\_\-group (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{port, }
+\item[{uint32\-\_\-t}]{mask, }
+\item[{uint32\-\_\-t}]{flags}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_ad3316eb0275031a1bdb5cb984be8f447}
+
+
+\-Configuration functionality on a port. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em port} & \-The port number. \\
+\hline
+{\em mask} & \-The mask. \\
+\hline
+{\em flags} & \-The configuration. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gpio_8h_aa1efc8ea580cc2ac1dd4f2b7694753a1}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-configure\-\_\-pin@{gpio\-\_\-configure\-\_\-pin}}
+\index{gpio\-\_\-configure\-\_\-pin@{gpio\-\_\-configure\-\_\-pin}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-configure\-\_\-pin}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-configure\-\_\-pin (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin, }
+\item[{uint32\-\_\-t}]{flags}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_aa1efc8ea580cc2ac1dd4f2b7694753a1}
+
+
+\-Configuration functionality on a pin. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number. \\
+\hline
+{\em flags} & \-The configuration. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gpio_8h_a52838ded649c70319ba0ead507ebc1b0}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-disable\-\_\-pin\-\_\-glitch\-\_\-filter@{gpio\-\_\-disable\-\_\-pin\-\_\-glitch\-\_\-filter}}
+\index{gpio\-\_\-disable\-\_\-pin\-\_\-glitch\-\_\-filter@{gpio\-\_\-disable\-\_\-pin\-\_\-glitch\-\_\-filter}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-disable\-\_\-pin\-\_\-glitch\-\_\-filter}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-disable\-\_\-pin\-\_\-glitch\-\_\-filter (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_a52838ded649c70319ba0ead507ebc1b0}
+
+
+\-Disables the glitch filter of a pin. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gpio_8h_aba8e79a902d865538dcd88d5d3f9c964}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-disable\-\_\-pin\-\_\-interrupt@{gpio\-\_\-disable\-\_\-pin\-\_\-interrupt}}
+\index{gpio\-\_\-disable\-\_\-pin\-\_\-interrupt@{gpio\-\_\-disable\-\_\-pin\-\_\-interrupt}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-disable\-\_\-pin\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-disable\-\_\-pin\-\_\-interrupt (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_aba8e79a902d865538dcd88d5d3f9c964}
+
+
+\-Disables the interrupt of a pin. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gpio_8h_a207ba37b5edca047bf822eb0d36bf5d1}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-disable\-\_\-pin\-\_\-pull\-\_\-up@{gpio\-\_\-disable\-\_\-pin\-\_\-pull\-\_\-up}}
+\index{gpio\-\_\-disable\-\_\-pin\-\_\-pull\-\_\-up@{gpio\-\_\-disable\-\_\-pin\-\_\-pull\-\_\-up}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-disable\-\_\-pin\-\_\-pull\-\_\-up}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-disable\-\_\-pin\-\_\-pull\-\_\-up (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_a207ba37b5edca047bf822eb0d36bf5d1}
+
+
+\-Disables the pull-\/up resistor of a pin. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gpio_8h_aac347caefb997c7286ece5afea7635e6}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-enable\-\_\-gpio@{gpio\-\_\-enable\-\_\-gpio}}
+\index{gpio\-\_\-enable\-\_\-gpio@{gpio\-\_\-enable\-\_\-gpio}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-enable\-\_\-gpio}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-enable\-\_\-gpio (
+\begin{DoxyParamCaption}
+\item[{const {\bf gpio\-\_\-map\-\_\-t}}]{gpiomap, }
+\item[{uint32\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_aac347caefb997c7286ece5afea7635e6}
+
+
+\-Enables the \-G\-P\-I\-O mode of a set of pins. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em gpiomap} & \-The pin map. \\
+\hline
+{\em size} & \-The number of pins in {\itshape gpiomap\/}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gpio_8h_a53c0551dec2802423245c507cdc93859}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-enable\-\_\-gpio\-\_\-pin@{gpio\-\_\-enable\-\_\-gpio\-\_\-pin}}
+\index{gpio\-\_\-enable\-\_\-gpio\-\_\-pin@{gpio\-\_\-enable\-\_\-gpio\-\_\-pin}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-enable\-\_\-gpio\-\_\-pin}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-enable\-\_\-gpio\-\_\-pin (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_a53c0551dec2802423245c507cdc93859}
+
+
+\-Enables the \-G\-P\-I\-O mode of a pin. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number.\par
+ \-Refer to the product header file `uc3x.h' (where x is the part number; e.\-g. x = a0512) for pin definitions. \-E.\-g., to enable the \-G\-P\-I\-O mode of \-P\-X21, \-A\-V\-R32\-\_\-\-P\-I\-N\-\_\-\-P\-X21 can be used. \-Module pins such as \-A\-V\-R32\-\_\-\-P\-W\-M\-\_\-3\-\_\-\-P\-I\-N for \-P\-W\-M channel 3 can also be used to release module pins for \-G\-P\-I\-O. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gpio_8h_af8e9d12ce235497e93a945d244ffcb1d}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-enable\-\_\-module@{gpio\-\_\-enable\-\_\-module}}
+\index{gpio\-\_\-enable\-\_\-module@{gpio\-\_\-enable\-\_\-module}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-enable\-\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}int gpio\-\_\-enable\-\_\-module (
+\begin{DoxyParamCaption}
+\item[{const {\bf gpio\-\_\-map\-\_\-t}}]{gpiomap, }
+\item[{uint32\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_af8e9d12ce235497e93a945d244ffcb1d}
+
+
+\-Enables specific module modes for a set of pins. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em gpiomap} & \-The pin map. \\
+\hline
+{\em size} & \-The number of pins in {\itshape gpiomap\/}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{gpio_8h_a27f04dbcec307382213c2179b50890c2}{\-G\-P\-I\-O\-\_\-\-S\-U\-C\-C\-E\-S\-S} or \hyperlink{gpio_8h_a13cb25f6da54f68dccb38c06eb872b3e}{\-G\-P\-I\-O\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-R\-G\-U\-M\-E\-N\-T}. 
+\end{DoxyReturn}
+\hypertarget{gpio_8h_af9f1a0613d0095efbcd451aea19aad61}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-enable\-\_\-module\-\_\-pin@{gpio\-\_\-enable\-\_\-module\-\_\-pin}}
+\index{gpio\-\_\-enable\-\_\-module\-\_\-pin@{gpio\-\_\-enable\-\_\-module\-\_\-pin}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-enable\-\_\-module\-\_\-pin}]{\setlength{\rightskip}{0pt plus 5cm}int gpio\-\_\-enable\-\_\-module\-\_\-pin (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin, }
+\item[{uint32\-\_\-t}]{function}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_af9f1a0613d0095efbcd451aea19aad61}
+
+
+\-Enables a specific module mode for a pin. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number.\par
+ \-Refer to the product header file `uc3x.h' (where x is the part number; e.\-g. x = a0512) for module pins. \-E.\-g., to enable a \-P\-W\-M channel output, the pin number can be \-A\-V\-R32\-\_\-\-P\-W\-M\-\_\-3\-\_\-\-P\-I\-N for \-P\-W\-M channel 3. \\
+\hline
+{\em function} & \-The pin function.\par
+ \-Refer to the product header file `uc3x.h' (where x is the part number; e.\-g. x = a0512) for module pin functions. \-E.\-g., to enable a \-P\-W\-M channel output, the pin function can be \-A\-V\-R32\-\_\-\-P\-W\-M\-\_\-3\-\_\-\-F\-U\-N\-C\-T\-I\-O\-N for \-P\-W\-M channel 3.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{gpio_8h_a27f04dbcec307382213c2179b50890c2}{\-G\-P\-I\-O\-\_\-\-S\-U\-C\-C\-E\-S\-S} or \hyperlink{gpio_8h_a13cb25f6da54f68dccb38c06eb872b3e}{\-G\-P\-I\-O\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-R\-G\-U\-M\-E\-N\-T}. 
+\end{DoxyReturn}
+\hypertarget{gpio_8h_aaff54a64c4d4be449dacdf7489843d86}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-enable\-\_\-pin\-\_\-glitch\-\_\-filter@{gpio\-\_\-enable\-\_\-pin\-\_\-glitch\-\_\-filter}}
+\index{gpio\-\_\-enable\-\_\-pin\-\_\-glitch\-\_\-filter@{gpio\-\_\-enable\-\_\-pin\-\_\-glitch\-\_\-filter}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-enable\-\_\-pin\-\_\-glitch\-\_\-filter}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-enable\-\_\-pin\-\_\-glitch\-\_\-filter (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_aaff54a64c4d4be449dacdf7489843d86}
+
+
+\-Enables the glitch filter of a pin. 
+
+\-When the glitch filter is enabled, a glitch with duration of less than 1 clock cycle is automatically rejected, while a pulse with duration of 2 clock cycles or more is accepted. \-For pulse durations between 1 clock cycle and 2 clock cycles, the pulse may or may not be taken into account, depending on the precise timing of its occurrence. \-Thus for a pulse to be guaranteed visible it must exceed 2 clock cycles, whereas for a glitch to be reliably filtered out, its duration must not exceed 1 clock cycle. \-The filter introduces 2 clock cycles latency.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gpio_8h_a55a728589909501835f05b2ca33d43c8}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-enable\-\_\-pin\-\_\-interrupt@{gpio\-\_\-enable\-\_\-pin\-\_\-interrupt}}
+\index{gpio\-\_\-enable\-\_\-pin\-\_\-interrupt@{gpio\-\_\-enable\-\_\-pin\-\_\-interrupt}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-enable\-\_\-pin\-\_\-interrupt}]{\setlength{\rightskip}{0pt plus 5cm}int gpio\-\_\-enable\-\_\-pin\-\_\-interrupt (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin, }
+\item[{uint32\-\_\-t}]{mode}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_a55a728589909501835f05b2ca33d43c8}
+
+
+\-Enables the interrupt of a pin with the specified settings. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number. \\
+\hline
+{\em mode} & \-The trigger mode (\hyperlink{gpio_8h_a37dccdf4c8d04cae2be9a8ac321cad84}{\-G\-P\-I\-O\-\_\-\-P\-I\-N\-\_\-\-C\-H\-A\-N\-G\-E}, \hyperlink{gpio_8h_ab7f1524655feb8ef492ffa61e8325ead}{\-G\-P\-I\-O\-\_\-\-R\-I\-S\-I\-N\-G\-\_\-\-E\-D\-G\-E} or \hyperlink{gpio_8h_ae3f7c69a67f3780f8c6361df8418a36b}{\-G\-P\-I\-O\-\_\-\-F\-A\-L\-L\-I\-N\-G\-\_\-\-E\-D\-G\-E}).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\hyperlink{gpio_8h_a27f04dbcec307382213c2179b50890c2}{\-G\-P\-I\-O\-\_\-\-S\-U\-C\-C\-E\-S\-S} or \hyperlink{gpio_8h_a13cb25f6da54f68dccb38c06eb872b3e}{\-G\-P\-I\-O\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-R\-G\-U\-M\-E\-N\-T}. 
+\end{DoxyReturn}
+\hypertarget{gpio_8h_ac7473fbcb50b12ed1f89e4af0053d9e3}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-enable\-\_\-pin\-\_\-pull\-\_\-up@{gpio\-\_\-enable\-\_\-pin\-\_\-pull\-\_\-up}}
+\index{gpio\-\_\-enable\-\_\-pin\-\_\-pull\-\_\-up@{gpio\-\_\-enable\-\_\-pin\-\_\-pull\-\_\-up}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-enable\-\_\-pin\-\_\-pull\-\_\-up}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-enable\-\_\-pin\-\_\-pull\-\_\-up (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_ac7473fbcb50b12ed1f89e4af0053d9e3}
+
+
+\-Enables the pull-\/up resistor of a pin. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gpio_8h_a1c5870c1d41fc5452633f5d2dba400a8}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-get\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin\-\_\-output\-\_\-value@{gpio\-\_\-get\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin\-\_\-output\-\_\-value}}
+\index{gpio\-\_\-get\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin\-\_\-output\-\_\-value@{gpio\-\_\-get\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin\-\_\-output\-\_\-value}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-get\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin\-\_\-output\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}int gpio\-\_\-get\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin\-\_\-output\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_a1c5870c1d41fc5452633f5d2dba400a8}
+
+
+\-Returns the output value set for a \-G\-P\-I\-O pin using open drain. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The pin output value.
+\end{DoxyReturn}
+\begin{DoxyNote}{\-Note}
+\-This function must be used in conjunction with \hyperlink{gpio_8h_aefb66382a63eb80fe2dbbba81941ea27}{gpio\-\_\-set\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin}, \hyperlink{gpio_8h_aa3ab2e7879fc80a4ac6a82de162a5b54}{gpio\-\_\-clr\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin} and \hyperlink{gpio_8h_ae84d0b7369c3a00074129a0669eaa8c0}{gpio\-\_\-tgl\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin}. 
+\end{DoxyNote}
+\hypertarget{gpio_8h_ade998bc37c9a25de09e924d819196ba1}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-get\-\_\-gpio\-\_\-pin\-\_\-output\-\_\-value@{gpio\-\_\-get\-\_\-gpio\-\_\-pin\-\_\-output\-\_\-value}}
+\index{gpio\-\_\-get\-\_\-gpio\-\_\-pin\-\_\-output\-\_\-value@{gpio\-\_\-get\-\_\-gpio\-\_\-pin\-\_\-output\-\_\-value}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-get\-\_\-gpio\-\_\-pin\-\_\-output\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}int gpio\-\_\-get\-\_\-gpio\-\_\-pin\-\_\-output\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_ade998bc37c9a25de09e924d819196ba1}
+
+
+\-Returns the output value set for a \-G\-P\-I\-O pin. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The pin output value.
+\end{DoxyReturn}
+\begin{DoxyNote}{\-Note}
+\-This function must be used in conjunction with \hyperlink{gpio_8h_a4d51cd706a0f51f82298d2e532267ef5}{gpio\-\_\-set\-\_\-gpio\-\_\-pin}, \hyperlink{gpio_8h_a556450a9b5877a6c3c02b9dac60595f9}{gpio\-\_\-clr\-\_\-gpio\-\_\-pin} and \hyperlink{gpio_8h_a559c1966b17539fb6f2e6f88ceb52d0f}{gpio\-\_\-tgl\-\_\-gpio\-\_\-pin}. 
+\end{DoxyNote}
+\hypertarget{gpio_8h_a45b567e9f64c3917c1584adb6f634d0a}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-get\-\_\-pin\-\_\-interrupt\-\_\-flag@{gpio\-\_\-get\-\_\-pin\-\_\-interrupt\-\_\-flag}}
+\index{gpio\-\_\-get\-\_\-pin\-\_\-interrupt\-\_\-flag@{gpio\-\_\-get\-\_\-pin\-\_\-interrupt\-\_\-flag}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-get\-\_\-pin\-\_\-interrupt\-\_\-flag}]{\setlength{\rightskip}{0pt plus 5cm}int gpio\-\_\-get\-\_\-pin\-\_\-interrupt\-\_\-flag (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_a45b567e9f64c3917c1584adb6f634d0a}
+
+
+\-Gets the interrupt flag of a pin. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The pin interrupt flag. 
+\end{DoxyReturn}
+\hypertarget{gpio_8h_a595b3cc6efd0f39a7daf8adffdf8d722}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-get\-\_\-pin\-\_\-value@{gpio\-\_\-get\-\_\-pin\-\_\-value}}
+\index{gpio\-\_\-get\-\_\-pin\-\_\-value@{gpio\-\_\-get\-\_\-pin\-\_\-value}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-get\-\_\-pin\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}int gpio\-\_\-get\-\_\-pin\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_a595b3cc6efd0f39a7daf8adffdf8d722}
+
+
+\-Returns the value of a pin. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The pin value. 
+\end{DoxyReturn}
+\hypertarget{gpio_8h_aefb66382a63eb80fe2dbbba81941ea27}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-set\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin@{gpio\-\_\-set\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin}}
+\index{gpio\-\_\-set\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin@{gpio\-\_\-set\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-set\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-set\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_aefb66382a63eb80fe2dbbba81941ea27}
+
+
+\-Drives a \-G\-P\-I\-O pin to 1 using open drain. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gpio_8h_a4d51cd706a0f51f82298d2e532267ef5}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-set\-\_\-gpio\-\_\-pin@{gpio\-\_\-set\-\_\-gpio\-\_\-pin}}
+\index{gpio\-\_\-set\-\_\-gpio\-\_\-pin@{gpio\-\_\-set\-\_\-gpio\-\_\-pin}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-set\-\_\-gpio\-\_\-pin}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-set\-\_\-gpio\-\_\-pin (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_a4d51cd706a0f51f82298d2e532267ef5}
+
+
+\-Drives a \-G\-P\-I\-O pin to 1. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gpio_8h_a80f54b96c3056680069c59114c13c11c}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-set\-\_\-group\-\_\-high@{gpio\-\_\-set\-\_\-group\-\_\-high}}
+\index{gpio\-\_\-set\-\_\-group\-\_\-high@{gpio\-\_\-set\-\_\-group\-\_\-high}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-set\-\_\-group\-\_\-high}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-set\-\_\-group\-\_\-high (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{port, }
+\item[{uint32\-\_\-t}]{mask}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_a80f54b96c3056680069c59114c13c11c}
+
+
+\-Drives a \-G\-P\-I\-O port to 1. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em port} & \-The port number. \\
+\hline
+{\em mask} & \-The mask. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gpio_8h_a88a6f215862430f83fac55a7f2843df6}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-set\-\_\-group\-\_\-low@{gpio\-\_\-set\-\_\-group\-\_\-low}}
+\index{gpio\-\_\-set\-\_\-group\-\_\-low@{gpio\-\_\-set\-\_\-group\-\_\-low}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-set\-\_\-group\-\_\-low}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-set\-\_\-group\-\_\-low (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{port, }
+\item[{uint32\-\_\-t}]{mask}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_a88a6f215862430f83fac55a7f2843df6}
+
+
+\-Drives a \-G\-P\-I\-O port to 0. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em port} & \-The port number. \\
+\hline
+{\em mask} & \-The mask. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gpio_8h_a56f766236871cf0dbe917d9ead9b5fca}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-set\-\_\-pin\-\_\-high@{gpio\-\_\-set\-\_\-pin\-\_\-high}}
+\index{gpio\-\_\-set\-\_\-pin\-\_\-high@{gpio\-\_\-set\-\_\-pin\-\_\-high}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-set\-\_\-pin\-\_\-high}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-set\-\_\-pin\-\_\-high (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_a56f766236871cf0dbe917d9ead9b5fca}
+
+
+\-Drives a \-G\-P\-I\-O pin to 1. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Note}
+\-The function \hyperlink{gpio_8h_aa1efc8ea580cc2ac1dd4f2b7694753a1}{gpio\-\_\-configure\-\_\-pin} must be called before. 
+\end{DoxyNote}
+\hypertarget{gpio_8h_ac691d66dd34e00bc7e990458fbd63cd8}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-set\-\_\-pin\-\_\-low@{gpio\-\_\-set\-\_\-pin\-\_\-low}}
+\index{gpio\-\_\-set\-\_\-pin\-\_\-low@{gpio\-\_\-set\-\_\-pin\-\_\-low}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-set\-\_\-pin\-\_\-low}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-set\-\_\-pin\-\_\-low (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_ac691d66dd34e00bc7e990458fbd63cd8}
+
+
+\-Drives a \-G\-P\-I\-O pin to 0. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Note}
+\-The function \hyperlink{gpio_8h_aa1efc8ea580cc2ac1dd4f2b7694753a1}{gpio\-\_\-configure\-\_\-pin} must be called before. 
+\end{DoxyNote}
+\hypertarget{gpio_8h_ae84d0b7369c3a00074129a0669eaa8c0}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-tgl\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin@{gpio\-\_\-tgl\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin}}
+\index{gpio\-\_\-tgl\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin@{gpio\-\_\-tgl\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-tgl\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-tgl\-\_\-gpio\-\_\-open\-\_\-drain\-\_\-pin (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_ae84d0b7369c3a00074129a0669eaa8c0}
+
+
+\-Toggles a \-G\-P\-I\-O pin using open drain. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gpio_8h_a559c1966b17539fb6f2e6f88ceb52d0f}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-tgl\-\_\-gpio\-\_\-pin@{gpio\-\_\-tgl\-\_\-gpio\-\_\-pin}}
+\index{gpio\-\_\-tgl\-\_\-gpio\-\_\-pin@{gpio\-\_\-tgl\-\_\-gpio\-\_\-pin}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-tgl\-\_\-gpio\-\_\-pin}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-tgl\-\_\-gpio\-\_\-pin (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_a559c1966b17539fb6f2e6f88ceb52d0f}
+
+
+\-Toggles a \-G\-P\-I\-O pin. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gpio_8h_a592c014bb5a6f725d69d52ced0a2dd50}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-toggle\-\_\-group@{gpio\-\_\-toggle\-\_\-group}}
+\index{gpio\-\_\-toggle\-\_\-group@{gpio\-\_\-toggle\-\_\-group}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-toggle\-\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-toggle\-\_\-group (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{port, }
+\item[{uint32\-\_\-t}]{mask}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_a592c014bb5a6f725d69d52ced0a2dd50}
+
+
+\-Toggles a \-G\-P\-I\-O group. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em port} & \-The port number. \\
+\hline
+{\em mask} & \-The mask. \\
+\hline
+\end{DoxyParams}
+\hypertarget{gpio_8h_a821248aa6811112db9bf1ce9a67861bb}{
+\index{gpio.\-h@{gpio.\-h}!gpio\-\_\-toggle\-\_\-pin@{gpio\-\_\-toggle\-\_\-pin}}
+\index{gpio\-\_\-toggle\-\_\-pin@{gpio\-\_\-toggle\-\_\-pin}!gpio.h@{gpio.\-h}}
+\subsubsection[{gpio\-\_\-toggle\-\_\-pin}]{\setlength{\rightskip}{0pt plus 5cm}void gpio\-\_\-toggle\-\_\-pin (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pin}
+\end{DoxyParamCaption}
+)}}
+\label{gpio_8h_a821248aa6811112db9bf1ce9a67861bb}
+
+
+\-Toggles a \-G\-P\-I\-O pin. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em pin} & \-The pin number.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{\-Note}
+\-The function \hyperlink{gpio_8h_aa1efc8ea580cc2ac1dd4f2b7694753a1}{gpio\-\_\-configure\-\_\-pin} must be called before. 
+\end{DoxyNote}

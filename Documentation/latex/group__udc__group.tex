@@ -1,0 +1,185 @@
+\hypertarget{group__udc__group}{
+\section{\-U\-S\-B \-Device \-Controller (\-U\-D\-C)}
+\label{group__udc__group}\index{\-U\-S\-B Device Controller (\-U\-D\-C)@{\-U\-S\-B Device Controller (\-U\-D\-C)}}
+}
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structudc__string__desc__t}{udc\-\_\-string\-\_\-desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-U\-S\-B device string descriptor \-Structure used to transfer \-A\-S\-C\-I\-I strings to \-U\-S\-B \-String descriptor structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__udc__desc__group}{\-U\-S\-B Device Descriptor}
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structusb__iface__desc__t}{usb\-\_\-iface\-\_\-desc\-\_\-t} \-U\-D\-C\-\_\-\-D\-E\-S\-C\-\_\-\-S\-T\-O\-R\-A\-G\-E $\ast$ \hyperlink{group__udc__group_ga7da79665b18d9c63db481ec59987ce66}{udc\-\_\-get\-\_\-interface\-\_\-desc} (void)
+\begin{DoxyCompactList}\small\item\em \-Returns a pointer on the current interface descriptor. \end{DoxyCompactList}\item 
+void \hyperlink{group__udc__group_ga11a32ff7928ba06d3b59e95e0a2b7a92}{udc\-\_\-reset} (void)
+\begin{DoxyCompactList}\small\item\em \-Reset the current configuration of the \-U\-S\-B device, \-This routines can be called by \-U\-D\-D when a \-R\-E\-S\-E\-T on the \-U\-S\-B line occurs. \end{DoxyCompactList}\item 
+void \hyperlink{group__udc__group_ga4afae313045f44b5eb4c60957ab8ef4e}{udc\-\_\-sof\-\_\-notify} (void)
+\begin{DoxyCompactList}\small\item\em \-To signal that a \-S\-O\-F is occured. \end{DoxyCompactList}\item 
+bool \hyperlink{group__udc__group_ga58c2916d7984e0e5b2143cadf4af6080}{udc\-\_\-process\-\_\-setup} (void)
+\begin{DoxyCompactList}\small\item\em \-Main routine to manage the \-U\-S\-B \-S\-E\-T\-U\-P request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Internal structure to store the \-U\-S\-B device main strings}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__udc__group_gac2dafd8d9efe73f2709291818829a79b}{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-N\-U\-F\-A\-C\-T\-U\-R\-E\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E}~0
+\begin{DoxyCompactList}\small\item\em \-U\-S\-B device manufacture name storage \-String is allocated only if \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-N\-U\-F\-A\-C\-T\-U\-R\-E\-\_\-\-N\-A\-M\-E is declared by usb application configuration. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__udc__group_ga76a9e0f1f322165feaf0a8f2f583ea8f}{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E}~0
+\begin{DoxyCompactList}\small\item\em \-U\-S\-B device product name storage \-String is allocated only if \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-N\-A\-M\-E is declared by usb application configuration. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__udc__group_gacf4c1ef7c6001ee2b919e81143543899}{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E}~0
+\begin{DoxyCompactList}\small\item\em \-Get \-U\-S\-B device serial number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-The \-U\-D\-C provides a high-\/level abstraction of the usb device. \-You can use these functions to control the main device state (start/attach/wakeup).\hypertarget{group__udc__group_USB_DEVICE_CONF}{}\subsection{\-U\-S\-B Device Custom configuration}\label{group__udc__group_USB_DEVICE_CONF}
+\-The following \-U\-S\-B \-Device configuration must be included in the \hyperlink{conf__usb_8h}{conf\-\_\-usb.\-h} file of the application.
+
+\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-V\-E\-N\-D\-O\-R\-\_\-\-I\-D (\-Word)\par
+ \-Vendor \-I\-D provided by \-U\-S\-B org (\-A\-T\-M\-E\-L 0x03\-E\-B).
+
+\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-I\-D (\-Word)\par
+ \-Product \-I\-D (\-Referenced in \hyperlink{usb__atmel_8h}{usb\-\_\-atmel.\-h}).
+
+\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-J\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N (\-Byte)\par
+ \-Major version of the device
+
+\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-I\-N\-O\-R\-\_\-\-V\-E\-R\-S\-I\-O\-N (\-Byte)\par
+ \-Minor version of the device
+
+\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-N\-U\-F\-A\-C\-T\-U\-R\-E\-\_\-\-N\-A\-M\-E (string)\par
+ \-A\-S\-C\-I\-I name for the manufacture
+
+\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-N\-A\-M\-E (string)\par
+ \-A\-S\-C\-I\-I name for the product
+
+\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-N\-A\-M\-E (string)\par
+ \-A\-S\-C\-I\-I name to enable and set a serial number
+
+\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-O\-W\-E\-R (\-Numeric)\par
+ (unit m\-A) \-Maximum device power
+
+\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-A\-T\-T\-R (\-Byte)\par
+ \-U\-S\-B attributes available\-:
+\begin{DoxyItemize}
+\item \-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-S\-E\-L\-F\-\_\-\-P\-O\-W\-E\-R\-E\-D
+\item \-U\-S\-B\-\_\-\-C\-O\-N\-F\-I\-G\-\_\-\-A\-T\-T\-R\-\_\-\-R\-E\-M\-O\-T\-E\-\_\-\-W\-A\-K\-E\-U\-P \-Note\-: if remote wake enabled then defines remotewakeup callbacks, see \-Table 5-\/2. \-External \-A\-P\-I from \-U\-D\-C -\/ \-Callback
+\end{DoxyItemize}
+
+\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-L\-O\-W\-\_\-\-S\-P\-E\-E\-D (\-Only defined)\par
+ \-Force the \-U\-S\-B \-Device to run in low speed
+
+\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-H\-S\-\_\-\-S\-U\-P\-P\-O\-R\-T (\-Only defined)\par
+ \-Authorize the \-U\-S\-B \-Device to run in high speed
+
+\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-X\-\_\-\-E\-P (\-Byte)\par
+ \-Define the maximum endpoint number used by the \-U\-S\-B \-Device.\par
+ \-This one is already defined in \-U\-D\-I default configuration. \-Ex\-:
+\begin{DoxyItemize}
+\item \-When endpoint control 0x00, endpoint 0x01 and endpoint 0x82 is used then \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-X\-\_\-\-E\-P=2
+\item \-When only endpoint control 0x00 is used then \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-X\-\_\-\-E\-P=0
+\item \-When endpoint 0x01 and endpoint 0x81 is used then \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-X\-\_\-\-E\-P=1\par
+ (configuration not possible on \-U\-S\-B\-B interface) 
+\end{DoxyItemize}
+
+\subsection{\-Define \-Documentation}
+\hypertarget{group__udc__group_gac2dafd8d9efe73f2709291818829a79b}{
+\index{\-U\-S\-B Device Controller (\-U\-D\-C)@{\-U\-S\-B Device Controller (\-U\-D\-C)}!\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-N\-U\-F\-A\-C\-T\-U\-R\-E\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-N\-U\-F\-A\-C\-T\-U\-R\-E\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E}}
+\index{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-N\-U\-F\-A\-C\-T\-U\-R\-E\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-N\-U\-F\-A\-C\-T\-U\-R\-E\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E}!USB Device Controller (UDC)@{\-U\-S\-B Device Controller (\-U\-D\-C)}}
+\subsubsection[{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-N\-U\-F\-A\-C\-T\-U\-R\-E\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-N\-U\-F\-A\-C\-T\-U\-R\-E\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E~0}}
+\label{group__udc__group_gac2dafd8d9efe73f2709291818829a79b}
+
+
+\-U\-S\-B device manufacture name storage \-String is allocated only if \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-M\-A\-N\-U\-F\-A\-C\-T\-U\-R\-E\-\_\-\-N\-A\-M\-E is declared by usb application configuration. 
+
+\hypertarget{group__udc__group_ga76a9e0f1f322165feaf0a8f2f583ea8f}{
+\index{\-U\-S\-B Device Controller (\-U\-D\-C)@{\-U\-S\-B Device Controller (\-U\-D\-C)}!\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E}}
+\index{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E}!USB Device Controller (UDC)@{\-U\-S\-B Device Controller (\-U\-D\-C)}}
+\subsubsection[{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E~0}}
+\label{group__udc__group_ga76a9e0f1f322165feaf0a8f2f583ea8f}
+
+
+\-U\-S\-B device product name storage \-String is allocated only if \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-P\-R\-O\-D\-U\-C\-T\-\_\-\-N\-A\-M\-E is declared by usb application configuration. 
+
+\hypertarget{group__udc__group_gacf4c1ef7c6001ee2b919e81143543899}{
+\index{\-U\-S\-B Device Controller (\-U\-D\-C)@{\-U\-S\-B Device Controller (\-U\-D\-C)}!\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E}}
+\index{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E@{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E}!USB Device Controller (UDC)@{\-U\-S\-B Device Controller (\-U\-D\-C)}}
+\subsubsection[{\-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-N\-A\-M\-E\-\_\-\-S\-I\-Z\-E~0}}
+\label{group__udc__group_gacf4c1ef7c6001ee2b919e81143543899}
+
+
+\-Get \-U\-S\-B device serial number. 
+
+\-Use the define \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-N\-A\-M\-E to set static serial number.
+
+\-For dynamic serial number set the define \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-G\-E\-T\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-N\-A\-M\-E\-\_\-\-P\-O\-I\-N\-T\-E\-R to a suitable pointer. \-This will also require the serial number length define \-U\-S\-B\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-G\-E\-T\-\_\-\-S\-E\-R\-I\-A\-L\-\_\-\-N\-A\-M\-E\-\_\-\-L\-E\-N\-G\-T\-H. 
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__udc__group_ga7da79665b18d9c63db481ec59987ce66}{
+\index{\-U\-S\-B Device Controller (\-U\-D\-C)@{\-U\-S\-B Device Controller (\-U\-D\-C)}!udc\-\_\-get\-\_\-interface\-\_\-desc@{udc\-\_\-get\-\_\-interface\-\_\-desc}}
+\index{udc\-\_\-get\-\_\-interface\-\_\-desc@{udc\-\_\-get\-\_\-interface\-\_\-desc}!USB Device Controller (UDC)@{\-U\-S\-B Device Controller (\-U\-D\-C)}}
+\subsubsection[{udc\-\_\-get\-\_\-interface\-\_\-desc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf usb\-\_\-iface\-\_\-desc\-\_\-t} \-U\-D\-C\-\_\-\-D\-E\-S\-C\-\_\-\-S\-T\-O\-R\-A\-G\-E $\ast$ udc\-\_\-get\-\_\-interface\-\_\-desc (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udc__group_ga7da79665b18d9c63db481ec59987ce66}
+
+
+\-Returns a pointer on the current interface descriptor. 
+
+\begin{DoxyReturn}{\-Returns}
+pointer on the current interface descriptor. 
+\end{DoxyReturn}
+\hypertarget{group__udc__group_ga58c2916d7984e0e5b2143cadf4af6080}{
+\index{\-U\-S\-B Device Controller (\-U\-D\-C)@{\-U\-S\-B Device Controller (\-U\-D\-C)}!udc\-\_\-process\-\_\-setup@{udc\-\_\-process\-\_\-setup}}
+\index{udc\-\_\-process\-\_\-setup@{udc\-\_\-process\-\_\-setup}!USB Device Controller (UDC)@{\-U\-S\-B Device Controller (\-U\-D\-C)}}
+\subsubsection[{udc\-\_\-process\-\_\-setup}]{\setlength{\rightskip}{0pt plus 5cm}bool udc\-\_\-process\-\_\-setup (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udc__group_ga58c2916d7984e0e5b2143cadf4af6080}
+
+
+\-Main routine to manage the \-U\-S\-B \-S\-E\-T\-U\-P request. 
+
+\-Decodes and manages a setup request.
+
+\-This function parses a \-U\-S\-B \-S\-E\-T\-U\-P request and submits an appropriate response back to the host or, in the case of \-S\-E\-T\-U\-P \-O\-U\-T requests with data, sets up a buffer for receiving the data payload.
+
+\-The main standard requests defined by the \-U\-S\-B 2.\-0 standard are handled internally. \-The interface requests are sent to \-U\-D\-I, and the specific request sent to a specific application callback.
+
+\begin{DoxyReturn}{\-Returns}
+true if the request is supported, else the request is stalled by \-U\-D\-D 
+\end{DoxyReturn}
+\hypertarget{group__udc__group_ga11a32ff7928ba06d3b59e95e0a2b7a92}{
+\index{\-U\-S\-B Device Controller (\-U\-D\-C)@{\-U\-S\-B Device Controller (\-U\-D\-C)}!udc\-\_\-reset@{udc\-\_\-reset}}
+\index{udc\-\_\-reset@{udc\-\_\-reset}!USB Device Controller (UDC)@{\-U\-S\-B Device Controller (\-U\-D\-C)}}
+\subsubsection[{udc\-\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}void udc\-\_\-reset (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udc__group_ga11a32ff7928ba06d3b59e95e0a2b7a92}
+
+
+\-Reset the current configuration of the \-U\-S\-B device, \-This routines can be called by \-U\-D\-D when a \-R\-E\-S\-E\-T on the \-U\-S\-B line occurs. 
+
+\-Reset the \-U\-D\-C. \hypertarget{group__udc__group_ga4afae313045f44b5eb4c60957ab8ef4e}{
+\index{\-U\-S\-B Device Controller (\-U\-D\-C)@{\-U\-S\-B Device Controller (\-U\-D\-C)}!udc\-\_\-sof\-\_\-notify@{udc\-\_\-sof\-\_\-notify}}
+\index{udc\-\_\-sof\-\_\-notify@{udc\-\_\-sof\-\_\-notify}!USB Device Controller (UDC)@{\-U\-S\-B Device Controller (\-U\-D\-C)}}
+\subsubsection[{udc\-\_\-sof\-\_\-notify}]{\setlength{\rightskip}{0pt plus 5cm}void udc\-\_\-sof\-\_\-notify (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__udc__group_ga4afae313045f44b5eb4c60957ab8ef4e}
+
+
+\-To signal that a \-S\-O\-F is occured. 
+
+\-The \-U\-D\-C must send the signal to all \-U\-D\-Is enabled 

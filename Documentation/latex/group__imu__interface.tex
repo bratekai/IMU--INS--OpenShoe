@@ -1,0 +1,249 @@
+\hypertarget{group__imu__interface}{
+\section{\-I\-M\-U interface}
+\label{group__imu__interface}\index{\-I\-M\-U interface@{\-I\-M\-U interface}}
+}
+
+
+\-This group contains the \-I\-M\-U interface functionalities.  
+
+
+\subsection*{\-Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__imu__interface_ga1675e8544a889ebf498d8a076eafd13a}{\-M\-A\-X\-\_\-\-L\-O\-G2\-\_\-\-N\-R\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-T\-A\-P\-S}~4
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__imu__interface_gaffa3d61bdee6ac9ce4d8c30017fca3c9}{imu\-\_\-interface\-\_\-init} (void)
+\begin{DoxyCompactList}\small\item\em \-Initialization routine for the \-I\-M\-U to \-M\-C\-U interface. \end{DoxyCompactList}\item 
+void \hyperlink{group__imu__interface_gae38a1d022cfc792215e943bdfd63483a}{convert\-\_\-inert\-\_\-readings} (void)
+\begin{DoxyCompactList}\small\item\em \-Converts raw (integer) inertial readings to float \-S\-I units. \end{DoxyCompactList}\item 
+void \hyperlink{group__imu__interface_gab9e72cf471b9cdc12145d3d185fe5f05}{convert\-\_\-auxiliary\-\_\-data} (void)
+\begin{DoxyCompactList}\small\item\em \-Converts raw (integer) auxiliary data readings to float \-S\-I units. \end{DoxyCompactList}\item 
+void \hyperlink{group__imu__interface_ga646f88d2978376b42020975d5802919d}{imu\-\_\-burst\-\_\-read} (void)
+\begin{DoxyCompactList}\small\item\em \-Request and reads all sensor output data from \-I\-M\-U. \end{DoxyCompactList}\item 
+void \hyperlink{group__imu__interface_ga71833d5eb4e7c71baaaa9e707a6c1f8d}{precision\-\_\-gyro\-\_\-bias\-\_\-null\-\_\-calibration} (void)
+\begin{DoxyCompactList}\small\item\em \-Initializes the internal \-I\-M\-U gyro calibration routine. \end{DoxyCompactList}\item 
+void \hyperlink{group__imu__interface_gaba5c2c784f3302cfb7972bbf5fef48d2}{low\-\_\-pass\-\_\-filter\-\_\-setting} (uint8\-\_\-t nr\-\_\-filter\-\_\-taps)
+\begin{DoxyCompactList}\small\item\em \-Sets the number of filter taps of the \-I\-M\-U internal low pass filter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-I\-M\-U commands}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__imu__interface_ga4cbbbb74258f1330950dddfd7e059885}{\-B\-U\-R\-S\-T\-\_\-\-R\-E\-A\-D}~0x3\-E00
+\item 
+\#define \hyperlink{group__imu__interface_ga95952a1aa5066a0ee395544b1d00f5b6}{\-P\-R\-E\-C\-I\-S\-I\-O\-N\-\_\-\-G\-Y\-R\-O\-\_\-\-B\-I\-A\-S\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N}~0x\-B\-E10
+\item 
+\#define \hyperlink{group__imu__interface_ga32b21aed5e8b0b591638c29805ea49a2}{\-S\-E\-T\-\_\-\-N\-R\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-T\-A\-P\-S}~0x\-B8
+\end{DoxyCompactItemize}
+\subsection*{\-Scaling of \-I\-M\-U raw data}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__imu__interface_gacf1763c4ed2b219ea3a67c92d9740186}{\-S\-U\-P\-P\-L\-Y\-\_\-\-S\-C\-A\-L\-E}~0.\-002418f
+\item 
+\#define \hyperlink{group__imu__interface_gacf1763c4ed2b219ea3a67c92d9740186}{\-S\-U\-P\-P\-L\-Y\-\_\-\-S\-C\-A\-L\-E}~0.\-000151125f
+\item 
+\#define \hyperlink{group__imu__interface_gabdeac7f9288bf09fd6e1739d22ff8bea}{\-G\-Y\-R\-O\-\_\-\-S\-C\-A\-L\-E}~0.\-00087266f
+\item 
+\#define \hyperlink{group__imu__interface_ga12c7b17bb03dc66dac226cdfe74f3c2d}{\-A\-C\-C\-\_\-\-S\-C\-A\-L\-E}~0.\-0081643275f
+\item 
+\#define \hyperlink{group__imu__interface_ga37fc2eea145b1cf777795b062ce43500}{\-T\-E\-M\-P\-\_\-\-S\-C\-A\-L\-E}~0.\-0085f
+\end{DoxyCompactItemize}
+\subsection*{\-Global \-I\-M\-U output variables}
+\label{_amgrpf39e9e9a0e1f588f7f14ba40bfd8a838}%
+ \-Global variable used for making sensor readings available to other parts of the program. \-The variables will contain the latest read out sensor readings. \-The values are scaled to \-S\-I units apart from the temperature which is in $^circ C$. \-Angels are given in radians. \begin{DoxyCompactItemize}
+\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__imu__interface_gaf92cab44915b7d9faaf5aeadb328bae6}{accelerations\-\_\-in}
+\begin{DoxyCompactList}\small\item\em $[m/s^2]$ \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__imu__interface_ga8cac4b2812dcb492989d7122c5eb0bfb}{angular\-\_\-rates\-\_\-in}
+\begin{DoxyCompactList}\small\item\em $[rad/s]$ \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a90c683614d896321009d3b3c401b764f}{vec3} \hyperlink{group__imu__interface_gacd438fa96131e9024d8ad206d83ffb66}{imu\-\_\-temperaturs}
+\begin{DoxyCompactList}\small\item\em $[^circ C]$ \end{DoxyCompactList}\item 
+\hyperlink{nav__types_8h_a37e1884b1f06826c49607cec459b4e8a}{precision} \hyperlink{group__imu__interface_ga3f561003deb253bcc716a6c690c87cfe}{imu\-\_\-supply\-\_\-voltage}
+\begin{DoxyCompactList}\small\item\em $[V]$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-This group contains the \-I\-M\-U interface functionalities. 
+
+\subsection{\-Define \-Documentation}
+\hypertarget{group__imu__interface_ga12c7b17bb03dc66dac226cdfe74f3c2d}{
+\index{\-I\-M\-U interface@{\-I\-M\-U interface}!\-A\-C\-C\-\_\-\-S\-C\-A\-L\-E@{\-A\-C\-C\-\_\-\-S\-C\-A\-L\-E}}
+\index{\-A\-C\-C\-\_\-\-S\-C\-A\-L\-E@{\-A\-C\-C\-\_\-\-S\-C\-A\-L\-E}!IMU interface@{\-I\-M\-U interface}}
+\subsubsection[{\-A\-C\-C\-\_\-\-S\-C\-A\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-A\-C\-C\-\_\-\-S\-C\-A\-L\-E~0.\-0081643275f}}
+\label{group__imu__interface_ga12c7b17bb03dc66dac226cdfe74f3c2d}
+\hypertarget{group__imu__interface_ga4cbbbb74258f1330950dddfd7e059885}{
+\index{\-I\-M\-U interface@{\-I\-M\-U interface}!\-B\-U\-R\-S\-T\-\_\-\-R\-E\-A\-D@{\-B\-U\-R\-S\-T\-\_\-\-R\-E\-A\-D}}
+\index{\-B\-U\-R\-S\-T\-\_\-\-R\-E\-A\-D@{\-B\-U\-R\-S\-T\-\_\-\-R\-E\-A\-D}!IMU interface@{\-I\-M\-U interface}}
+\subsubsection[{\-B\-U\-R\-S\-T\-\_\-\-R\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-B\-U\-R\-S\-T\-\_\-\-R\-E\-A\-D~0x3\-E00}}
+\label{group__imu__interface_ga4cbbbb74258f1330950dddfd7e059885}
+\hypertarget{group__imu__interface_gabdeac7f9288bf09fd6e1739d22ff8bea}{
+\index{\-I\-M\-U interface@{\-I\-M\-U interface}!\-G\-Y\-R\-O\-\_\-\-S\-C\-A\-L\-E@{\-G\-Y\-R\-O\-\_\-\-S\-C\-A\-L\-E}}
+\index{\-G\-Y\-R\-O\-\_\-\-S\-C\-A\-L\-E@{\-G\-Y\-R\-O\-\_\-\-S\-C\-A\-L\-E}!IMU interface@{\-I\-M\-U interface}}
+\subsubsection[{\-G\-Y\-R\-O\-\_\-\-S\-C\-A\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-G\-Y\-R\-O\-\_\-\-S\-C\-A\-L\-E~0.\-00087266f}}
+\label{group__imu__interface_gabdeac7f9288bf09fd6e1739d22ff8bea}
+\hypertarget{group__imu__interface_ga1675e8544a889ebf498d8a076eafd13a}{
+\index{\-I\-M\-U interface@{\-I\-M\-U interface}!\-M\-A\-X\-\_\-\-L\-O\-G2\-\_\-\-N\-R\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-T\-A\-P\-S@{\-M\-A\-X\-\_\-\-L\-O\-G2\-\_\-\-N\-R\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-T\-A\-P\-S}}
+\index{\-M\-A\-X\-\_\-\-L\-O\-G2\-\_\-\-N\-R\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-T\-A\-P\-S@{\-M\-A\-X\-\_\-\-L\-O\-G2\-\_\-\-N\-R\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-T\-A\-P\-S}!IMU interface@{\-I\-M\-U interface}}
+\subsubsection[{\-M\-A\-X\-\_\-\-L\-O\-G2\-\_\-\-N\-R\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-T\-A\-P\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-M\-A\-X\-\_\-\-L\-O\-G2\-\_\-\-N\-R\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-T\-A\-P\-S~4}}
+\label{group__imu__interface_ga1675e8544a889ebf498d8a076eafd13a}
+\hypertarget{group__imu__interface_ga95952a1aa5066a0ee395544b1d00f5b6}{
+\index{\-I\-M\-U interface@{\-I\-M\-U interface}!\-P\-R\-E\-C\-I\-S\-I\-O\-N\-\_\-\-G\-Y\-R\-O\-\_\-\-B\-I\-A\-S\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N@{\-P\-R\-E\-C\-I\-S\-I\-O\-N\-\_\-\-G\-Y\-R\-O\-\_\-\-B\-I\-A\-S\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N}}
+\index{\-P\-R\-E\-C\-I\-S\-I\-O\-N\-\_\-\-G\-Y\-R\-O\-\_\-\-B\-I\-A\-S\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N@{\-P\-R\-E\-C\-I\-S\-I\-O\-N\-\_\-\-G\-Y\-R\-O\-\_\-\-B\-I\-A\-S\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N}!IMU interface@{\-I\-M\-U interface}}
+\subsubsection[{\-P\-R\-E\-C\-I\-S\-I\-O\-N\-\_\-\-G\-Y\-R\-O\-\_\-\-B\-I\-A\-S\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-P\-R\-E\-C\-I\-S\-I\-O\-N\-\_\-\-G\-Y\-R\-O\-\_\-\-B\-I\-A\-S\-\_\-\-C\-A\-L\-I\-B\-R\-A\-T\-I\-O\-N~0x\-B\-E10}}
+\label{group__imu__interface_ga95952a1aa5066a0ee395544b1d00f5b6}
+\hypertarget{group__imu__interface_ga32b21aed5e8b0b591638c29805ea49a2}{
+\index{\-I\-M\-U interface@{\-I\-M\-U interface}!\-S\-E\-T\-\_\-\-N\-R\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-T\-A\-P\-S@{\-S\-E\-T\-\_\-\-N\-R\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-T\-A\-P\-S}}
+\index{\-S\-E\-T\-\_\-\-N\-R\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-T\-A\-P\-S@{\-S\-E\-T\-\_\-\-N\-R\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-T\-A\-P\-S}!IMU interface@{\-I\-M\-U interface}}
+\subsubsection[{\-S\-E\-T\-\_\-\-N\-R\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-T\-A\-P\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-E\-T\-\_\-\-N\-R\-\_\-\-F\-I\-L\-T\-E\-R\-\_\-\-T\-A\-P\-S~0x\-B8}}
+\label{group__imu__interface_ga32b21aed5e8b0b591638c29805ea49a2}
+\hypertarget{group__imu__interface_gacf1763c4ed2b219ea3a67c92d9740186}{
+\index{\-I\-M\-U interface@{\-I\-M\-U interface}!\-S\-U\-P\-P\-L\-Y\-\_\-\-S\-C\-A\-L\-E@{\-S\-U\-P\-P\-L\-Y\-\_\-\-S\-C\-A\-L\-E}}
+\index{\-S\-U\-P\-P\-L\-Y\-\_\-\-S\-C\-A\-L\-E@{\-S\-U\-P\-P\-L\-Y\-\_\-\-S\-C\-A\-L\-E}!IMU interface@{\-I\-M\-U interface}}
+\subsubsection[{\-S\-U\-P\-P\-L\-Y\-\_\-\-S\-C\-A\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-U\-P\-P\-L\-Y\-\_\-\-S\-C\-A\-L\-E~0.\-002418f}}
+\label{group__imu__interface_gacf1763c4ed2b219ea3a67c92d9740186}
+\hypertarget{group__imu__interface_gacf1763c4ed2b219ea3a67c92d9740186}{
+\index{\-I\-M\-U interface@{\-I\-M\-U interface}!\-S\-U\-P\-P\-L\-Y\-\_\-\-S\-C\-A\-L\-E@{\-S\-U\-P\-P\-L\-Y\-\_\-\-S\-C\-A\-L\-E}}
+\index{\-S\-U\-P\-P\-L\-Y\-\_\-\-S\-C\-A\-L\-E@{\-S\-U\-P\-P\-L\-Y\-\_\-\-S\-C\-A\-L\-E}!IMU interface@{\-I\-M\-U interface}}
+\subsubsection[{\-S\-U\-P\-P\-L\-Y\-\_\-\-S\-C\-A\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-S\-U\-P\-P\-L\-Y\-\_\-\-S\-C\-A\-L\-E~0.\-000151125f}}
+\label{group__imu__interface_gacf1763c4ed2b219ea3a67c92d9740186}
+\hypertarget{group__imu__interface_ga37fc2eea145b1cf777795b062ce43500}{
+\index{\-I\-M\-U interface@{\-I\-M\-U interface}!\-T\-E\-M\-P\-\_\-\-S\-C\-A\-L\-E@{\-T\-E\-M\-P\-\_\-\-S\-C\-A\-L\-E}}
+\index{\-T\-E\-M\-P\-\_\-\-S\-C\-A\-L\-E@{\-T\-E\-M\-P\-\_\-\-S\-C\-A\-L\-E}!IMU interface@{\-I\-M\-U interface}}
+\subsubsection[{\-T\-E\-M\-P\-\_\-\-S\-C\-A\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define \-T\-E\-M\-P\-\_\-\-S\-C\-A\-L\-E~0.\-0085f}}
+\label{group__imu__interface_ga37fc2eea145b1cf777795b062ce43500}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{group__imu__interface_gab9e72cf471b9cdc12145d3d185fe5f05}{
+\index{\-I\-M\-U interface@{\-I\-M\-U interface}!convert\-\_\-auxiliary\-\_\-data@{convert\-\_\-auxiliary\-\_\-data}}
+\index{convert\-\_\-auxiliary\-\_\-data@{convert\-\_\-auxiliary\-\_\-data}!IMU interface@{\-I\-M\-U interface}}
+\subsubsection[{convert\-\_\-auxiliary\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}void convert\-\_\-auxiliary\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__imu__interface_gab9e72cf471b9cdc12145d3d185fe5f05}
+
+
+\-Converts raw (integer) auxiliary data readings to float \-S\-I units. 
+
+\hypertarget{group__imu__interface_gae38a1d022cfc792215e943bdfd63483a}{
+\index{\-I\-M\-U interface@{\-I\-M\-U interface}!convert\-\_\-inert\-\_\-readings@{convert\-\_\-inert\-\_\-readings}}
+\index{convert\-\_\-inert\-\_\-readings@{convert\-\_\-inert\-\_\-readings}!IMU interface@{\-I\-M\-U interface}}
+\subsubsection[{convert\-\_\-inert\-\_\-readings}]{\setlength{\rightskip}{0pt plus 5cm}void convert\-\_\-inert\-\_\-readings (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__imu__interface_gae38a1d022cfc792215e943bdfd63483a}
+
+
+\-Converts raw (integer) inertial readings to float \-S\-I units. 
+
+\hypertarget{group__imu__interface_ga646f88d2978376b42020975d5802919d}{
+\index{\-I\-M\-U interface@{\-I\-M\-U interface}!imu\-\_\-burst\-\_\-read@{imu\-\_\-burst\-\_\-read}}
+\index{imu\-\_\-burst\-\_\-read@{imu\-\_\-burst\-\_\-read}!IMU interface@{\-I\-M\-U interface}}
+\subsubsection[{imu\-\_\-burst\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}void imu\-\_\-burst\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__imu__interface_ga646f88d2978376b42020975d5802919d}
+
+
+\-Request and reads all sensor output data from \-I\-M\-U. 
+
+\-This function uses the \-I\-M\-U burst read functionallity in which all \-I\-M\-U sensor data (rotation, specific force, temperature, and supply voltage) is output by the \-I\-M\-U after a single request. \-This way only two clock cycles are required between each read operation. \-This is faster than only reading out rotation and specific force. \-The functions first reads in the values in 16-\/bit intermediate variables and then call the help functions \hyperlink{group__imu__interface_gae38a1d022cfc792215e943bdfd63483a}{convert\-\_\-inert\-\_\-readings()} and \hyperlink{group__imu__interface_gab9e72cf471b9cdc12145d3d185fe5f05}{convert\-\_\-auxiliary\-\_\-data()} to shift out status bits and scale to \-S\-I units.
+
+
+\begin{DoxyParams}[1]{\-Parameters}
+\mbox{\tt out}  & {\em angular\-\_\-rates\-\_\-in} & \-Vector containing the 3 (x,y,z) angular rates in \mbox{[}rad/sec\mbox{]}. \\
+\hline
+\mbox{\tt out}  & {\em accelerations\-\_\-in} & \-Vector containing the 3 (x,y,z) specific force in \mbox{[}m/s$^\wedge$2\mbox{]}. \\
+\hline
+\mbox{\tt out}  & {\em imu\-\_\-temperatures} & \-Vector containing the 3 (x,y,z) temperatur readings in \mbox{[}\-C\mbox{]}. \\
+\hline
+\mbox{\tt out}  & {\em imu\-\_\-supply\-\_\-voltage} & \-Supply voltage measurement in \mbox{[}\-V\mbox{]}. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__imu__interface_gaffa3d61bdee6ac9ce4d8c30017fca3c9}{
+\index{\-I\-M\-U interface@{\-I\-M\-U interface}!imu\-\_\-interface\-\_\-init@{imu\-\_\-interface\-\_\-init}}
+\index{imu\-\_\-interface\-\_\-init@{imu\-\_\-interface\-\_\-init}!IMU interface@{\-I\-M\-U interface}}
+\subsubsection[{imu\-\_\-interface\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}void imu\-\_\-interface\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__imu__interface_gaffa3d61bdee6ac9ce4d8c30017fca3c9}
+
+
+\-Initialization routine for the \-I\-M\-U to \-M\-C\-U interface. 
+
+/brief \-Initialization routine for the \-I\-M\-U to \-M\-C\-U interface
+
+/details \-The initialization functions calls asf spi master initialization and setup routines with arguments defined by setting macros found in conf\-\_\-spi\-\_\-master.\-h. \-The routine selects the \-I\-M\-U \-S\-P\-I for communication and the interface functions will assume that the \-I\-M\-U \-S\-P\-I is still selected. \hypertarget{group__imu__interface_gaba5c2c784f3302cfb7972bbf5fef48d2}{
+\index{\-I\-M\-U interface@{\-I\-M\-U interface}!low\-\_\-pass\-\_\-filter\-\_\-setting@{low\-\_\-pass\-\_\-filter\-\_\-setting}}
+\index{low\-\_\-pass\-\_\-filter\-\_\-setting@{low\-\_\-pass\-\_\-filter\-\_\-setting}!IMU interface@{\-I\-M\-U interface}}
+\subsubsection[{low\-\_\-pass\-\_\-filter\-\_\-setting}]{\setlength{\rightskip}{0pt plus 5cm}void low\-\_\-pass\-\_\-filter\-\_\-setting (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{nr\-\_\-filter\-\_\-taps}
+\end{DoxyParamCaption}
+)}}
+\label{group__imu__interface_gaba5c2c784f3302cfb7972bbf5fef48d2}
+
+
+\-Sets the number of filter taps of the \-I\-M\-U internal low pass filter. 
+
+\hypertarget{group__imu__interface_ga71833d5eb4e7c71baaaa9e707a6c1f8d}{
+\index{\-I\-M\-U interface@{\-I\-M\-U interface}!precision\-\_\-gyro\-\_\-bias\-\_\-null\-\_\-calibration@{precision\-\_\-gyro\-\_\-bias\-\_\-null\-\_\-calibration}}
+\index{precision\-\_\-gyro\-\_\-bias\-\_\-null\-\_\-calibration@{precision\-\_\-gyro\-\_\-bias\-\_\-null\-\_\-calibration}!IMU interface@{\-I\-M\-U interface}}
+\subsubsection[{precision\-\_\-gyro\-\_\-bias\-\_\-null\-\_\-calibration}]{\setlength{\rightskip}{0pt plus 5cm}void precision\-\_\-gyro\-\_\-bias\-\_\-null\-\_\-calibration (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{group__imu__interface_ga71833d5eb4e7c71baaaa9e707a6c1f8d}
+
+
+\-Initializes the internal \-I\-M\-U gyro calibration routine. 
+
+\-The internal gyro calibration routine will take the mean gyro value over approx. 15s. \-During this time the \-I\-M\-U will be off-\/line (not sending out any interrupts). \-During this period the \-I\-M\-U should be kept statinarry. 
+
+\subsection{\-Variable \-Documentation}
+\hypertarget{group__imu__interface_gaf92cab44915b7d9faaf5aeadb328bae6}{
+\index{\-I\-M\-U interface@{\-I\-M\-U interface}!accelerations\-\_\-in@{accelerations\-\_\-in}}
+\index{accelerations\-\_\-in@{accelerations\-\_\-in}!IMU interface@{\-I\-M\-U interface}}
+\subsubsection[{accelerations\-\_\-in}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} {\bf accelerations\-\_\-in}}}
+\label{group__imu__interface_gaf92cab44915b7d9faaf5aeadb328bae6}
+
+
+$[m/s^2]$ 
+
+\-Accelerations read from the \-I\-M\-U \mbox{[} $m/s^2$\mbox{]}. \-These are written into the \-I\-M\-U data buffer. \hypertarget{group__imu__interface_ga8cac4b2812dcb492989d7122c5eb0bfb}{
+\index{\-I\-M\-U interface@{\-I\-M\-U interface}!angular\-\_\-rates\-\_\-in@{angular\-\_\-rates\-\_\-in}}
+\index{angular\-\_\-rates\-\_\-in@{angular\-\_\-rates\-\_\-in}!IMU interface@{\-I\-M\-U interface}}
+\subsubsection[{angular\-\_\-rates\-\_\-in}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} {\bf angular\-\_\-rates\-\_\-in}}}
+\label{group__imu__interface_ga8cac4b2812dcb492989d7122c5eb0bfb}
+
+
+$[rad/s]$ 
+
+\-Angular rates read from the \-I\-M\-U \mbox{[} $rad/s$\mbox{]}. \-These are written into the \-I\-M\-U data buffer. \hypertarget{group__imu__interface_ga3f561003deb253bcc716a6c690c87cfe}{
+\index{\-I\-M\-U interface@{\-I\-M\-U interface}!imu\-\_\-supply\-\_\-voltage@{imu\-\_\-supply\-\_\-voltage}}
+\index{imu\-\_\-supply\-\_\-voltage@{imu\-\_\-supply\-\_\-voltage}!IMU interface@{\-I\-M\-U interface}}
+\subsubsection[{imu\-\_\-supply\-\_\-voltage}]{\setlength{\rightskip}{0pt plus 5cm}{\bf precision} {\bf imu\-\_\-supply\-\_\-voltage}}}
+\label{group__imu__interface_ga3f561003deb253bcc716a6c690c87cfe}
+
+
+$[V]$ 
+
+\hypertarget{group__imu__interface_gacd438fa96131e9024d8ad206d83ffb66}{
+\index{\-I\-M\-U interface@{\-I\-M\-U interface}!imu\-\_\-temperaturs@{imu\-\_\-temperaturs}}
+\index{imu\-\_\-temperaturs@{imu\-\_\-temperaturs}!IMU interface@{\-I\-M\-U interface}}
+\subsubsection[{imu\-\_\-temperaturs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec3} {\bf imu\-\_\-temperaturs}}}
+\label{group__imu__interface_gacd438fa96131e9024d8ad206d83ffb66}
+
+
+$[^circ C]$ 
+

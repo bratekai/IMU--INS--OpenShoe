@@ -1,0 +1,563 @@
+\hypertarget{spi_8c}{
+\section{spi.c \-File \-Reference}
+\label{spi_8c}\index{spi.\-c@{spi.\-c}}
+}
+
+
+\-S\-P\-I driver for \-A\-V\-R32 \-U\-C3.  
+
+
+{\ttfamily \#include \char`\"{}spi.\-h\char`\"{}}\*
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+union \hyperlink{unionu__avr32__spi__cr__t}{u\-\_\-avr32\-\_\-spi\-\_\-cr\-\_\-t}
+\item 
+union \hyperlink{unionu__avr32__spi__mr__t}{u\-\_\-avr32\-\_\-spi\-\_\-mr\-\_\-t}
+\item 
+union \hyperlink{unionu__avr32__spi__tdr__t}{u\-\_\-avr32\-\_\-spi\-\_\-tdr\-\_\-t}
+\item 
+union \hyperlink{unionu__avr32__spi__ier__t}{u\-\_\-avr32\-\_\-spi\-\_\-ier\-\_\-t}
+\item 
+union \hyperlink{unionu__avr32__spi__idr__t}{u\-\_\-avr32\-\_\-spi\-\_\-idr\-\_\-t}
+\item 
+union \hyperlink{unionu__avr32__spi__csr__t}{u\-\_\-avr32\-\_\-spi\-\_\-csr\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+int16\-\_\-t \hyperlink{spi_8c_ac4f834a88c24447093521628ed16a72b}{get\-Baud\-Div} (const unsigned int baudrate, uint32\-\_\-t pba\-\_\-hz)
+\begin{DoxyCompactList}\small\item\em \-Calculates the baudrate divider. \end{DoxyCompactList}\item 
+\hyperlink{spi_8h_a856ecadf3d7fe18c4fc3ae56500f8982}{spi\-\_\-status\-\_\-t} \hyperlink{spi_8c_a1fc77d26387ef26a9b5020e4e04b3b2e}{spi\-\_\-init\-Slave} (volatile avr32\-\_\-spi\-\_\-t $\ast$spi, unsigned char bits, unsigned char spi\-\_\-mode)
+\item 
+\hyperlink{spi_8h_a856ecadf3d7fe18c4fc3ae56500f8982}{spi\-\_\-status\-\_\-t} \hyperlink{spi_8c_a04a1d45030965c52dc63b205166c61c1}{spi\-\_\-init\-Test} (volatile avr32\-\_\-spi\-\_\-t $\ast$spi)
+\begin{DoxyCompactList}\small\item\em \-Sets up the \-S\-P\-I in a test mode where the transmitter is connected to the receiver (local loopback). \end{DoxyCompactList}\item 
+\hyperlink{spi_8h_a856ecadf3d7fe18c4fc3ae56500f8982}{spi\-\_\-status\-\_\-t} \hyperlink{spi_8c_a93b09f2d5b41fe71291968cd2658cba2}{spi\-\_\-init\-Master} (volatile avr32\-\_\-spi\-\_\-t $\ast$spi, const \hyperlink{structspi__options__t}{spi\-\_\-options\-\_\-t} $\ast$options)
+\begin{DoxyCompactList}\small\item\em \-Initializes the \-S\-P\-I in master mode. \end{DoxyCompactList}\item 
+\hyperlink{spi_8h_a856ecadf3d7fe18c4fc3ae56500f8982}{spi\-\_\-status\-\_\-t} \hyperlink{spi_8c_ad76b44e99966bb6a66b122b44f64b928}{spi\-\_\-selection\-Mode} (volatile avr32\-\_\-spi\-\_\-t $\ast$spi, unsigned char variable\-\_\-ps, unsigned char pcs\-\_\-decode, unsigned char delay)
+\item 
+\hyperlink{spi_8h_a856ecadf3d7fe18c4fc3ae56500f8982}{spi\-\_\-status\-\_\-t} \hyperlink{spi_8c_af9d47e62b6b92aa3d786229c24584ae1}{spi\-\_\-select\-Chip} (volatile avr32\-\_\-spi\-\_\-t $\ast$spi, unsigned char chip)
+\begin{DoxyCompactList}\small\item\em \-Selects slave chip. \end{DoxyCompactList}\item 
+\hyperlink{spi_8h_a856ecadf3d7fe18c4fc3ae56500f8982}{spi\-\_\-status\-\_\-t} \hyperlink{spi_8c_a6c7f9eff8ca5319ae5b998255d925a6a}{spi\-\_\-unselect\-Chip} (volatile avr32\-\_\-spi\-\_\-t $\ast$spi, unsigned char chip)
+\begin{DoxyCompactList}\small\item\em \-Unselects slave chip. \end{DoxyCompactList}\item 
+\hyperlink{spi_8h_a856ecadf3d7fe18c4fc3ae56500f8982}{spi\-\_\-status\-\_\-t} \hyperlink{spi_8c_a5487ca1d63a13d055c803a6c96067a6f}{spi\-\_\-setup\-Chip\-Reg} (volatile avr32\-\_\-spi\-\_\-t $\ast$spi, const \hyperlink{structspi__options__t}{spi\-\_\-options\-\_\-t} $\ast$options, uint32\-\_\-t pba\-\_\-hz)
+\begin{DoxyCompactList}\small\item\em \-Sets options for a specific slave chip. \end{DoxyCompactList}\item 
+void \hyperlink{spi_8c_ac93e5990e8abc811f4ba2fb65e10e94d}{spi\-\_\-enable} (volatile avr32\-\_\-spi\-\_\-t $\ast$spi)
+\begin{DoxyCompactList}\small\item\em \-Enables the \-S\-P\-I. \end{DoxyCompactList}\item 
+void \hyperlink{spi_8c_a5cc4ac60e6ecf3cdc442265aaa0a63e0}{spi\-\_\-disable} (volatile avr32\-\_\-spi\-\_\-t $\ast$spi)
+\begin{DoxyCompactList}\small\item\em \-Disables the \-S\-P\-I. \end{DoxyCompactList}\item 
+int \hyperlink{spi_8c_aa945d35a658c234e2cb650a53dcdaa37}{spi\-\_\-is\-\_\-enabled} (volatile avr32\-\_\-spi\-\_\-t $\ast$spi)
+\begin{DoxyCompactList}\small\item\em \-Tests if the \-S\-P\-I is enabled. \end{DoxyCompactList}\item 
+unsigned char \hyperlink{spi_8c_a4e0840fa276e1e4bfe182769d458f9d6}{spi\-\_\-write\-Register\-Empty\-Check} (volatile avr32\-\_\-spi\-\_\-t $\ast$spi)
+\begin{DoxyCompactList}\small\item\em \-Checks if there is no data in the transmit register. \end{DoxyCompactList}\item 
+\hyperlink{spi_8h_a856ecadf3d7fe18c4fc3ae56500f8982}{spi\-\_\-status\-\_\-t} \hyperlink{spi_8c_ab5b92c3f2168e3b0a28f6325efcad5f3}{spi\-\_\-write} (volatile avr32\-\_\-spi\-\_\-t $\ast$spi, uint16\-\_\-t data)
+\begin{DoxyCompactList}\small\item\em \-Writes one data word in master fixed peripheral select mode or in slave mode. \end{DoxyCompactList}\item 
+\hyperlink{spi_8h_a856ecadf3d7fe18c4fc3ae56500f8982}{spi\-\_\-status\-\_\-t} \hyperlink{spi_8c_a7b54e1dd21fe488aeca4a28322df36ff}{spi\-\_\-variable\-Slave\-Write} (volatile avr32\-\_\-spi\-\_\-t $\ast$spi, uint16\-\_\-t data, uint8\-\_\-t pcs, uint8\-\_\-t lastxfer)
+\begin{DoxyCompactList}\small\item\em \-Selects a slave in master variable peripheral select mode and writes one data word to it. \end{DoxyCompactList}\item 
+unsigned char \hyperlink{spi_8c_a3675facf1bb501f769ce8e9a3c2fc23f}{spi\-\_\-write\-End\-Check} (volatile avr32\-\_\-spi\-\_\-t $\ast$spi)
+\begin{DoxyCompactList}\small\item\em \-Checks if all transmissions are complete. \end{DoxyCompactList}\item 
+unsigned char \hyperlink{spi_8c_a86f2b56ec7eeb0712ef0c5f43e9ae604}{spi\-\_\-read\-Register\-Full\-Check} (volatile avr32\-\_\-spi\-\_\-t $\ast$spi)
+\begin{DoxyCompactList}\small\item\em \-Checks if there is data in the receive register. \end{DoxyCompactList}\item 
+\hyperlink{spi_8h_a856ecadf3d7fe18c4fc3ae56500f8982}{spi\-\_\-status\-\_\-t} \hyperlink{spi_8c_a37b77c1847803528025bd60897cc18e8}{spi\-\_\-read} (volatile avr32\-\_\-spi\-\_\-t $\ast$spi, unsigned short $\ast$data)
+\item 
+unsigned char \hyperlink{spi_8c_a354beb51d8e5e95665c089832f3a8631}{spi\-\_\-get\-Status} (volatile avr32\-\_\-spi\-\_\-t $\ast$spi)
+\begin{DoxyCompactList}\small\item\em \-Gets status information from the \-S\-P\-I. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-S\-P\-I driver for \-A\-V\-R32 \-U\-C3. \-This file defines a useful set of functions for the \-S\-P\-I interface on \-A\-V\-R32 devices.
+
+
+\begin{DoxyItemize}
+\item \-Compiler\-: \-I\-A\-R \-E\-W\-A\-V\-R32 and \-G\-N\-U \-G\-C\-C for \-A\-V\-R32
+\item \-Supported devices\-: \-All \-A\-V\-R32 devices with an \-S\-P\-I module can be used.
+\item \-App\-Note\-:
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{\-Author}
+\-Atmel \-Corporation\-: \href{http://www.atmel.com}{\tt http\-://www.\-atmel.\-com} \par
+ \-Support and \-F\-A\-Q\-: \href{http://support.atmel.no/}{\tt http\-://support.\-atmel.\-no/} 
+\end{DoxyAuthor}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{spi_8c_ac4f834a88c24447093521628ed16a72b}{
+\index{spi.\-c@{spi.\-c}!get\-Baud\-Div@{get\-Baud\-Div}}
+\index{get\-Baud\-Div@{get\-Baud\-Div}!spi.c@{spi.\-c}}
+\subsubsection[{get\-Baud\-Div}]{\setlength{\rightskip}{0pt plus 5cm}int16\-\_\-t get\-Baud\-Div (
+\begin{DoxyParamCaption}
+\item[{const unsigned int}]{baudrate, }
+\item[{uint32\-\_\-t}]{pba\-\_\-hz}
+\end{DoxyParamCaption}
+)}}
+\label{spi_8c_ac4f834a88c24447093521628ed16a72b}
+
+
+\-Calculates the baudrate divider. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em baudrate} & \-Baudrate value. \\
+\hline
+{\em pba\-\_\-hz} & \-S\-P\-I module input clock frequency (\-P\-B\-A clock, \-Hz).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Divider or error code. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em $>$=0} & \-Success. \\
+\hline
+{\em $<$0} & \-Error. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{spi_8c_a5cc4ac60e6ecf3cdc442265aaa0a63e0}{
+\index{spi.\-c@{spi.\-c}!spi\-\_\-disable@{spi\-\_\-disable}}
+\index{spi\-\_\-disable@{spi\-\_\-disable}!spi.c@{spi.\-c}}
+\subsubsection[{spi\-\_\-disable}]{\setlength{\rightskip}{0pt plus 5cm}void spi\-\_\-disable (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-spi\-\_\-t $\ast$}]{spi}
+\end{DoxyParamCaption}
+)}}
+\label{spi_8c_a5cc4ac60e6ecf3cdc442265aaa0a63e0}
+
+
+\-Disables the \-S\-P\-I. 
+
+\-Ensures that nothing is transferred while setting up buffers.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em spi} & \-Base address of the \-S\-P\-I instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{\-Warning}
+\-This may cause data loss if used on a slave \-S\-P\-I. 
+\end{DoxyWarning}
+\hypertarget{spi_8c_ac93e5990e8abc811f4ba2fb65e10e94d}{
+\index{spi.\-c@{spi.\-c}!spi\-\_\-enable@{spi\-\_\-enable}}
+\index{spi\-\_\-enable@{spi\-\_\-enable}!spi.c@{spi.\-c}}
+\subsubsection[{spi\-\_\-enable}]{\setlength{\rightskip}{0pt plus 5cm}void spi\-\_\-enable (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-spi\-\_\-t $\ast$}]{spi}
+\end{DoxyParamCaption}
+)}}
+\label{spi_8c_ac93e5990e8abc811f4ba2fb65e10e94d}
+
+
+\-Enables the \-S\-P\-I. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em spi} & \-Base address of the \-S\-P\-I instance. \\
+\hline
+\end{DoxyParams}
+\hypertarget{spi_8c_a354beb51d8e5e95665c089832f3a8631}{
+\index{spi.\-c@{spi.\-c}!spi\-\_\-get\-Status@{spi\-\_\-get\-Status}}
+\index{spi\-\_\-get\-Status@{spi\-\_\-get\-Status}!spi.c@{spi.\-c}}
+\subsubsection[{spi\-\_\-get\-Status}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char spi\-\_\-get\-Status (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-spi\-\_\-t $\ast$}]{spi}
+\end{DoxyParamCaption}
+)}}
+\label{spi_8c_a354beb51d8e5e95665c089832f3a8631}
+
+
+\-Gets status information from the \-S\-P\-I. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em spi} & \-Base address of the \-S\-P\-I instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em \-S\-P\-I\-\_\-\-O\-K} & \-Success. \\
+\hline
+{\em \-S\-P\-I\-\_\-\-E\-R\-R\-O\-R\-\_\-\-O\-V\-E\-R\-R\-U\-N} & \-Overrun error. \\
+\hline
+{\em \-S\-P\-I\-\_\-\-E\-R\-R\-O\-R\-\_\-\-M\-O\-D\-E\-\_\-\-F\-A\-U\-L\-T} & \-Mode fault (\-S\-P\-I addressed as slave while in master mode). \\
+\hline
+{\em \-S\-P\-I\-\_\-\-E\-R\-R\-O\-R\-\_\-\-O\-V\-E\-R\-R\-U\-N\-\_\-\-A\-N\-D\-\_\-\-M\-O\-D\-E\-\_\-\-F\-A\-U\-L\-T} & \-Overrun error and mode fault. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{spi_8c_a93b09f2d5b41fe71291968cd2658cba2}{
+\index{spi.\-c@{spi.\-c}!spi\-\_\-init\-Master@{spi\-\_\-init\-Master}}
+\index{spi\-\_\-init\-Master@{spi\-\_\-init\-Master}!spi.c@{spi.\-c}}
+\subsubsection[{spi\-\_\-init\-Master}]{\setlength{\rightskip}{0pt plus 5cm}{\bf spi\-\_\-status\-\_\-t} spi\-\_\-init\-Master (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-spi\-\_\-t $\ast$}]{spi, }
+\item[{const {\bf spi\-\_\-options\-\_\-t} $\ast$}]{options}
+\end{DoxyParamCaption}
+)}}
+\label{spi_8c_a93b09f2d5b41fe71291968cd2658cba2}
+
+
+\-Initializes the \-S\-P\-I in master mode. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em spi} & \-Base address of the \-S\-P\-I instance. \\
+\hline
+{\em options} & \-Pointer to a structure containing initialization options.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em \-S\-P\-I\-\_\-\-O\-K} & \-Success. \\
+\hline
+{\em \-S\-P\-I\-\_\-\-E\-R\-R\-O\-R\-\_\-\-A\-R\-G\-U\-M\-E\-N\-T} & \-Invalid argument(s) passed. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{spi_8c_a1fc77d26387ef26a9b5020e4e04b3b2e}{
+\index{spi.\-c@{spi.\-c}!spi\-\_\-init\-Slave@{spi\-\_\-init\-Slave}}
+\index{spi\-\_\-init\-Slave@{spi\-\_\-init\-Slave}!spi.c@{spi.\-c}}
+\subsubsection[{spi\-\_\-init\-Slave}]{\setlength{\rightskip}{0pt plus 5cm}{\bf spi\-\_\-status\-\_\-t} spi\-\_\-init\-Slave (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-spi\-\_\-t $\ast$}]{spi, }
+\item[{unsigned char}]{bits, }
+\item[{unsigned char}]{spi\-\_\-mode}
+\end{DoxyParamCaption}
+)}}
+\label{spi_8c_a1fc77d26387ef26a9b5020e4e04b3b2e}
+\hypertarget{spi_8c_a04a1d45030965c52dc63b205166c61c1}{
+\index{spi.\-c@{spi.\-c}!spi\-\_\-init\-Test@{spi\-\_\-init\-Test}}
+\index{spi\-\_\-init\-Test@{spi\-\_\-init\-Test}!spi.c@{spi.\-c}}
+\subsubsection[{spi\-\_\-init\-Test}]{\setlength{\rightskip}{0pt plus 5cm}{\bf spi\-\_\-status\-\_\-t} spi\-\_\-init\-Test (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-spi\-\_\-t $\ast$}]{spi}
+\end{DoxyParamCaption}
+)}}
+\label{spi_8c_a04a1d45030965c52dc63b205166c61c1}
+
+
+\-Sets up the \-S\-P\-I in a test mode where the transmitter is connected to the receiver (local loopback). 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em spi} & \-Base address of the \-S\-P\-I instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em \-S\-P\-I\-\_\-\-O\-K} & \-Success. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{spi_8c_aa945d35a658c234e2cb650a53dcdaa37}{
+\index{spi.\-c@{spi.\-c}!spi\-\_\-is\-\_\-enabled@{spi\-\_\-is\-\_\-enabled}}
+\index{spi\-\_\-is\-\_\-enabled@{spi\-\_\-is\-\_\-enabled}!spi.c@{spi.\-c}}
+\subsubsection[{spi\-\_\-is\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}int spi\-\_\-is\-\_\-enabled (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-spi\-\_\-t $\ast$}]{spi}
+\end{DoxyParamCaption}
+)}}
+\label{spi_8c_aa945d35a658c234e2cb650a53dcdaa37}
+
+
+\-Tests if the \-S\-P\-I is enabled. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em spi} & \-Base address of the \-S\-P\-I instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+{\ttfamily 1} if the \-S\-P\-I is enabled, otherwise {\ttfamily 0}. 
+\end{DoxyReturn}
+\hypertarget{spi_8c_a37b77c1847803528025bd60897cc18e8}{
+\index{spi.\-c@{spi.\-c}!spi\-\_\-read@{spi\-\_\-read}}
+\index{spi\-\_\-read@{spi\-\_\-read}!spi.c@{spi.\-c}}
+\subsubsection[{spi\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}{\bf spi\-\_\-status\-\_\-t} spi\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-spi\-\_\-t $\ast$}]{spi, }
+\item[{unsigned short $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}
+\label{spi_8c_a37b77c1847803528025bd60897cc18e8}
+\hypertarget{spi_8c_a86f2b56ec7eeb0712ef0c5f43e9ae604}{
+\index{spi.\-c@{spi.\-c}!spi\-\_\-read\-Register\-Full\-Check@{spi\-\_\-read\-Register\-Full\-Check}}
+\index{spi\-\_\-read\-Register\-Full\-Check@{spi\-\_\-read\-Register\-Full\-Check}!spi.c@{spi.\-c}}
+\subsubsection[{spi\-\_\-read\-Register\-Full\-Check}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char spi\-\_\-read\-Register\-Full\-Check (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-spi\-\_\-t $\ast$}]{spi}
+\end{DoxyParamCaption}
+)}}
+\label{spi_8c_a86f2b56ec7eeb0712ef0c5f43e9ae604}
+
+
+\-Checks if there is data in the receive register. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em spi} & \-Base address of the \-S\-P\-I instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 1} & \-Some data in \-R\-D\-R. \\
+\hline
+{\em 0} & \-No data in \-R\-D\-R. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{spi_8c_af9d47e62b6b92aa3d786229c24584ae1}{
+\index{spi.\-c@{spi.\-c}!spi\-\_\-select\-Chip@{spi\-\_\-select\-Chip}}
+\index{spi\-\_\-select\-Chip@{spi\-\_\-select\-Chip}!spi.c@{spi.\-c}}
+\subsubsection[{spi\-\_\-select\-Chip}]{\setlength{\rightskip}{0pt plus 5cm}{\bf spi\-\_\-status\-\_\-t} spi\-\_\-select\-Chip (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-spi\-\_\-t $\ast$}]{spi, }
+\item[{unsigned char}]{chip}
+\end{DoxyParamCaption}
+)}}
+\label{spi_8c_af9d47e62b6b92aa3d786229c24584ae1}
+
+
+\-Selects slave chip. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em spi} & \-Base address of the \-S\-P\-I instance. \\
+\hline
+{\em chip} & \-Slave chip number (normal\-: 0 to 3, extarnally decoded signal\-: 0 to 14).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em \-S\-P\-I\-\_\-\-O\-K} & \-Success. \\
+\hline
+{\em \-S\-P\-I\-\_\-\-E\-R\-R\-O\-R\-\_\-\-A\-R\-G\-U\-M\-E\-N\-T} & \-Invalid argument(s) passed. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{spi_8c_ad76b44e99966bb6a66b122b44f64b928}{
+\index{spi.\-c@{spi.\-c}!spi\-\_\-selection\-Mode@{spi\-\_\-selection\-Mode}}
+\index{spi\-\_\-selection\-Mode@{spi\-\_\-selection\-Mode}!spi.c@{spi.\-c}}
+\subsubsection[{spi\-\_\-selection\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf spi\-\_\-status\-\_\-t} spi\-\_\-selection\-Mode (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-spi\-\_\-t $\ast$}]{spi, }
+\item[{unsigned char}]{variable\-\_\-ps, }
+\item[{unsigned char}]{pcs\-\_\-decode, }
+\item[{unsigned char}]{delay}
+\end{DoxyParamCaption}
+)}}
+\label{spi_8c_ad76b44e99966bb6a66b122b44f64b928}
+\hypertarget{spi_8c_a5487ca1d63a13d055c803a6c96067a6f}{
+\index{spi.\-c@{spi.\-c}!spi\-\_\-setup\-Chip\-Reg@{spi\-\_\-setup\-Chip\-Reg}}
+\index{spi\-\_\-setup\-Chip\-Reg@{spi\-\_\-setup\-Chip\-Reg}!spi.c@{spi.\-c}}
+\subsubsection[{spi\-\_\-setup\-Chip\-Reg}]{\setlength{\rightskip}{0pt plus 5cm}{\bf spi\-\_\-status\-\_\-t} spi\-\_\-setup\-Chip\-Reg (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-spi\-\_\-t $\ast$}]{spi, }
+\item[{const {\bf spi\-\_\-options\-\_\-t} $\ast$}]{options, }
+\item[{uint32\-\_\-t}]{pba\-\_\-hz}
+\end{DoxyParamCaption}
+)}}
+\label{spi_8c_a5487ca1d63a13d055c803a6c96067a6f}
+
+
+\-Sets options for a specific slave chip. 
+
+\-The baudrate field has to be written before transfer in master mode. \-Four similar registers exist, one for each slave. \-When using encoded slave addressing, reg=0 sets options for slaves 0 to 3, reg=1 for slaves 4 to 7 and so on.
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em spi} & \-Base address of the \-S\-P\-I instance. \\
+\hline
+{\em options} & \-Pointer to a structure containing initialization options for an \-S\-P\-I channel. \\
+\hline
+{\em pba\-\_\-hz} & \-S\-P\-I module input clock frequency (\-P\-B\-A clock, \-Hz).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em \-S\-P\-I\-\_\-\-O\-K} & \-Success. \\
+\hline
+{\em \-S\-P\-I\-\_\-\-E\-R\-R\-O\-R\-\_\-\-A\-R\-G\-U\-M\-E\-N\-T} & \-Invalid argument(s) passed. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{spi_8c_a6c7f9eff8ca5319ae5b998255d925a6a}{
+\index{spi.\-c@{spi.\-c}!spi\-\_\-unselect\-Chip@{spi\-\_\-unselect\-Chip}}
+\index{spi\-\_\-unselect\-Chip@{spi\-\_\-unselect\-Chip}!spi.c@{spi.\-c}}
+\subsubsection[{spi\-\_\-unselect\-Chip}]{\setlength{\rightskip}{0pt plus 5cm}{\bf spi\-\_\-status\-\_\-t} spi\-\_\-unselect\-Chip (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-spi\-\_\-t $\ast$}]{spi, }
+\item[{unsigned char}]{chip}
+\end{DoxyParamCaption}
+)}}
+\label{spi_8c_a6c7f9eff8ca5319ae5b998255d925a6a}
+
+
+\-Unselects slave chip. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em spi} & \-Base address of the \-S\-P\-I instance. \\
+\hline
+{\em chip} & \-Slave chip number (normal\-: 0 to 3, extarnally decoded signal\-: 0 to 14).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em \-S\-P\-I\-\_\-\-O\-K} & \-Success. \\
+\hline
+{\em \-S\-P\-I\-\_\-\-E\-R\-R\-O\-R\-\_\-\-T\-I\-M\-E\-O\-U\-T} & \-Time-\/out.\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyNote}{\-Note}
+\-Will block program execution until time-\/out occurs if last transmission is not complete. \-Invoke \hyperlink{spi_8h_a3675facf1bb501f769ce8e9a3c2fc23f}{spi\-\_\-write\-End\-Check} beforehand if needed. 
+\end{DoxyNote}
+\hypertarget{spi_8c_a7b54e1dd21fe488aeca4a28322df36ff}{
+\index{spi.\-c@{spi.\-c}!spi\-\_\-variable\-Slave\-Write@{spi\-\_\-variable\-Slave\-Write}}
+\index{spi\-\_\-variable\-Slave\-Write@{spi\-\_\-variable\-Slave\-Write}!spi.c@{spi.\-c}}
+\subsubsection[{spi\-\_\-variable\-Slave\-Write}]{\setlength{\rightskip}{0pt plus 5cm}{\bf spi\-\_\-status\-\_\-t} spi\-\_\-variable\-Slave\-Write (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-spi\-\_\-t $\ast$}]{spi, }
+\item[{uint16\-\_\-t}]{data, }
+\item[{uint8\-\_\-t}]{pcs, }
+\item[{uint8\-\_\-t}]{lastxfer}
+\end{DoxyParamCaption}
+)}}
+\label{spi_8c_a7b54e1dd21fe488aeca4a28322df36ff}
+
+
+\-Selects a slave in master variable peripheral select mode and writes one data word to it. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em spi} & \-Base address of the \-S\-P\-I instance. \\
+\hline
+{\em data} & \-The data word to write. \\
+\hline
+{\em pcs} & \-Slave selector (bit 0 -\/$>$ n\-C\-S line 0, bit 1 -\/$>$ n\-C\-S line 1, etc.). \\
+\hline
+{\em lastxfer} & \-Boolean indicating whether this is the last data word transfer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em \-S\-P\-I\-\_\-\-O\-K} & \-Success. \\
+\hline
+{\em \-S\-P\-I\-\_\-\-E\-R\-R\-O\-R\-\_\-\-T\-I\-M\-E\-O\-U\-T} & \-Time-\/out. \\
+\hline
+{\em \-S\-P\-I\-\_\-\-E\-R\-R\-O\-R\-\_\-\-A\-R\-G\-U\-M\-E\-N\-T} & \-Invalid argument(s) passed.\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyNote}{\-Note}
+\-Will block program execution until time-\/out occurs if transmitter is busy and transmit buffer is full. \-Invoke \hyperlink{spi_8h_a4e0840fa276e1e4bfe182769d458f9d6}{spi\-\_\-write\-Register\-Empty\-Check} beforehand if needed.
+
+\-Once the data has been written to the transmit buffer, the end of transmission is not waited for. \-Invoke \hyperlink{spi_8h_a3675facf1bb501f769ce8e9a3c2fc23f}{spi\-\_\-write\-End\-Check} if needed. 
+\end{DoxyNote}
+\hypertarget{spi_8c_ab5b92c3f2168e3b0a28f6325efcad5f3}{
+\index{spi.\-c@{spi.\-c}!spi\-\_\-write@{spi\-\_\-write}}
+\index{spi\-\_\-write@{spi\-\_\-write}!spi.c@{spi.\-c}}
+\subsubsection[{spi\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}{\bf spi\-\_\-status\-\_\-t} spi\-\_\-write (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-spi\-\_\-t $\ast$}]{spi, }
+\item[{uint16\-\_\-t}]{data}
+\end{DoxyParamCaption}
+)}}
+\label{spi_8c_ab5b92c3f2168e3b0a28f6325efcad5f3}
+
+
+\-Writes one data word in master fixed peripheral select mode or in slave mode. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em spi} & \-Base address of the \-S\-P\-I instance. \\
+\hline
+{\em data} & \-The data word to write.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em \-S\-P\-I\-\_\-\-O\-K} & \-Success. \\
+\hline
+{\em \-S\-P\-I\-\_\-\-E\-R\-R\-O\-R\-\_\-\-T\-I\-M\-E\-O\-U\-T} & \-Time-\/out.\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyNote}{\-Note}
+\-Will block program execution until time-\/out occurs if transmitter is busy and transmit buffer is full. \-Invoke \hyperlink{spi_8h_a4e0840fa276e1e4bfe182769d458f9d6}{spi\-\_\-write\-Register\-Empty\-Check} beforehand if needed.
+
+\-Once the data has been written to the transmit buffer, the end of transmission is not waited for. \-Invoke \hyperlink{spi_8h_a3675facf1bb501f769ce8e9a3c2fc23f}{spi\-\_\-write\-End\-Check} if needed. 
+\end{DoxyNote}
+\hypertarget{spi_8c_a3675facf1bb501f769ce8e9a3c2fc23f}{
+\index{spi.\-c@{spi.\-c}!spi\-\_\-write\-End\-Check@{spi\-\_\-write\-End\-Check}}
+\index{spi\-\_\-write\-End\-Check@{spi\-\_\-write\-End\-Check}!spi.c@{spi.\-c}}
+\subsubsection[{spi\-\_\-write\-End\-Check}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char spi\-\_\-write\-End\-Check (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-spi\-\_\-t $\ast$}]{spi}
+\end{DoxyParamCaption}
+)}}
+\label{spi_8c_a3675facf1bb501f769ce8e9a3c2fc23f}
+
+
+\-Checks if all transmissions are complete. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em spi} & \-Base address of the \-S\-P\-I instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 1} & \-All transmissions complete. \\
+\hline
+{\em 0} & \-Transmissions not complete. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{spi_8c_a4e0840fa276e1e4bfe182769d458f9d6}{
+\index{spi.\-c@{spi.\-c}!spi\-\_\-write\-Register\-Empty\-Check@{spi\-\_\-write\-Register\-Empty\-Check}}
+\index{spi\-\_\-write\-Register\-Empty\-Check@{spi\-\_\-write\-Register\-Empty\-Check}!spi.c@{spi.\-c}}
+\subsubsection[{spi\-\_\-write\-Register\-Empty\-Check}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char spi\-\_\-write\-Register\-Empty\-Check (
+\begin{DoxyParamCaption}
+\item[{volatile avr32\-\_\-spi\-\_\-t $\ast$}]{spi}
+\end{DoxyParamCaption}
+)}}
+\label{spi_8c_a4e0840fa276e1e4bfe182769d458f9d6}
+
+
+\-Checks if there is no data in the transmit register. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em spi} & \-Base address of the \-S\-P\-I instance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 1} & \-No data in \-T\-D\-R. \\
+\hline
+{\em 0} & \-Some data in \-T\-D\-R. \\
+\hline
+\end{DoxyRetVals}

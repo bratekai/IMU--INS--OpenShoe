@@ -1,0 +1,26 @@
+\form#0:$2^{cpu\_shift}$
+\form#1:$2^{pba\_shift}$
+\form#2:$2^{pbb\_shift}$
+\form#3:$2^{pbc\_shift}$
+\form#4:\[ f_{cpu} = \frac{f_{sys}}{2^\mathrm{CONFIG\_SYSCLK\_CPU\_DIV}}\,\mbox{Hz} \]
+\form#5:\[ f_{PBA} = \frac{f_{sys}}{2^\mathrm{CONFIG\_SYSCLK\_PBA\_DIV}}\,\mbox{Hz} \]
+\form#6:\[ f_{PBB} = \frac{f_{sys}}{2^\mathrm{CONFIG\_SYSCLK\_PBB\_DIV}}\,\mbox{Hz} \]
+\form#7:\[ f_{PBC} = \frac{f_{sys}}{2^\mathrm{CONFIG\_SYSCLK\_PBC\_DIV}}\,\mbox{Hz} \]
+\form#8:$2^{CONFIG\_SYSCLK\_CPU\_DIV}$
+\form#9:$2^{CONFIG\_SYSCLK\_PBA\_DIV}$
+\form#10:$2^{CONFIG\_SYSCLK\_PBB\_DIV}$
+\form#11:$2^{CONFIG\_SYSCLK\_PBC\_DIV}$
+\form#12:$^circ C$
+\form#13:$[m/s^2]$
+\form#14:$[rad/s]$
+\form#15:$[^circ C]$
+\form#16:$[V]$
+\form#17:$m/s^2$
+\form#18:$(m/s^2)^2$
+\form#19:$degrees$
+\form#20:$m$
+\form#21:$s$
+\form#22:$rad/s$
+\form#23:$rad$
+\form#24:$m/s$
+\form#25:$R_b^t$

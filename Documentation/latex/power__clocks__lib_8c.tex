@@ -1,0 +1,135 @@
+\hypertarget{power__clocks__lib_8c}{
+\section{power\-\_\-clocks\-\_\-lib.c \-File \-Reference}
+\label{power__clocks__lib_8c}\index{power\-\_\-clocks\-\_\-lib.\-c@{power\-\_\-clocks\-\_\-lib.\-c}}
+}
+
+
+\-High-\/level library abstracting features such as oscillators/pll/dfll configuration, clock configuration, \-System-\/sensible parameters configuration, buses clocks configuration, sleep mode, reset.  
+
+
+{\ttfamily \#include \char`\"{}power\-\_\-clocks\-\_\-lib.\-h\char`\"{}}\*
+\subsection*{\-Functions}
+\begin{DoxyCompactItemize}
+\item 
+long int \hyperlink{power__clocks__lib_8c_a6a10f502b3248fff54863a281af1da9e}{pcl\-\_\-configure\-\_\-clocks} (pcl\-\_\-freq\-\_\-param\-\_\-t $\ast$param)
+\begin{DoxyCompactList}\small\item\em \-Device-\/specific data. \end{DoxyCompactList}\item 
+long int \hyperlink{power__clocks__lib_8c_ac557cb29483bdd41f36dea2dba5bf9ab}{pcl\-\_\-switch\-\_\-to\-\_\-osc} (\hyperlink{power__clocks__lib_8h_af1e177f049f666a68c4969ab118bac6b}{pcl\-\_\-osc\-\_\-t} osc, unsigned int fcrystal, unsigned int startup)
+\begin{DoxyCompactList}\small\item\em \-Device-\/specific implementation. \end{DoxyCompactList}\item 
+long int \hyperlink{power__clocks__lib_8c_a8c02993a038be7348f0363675e6e836a}{pcl\-\_\-configure\-\_\-usb\-\_\-clock} (void)
+\begin{DoxyCompactList}\small\item\em \-Configure the \-U\-S\-B \-Clock. \end{DoxyCompactList}\item 
+void \hyperlink{power__clocks__lib_8c_a22234c65b535937b477c7e988ec2fec5}{pcl\-\_\-write\-\_\-gplp} (unsigned long gplp, unsigned long value)
+\begin{DoxyCompactList}\small\item\em \-Write into the \-G\-P\-L\-P registers. \end{DoxyCompactList}\item 
+unsigned long \hyperlink{power__clocks__lib_8c_a1f0120dade42a19b5d5a0f2f217b857a}{pcl\-\_\-read\-\_\-gplp} (unsigned long gplp)
+\begin{DoxyCompactList}\small\item\em \-Read the content of the \-G\-P\-L\-P registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-High-\/level library abstracting features such as oscillators/pll/dfll configuration, clock configuration, \-System-\/sensible parameters configuration, buses clocks configuration, sleep mode, reset. 
+\begin{DoxyItemize}
+\item \-Compiler\-: \-I\-A\-R \-E\-W\-A\-V\-R32 and \-G\-N\-U \-G\-C\-C for \-A\-V\-R32
+\item \-Supported devices\-: \-All \-A\-V\-R32 devices.
+\item \-App\-Note\-:
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{\-Author}
+\-Atmel \-Corporation\-: \href{http://www.atmel.com}{\tt http\-://www.\-atmel.\-com} \par
+ \-Support and \-F\-A\-Q\-: \href{http://support.atmel.no/}{\tt http\-://support.\-atmel.\-no/} 
+\end{DoxyAuthor}
+
+
+\subsection{\-Function \-Documentation}
+\hypertarget{power__clocks__lib_8c_a6a10f502b3248fff54863a281af1da9e}{
+\index{power\-\_\-clocks\-\_\-lib.\-c@{power\-\_\-clocks\-\_\-lib.\-c}!pcl\-\_\-configure\-\_\-clocks@{pcl\-\_\-configure\-\_\-clocks}}
+\index{pcl\-\_\-configure\-\_\-clocks@{pcl\-\_\-configure\-\_\-clocks}!power_clocks_lib.c@{power\-\_\-clocks\-\_\-lib.\-c}}
+\subsubsection[{pcl\-\_\-configure\-\_\-clocks}]{\setlength{\rightskip}{0pt plus 5cm}long int pcl\-\_\-configure\-\_\-clocks (
+\begin{DoxyParamCaption}
+\item[{pcl\-\_\-freq\-\_\-param\-\_\-t $\ast$}]{param}
+\end{DoxyParamCaption}
+)}}
+\label{power__clocks__lib_8c_a6a10f502b3248fff54863a281af1da9e}
+
+
+\-Device-\/specific data. 
+
+\-Automatically configure the \-C\-P\-U, \-P\-B\-A, \-P\-B\-B, and \-H\-S\-B clocks. \hypertarget{power__clocks__lib_8c_a8c02993a038be7348f0363675e6e836a}{
+\index{power\-\_\-clocks\-\_\-lib.\-c@{power\-\_\-clocks\-\_\-lib.\-c}!pcl\-\_\-configure\-\_\-usb\-\_\-clock@{pcl\-\_\-configure\-\_\-usb\-\_\-clock}}
+\index{pcl\-\_\-configure\-\_\-usb\-\_\-clock@{pcl\-\_\-configure\-\_\-usb\-\_\-clock}!power_clocks_lib.c@{power\-\_\-clocks\-\_\-lib.\-c}}
+\subsubsection[{pcl\-\_\-configure\-\_\-usb\-\_\-clock}]{\setlength{\rightskip}{0pt plus 5cm}long int pcl\-\_\-configure\-\_\-usb\-\_\-clock (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{power__clocks__lib_8c_a8c02993a038be7348f0363675e6e836a}
+
+
+\-Configure the \-U\-S\-B \-Clock. 
+
+\begin{DoxyReturn}{\-Returns}
+\-Status. 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{\-Return values}
+{\em 0} & \-Success. \\
+\hline
+{\em $<$0} & \-An error occured. \\
+\hline
+\end{DoxyRetVals}
+\hypertarget{power__clocks__lib_8c_a1f0120dade42a19b5d5a0f2f217b857a}{
+\index{power\-\_\-clocks\-\_\-lib.\-c@{power\-\_\-clocks\-\_\-lib.\-c}!pcl\-\_\-read\-\_\-gplp@{pcl\-\_\-read\-\_\-gplp}}
+\index{pcl\-\_\-read\-\_\-gplp@{pcl\-\_\-read\-\_\-gplp}!power_clocks_lib.c@{power\-\_\-clocks\-\_\-lib.\-c}}
+\subsubsection[{pcl\-\_\-read\-\_\-gplp}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long pcl\-\_\-read\-\_\-gplp (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{gplp}
+\end{DoxyParamCaption}
+)}}
+\label{power__clocks__lib_8c_a1f0120dade42a19b5d5a0f2f217b857a}
+
+
+\-Read the content of the \-G\-P\-L\-P registers. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em gplp} & \-G\-P\-L\-P register index (0,1,... depending on the number of \-G\-P\-L\-P registers for a given part)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{\-Returns}
+\-The content of the chosen \-G\-P\-L\-P register. 
+\end{DoxyReturn}
+\hypertarget{power__clocks__lib_8c_ac557cb29483bdd41f36dea2dba5bf9ab}{
+\index{power\-\_\-clocks\-\_\-lib.\-c@{power\-\_\-clocks\-\_\-lib.\-c}!pcl\-\_\-switch\-\_\-to\-\_\-osc@{pcl\-\_\-switch\-\_\-to\-\_\-osc}}
+\index{pcl\-\_\-switch\-\_\-to\-\_\-osc@{pcl\-\_\-switch\-\_\-to\-\_\-osc}!power_clocks_lib.c@{power\-\_\-clocks\-\_\-lib.\-c}}
+\subsubsection[{pcl\-\_\-switch\-\_\-to\-\_\-osc}]{\setlength{\rightskip}{0pt plus 5cm}long int pcl\-\_\-switch\-\_\-to\-\_\-osc (
+\begin{DoxyParamCaption}
+\item[{{\bf pcl\-\_\-osc\-\_\-t}}]{osc, }
+\item[{unsigned int}]{fcrystal, }
+\item[{unsigned int}]{startup}
+\end{DoxyParamCaption}
+)}}
+\label{power__clocks__lib_8c_ac557cb29483bdd41f36dea2dba5bf9ab}
+
+
+\-Device-\/specific implementation. 
+
+\-Switch the main clock source to \-Osc0 configured in crystal mode.
+
+\-U\-C3\-C \-Device-\/specific implementation \hypertarget{power__clocks__lib_8c_a22234c65b535937b477c7e988ec2fec5}{
+\index{power\-\_\-clocks\-\_\-lib.\-c@{power\-\_\-clocks\-\_\-lib.\-c}!pcl\-\_\-write\-\_\-gplp@{pcl\-\_\-write\-\_\-gplp}}
+\index{pcl\-\_\-write\-\_\-gplp@{pcl\-\_\-write\-\_\-gplp}!power_clocks_lib.c@{power\-\_\-clocks\-\_\-lib.\-c}}
+\subsubsection[{pcl\-\_\-write\-\_\-gplp}]{\setlength{\rightskip}{0pt plus 5cm}void pcl\-\_\-write\-\_\-gplp (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{gplp, }
+\item[{unsigned long}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{power__clocks__lib_8c_a22234c65b535937b477c7e988ec2fec5}
+
+
+\-Write into the \-G\-P\-L\-P registers. 
+
+
+\begin{DoxyParams}{\-Parameters}
+{\em gplp} & \-G\-P\-L\-P register index (0,1,... depending on the number of \-G\-P\-L\-P registers for a given part) \\
+\hline
+{\em value} & \-Value to write \\
+\hline
+\end{DoxyParams}

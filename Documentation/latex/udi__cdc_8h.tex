@@ -1,0 +1,85 @@
+\hypertarget{udi__cdc_8h}{
+\section{udi\-\_\-cdc.h \-File \-Reference}
+\label{udi__cdc_8h}\index{udi\-\_\-cdc.\-h@{udi\-\_\-cdc.\-h}}
+}
+
+
+\-U\-S\-B \-Device \-Communication \-Device \-Class (\-C\-D\-C) interface definitions.  
+
+
+{\ttfamily \#include \char`\"{}conf\-\_\-usb.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}usb\-\_\-protocol.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}usb\-\_\-protocol\-\_\-cdc.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}udd.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}udc\-\_\-desc.\-h\char`\"{}}\*
+{\ttfamily \#include \char`\"{}udi.\-h\char`\"{}}\*
+\subsection*{\-Data \-Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structudi__cdc__comm__desc__t}{udi\-\_\-cdc\-\_\-comm\-\_\-desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Communication \-Class interface descriptor. \end{DoxyCompactList}\item 
+struct \hyperlink{structudi__cdc__data__desc__t}{udi\-\_\-cdc\-\_\-data\-\_\-desc\-\_\-t}
+\begin{DoxyCompactList}\small\item\em \-Data \-Class interface descriptor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{\-Defines}
+\begin{Indent}\paragraph*{\-Interface \-Descriptor}
+{\em \-The following structures provide the interface descriptor. \-It must be implemented in \-U\-S\-B configuration descriptor. }\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__udi__cdc__group_gab60b7a7764b991aff0c527e8fa0ac8c8}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-I\-A\-D\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D}~0
+\begin{DoxyCompactList}\small\item\em \-By default no string associated to these interfaces. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__udi__cdc__group_ga4fef11b2181a17d8faac207f30c8a088}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D}~0
+\item 
+\#define \hyperlink{group__udi__cdc__group_ga7f130213f9c935f192ad0e7a79654533}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-S\-T\-R\-I\-N\-G\-\_\-\-I\-D}~0
+\item 
+\#define \hyperlink{group__udi__cdc__group_ga186a4ed83a0c245ad4fb377ed96ccd9c}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-E\-P\-\_\-\-S\-I\-Z\-E}~64
+\begin{DoxyCompactList}\small\item\em \-C\-D\-C communication enpoints size for all speed. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__udi__cdc__group_gac62f6054c333924c2bef7eddaa9e57ab}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-E\-P\-S\-\_\-\-S\-I\-Z\-E}~64
+\begin{DoxyCompactList}\small\item\em \-C\-D\-C data enpoints size for all speed (no need to use 512\-B for \-H\-S) \end{DoxyCompactList}\item 
+\#define \hyperlink{group__udi__cdc__group_gad564430bd926e661c9de9c0b12b372f8}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-D\-E\-S\-C\-\_\-\-I\-F\-A\-C\-E}
+\begin{DoxyCompactList}\small\item\em \-Fill field including interface numbers. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__udi__cdc__group_gaccf2e8998f50f5d955bf54266c28c484}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-D\-E\-S\-C\-\_\-\-I\-F\-A\-C\-E}~.iface.\-b\-Interface\-Number       = \-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-I\-F\-A\-C\-E\-\_\-\-N\-U\-M\-B\-E\-R,
+\item 
+\#define \hyperlink{group__udi__cdc__group_ga1e55408092fbf059c01ab7e81b7fd910}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-I\-A\-D\-\_\-\-D\-E\-S\-C}
+\item 
+\#define \hyperlink{group__udi__cdc__group_ga7970530df36eefc5119aadd584f82de8}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-C\-O\-M\-M\-\_\-\-D\-E\-S\-C}
+\begin{DoxyCompactList}\small\item\em \-Content of \-C\-D\-C \-C\-O\-M\-M interface descriptor for all speed. \end{DoxyCompactList}\item 
+\#define \hyperlink{group__udi__cdc__group_gade744816217f972675f9e7e5c2204d93}{\-U\-D\-I\-\_\-\-C\-D\-C\-\_\-\-D\-A\-T\-A\-\_\-\-D\-E\-S\-C}
+\begin{DoxyCompactList}\small\item\em \-Content of \-C\-D\-C \-D\-A\-T\-A interface descriptor for all speed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-Functions}
+\begin{Indent}\paragraph*{\-Interface for application}
+{\em \-These routines are used by memory to transfer its data to/from \-U\-S\-B \-C\-D\-C endpoint. }\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__udi__cdc__group_ga5507164c7c4ff2c9b94af48229dc0c3c}{udi\-\_\-cdc\-\_\-ctrl\-\_\-signal\-\_\-dcd} (bool b\-\_\-set)
+\begin{DoxyCompactList}\small\item\em \-Notify a state change of \-D\-C\-D signal. \end{DoxyCompactList}\item 
+void \hyperlink{group__udi__cdc__group_ga6b34b223f6c03cd35fc16d29cb9cfb78}{udi\-\_\-cdc\-\_\-ctrl\-\_\-signal\-\_\-dsr} (bool b\-\_\-set)
+\begin{DoxyCompactList}\small\item\em \-Notify a state change of \-D\-S\-R signal. \end{DoxyCompactList}\item 
+void \hyperlink{group__udi__cdc__group_gaf62c55c329d7e7ff3913274b124e54aa}{udi\-\_\-cdc\-\_\-signal\-\_\-framing\-\_\-error} (void)
+\begin{DoxyCompactList}\small\item\em \-Notify a framing error. \end{DoxyCompactList}\item 
+void \hyperlink{group__udi__cdc__group_gab6dd1be8afa57a1bece870338bdc5f74}{udi\-\_\-cdc\-\_\-signal\-\_\-parity\-\_\-error} (void)
+\begin{DoxyCompactList}\small\item\em \-Notify a parity error. \end{DoxyCompactList}\item 
+void \hyperlink{group__udi__cdc__group_ga7730a564c9cb117af611958500a4fa7f}{udi\-\_\-cdc\-\_\-signal\-\_\-overrun} (void)
+\begin{DoxyCompactList}\small\item\em \-Notify a overrun. \end{DoxyCompactList}\item 
+bool \hyperlink{group__udi__cdc__group_gab5beb4e918e089e0eacf20dba1df73ea}{udi\-\_\-cdc\-\_\-is\-\_\-rx\-\_\-ready} (void)
+\begin{DoxyCompactList}\small\item\em \-This function checks if a character has been received on the \-C\-D\-C line. \end{DoxyCompactList}\item 
+int \hyperlink{group__udi__cdc__group_ga202f3fd7b153f6e1a41601735e0febb6}{udi\-\_\-cdc\-\_\-getc} (void)
+\begin{DoxyCompactList}\small\item\em \-Waits and gets a value on \-C\-D\-C line. \end{DoxyCompactList}\item 
+iram\-\_\-size\-\_\-t \hyperlink{group__udi__cdc__group_gaa7374616de8bc3a83de3f1884b56fa39}{udi\-\_\-cdc\-\_\-read\-\_\-buf} (int $\ast$buf, iram\-\_\-size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em \-Reads a \-R\-A\-M buffer on \-C\-D\-C line. \end{DoxyCompactList}\item 
+bool \hyperlink{group__udi__cdc__group_ga7d0d458a5731da95dd05f30714c42dde}{udi\-\_\-cdc\-\_\-is\-\_\-tx\-\_\-ready} (void)
+\begin{DoxyCompactList}\small\item\em \-This function checks if a new character sent is possible \-The type int is used to support scanf redirection from compiler \-L\-I\-B. \end{DoxyCompactList}\item 
+int \hyperlink{group__udi__cdc__group_ga8faae3fcf4911017c0fcf0aa127179f6}{udi\-\_\-cdc\-\_\-putc} (int value)
+\begin{DoxyCompactList}\small\item\em \-Puts a byte on \-C\-D\-C line \-The type int is used to support printf redirection from compiler \-L\-I\-B. \end{DoxyCompactList}\item 
+iram\-\_\-size\-\_\-t \hyperlink{group__udi__cdc__group_ga88f09b3f954620d37bf882e6d1874c42}{udi\-\_\-cdc\-\_\-write\-\_\-buf} (const int $\ast$buf, iram\-\_\-size\-\_\-t size)
+\begin{DoxyCompactList}\small\item\em \-Writes a \-R\-A\-M buffer on \-C\-D\-C line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\subsection*{\-Variables}
+\begin{DoxyCompactItemize}
+\item 
+\-U\-D\-C\-\_\-\-D\-E\-S\-C\-\_\-\-S\-T\-O\-R\-A\-G\-E \hyperlink{structudi__api__t}{udi\-\_\-api\-\_\-t} \hyperlink{group__udi__cdc__group_gad7b0a90350a1f1a7c62fab1a749bf687}{udi\-\_\-api\-\_\-cdc\-\_\-comm}
+\begin{DoxyCompactList}\small\item\em \-Global struture which contains standard \-U\-D\-I \-A\-P\-I for \-U\-D\-C. \end{DoxyCompactList}\item 
+\-U\-D\-C\-\_\-\-D\-E\-S\-C\-\_\-\-S\-T\-O\-R\-A\-G\-E \hyperlink{structudi__api__t}{udi\-\_\-api\-\_\-t} \hyperlink{group__udi__cdc__group_ga3f85c229cc3218b75cb4844b8e9ad2d7}{udi\-\_\-api\-\_\-cdc\-\_\-data}
+\end{DoxyCompactItemize}
+
+
+\subsection{\-Detailed \-Description}
+\-U\-S\-B \-Device \-Communication \-Device \-Class (\-C\-D\-C) interface definitions. \-Copyright (\-C) 2009 \-Atmel \-Corporation. \-All rights reserved. 
